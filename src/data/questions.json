@@ -1,0 +1,6162 @@
+[
+  {
+    "category": "Docker",
+    "question": "Co je Docker a k čemu se používá?",
+    "options": [
+      "Platforma pro vytváření, distribuci a spouštění kontejnerizovaných aplikací",
+      "Databázový server pro ukládání strukturovaných dat",
+      "Verzovací systém pro správu zdrojového kódu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jaký je rozdíl mezi Docker Image a Docker Container?",
+    "options": [
+      "Image je neproměnný soubor s popisem aplikace, Container je běžící instance image",
+      "Image běží jako proces, Container je uložený soubor",
+      "Image a Container jsou synonyma pro stejnou věc",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak funguje Docker Compose?",
+    "options": [
+      "Umožňuje definovat a spravovat multi-kontejnerové aplikace pomocí YAML souboru",
+      "Slouží k verzování Docker images",
+      "Je to GUI nástroj pro správu kontejnerů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jaký je rozdíl mezi Dockerfile a docker-compose.yml?",
+    "options": [
+      "Dockerfile definuje sestavení image, docker-compose.yml konfiguruje více kontejnerů",
+      "Dockerfile spouští kontejnery, docker-compose.yml je pro build",
+      "Jsou to stejné soubory s jiným názvem",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak Docker spravuje sítě a jaké typy sítí podporuje?",
+    "options": [
+      "Podporuje bridge, host, overlay a none sítě přes Docker Network API",
+      "Docker nepodporuje vlastní sítě, používá pouze hostitelskou síť",
+      "Podporuje pouze TCP/IP protokol bez vlastní správy sítí",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vytvořit vícevrstvý Docker Image efektivně?",
+    "options": [
+      "Použitím multi-stage buildů pro minimalizaci velikosti výsledného image",
+      "Vytvořením více Dockerfile souborů a jejich spojením",
+      "Docker nepodporuje vícevrstvé images",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak funguje Docker Volumes a v čem se liší od Bind Mounts?",
+    "options": [
+      "Volumes jsou spravovány Dockerem pro trvalé uložení, Bind Mounts mapují složku na hostiteli",
+      "Volumes a Bind Mounts jsou totožné mechanismy",
+      "Bind Mounts jsou spravovány Dockerem, Volumes mapují hostitelské složky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak zajistit bezpečnost v Docker kontejnerech?",
+    "options": [
+      "Použitím minimálních image, neprivilegovaných uživatelů a skenováním bezpečnostních chyb",
+      "Docker kontejnery jsou automaticky bezpečné bez další konfigurace",
+      "Bezpečnost zajišťuje pouze hostitelský operační systém",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Co je Docker Overlay Network?",
+    "options": [
+      "Síť pro komunikaci mezi kontejnery běžícími na různých hostitelích ve Swarm clusteru",
+      "Základní síť pro lokální kontejnery na jednom hostiteli",
+      "Nástroj pro šifrování Docker images",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak Docker provádí izolaci kontejnerů?",
+    "options": [
+      "Pomocí kernelových mechanismů jako namespaces, cgroups a UnionFS",
+      "Každý kontejner běží ve vlastním virtuálním stroji",
+      "Docker neizoluje kontejnery, sdílejí vše s hostitelem",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak můžete snížit velikost Docker Image?",
+    "options": [
+      "Použitím menších base images, odstraněním nepotřebných souborů a minimalizací vrstev",
+      "Kompresí hotového image pomocí gzip",
+      "Velikost image nelze ovlivnit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak spravovat tajné klíče v Docker kontejnerech?",
+    "options": [
+      "Použitím Docker Secrets nebo environment variables s bezpečným přístupem",
+      "Uložením přímo do Dockerfile jako ENV proměnné",
+      "Tajné klíče se v Dockeru nedají bezpečně spravovat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Co je Docker BuildKit a proč se používá?",
+    "options": [
+      "Vylepšená verze Docker Build systému zlepšující rychlost, bezpečnost a paralelizaci",
+      "Grafický nástroj pro tvorbu Dockerfile",
+      "Plugin pro verzování Docker images",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak Docker řeší problémy se závislostmi mezi kontejnery?",
+    "options": [
+      "Pomocí Docker Compose a definice služeb v depends_on",
+      "Docker automaticky detekuje a řeší všechny závislosti",
+      "Závislosti mezi kontejnery nelze definovat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jaké jsou výhody použití Docker Swarm oproti Kubernetes?",
+    "options": [
+      "Docker Swarm je jednodušší na nasazení, ale méně robustní než Kubernetes",
+      "Docker Swarm je složitější ale výkonnější než Kubernetes",
+      "Docker Swarm a Kubernetes jsou identické nástroje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak monitorovat kontejnery v Dockeru?",
+    "options": [
+      "Pomocí nástrojů jako Prometheus, Grafana, cAdvisor nebo Docker stats",
+      "Docker nepodporuje monitoring kontejnerů",
+      "Pouze pomocí příkazu docker ps",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Co znamená koncept 'immutable infrastructure' v Dockeru?",
+    "options": [
+      "Kontejnery jsou neměnné a každá změna vyžaduje vytvoření nové image",
+      "Docker images lze libovolně měnit za běhu",
+      "Infrastruktura se nikdy neaktualizuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak funguje Docker Multi-Stage Build?",
+    "options": [
+      "Umožňuje sestavení více fází v Dockerfile pro minimalizaci velikosti finálního image",
+      "Spouští více kontejnerů současně",
+      "Vytváří zálohy image v různých fázích",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak spustit dočasný kontejner v Dockeru?",
+    "options": [
+      "Použitím docker run --rm pro automatické odstranění po ukončení",
+      "Všechny kontejnery jsou automaticky dočasné",
+      "Dočasné kontejnery Docker nepodporuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak analyzovat problémy s kontejnery v Dockeru?",
+    "options": [
+      "Pomocí docker logs, docker inspect a docker stats",
+      "Docker neposkytuje diagnostické nástroje",
+      "Pouze restartem kontejneru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak lze omezit zdroje (CPU, RAM) pro běžící Docker kontejner?",
+    "options": [
+      "Použitím parametrů --memory a --cpus při spouštění kontejneru",
+      "Zdroje nelze omezit, kontejner využívá vše dostupné",
+      "Pouze editací Dockerfile",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vytvořit vlastní síť v Dockeru?",
+    "options": [
+      "Použitím příkazu docker network create",
+      "Editací konfiguračního souboru /etc/docker/networks",
+      "Docker nepodporuje vlastní sítě",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak nasadit více instancí stejného kontejneru v Docker Compose?",
+    "options": [
+      "Definováním replicas v docker-compose.yml",
+      "Spuštěním docker-compose up vícekrát",
+      "Docker Compose podporuje pouze jednu instanci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jaký je rozdíl mezi ENTRYPOINT a CMD v Dockerfile?",
+    "options": [
+      "ENTRYPOINT definuje vždy spouštěný proces, CMD poskytuje výchozí argumenty které lze přepsat",
+      "ENTRYPOINT a CMD jsou identické příkazy",
+      "CMD definuje proces, ENTRYPOINT pouze argumenty",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak funguje Docker Healthcheck?",
+    "options": [
+      "Umožňuje definovat zdravotní stav kontejneru pomocí HEALTHCHECK v Dockerfile",
+      "Automaticky restartuje nezdravé kontejnery bez konfigurace",
+      "Docker Healthcheck je externí monitorovací nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vymazat nepoužívané Docker Images?",
+    "options": [
+      "Použitím docker image prune",
+      "Ručním smazáním souborů v /var/lib/docker",
+      "Nepoužívané images se mažou automaticky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vylistovat pouze běžící kontejnery?",
+    "options": [
+      "Pomocí docker ps",
+      "Pomocí docker ps -a",
+      "Pomocí docker list --running",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak Docker řeší závislosti mezi kontejnery v síti?",
+    "options": [
+      "Pomocí interních DNS služeb v rámci docker network",
+      "Kontejnery komunikují pouze přes IP adresy",
+      "Docker nepodporuje komunikaci mezi kontejnery",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vytvořit více kontejnerů v jednom Docker Compose souboru?",
+    "options": [
+      "Definováním více služeb (services) v docker-compose.yml",
+      "Vytvořením více docker-compose souborů",
+      "Docker Compose podporuje pouze jeden kontejner",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak funguje Docker Build Cache?",
+    "options": [
+      "Docker znovu nepřekompilovává vrstvy, které se nezměnily",
+      "Cache se používá pouze pro stahování base images",
+      "Docker Build Cache neexistuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak bezpečně spouštět kontejnery s rootless Dockerem?",
+    "options": [
+      "Použitím rootless režimu, který běží bez oprávnění superuživatele",
+      "Rootless Docker znamená kontejnery bez root filesystému",
+      "Docker vždy vyžaduje root oprávnění",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vytvořit tajný soubor v Docker Swarm?",
+    "options": [
+      "Pomocí docker secret create",
+      "Uložením do environment proměnné",
+      "Docker Swarm nepodporuje secrets",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak povolit logging driver v Dockeru?",
+    "options": [
+      "Použitím --log-driver parametru při spuštění kontejneru",
+      "Editací /etc/docker/logging.conf",
+      "Logging je vždy povolen automaticky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak funguje Docker Context?",
+    "options": [
+      "Docker Context umožňuje přepínání mezi různými Docker Daemony",
+      "Context je alias pro Docker Compose",
+      "Docker Context ukládá build cache",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak provést rollback kontejnerové aplikace?",
+    "options": [
+      "Použitím docker service update --rollback v Docker Swarm",
+      "Rollback není v Dockeru možný",
+      "Pouze ručním nasazením starší verze image",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Co jsou Docker Labels a k čemu se používají?",
+    "options": [
+      "Slouží k přidávání metadat k objektům v Dockeru",
+      "Labels jsou alternativní název pro tagy",
+      "Používají se pro pojmenování kontejnerů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak bezpečně ukládat citlivé údaje v Docker Compose?",
+    "options": [
+      "Použitím .env souborů nebo Docker Secrets",
+      "Přímo v docker-compose.yml jako plain text",
+      "Citlivé údaje nelze v Docker Compose bezpečně ukládat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak zobrazit detaily o běžícím kontejneru?",
+    "options": [
+      "Pomocí docker inspect",
+      "Pomocí docker details",
+      "Pomocí docker info --container",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak změnit konfiguraci běžícího kontejneru?",
+    "options": [
+      "Je nutné kontejner restartovat s novými parametry",
+      "Pomocí docker config update",
+      "Konfiguraci lze měnit za běhu bez restartu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak z Docker kontejneru odstranit nepotřebné vrstvy?",
+    "options": [
+      "Použitím docker image prune nebo optimalizací Dockerfile",
+      "Vrstvy lze mazat příkazem docker layer rm",
+      "Vrstvy z existujícího image nelze odstranit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vytvořit image pouze pro vývojové prostředí?",
+    "options": [
+      "Použitím Dockerfile.dev a docker build -f Dockerfile.dev",
+      "Přidáním --dev flagu k docker build",
+      "Docker nepodporuje různé typy prostředí",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak funguje Docker Security Scanning?",
+    "options": [
+      "Prohledává image na známé bezpečnostní chyby",
+      "Skenuje síťový provoz kontejnerů",
+      "Docker Security Scanning neexistuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak Docker řeší problémy se souběžností více kontejnerů?",
+    "options": [
+      "Pomocí orchestrátorů jako Kubernetes nebo Swarm",
+      "Docker automaticky řeší souběžnost bez konfigurace",
+      "Souběžnost více kontejnerů není podporována",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vytvořit lightweight Docker image?",
+    "options": [
+      "Použitím Alpine Linux jako základního image",
+      "Kompresí výsledného image",
+      "Lightweight images Docker nepodporuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak zobrazit historii změn v Docker image?",
+    "options": [
+      "Pomocí docker history",
+      "Pomocí docker log --image",
+      "Historie změn se neukládá",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak restartovat kontejner při selhání?",
+    "options": [
+      "Použitím --restart flagu při docker run",
+      "Docker automaticky restartuje všechny kontejnery",
+      "Restart při selhání není možný",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jaký je rozdíl mezi soft limit a hard limit u Docker resource constraints?",
+    "options": [
+      "Soft limit je doporučená hodnota, hard limit je maximální povolená hodnota",
+      "Soft a hard limit jsou totožné",
+      "Hard limit je doporučená hodnota, soft limit je maximum",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak vypnout a smazat všechny kontejnery najednou?",
+    "options": [
+      "Použitím docker rm -f $(docker ps -aq)",
+      "Pomocí docker clean --all",
+      "Pouze ručním mazáním po jednom",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak zajistit audit Docker událostí?",
+    "options": [
+      "Pomocí docker events",
+      "Docker nepodporuje audit událostí",
+      "Pomocí docker audit --enable",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Docker",
+    "question": "Jak Docker zvládá verze image a tagování?",
+    "options": [
+      "Pomocí docker tag a docker push",
+      "Docker automaticky verzuje všechny images",
+      "Tagování images není podporováno",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes a jaké jsou jeho hlavní součásti?",
+    "options": [
+      "Platforma pro orchestraci kontejnerů s automatizací nasazení, škálování a správy aplikací",
+      "Databázový systém pro ukládání kontejnerových dat",
+      "Nástroj pro vytváření Docker images",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaký je rozdíl mezi Podem a Node?",
+    "options": [
+      "Pod je nejmenší nasaditelná jednotka obsahující kontejnery, Node je stroj hostující Pody",
+      "Pod je fyzický server, Node je kontejner",
+      "Pod a Node jsou synonyma",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je kubelet a jakou má roli?",
+    "options": [
+      "Agent běžící na každém Node, který spravuje a monitoruje Pody",
+      "Centrální databáze Kubernetes clusteru",
+      "GUI nástroj pro správu Kubernetes",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak funguje Kubernetes Scheduler?",
+    "options": [
+      "Rozhoduje, na kterém Node bude nový Pod spuštěn na základě dostupných zdrojů",
+      "Plánuje zálohy Kubernetes clusteru",
+      "Spravuje časové zóny v clusteru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaký je rozdíl mezi Deployment a StatefulSet?",
+    "options": [
+      "Deployment je pro bezstavové aplikace, StatefulSet pro aplikace vyžadující perzistentní identitu",
+      "Deployment a StatefulSet jsou identické",
+      "StatefulSet je pro bezstavové, Deployment pro stavové aplikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes Namespace a k čemu se používá?",
+    "options": [
+      "Umožňuje izolaci prostředků v Kubernetes clusteru",
+      "Definuje jmenné konvence pro Pody",
+      "Je to alias pro cluster",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak se v Kubernetes definuje Health Check?",
+    "options": [
+      "Pomocí livenessProbe a readinessProbe v YAML konfiguraci",
+      "Health check se definuje v Dockerfile",
+      "Kubernetes nepodporuje health checks",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes Service a jaké typy existují?",
+    "options": [
+      "Umožňuje síťovou komunikaci mezi Pody; typy: ClusterIP, NodePort, LoadBalancer, ExternalName",
+      "Service je typ Podu pro databáze",
+      "Kubernetes Service neexistuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaký je rozdíl mezi ConfigMap a Secret?",
+    "options": [
+      "ConfigMap uchovává nekryptovaná konfigurační data, Secret obsahuje base64 kódovaná citlivá data",
+      "ConfigMap a Secret jsou totožné",
+      "Secret je pro veřejná data, ConfigMap pro citlivá",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaké jsou způsoby škálování aplikací v Kubernetes?",
+    "options": [
+      "Manuální škálování (kubectl scale), automatické škálování (HPA, VPA) a cluster autoscaler",
+      "Kubernetes nepodporuje škálování",
+      "Pouze ruční úprava počtu Podů v YAML",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes spravuje persistentní úložiště?",
+    "options": [
+      "Pomocí PersistentVolume (PV) a PersistentVolumeClaim (PVC)",
+      "Kubernetes nepodporuje persistentní úložiště",
+      "Pouze pomocí Docker Volumes",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes zajišťuje bezpečnost komunikace mezi komponentami?",
+    "options": [
+      "Použitím RBAC, Network Policies a TLS certifikátů",
+      "Komunikace je vždy nešifrovaná",
+      "Bezpečnost zajišťuje pouze firewall",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes Operator?",
+    "options": [
+      "Rozšiřuje funkcionalitu Kubernetes a umožňuje automatizaci složitých operací",
+      "Uživatel s admin právy v clusteru",
+      "Nástroj pro monitoring Podů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes zvládá rolling updates?",
+    "options": [
+      "Pomocí Deployment strategií jako RollingUpdate a Recreate",
+      "Rolling updates nejsou podporovány",
+      "Pouze ručním restartováním Podů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak obnovit nefunkční Pod v Kubernetes?",
+    "options": [
+      "Kubelet automaticky restartuje nefunkční Pody",
+      "Je nutné ručně smazat a znovu vytvořit Pod",
+      "Nefunkční Pody nelze obnovit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak funguje Kubernetes Ingress?",
+    "options": [
+      "Umožňuje routování HTTP/S provozu k vnitřním službám",
+      "Ingress je typ Podu",
+      "Slouží k šifrování dat v clusteru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak monitorovat Kubernetes cluster?",
+    "options": [
+      "Pomocí Prometheus, Grafana, ELK stacku a Kubernetes Metrics Server",
+      "Kubernetes nepodporuje monitoring",
+      "Pouze pomocí kubectl logs",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaké jsou hlavní výhody použití Helm Charts?",
+    "options": [
+      "Usnadňují správu a nasazení aplikací v Kubernetes pomocí šablon",
+      "Helm Charts jsou pouze pro monitoring",
+      "Slouží k vytváření Docker images",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak spravovat tajná data v Kubernetes?",
+    "options": [
+      "Pomocí Secrets a šifrování v etcd",
+      "Tajná data se ukládají přímo do ConfigMap",
+      "Kubernetes nepodporuje správu tajných dat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes DaemonSet?",
+    "options": [
+      "Zajišťuje, že určitý Pod běží na každém Node",
+      "DaemonSet je typ Service",
+      "Spravuje démony operačního systému",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes řídí přístup k API serveru?",
+    "options": [
+      "Pomocí Role-Based Access Control (RBAC) a autentizačních mechanismů",
+      "API server je vždy veřejně přístupný",
+      "Přístup řídí pouze firewall",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes Custom Resource Definition (CRD)?",
+    "options": [
+      "Umožňuje rozšíření Kubernetes o vlastní objekty",
+      "CRD je typ Podu",
+      "Definuje custom Docker images",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaký je rozdíl mezi ReplicaSet a Deployment?",
+    "options": [
+      "Deployment spravuje ReplicaSety a umožňuje provádět aktualizace",
+      "ReplicaSet a Deployment jsou totožné",
+      "ReplicaSet je novější náhrada za Deployment",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak lze škálovat v Kubernetes?",
+    "options": [
+      "Přidáním více podů, zvýšením jejich výkonu, nebo přidáním nových serverů do clusteru",
+      "Škálování v Kubernetes není možné",
+      "Pouze vertikálním škálováním Node",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes provádí zálohování a obnovu dat?",
+    "options": [
+      "Pomocí snapshotů Persistent Volumes nebo externích řešení jako Velero",
+      "Kubernetes automaticky zálohuje všechna data",
+      "Zálohování není v Kubernetes podporováno",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak se konfiguruje Kubernetes API Server?",
+    "options": [
+      "Konfigurací parametrů v kube-apiserver",
+      "API Server se nekonfiguruje",
+      "Pouze editací YAML souborů Podů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes Pod Disruption Budget (PDB)?",
+    "options": [
+      "Umožňuje definovat maximální počet replik, které mohou být současně vypnuty",
+      "PDB je rozpočet na provoz clusteru",
+      "Definuje finanční limity pro cloud resources",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes spravuje konfigurace pro aplikace?",
+    "options": [
+      "Pomocí ConfigMaps a Secrets",
+      "Konfigurace se ukládají přímo do Podů",
+      "Kubernetes nepodporuje externí konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes Network Policy?",
+    "options": [
+      "Definuje pravidla síťové komunikace mezi Pody",
+      "Network Policy je typ Service",
+      "Slouží k nastavení DNS",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes spravuje závislosti mezi Pody?",
+    "options": [
+      "Použitím Init Containers a Affinity/Anti-Affinity pravidel",
+      "Závislosti mezi Pody nelze definovat",
+      "Pouze pomocí Docker Compose",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak lze sledovat logy v Kubernetes?",
+    "options": [
+      "Pomocí kubectl logs a nástrojů jako Fluentd nebo Loki",
+      "Logy se v Kubernetes neukládají",
+      "Pouze přímým přístupem do kontejneru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes řeší vysokou dostupnost?",
+    "options": [
+      "Použitím multi-master architektury a load balanceru",
+      "Kubernetes nepodporuje vysokou dostupnost",
+      "Pouze replikací Podů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak nasadit Stateful aplikaci v Kubernetes?",
+    "options": [
+      "Použitím StatefulSet namísto Deploymentu",
+      "Stateful aplikace nelze v Kubernetes nasadit",
+      "Pomocí DaemonSet",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak funguje Kubernetes Job a CronJob?",
+    "options": [
+      "Job spouští úlohy s jednorázovým vykonáním, CronJob plánuje periodické úlohy",
+      "Job a CronJob jsou totožné",
+      "CronJob je pro jednorázové úlohy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes zpracovává výpadek Node?",
+    "options": [
+      "Node Controller automaticky přesouvá Pody na jiný dostupný Node",
+      "Pody na vypadlém Node jsou ztraceny",
+      "Kubernetes nedetekuje výpadky Node",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes Eviction Policy?",
+    "options": [
+      "Mechanismus pro odstranění Podů při přetížení uzlů",
+      "Pravidlo pro mazání starých images",
+      "Policy pro přístup uživatelů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaký je rozdíl mezi LoadBalancer a Ingress?",
+    "options": [
+      "LoadBalancer vystavuje jednotlivé služby, Ingress umožňuje směrování na základě URL",
+      "LoadBalancer a Ingress jsou totožné",
+      "Ingress je typ LoadBalanceru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak funguje Kubernetes Admission Controller?",
+    "options": [
+      "Provádí validaci a mutaci požadavků na API server",
+      "Řídí přístup uživatelů do clusteru",
+      "Spravuje admission tickets",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak spravovat konfigurace více prostředí v Kubernetes?",
+    "options": [
+      "Použitím různých Namespace nebo Helm Values",
+      "Kubernetes podporuje pouze jedno prostředí",
+      "Vytvořením samostatných clusterů pro každé prostředí",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes spravuje síťovou komunikaci mezi kontejnery?",
+    "options": [
+      "Pomocí CNI pluginů jako Calico, Flannel nebo Cilium",
+      "Používá pouze Docker networking",
+      "Síťová komunikace není v Kubernetes možná",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaký je rozdíl mezi Taint a Toleration v Kubernetes?",
+    "options": [
+      "Taint brání běhu Podů na Nodech, pokud nemají odpovídající Toleration",
+      "Taint a Toleration jsou totožné",
+      "Toleration brání běhu Podů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes implementuje Service Discovery?",
+    "options": [
+      "Pomocí DNS služby CoreDNS a environment variables",
+      "Service Discovery není v Kubernetes podporováno",
+      "Pouze pomocí externích nástrojů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak nakonfigurovat Kubernetes audit logging?",
+    "options": [
+      "Použitím audit-policy.yaml a nastavení kube-apiserver",
+      "Audit logging je automaticky povolen",
+      "Kubernetes nepodporuje audit logging",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Co je Kubernetes Federation?",
+    "options": [
+      "Umožňuje správu více clusterů z jednoho rozhraní",
+      "Federation je typ Podu",
+      "Slouží k federované autentizaci uživatelů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak funguje Kubernetes Horizontal Pod Autoscaler (HPA)?",
+    "options": [
+      "Dynamicky upravuje počet Podů na základě metrik CPU nebo paměti",
+      "HPA škáluje pouze vertikálně",
+      "Automaticky přidává nové Node do clusteru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes řídí životní cyklus Podů?",
+    "options": [
+      "Pomocí stavů Pending, Running, Succeeded a Failed",
+      "Pody nemají definovaný životní cyklus",
+      "Pouze pomocí externích nástrojů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jaké jsou možnosti autentizace v Kubernetes?",
+    "options": [
+      "X.509 certifikáty, tokeny a OpenID Connect",
+      "Pouze uživatelské jméno a heslo",
+      "Kubernetes nepodporuje autentizaci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak Kubernetes spravuje zdroje na úrovni Node?",
+    "options": [
+      "Pomocí cgroups a resource requests/limits v YAML definicích",
+      "Zdroje se nespravují, Pody využívají vše dostupné",
+      "Pouze pomocí Docker resource limits",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak zabezpečit Kubernetes cluster?",
+    "options": [
+      "Použitím RBAC, Network Policies a auditování",
+      "Kubernetes je automaticky bezpečný",
+      "Bezpečnost zajišťuje pouze cloud provider",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Kubernetes",
+    "question": "Jak zálohovat a obnovit Kubernetes etcd databázi?",
+    "options": [
+      "Pomocí etcdctl snapshot save a restore příkazů",
+      "etcd se zálohuje automaticky",
+      "etcd nelze zálohovat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je Spring Framework a proč se používá?",
+    "options": [
+      "Framework pro vývoj Java aplikací s podporou dependency injection, transakcí a webových aplikací",
+      "Databázový systém pro Java aplikace",
+      "Nástroj pro kompilaci Java kódu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje Dependency Injection v Springu?",
+    "options": [
+      "Umožňuje vkládání závislostí do tříd bez pevné vazby mezi nimi",
+      "Automaticky generuje kód pro závislosti",
+      "Dependency Injection v Springu neexistuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaký je rozdíl mezi @Component, @Service a @Repository?",
+    "options": [
+      "@Component je obecná anotace, @Service pro servisní třídy, @Repository pro datové vrstvy s překladem výjimek",
+      "Všechny tři anotace jsou identické",
+      "@Repository je pro servisní logiku, @Service pro databáze",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje Spring Bean Lifecycle?",
+    "options": [
+      "Bean prochází fázemi instanciace, DI, konfigurace, inicializace, usage a zničení",
+      "Bean se vytvoří a nikdy nezaniká",
+      "Lifecycle se řídí pouze Garbage Collectorem",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring spravuje transakce?",
+    "options": [
+      "Pomocí anotace @Transactional a Spring Transaction Management (ACID)",
+      "Transakce se spravují pouze na úrovni databáze",
+      "Spring nepodporuje správu transakcí",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaký je rozdíl mezi singleton a prototype scope u Spring beanů?",
+    "options": [
+      "Singleton má jednu instanci na kontext, prototype vytváří novou instanci při každém vyžádání",
+      "Singleton a prototype jsou totožné",
+      "Prototype má jednu instanci, singleton více",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaký je rozdíl mezi ApplicationContext a BeanFactory?",
+    "options": [
+      "ApplicationContext rozšiřuje BeanFactory o event handling a mezinárodní podporu",
+      "BeanFactory je novější než ApplicationContext",
+      "Jsou to totožné komponenty",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring řeší aspektově orientované programování (AOP)?",
+    "options": [
+      "Použitím @Aspect a @Around/@Before/@After anotací",
+      "AOP není ve Springu podporováno",
+      "Pouze pomocí XML konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaký je rozdíl mezi @Autowired a @Inject?",
+    "options": [
+      "@Autowired je Spring-specifická, @Inject pochází z Java EE standardu",
+      "@Autowired a @Inject jsou totožné",
+      "@Inject je Spring-specifická",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring řeší správu konfigurací?",
+    "options": [
+      "Pomocí @PropertySource a externích souborů jako application.properties",
+      "Konfigurace se hardcodují přímo do kódu",
+      "Spring nepodporuje externí konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je Spring Profiles a k čemu slouží?",
+    "options": [
+      "Umožňuje definovat různé konfigurace pro různá prostředí (dev, prod)",
+      "Profiles jsou uživatelské účty v aplikaci",
+      "Slouží k profilování výkonu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring podporuje testování?",
+    "options": [
+      "Pomocí @SpringBootTest, @MockBean a @WebMvcTest",
+      "Spring nepodporuje testování",
+      "Pouze pomocí JUnit bez integrace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje Spring Context Refresh?",
+    "options": [
+      "Umožňuje opětovné načtení kontextu aplikace bez restartu celé aplikace",
+      "Context Refresh restartuje celou aplikaci",
+      "Spring Context Refresh neexistuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring řeší bezpečnost aplikací?",
+    "options": [
+      "Pomocí Spring Security pro autentizaci a autorizaci",
+      "Bezpečnost se řeší pouze na úrovni databáze",
+      "Spring nepodporuje bezpečnost",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje Event Handling ve Springu?",
+    "options": [
+      "Pomocí @EventListener a ApplicationEventPublisher",
+      "Event Handling není ve Springu podporován",
+      "Pouze pomocí externích knihoven",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak implementovat REST API pomocí Springu?",
+    "options": [
+      "Použitím @RestController, @RequestMapping, @GetMapping, @PostMapping atd.",
+      "REST API se ve Springu nedá implementovat",
+      "Pouze pomocí XML konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je Spring Data JPA a jak funguje?",
+    "options": [
+      "Rozšíření JPA usnadňující práci s databázemi pomocí repository, umí generovat SQL z názvů metod",
+      "Spring Data JPA je databázový server",
+      "Slouží pouze k migraci databází",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring řeší cachování?",
+    "options": [
+      "Pomocí @Cacheable a @CacheEvict anotací",
+      "Cachování ve Springu neexistuje",
+      "Pouze pomocí externích cache serverů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje Lazy vs Eager initialization v Springu?",
+    "options": [
+      "Lazy načítání odloží instanciaci beanů až do použití, eager vytváří beany při startu",
+      "Lazy a Eager jsou totožné",
+      "Eager odloží instanciaci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje Spring WebFlux?",
+    "options": [
+      "WebFlux je reaktivní alternativa k tradičnímu Spring MVC",
+      "WebFlux je databázová knihovna",
+      "WebFlux slouží k generování PDF",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje mechanismus dependency injection ve Springu?",
+    "options": [
+      "Spring automaticky spravuje závislosti mezi objekty a vkládá je",
+      "Závislosti se musí vždy vytvářet ručně",
+      "DI funguje pouze s XML konfigurací",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaký je rozdíl mezi @Primary a @Qualifier anotacemi?",
+    "options": [
+      "@Primary označuje preferovanou instanci beanu, @Qualifier umožňuje výběr konkrétní instance",
+      "@Primary a @Qualifier jsou totožné",
+      "@Qualifier označuje preferovanou instanci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak lze ve Springu vytvořit vlastní anotaci?",
+    "options": [
+      "Pomocí @Retention, @Target a @Component nebo jiné specifické anotace",
+      "Vlastní anotace nelze ve Springu vytvářet",
+      "Pouze editací Spring knihoven",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je Spring Boot Starter a k čemu slouží?",
+    "options": [
+      "Předkonfigurované závislosti usnadňující integraci běžných technologií",
+      "Starter je typ Spring beanu",
+      "Slouží ke spuštění aplikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring Boot automaticky konfiguruje aplikaci?",
+    "options": [
+      "Použitím @EnableAutoConfiguration a spring.factories souboru",
+      "Auto-konfigurace neexistuje",
+      "Pouze pomocí XML souborů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaká je role @Bean anotace ve Springu?",
+    "options": [
+      "Označuje metodu, která vytváří a vrací instanci beanu spravovaného Spring kontejnerem",
+      "@Bean je alias pro @Component",
+      "Slouží k mazání beanů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak ve Springu funguje @ComponentScan?",
+    "options": [
+      "Automaticky detekuje a registruje komponenty v definovaném balíčku",
+      "ComponentScan skenuje databázi",
+      "Slouží k bezpečnostnímu skenování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je JavaConfig ve Springu?",
+    "options": [
+      "Způsob konfigurace Spring aplikace pomocí čistého Java kódu namísto XML",
+      "JavaConfig je konfigurační soubor JVM",
+      "Slouží ke konfiguraci IDE",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaký je rozdíl mezi @RestController a @Controller?",
+    "options": [
+      "@RestController vrací data jako JSON/XML, @Controller obsluhuje HTML stránky",
+      "@RestController a @Controller jsou totožné",
+      "@Controller vrací JSON, @RestController HTML",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaké existují typy dependency injection ve Springu?",
+    "options": [
+      "Konstruktorová, setterová a field injection",
+      "Pouze konstruktorová injection",
+      "DI typy ve Springu neexistují",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring Boot podporuje monitoring a logging?",
+    "options": [
+      "Pomocí Spring Actuator a knihoven jako Logback nebo SLF4J",
+      "Monitoring ve Spring Boot není podporován",
+      "Pouze pomocí externích nástrojů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je Spring Actuator a k čemu se používá?",
+    "options": [
+      "Poskytuje metriky a diagnostiku běžící aplikace",
+      "Actuator je databázový konektor",
+      "Slouží k autentizaci uživatelů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaký je rozdíl mezi checked a unchecked výjimkami ve Springu?",
+    "options": [
+      "Checked výjimky musí být ošetřeny, unchecked jsou runtime výjimky",
+      "Checked a unchecked výjimky jsou totožné",
+      "Unchecked výjimky musí být ošetřeny",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje @Transactional anotace?",
+    "options": [
+      "Označuje metodu nebo třídu jako transakční, zajišťuje správu databázových transakcí",
+      "@Transactional slouží k logování",
+      "Označuje pouze read-only operace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je Spring MVC a jak funguje?",
+    "options": [
+      "Framework pro webové aplikace založený na Model-View-Controller architektuře",
+      "Spring MVC je databázová knihovna",
+      "MVC je messaging systém",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring MVC zpracovává HTTP requesty?",
+    "options": [
+      "Pomocí @RequestMapping a dalších souvisejících anotací",
+      "HTTP requesty se zpracovávají pouze v JSP",
+      "Spring MVC nepodporuje HTTP",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je ModelAndView ve Spring MVC?",
+    "options": [
+      "Objekt kombinující modelová data a pohled (view) pro vykreslení odpovědi",
+      "ModelAndView je typ databáze",
+      "Slouží pouze k validaci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje validace ve Springu?",
+    "options": [
+      "Pomocí anotací jako @Valid, @NotNull a vlastních validátorů",
+      "Validace ve Springu neexistuje",
+      "Pouze pomocí JavaScriptu na frontendu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje interakce mezi Spring MVC a Thymeleaf?",
+    "options": [
+      "Thymeleaf je šablonovací engine podporující dynamické vykreslování HTML",
+      "Thymeleaf je databázová knihovna",
+      "Spring MVC nepodporuje Thymeleaf",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je CORS a jak ho konfigurovat ve Spring Boot?",
+    "options": [
+      "Cross-Origin Resource Sharing umožňuje bezpečné sdílení zdrojů mezi doménami",
+      "CORS je databázový protokol",
+      "CORS se ve Springu nekonfiguruje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak fungují aspekty (AOP) ve Springu?",
+    "options": [
+      "Umožňují aplikovat cross-cutting logiku jako logging nebo bezpečnost",
+      "AOP slouží pouze k testování",
+      "Aspekty ve Springu neexistují",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak implementovat vlastní Spring Boot Starter?",
+    "options": [
+      "Vytvořením vlastního modulu s AutoConfiguration a definicí závislostí",
+      "Vlastní Starter nelze vytvořit",
+      "Pouze editací Spring Boot knihoven",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je Spring Boot DevTools a jak pomáhá vývojářům?",
+    "options": [
+      "Zajišťuje automatické restartování aplikace při změně kódu",
+      "DevTools je debugger",
+      "Slouží k deployment do produkce",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak Spring Boot podporuje konfiguraci databázových spojení?",
+    "options": [
+      "Použitím application.properties nebo application.yml a JDBC driverů",
+      "Databázová spojení se konfigurují pouze v kódu",
+      "Spring Boot nepodporuje databáze",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje Spring WebFlux ve srovnání se Spring MVC?",
+    "options": [
+      "WebFlux je reaktivní framework podporující asynchronní programování",
+      "WebFlux a Spring MVC jsou totožné",
+      "WebFlux je pomalejší než MVC",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Co je Reactive Streams a jak souvisí s WebFlux?",
+    "options": [
+      "Definuje standard pro asynchronní zpracování datových toků",
+      "Reactive Streams je databázová knihovna",
+      "Nesouvisí s WebFlux",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jaký je rozdíl mezi Mono a Flux v reaktivním Springu?",
+    "options": [
+      "Mono vrací jeden prvek, Flux může vrátit více prvků",
+      "Mono a Flux jsou totožné",
+      "Flux vrací jeden prvek, Mono více",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak funguje Spring Security OAuth2?",
+    "options": [
+      "Umožňuje autentizaci a autorizaci přes OAuth2 protokol",
+      "OAuth2 ve Springu neexistuje",
+      "OAuth2 slouží pouze k šifrování dat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak konfigurovat rate limiting ve Spring Boot?",
+    "options": [
+      "Pomocí knihoven jako Bucket4j nebo Spring Cloud Gateway",
+      "Rate limiting ve Springu neexistuje",
+      "Pouze pomocí externího proxy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Core",
+    "question": "Jak provést migraci databáze ve Spring Boot?",
+    "options": [
+      "Použitím Flyway nebo Liquibase",
+      "Migrace databází není ve Springu podporována",
+      "Pouze ručním spouštěním SQL skriptů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Co je Spring Boot a jaké jsou jeho hlavní výhody?",
+    "options": [
+      "Framework usnadňující vývoj s auto-konfigurací, vestavěnými servery a jednoduchou integrací",
+      "Databázový server pro Java aplikace",
+      "Nástroj pro kompilaci Java kódu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi Spring a Spring Boot?",
+    "options": [
+      "Spring Boot staví na Springu a přidává auto-konfiguraci a vestavěný aplikační server",
+      "Spring a Spring Boot jsou totožné",
+      "Spring Boot je starší verze Springu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Co je Spring Boot Starter a proč se používá?",
+    "options": [
+      "Předkonfigurované závislosti usnadňující integraci běžných knihoven",
+      "Starter je typ databáze",
+      "Slouží pouze ke spuštění aplikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak funguje auto-konfigurace ve Spring Boot?",
+    "options": [
+      "Využívá @EnableAutoConfiguration a analyzuje třídy na classpath",
+      "Auto-konfigurace neexistuje",
+      "Pouze pomocí XML souborů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak spustit Spring Boot aplikaci bez externího serveru?",
+    "options": [
+      "Používá vestavěný server (Tomcat, Jetty, Undertow) a spouští se jako java -jar",
+      "Vždy vyžaduje externí server",
+      "Pouze pomocí Docker kontejneru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak definovat vlastnosti aplikace ve Spring Boot?",
+    "options": [
+      "Pomocí application.properties nebo application.yml",
+      "Pouze hardcodováním v kódu",
+      "Vlastnosti nelze definovat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak funguje Spring Boot Actuator?",
+    "options": [
+      "Poskytuje metriky, sledování a diagnostiku běžící aplikace",
+      "Actuator je databázový konektor",
+      "Slouží k deployment aplikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi @SpringBootApplication a @EnableAutoConfiguration?",
+    "options": [
+      "@SpringBootApplication je kombinace @Configuration, @EnableAutoConfiguration a @ComponentScan",
+      "Jsou to totožné anotace",
+      "@EnableAutoConfiguration je novější náhrada",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak implementovat REST API ve Spring Boot?",
+    "options": [
+      "Pomocí @RestController, @RequestMapping, @GetMapping, @PostMapping atd.",
+      "REST API nelze ve Spring Boot implementovat",
+      "Pouze pomocí XML konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak pracovat s databází ve Spring Boot?",
+    "options": [
+      "Pomocí Spring Data JPA nebo JDBC Template přes spring.datasource nastavení",
+      "Databáze nejsou ve Spring Boot podporovány",
+      "Pouze pomocí raw JDBC bez abstrakce",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak lze testovat Spring Boot aplikaci?",
+    "options": [
+      "Použitím @SpringBootTest, MockMvc a testovacích frameworků jako JUnit",
+      "Testování ve Spring Boot není podporováno",
+      "Pouze manuálním testováním",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot podporuje logging?",
+    "options": [
+      "Použitím SLF4J, Logback nebo Log4j2 s konfigurací v application.properties",
+      "Logging není ve Spring Boot podporován",
+      "Pouze pomocí System.out.println",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Co je DevTools ve Spring Boot?",
+    "options": [
+      "Usnadňuje vývoj automatickým restartem aplikace při změně kódu",
+      "DevTools je debugger",
+      "Nástroj pro deployment do produkce",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi @Component, @Service a @Repository ve Spring Boot?",
+    "options": [
+      "@Component pro obecné komponenty, @Service pro business logiku, @Repository pro datovou vrstvu",
+      "Všechny tři jsou identické",
+      "@Repository je pro business logiku",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot řeší bezpečnost aplikací?",
+    "options": [
+      "Pomocí Spring Security pro autentizaci a autorizaci uživatelů",
+      "Bezpečnost není ve Spring Boot podporována",
+      "Pouze pomocí firewallu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi embedded a external databází v Spring Boot?",
+    "options": [
+      "Embedded (H2) běží v paměti, externí (MySQL, PostgreSQL) vyžadují JDBC připojení",
+      "Embedded a externí databáze jsou totožné",
+      "Spring Boot podporuje pouze embedded databáze",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak konfigurovat cache ve Spring Boot?",
+    "options": [
+      "Použitím anotací @Cacheable, @CachePut a @CacheEvict",
+      "Cache ve Spring Boot neexistuje",
+      "Pouze pomocí externích cache serverů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak implementovat messaging v Spring Boot?",
+    "options": [
+      "Použitím Spring Boot s RabbitMQ, Kafka nebo ActiveMQ",
+      "Messaging není ve Spring Boot podporován",
+      "Pouze pomocí HTTP requestů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak nakonfigurovat více profilů v Spring Boot?",
+    "options": [
+      "Použitím spring.profiles.active v application.properties nebo application.yml",
+      "Profily ve Spring Boot neexistují",
+      "Pouze vytvořením samostatných aplikací",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak funguje @Value anotace ve Spring Boot?",
+    "options": [
+      "Umožňuje vkládání hodnot z application.properties do proměnných tříd",
+      "@Value slouží k validaci",
+      "Definuje hodnotu v databázi",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak funguje mechanismus závislostí ve Spring Boot?",
+    "options": [
+      "Využívá Maven nebo Gradle k automatickému spravování závislostí přes Starters",
+      "Závislosti se musí stahovat ručně",
+      "Spring Boot nemá správu závislostí",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak nakonfigurovat vlastní banner při startu aplikace ve Spring Boot?",
+    "options": [
+      "Vytvořením banner.txt v src/main/resources nebo použitím spring.banner.location",
+      "Banner nelze změnit",
+      "Pouze editací Spring Boot knihoven",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi @RestController a @Controller?",
+    "options": [
+      "@RestController vrací JSON/XML, @Controller obvykle obsluhuje HTML šablony",
+      "@RestController a @Controller jsou totožné",
+      "@Controller vrací JSON",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot podporuje asynchronní zpracování?",
+    "options": [
+      "Pomocí anotace @Async a povolením @EnableAsync v konfiguraci",
+      "Asynchronní zpracování není podporováno",
+      "Pouze pomocí externích knihoven",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak lze zabezpečit REST API ve Spring Boot?",
+    "options": [
+      "Pomocí Spring Security a JWT (JSON Web Token)",
+      "REST API nelze zabezpečit",
+      "Pouze pomocí firewallu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak implementovat vlastní filtry ve Spring Boot?",
+    "options": [
+      "Vytvořením třídy implementující javax.servlet.Filter a označením @Component",
+      "Filtry ve Spring Boot neexistují",
+      "Pouze pomocí XML konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak funguje Error Handling ve Spring Boot?",
+    "options": [
+      "Pomocí @ExceptionHandler, @ControllerAdvice nebo vlastního ErrorController",
+      "Error Handling není podporován",
+      "Chyby se ignorují",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak nakonfigurovat vlastní inicializační logiku ve Spring Boot?",
+    "options": [
+      "Použitím CommandLineRunner nebo ApplicationRunner",
+      "Inicializační logiku nelze přidat",
+      "Pouze v main metodě",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi Spring Boot a Spring Cloud?",
+    "options": [
+      "Spring Boot je pro vývoj aplikací, Spring Cloud pro mikroservisní architekturu",
+      "Spring Boot a Spring Cloud jsou totožné",
+      "Spring Cloud je starší verze Spring Boot",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot pracuje s WebSockets?",
+    "options": [
+      "Pomocí knihovny spring-websocket a anotací @MessageMapping",
+      "WebSockets nejsou podporovány",
+      "Pouze pomocí externích knihoven",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak implementovat task scheduling ve Spring Boot?",
+    "options": [
+      "Použitím @Scheduled anotace a povolením @EnableScheduling",
+      "Scheduling není ve Spring Boot podporován",
+      "Pouze pomocí cron jobů OS",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak lze sledovat výkon aplikace ve Spring Boot?",
+    "options": [
+      "Použitím Spring Boot Actuator a externích nástrojů jako Prometheus a Grafana",
+      "Sledování výkonu není podporováno",
+      "Pouze pomocí logů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak nakonfigurovat SMTP server pro odesílání e-mailů ve Spring Boot?",
+    "options": [
+      "Pomocí spring.mail.host, spring.mail.port a dalších nastavení v application.properties",
+      "E-maily nelze ve Spring Boot odesílat",
+      "Pouze pomocí externích služeb",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak funguje Spring Boot DevTools LiveReload?",
+    "options": [
+      "Automaticky restartuje aplikaci při změně zdrojových souborů",
+      "LiveReload neexistuje",
+      "Vyžaduje ruční restart",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak zajistit externí konfiguraci Spring Boot aplikace?",
+    "options": [
+      "Použitím application.properties, YAML, Environment Variables nebo Spring Cloud Config",
+      "Externí konfigurace není podporována",
+      "Pouze hardcodováním v kódu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi blocking a non-blocking IO v Spring Boot?",
+    "options": [
+      "Blocking využívá thread-per-request, non-blocking používá reaktivní programování (WebFlux)",
+      "Blocking a non-blocking jsou totožné",
+      "Spring Boot podporuje pouze blocking IO",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot podporuje monitoring metrik?",
+    "options": [
+      "Pomocí Micrometer a Actuator endpointů jako /actuator/metrics",
+      "Monitoring metrik není podporován",
+      "Pouze pomocí externích nástrojů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak implementovat Circuit Breaker ve Spring Boot?",
+    "options": [
+      "Pomocí Resilience4j nebo Hystrix",
+      "Circuit Breaker ve Spring Boot neexistuje",
+      "Pouze pomocí try-catch bloků",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot pracuje s externími službami?",
+    "options": [
+      "Použitím REST clients jako WebClient nebo RestTemplate",
+      "Externí služby nelze volat",
+      "Pouze pomocí raw HTTP socketů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak nakonfigurovat Spring Boot aplikaci pro produkční nasazení?",
+    "options": [
+      "Použitím správného profilu (prod), optimalizací memory managementu a monitoringem",
+      "Produkční nasazení nevyžaduje konfiguraci",
+      "Pouze pomocí Docker kontejneru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak funguje dependency injection v Spring Boot?",
+    "options": [
+      "Pomocí anotací @Autowired, @Inject nebo ruční konfigurací beanu",
+      "DI ve Spring Boot neexistuje",
+      "Pouze pomocí XML konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak lze provést graceful shutdown ve Spring Boot?",
+    "options": [
+      "Povolením spring.lifecycle.timeout-per-shutdown-phase a použitím @PreDestroy",
+      "Graceful shutdown není podporován",
+      "Pouze násilným ukončením procesu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot podporuje API versioning?",
+    "options": [
+      "Použitím URL (/api/v1/resource), HTTP Headers nebo parametrů dotazu",
+      "API versioning není podporován",
+      "Pouze vytvořením samostatných aplikací",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi Spring Boot a Quarkus/Micronaut?",
+    "options": [
+      "Quarkus a Micronaut jsou optimalizované pro GraalVM, Spring Boot je univerzálnější",
+      "Jsou to totožné frameworky",
+      "Spring Boot je optimalizován pro GraalVM",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot podporuje serverless aplikace?",
+    "options": [
+      "Pomocí Spring Cloud Function a AWS Lambda integrace",
+      "Serverless není podporován",
+      "Pouze pomocí externích frameworků",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak pracovat s HTTP2 v Spring Boot?",
+    "options": [
+      "Povolením server.http2.enabled=true v konfiguraci",
+      "HTTP2 není ve Spring Boot podporován",
+      "Vyžaduje externí proxy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak konfigurovat Session Management ve Spring Boot?",
+    "options": [
+      "Použitím spring.session.store-type pro uložení do databáze nebo Redis",
+      "Session Management není podporován",
+      "Pouze pomocí cookies",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak Spring Boot podporuje GraphQL?",
+    "options": [
+      "Použitím knihovny spring-graphql a anotací jako @QueryMapping",
+      "GraphQL není ve Spring Boot podporován",
+      "Pouze pomocí externích knihoven",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jak lze implementovat distributed tracing ve Spring Boot?",
+    "options": [
+      "Pomocí Spring Cloud Sleuth a Zipkin",
+      "Distributed tracing není podporován",
+      "Pouze pomocí logů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Spring Boot",
+    "question": "Jaký je rozdíl mezi Spring Boot CLI a běžnou Spring Boot aplikací?",
+    "options": [
+      "CLI umožňuje rychlé spouštění aplikací bez kompilace pomocí Groovy skriptů",
+      "CLI a běžná aplikace jsou totožné",
+      "CLI je pouze pro testování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je relační databáze a jaké jsou její základní principy?",
+    "options": [
+      "Databáze organizovaná do tabulek s relacemi mezi nimi, založená na relační algebře",
+      "Databáze ukládající data jako dokumenty",
+      "Databáze bez struktury dat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je SQL a k čemu slouží?",
+    "options": [
+      "Structured Query Language pro dotazování a manipulaci s daty v relačních databázích",
+      "Programovací jazyk pro webové aplikace",
+      "Nástroj pro správu souborů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi PRIMARY KEY a UNIQUE constraint?",
+    "options": [
+      "PRIMARY KEY je unikátní a nesmí být NULL, UNIQUE může obsahovat NULL hodnoty",
+      "PRIMARY KEY a UNIQUE jsou totožné",
+      "UNIQUE nesmí být NULL, PRIMARY KEY může",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je FOREIGN KEY a jak funguje?",
+    "options": [
+      "Vytváří referenční integritu mezi tabulkami odkazem na primární klíč jiné tabulky",
+      "Slouží k šifrování dat",
+      "Definuje unikátní hodnoty v tabulce",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi INNER JOIN a LEFT JOIN?",
+    "options": [
+      "INNER JOIN vrací pouze shodné záznamy, LEFT JOIN vrací všechny z levé tabulky",
+      "INNER JOIN a LEFT JOIN jsou totožné",
+      "LEFT JOIN vrací pouze shodné záznamy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co jsou databázové indexy a proč se používají?",
+    "options": [
+      "Datové struktury zrychlující vyhledávání dat na úkor prostoru a rychlosti zápisu",
+      "Indexy zpomalují vyhledávání",
+      "Slouží k zálohování dat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi clustered a non-clustered indexem?",
+    "options": [
+      "Clustered určuje fyzické uspořádání dat, non-clustered je samostatná struktura s pointery",
+      "Clustered a non-clustered jsou totožné",
+      "Non-clustered určuje fyzické uspořádání",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je normalizace databáze?",
+    "options": [
+      "Proces organizace dat pro minimalizaci redundance a závislostí",
+      "Proces zálohování databáze",
+      "Metoda šifrování dat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaké jsou normální formy (1NF, 2NF, 3NF)?",
+    "options": [
+      "1NF atomické hodnoty, 2NF bez částečných závislostí, 3NF bez tranzitivních závislostí",
+      "Normální formy jsou typy indexů",
+      "Normální formy určují velikost tabulky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je denormalizace a kdy se používá?",
+    "options": [
+      "Záměrné přidání redundance pro zlepšení výkonu čtení",
+      "Proces odstraňování duplicit",
+      "Denormalizace zlepšuje výkon zápisu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je ACID v kontextu databází?",
+    "options": [
+      "Atomicity, Consistency, Isolation, Durability - vlastnosti databázových transakcí",
+      "Typ databázového indexu",
+      "Šifrovací algoritmus",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi optimistickým a pesimistickým zamykáním?",
+    "options": [
+      "Optimistické kontroluje konflikty až při commitu, pesimistické zamyká ihned",
+      "Optimistické a pesimistické zamykání jsou totožné",
+      "Pesimistické kontroluje konflikty až při commitu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je databázová transakce?",
+    "options": [
+      "Logická jednotka práce obsahující jeden nebo více SQL příkazů",
+      "Typ databázového indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jak funguje COMMIT a ROLLBACK?",
+    "options": [
+      "COMMIT potvrzuje změny, ROLLBACK je vrací zpět",
+      "COMMIT vrací změny zpět, ROLLBACK je potvrzuje",
+      "COMMIT a ROLLBACK jsou totožné",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je izolace transakcí a jaké úrovně existují?",
+    "options": [
+      "Určuje viditelnost změn mezi transakcemi; READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE",
+      "Izolace určuje rychlost transakce",
+      "Existuje pouze jedna úroveň izolace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je deadlock a jak se řeší?",
+    "options": [
+      "Vzájemné čekání transakcí na zdroje; řeší se timeoutem nebo detekcí a rollbackem",
+      "Deadlock je typ indexu",
+      "Deadlock nelze řešit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi WHERE a HAVING?",
+    "options": [
+      "WHERE filtruje před agregací, HAVING filtruje po agregaci",
+      "WHERE a HAVING jsou totožné",
+      "HAVING filtruje před agregací",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je stored procedure?",
+    "options": [
+      "Předkompilovaný SQL kód uložený v databázi pro opakované spouštění",
+      "Typ databázového indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je databázový trigger?",
+    "options": [
+      "Automaticky spouštěný kód při INSERT, UPDATE nebo DELETE operacích",
+      "Trigger je typ indexu",
+      "Trigger slouží k zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je view (pohled) v databázi?",
+    "options": [
+      "Virtuální tabulka definovaná SQL dotazem",
+      "Typ fyzické tabulky",
+      "Metoda indexování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi view a materialized view?",
+    "options": [
+      "View se počítá při každém dotazu, materialized view má uložená data",
+      "View a materialized view jsou totožné",
+      "Materialized view se počítá při každém dotazu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je execution plan?",
+    "options": [
+      "Plán, jak databáze provede SQL dotaz včetně použitých indexů a joinů",
+      "Plán zálohování databáze",
+      "Seznam uživatelů databáze",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jak optimalizovat pomalé SQL dotazy?",
+    "options": [
+      "Analýzou execution planu, přidáním indexů, přepsáním dotazu",
+      "Pomalé dotazy nelze optimalizovat",
+      "Pouze zvýšením hardware",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je SQL injection a jak se mu bránit?",
+    "options": [
+      "Útok vložením škodlivého SQL kódu; bránit se parametrizovanými dotazy",
+      "SQL injection je typ indexu",
+      "SQL injection nelze zabránit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je connection pooling?",
+    "options": [
+      "Opakované využití databázových spojení pro snížení režie vytváření nových",
+      "Typ databázového indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi DELETE, TRUNCATE a DROP?",
+    "options": [
+      "DELETE maže řádky, TRUNCATE vyprázdní tabulku, DROP odstraní tabulku",
+      "DELETE, TRUNCATE a DROP jsou totožné",
+      "DROP maže pouze řádky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je databázová replikace?",
+    "options": [
+      "Kopírování dat mezi databázovými servery pro dostupnost a výkon",
+      "Typ databázového indexu",
+      "Metoda šifrování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi master-slave a master-master replikací?",
+    "options": [
+      "Master-slave má jeden zapisovací uzel, master-master umožňuje zápis na všech",
+      "Master-slave a master-master jsou totožné",
+      "Master-master má jeden zapisovací uzel",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je sharding v databázích?",
+    "options": [
+      "Horizontální rozdělení dat mezi více databázových serverů",
+      "Typ indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je partitioning tabulek?",
+    "options": [
+      "Rozdělení velké tabulky na menší části pro lepší výkon",
+      "Typ databázového indexu",
+      "Metoda šifrování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jak funguje GROUP BY v SQL?",
+    "options": [
+      "Seskupuje řádky se stejnými hodnotami pro agregační funkce",
+      "Řadí výsledky dotazu",
+      "Filtruje duplicitní řádky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co jsou agregační funkce v SQL?",
+    "options": [
+      "Funkce počítající hodnoty ze skupin řádků jako SUM, COUNT, AVG, MIN, MAX",
+      "Funkce pro formátování textu",
+      "Funkce pro mazání dat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je subquery (poddotaz)?",
+    "options": [
+      "SQL dotaz vnořený do jiného dotazu",
+      "Typ databázového indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi correlated a non-correlated subquery?",
+    "options": [
+      "Correlated závisí na vnějším dotazu, non-correlated je nezávislý",
+      "Correlated a non-correlated jsou totožné",
+      "Non-correlated závisí na vnějším dotazu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je CTE (Common Table Expression)?",
+    "options": [
+      "Dočasná pojmenovaná sada výsledků definovaná pomocí WITH klauzule",
+      "Typ databázového indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je rekurzivní CTE?",
+    "options": [
+      "CTE odkazující samo na sebe pro procházení hierarchických dat",
+      "Typ indexu",
+      "Metoda šifrování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je UNION a UNION ALL?",
+    "options": [
+      "UNION kombinuje výsledky a odstraní duplicity, UNION ALL ponechá všechny řádky",
+      "UNION a UNION ALL jsou totožné",
+      "UNION ALL odstraní duplicity",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je CASE expression v SQL?",
+    "options": [
+      "Podmíněný výraz pro různé výsledky na základě podmínek",
+      "Typ indexu",
+      "Metoda řazení",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je NULL v SQL a jak se s ním pracuje?",
+    "options": [
+      "Reprezentuje chybějící nebo neznámou hodnotu; používá se IS NULL / IS NOT NULL",
+      "NULL je totéž jako 0 nebo prázdný řetězec",
+      "NULL nelze použít v SQL",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je COALESCE funkce?",
+    "options": [
+      "Vrací první non-NULL hodnotu ze seznamu argumentů",
+      "Spojuje tabulky",
+      "Maže duplicitní řádky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je window function v SQL?",
+    "options": [
+      "Funkce provádějící výpočty přes sadu řádků souvisejících s aktuálním řádkem",
+      "Typ indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jak funguje ROW_NUMBER, RANK a DENSE_RANK?",
+    "options": [
+      "ROW_NUMBER čísluje řádky, RANK a DENSE_RANK přiřazují pořadí s různým zacházením s duplicitami",
+      "Všechny tři funkce jsou totožné",
+      "Slouží k mazání řádků",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je database schema?",
+    "options": [
+      "Logická struktura definující organizaci dat v databázi",
+      "Typ indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je database migration?",
+    "options": [
+      "Správa verzí databázového schématu pomocí skriptů",
+      "Přesun databáze na jiný server",
+      "Typ indexu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jaký je rozdíl mezi PostgreSQL a MySQL?",
+    "options": [
+      "PostgreSQL má pokročilejší funkce (JSONB, CTE), MySQL je jednodušší a rychlejší pro základní operace",
+      "PostgreSQL a MySQL jsou totožné",
+      "MySQL má pokročilejší funkce",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je ORM a jaké jsou jeho výhody/nevýhody?",
+    "options": [
+      "Object-Relational Mapping mapuje objekty na tabulky; výhoda je produktivita, nevýhoda výkon",
+      "ORM je typ databáze",
+      "ORM vždy zlepšuje výkon",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je N+1 problém v ORM?",
+    "options": [
+      "Provedení N dodatečných dotazů pro N záznamů místo jednoho dotazu",
+      "N+1 je typ indexu",
+      "N+1 problém neexistuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je lazy loading vs eager loading?",
+    "options": [
+      "Lazy načítá data až při přístupu, eager načítá vše najednou",
+      "Lazy a eager loading jsou totožné",
+      "Eager načítá data až při přístupu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Jak zálohovat relační databázi?",
+    "options": [
+      "Pomocí full backup, incremental backup a transaction log backup",
+      "Relační databáze nelze zálohovat",
+      "Pouze kopírováním souborů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Relational Databases",
+    "question": "Co je point-in-time recovery?",
+    "options": [
+      "Obnovení databáze do konkrétního časového bodu pomocí transaction logů",
+      "Typ indexu",
+      "Metoda šifrování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je Maven a k čemu slouží?",
+    "options": [
+      "Build nástroj pro Java projekty spravující závislosti, build lifecycle a pluginy",
+      "Databázový server",
+      "Webový framework",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je pom.xml v Mavenu?",
+    "options": [
+      "Project Object Model - konfigurační soubor definující projekt, závislosti a build",
+      "Soubor s Java kódem",
+      "Databázová konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je Maven lifecycle?",
+    "options": [
+      "Sekvence fází buildu: validate, compile, test, package, verify, install, deploy",
+      "Typ závislosti",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jaký je rozdíl mezi compile a provided scope v Mavenu?",
+    "options": [
+      "Compile je zahrnuto v buildu, provided je dostupné za běhu ale ne v balíčku",
+      "Compile a provided jsou totožné",
+      "Provided je zahrnuto v balíčku",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je Maven repository?",
+    "options": [
+      "Úložiště Maven artefaktů (local, central, remote)",
+      "Typ Java třídy",
+      "Databázové úložiště",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jak řešit konflikty závislostí v Mavenu?",
+    "options": [
+      "Použitím dependencyManagement, exclusions nebo explicitní verzí",
+      "Konflikty se řeší automaticky bez zásahu",
+      "Konflikty nelze řešit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je Gradle a jaké jsou jeho výhody oproti Mavenu?",
+    "options": [
+      "Flexibilnější build nástroj s Groovy/Kotlin DSL, inkrementálními buildy a lepším výkonem",
+      "Gradle a Maven jsou totožné",
+      "Maven je rychlejší než Gradle",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je build.gradle?",
+    "options": [
+      "Konfigurační soubor Gradle projektu definující závislosti a tasky",
+      "Java zdrojový soubor",
+      "Databázová konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jak fungují Gradle tasky?",
+    "options": [
+      "Jednotky práce které lze spouštět a na sobě záviset",
+      "Typy závislostí",
+      "Databázové operace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je Gradle wrapper?",
+    "options": [
+      "Skript zajišťující konzistentní verzi Gradle bez nutnosti instalace",
+      "Typ závislosti",
+      "Java wrapper třída",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jaký je rozdíl mezi implementation a api v Gradle?",
+    "options": [
+      "Implementation skrývá závislost před konzumenty, api ji vystavuje",
+      "Implementation a api jsou totožné",
+      "Api skrývá závislost",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je multi-module projekt v Maven/Gradle?",
+    "options": [
+      "Projekt rozdělený do více modulů s vlastními závislostmi a společným rodičem",
+      "Projekt s více main třídami",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jak funguje Maven plugin?",
+    "options": [
+      "Rozšiřuje Maven funkcionalitu a váže se na fáze lifecycle",
+      "Plugin je typ závislosti",
+      "Plugin je Java třída",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je BOM (Bill of Materials) v Mavenu?",
+    "options": [
+      "POM definující verze závislostí pro konzistentní správu verzí",
+      "Typ Java souboru",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jak publikovat artefakt do Maven repository?",
+    "options": [
+      "Pomocí mvn deploy nebo Gradle publishing pluginu",
+      "Ruční kopírování souborů",
+      "Publikování není možné",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je transitive dependency?",
+    "options": [
+      "Závislost závislosti - nepřímo vyžadovaná knihovna",
+      "Typ Maven pluginu",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jak spustit pouze testy v Maven/Gradle?",
+    "options": [
+      "mvn test nebo gradle test",
+      "mvn run-tests",
+      "gradle execute-tests",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je Maven profile?",
+    "options": [
+      "Konfigurace pro různá prostředí aktivovatelná parametrem nebo podmínkou",
+      "Typ závislosti",
+      "Java profil",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jak vytvořit executable JAR v Maven/Gradle?",
+    "options": [
+      "Použitím maven-shade-plugin, spring-boot-maven-plugin nebo Gradle shadow plugin",
+      "JAR je vždy executable",
+      "Executable JAR nelze vytvořit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je Gradle daemon?",
+    "options": [
+      "Proces na pozadí zrychlující opakované buildy cachováním",
+      "Typ Gradle tasku",
+      "Databázový proces",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jak přeskočit testy při buildu?",
+    "options": [
+      "mvn install -DskipTests nebo gradle build -x test",
+      "Testy nelze přeskočit",
+      "mvn install --no-tests",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je settings.xml v Mavenu?",
+    "options": [
+      "Globální konfigurace Mavenu pro repository, proxy a credentials",
+      "Projektová konfigurace",
+      "Java konfigurační soubor",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jak funguje Gradle build cache?",
+    "options": [
+      "Ukládá výstupy tasků pro přeskočení při nezměněných vstupech",
+      "Cache pro závislosti",
+      "Databázová cache",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Jaký je rozdíl mezi compile a runtime classpath?",
+    "options": [
+      "Compile classpath pro kompilaci, runtime classpath pro spuštění aplikace",
+      "Compile a runtime classpath jsou totožné",
+      "Runtime classpath je pro kompilaci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Maven/Gradle",
+    "question": "Co je Gradle configuration?",
+    "options": [
+      "Pojmenovaná skupina závislostí (implementation, testImplementation, etc.)",
+      "Konfigurační soubor",
+      "Java konfigurace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je observability a jaké jsou její tři pilíře?",
+    "options": [
+      "Schopnost porozumět vnitřnímu stavu systému; logy, metriky, traces",
+      "Typ databáze",
+      "Testovací framework",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Jaký je rozdíl mezi monitoringem a observability?",
+    "options": [
+      "Monitoring sleduje známé problémy, observability umožňuje zkoumat neznámé",
+      "Monitoring a observability jsou totožné",
+      "Observability sleduje známé problémy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je distributed tracing?",
+    "options": [
+      "Sledování požadavků napříč mikroservisami pro analýzu latence a chyb",
+      "Typ databázového indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je Prometheus a k čemu slouží?",
+    "options": [
+      "Open-source systém pro sběr a dotazování metrik s pull modelem",
+      "Databázový server",
+      "Webový framework",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je Grafana?",
+    "options": [
+      "Vizualizační nástroj pro metriky a logy s podporou dashboardů a alertů",
+      "Databázový server",
+      "Build nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je ELK stack?",
+    "options": [
+      "Elasticsearch, Logstash, Kibana - stack pro centralizované logování a analýzu",
+      "Typ databáze",
+      "Build nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je Jaeger nebo Zipkin?",
+    "options": [
+      "Nástroje pro distributed tracing a vizualizaci trace dat",
+      "Databázové servery",
+      "Build nástroje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je span v kontextu tracingu?",
+    "options": [
+      "Jednotka práce reprezentující operaci s časem začátku, trvání a metadaty",
+      "Typ logu",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je trace ID a span ID?",
+    "options": [
+      "Trace ID identifikuje celý požadavek, span ID konkrétní operaci v rámci trace",
+      "Trace ID a span ID jsou totožné",
+      "Span ID identifikuje celý požadavek",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je OpenTelemetry?",
+    "options": [
+      "Standard pro instrumentaci aplikací sbírající traces, metriky a logy",
+      "Databázový server",
+      "Build nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Jaký je rozdíl mezi push a pull modelem pro metriky?",
+    "options": [
+      "Push posílá data na server, pull server stahuje data z aplikací",
+      "Push a pull jsou totožné",
+      "Pull posílá data na server",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je SLI, SLO a SLA?",
+    "options": [
+      "SLI je metrika, SLO je cíl, SLA je smlouva o úrovni služeb",
+      "SLI, SLO a SLA jsou totožné",
+      "SLA je metrika",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je alerting a jak ho nastavit?",
+    "options": [
+      "Automatické upozornění při překročení prahových hodnot metrik",
+      "Typ logu",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je structured logging?",
+    "options": [
+      "Logování ve strukturovaném formátu (JSON) pro snadné parsování a vyhledávání",
+      "Typ databáze",
+      "Nestrukturovaný text",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je log aggregation?",
+    "options": [
+      "Centralizovaný sběr logů z více služeb na jedno místo",
+      "Typ databázového indexu",
+      "Build proces",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je correlation ID?",
+    "options": [
+      "Unikátní identifikátor pro sledování požadavku napříč službami",
+      "Typ logu",
+      "Databázový klíč",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co jsou RED metriky?",
+    "options": [
+      "Rate (počet požadavků), Errors (chybovost), Duration (latence)",
+      "Typ databáze",
+      "Barvy v Grafaně",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co jsou USE metriky?",
+    "options": [
+      "Utilization, Saturation, Errors - metriky pro systémové zdroje",
+      "Typ logu",
+      "Uživatelské metriky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je health check endpoint?",
+    "options": [
+      "API endpoint vracející stav aplikace a jejích závislostí",
+      "Typ logu",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Jaký je rozdíl mezi liveness a readiness probe?",
+    "options": [
+      "Liveness zjišťuje zda aplikace běží, readiness zda je připravena přijímat traffic",
+      "Liveness a readiness jsou totožné",
+      "Readiness zjišťuje zda aplikace běží",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je cardinality v kontextu metrik?",
+    "options": [
+      "Počet unikátních kombinací labelů - vysoká kardinalita může způsobit problémy",
+      "Typ databázového indexu",
+      "Počet logů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je sampling v tracingu?",
+    "options": [
+      "Zachycování pouze části traces pro snížení objemu dat",
+      "Typ logu",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Jak instrumentovat aplikaci pro observability?",
+    "options": [
+      "Přidáním knihoven pro metriky, tracing a structured logging",
+      "Instrumentace není potřeba",
+      "Pouze pomocí externích nástrojů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je Micrometer v Java ekosystému?",
+    "options": [
+      "Vendor-neutral fasáda pro metriky s podporou různých backends",
+      "Databázová knihovna",
+      "Build nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je log level a jaké úrovně existují?",
+    "options": [
+      "Závažnost logu; TRACE, DEBUG, INFO, WARN, ERROR, FATAL",
+      "Typ databáze",
+      "Existuje pouze jedna úroveň",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je APM (Application Performance Monitoring)?",
+    "options": [
+      "Sledování výkonu aplikací včetně transakcí, chyb a závislostí",
+      "Typ databáze",
+      "Build nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je percentil v kontextu latence?",
+    "options": [
+      "Hodnota pod kterou spadá určité procento požadavků (p99 = 99% požadavků je rychlejších)",
+      "Průměrná latence",
+      "Typ logu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Proč je p99 důležitější než průměrná latence?",
+    "options": [
+      "P99 zachycuje tail latency - nejpomalejší požadavky které průměr skryje",
+      "P99 a průměr jsou totožné",
+      "Průměr je přesnější",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je context propagation?",
+    "options": [
+      "Předávání trace kontextu mezi službami pro distribuované trasování",
+      "Typ logu",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Observability",
+    "question": "Co je baggage v distribuovaném tracingu?",
+    "options": [
+      "Uživatelská data předávaná spolu s trace kontextem napříč službami",
+      "Typ logu",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je MongoDB a jaké jsou její hlavní vlastnosti?",
+    "options": [
+      "NoSQL dokumentová databáze ukládající data jako BSON dokumenty",
+      "Relační databáze",
+      "Grafová databáze",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je BSON?",
+    "options": [
+      "Binary JSON - binární reprezentace JSON dokumentů používaná MongoDB",
+      "Typ SQL dotazu",
+      "Relační formát",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jaký je rozdíl mezi MongoDB a relační databází?",
+    "options": [
+      "MongoDB ukládá dokumenty bez schématu, relační používá tabulky s pevným schématem",
+      "MongoDB a relační databáze jsou totožné",
+      "MongoDB používá tabulky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je collection v MongoDB?",
+    "options": [
+      "Skupina dokumentů - ekvivalent tabulky v relační databázi",
+      "Typ indexu",
+      "Databázový server",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je document v MongoDB?",
+    "options": [
+      "Základní jednotka dat - BSON objekt s páry klíč-hodnota",
+      "Typ indexu",
+      "SQL dotaz",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je _id pole v MongoDB?",
+    "options": [
+      "Unikátní identifikátor dokumentu, automaticky generovaný jako ObjectId",
+      "Volitelné pole",
+      "Typ indexu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jak funguje indexování v MongoDB?",
+    "options": [
+      "B-tree indexy pro rychlejší dotazy; podporuje single field, compound a text indexy",
+      "MongoDB nepodporuje indexy",
+      "Pouze hash indexy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je aggregation pipeline?",
+    "options": [
+      "Framework pro transformaci a analýzu dat pomocí sekvence operací",
+      "Typ indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jaké jsou základní aggregation stages?",
+    "options": [
+      "$match, $group, $project, $sort, $limit, $lookup",
+      "SELECT, FROM, WHERE",
+      "INSERT, UPDATE, DELETE",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je $lookup v MongoDB?",
+    "options": [
+      "Operace pro spojení dat z jiné kolekce - podobné JOIN v SQL",
+      "Typ indexu",
+      "Metoda mazání",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jak funguje replikace v MongoDB?",
+    "options": [
+      "Replica set s primárním a sekundárními nody pro vysokou dostupnost",
+      "Replikace není podporována",
+      "Pouze master-master",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je replica set?",
+    "options": [
+      "Skupina MongoDB serverů udržujících stejná data s automatickým failover",
+      "Typ indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je sharding v MongoDB?",
+    "options": [
+      "Horizontální škálování rozdělením dat mezi více serverů podle shard key",
+      "Typ indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je shard key?",
+    "options": [
+      "Pole určující distribuci dokumentů mezi shardy",
+      "Primární klíč",
+      "Typ indexu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jaké jsou write concerns v MongoDB?",
+    "options": [
+      "Úroveň potvrzení zápisu - od unacknowledged po majority",
+      "Typ indexu",
+      "Metoda čtení",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jaké jsou read preferences v MongoDB?",
+    "options": [
+      "Určují ze kterých nodů číst - primary, secondary, nearest",
+      "Typ indexu",
+      "Metoda zápisu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je embedded document?",
+    "options": [
+      "Vnořený dokument uvnitř jiného dokumentu pro denormalizaci",
+      "Typ indexu",
+      "Externí reference",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Kdy použít embedding vs reference?",
+    "options": [
+      "Embedding pro často čtená data společně, reference pro velká nebo sdílená data",
+      "Vždy používat embedding",
+      "Vždy používat reference",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je MongoDB Atlas?",
+    "options": [
+      "Managed cloud databázová služba pro MongoDB",
+      "Lokální instalace MongoDB",
+      "Typ indexu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jak fungují transakce v MongoDB?",
+    "options": [
+      "Multi-document ACID transakce od verze 4.0 pro replica sets",
+      "MongoDB nepodporuje transakce",
+      "Pouze single-document transakce",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je change streams?",
+    "options": [
+      "Real-time notifikace o změnách v databázi",
+      "Typ indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jak optimalizovat dotazy v MongoDB?",
+    "options": [
+      "Použitím správných indexů, explain() pro analýzu a omezením vrácených polí",
+      "Optimalizace není možná",
+      "Pouze zvýšením hardware",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je covered query?",
+    "options": [
+      "Dotaz splnitelný pouze z indexu bez přístupu k dokumentům",
+      "Typ indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je TTL index?",
+    "options": [
+      "Index automaticky mazající dokumenty po uplynutí určité doby",
+      "Typ primárního klíče",
+      "Metoda replikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je text index v MongoDB?",
+    "options": [
+      "Index pro full-text vyhledávání v textových polích",
+      "Index pro čísla",
+      "Typ primárního klíče",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je geospatial index?",
+    "options": [
+      "Index pro geografické dotazy na lokační data",
+      "Typ textového indexu",
+      "Metoda zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jak zálohovat MongoDB?",
+    "options": [
+      "Pomocí mongodump/mongorestore nebo cloud snapshots",
+      "MongoDB nelze zálohovat",
+      "Pouze kopírováním souborů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je WiredTiger storage engine?",
+    "options": [
+      "Výchozí storage engine s kompresí a document-level locking",
+      "Typ indexu",
+      "Metoda replikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je MongoDB Compass?",
+    "options": [
+      "GUI nástroj pro vizuální práci s MongoDB",
+      "Typ indexu",
+      "Build nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jaké jsou update operátory v MongoDB?",
+    "options": [
+      "$set, $unset, $inc, $push, $pull, $addToSet",
+      "UPDATE, SET, WHERE",
+      "INSERT, DELETE",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je upsert v MongoDB?",
+    "options": [
+      "Update který vytvoří dokument pokud neexistuje",
+      "Typ indexu",
+      "Metoda mazání",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jak funguje MongoDB driver pro Java/Node.js?",
+    "options": [
+      "Knihovna poskytující API pro připojení a operace s MongoDB",
+      "Typ indexu",
+      "Samostatná aplikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je schema validation v MongoDB?",
+    "options": [
+      "Volitelná validace struktury dokumentů pomocí JSON Schema",
+      "Povinné schéma jako v SQL",
+      "Typ indexu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jaký je limit velikosti dokumentu v MongoDB?",
+    "options": [
+      "16 MB na dokument",
+      "1 MB na dokument",
+      "Bez limitu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je GridFS?",
+    "options": [
+      "Specifikace pro ukládání velkých souborů rozdělených do chunků",
+      "Typ indexu",
+      "Metoda replikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je capped collection?",
+    "options": [
+      "Kolekce s pevnou velikostí automaticky mazající nejstarší dokumenty",
+      "Typ indexu",
+      "Neomezená kolekce",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jak funguje connection pooling v MongoDB?",
+    "options": [
+      "Driver udržuje pool spojení pro efektivní opakované použití",
+      "Každý dotaz vytváří nové spojení",
+      "Connection pooling není podporován",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je arbiter v replica set?",
+    "options": [
+      "Node bez dat sloužící pouze pro volbu primary při failover",
+      "Primární node",
+      "Typ indexu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Co je oplog v MongoDB?",
+    "options": [
+      "Operations log pro replikaci změn mezi nody",
+      "Typ indexu",
+      "Error log",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "MongoDB",
+    "question": "Jak monitorovat MongoDB?",
+    "options": [
+      "Pomocí mongostat, mongotop, db.serverStatus() a MongoDB Atlas metrics",
+      "Monitoring není možný",
+      "Pouze pomocí logů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je REST a jaké jsou jeho principy?",
+    "options": [
+      "Architektonický styl pro webové API; stateless, cacheable, uniform interface",
+      "Programovací jazyk",
+      "Databázový systém",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jaké jsou hlavní HTTP metody v REST?",
+    "options": [
+      "GET (čtení), POST (vytvoření), PUT (aktualizace), DELETE (mazání), PATCH (částečná aktualizace)",
+      "Pouze GET a POST",
+      "SELECT, INSERT, UPDATE, DELETE",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jaký je rozdíl mezi PUT a PATCH?",
+    "options": [
+      "PUT nahrazuje celý resource, PATCH aktualizuje pouze část",
+      "PUT a PATCH jsou totožné",
+      "PATCH nahrazuje celý resource",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co znamená stateless v kontextu REST?",
+    "options": [
+      "Server neuchovává stav klienta mezi požadavky",
+      "Server uchovává stav",
+      "Klient je bezstavový",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je idempotence a které HTTP metody jsou idempotentní?",
+    "options": [
+      "Opakované volání má stejný výsledek; GET, PUT, DELETE jsou idempotentní",
+      "Všechny metody jsou idempotentní",
+      "Žádná metoda není idempotentní",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jaké jsou běžné HTTP status kódy?",
+    "options": [
+      "200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 500 Internal Server Error",
+      "Existuje pouze 200 a 500",
+      "Status kódy se nepoužívají",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je HATEOAS?",
+    "options": [
+      "Hypermedia As The Engine Of Application State - odpověď obsahuje odkazy na další akce",
+      "Typ autentizace",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jak navrhovat URL v REST API?",
+    "options": [
+      "Použití noun (podstatných jmen), hierarchická struktura, množné číslo pro kolekce",
+      "Použití sloves v URL",
+      "Bez pravidel",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je content negotiation?",
+    "options": [
+      "Mechanismus pro výběr formátu odpovědi (JSON/XML) pomocí Accept headeru",
+      "Typ autentizace",
+      "Metoda komprese",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jak implementovat verzování REST API?",
+    "options": [
+      "URL path (/v1/), header (Accept-Version) nebo query parameter (?version=1)",
+      "Verzování není potřeba",
+      "Pouze pomocí URL",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je pagination v REST API?",
+    "options": [
+      "Rozdělení velkých výsledků na stránky pomocí limit/offset nebo cursor",
+      "Typ autentizace",
+      "Metoda komprese",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jak implementovat filtrování a řazení v REST?",
+    "options": [
+      "Pomocí query parametrů jako ?status=active&sort=created_at",
+      "Filtrování není možné",
+      "Pouze v request body",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je rate limiting?",
+    "options": [
+      "Omezení počtu požadavků za časové období pro ochranu API",
+      "Typ autentizace",
+      "Metoda komprese",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jak zabezpečit REST API?",
+    "options": [
+      "Pomocí HTTPS, autentizace (JWT/OAuth), autorizace, validace vstupů",
+      "REST API nelze zabezpečit",
+      "Pouze pomocí firewallu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je JWT a jak funguje?",
+    "options": [
+      "JSON Web Token - self-contained token s claims pro autentizaci",
+      "Databázový formát",
+      "Typ komprese",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je OAuth 2.0?",
+    "options": [
+      "Autorizační framework pro delegovaný přístup k resources",
+      "Šifrovací algoritmus",
+      "Databázový protokol",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jaký je rozdíl mezi autentizací a autorizací?",
+    "options": [
+      "Autentizace ověřuje identitu, autorizace ověřuje oprávnění",
+      "Autentizace a autorizace jsou totožné",
+      "Autorizace ověřuje identitu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je CORS?",
+    "options": [
+      "Cross-Origin Resource Sharing - mechanismus pro povolení cross-domain requestů",
+      "Typ autentizace",
+      "Šifrovací protokol",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je OpenAPI/Swagger?",
+    "options": [
+      "Specifikace pro popis REST API umožňující generování dokumentace a klientů",
+      "Databázový formát",
+      "Autentizační protokol",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jak správně vracet chyby v REST API?",
+    "options": [
+      "Správný HTTP status, strukturovaná chybová odpověď s kódem a zprávou",
+      "Vždy vracet 200",
+      "Textová zpráva bez struktury",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je caching v REST API?",
+    "options": [
+      "Ukládání odpovědí pro snížení zatížení serveru pomocí Cache-Control headerů",
+      "Typ autentizace",
+      "Metoda komprese",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je ETag header?",
+    "options": [
+      "Identifikátor verze resource pro conditional requests a caching",
+      "Typ autentizace",
+      "Šifrovací klíč",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jaký je rozdíl mezi REST a SOAP?",
+    "options": [
+      "REST je architektonický styl s HTTP, SOAP je protokol s XML a WSDL",
+      "REST a SOAP jsou totožné",
+      "SOAP používá JSON",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je Richardson Maturity Model?",
+    "options": [
+      "Model úrovní REST zralosti od 0 do 3 (HATEOAS)",
+      "Autentizační model",
+      "Databázový model",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jak testovat REST API?",
+    "options": [
+      "Pomocí nástrojů jako Postman, curl, automatizované testy s JUnit/Jest",
+      "REST API nelze testovat",
+      "Pouze manuálně",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je bulk operation v REST?",
+    "options": [
+      "Hromadná operace nad více resources v jednom požadavku",
+      "Typ autentizace",
+      "Metoda komprese",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jak implementovat async operace v REST?",
+    "options": [
+      "Vrátit 202 Accepted s URL pro polling stavu nebo použít webhooks",
+      "Async operace nejsou možné",
+      "Použít dlouhý timeout",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je webhook?",
+    "options": [
+      "HTTP callback pro notifikaci o událostech na zadanou URL",
+      "Typ autentizace",
+      "Databázový trigger",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Jaké jsou best practices pro REST API design?",
+    "options": [
+      "Konzistentní naming, správné HTTP metody, verzování, dokumentace, error handling",
+      "Bez pravidel",
+      "Používat pouze POST",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "REST",
+    "question": "Co je API Gateway?",
+    "options": [
+      "Entry point pro API poskytující routing, autentizaci, rate limiting",
+      "Databázový server",
+      "Typ autentizace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je GraphQL a jaké jsou jeho hlavní výhody?",
+    "options": [
+      "Query language pro API umožňující klientům žádat přesně ta data která potřebují",
+      "Databázový jazyk",
+      "Programovací jazyk",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jaký je rozdíl mezi GraphQL a REST?",
+    "options": [
+      "GraphQL má jeden endpoint a flexibilní dotazy, REST má více endpointů s fixní strukturou",
+      "GraphQL a REST jsou totožné",
+      "REST je flexibilnější",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je GraphQL schema?",
+    "options": [
+      "Definice typů, queries, mutations a subscriptions dostupných v API",
+      "Databázové schéma",
+      "JSON soubor",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je Query v GraphQL?",
+    "options": [
+      "Operace pro čtení dat - ekvivalent GET v REST",
+      "Operace pro zápis dat",
+      "Typ subscribce",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je Mutation v GraphQL?",
+    "options": [
+      "Operace pro modifikaci dat - vytvoření, aktualizace, mazání",
+      "Operace pro čtení dat",
+      "Typ schématu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je Subscription v GraphQL?",
+    "options": [
+      "Real-time operace pro přijímání aktualizací přes WebSocket",
+      "Typ query",
+      "Typ mutation",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je resolver v GraphQL?",
+    "options": [
+      "Funkce která vrací data pro konkrétní pole ve schématu",
+      "Typ query",
+      "Databázový index",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je GraphQL type system?",
+    "options": [
+      "Systém typů definující strukturu dat - scalar, object, enum, interface, union",
+      "Databázový systém",
+      "Programovací jazyk",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co jsou scalar types v GraphQL?",
+    "options": [
+      "Základní typy jako Int, Float, String, Boolean, ID",
+      "Komplexní objekty",
+      "Typ query",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je fragment v GraphQL?",
+    "options": [
+      "Znovupoužitelná jednotka pro definici sady polí",
+      "Typ mutation",
+      "Databázový index",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je N+1 problém v GraphQL?",
+    "options": [
+      "Provedení N dodatečných databázových dotazů pro N položek v seznamu",
+      "Typ query",
+      "N+1 problém neexistuje v GraphQL",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je DataLoader a jak řeší N+1 problém?",
+    "options": [
+      "Utility pro batching a caching požadavků na data",
+      "Databázový driver",
+      "Typ query",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je introspection v GraphQL?",
+    "options": [
+      "Schopnost dotazovat se na schéma samotné pro autodiscovery",
+      "Typ mutation",
+      "Metoda autentizace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je directive v GraphQL?",
+    "options": [
+      "Anotace měnící chování query jako @include, @skip, @deprecated",
+      "Typ query",
+      "Databázový index",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je input type v GraphQL?",
+    "options": [
+      "Speciální typ pro argumenty mutations a queries",
+      "Typ výstupu",
+      "Databázový typ",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak implementovat autentizaci v GraphQL?",
+    "options": [
+      "Pomocí context objektu předávajícího user info do resolverů",
+      "Autentizace není možná v GraphQL",
+      "Pomocí speciálního typu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak implementovat autorizaci v GraphQL?",
+    "options": [
+      "V resolverech nebo pomocí direktiv kontrolujících oprávnění",
+      "Autorizace není možná",
+      "Pomocí speciálního endpointu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je persisted query?",
+    "options": [
+      "Předem uložená query identifikovaná hashem pro bezpečnost a výkon",
+      "Query uložená v databázi",
+      "Typ mutation",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je query complexity analysis?",
+    "options": [
+      "Analýza náročnosti query pro ochranu proti příliš složitým dotazům",
+      "Typ query",
+      "Metoda optimalizace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je depth limiting v GraphQL?",
+    "options": [
+      "Omezení hloubky vnořených queries pro prevenci DoS",
+      "Typ query",
+      "Metoda autentizace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je Apollo Server?",
+    "options": [
+      "Populární GraphQL server implementace pro Node.js",
+      "Databázový server",
+      "Frontend framework",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je Apollo Client?",
+    "options": [
+      "State management a GraphQL klient pro frontend aplikace",
+      "Databázový klient",
+      "Backend server",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak funguje caching v GraphQL?",
+    "options": [
+      "Normalizovaná cache na klientovi pomocí __typename a id",
+      "Stejně jako v REST",
+      "GraphQL nepodporuje caching",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je schema stitching?",
+    "options": [
+      "Kombinování více GraphQL schémat do jednoho",
+      "Typ query",
+      "Metoda autentizace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je federation v GraphQL?",
+    "options": [
+      "Architektura pro kompozici distribuovaného GraphQL API z mikroservis",
+      "Typ autentizace",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak implementovat pagination v GraphQL?",
+    "options": [
+      "Pomocí Relay-style cursor pagination nebo offset/limit",
+      "Pagination není možná",
+      "Stejně jako v REST",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je Relay connection specification?",
+    "options": [
+      "Standard pro pagination s edges, nodes, pageInfo a cursory",
+      "Typ query",
+      "Databázový protokol",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak správně vracet chyby v GraphQL?",
+    "options": [
+      "Pomocí errors pole v odpovědi s message, locations a path",
+      "Pomocí HTTP status kódů",
+      "Chyby nelze vracet",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je partial response v GraphQL?",
+    "options": [
+      "Odpověď obsahující data i errors když některá pole selžou",
+      "Neúplná odpověď",
+      "Typ query",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak implementovat file upload v GraphQL?",
+    "options": [
+      "Pomocí graphql-upload specifikace s multipart form data",
+      "File upload není možný",
+      "Pouze base64 encoding",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je batching v GraphQL?",
+    "options": [
+      "Kombinování více operací do jednoho HTTP požadavku",
+      "Typ query",
+      "Metoda autentizace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak testovat GraphQL API?",
+    "options": [
+      "Unit testy resolverů, integration testy s test serverem, mocking",
+      "GraphQL nelze testovat",
+      "Pouze manuálně",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je GraphQL Playground/GraphiQL?",
+    "options": [
+      "IDE pro interaktivní testování a exploraci GraphQL API",
+      "Databázový nástroj",
+      "Build nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jaké jsou nevýhody GraphQL?",
+    "options": [
+      "Složitější caching, potenciální N+1 problémy, komplexita schématu",
+      "GraphQL nemá nevýhody",
+      "Pomalejší než REST",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je code-first vs schema-first approach?",
+    "options": [
+      "Code-first generuje schéma z kódu, schema-first píše SDL schéma ručně",
+      "Code-first a schema-first jsou totožné",
+      "Existuje pouze schema-first",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je SDL (Schema Definition Language)?",
+    "options": [
+      "Jazyk pro definici GraphQL schématu v čitelné textové formě",
+      "Databázový jazyk",
+      "Programovací jazyk",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak implementovat rate limiting v GraphQL?",
+    "options": [
+      "Pomocí query complexity, depth limiting nebo na úrovni HTTP",
+      "Rate limiting není možný",
+      "Pouze pomocí firewallu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je union type v GraphQL?",
+    "options": [
+      "Typ který může být jedním z několika object typů",
+      "Typ pro spojení queries",
+      "Databázový typ",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je interface v GraphQL?",
+    "options": [
+      "Abstraktní typ definující společná pole pro více object typů",
+      "Typ pro vstupní data",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak implementovat real-time updates kromě subscriptions?",
+    "options": [
+      "Live queries, polling nebo server-sent events",
+      "Pouze subscriptions jsou možné",
+      "Real-time není možný",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je operationName v GraphQL?",
+    "options": [
+      "Pojmenování operace pro debugging a logging při více operacích v dokumentu",
+      "Typ query",
+      "Databázový identifikátor",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co jsou variables v GraphQL?",
+    "options": [
+      "Dynamické hodnoty předávané do query místo hardcoded hodnot",
+      "Typ query",
+      "Databázové proměnné",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Jak optimalizovat výkon GraphQL API?",
+    "options": [
+      "DataLoader, persisted queries, caching, complexity analysis, efficient resolvers",
+      "Optimalizace není možná",
+      "Pouze zvýšením hardware",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je nullability v GraphQL?",
+    "options": [
+      "Pole jsou defaultně nullable, ! značí non-null typy",
+      "Všechna pole jsou non-null",
+      "Nullability nelze definovat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Kdy použít GraphQL vs REST?",
+    "options": [
+      "GraphQL pro komplexní data requirements, REST pro jednoduché CRUD a caching",
+      "Vždy používat GraphQL",
+      "Vždy používat REST",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "GraphQL",
+    "question": "Co je enum type v GraphQL?",
+    "options": [
+      "Typ s předdefinovanou sadou hodnot",
+      "Typ pro čísla",
+      "Typ pro pole",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Co je mikroservisní architektura?",
+    "options": [
+      "Přístup k vývoji softwaru, kde aplikace sestává z malých, nezávisle nasaditelných služeb komunikujících přes API",
+      "Monolitická aplikace rozdělená do vrstev",
+      "Architektura založená na jedné centrální databázi",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou hlavní výhody mikroservisní architektury?",
+    "options": [
+      "Škálovatelnost, nezávislé nasazování, lepší údržba, odolnost proti chybám a technologická flexibilita",
+      "Jednodušší vývoj a nižší náklady na infrastrukturu",
+      "Centralizovaná správa dat a jednodušší debugging",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou nevýhody mikroservisní architektury?",
+    "options": [
+      "Složitější komunikace, vyšší provozní režie, potřeba správy distribuovaných dat a bezpečnostní výzvy",
+      "Nemožnost škálování jednotlivých služeb",
+      "Nutnost použití jednoho programovacího jazyka",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou běžné způsoby komunikace mezi mikroservisami?",
+    "options": [
+      "REST API, gRPC, asynchronní messaging (Kafka, RabbitMQ), event-driven architektura",
+      "Pouze sdílená databáze",
+      "Pouze synchronní HTTP volání",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Co je API Gateway a proč se používá?",
+    "options": [
+      "Vstupní bod pro všechny mikroservisy poskytující autentizaci, rate limiting, agregaci odpovědí a caching",
+      "Databázový server pro mikroservisy",
+      "Nástroj pro verzování kódu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou strategie databází v mikroservisní architektuře?",
+    "options": [
+      "Sdílená databáze, databáze na službu (Database-per-service), Event Sourcing, CQRS",
+      "Pouze jedna centrální databáze",
+      "Pouze NoSQL databáze",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaký je rozdíl mezi synchronní a asynchronní komunikací mezi mikroservisami?",
+    "options": [
+      "Synchronní vyžaduje okamžitou odpověď (REST, gRPC), asynchronní využívá zprávy a eventy (Kafka, RabbitMQ)",
+      "Synchronní je vždy rychlejší",
+      "Asynchronní vyžaduje sdílenou databázi",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Co je Service Discovery a jak funguje?",
+    "options": [
+      "Umožňuje mikroservisám dynamicky nacházet a komunikovat mezi sebou (Eureka, Consul, Zookeeper)",
+      "Nástroj pro monitoring aplikací",
+      "Systém pro správu verzí",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou strategie škálování mikroservis?",
+    "options": [
+      "Horizontální škálování (replikace instancí), automatické škálování (HPA v Kubernetes), rozdělení na menší služby",
+      "Pouze vertikální škálování",
+      "Škálování není v mikroservisách možné",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Co je Circuit Breaker pattern a proč se používá?",
+    "options": [
+      "Slouží k prevenci přetížení selhávajících služeb (Netflix Hystrix, Resilience4j)",
+      "Pattern pro šifrování dat",
+      "Způsob cachování dat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak mikroservisy řeší transakce?",
+    "options": [
+      "Pomocí SAGA patternu, dvoufázového commit protokolu (2PC), Outbox Pattern nebo kompenzačních transakcí",
+      "Transakce nejsou v mikroservisách možné",
+      "Pouze pomocí globálních zámků",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaký je rozdíl mezi monolitem a mikroservisami?",
+    "options": [
+      "Monolit je jedna velká aplikace, mikroservisy jsou malé, autonomní služby",
+      "Monolit je vždy lepší pro velké projekty",
+      "Mikroservisy nemohou používat databáze",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak implementovat zabezpečení v mikroservisní architektuře?",
+    "options": [
+      "OAuth2, JWT, role-based access control (RBAC), API Gateway s autentizací",
+      "Pouze pomocí firewallu",
+      "Zabezpečení není v mikroservisách potřeba",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak monitorovat mikroservisní architekturu?",
+    "options": [
+      "Použitím Prometheus, Grafana, ELK Stack, OpenTelemetry",
+      "Pouze pomocí logů v souborech",
+      "Monitoring není v mikroservisách možný",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou běžné způsoby logování v mikroservisní architektuře?",
+    "options": [
+      "Distribuované logování (ELK, Loki), strukturované logy (JSON), korelace logů pomocí Trace ID",
+      "Pouze lokální soubory",
+      "Logování není v mikroservisách potřeba",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaký je rozdíl mezi Load Balancerem a Service Mesh?",
+    "options": [
+      "Load Balancer rozkládá zátěž na servery, Service Mesh řídí síťovou komunikaci mezi mikroservisami",
+      "Jsou to synonyma",
+      "Load Balancer je pouze pro monolity",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Co je Istio a jak se používá v mikroservisní architektuře?",
+    "options": [
+      "Service mesh pro řízení komunikace mezi službami, poskytuje monitoring, bezpečnost, circuit breaking",
+      "Databázový systém",
+      "Verzovací nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak mikroservisy zvládají automatické škálování?",
+    "options": [
+      "Pomocí Kubernetes Horizontal Pod Autoscaler (HPA), auto-scaling skupin v cloudu",
+      "Automatické škálování není možné",
+      "Pouze manuálním přidáváním instancí",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaký je rozdíl mezi event-driven architekturou a request-response komunikací?",
+    "options": [
+      "Event-driven model funguje na principu asynchronních zpráv, request-response model vyžaduje okamžitou odpověď",
+      "Jsou to synonyma",
+      "Event-driven je vždy pomalejší",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou nejčastější chyby při návrhu mikroservisní architektury?",
+    "options": [
+      "Špatná granularita služeb, příliš mnoho synchronních volání, absence centralizovaného logování a monitoring",
+      "Použití více programovacích jazyků",
+      "Použití kontejnerů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak funguje distribuce konfigurace v mikroservisní architektuře?",
+    "options": [
+      "Pomocí Spring Cloud Config, Consul nebo Kubernetes ConfigMaps",
+      "Konfigurace musí být hardcoded",
+      "Každá služba má vlastní konfigurační soubor bez centrální správy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak se řeší problém závislostí mezi mikroservisami?",
+    "options": [
+      "Pomocí asynchronní komunikace, event-driven designu a verzování API",
+      "Závislosti nelze řešit",
+      "Pouze pomocí sdílené databáze",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak lze minimalizovat latenci v mikroservisní architektuře?",
+    "options": [
+      "Použitím caching, optimalizací dotazů a load balancingem",
+      "Latenci nelze minimalizovat",
+      "Použitím více databází",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou výhody decentralizovaného logování?",
+    "options": [
+      "Možnost sledování logů napříč celým systémem pomocí ELK stacku, Loki nebo Splunk",
+      "Jednodušší správa",
+      "Nižší nároky na úložiště",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou hlavní metody testování mikroservis?",
+    "options": [
+      "Unit testy, integrační testy, contract testing (Pact), end-to-end testy",
+      "Pouze manuální testování",
+      "Testování není v mikroservisách možné",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Co je Sidecar pattern a proč se používá?",
+    "options": [
+      "Umožňuje přidání doplňkových funkcí jako monitoring, bezpečnost a routing bez úprav hlavní služby",
+      "Pattern pro ukládání dat",
+      "Způsob šifrování komunikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak mikroservisy zvládají rollback v případě selhání nasazení?",
+    "options": [
+      "Použitím Canary Deployment, Blue-Green Deployment nebo Feature Toggles",
+      "Rollback není možný",
+      "Pouze manuálním zásahem",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak funguje federovaný monitoring v mikroservisní architektuře?",
+    "options": [
+      "Každá služba sbírá metriky a logy, které jsou centralizovány v monitoringových nástrojích",
+      "Monitoring je pouze lokální",
+      "Federovaný monitoring neexistuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou běžné strategie pro nasazování mikroservis?",
+    "options": [
+      "Rolling Updates, Canary Releases, Blue-Green Deployments",
+      "Pouze Big Bang deployment",
+      "Nasazování není v mikroservisách strukturované",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak mikroservisy zvládají závislosti na jiných službách?",
+    "options": [
+      "Použitím Circuit Breaker patternu, retry mechanizmů a fallback strategií",
+      "Závislosti se neřeší",
+      "Pouze pomocí timeoutů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak lze zajistit kompatibilitu API mezi verzemi mikroservis?",
+    "options": [
+      "Použitím API Gateway s verzováním a backward compatibility strategií",
+      "Kompatibilita není možná",
+      "Pouze pomocí dokumentace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Co je CQRS a proč se používá v mikroservisách?",
+    "options": [
+      "CQRS odděluje čtecí a zápisovou logiku pro lepší škálovatelnost a výkon",
+      "Způsob šifrování dat",
+      "Protokol pro komunikaci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak řešit problém single point of failure v mikroservisách?",
+    "options": [
+      "Použitím redundance, failover strategií a load balancingu",
+      "Single point of failure nelze řešit",
+      "Pouze pomocí zálohování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak funguje event sourcing v mikroservisní architektuře?",
+    "options": [
+      "Místo ukládání pouze aktuálního stavu se zaznamenává sekvence událostí",
+      "Způsob logování",
+      "Synchronní komunikace mezi službami",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou bezpečnostní hrozby v mikroservisní architektuře?",
+    "options": [
+      "API útoky, neautorizovaný přístup, závislost na třetích stranách, man-in-the-middle útoky",
+      "Mikroservisy jsou vždy bezpečné",
+      "Pouze DDoS útoky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak řešit rate limiting v mikroservisách?",
+    "options": [
+      "Pomocí API Gateway, Redis Rate Limiteru nebo Nginx Rate Limiting",
+      "Rate limiting není v mikroservisách potřeba",
+      "Pouze pomocí firewallu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak funguje JWT v mikroservisní architektuře?",
+    "options": [
+      "JWT umožňuje decentralizovanou autentizaci a autorizaci mezi mikroservisami",
+      "JWT je databázový systém",
+      "JWT slouží pouze pro logování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou hlavní rozdíly mezi mikroservisami a serverless architekturou?",
+    "options": [
+      "Mikroservisy běží kontinuálně, serverless funkce se spouštějí pouze na vyžádání",
+      "Jsou to synonyma",
+      "Serverless je vždy dražší",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak implementovat bezpečnou komunikaci mezi mikroservisami?",
+    "options": [
+      "Použitím TLS, mutual TLS (mTLS) a API gateway s autentizací",
+      "Šifrování není potřeba v interní síti",
+      "Pouze pomocí VPN",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak se řeší konzistence dat mezi mikroservisami?",
+    "options": [
+      "Pomocí event sourcingu, eventual consistency a SAGA patternu",
+      "Konzistence není v mikroservisách možná",
+      "Pouze pomocí distribuovaných zámků",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak funguje reverse proxy v mikroservisní architektuře?",
+    "options": [
+      "Reverse proxy směruje požadavky klientů na správné mikroservisy",
+      "Je to typ databáze",
+      "Slouží pouze pro caching",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaký je rozdíl mezi Kubernetes Ingress a API Gateway?",
+    "options": [
+      "Ingress poskytuje základní směrování provozu, API Gateway přidává autentizaci, rate limiting a caching",
+      "Jsou to synonyma",
+      "Ingress je pouze pro monolity",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaký je rozdíl mezi monorepo a multirepo přístupem v mikroservisách?",
+    "options": [
+      "Monorepo uchovává kód všech služeb v jednom repozitáři, multirepo má každou službu v separátním repozitáři",
+      "Monorepo je vždy lepší",
+      "Multirepo neumožňuje sdílení kódu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak zajistit vysokou dostupnost v mikroservisní architektuře?",
+    "options": [
+      "Použitím automatického škálování, load balancingu a redundantních instancí",
+      "Vysoká dostupnost není v mikroservisách možná",
+      "Pouze pomocí lepšího hardwaru",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou nejlepší nástroje pro správu mikroservis?",
+    "options": [
+      "Kubernetes, Istio, Consul, Prometheus, OpenTelemetry",
+      "Pouze Docker",
+      "Nástroje nejsou potřeba",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak implementovat zero-downtime deployment pro mikroservisy?",
+    "options": [
+      "Použitím Rolling Updates, Canary Releases nebo Feature Toggles",
+      "Zero-downtime deployment není možný",
+      "Pouze pomocí plánovaných odstávek",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak funguje Distributed Tracing v mikroservisní architektuře?",
+    "options": [
+      "Pomocí OpenTelemetry, Jaeger nebo Zipkin pro sledování požadavků napříč službami",
+      "Je to typ databáze",
+      "Slouží pouze pro logování chyb",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jak mikroservisy zvládají globální konfiguraci?",
+    "options": [
+      "Použitím centralizovaných konfigurací jako Spring Cloud Config, HashiCorp Consul nebo Kubernetes ConfigMaps",
+      "Globální konfigurace není možná",
+      "Každá služba má vlastní hardcoded konfiguraci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Microservice Architecture",
+    "question": "Jaké jsou hlavní faktory pro rozhodování mezi monolitem a mikroservisami?",
+    "options": [
+      "Počet vývojářů, škálovatelnost, komplexita systému, potřeba nezávislého nasazování",
+      "Pouze náklady na infrastrukturu",
+      "Mikroservisy jsou vždy lepší volba",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Co je asynchronní komunikace a proč se používá?",
+    "options": [
+      "Umožňuje systémům komunikovat bez čekání na okamžitou odpověď, což zlepšuje škálovatelnost a výkon",
+      "Vyžaduje okamžitou odpověď od příjemce",
+      "Je pomalejší než synchronní komunikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaké jsou hlavní rozdíly mezi synchronní a asynchronní komunikací?",
+    "options": [
+      "Synchronní vyžaduje okamžitou odpověď, asynchronní umožňuje zpracování požadavků v budoucnu",
+      "Synchronní a asynchronní jsou totožné",
+      "Asynchronní vyžaduje okamžitou odpověď",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaké jsou hlavní výhody asynchronní komunikace?",
+    "options": [
+      "Zvýšení škálovatelnosti, snížení latence, lepší odolnost proti výpadkům a možnost zpracování úloh na pozadí",
+      "Jednodušší implementace",
+      "Nižší náklady na infrastrukturu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaké technologie se běžně používají pro asynchronní komunikaci?",
+    "options": [
+      "Apache Kafka, RabbitMQ, ActiveMQ, Amazon SQS, Google Pub/Sub, Redis Streams",
+      "Pouze HTTP REST",
+      "Pouze databázové triggery",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Co je message queue a jak funguje?",
+    "options": [
+      "Ukládá zprávy, které jsou zpracovány přijímačem později, což umožňuje oddělení producenta a konzumenta",
+      "Synchronní komunikační kanál",
+      "Databáze pro zprávy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak funguje publish-subscribe model?",
+    "options": [
+      "Vydavatel publikuje zprávy do tématu, odběratelé dostávají všechny zprávy spojené s tímto tématem",
+      "Zprávy jsou posílány pouze jednomu příjemci",
+      "Publish-subscribe vyžaduje synchronní odpověď",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Co je event-driven architektura?",
+    "options": [
+      "Model, kde se akce systému řídí událostmi místo přímých požadavků",
+      "Architektura založená na synchronních voláních",
+      "Typ databázové architektury",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaký je rozdíl mezi event-driven a message-driven architekturou?",
+    "options": [
+      "Event-driven propaguje události které mohou ovlivnit více služeb, message-driven pracuje s explicitními zprávami mezi konkrétními službami",
+      "Event-driven a message-driven jsou totožné",
+      "Message-driven propaguje události",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak lze zajistit garantované doručení zpráv v asynchronní komunikaci?",
+    "options": [
+      "Použitím potvrzení (ACK/NACK), dead-letter queues a retry mechanisms",
+      "Garantované doručení není možné",
+      "Pouze pomocí synchronní komunikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Co je idempotence v asynchronním zpracování zpráv?",
+    "options": [
+      "Opakované zpracování stejné zprávy nepovede ke změně stavu",
+      "Každá zpráva musí být zpracována pouze jednou",
+      "Typ zprávy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Co je dead-letter queue (DLQ) a proč se používá?",
+    "options": [
+      "Speciální fronta pro zprávy, které nebyly úspěšně zpracovány po určitém počtu pokusů",
+      "Fronta pro smazané zprávy",
+      "Hlavní fronta pro zprávy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak se řeší sekvence zpráv v asynchronní komunikaci?",
+    "options": [
+      "Použitím FIFO queue (First In First Out) nebo partition keys (Kafka)",
+      "Sekvence nelze garantovat",
+      "Pouze pomocí timestamps",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Co je transactional messaging?",
+    "options": [
+      "Mechanismus zajišťující, že zprávy jsou zpracovány atomicky v rámci transakce",
+      "Typ synchronní komunikace",
+      "Zprávy bez transakční podpory",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak funguje retry mechanismus v asynchronní komunikaci?",
+    "options": [
+      "Pomocí exponential backoff, dead-letter queues nebo circuit breaker patternu",
+      "Opakované pokusy nejsou možné",
+      "Pouze manuální retry",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Co je fan-out pattern?",
+    "options": [
+      "Jeden producent posílá zprávy více odběratelům současně",
+      "Více producentů posílá jednomu odběrateli",
+      "Typ point-to-point komunikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaké jsou výzvy při škálování asynchronních systémů?",
+    "options": [
+      "Řízení pořadí zpráv, zajištění doručení pouze jednou (exactly-once) a řízení zatížení",
+      "Škálování je vždy jednoduché",
+      "Asynchronní systémy nelze škálovat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak funguje priority queue v message brokerech?",
+    "options": [
+      "Umožňuje zpracovávat důležitější zprávy před méně důležitými",
+      "Všechny zprávy mají stejnou prioritu",
+      "Priority queue je typ FIFO",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak lze sledovat zprávy v distribuovaných systémech?",
+    "options": [
+      "Pomocí distributed tracing (OpenTelemetry, Jaeger) a korelace zpráv pomocí unikátních ID",
+      "Sledování není možné",
+      "Pouze pomocí logů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak zajistit bezpečnost v asynchronní komunikaci?",
+    "options": [
+      "Šifrováním zpráv, autentizací pomocí OAuth2, TLS a řízením přístupu na základě rolí",
+      "Bezpečnost není v asynchronní komunikaci potřeba",
+      "Pouze pomocí firewallu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Co je back-pressure a jak se řeší?",
+    "options": [
+      "Mechanismus řízení toku dat pro zabránění přetížení systému, řešený pomocí rate limiting nebo load shedding",
+      "Typ zprávy",
+      "Back-pressure nelze řešit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaké jsou hlavní metriky pro monitoring asynchronní komunikace?",
+    "options": [
+      "Latence, throughput, počet nevyřízených zpráv, error rate",
+      "Pouze počet zpráv",
+      "Metriky nejsou důležité",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaký je rozdíl mezi choreografií a orchestrací v event-driven systémech?",
+    "options": [
+      "Choreografie umožňuje jednotlivým službám reagovat na události nezávisle, orchestrace řídí workflow centrálně",
+      "Choreografie a orchestrace jsou totožné",
+      "Orchestrace umožňuje nezávislou reakci",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak funguje distributed event processing?",
+    "options": [
+      "Data jsou zpracovávána paralelně na různých uzlech pro zvýšení výkonu a dostupnosti",
+      "Zpracování probíhá na jednom uzlu",
+      "Distributed processing není možný",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaké jsou příklady reálného použití asynchronní komunikace?",
+    "options": [
+      "Zpracování plateb, notifikace, logování, IoT messaging",
+      "Pouze pro interní systémy",
+      "Asynchronní komunikace nemá praktické využití",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak implementovat asynchronní API?",
+    "options": [
+      "Použitím WebSockets, polling, Webhooks nebo server-sent events",
+      "Asynchronní API nelze implementovat",
+      "Pouze pomocí REST",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaký je rozdíl mezi stream processing a batch processing?",
+    "options": [
+      "Stream processing zpracovává data v reálném čase, batch processing v dávkách",
+      "Stream a batch processing jsou totožné",
+      "Batch processing je v reálném čase",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak funguje exactly-once zpracování v asynchronních systémech?",
+    "options": [
+      "Kombinací idempotence, deduplikace a transactional messaging",
+      "Exactly-once není možné",
+      "Automaticky zajištěno všemi message brokery",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jak optimalizovat asynchronní zpracování zpráv?",
+    "options": [
+      "Použitím paralelizace, optimalizací spotřebitelských skupin a škálování producentů",
+      "Optimalizace není možná",
+      "Pouze zvýšením hardware",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaký je rozdíl mezi Kafka a RabbitMQ?",
+    "options": [
+      "Kafka je distribuovaná logovací platforma s vysokou propustností, RabbitMQ je message broker vhodný pro více patternů",
+      "Kafka a RabbitMQ jsou totožné",
+      "RabbitMQ má vyšší propustnost",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Asynchronous Communication",
+    "question": "Jaký je rozdíl mezi event-driven a command-driven architekturou?",
+    "options": [
+      "Event-driven systém reaguje na události, command-driven systém provádí explicitní příkazy",
+      "Event-driven a command-driven jsou totožné",
+      "Command-driven reaguje na události",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je java.util.concurrent a jaké problémy řeší?",
+    "options": [
+      "Sada nástrojů pro správu souběžného zpracování v Javě, usnadňuje práci s více vlákny a synchronizací",
+      "Databázová knihovna",
+      "Webový framework",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaký je rozdíl mezi synchronized a Lock v java.util.concurrent?",
+    "options": [
+      "synchronized je jednoduchý ale blokuje vlákna; Lock poskytuje větší kontrolu a umožňuje přerušení čekání",
+      "synchronized a Lock jsou totožné",
+      "Lock je jednodušší",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je ExecutorService a k čemu slouží?",
+    "options": [
+      "Umožňuje efektivní správu vláken a plánování úloh bez nutnosti explicitního vytváření nových vláken",
+      "Databázový executor",
+      "Webový server",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak funguje ThreadPoolExecutor?",
+    "options": [
+      "Umožňuje definovat velikost poolu vláken a strategii přidělování úloh",
+      "Vytváří nové vlákno pro každou úlohu",
+      "ThreadPoolExecutor neexistuje",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je ForkJoinPool a jak se liší od běžného ThreadPoolExecutor?",
+    "options": [
+      "ForkJoinPool je optimalizovaný pro rekurzivní rozdělování úloh (divide-and-conquer) pomocí ForkJoinTask",
+      "ForkJoinPool a ThreadPoolExecutor jsou totožné",
+      "ForkJoinPool je pro sekvenční úlohy",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaký je rozdíl mezi Callable a Runnable?",
+    "options": [
+      "Callable vrací hodnotu a může vyvolat výjimku, Runnable nic nevrací a nemůže vyhazovat checked výjimky",
+      "Callable a Runnable jsou totožné",
+      "Runnable vrací hodnotu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je Future v java.util.concurrent?",
+    "options": [
+      "Představuje výsledek asynchronní operace, umožňuje zjištění stavu a získání výsledku",
+      "Typ vlákna",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak funguje CompletableFuture a jak se liší od Future?",
+    "options": [
+      "CompletableFuture rozšiřuje Future o možnost skládání asynchronních operací a callbacky",
+      "CompletableFuture a Future jsou totožné",
+      "Future podporuje callbacky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je ScheduledExecutorService?",
+    "options": [
+      "Umožňuje plánování úloh ke spuštění po určité době nebo v opakovaných intervalech",
+      "Typ vlákna",
+      "Databázový plánovač",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak funguje CountDownLatch a k čemu se používá?",
+    "options": [
+      "Umožňuje jednomu nebo více vláknům čekat na dokončení operací jiných vláken",
+      "Počítadlo vláken",
+      "Typ zámku",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je CyclicBarrier a jak se liší od CountDownLatch?",
+    "options": [
+      "CyclicBarrier umožňuje synchronizaci více vláken opakovaně, CountDownLatch je jednorázový",
+      "CyclicBarrier a CountDownLatch jsou totožné",
+      "CountDownLatch je opakovaný",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaký je rozdíl mezi Semaphore a Lock?",
+    "options": [
+      "Semaphore omezuje počet souběžných přístupů ke zdroji, Lock řídí přístup jednoho vlákna k určité sekci kódu",
+      "Semaphore a Lock jsou totožné",
+      "Lock omezuje počet přístupů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak funguje ReentrantLock a kdy jej použít?",
+    "options": [
+      "Umožňuje větší kontrolu nad zámky, včetně možnosti pokusit se získat zámek bez zablokování",
+      "ReentrantLock je jednodušší než synchronized",
+      "ReentrantLock nelze použít opakovaně",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaké jsou výhody ReadWriteLock oproti ReentrantLock?",
+    "options": [
+      "ReadWriteLock umožňuje současné čtení více vlákny, zatímco zápis je exkluzivní",
+      "ReadWriteLock a ReentrantLock jsou totožné",
+      "ReentrantLock umožňuje současné čtení",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaké jsou hlavní výhody ConcurrentHashMap oproti HashMap?",
+    "options": [
+      "ConcurrentHashMap podporuje souběžné přístupy bez nutnosti explicitní synchronizace",
+      "ConcurrentHashMap a HashMap jsou totožné",
+      "HashMap je thread-safe",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaký je rozdíl mezi BlockingQueue a běžnou Queue?",
+    "options": [
+      "BlockingQueue podporuje blokování při vkládání a odebírání prvků, což je užitečné pro synchronizaci mezi vlákny",
+      "BlockingQueue a Queue jsou totožné",
+      "Queue podporuje blokování",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak funguje LinkedBlockingQueue oproti ArrayBlockingQueue?",
+    "options": [
+      "LinkedBlockingQueue umožňuje dynamickou velikost, ArrayBlockingQueue má pevně stanovenou kapacitu",
+      "LinkedBlockingQueue a ArrayBlockingQueue jsou totožné",
+      "ArrayBlockingQueue má dynamickou velikost",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je Exchanger a jak se používá?",
+    "options": [
+      "Umožňuje dvěma vláknům bezpečně vyměnit data",
+      "Typ fronty",
+      "Databázový koncept",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak funguje ThreadLocal a jaké jsou jeho výhody a nevýhody?",
+    "options": [
+      "Ukládá hodnoty specifické pro každé vlákno, ale může způsobovat úniky paměti pokud není správně vyčištěn",
+      "ThreadLocal sdílí hodnoty mezi vlákny",
+      "ThreadLocal nemá nevýhody",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je StampedLock a jak se liší od ReadWriteLock?",
+    "options": [
+      "StampedLock poskytuje efektivnější přístup k datům pomocí optimistických zámků",
+      "StampedLock a ReadWriteLock jsou totožné",
+      "ReadWriteLock používá optimistické zámky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaké jsou hlavní výzvy při práci se souběžným programováním?",
+    "options": [
+      "Race conditions, deadlocky, livelocky a problémy s viditelností dat",
+      "Souběžné programování nemá výzvy",
+      "Pouze výkon",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak detekovat a předcházet deadlockům?",
+    "options": [
+      "Použitím timeoutů, pořadí získávání zámků a dynamické prevence",
+      "Deadlocky nelze detekovat",
+      "Pouze restartováním aplikace",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak funguje Phaser a jak se liší od CyclicBarrier?",
+    "options": [
+      "Phaser umožňuje dynamické přidávání a odebírání účastníků synchronizace",
+      "Phaser a CyclicBarrier jsou totožné",
+      "CyclicBarrier umožňuje dynamické přidávání",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak lze efektivně ladit souběžné aplikace?",
+    "options": [
+      "Použitím thread dumpu, nástrojů jako VisualVM, JConsole a specializovaných testovacích rámců",
+      "Ladění souběžných aplikací není možné",
+      "Pouze pomocí println",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaké jsou best practices pro práci s java.util.concurrent?",
+    "options": [
+      "Používat vysoce úrovňové API jako ExecutorService, minimalizovat sdílení stavů, správně spravovat zámky",
+      "Vždy používat synchronized",
+      "Vytvářet vlákna ručně",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak funguje CompletionService a kdy se používá?",
+    "options": [
+      "Umožňuje efektivní správu více asynchronních úloh a jejich zpracování v pořadí, v jakém jsou dokončeny",
+      "CompletionService je typ fronty",
+      "Slouží k plánování úloh",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Co je ForkJoinTask a jaký je jeho účel?",
+    "options": [
+      "Abstrakce pro úlohy v ForkJoinPool, která umožňuje rozdělování a kombinaci výpočtů",
+      "Typ vlákna",
+      "Databázový task",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jaký je rozdíl mezi ForkJoinPool a ExecutorService?",
+    "options": [
+      "ForkJoinPool je optimalizován pro úlohy typu divide-and-conquer, ExecutorService spravuje obecné úlohy",
+      "ForkJoinPool a ExecutorService jsou totožné",
+      "ExecutorService je pro divide-and-conquer",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak lze implementovat thread-safe cache v java.util.concurrent?",
+    "options": [
+      "Použitím ConcurrentHashMap, AtomicReference nebo kombinací ReadWriteLock s HashMap",
+      "Thread-safe cache nelze implementovat",
+      "Pouze pomocí synchronized HashMap",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Java Concurrency",
+    "question": "Jak zajistit efektivní synchronizaci mezi více vlákny?",
+    "options": [
+      "Použitím správného synchronizačního mechanismu (Lock, Semaphore, CountDownLatch), minimalizací sdílených dat",
+      "Vždy používat synchronized",
+      "Synchronizace není potřeba",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Co je Git a k čemu slouží?",
+    "options": [
+      "Distribuovaný verzovací systém umožňující sledování změn v kódu",
+      "Cloudová platforma pro hosting",
+      "Programovací jazyk",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jaký je rozdíl mezi Git a GitHub?",
+    "options": [
+      "Git je nástroj pro verzování, GitHub je cloudová platforma pro správu repozitářů",
+      "Git a GitHub jsou totožné",
+      "GitHub je verzovací nástroj",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak vytvořit nový Git repozitář?",
+    "options": [
+      "Pomocí git init pro lokální repozitář nebo git clone pro klonování existujícího",
+      "Pomocí git create",
+      "Pouze na GitHubu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak přidat soubory do staging area?",
+    "options": [
+      "Použitím git add <soubor> nebo git add . pro všechny změněné soubory",
+      "Pomocí git stage",
+      "Soubory se přidávají automaticky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak potvrdit změny v Git repozitáři?",
+    "options": [
+      "Použitím git commit -m \"Popis změny\"",
+      "Pomocí git save",
+      "Pomocí git push",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak odeslat změny na vzdálený repozitář?",
+    "options": [
+      "Pomocí git push origin <branch>",
+      "Pomocí git upload",
+      "Pomocí git send",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak stáhnout změny z repozitáře?",
+    "options": [
+      "Použitím git pull nebo git fetch a následným git merge",
+      "Pomocí git download",
+      "Pomocí git get",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak zobrazit historii commitů?",
+    "options": [
+      "Použitím git log",
+      "Pomocí git history",
+      "Pomocí git show-all",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak vytvořit novou větev v Gitu?",
+    "options": [
+      "Pomocí git branch <název_větve>",
+      "Pomocí git create-branch",
+      "Pomocí git new",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak přepnout větev?",
+    "options": [
+      "Použitím git checkout <název_větve> nebo git switch <název_větve>",
+      "Pomocí git change",
+      "Pomocí git move",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak sloučit dvě větve?",
+    "options": [
+      "Pomocí git merge <název_větve>",
+      "Pomocí git combine",
+      "Pomocí git join",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Co je rebase a jak funguje?",
+    "options": [
+      "git rebase přepisuje historii commitů tak, aby byly aplikovány na jinou větev",
+      "Rebase je totéž jako merge",
+      "Rebase maže commity",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak odstranit větev?",
+    "options": [
+      "Lokálně: git branch -d <název>, vzdáleně: git push origin --delete <název>",
+      "Pomocí git remove-branch",
+      "Větve nelze odstranit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Co je git stash a jak jej použít?",
+    "options": [
+      "git stash dočasně ukládá necommitované změny",
+      "git stash maže změny",
+      "git stash je alias pro commit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak obnovit změny ze stashe?",
+    "options": [
+      "Použitím git stash pop nebo git stash apply",
+      "Pomocí git stash restore",
+      "Pomocí git unstash",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak vrátit commit?",
+    "options": [
+      "Použitím git revert <hash> pro reverzní commit nebo git reset <hash> pro reset historie",
+      "Pomocí git undo",
+      "Commity nelze vrátit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jaký je rozdíl mezi git revert a git reset?",
+    "options": [
+      "git revert vytvoří nový commit s obrácenými změnami, git reset přepíše historii commitů",
+      "git revert a git reset jsou totožné",
+      "git reset vytvoří nový commit",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak zobrazit změny mezi commity?",
+    "options": [
+      "Použitím git diff",
+      "Pomocí git compare",
+      "Pomocí git show-changes",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Co je git cherry-pick a k čemu slouží?",
+    "options": [
+      "Přenesení konkrétního commitu do jiné větve",
+      "Výběr větve",
+      "Mazání commitů",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak nastavit vzdálený repozitář?",
+    "options": [
+      "Použitím git remote add origin <URL>",
+      "Pomocí git set-remote",
+      "Pomocí git connect",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak odstranit soubor z Git historie?",
+    "options": [
+      "Použitím git rm --cached <soubor> a následným commitem",
+      "Pomocí git delete-history",
+      "Soubory nelze odstranit z historie",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak vytvořit pull request na GitHubu?",
+    "options": [
+      "Vytvořením nové větve, pushnutím změn a následným vytvořením PR na GitHubu",
+      "Pomocí git pull-request",
+      "PR se vytváří automaticky",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jaké jsou rozdíly mezi fork a clone?",
+    "options": [
+      "clone stáhne repozitář lokálně, fork vytvoří kopii repozitáře v GitHub účtu",
+      "fork a clone jsou totožné",
+      "clone vytvoří kopii na GitHubu",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak vytvořit Git tag?",
+    "options": [
+      "Použitím git tag -a v1.0 -m \"Popis tagu\"",
+      "Pomocí git create-tag",
+      "Tagy nelze vytvářet",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak sdílet tag s ostatními?",
+    "options": [
+      "Použitím git push origin --tags",
+      "Tagy se sdílejí automaticky",
+      "Pomocí git share-tags",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Co je .gitignore a jak se používá?",
+    "options": [
+      "Soubor určující, které soubory Git nemá sledovat",
+      "Soubor s ignorovanými commity",
+      "Konfigurace pro GitHub",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak přejmenovat větev?",
+    "options": [
+      "Lokálně: git branch -m <nový_název>, vzdáleně: git push origin -u <nový_název>",
+      "Pomocí git rename-branch",
+      "Větve nelze přejmenovat",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak zjistit, kdo naposledy upravil konkrétní řádek kódu?",
+    "options": [
+      "Pomocí git blame <soubor>",
+      "Pomocí git who",
+      "Pomocí git author",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak opravit konflikt při slučování větví?",
+    "options": [
+      "Ručně upravit soubor, potvrdit změny pomocí git add, a dokončit merge commit",
+      "Konflikty se řeší automaticky",
+      "Pomocí git resolve",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": "Git/GitHub",
+    "question": "Jak vrátit soubor do původního stavu před změnami?",
+    "options": [
+      "Použitím git checkout -- <soubor> nebo git restore <soubor>",
+      "Pomocí git undo-file",
+      "Pomocí git reset-file",
+      "N/A"
+    ],
+    "correctAnswer": 0
+  }
+]

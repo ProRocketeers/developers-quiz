@@ -1,0 +1,68 @@
+.quiz-summary {
+  position: relative;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.threshold-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #28a745;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.quiz-summary.passed {
+  background-color: #d4edda;
+  border: 2px solid #28a745;
+}
+
+.quiz-summary.failed {
+  background-color: #f8d7da;
+  border: 2px solid #dc3545;
+}
+
+.quiz-summary h2 {
+  margin-bottom: 20px;
+}
+
+.score {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.passed .score {
+  color: #28a745;
+}
+
+.failed .score {
+  color: #dc3545;
+}
+
+.result-text {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.reset-btn {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #0056b3;
+}
