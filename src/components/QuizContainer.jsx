@@ -1,22 +1,24 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, Suspense, lazy } from 'react'
 import QuizQuestion from './QuizQuestion'
-import QuizSummary from './QuizSummary'
+import Spinner from './Spinner'
+const QuizSummary = lazy(() => import('./QuizSummary'))
 import './QuizContainer.css'
 import { getQuestions, getCategories } from '../services/questionService'
+import { useQuizSettings } from '../context/QuizContext'
 
-const TOTAL_QUESTIONS_DEFAULT = 4;
 const SUCCESS_THRESHOLD = 0.5;
 const QUIZ_TIME = 10;
-const USE_MOCK = false;
-const categories = getCategories(USE_MOCK)
 
 function QuizContainer() {
+  const { settings } = useQuizSettings()
   const [questions, setQuestions] = useState([])
   const [answers, setAnswers] = useState({})
   const [showSummary, setShowSummary] = useState(false)
-  const [maxQuestions, setMaxQuestions] = useState(TOTAL_QUESTIONS_DEFAULT)
+  const [maxQuestions, setMaxQuestions] = useState(settings.questionCount)
   const [timeLeft, setTimeLeft] = useState(QUIZ_TIME)
   const [selectedCategory, setSelectedCategory] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const categories = useMemo(() => getCategories(settings.useMock), []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -33,11 +35,13 @@ function QuizContainer() {
   }, [])
 
   useEffect(() => {
+    setLoading(true)
     setTimeout(() => {
-      const loadedQuestions = getQuestions(maxQuestions, USE_MOCK, selectedCategory);
+      const loadedQuestions = getQuestions(maxQuestions, settings.useMock, selectedCategory);
       setQuestions(loadedQuestions);
       setAnswers({});
       setShowSummary(false);
+      setLoading(false)
     }, 1000);
   }, [maxQuestions, selectedCategory]);
 
@@ -55,8 +59,8 @@ function QuizContainer() {
   }
 
   const handleReset = () => {
-    setMaxQuestions(TOTAL_QUESTIONS_DEFAULT);
-    const loadedQuestions = getQuestions(maxQuestions, USE_MOCK);
+    setMaxQuestions(settings.questionCount);
+    const loadedQuestions = getQuestions(maxQuestions, settings.useMock);
     setQuestions(loadedQuestions);
     setAnswers({})
     setShowSummary(false)
@@ -74,54 +78,57 @@ function QuizContainer() {
   }
 
   if (showSummary) {
-    // Random result for now (as per spec)
     let score = calculateScore()
     const minimalRequiredScore = Math.ceil(SUCCESS_THRESHOLD * maxQuestions);
     return (
-      <QuizSummary
-        score={score}
-        total={maxQuestions}
-        passed={score >= minimalRequiredScore}
-        onReset={handleReset}
-        thresholdForSuccess={minimalRequiredScore}
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <QuizSummary
+          score={score}
+          total={maxQuestions}
+          passed={score >= minimalRequiredScore}
+          onReset={handleReset}
+          thresholdForSuccess={minimalRequiredScore}
+        />
+      </Suspense>
     )
   }
 
   const answeredCount = Object.keys(answers).length
 
-  if (questions.length === 0) {
-    return <div className="quiz-container">Loading questions...</div>;
+  if (loading) {
+    return <div className="quiz-container"><Spinner visible={true} /></div>;
   }
 
   return (
     <div className="quiz-container">
       <span>{timeLeft}</span>
       <div className="quiz-header">
-        <label>
-          Category:
-          <select
-            value={selectedCategory || ''}
-            onChange={(e) => setSelectedCategory(e.target.value || null)}
-            style={{ marginLeft: '8px', padding: '4px' }}
-          >
-            <option value="">All categories</option>
-            {categories.map(cat => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Max questions:
-          <input
-            type="number"
-            value={maxQuestions}
-            onChange={(e) => setMaxQuestions(Number(e.target.value))}
-            min="1"
-            style={{ marginLeft: '8px', padding: '4px', width: '60px' }}
-          />
-        </label>
-        <button onClick={handleReset}>refresh</button>
+        <div className="quiz-header-filter">
+          <label>
+            Category:
+            <select
+              value={selectedCategory || ''}
+              onChange={(e) => setSelectedCategory(e.target.value || null)}
+              style={{ marginLeft: '8px', padding: '4px' }}
+            >
+              <option value="">All categories</option>
+              {categories.map(cat => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Max questions:
+            <input
+              type="number"
+              value={maxQuestions}
+              onChange={(e) => setMaxQuestions(Number(e.target.value))}
+              min="1"
+              style={{ marginLeft: '8px', padding: '4px', width: '60px' }}
+            />
+          </label>
+          <button className="btn btn-success" onClick={handleReset}>refresh</button>
+        </div>
       </div>
       {questions.map((q, index) => (
         <QuizQuestion
