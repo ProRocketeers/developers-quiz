@@ -2,27 +2,44 @@ import { useState, useEffect } from 'react'
 import QuizQuestion from './QuizQuestion'
 import QuizSummary from './QuizSummary'
 import './QuizContainer.css'
-import { getQuestions } from '../services/questionService'
+import { getQuestions, getCategories } from '../services/questionService'
 
 const TOTAL_QUESTIONS_DEFAULT = 4;
 const SUCCESS_THRESHOLD = 0.5;
 const QUIZ_TIME = 10;
 const USE_MOCK = false;
+const categories = getCategories(USE_MOCK)
 
 function QuizContainer() {
   const [questions, setQuestions] = useState([])
   const [answers, setAnswers] = useState({})
   const [showSummary, setShowSummary] = useState(false)
   const [maxQuestions, setMaxQuestions] = useState(TOTAL_QUESTIONS_DEFAULT)
+  const [timeLeft, setTimeLeft] = useState(QUIZ_TIME)
+  const [selectedCategory, setSelectedCategory] = useState(null)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(t => {
+        if (t <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [])
 
   useEffect(() => {
     setTimeout(() => {
-      const loadedQuestions = getQuestions(maxQuestions, USE_MOCK);
+      const loadedQuestions = getQuestions(maxQuestions, USE_MOCK, selectedCategory);
       setQuestions(loadedQuestions);
       setAnswers({});
       setShowSummary(false);
     }, 1000);
-  }, [maxQuestions]);
+  }, [maxQuestions, selectedCategory]);
 
   const handleAnswerSelect = (questionIndex, answerIndex) => {
     console.log('questionIndex', questionIndex)
@@ -79,7 +96,21 @@ function QuizContainer() {
 
   return (
     <div className="quiz-container">
+      <span>{timeLeft}</span>
       <div className="quiz-header">
+        <label>
+          Category:
+          <select
+            value={selectedCategory || ''}
+            onChange={(e) => setSelectedCategory(e.target.value || null)}
+            style={{ marginLeft: '8px', padding: '4px' }}
+          >
+            <option value="">All categories</option>
+            {categories.map(cat => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
+        </label>
         <label>
           Max questions:
           <input
