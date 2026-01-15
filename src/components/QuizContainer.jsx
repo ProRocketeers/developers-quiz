@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, Suspense, lazy } from 'react'
 import QuizQuestion from './QuizQuestion'
 import Spinner from './Spinner'
+import SummaryList from './SummaryList'
 const QuizSummary = lazy(() => import('./QuizSummary'))
 import './QuizContainer.css'
 import { getQuestions, getCategories } from '../services/questionService'
@@ -18,7 +19,9 @@ function QuizContainer() {
   const [timeLeft, setTimeLeft] = useState(QUIZ_TIME)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [showDetails, setShowDetails] = useState(false)
   const categories = useMemo(() => getCategories(settings.useMock), []);
+  const [inputMaxQuestions, setInputMaxQuestions] = useState(settings.questionCount)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -64,6 +67,16 @@ function QuizContainer() {
     setQuestions(loadedQuestions);
     setAnswers({})
     setShowSummary(false)
+    setShowDetails(false)
+  }
+
+  const handleRefresh = () => {
+    const loadedQuestions = getQuestions(maxQuestions, settings.useMock);
+    setQuestions(loadedQuestions);
+    setMaxQuestions(inputMaxQuestions)
+    setAnswers({})
+    setShowSummary(false)
+    setShowDetails(false)
   }
 
   const calculateScore = () => {
@@ -81,15 +94,28 @@ function QuizContainer() {
     let score = calculateScore()
     const minimalRequiredScore = Math.ceil(SUCCESS_THRESHOLD * maxQuestions);
     return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <QuizSummary
-          score={score}
-          total={maxQuestions}
-          passed={score >= minimalRequiredScore}
-          onReset={handleReset}
-          thresholdForSuccess={minimalRequiredScore}
-        />
-      </Suspense>
+      <div className="quiz-container">
+        <Suspense fallback={<div>Loading...</div>}>
+          <QuizSummary
+            score={score}
+            total={maxQuestions}
+            passed={score >= minimalRequiredScore}
+            onReset={handleReset}
+            thresholdForSuccess={minimalRequiredScore}
+          />
+        </Suspense>
+        <div className="summary-details-toggle">
+          <button
+            className="toggle-btn"
+            onClick={() => setShowDetails(!showDetails)}
+          >
+            {showDetails ? 'Hide Details' : 'Show Details'}
+          </button>
+        </div>
+        {showDetails && (
+          <SummaryList questions={questions} answers={answers} />
+        )}
+      </div>
     )
   }
 
@@ -101,7 +127,7 @@ function QuizContainer() {
 
   return (
     <div className="quiz-container">
-      <span>{timeLeft}</span>
+      {settings.useTimeLimit ? <span>{timeLeft}</span> : null}
       <div className="quiz-header">
         <div className="quiz-header-filter">
           <label>
@@ -121,13 +147,18 @@ function QuizContainer() {
             Max questions:
             <input
               type="number"
-              value={maxQuestions}
-              onChange={(e) => setMaxQuestions(Number(e.target.value))}
-              min="1"
+              value={inputMaxQuestions}
+              onChange={(e) => setInputMaxQuestions(Number(e.target.value))}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  setMaxQuestions(inputMaxQuestions)
+                }
+              }}
+              
               style={{ marginLeft: '8px', padding: '4px', width: '60px' }}
             />
           </label>
-          <button className="btn btn-success" onClick={handleReset}>refresh</button>
+          <button className="btn btn-success" onClick={handleRefresh}>refresh</button>
         </div>
       </div>
       {questions.map((q, index) => (

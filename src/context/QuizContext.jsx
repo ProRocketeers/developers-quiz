@@ -3,12 +3,14 @@ import { createContext, useContext, useState } from 'react'
 const QuizContext = createContext(null)
 
 const SETTINGS_DEFAULT = {
-  questionCount: 4,
+  questionCount: 2,
   category: null,
   timeLimit: 10,
-  useMock: false
+  useMock: false,
+  useTimeLimit: false
 }
 
+// @refresh reset (force full remount pri HMR)
 export function QuizProvider({ children }) {
   const [settings, setSettings] = useState(SETTINGS_DEFAULT)
 

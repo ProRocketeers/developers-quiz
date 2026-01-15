@@ -7,9 +7,11 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <QuizProvider>
-        <QuizContainer />
-      </QuizProvider>
+      <div className="main">
+        <QuizProvider>
+          <QuizContainer />
+        </QuizProvider>
+      </div>
       <Footer />
     </div>
   )
