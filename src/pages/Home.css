@@ -1,0 +1,29 @@
+.home {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.home h2 {
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.home p {
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.start-btn {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.start-btn:hover {
+  background-color: #45a049;
+}

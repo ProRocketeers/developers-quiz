@@ -1,0 +1,27 @@
+.results-page {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.results-page h2 {
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.results-page p {
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.results-page .btn {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.results-page .btn:hover {
+  background-color: #45a049;
+}

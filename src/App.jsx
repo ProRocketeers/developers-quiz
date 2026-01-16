@@ -1,19 +1,23 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './layouts/Layout'
 import QuizContainer from './components/QuizContainer'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Home from './pages/Home'
+import Results from './pages/Results'
 import { QuizProvider } from './context/QuizContext'
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <div className="main">
-        <QuizProvider>
-          <QuizContainer />
-        </QuizProvider>
-      </div>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <QuizProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/quiz" element={<QuizContainer />} />
+            <Route path="/results" element={<Results />} />
+          </Route>
+        </Routes>
+      </QuizProvider>
+    </BrowserRouter>
   )
 }
 
