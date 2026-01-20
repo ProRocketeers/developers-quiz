@@ -27,3 +27,8 @@
 .start-btn:hover {
   background-color: #45a049;
 }
+
+.start-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

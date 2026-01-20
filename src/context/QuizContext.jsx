@@ -7,7 +7,9 @@ const SETTINGS_DEFAULT = {
   category: null,
   timeLimit: 10,
   useMock: false,
-  useTimeLimit: false
+  useTimeLimit: false,
+  name: null,
+  email: null
 }
 
 // @refresh reset (force full remount pri HMR)

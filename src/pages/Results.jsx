@@ -47,7 +47,9 @@ function Results() {
       </div>
 
       {showDetails && (
-        <SummaryList questions={questions} answers={answers} />
+        <SummaryList questions={questions} answers={answers} score={score}
+        total={total}
+        passed={score >= minimalRequiredScore} />
       )}
     </div>
   )

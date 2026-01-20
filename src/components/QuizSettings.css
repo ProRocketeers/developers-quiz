@@ -27,3 +27,7 @@
 .quiz-settings input[type="number"] {
   width: 70px;
 }
+
+.quiz-settings .row {
+  padding: .4rem;
+}
