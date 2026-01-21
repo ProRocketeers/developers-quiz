@@ -1,10 +1,8 @@
 import realQuestions from '../data/questions.json';
 import { mockQuestions } from '../data/mockData';
+import type { Question } from '../types';
 
-
-
-
-function shuffleArray(array) {
+function shuffleArray<T>(array: T[]): T[] {
   const result = [...array];
   for (let i = result.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -13,7 +11,7 @@ function shuffleArray(array) {
   return result;
 }
 
-function shuffleQuestionOptions(question) {
+function shuffleQuestionOptions(question: Question): Question {
   const correctValue = question.options[question.correctAnswer];
   const shuffledOptions = shuffleArray(question.options);
   const newCorrectIndex = shuffledOptions.indexOf(correctValue);
@@ -25,13 +23,13 @@ function shuffleQuestionOptions(question) {
   };
 }
 
-function selectRandomQuestions(questions, count) {
+function selectRandomQuestions(questions: Question[], count: number): Question[] {
   const shuffled = [...questions].sort(() => Math.random() - 0.5);
   const selected = shuffled.slice(0, Math.min(count, questions.length));
   return selected.map(shuffleQuestionOptions);
 }
 
-export function getQuestions(count, useMock = true, selectedCategories = null) {
+export function getQuestions(count: number, useMock = true, selectedCategories: string | string[] | null = null): Question[] {
   const source = useMock ? mockQuestions : realQuestions;
   let filtered = source;
   if (selectedCategories) {
@@ -39,10 +37,10 @@ export function getQuestions(count, useMock = true, selectedCategories = null) {
     filtered = categoryList ? source.filter(q => categoryList.includes(q.category))
     : source;
   }
-  return selectRandomQuestions(filtered, count);
+  return selectRandomQuestions(filtered as Question[], count);
 }
 
-export function getQuestionCount(useMock = true, category = null) {
+export function getQuestionCount(useMock = true, category: string | null = null): number {
   const source = useMock ? mockQuestions : realQuestions;
   const filtered = category
     ? source.filter(q => q.category === category)
@@ -50,16 +48,21 @@ export function getQuestionCount(useMock = true, category = null) {
   return filtered.length;
 }
 
-export function getCategories(useMock = true, withCount = false) {
+export function getCategories(useMock = true): string[] {
   const source = useMock ? mockQuestions : realQuestions;
   const categories = [...new Set(source.map(q => q.category))];
   return categories.sort();
 }
 
-export function getCategoriesWithCount(useMock = false) {
+interface CategoryWithCount {
+  name: string;
+  count: number;
+}
+
+export function getCategoriesWithCount(useMock = false): CategoryWithCount[] {
   const source = useMock ? mockQuestions : realQuestions;
 
-  const frequencyMap = {}
+  const frequencyMap: Record<string, number> = {}
   source.forEach(q => {
     frequencyMap[q.category] = (frequencyMap[q.category] ?? 0) + 1
   })
@@ -67,16 +70,4 @@ export function getCategoriesWithCount(useMock = false) {
   return Object.entries(frequencyMap)
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => a.name.localeCompare(b.name))
-}
-
-export function green(categories) {
-  // alert(categories?.length)
-        // categories.map((idx,cat) => console.log(idx, cat))
-        console.log(typeof categories)
-        console.log(categories instanceof Set)
-        console.log(categories instanceof Array)
-        console.log(Array.isArray(categories))
-        // console.log(categories?.map((cat, idx) => console.log(idx)))
-        console.log(categories?.length)
-        // console.log((categories ?? []).map(cat => console.log(cat)))
 }
