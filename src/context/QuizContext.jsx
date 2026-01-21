@@ -9,7 +9,9 @@ const SETTINGS_DEFAULT = {
   useMock: false,
   useTimeLimit: false,
   name: null,
-  email: null
+  email: null,
+  selectedCategories: [],
+  multiSelect: true
 }
 
 // @refresh reset (force full remount pri HMR)

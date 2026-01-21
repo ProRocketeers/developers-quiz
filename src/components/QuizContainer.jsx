@@ -38,7 +38,7 @@ function QuizContainer() {
   const loadQuestions = () => {
     setLoading(true)
     setTimeout(() => {
-      const loadedQuestions = getQuestions(settings.questionCount, settings.useMock, settings.category)
+      const loadedQuestions = getQuestions(settings.questionCount, settings.useMock, settings.multiSelect ? settings.selectedCategories : settings.category)
       setQuestions(loadedQuestions)
       setAnswers({})
       setLoading(false)
@@ -84,8 +84,6 @@ function QuizContainer() {
       {settings.useTimeLimit ? <span>{timeLeft}</span> : null}
 
       <QuizSettings showRefresh={true} onRefresh={handleRefresh} showNamePrompt={false} />
-
-      <div className="container"><div className="row"><div className="col">name: {settings.name || "green"}<div className="col">email: {settings.email}</div></div></div></div>
 
       {questions.map((q, index) => (
         <QuizQuestion

@@ -1,21 +1,18 @@
 import { useState, useMemo } from 'react'
-import { getCategories } from '../services/questionService'
+import { getCategoriesWithCount } from '../services/questionService'
 import { useQuizSettings } from '../context/QuizContext'
 import './QuizSettings.css'
+import CategoryList from './CategoryList'
 
 function QuizSettings({ showRefresh = false, onRefresh, showNamePrompt = false, onValidationChange }) {
   const { settings, updateSettings } = useQuizSettings()
-  const categories = useMemo(() => getCategories(settings.useMock), [settings.useMock])
+  const categories = useMemo(() => getCategoriesWithCount(settings.useMock), [settings.useMock])
   const [inputMaxQuestions, setInputMaxQuestions] = useState(settings.questionCount)
   const [inputEmail, setInputEmail] = useState()
   const [inputName, setInputName] = useState()
   const [errors, setErrors] = useState({ name: '', email: '' })
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-
-  const handleCategoryChange = (e) => {
-    updateSettings({ category: e.target.value || null })
-  }
 
   const handleMaxQuestionsKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -59,6 +56,14 @@ function QuizSettings({ showRefresh = false, onRefresh, showNamePrompt = false, 
     onValidationChange?.(hasError || notFilled)
   }
 
+  const handleCategorySelection = (selected) => {
+    if (Array.isArray(selected)) {
+      updateSettings({ selectedCategories: selected })
+    } else {
+      updateSettings({ category: selected })
+    }
+  }
+
   return (
     <div className="quiz-settings">
       <div className="container">
@@ -83,19 +88,14 @@ function QuizSettings({ showRefresh = false, onRefresh, showNamePrompt = false, 
       
       <div className="row">
         <div className="col">
-      <label>
-        Category:
-        <select
-          value={settings.category || ''}
-          onChange={handleCategoryChange}
-        >
-          <option value="">All categories</option>
-          {categories.map(cat => (
-            <option key={cat} value={cat}>{cat}</option>
-          ))}
-        </select>
-      </label>
-      </div>
+          <label>Category:</label>
+          <CategoryList
+            categories={categories}
+            onSelectionChange={handleCategorySelection}
+            multiSelect={settings.multiSelect}
+            value={settings.multiSelect ? settings.selectedCategories : settings.category}
+          />
+        </div>
 
 <div className="col">
       <label>
