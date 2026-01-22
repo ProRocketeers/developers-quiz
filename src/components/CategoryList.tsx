@@ -1,38 +1,43 @@
-import { Badge, Form, ListGroup } from "react-bootstrap"
+import { Badge, Form, ListGroup } from "react-bootstrap";
 
-function CategoryList({ categories, onSelectionChange, multiSelect = false, value }) {
-  const selected = value ?? '';
+function CategoryList({
+  categories,
+  onSelectionChange,
+  multiSelect = false,
+  value,
+}) {
+  const selected = value ?? "";
 
   const handleToggle = (categoryName) => {
     const newSelected = selected.includes(categoryName)
-      ? selected.filter(name => name !== categoryName)
-      : [...selected, categoryName]
+      ? selected.filter((name) => name !== categoryName)
+      : [...selected, categoryName];
 
-    onSelectionChange?.(newSelected)
-  }
+    onSelectionChange?.(newSelected);
+  };
 
   const handleSelectChange = (e) => {
-    const value = e.target.value || null
-    console.log(value)
-    onSelectionChange?.(value)
-  }
+    const value = e.target.value || null;
+    console.log(value);
+    onSelectionChange?.(value);
+  };
 
   if (!multiSelect) {
     return (
       <Form.Select value={selected} onChange={handleSelectChange}>
         <option value="">All categories</option>
-        {categories?.map(category => (
+        {categories?.map((category) => (
           <option key={category.name} value={category.name}>
             {category.name} ({category.count})
           </option>
         ))}
       </Form.Select>
-    )
+    );
   }
 
   return (
     <ListGroup>
-      {categories?.map(category => (
+      {categories?.map((category) => (
         <ListGroup.Item
           key={category.name}
           className="d-flex justify-content-between align-items-center"
@@ -52,7 +57,7 @@ function CategoryList({ categories, onSelectionChange, multiSelect = false, valu
         </ListGroup.Item>
       ))}
     </ListGroup>
-  )
+  );
 }
 
-export default CategoryList
+export default CategoryList;

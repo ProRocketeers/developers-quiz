@@ -1,14 +1,19 @@
-import './QuizQuestion.css'
-import type { Question } from '../types'
+import "./QuizQuestion.css";
+import type { Question } from "../types";
 
- interface Props {
-    question: Question
-    selectedAnswer: number | undefined
-    onAnswerSelect: (index: number) => void
-    questionNumber: number
-  }
+interface Props {
+  question: Question;
+  selectedAnswer: number | undefined;
+  onAnswerSelect: (index: number) => void;
+  questionNumber: number;
+}
 
-function QuizQuestion({ question, selectedAnswer, onAnswerSelect, questionNumber }: Props) {
+function QuizQuestion({
+  question,
+  selectedAnswer,
+  onAnswerSelect,
+  questionNumber,
+}: Props) {
   return (
     <div className="quiz-question">
       <h3 className="question-title">
@@ -29,7 +34,7 @@ function QuizQuestion({ question, selectedAnswer, onAnswerSelect, questionNumber
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default QuizQuestion
+export default QuizQuestion;

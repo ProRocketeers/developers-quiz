@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import QuizQuestion from './QuizQuestion'
-import Spinner from './Spinner'
-import QuizSettings from './QuizSettings'
-import './QuizContainer.css'
-import { getQuestions } from '../services/questionService'
-import { useQuizSettings } from '../context/QuizContext'
-import type { Question } from '../types'
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import QuizQuestion from "./QuizQuestion";
+import Spinner from "./Spinner";
+import QuizSettings from "./QuizSettings";
+import "./QuizContainer.css";
+import { getQuestions } from "../services/questionService";
+import { useQuizSettings } from "../context/QuizContext";
+import type { Question } from "../types";
 
-const QUIZ_TIME = 10
+const QUIZ_TIME = 10;
 
 function QuizContainer() {
-  const navigate = useNavigate()
-  const { settings } = useQuizSettings()
-  const [questions, setQuestions] = useState<Question[]>([])
-  const [answers, setAnswers] = useState<Record<number, number>>({})
-  const [timeLeft, setTimeLeft] = useState(QUIZ_TIME)
-  const [loading, setLoading] = useState(true)
+  const navigate = useNavigate();
+  const { settings } = useQuizSettings();
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [timeLeft, setTimeLeft] = useState(QUIZ_TIME);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(t => {
+      setTimeLeft((t) => {
         if (t <= 1) {
           clearInterval(timer);
           return 0;
@@ -28,63 +28,78 @@ function QuizContainer() {
         return t - 1;
       });
     }, 1000);
-    
+
     return () => clearInterval(timer);
-  }, [])
+  }, []);
 
   useEffect(() => {
-    loadQuestions()
-  }, [settings.category])
+    loadQuestions();
+  }, [settings.category]);
 
   const loadQuestions = () => {
-    setLoading(true)
+    setLoading(true);
     setTimeout(() => {
-      const loadedQuestions = getQuestions(settings.questionCount, settings.useMock, settings.multiSelect ? settings.selectedCategories : settings.category)
-      setQuestions(loadedQuestions)
-      setAnswers({})
-      setLoading(false)
-    }, 1000)
-  }
+      const loadedQuestions = getQuestions(
+        settings.questionCount,
+        settings.useMock,
+        settings.multiSelect ? settings.selectedCategories : settings.category,
+      );
+      setQuestions(loadedQuestions);
+      setAnswers({});
+      setLoading(false);
+    }, 1000);
+  };
 
   const handleAnswerSelect = (questionIndex: number, answerIndex: number) => {
-    setAnswers(prev => ({
+    setAnswers((prev) => ({
       ...prev,
-      [questionIndex]: answerIndex
-    }))
-  }
+      [questionIndex]: answerIndex,
+    }));
+  };
 
   const calculateScore = () => {
-    let score = 0
+    let score = 0;
     Object.keys(answers).forEach((questionIndex) => {
-      const answerIndex = answers[questionIndex]
+      const answerIndex = answers[questionIndex];
       if (answerIndex === questions[questionIndex]?.correctAnswer) {
-        score++
+        score++;
       }
-    })
-    return score
-  }
+    });
+    return score;
+  };
 
   const handleSubmit = () => {
-    const score = calculateScore()
-    sessionStorage.setItem('quizResults', JSON.stringify({ questions, answers, score }))
-    navigate('/results')
-  }
+    const score = calculateScore();
+    sessionStorage.setItem(
+      "quizResults",
+      JSON.stringify({ questions, answers, score }),
+    );
+    navigate("/results");
+  };
 
   const handleRefresh = () => {
-    loadQuestions()
-  }
+    loadQuestions();
+  };
 
-  const answeredCount = Object.keys(answers).length
+  const answeredCount = Object.keys(answers).length;
 
   if (loading) {
-    return <div className="quiz-container"><Spinner visible={true} /></div>;
+    return (
+      <div className="quiz-container">
+        <Spinner visible={true} />
+      </div>
+    );
   }
 
   return (
     <div className="quiz-container">
       {settings.useTimeLimit ? <span>{timeLeft}</span> : null}
 
-      <QuizSettings showRefresh={true} onRefresh={handleRefresh} showNamePrompt={false} />
+      <QuizSettings
+        showRefresh={true}
+        onRefresh={handleRefresh}
+        showNamePrompt={false}
+      />
 
       {questions.map((q, index) => (
         <QuizQuestion
@@ -92,12 +107,16 @@ function QuizContainer() {
           questionNumber={index + 1}
           question={q}
           selectedAnswer={answers[index]}
-          onAnswerSelect={(answerIndex) => handleAnswerSelect(index, answerIndex)}
+          onAnswerSelect={(answerIndex) =>
+            handleAnswerSelect(index, answerIndex)
+          }
         />
       ))}
 
       <div className="quiz-footer">
-        <span className="progress">Answered: {answeredCount} / {settings.questionCount}</span>
+        <span className="progress">
+          Answered: {answeredCount} / {settings.questionCount}
+        </span>
         <button
           className="submit-btn"
           onClick={handleSubmit}
@@ -107,7 +126,7 @@ function QuizContainer() {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default QuizContainer
+export default QuizContainer;

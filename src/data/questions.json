@@ -3024,7 +3024,7 @@
     ],
     "correctAnswer": 0
   },
-    {
+  {
     "category": "Microservice Architecture",
     "question": "Co je mikroservisní architektura?",
     "options": [
@@ -8106,7 +8106,7 @@
     ],
     "correctAnswer": 0
   },
-    {
+  {
     "category": "HTTP(s)",
     "question": "Co je HTTP a HTTPS?",
     "options": [

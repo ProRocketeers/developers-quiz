@@ -1,135 +1,163 @@
-import { useState, useMemo } from 'react'
-import { getCategoriesWithCount } from '../services/questionService'
-import { useQuizSettings } from '../context/QuizContext'
-import './QuizSettings.css'
-import CategoryList from './CategoryList'
+import { useState, useMemo } from "react";
+import { getCategoriesWithCount } from "../services/questionService";
+import { useQuizSettings } from "../context/QuizContext";
+import "./QuizSettings.css";
+import CategoryList from "./CategoryList";
 
 interface Props {
-    showRefresh?: boolean
-    onRefresh?: () => void
-    showNamePrompt?: boolean
-    onValidationChange?: (hasError: boolean) => void
-  }
+  showRefresh?: boolean;
+  onRefresh?: () => void;
+  showNamePrompt?: boolean;
+  onValidationChange?: (hasError: boolean) => void;
+}
 
-function QuizSettings({ showRefresh = false, onRefresh, showNamePrompt = false, onValidationChange }: Props) {
-  const { settings, updateSettings } = useQuizSettings()
-  const categories = useMemo(() => getCategoriesWithCount(settings.useMock), [settings.useMock])
-  const [inputMaxQuestions, setInputMaxQuestions] = useState(settings.questionCount)
-  const [inputEmail, setInputEmail] = useState()
-  const [inputName, setInputName] = useState()
-  const [errors, setErrors] = useState({ name: '', email: '' })
+function QuizSettings({
+  showRefresh = false,
+  onRefresh,
+  showNamePrompt = false,
+  onValidationChange,
+}: Props) {
+  const { settings, updateSettings } = useQuizSettings();
+  const categories = useMemo(
+    () => getCategoriesWithCount(settings.useMock),
+    [settings.useMock],
+  );
+  const [inputMaxQuestions, setInputMaxQuestions] = useState(
+    settings.questionCount,
+  );
+  const [inputEmail, setInputEmail] = useState();
+  const [inputName, setInputName] = useState();
+  const [errors, setErrors] = useState({ name: "", email: "" });
 
-  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleMaxQuestionsKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      updateSettings({ questionCount: inputMaxQuestions })
+    if (e.key === "Enter") {
+      updateSettings({ questionCount: inputMaxQuestions });
     }
-  }
+  };
 
   const handleInputMaxQuestions = (val) => {
-    console.log('green ', val)
-    setInputMaxQuestions(val)
-    updateSettings({ questionCount: val })
-  }
+    console.log("green ", val);
+    setInputMaxQuestions(val);
+    updateSettings({ questionCount: val });
+  };
 
   const handleRefresh = () => {
-    updateSettings({ questionCount: inputMaxQuestions })
-    if (onRefresh) onRefresh()
-  }
+    updateSettings({ questionCount: inputMaxQuestions });
+    if (onRefresh) onRefresh();
+  };
 
   const validateField = (field, val) => {
-    if (!val) return 'Povinné pole'
-    if (field === 'name' && val.length < 2) return 'Min. 2 znaky'
-    if (field === 'email' && !validateEmail(val)) return 'Neplatný email'
-    return ''
-  }
+    if (!val) return "Povinné pole";
+    if (field === "name" && val.length < 2) return "Min. 2 znaky";
+    if (field === "email" && !validateEmail(val)) return "Neplatný email";
+    return "";
+  };
 
   const handleInput = (field, val) => {
-    if (field !== 'name' && field !== 'email') return
+    if (field !== "name" && field !== "email") return;
 
-    const newError = validateField(field, val)
-    const newErrors = { ...errors, [field]: newError }
-    setErrors(newErrors)
-    const hasError = !!newErrors.name || !!newErrors.email
-    const currentName = field === 'name' ? val : inputName
-    const currentEmail = field === 'email' ? val : inputEmail
-    const notFilled = !currentName || !currentEmail
+    const newError = validateField(field, val);
+    const newErrors = { ...errors, [field]: newError };
+    setErrors(newErrors);
+    const hasError = !!newErrors.name || !!newErrors.email;
+    const currentName = field === "name" ? val : inputName;
+    const currentEmail = field === "email" ? val : inputEmail;
+    const notFilled = !currentName || !currentEmail;
 
-    const setters = { name: setInputName, email: setInputEmail }
-    setters[field](val)
-    updateSettings({ [field]: val })
-    
-    onValidationChange?.(hasError || notFilled)
-  }
+    const setters = { name: setInputName, email: setInputEmail };
+    setters[field](val);
+    updateSettings({ [field]: val });
+
+    onValidationChange?.(hasError || notFilled);
+  };
 
   const handleCategorySelection = (selected) => {
     if (Array.isArray(selected)) {
-      updateSettings({ selectedCategories: selected })
+      updateSettings({ selectedCategories: selected });
     } else {
-      updateSettings({ category: selected })
+      updateSettings({ category: selected });
     }
-  }
+  };
 
   return (
     <div className="quiz-settings">
       <div className="container">
-      {showNamePrompt && (
+        {showNamePrompt && (
           <div className="row">
             <div className="col">
-        <label>
-        Name:
-        <input type="text" onChange={(e) => handleInput('name', e.target.value)} className="form-control" />
-        {errors.name && <span className="text-danger small">{errors.name}</span>}
-      </label>
-      </div>
-      <div className="col">
-      <label>
-        Email:
-        <input type="email" onChange={(e) => handleInput('email', e.target.value)} className="form-control" />
-        {errors.email && <span className="text-danger small">{errors.email}</span>}
-      </label>
-      </div>
-      </div>
-      )}
-      
-      <div className="row">
-        <div className="col">
-          <label>Category:</label>
-          <CategoryList
-            categories={categories}
-            onSelectionChange={handleCategorySelection}
-            multiSelect={settings.multiSelect}
-            value={settings.multiSelect ? settings.selectedCategories : settings.category}
-          />
-        </div>
+              <label>
+                Name:
+                <input
+                  type="text"
+                  onChange={(e) => handleInput("name", e.target.value)}
+                  className="form-control"
+                />
+                {errors.name && (
+                  <span className="text-danger small">{errors.name}</span>
+                )}
+              </label>
+            </div>
+            <div className="col">
+              <label>
+                Email:
+                <input
+                  type="email"
+                  onChange={(e) => handleInput("email", e.target.value)}
+                  className="form-control"
+                />
+                {errors.email && (
+                  <span className="text-danger small">{errors.email}</span>
+                )}
+              </label>
+            </div>
+          </div>
+        )}
 
-<div className="col">
-      <label>
-        Max questions:
-        <input
-          type="number"
-          value={inputMaxQuestions}
-          onChange={(e) => handleInputMaxQuestions(Number(e.target.value))}
-          onKeyDown={handleMaxQuestionsKeyDown}
-          min={1}
-          className="form-control"
-        />
-      </label>
-      </div>
-</div>
-<div className="row">
-  <div className="col">
-      {showRefresh && (
-        <button className="btn btn-success" onClick={handleRefresh}>
-          Refresh
-        </button>
-      )}
-      </div>
-      </div>
+        <div className="row">
+          <div className="col">
+            <label>Category:</label>
+            <CategoryList
+              categories={categories}
+              onSelectionChange={handleCategorySelection}
+              multiSelect={settings.multiSelect}
+              value={
+                settings.multiSelect
+                  ? settings.selectedCategories
+                  : settings.category
+              }
+            />
+          </div>
+
+          <div className="col">
+            <label>
+              Max questions:
+              <input
+                type="number"
+                value={inputMaxQuestions}
+                onChange={(e) =>
+                  handleInputMaxQuestions(Number(e.target.value))
+                }
+                onKeyDown={handleMaxQuestionsKeyDown}
+                min={1}
+                className="form-control"
+              />
+            </label>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            {showRefresh && (
+              <button className="btn btn-success" onClick={handleRefresh}>
+                Refresh
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default QuizSettings
+export default QuizSettings;

@@ -1,5 +1,5 @@
 function Spinner({ visible }) {
-  if (!visible) return null
+  if (!visible) return null;
 
   return (
     <div className="d-flex justify-content-center py-5">
@@ -7,7 +7,7 @@ function Spinner({ visible }) {
         <span className="visually-hidden">Loading...</span>
       </div>
     </div>
-  )
+  );
 }
 
-export default Spinner
+export default Spinner;

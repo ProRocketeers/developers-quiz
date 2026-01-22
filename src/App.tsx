@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Layout from './layouts/Layout'
-import QuizContainer from './components/QuizContainer'
-import Home from './pages/Home'
-import Results from './pages/Results'
-import { QuizProvider } from './context/QuizContext'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import QuizContainer from "./components/QuizContainer";
+import Home from "./pages/Home";
+import Results from "./pages/Results";
+import { QuizProvider } from "./context/QuizContext";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         </Routes>
       </QuizProvider>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
