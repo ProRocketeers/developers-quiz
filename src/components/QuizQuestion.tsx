@@ -1,13 +1,21 @@
 import './QuizQuestion.css'
+import type { Question } from '../types'
 
-function QuizQuestion({ question, options, selectedAnswer, onAnswerSelect, questionNumber }) {
+ interface Props {
+    question: Question
+    selectedAnswer: number | undefined
+    onAnswerSelect: (index: number) => void
+    questionNumber: number
+  }
+
+function QuizQuestion({ question, selectedAnswer, onAnswerSelect, questionNumber }: Props) {
   return (
     <div className="quiz-question">
       <h3 className="question-title">
-        {questionNumber}. {question}
+        {questionNumber}. {question.question}
       </h3>
       <div className="options">
-        {options.map((option, index) => (
+        {question.options.map((option, index) => (
           <label key={index} className="option">
             <input
               type="radio"

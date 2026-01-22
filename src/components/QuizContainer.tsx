@@ -6,14 +6,15 @@ import QuizSettings from './QuizSettings'
 import './QuizContainer.css'
 import { getQuestions } from '../services/questionService'
 import { useQuizSettings } from '../context/QuizContext'
+import type { Question } from '../types'
 
 const QUIZ_TIME = 10
 
 function QuizContainer() {
   const navigate = useNavigate()
   const { settings } = useQuizSettings()
-  const [questions, setQuestions] = useState([])
-  const [answers, setAnswers] = useState({})
+  const [questions, setQuestions] = useState<Question[]>([])
+  const [answers, setAnswers] = useState<Record<number, number>>({})
   const [timeLeft, setTimeLeft] = useState(QUIZ_TIME)
   const [loading, setLoading] = useState(true)
 
@@ -45,7 +46,7 @@ function QuizContainer() {
     }, 1000)
   }
 
-  const handleAnswerSelect = (questionIndex, answerIndex) => {
+  const handleAnswerSelect = (questionIndex: number, answerIndex: number) => {
     setAnswers(prev => ({
       ...prev,
       [questionIndex]: answerIndex
@@ -89,8 +90,7 @@ function QuizContainer() {
         <QuizQuestion
           key={index}
           questionNumber={index + 1}
-          question={q.question}
-          options={q.options}
+          question={q}
           selectedAnswer={answers[index]}
           onAnswerSelect={(answerIndex) => handleAnswerSelect(index, answerIndex)}
         />

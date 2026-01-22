@@ -4,7 +4,14 @@ import { useQuizSettings } from '../context/QuizContext'
 import './QuizSettings.css'
 import CategoryList from './CategoryList'
 
-function QuizSettings({ showRefresh = false, onRefresh, showNamePrompt = false, onValidationChange }) {
+interface Props {
+    showRefresh?: boolean
+    onRefresh?: () => void
+    showNamePrompt?: boolean
+    onValidationChange?: (hasError: boolean) => void
+  }
+
+function QuizSettings({ showRefresh = false, onRefresh, showNamePrompt = false, onValidationChange }: Props) {
   const { settings, updateSettings } = useQuizSettings()
   const categories = useMemo(() => getCategoriesWithCount(settings.useMock), [settings.useMock])
   const [inputMaxQuestions, setInputMaxQuestions] = useState(settings.questionCount)
