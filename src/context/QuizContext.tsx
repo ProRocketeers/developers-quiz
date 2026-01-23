@@ -11,7 +11,9 @@ const SETTINGS_DEFAULT = {
   name: null,
   email: null,
   selectedCategories: [],
-  multiSelect: true
+  multiSelect: true,
+  thresholdForSuccess: 0.5,
+  emailForCopy: "peopleandculture@prorocketeers.com"
 };
 
 const STORAGE_KEY = 'quizSettings';

@@ -7,6 +7,8 @@ interface EmailData {
   name: string
   score: number
   total: number
+  passed: boolean
+  detailed?: boolean
   questions?: Question[]
   answers?: Record<number, number>
 }

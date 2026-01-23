@@ -8,9 +8,11 @@ function SummaryList({ questions, answers, score, total, passed }) {
   const [emailStatus, setEmailStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   const handleSendEmail = async () => {
-    const success = await sendResultsEmail({name: settings.name, score: score, total: total, to: settings.email, questions, answers});
+    const success = await sendResultsEmail({name: settings.name, score: score, total, passed, to: settings.email, questions, answers, detailed: false});
+    const success2 = await sendResultsEmail({name: settings.name, score: score, total, passed, to: settings.emailForCopy, questions, answers, detailed: true});
     setEmailStatus(success ? 'sent' : 'error');
-
+    console.log('email short form sent: ',success)
+    console.log('email detailed form sent: ',success2)
   }
 
   return (
@@ -28,7 +30,6 @@ function SummaryList({ questions, answers, score, total, passed }) {
             <strong>Výsledek:</strong> {passed ? "✓" : "✗"}
           </div>
           <div>
-            <span>{emailStatus}</span>
             <button
               className="toggle-btn"
               onClick={handleSendEmail}

@@ -16,6 +16,8 @@ interface EmailRequest {
   name: string
   score: number
   total: number
+  passed: boolean
+  detailed?: boolean
   questions?: Question[]
   answers?: Record<number, number>
 }
@@ -26,7 +28,7 @@ export async function POST(request: Request) {
 
   try {
     const body: EmailRequest = await request.json()
-    const { to, name, score, total, questions, answers } = body
+    const { to, name, score, total, passed, detailed = false, questions, answers } = body
 
     if (!to || !name) {
       return NextResponse.json(
@@ -36,28 +38,43 @@ export async function POST(request: Request) {
     }
 
     const percentage = Math.round((score / total) * 100)
-    const passed = percentage >= 50
 
     let questionsText = ''
     if (questions && answers) {
-      questionsText = questions
-        .map((q, i) => {
-          const userAnswerIndex = answers[i]
-          const isCorrect = userAnswerIndex === q.correctAnswer
-          const userAnswer = q.options[userAnswerIndex] || 'Nezodpovězeno'
-          return `${i + 1}. ${q.question}\n   ${isCorrect ? '✅' : '❌'} ${userAnswer}`
-        })
-        .join('\n\n')
+      if (detailed) {
+        questionsText = questions
+          .map((q, i) => {
+            const userAnswerIndex = answers[i]
+            const isCorrect = userAnswerIndex === q.correctAnswer
+            const optionsText = q.options
+              .map((opt, optIndex) => {
+                const isUserAnswer = optIndex === userAnswerIndex
+                const icon = isUserAnswer ? (isCorrect ? ' ✅' : ' ❌') : ''
+                return `   - ${opt}${icon}`
+              })
+              .join('\n')
+            return `${i + 1}. ${q.question}\n${optionsText}`
+          })
+          .join('\n\n')
+      } else {
+        questionsText = questions
+          .map((q, i) => {
+            const userAnswerIndex = answers[i]
+            const isCorrect = userAnswerIndex === q.correctAnswer
+            return `${i + 1}. ${q.question} ${isCorrect ? '✅' : '❌'}`
+          })
+          .join('\n')
+      }
     }
 
     const msg = {
       to,
       from: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com',
-      subject: `Výsledky kvízu - ${passed ? 'PROŠEL' : 'NEPROŠEL'} (${percentage}%)`,
+      subject: `TEST | Výsledky | Java Developer Quiz | ${name} - ${passed ? 'PROŠEL' : 'NEPROŠEL'} (${percentage}%)`,
       text: `
 Ahoj ${name},
 
-Výsledek kvízu: ${score}/${total} (${percentage}%)
+TEST | Výsledky | Java Developer Quiz | ${name} - ${score}/${total} (${percentage}%)
 Status: ${passed ? 'PROŠEL ✅' : 'NEPROŠEL ❌'}
 
 ${questionsText ? `Přehled odpovědí:\n\n${questionsText}` : ''}

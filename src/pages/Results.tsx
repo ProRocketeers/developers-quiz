@@ -4,11 +4,11 @@ import QuizSummary from "../components/QuizSummary";
 import SummaryList from "../components/SummaryList";
 import type { QuizResults } from "../types";
 import "./Results.css";
-
-const SUCCESS_THRESHOLD = 0.5;
+import { useQuizSettings } from "../context/QuizContext";
 
 function Results() {
   const navigate = useNavigate();
+  const {settings} = useQuizSettings();
   const [showDetails, setShowDetails] = useState(false);
 
   const saved = sessionStorage.getItem("quizResults");
@@ -26,7 +26,10 @@ function Results() {
 
   const { questions, answers, score } = JSON.parse(saved) as QuizResults;
   const total = questions.length;
-  const minimalRequiredScore = Math.ceil(SUCCESS_THRESHOLD * total);
+  const minimalRequiredScore = Math.ceil(settings.thresholdForSuccess * total);
+  console.log('min: ', minimalRequiredScore)
+  console.log('min: ', settings.thresholdForSuccess)
+  console.log('min: ', total)
   console.log(questions[0]?.category);
 
   return (
@@ -36,7 +39,7 @@ function Results() {
         total={total}
         passed={score >= minimalRequiredScore}
         onReset={() => navigate("/quiz")}
-        thresholdForSuccess={minimalRequiredScore}
+        minimalRequiredScore={minimalRequiredScore}
       />
 
       <div className="summary-details-toggle">

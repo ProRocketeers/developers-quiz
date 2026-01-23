@@ -1,11 +1,11 @@
 import "./QuizSummary.css";
 
-function QuizSummary({ score, total, passed, onReset, thresholdForSuccess }) {
+function QuizSummary({ score, total, passed, onReset, minimalRequiredScore }) {
   return (
     <div className={`quiz-summary ${passed ? "passed" : "failed"}`}>
       <div className="text-end">
         <span className={`badge ${passed ? "bg-success" : "bg-danger"}`}>
-          min : {thresholdForSuccess}
+          min : {minimalRequiredScore}
         </span>
       </div>
       <h2>Quiz Complete!</h2>
