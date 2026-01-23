@@ -11,18 +11,33 @@ const SETTINGS_DEFAULT = {
   name: null,
   email: null,
   selectedCategories: [],
-  multiSelect: true,
+  multiSelect: true
 };
+
+const STORAGE_KEY = 'quizSettings';
+
+function loadSettings() {
+  const saved = sessionStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    return { ...SETTINGS_DEFAULT, ...JSON.parse(saved) };
+  }
+  return SETTINGS_DEFAULT;
+}
 
 // @refresh reset (force full remount pri HMR)
 export function QuizProvider({ children }) {
-  const [settings, setSettings] = useState(SETTINGS_DEFAULT);
+  const [settings, setSettings] = useState(loadSettings);
 
   const updateSettings = (newSettings) => {
-    setSettings((prev) => ({ ...prev, ...newSettings }));
+    setSettings((prev) => {
+      const updated = { ...prev, ...newSettings };
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+      return updated;
+    });
   };
 
   const resetSettings = () => {
+    sessionStorage.removeItem(STORAGE_KEY);
     setSettings(SETTINGS_DEFAULT);
   };
 

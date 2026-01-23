@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { getCategoriesWithCount } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
 import "./QuizSettings.css";
@@ -25,11 +25,29 @@ function QuizSettings({
   const [inputMaxQuestions, setInputMaxQuestions] = useState(
     settings.questionCount,
   );
-  const [inputEmail, setInputEmail] = useState();
-  const [inputName, setInputName] = useState();
+  const [inputEmail, setInputEmail] = useState(settings.email);
+  const [inputName, setInputName] = useState(settings.name);
   const [errors, setErrors] = useState({ name: "", email: "" });
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const validateField = (field, val) => {
+    if (!val) return "Povinné pole";
+    if (field === "name" && val.length < 2) return "Min. 2 znaky";
+    if (field === "email" && !validateEmail(val)) return "Neplatný email";
+    return "";
+  };
+
+  useEffect(() => {
+    if (!showNamePrompt) return;
+
+    const nameError = validateField("name", settings.name);
+    const emailError = validateField("email", settings.email);
+    const hasError = !!nameError || !!emailError;
+    const notFilled = !settings.name || !settings.email;
+
+    onValidationChange?.(hasError || notFilled);
+  }, []);
 
   const handleMaxQuestionsKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -46,13 +64,6 @@ function QuizSettings({
   const handleRefresh = () => {
     updateSettings({ questionCount: inputMaxQuestions });
     if (onRefresh) onRefresh();
-  };
-
-  const validateField = (field, val) => {
-    if (!val) return "Povinné pole";
-    if (field === "name" && val.length < 2) return "Min. 2 znaky";
-    if (field === "email" && !validateEmail(val)) return "Neplatný email";
-    return "";
   };
 
   const handleInput = (field, val) => {
@@ -91,9 +102,10 @@ function QuizSettings({
                 Name:
                 <input
                   type="text"
+                  value={inputName}
                   onChange={(e) => handleInput("name", e.target.value)}
                   className="form-control"
-                />
+                  />
                 {errors.name && (
                   <span className="text-danger small">{errors.name}</span>
                 )}
@@ -104,6 +116,7 @@ function QuizSettings({
                 Email:
                 <input
                   type="email"
+                  value={inputEmail}
                   onChange={(e) => handleInput("email", e.target.value)}
                   className="form-control"
                 />
