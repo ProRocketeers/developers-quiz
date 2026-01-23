@@ -1,8 +1,17 @@
+import { useState } from "react";
 import { useQuizSettings } from "../context/QuizContext";
 import "./SummaryList.css";
+import { sendResultsEmail } from "../services/emailService";
 
 function SummaryList({ questions, answers, score, total, passed }) {
   const { settings } = useQuizSettings();
+  const [emailStatus, setEmailStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  const handleSendEmail = async () => {
+    const success = await sendResultsEmail({name: settings.name, score: score, total: total, to: settings.email, questions, answers});
+    setEmailStatus(success ? 'sent' : 'error');
+
+  }
 
   return (
     <div className="summary-list">
@@ -17,6 +26,19 @@ function SummaryList({ questions, answers, score, total, passed }) {
           </div>
           <div>
             <strong>Výsledek:</strong> {passed ? "✓" : "✗"}
+          </div>
+          <div>
+            <span>{emailStatus}</span>
+            <button
+              className="toggle-btn"
+              onClick={handleSendEmail}
+              disabled={emailStatus === 'sending' || !settings.email}
+            >
+              {emailStatus === 'sending' ? 'Odesílám...' :
+              emailStatus === 'sent' ? 'Odesláno ✓' :
+              emailStatus === 'error' ? 'Chyba - zkusit znovu' :
+              'Odeslat email'}
+            </button>
           </div>
         </div>
       </div>
