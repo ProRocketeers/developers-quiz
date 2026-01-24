@@ -186,8 +186,7 @@ const startServer = async () => {
   const vite = isProduction
     ? null
     : await createViteServer({
-        server: { middlewareMode: true },
-        appType: 'custom'
+        server: { middlewareMode: true }
       })
 
   const server = http.createServer(requestHandler(vite))
