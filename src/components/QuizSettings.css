@@ -57,3 +57,15 @@
   background-color: var(--color-primary-hover);
   border-color: var(--color-primary-hover);
 }
+
+.quiz-settings .category-total {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(47, 91, 255, 0.08);
+  color: var(--color-text);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

@@ -1,11 +1,13 @@
-import { useState } from "react";
-import { Badge, Form, ListGroup } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import "./CategoryList.css";
 
 function CategoryList({
   categories,
   onSelectionChange,
   multiSelect = false,
   value,
+  categoryQuestionCounts = {},
+  onCountChange,
 }) {
   const selected = value ?? "";
 
@@ -15,6 +17,13 @@ function CategoryList({
       : [...selected, categoryName];
 
     onSelectionChange?.(newSelected);
+  };
+
+  const handleCountChange = (categoryName, val, maxCount) => {
+    const parsed = Number(val);
+    if (Number.isNaN(parsed)) return;
+    const sanitized = Math.max(0, Math.min(parsed, maxCount));
+    onCountChange?.(categoryName, sanitized);
   };
 
   const handleSelectChange = (e) => {
@@ -36,27 +45,46 @@ function CategoryList({
   }
 
   return (
-    <ListGroup>
-      {categories?.map((category) => (
-        <ListGroup.Item
-          key={category.name}
-          className="d-flex justify-content-between align-items-center"
-          action
-          onClick={() => handleToggle(category.name)}
-        >
-          <Form.Check
-            type="checkbox"
-            checked={selected.includes(category.name)}
-            onChange={() => handleToggle(category.name)}
-            label={category.name}
-            onClick={(e) => e.stopPropagation()}
-          />
-          <Badge bg="secondary" pill>
-            {category.count}
-          </Badge>
-        </ListGroup.Item>
-      ))}
-    </ListGroup>
+    <div className="category-list">
+      {categories?.map((category) => {
+        const isSelected = selected.includes(category.name);
+        const countValue = categoryQuestionCounts[category.name] ?? 0;
+
+        return (
+          <div
+            key={category.name}
+            className={`category-item ${isSelected ? "selected" : ""}`}
+          >
+            <label className="category-info">
+              <input
+                type="checkbox"
+                checked={isSelected}
+                onChange={() => handleToggle(category.name)}
+              />
+              <span className="category-name">{category.name}</span>
+              <span className="category-meta">{category.count} otázek</span>
+            </label>
+            <div className="category-count">
+              <span>Počet</span>
+              <input
+                type="number"
+                min={0}
+                max={category.count}
+                value={countValue}
+                disabled={!isSelected}
+                onChange={(e) =>
+                  handleCountChange(
+                    category.name,
+                    e.target.value,
+                    category.count,
+                  )
+                }
+              />
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
