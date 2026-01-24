@@ -19,7 +19,9 @@ body {
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   min-height: 100vh;
-  color: #fff;
+  color: #1a1449;
+  background: #f5f5f9;
+  line-height: 1.6;
 }
 
 .quiz-header-filter {

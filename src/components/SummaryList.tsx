@@ -5,20 +5,38 @@ import { sendResultsEmail } from "../services/emailService";
 
 function SummaryList({ questions, answers, score, total, passed }) {
   const { settings } = useQuizSettings();
-  const [emailStatus, setEmailStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [emailStatus, setEmailStatus] = useState<
+    "idle" | "sending" | "sent" | "error"
+  >("idle");
 
   const handleSendEmail = async () => {
-    const success = await sendResultsEmail({name: settings.name, score: score, total, passed, to: settings.email, questions, answers, detailed: false});
-    const success2 = await sendResultsEmail({name: settings.name, score: score, total, passed, to: settings.emailForCopy, questions, answers, detailed: true});
-    setEmailStatus(success ? 'sent' : 'error');
-    console.log('email short form sent: ',success)
-    console.log('email detailed form sent: ',success2)
-  }
+    const success = await sendResultsEmail({
+      name: settings.name,
+      score,
+      total,
+      passed,
+      to: settings.email,
+      questions,
+      answers,
+      detailed: false,
+    });
+    await sendResultsEmail({
+      name: settings.name,
+      score,
+      total,
+      passed,
+      to: settings.emailForCopy,
+      questions,
+      answers,
+      detailed: true,
+    });
+    setEmailStatus(success ? "sent" : "error");
+  };
 
   return (
     <div className="summary-list">
       <div className="user-info">
-        <h2>Summary pro {settings.name}</h2>
+        <h2>Souhrn pro {settings.name}</h2>
         <div className="d-flex flex-column gap-2">
           <div>
             <strong>Email:</strong> {settings.email || "Neuvedeno"}
@@ -33,12 +51,15 @@ function SummaryList({ questions, answers, score, total, passed }) {
             <button
               className="toggle-btn"
               onClick={handleSendEmail}
-              disabled={emailStatus === 'sending' || !settings.email}
+              disabled={emailStatus === "sending" || !settings.email}
             >
-              {emailStatus === 'sending' ? 'Odesílám...' :
-              emailStatus === 'sent' ? 'Odesláno ✓' :
-              emailStatus === 'error' ? 'Chyba - zkusit znovu' :
-              'Odeslat email'}
+              {emailStatus === "sending"
+                ? "Odesílám..."
+                : emailStatus === "sent"
+                  ? "Odesláno ✓"
+                  : emailStatus === "error"
+                    ? "Chyba - zkusit znovu"
+                    : "Odeslat email"}
             </button>
           </div>
         </div>
