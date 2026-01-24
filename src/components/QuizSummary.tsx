@@ -1,6 +1,23 @@
 import "./QuizSummary.css";
+import { formatDuration } from "../utils/formatDuration";
 
-function QuizSummary({ score, total, passed, onReset, minimalRequiredScore }) {
+type QuizSummaryProps = {
+  score: number;
+  total: number;
+  passed: boolean;
+  onReset: () => void;
+  minimalRequiredScore: number;
+  totalDurationMs?: number;
+};
+
+function QuizSummary({
+  score,
+  total,
+  passed,
+  onReset,
+  minimalRequiredScore,
+  totalDurationMs,
+}: QuizSummaryProps) {
   return (
     <div className={`quiz-summary ${passed ? "passed" : "failed"}`}>
       <div className="text-end">
@@ -12,6 +29,7 @@ function QuizSummary({ score, total, passed, onReset, minimalRequiredScore }) {
       <div className="score">
         {score} / {total}
       </div>
+      <div className="score-time">Čas: {formatDuration(totalDurationMs)}</div>
       <p className="result-text">
         {passed ? "Congratulations! You passed!" : "Try again!"}
       </p>

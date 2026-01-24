@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import QuizQuestion from "./QuizQuestion";
 import Spinner from "./Spinner";
@@ -20,8 +20,12 @@ function QuizContainer() {
   const { settings } = useQuizSettings();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [questionDurationsMs, setQuestionDurationsMs] = useState<
+    Record<number, number>
+  >({});
   const [timeLeft, setTimeLeft] = useState(QUIZ_TIME);
   const [loading, setLoading] = useState(true);
+  const quizStartedAtRef = useRef<number | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -52,11 +56,23 @@ function QuizContainer() {
       );
       setQuestions(loadedQuestions);
       setAnswers({});
+      setQuestionDurationsMs({});
+      quizStartedAtRef.current = Date.now();
       setLoading(false);
     }, 1000);
   };
 
   const handleAnswerSelect = (questionIndex: number, answerIndex: number) => {
+    setQuestionDurationsMs((prev) => {
+      if (prev[questionIndex] !== undefined) {
+        return prev;
+      }
+      const startTime = quizStartedAtRef.current ?? Date.now();
+      return {
+        ...prev,
+        [questionIndex]: Math.max(0, Date.now() - startTime),
+      };
+    });
     setAnswers((prev) => ({
       ...prev,
       [questionIndex]: answerIndex,
@@ -76,6 +92,9 @@ function QuizContainer() {
 
   const handleSubmit = () => {
     const score = calculateScore();
+    const totalDurationMs = quizStartedAtRef.current
+      ? Math.max(0, Date.now() - quizStartedAtRef.current)
+      : 0;
     const settingsSnapshot = createSettingsSnapshot({
       name: settings.name,
       email: settings.email,
@@ -86,7 +105,7 @@ function QuizContainer() {
       thresholdForSuccess: settings.thresholdForSuccess,
     });
     const entry = createHistoryEntry(
-      { questions, answers, score },
+      { questions, answers, score, totalDurationMs, questionDurationsMs },
       settingsSnapshot,
     );
     addQuizHistoryEntry(entry);
