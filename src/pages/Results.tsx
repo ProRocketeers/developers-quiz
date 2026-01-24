@@ -6,6 +6,7 @@ import type { QuizHistoryEntry } from "../types";
 import "./Results.css";
 import { useQuizSettings } from "../context/QuizContext";
 import { createSettingsSnapshot, loadQuizHistory } from "../utils/quizResults";
+import { formatDuration } from "../utils/formatDuration";
 
 function Results() {
   const navigate = useNavigate();
@@ -46,8 +47,14 @@ function Results() {
 
   const selectedEntry =
     history.find((entry) => entry.id === selectedId) ?? history[0];
-  const { questions, answers, score, settingsSnapshot: selectedSettings } =
-    selectedEntry;
+  const {
+    questions,
+    answers,
+    score,
+    settingsSnapshot: selectedSettings,
+    totalDurationMs,
+    questionDurationsMs,
+  } = selectedEntry;
   const total = questions.length;
   const minimalRequiredScore = Math.ceil(
     selectedSettings.thresholdForSuccess * total,
@@ -60,6 +67,7 @@ function Results() {
         passed={score >= minimalRequiredScore}
         onReset={() => navigate("/quiz")}
         minimalRequiredScore={minimalRequiredScore}
+        totalDurationMs={totalDurationMs}
       />
 
       <div className="results-history">
@@ -85,7 +93,8 @@ function Results() {
                 </div>
                 <div className="history-meta">
                   Skóre {entry.score}/{entryTotal} • Minimum{" "}
-                  {entryMinimalScore}
+                  {entryMinimalScore} • Čas{" "}
+                  {formatDuration(entry.totalDurationMs)}
                 </div>
               </button>
             );
@@ -112,6 +121,8 @@ function Results() {
           userName={selectedSettings.name}
           userEmail={selectedSettings.email}
           emailForCopy={selectedSettings.emailForCopy}
+          totalDurationMs={totalDurationMs}
+          questionDurationsMs={questionDurationsMs}
         />
       )}
     </div>
