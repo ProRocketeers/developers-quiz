@@ -36,6 +36,7 @@ function SummaryList({
     if (!userEmail) {
       return;
     }
+    console.info("Email: start sending results", { to: userEmail });
     onEmailStatusChange("sending");
     const resolvedName = userName || "Neznámý uživatel";
     const primaryResult = await sendResultsEmail({
@@ -50,6 +51,7 @@ function SummaryList({
     });
     let copySuccess = true;
     if (emailForCopy) {
+      console.info("Email: sending copy", { to: emailForCopy });
       const copyResult = await sendResultsEmail({
         name: resolvedName,
         score,
@@ -63,6 +65,11 @@ function SummaryList({
       copySuccess = copyResult.success;
     }
     const isSuccess = primaryResult.success && copySuccess;
+    console.info("Email: send finished", {
+      to: userEmail,
+      status: isSuccess ? "sent" : "error",
+      message: primaryResult.message,
+    });
     onEmailStatusChange(isSuccess ? "sent" : "error");
   };
 

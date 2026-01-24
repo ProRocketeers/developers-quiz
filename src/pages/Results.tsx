@@ -102,6 +102,10 @@ function Results() {
     }
     let isCancelled = false;
     const sendEmail = async () => {
+      console.info("Email: auto-send start", {
+        entryId: selectedEntry.id,
+        to: userEmail,
+      });
       handleEmailStatusChange(selectedEntry.id, "sending");
       const resolvedName =
         selectedEntry.settingsSnapshot.name || "Neznámý uživatel";
@@ -117,6 +121,10 @@ function Results() {
       });
       let copySuccess = true;
       if (selectedEntry.settingsSnapshot.emailForCopy) {
+        console.info("Email: auto-send copy", {
+          entryId: selectedEntry.id,
+          to: selectedEntry.settingsSnapshot.emailForCopy,
+        });
         const copyResult = await sendResultsEmail({
           name: resolvedName,
           score: selectedEntry.score,
@@ -132,6 +140,12 @@ function Results() {
       if (isCancelled) {
         return;
       }
+      console.info("Email: auto-send finished", {
+        entryId: selectedEntry.id,
+        to: userEmail,
+        status: primaryResult.success && copySuccess ? "sent" : "error",
+        message: primaryResult.message,
+      });
       handleEmailStatusChange(
         selectedEntry.id,
         primaryResult.success && copySuccess ? "sent" : "error",
