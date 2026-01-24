@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
+import type { KeyboardEvent } from "react";
 import { getCategoriesWithCount } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
 import "./QuizSettings.css";
@@ -29,9 +30,10 @@ function QuizSettings({
   const [inputName, setInputName] = useState(settings.name);
   const [errors, setErrors] = useState({ name: "", email: "" });
 
-  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const validateField = (field, val) => {
+  const validateField = (field: string, val: string) => {
     if (!val) return "Povinné pole";
     if (field === "name" && val.length < 2) return "Min. 2 znaky";
     if (field === "email" && !validateEmail(val)) return "Neplatný email";
@@ -49,14 +51,13 @@ function QuizSettings({
     onValidationChange?.(hasError || notFilled);
   }, []);
 
-  const handleMaxQuestionsKeyDown = (e) => {
+  const handleMaxQuestionsKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       updateSettings({ questionCount: inputMaxQuestions });
     }
   };
 
-  const handleInputMaxQuestions = (val) => {
-    console.log("green ", val);
+  const handleInputMaxQuestions = (val: number) => {
     setInputMaxQuestions(val);
     updateSettings({ questionCount: val });
   };
@@ -66,7 +67,7 @@ function QuizSettings({
     if (onRefresh) onRefresh();
   };
 
-  const handleInput = (field, val) => {
+  const handleInput = (field: "name" | "email", val: string) => {
     if (field !== "name" && field !== "email") return;
 
     const newError = validateField(field, val);
@@ -84,7 +85,7 @@ function QuizSettings({
     onValidationChange?.(hasError || notFilled);
   };
 
-  const handleCategorySelection = (selected) => {
+  const handleCategorySelection = (selected: string | string[]) => {
     if (Array.isArray(selected)) {
       updateSettings({ selectedCategories: selected });
     } else {
@@ -98,27 +99,29 @@ function QuizSettings({
         {showNamePrompt && (
           <div className="row">
             <div className="col">
-              <label>
-                Name:
+              <label className="field-label">
+                Jméno
                 <input
                   type="text"
                   value={inputName}
                   onChange={(e) => handleInput("name", e.target.value)}
                   className="form-control"
-                  />
+                  placeholder="Např. Jana Nováková"
+                />
                 {errors.name && (
                   <span className="text-danger small">{errors.name}</span>
                 )}
               </label>
             </div>
             <div className="col">
-              <label>
-                Email:
+              <label className="field-label">
+                Email
                 <input
                   type="email"
                   value={inputEmail}
                   onChange={(e) => handleInput("email", e.target.value)}
                   className="form-control"
+                  placeholder="jmeno@firma.cz"
                 />
                 {errors.email && (
                   <span className="text-danger small">{errors.email}</span>
@@ -130,7 +133,7 @@ function QuizSettings({
 
         <div className="row">
           <div className="col">
-            <label>Category:</label>
+            <label className="field-label">Kategorie</label>
             <CategoryList
               categories={categories}
               onSelectionChange={handleCategorySelection}
@@ -144,8 +147,8 @@ function QuizSettings({
           </div>
 
           <div className="col">
-            <label>
-              Max questions:
+            <label className="field-label">
+              Počet otázek
               <input
                 type="number"
                 value={inputMaxQuestions}

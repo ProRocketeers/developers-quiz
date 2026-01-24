@@ -8,7 +8,7 @@ import { useQuizSettings } from "../context/QuizContext";
 
 function Results() {
   const navigate = useNavigate();
-  const {settings} = useQuizSettings();
+  const { settings } = useQuizSettings();
   const [showDetails, setShowDetails] = useState(false);
 
   const saved = sessionStorage.getItem("quizResults");
@@ -27,11 +27,6 @@ function Results() {
   const { questions, answers, score } = JSON.parse(saved) as QuizResults;
   const total = questions.length;
   const minimalRequiredScore = Math.ceil(settings.thresholdForSuccess * total);
-  console.log('min: ', minimalRequiredScore)
-  console.log('min: ', settings.thresholdForSuccess)
-  console.log('min: ', total)
-  console.log(questions[0]?.category);
-
   return (
     <div className="results-page">
       <QuizSummary

@@ -1,13 +1,14 @@
 .header {
-  padding: 2rem 4rem;
+  padding: 1.5rem 3rem;
   margin-bottom: 20px;
-  height: 20vh;
+  min-height: 120px;
   background-color: #1a1449 !important;
   color: #fec82f;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .header-brand {
@@ -19,6 +20,7 @@
 .header-nav {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -40,7 +42,8 @@
 }
 
 .header-logo {
-  height: auto;
+  max-height: 48px;
+  width: auto;
 }
 
 .header-divider {

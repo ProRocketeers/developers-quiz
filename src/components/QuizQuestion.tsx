@@ -21,7 +21,10 @@ function QuizQuestion({
       </h3>
       <div className="options">
         {question.options.map((option, index) => (
-          <label key={index} className="option">
+          <label
+            key={index}
+            className={`option ${selectedAnswer === index ? "selected" : ""}`}
+          >
             <input
               type="radio"
               name={`question-${questionNumber}`}

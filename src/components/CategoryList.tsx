@@ -19,7 +19,6 @@ function CategoryList({
 
   const handleSelectChange = (e) => {
     const value = e.target.value || null;
-    console.log(value);
     onSelectionChange?.(value);
   };
 

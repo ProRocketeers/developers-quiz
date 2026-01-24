@@ -93,7 +93,11 @@ function QuizContainer() {
 
   return (
     <div className="quiz-container">
-      {settings.useTimeLimit ? <span>{timeLeft}</span> : null}
+      {settings.useTimeLimit ? (
+        <div className="quiz-timer" aria-live="polite">
+          ⏱️ Zbývá: {timeLeft}s
+        </div>
+      ) : null}
 
       <QuizSettings
         showRefresh={true}

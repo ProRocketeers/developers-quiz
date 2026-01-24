@@ -14,22 +14,33 @@ function Home() {
   return (
     <div className="home">
       <h2>Vítejte v Java Developers Quiz</h2>
-      <p>Otestujte své znalosti z Java ekosystému.</p>
+      <p>Otestujte své znalosti z Java ekosystému a získejte rychlou zpětnou vazbu.</p>
 
-      <div className="d-flex justify-content-center">
-        <QuizSettings
-          showRefresh={false}
-          showNamePrompt={true}
-          onValidationChange={setHasErrors}
-        />
+      <div className="home-card">
+        <div className="home-card-header">
+          <h3>Nastavení quizu</h3>
+          <p>Zvolte oblast, počet otázek a vyplňte kontaktní údaje pro výsledky.</p>
+        </div>
+        <div className="d-flex justify-content-center">
+          <QuizSettings
+            showRefresh={false}
+            showNamePrompt={true}
+            onValidationChange={setHasErrors}
+          />
+        </div>
+        <div className="home-actions">
+          <button
+            className="start-btn"
+            onClick={handleStartQuiz}
+            disabled={hasErrors}
+          >
+            Spustit Quiz
+          </button>
+          <span className="home-hint">
+            Vyplňte jméno a email, aby bylo možné spustit quiz.
+          </span>
+        </div>
       </div>
-      <button
-        className="start-btn"
-        onClick={handleStartQuiz}
-        disabled={hasErrors}
-      >
-        Spustit Quiz
-      </button>
     </div>
   );
 }
