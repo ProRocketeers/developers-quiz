@@ -36,6 +36,7 @@ export function getQuestions(
   count: number,
   useMock = true,
   selectedCategories: string | string[] | null = null,
+  categoryQuestionCounts: Record<string, number> = {},
 ): Question[] {
   const source = useMock ? mockQuestions : realQuestions;
   let filtered = source;
@@ -46,6 +47,19 @@ export function getQuestions(
     filtered = categoryList
       ? source.filter((q) => categoryList.includes(q.category))
       : source;
+
+    const hasCategoryCounts = Object.keys(categoryQuestionCounts).length > 0;
+    if (hasCategoryCounts) {
+      const perCategory = categoryList.flatMap((category) => {
+        const available = source.filter((q) => q.category === category);
+        const desired = Math.min(
+          categoryQuestionCounts[category] ?? 0,
+          available.length,
+        );
+        return selectRandomQuestions(available as Question[], desired);
+      });
+      return shuffleArray(perCategory);
+    }
   }
   return selectRandomQuestions(filtered as Question[], count);
 }

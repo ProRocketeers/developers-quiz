@@ -29,6 +29,7 @@ function QuizSettings({
   const [inputEmail, setInputEmail] = useState(settings.email);
   const [inputName, setInputName] = useState(settings.name);
   const [errors, setErrors] = useState({ name: "", email: "" });
+  const categoryQuestionCounts = settings.categoryQuestionCounts ?? {};
 
   const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -87,11 +88,53 @@ function QuizSettings({
 
   const handleCategorySelection = (selected: string | string[]) => {
     if (Array.isArray(selected)) {
-      updateSettings({ selectedCategories: selected });
+      const nextCounts = { ...categoryQuestionCounts };
+      selected.forEach((category) => {
+        if (nextCounts[category] == null) {
+          nextCounts[category] = 1;
+        }
+      });
+      Object.keys(nextCounts).forEach((category) => {
+        if (!selected.includes(category)) {
+          delete nextCounts[category];
+        }
+      });
+      const total = selected.reduce(
+        (sum, category) => sum + (nextCounts[category] ?? 0),
+        0,
+      );
+      updateSettings({
+        selectedCategories: selected,
+        categoryQuestionCounts: nextCounts,
+        questionCount: total,
+      });
     } else {
       updateSettings({ category: selected });
     }
   };
+
+  const handleCategoryCountChange = (category: string, val: number) => {
+    const sanitized = Math.max(0, Math.floor(val));
+    const nextCounts = {
+      ...categoryQuestionCounts,
+      [category]: sanitized,
+    };
+    const total = settings.selectedCategories.reduce(
+      (sum, categoryName) => sum + (nextCounts[categoryName] ?? 0),
+      0,
+    );
+    updateSettings({
+      categoryQuestionCounts: nextCounts,
+      questionCount: total,
+    });
+  };
+
+  const totalQuestions = settings.multiSelect
+    ? settings.selectedCategories.reduce(
+        (sum, category) => sum + (categoryQuestionCounts[category] ?? 0),
+        0,
+      )
+    : inputMaxQuestions;
 
   return (
     <div className="quiz-settings">
@@ -143,24 +186,33 @@ function QuizSettings({
                   ? settings.selectedCategories
                   : settings.category
               }
+              categoryQuestionCounts={categoryQuestionCounts}
+              onCountChange={handleCategoryCountChange}
             />
+            {settings.multiSelect && (
+              <div className="category-total">
+                Celkem otázek: <strong>{totalQuestions}</strong>
+              </div>
+            )}
           </div>
 
-          <div className="col">
-            <label className="field-label">
-              Počet otázek
-              <input
-                type="number"
-                value={inputMaxQuestions}
-                onChange={(e) =>
-                  handleInputMaxQuestions(Number(e.target.value))
-                }
-                onKeyDown={handleMaxQuestionsKeyDown}
-                min={1}
-                className="form-control"
-              />
-            </label>
-          </div>
+          {!settings.multiSelect && (
+            <div className="col">
+              <label className="field-label">
+                Počet otázek
+                <input
+                  type="number"
+                  value={inputMaxQuestions}
+                  onChange={(e) =>
+                    handleInputMaxQuestions(Number(e.target.value))
+                  }
+                  onKeyDown={handleMaxQuestionsKeyDown}
+                  min={1}
+                  className="form-control"
+                />
+              </label>
+            </div>
+          )}
         </div>
         <div className="row">
           <div className="col">

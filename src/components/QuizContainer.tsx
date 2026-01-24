@@ -43,6 +43,7 @@ function QuizContainer() {
         settings.questionCount,
         settings.useMock,
         settings.multiSelect ? settings.selectedCategories : settings.category,
+        settings.categoryQuestionCounts ?? {},
       );
       setQuestions(loadedQuestions);
       setAnswers({});

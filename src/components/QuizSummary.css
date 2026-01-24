@@ -4,11 +4,12 @@
   margin: 50px auto;
   padding: 40px;
   text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(26, 20, 73, 0.15);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
   gap: 12px;
+  border: 1px solid var(--color-border);
 }
 
 .threshold-badge {
@@ -24,13 +25,13 @@
 }
 
 .quiz-summary.passed {
-  background-color: #d4edda;
-  border: 2px solid #28a745;
+  background-color: rgba(47, 158, 68, 0.12);
+  border: 2px solid rgba(47, 158, 68, 0.5);
 }
 
 .quiz-summary.failed {
-  background-color: #f8d7da;
-  border: 2px solid #dc3545;
+  background-color: rgba(224, 49, 49, 0.1);
+  border: 2px solid rgba(224, 49, 49, 0.5);
 }
 
 .quiz-summary h2 {
@@ -44,11 +45,11 @@
 }
 
 .passed .score {
-  color: #28a745;
+  color: var(--color-success);
 }
 
 .failed .score {
-  color: #dc3545;
+  color: var(--color-danger);
 }
 
 .result-text {
@@ -58,17 +59,17 @@
 
 .reset-btn {
   padding: 12px 24px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--color-primary);
+  color: #ffffff;
   border: none;
-  border-radius: 4px;
+  border-radius: 999px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .reset-btn:hover {
-  background-color: #0056b3;
+  background-color: var(--color-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 10px 16px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 10px 20px rgba(47, 91, 255, 0.3);
 }

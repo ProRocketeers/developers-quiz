@@ -2,9 +2,15 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: radial-gradient(
+      circle at top,
+      rgba(47, 91, 255, 0.08),
+      transparent 55%
+    ),
+    var(--color-background);
 }
 
 .main {
   flex: 1;
-  padding: 20px;
+  padding: clamp(20px, 4vw, 40px) clamp(16px, 6vw, 80px);
 }
