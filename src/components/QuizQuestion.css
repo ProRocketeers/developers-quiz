@@ -1,14 +1,15 @@
 .quiz-question {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 24px;
   margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
 }
 
 .question-title {
   margin-bottom: 16px;
-  color: #333;
+  color: var(--color-text);
 }
 
 .options {
@@ -21,25 +22,28 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s,
+    transform 0.2s;
+  background-color: #fafbff;
 }
 
 .option:hover {
-  background-color: #f0f0f0;
+  background-color: #f1f4ff;
+  transform: translateY(-1px);
 }
 
 .option.selected {
-  background-color: rgba(76, 175, 80, 0.12);
-  border-color: #4caf50;
-  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+  background-color: rgba(47, 91, 255, 0.12);
+  border-color: rgba(47, 91, 255, 0.6);
+  box-shadow: 0 0 0 2px rgba(47, 91, 255, 0.15);
 }
 
 .option input[type="radio"]:focus-visible + .option-text {
-  outline: 2px solid rgba(26, 20, 73, 0.35);
+  outline: 2px solid rgba(47, 91, 255, 0.35);
   outline-offset: 4px;
   border-radius: 4px;
 }

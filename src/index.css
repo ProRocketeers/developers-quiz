@@ -4,6 +4,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light;
+  --color-primary: #2f5bff;
+  --color-primary-hover: #2346c7;
+  --color-accent: #f5c542;
+  --color-success: #2f9e44;
+  --color-danger: #e03131;
+  --color-surface: #ffffff;
+  --color-background: #f6f7fb;
+  --color-text: #1f2233;
+  --color-muted: #5f6172;
+  --color-border: #e3e6f1;
+  --shadow-sm: 0 4px 12px rgba(31, 34, 51, 0.08);
+  --shadow-md: 0 12px 32px rgba(31, 34, 51, 0.12);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -16,12 +35,43 @@
 
 body {
   font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   min-height: 100vh;
-  color: #1a1449;
-  background: #f5f5f9;
+  color: var(--color-text);
+  background: var(--color-background);
   line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(47, 91, 255, 0.35);
+  outline-offset: 2px;
 }
 
 .quiz-header-filter {
@@ -31,5 +81,4 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  /* background-color: white; */
 }
