@@ -1,12 +1,17 @@
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import QuizSummary from "../components/QuizSummary";
 import SummaryList from "../components/SummaryList";
 import type { QuizHistoryEntry } from "../types";
 import "./Results.css";
 import { useQuizSettings } from "../context/QuizContext";
-import { createSettingsSnapshot, loadQuizHistory } from "../utils/quizResults";
+import {
+  createSettingsSnapshot,
+  loadQuizHistory,
+  saveQuizHistory,
+} from "../utils/quizResults";
 import { formatDuration } from "../utils/formatDuration";
+import { sendResultsEmail } from "../services/emailService";
 
 function Results() {
   const navigate = useNavigate();
@@ -28,10 +33,13 @@ function Results() {
     [settings],
   );
 
-  const history = useMemo(
-    () => loadQuizHistory(settingsSnapshot),
-    [settingsSnapshot],
+  const [history, setHistory] = useState<QuizHistoryEntry[]>(() =>
+    loadQuizHistory(settingsSnapshot),
   );
+
+  useEffect(() => {
+    setHistory(loadQuizHistory(settingsSnapshot));
+  }, [settingsSnapshot]);
 
   if (history.length === 0) {
     return (
@@ -67,6 +75,98 @@ function Results() {
         : [...prev, entryId],
     );
   };
+
+  const handleEmailStatusChange = useCallback(
+    (entryId: string, status: QuizHistoryEntry["emailStatus"]) => {
+      setHistory((prev) => {
+        const next = prev.map((entry) =>
+          entry.id === entryId ? { ...entry, emailStatus: status } : entry,
+        );
+        saveQuizHistory(next);
+        return next;
+      });
+    },
+    [],
+  );
+
+  useEffect(() => {
+    if (!selectedEntry) {
+      return;
+    }
+    if (selectedEntry.emailStatus !== "idle") {
+      return;
+    }
+    const userEmail = selectedEntry.settingsSnapshot.email;
+    if (!userEmail) {
+      return;
+    }
+    let isCancelled = false;
+    const sendEmail = async () => {
+      console.info("Email: auto-send start", {
+        entryId: selectedEntry.id,
+        to: userEmail,
+      });
+      handleEmailStatusChange(selectedEntry.id, "sending");
+      const resolvedName =
+        selectedEntry.settingsSnapshot.name || "Neznámý uživatel";
+      const primaryResult = await sendResultsEmail({
+        name: resolvedName,
+        score: selectedEntry.score,
+        total: selectedEntry.questions.length,
+        passed: selectedEntry.score >= minimalRequiredScore,
+        to: userEmail,
+        questions: selectedEntry.questions,
+        answers: selectedEntry.answers,
+        detailed: false,
+      });
+      let copySuccess = true;
+      if (selectedEntry.settingsSnapshot.emailForCopy) {
+        console.info("Email: auto-send copy", {
+          entryId: selectedEntry.id,
+          to: selectedEntry.settingsSnapshot.emailForCopy,
+        });
+        const copyResult = await sendResultsEmail({
+          name: resolvedName,
+          score: selectedEntry.score,
+          total: selectedEntry.questions.length,
+          passed: selectedEntry.score >= minimalRequiredScore,
+          to: selectedEntry.settingsSnapshot.emailForCopy,
+          questions: selectedEntry.questions,
+          answers: selectedEntry.answers,
+          detailed: true,
+        });
+        copySuccess = copyResult.success;
+      }
+      if (isCancelled) {
+        return;
+      }
+      console.info("Email: auto-send finished", {
+        entryId: selectedEntry.id,
+        to: userEmail,
+        status: primaryResult.success && copySuccess ? "sent" : "error",
+        message: primaryResult.message,
+      });
+      handleEmailStatusChange(
+        selectedEntry.id,
+        primaryResult.success && copySuccess ? "sent" : "error",
+      );
+    };
+    void sendEmail();
+    return () => {
+      isCancelled = true;
+    };
+  }, [
+    handleEmailStatusChange,
+    minimalRequiredScore,
+    selectedEntry,
+    selectedEntry?.answers,
+    selectedEntry?.emailStatus,
+    selectedEntry?.questions,
+    selectedEntry?.score,
+    selectedEntry?.settingsSnapshot.email,
+    selectedEntry?.settingsSnapshot.emailForCopy,
+    selectedEntry?.settingsSnapshot.name,
+  ]);
 
   return (
     <div className="results-page">
@@ -128,6 +228,10 @@ function Results() {
                       userName={entry.settingsSnapshot.name}
                       userEmail={entry.settingsSnapshot.email}
                       emailForCopy={entry.settingsSnapshot.emailForCopy}
+                      emailStatus={entry.emailStatus ?? "idle"}
+                      onEmailStatusChange={(status) =>
+                        handleEmailStatusChange(entry.id, status)
+                      }
                       totalDurationMs={entry.totalDurationMs}
                       questionDurationsMs={entry.questionDurationsMs}
                     />

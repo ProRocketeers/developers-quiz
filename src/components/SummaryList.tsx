@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./SummaryList.css";
 import { sendResultsEmail } from "../services/emailService";
 import type { Question } from "../types";
@@ -13,6 +12,8 @@ type SummaryListProps = {
   userName: string | null;
   userEmail: string | null;
   emailForCopy: string | null;
+  emailStatus: "idle" | "sending" | "sent" | "error";
+  onEmailStatusChange: (status: "idle" | "sending" | "sent" | "error") => void;
   totalDurationMs?: number;
   questionDurationsMs?: Record<number, number>;
 };
@@ -26,19 +27,19 @@ function SummaryList({
   userName,
   userEmail,
   emailForCopy,
+  emailStatus,
+  onEmailStatusChange,
   totalDurationMs,
   questionDurationsMs,
 }: SummaryListProps) {
-  const [emailStatus, setEmailStatus] = useState<
-    "idle" | "sending" | "sent" | "error"
-  >("idle");
-
   const handleSendEmail = async () => {
     if (!userEmail) {
       return;
     }
+    console.info("Email: start sending results", { to: userEmail });
+    onEmailStatusChange("sending");
     const resolvedName = userName || "Neznámý uživatel";
-    const success = await sendResultsEmail({
+    const primaryResult = await sendResultsEmail({
       name: resolvedName,
       score,
       total,
@@ -48,8 +49,10 @@ function SummaryList({
       answers,
       detailed: false,
     });
+    let copySuccess = true;
     if (emailForCopy) {
-      await sendResultsEmail({
+      console.info("Email: sending copy", { to: emailForCopy });
+      const copyResult = await sendResultsEmail({
         name: resolvedName,
         score,
         total,
@@ -59,9 +62,25 @@ function SummaryList({
         answers,
         detailed: true,
       });
+      copySuccess = copyResult.success;
     }
-    setEmailStatus(success ? "sent" : "error");
+    const isSuccess = primaryResult.success && copySuccess;
+    console.info("Email: send finished", {
+      to: userEmail,
+      status: isSuccess ? "sent" : "error",
+      message: primaryResult.message,
+    });
+    onEmailStatusChange(isSuccess ? "sent" : "error");
   };
+
+  const emailStatusLabel =
+    emailStatus === "sending"
+      ? "Odesílám..."
+      : emailStatus === "sent"
+        ? "Odesláno"
+        : emailStatus === "error"
+          ? "Odeslání selhalo"
+          : "Neodesláno";
 
   return (
     <div className="summary-list">
@@ -70,6 +89,9 @@ function SummaryList({
         <div className="d-flex flex-column gap-2">
           <div>
             <strong>Email:</strong> {userEmail || "Neuvedeno"}
+          </div>
+          <div>
+            <strong>Stav emailu:</strong> {emailStatusLabel}
           </div>
           <div>
             <strong>Skóre:</strong> {score}/{total}
