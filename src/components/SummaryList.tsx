@@ -1,45 +1,70 @@
 import { useState } from "react";
-import { useQuizSettings } from "../context/QuizContext";
 import "./SummaryList.css";
 import { sendResultsEmail } from "../services/emailService";
+import type { Question } from "../types";
 
-function SummaryList({ questions, answers, score, total, passed }) {
-  const { settings } = useQuizSettings();
+type SummaryListProps = {
+  questions: Question[];
+  answers: Record<number, number>;
+  score: number;
+  total: number;
+  passed: boolean;
+  userName: string | null;
+  userEmail: string | null;
+  emailForCopy: string | null;
+};
+
+function SummaryList({
+  questions,
+  answers,
+  score,
+  total,
+  passed,
+  userName,
+  userEmail,
+  emailForCopy,
+}: SummaryListProps) {
   const [emailStatus, setEmailStatus] = useState<
     "idle" | "sending" | "sent" | "error"
   >("idle");
 
   const handleSendEmail = async () => {
+    if (!userEmail) {
+      return;
+    }
+    const resolvedName = userName || "Neznámý uživatel";
     const success = await sendResultsEmail({
-      name: settings.name,
+      name: resolvedName,
       score,
       total,
       passed,
-      to: settings.email,
+      to: userEmail,
       questions,
       answers,
       detailed: false,
     });
-    await sendResultsEmail({
-      name: settings.name,
-      score,
-      total,
-      passed,
-      to: settings.emailForCopy,
-      questions,
-      answers,
-      detailed: true,
-    });
+    if (emailForCopy) {
+      await sendResultsEmail({
+        name: resolvedName,
+        score,
+        total,
+        passed,
+        to: emailForCopy,
+        questions,
+        answers,
+        detailed: true,
+      });
+    }
     setEmailStatus(success ? "sent" : "error");
   };
 
   return (
     <div className="summary-list">
       <div className="user-info">
-        <h2>Souhrn pro {settings.name}</h2>
+        <h2>Souhrn pro {userName || "Neznámý uživatel"}</h2>
         <div className="d-flex flex-column gap-2">
           <div>
-            <strong>Email:</strong> {settings.email || "Neuvedeno"}
+            <strong>Email:</strong> {userEmail || "Neuvedeno"}
           </div>
           <div>
             <strong>Skóre:</strong> {score}/{total}
@@ -51,7 +76,7 @@ function SummaryList({ questions, answers, score, total, passed }) {
             <button
               className="toggle-btn"
               onClick={handleSendEmail}
-              disabled={emailStatus === "sending" || !settings.email}
+              disabled={emailStatus === "sending" || !userEmail}
             >
               {emailStatus === "sending"
                 ? "Odesílám..."
