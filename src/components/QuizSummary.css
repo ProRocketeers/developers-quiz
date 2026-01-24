@@ -44,6 +44,13 @@
   margin-bottom: 16px;
 }
 
+.score-time {
+  font-size: 16px;
+  color: var(--color-muted);
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
 .passed .score {
   color: var(--color-success);
 }

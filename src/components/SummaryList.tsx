@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./SummaryList.css";
 import { sendResultsEmail } from "../services/emailService";
 import type { Question } from "../types";
+import { formatDuration } from "../utils/formatDuration";
 
 type SummaryListProps = {
   questions: Question[];
@@ -12,6 +13,8 @@ type SummaryListProps = {
   userName: string | null;
   userEmail: string | null;
   emailForCopy: string | null;
+  totalDurationMs?: number;
+  questionDurationsMs?: Record<number, number>;
 };
 
 function SummaryList({
@@ -23,6 +26,8 @@ function SummaryList({
   userName,
   userEmail,
   emailForCopy,
+  totalDurationMs,
+  questionDurationsMs,
 }: SummaryListProps) {
   const [emailStatus, setEmailStatus] = useState<
     "idle" | "sending" | "sent" | "error"
@@ -73,6 +78,9 @@ function SummaryList({
             <strong>Výsledek:</strong> {passed ? "✓" : "✗"}
           </div>
           <div>
+            <strong>Celkový čas:</strong> {formatDuration(totalDurationMs)}
+          </div>
+          <div>
             <button
               className="toggle-btn"
               onClick={handleSendEmail}
@@ -93,12 +101,16 @@ function SummaryList({
       {questions.map((q, qIndex) => {
         const userAnswer = answers[qIndex];
         const isCorrect = userAnswer === q.correctAnswer;
+        const questionDuration = questionDurationsMs?.[qIndex];
 
         return (
           <div key={qIndex} className="summary-item">
             <div className="summary-question">
               <span className="question-number">{qIndex + 1}.</span>
               {q.question}
+              <span className="question-time">
+                ⏱️ {formatDuration(questionDuration)}
+              </span>
             </div>
             <div className="summary-options">
               {q.options.map((option, oIndex) => {

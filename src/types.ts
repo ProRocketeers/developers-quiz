@@ -16,6 +16,8 @@ export interface QuizResults {
   questions: Question[];
   answers: Record<number, number>;
   score: number;
+  totalDurationMs?: number;
+  questionDurationsMs?: Record<number, number>;
 }
 
 export interface QuizSettingsSnapshot {
