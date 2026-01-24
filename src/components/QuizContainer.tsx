@@ -7,6 +7,11 @@ import "./QuizContainer.css";
 import { getQuestions } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
 import type { Question } from "../types";
+import {
+  addQuizHistoryEntry,
+  createHistoryEntry,
+  createSettingsSnapshot,
+} from "../utils/quizResults";
 
 const QUIZ_TIME = 10;
 
@@ -71,10 +76,20 @@ function QuizContainer() {
 
   const handleSubmit = () => {
     const score = calculateScore();
-    sessionStorage.setItem(
-      "quizResults",
-      JSON.stringify({ questions, answers, score }),
+    const settingsSnapshot = createSettingsSnapshot({
+      name: settings.name,
+      email: settings.email,
+      emailForCopy: settings.emailForCopy,
+      category: settings.category,
+      selectedCategories: settings.selectedCategories,
+      questionCount: settings.questionCount,
+      thresholdForSuccess: settings.thresholdForSuccess,
+    });
+    const entry = createHistoryEntry(
+      { questions, answers, score },
+      settingsSnapshot,
     );
+    addQuizHistoryEntry(entry);
     navigate("/results");
   };
 

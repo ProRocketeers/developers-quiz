@@ -17,3 +17,19 @@ export interface QuizResults {
   answers: Record<number, number>;
   score: number;
 }
+
+export interface QuizSettingsSnapshot {
+  name: string | null;
+  email: string | null;
+  emailForCopy: string | null;
+  category: string | null;
+  selectedCategories: string[];
+  questionCount: number;
+  thresholdForSuccess: number;
+}
+
+export interface QuizHistoryEntry extends QuizResults {
+  id: string;
+  createdAt: string;
+  settingsSnapshot: QuizSettingsSnapshot;
+}
