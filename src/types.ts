@@ -34,4 +34,5 @@ export interface QuizHistoryEntry extends QuizResults {
   id: string;
   createdAt: string;
   settingsSnapshot: QuizSettingsSnapshot;
+  emailStatus?: "idle" | "sending" | "sent" | "error";
 }

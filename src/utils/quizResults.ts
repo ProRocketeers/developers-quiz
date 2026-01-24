@@ -29,6 +29,7 @@ export const createHistoryEntry = (
   id: createId(),
   createdAt: new Date().toISOString(),
   settingsSnapshot,
+  emailStatus: "idle",
   ...results,
 });
 
@@ -89,6 +90,18 @@ export const addQuizHistoryEntry = (
 ): QuizHistoryEntry[] => {
   const history = loadQuizHistory();
   const next = [entry, ...history];
+  saveQuizHistory(next);
+  return next;
+};
+
+export const updateQuizHistoryEntryEmailStatus = (
+  entryId: string,
+  emailStatus: QuizHistoryEntry["emailStatus"],
+): QuizHistoryEntry[] => {
+  const history = loadQuizHistory();
+  const next = history.map((entry) =>
+    entry.id === entryId ? { ...entry, emailStatus } : entry,
+  );
   saveQuizHistory(next);
   return next;
 };
