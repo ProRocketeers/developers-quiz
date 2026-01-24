@@ -13,7 +13,25 @@ interface EmailData {
   answers?: Record<number, number>
 }
 
-export async function sendResultsEmail(data: EmailData): Promise<boolean> {
+type EmailResponse = {
+  success: boolean
+  message?: string
+}
+
+const parseResponseBody = (body: string) => {
+  if (!body) {
+    return null
+  }
+  try {
+    return JSON.parse(body) as { message?: string; error?: string }
+  } catch {
+    return null
+  }
+}
+
+export async function sendResultsEmail(
+  data: EmailData
+): Promise<EmailResponse> {
   try {
     const response = await fetch(`${API_BASE_URL}/api/send-email`, {
       method: 'POST',
@@ -21,22 +39,23 @@ export async function sendResultsEmail(data: EmailData): Promise<boolean> {
       body: JSON.stringify(data)
     })
 
-    const result = await response.json()
+    const responseBody = await response.text()
+    const result = parseResponseBody(responseBody)
 
     if (response.ok) {
-      console.log('Email sent:', result.message)
-      return true
+      console.log('Email sent:', result?.message ?? 'Email sent')
+      return { success: true, message: result?.message }
     }
 
     if (response.status === 400) {
-      console.error('Bad request:', result.error)
-      return false
+      console.error('Bad request:', result?.error ?? 'Bad request')
+      return { success: false, message: result?.error ?? 'Bad request' }
     }
 
-    console.error('Server error:', result.error)
-    return false
+    console.error('Server error:', result?.error ?? 'Server error')
+    return { success: false, message: result?.error ?? 'Server error' }
   } catch (error) {
     console.error('Failed to connect:', error)
-    return false
+    return { success: false, message: 'Failed to connect' }
   }
 }
