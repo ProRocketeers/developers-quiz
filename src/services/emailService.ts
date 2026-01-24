@@ -1,6 +1,6 @@
 import type { Question } from '../types'
 
-const API_URL = 'http://localhost:3001'
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
 
 interface EmailData {
   to: string
@@ -15,7 +15,7 @@ interface EmailData {
 
 export async function sendResultsEmail(data: EmailData): Promise<boolean> {
   try {
-    const response = await fetch(`${API_URL}/api/send-email`, {
+    const response = await fetch(`${API_BASE_URL}/api/send-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
