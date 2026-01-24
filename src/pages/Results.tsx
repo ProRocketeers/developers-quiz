@@ -11,8 +11,8 @@ import { formatDuration } from "../utils/formatDuration";
 function Results() {
   const navigate = useNavigate();
   const { settings } = useQuizSettings();
-  const [showDetails, setShowDetails] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [expandedIds, setExpandedIds] = useState<string[]>([]);
 
   const settingsSnapshot = useMemo(
     () =>
@@ -59,6 +59,15 @@ function Results() {
   const minimalRequiredScore = Math.ceil(
     selectedSettings.thresholdForSuccess * total,
   );
+
+  const toggleDetails = (entryId: string) => {
+    setExpandedIds((prev) =>
+      prev.includes(entryId)
+        ? prev.filter((id) => id !== entryId)
+        : [...prev, entryId],
+    );
+  };
+
   return (
     <div className="results-page">
       <QuizSummary
@@ -79,52 +88,56 @@ function Results() {
               entry.settingsSnapshot.thresholdForSuccess * entryTotal,
             );
             const isActive = entry.id === selectedEntry.id;
+            const isExpanded = expandedIds.includes(entry.id);
             return (
-              <button
+              <div
                 key={entry.id}
                 className={`history-item ${isActive ? "active" : ""}`}
-                onClick={() => {
-                  setSelectedId(entry.id);
-                  setShowDetails(false);
-                }}
               >
-                <div className="history-title">
-                  {new Date(entry.createdAt).toLocaleString("cs-CZ")}
+                <div className="history-item-header">
+                  <button
+                    className="history-item-button"
+                    onClick={() => {
+                      setSelectedId(entry.id);
+                    }}
+                  >
+                    <div className="history-title">
+                      {new Date(entry.createdAt).toLocaleString("cs-CZ")}
+                    </div>
+                    <div className="history-meta">
+                      Skóre {entry.score}/{entryTotal} • Minimum{" "}
+                      {entryMinimalScore} • Čas{" "}
+                      {formatDuration(entry.totalDurationMs)}
+                    </div>
+                  </button>
+                  <button
+                    className="toggle-btn history-toggle"
+                    onClick={() => toggleDetails(entry.id)}
+                  >
+                    {isExpanded ? "Hide Details" : "Show Details"}
+                  </button>
                 </div>
-                <div className="history-meta">
-                  Skóre {entry.score}/{entryTotal} • Minimum{" "}
-                  {entryMinimalScore} • Čas{" "}
-                  {formatDuration(entry.totalDurationMs)}
-                </div>
-              </button>
+                {isExpanded && (
+                  <div className="history-details">
+                    <SummaryList
+                      questions={entry.questions}
+                      answers={entry.answers}
+                      score={entry.score}
+                      total={entryTotal}
+                      passed={entry.score >= entryMinimalScore}
+                      userName={entry.settingsSnapshot.name}
+                      userEmail={entry.settingsSnapshot.email}
+                      emailForCopy={entry.settingsSnapshot.emailForCopy}
+                      totalDurationMs={entry.totalDurationMs}
+                      questionDurationsMs={entry.questionDurationsMs}
+                    />
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
       </div>
-
-      <div className="summary-details-toggle">
-        <button
-          className="toggle-btn"
-          onClick={() => setShowDetails(!showDetails)}
-        >
-          {showDetails ? "Hide Details" : "Show Details"}
-        </button>
-      </div>
-
-      {showDetails && (
-        <SummaryList
-          questions={questions}
-          answers={answers}
-          score={score}
-          total={total}
-          passed={score >= minimalRequiredScore}
-          userName={selectedSettings.name}
-          userEmail={selectedSettings.email}
-          emailForCopy={selectedSettings.emailForCopy}
-          totalDurationMs={totalDurationMs}
-          questionDurationsMs={questionDurationsMs}
-        />
-      )}
     </div>
   );
 }
