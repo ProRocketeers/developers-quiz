@@ -18,6 +18,7 @@ const QUIZ_TIME = 10;
 function QuizContainer() {
   const navigate = useNavigate();
   const { settings } = useQuizSettings();
+  const [showSettings, setShowSettings] = useState(false);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [questionDurationsMs, setQuestionDurationsMs] = useState<
@@ -134,11 +135,26 @@ function QuizContainer() {
         </div>
       ) : null}
 
-      <QuizSettings
-        showRefresh={true}
-        onRefresh={handleRefresh}
-        showNamePrompt={false}
-      />
+      <div className="quiz-settings-toggle">
+        <button
+          className="toggle-btn"
+          onClick={() => setShowSettings((prev) => !prev)}
+          aria-expanded={showSettings}
+          aria-controls="quiz-settings-panel"
+        >
+          {showSettings ? "Skrýt nastavení" : "Ukázat nastavení"}
+        </button>
+      </div>
+
+      {showSettings && (
+        <div id="quiz-settings-panel">
+          <QuizSettings
+            showRefresh={true}
+            onRefresh={handleRefresh}
+            showNamePrompt={false}
+          />
+        </div>
+      )}
 
       {questions.map((q, index) => (
         <QuizQuestion
