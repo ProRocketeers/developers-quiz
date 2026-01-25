@@ -20,6 +20,22 @@
   font-weight: 600;
 }
 
+.quiz-settings .consent-label {
+  margin-top: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.quiz-settings .consent-label input[type="checkbox"] {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
 .quiz-settings select,
 .quiz-settings input {
   padding: 10px 12px;

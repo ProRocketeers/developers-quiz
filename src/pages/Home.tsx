@@ -37,7 +37,7 @@ function Home() {
             Spustit Quiz
           </button>
           <span className="home-hint">
-            Vyplňte jméno a email, aby bylo možné spustit quiz.
+            Vyplňte jméno, email a potvrďte souhlas se zpracováním údajů.
           </span>
         </div>
       </div>
