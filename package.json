@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "NODE_ENV=production node server/index.js",
     "format": "prettier --write",
-    "start": "NODE_ENV=production node server/index.js"
+    "start": "NODE_ENV=production node server/index.js",
+    "questions:to-json": "node scripts/questions-convert.js --to-json --input questions.md --output src/data/questions.json",
+    "questions:to-md": "node scripts/questions-convert.js --to-md --input src/data/questions.json --output questions.md"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
