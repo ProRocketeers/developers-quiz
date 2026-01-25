@@ -28,6 +28,9 @@ function QuizSettings({
   );
   const [inputEmail, setInputEmail] = useState(settings.email);
   const [inputName, setInputName] = useState(settings.name);
+  const [consentGiven, setConsentGiven] = useState(
+    settings.consentToEmailResults ?? false,
+  );
   const [errors, setErrors] = useState({ name: "", email: "" });
   const categoryQuestionCounts = settings.categoryQuestionCounts ?? {};
 
@@ -48,8 +51,9 @@ function QuizSettings({
     const emailError = validateField("email", settings.email);
     const hasError = !!nameError || !!emailError;
     const notFilled = !settings.name || !settings.email;
+    const consentMissing = !settings.consentToEmailResults;
 
-    onValidationChange?.(hasError || notFilled);
+    onValidationChange?.(hasError || notFilled || consentMissing);
   }, []);
 
   const handleMaxQuestionsKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -78,12 +82,28 @@ function QuizSettings({
     const currentName = field === "name" ? val : inputName;
     const currentEmail = field === "email" ? val : inputEmail;
     const notFilled = !currentName || !currentEmail;
+    const consentMissing = !consentGiven;
 
     const setters = { name: setInputName, email: setInputEmail };
     setters[field](val);
     updateSettings({ [field]: val });
 
-    onValidationChange?.(hasError || notFilled);
+    onValidationChange?.(hasError || notFilled || consentMissing);
+  };
+
+  const handleConsentChange = (checked: boolean) => {
+    setConsentGiven(checked);
+    updateSettings({ consentToEmailResults: checked });
+
+    if (!showNamePrompt) return;
+
+    const nameError = validateField("name", inputName);
+    const emailError = validateField("email", inputEmail);
+    const hasError = !!nameError || !!emailError;
+    const notFilled = !inputName || !inputEmail;
+    const consentMissing = !checked;
+
+    onValidationChange?.(hasError || notFilled || consentMissing);
   };
 
   const handleCategorySelection = (selected: string | string[]) => {
@@ -169,6 +189,17 @@ function QuizSettings({
                 {errors.email && (
                   <span className="text-danger small">{errors.email}</span>
                 )}
+              </label>
+            </div>
+            <div className="col-12">
+              <label className="consent-label">
+                <input
+                  type="checkbox"
+                  checked={consentGiven}
+                  onChange={(e) => handleConsentChange(e.target.checked)}
+                />
+                Souhlasím se zpracováním osobních údajů pouze za účelem
+                odeslání emailu s výsledky.
               </label>
             </div>
           </div>

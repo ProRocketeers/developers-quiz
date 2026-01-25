@@ -14,7 +14,8 @@ const SETTINGS_DEFAULT = {
   categoryQuestionCounts: {},
   multiSelect: true,
   thresholdForSuccess: 0.5,
-  emailForCopy: "peopleandculture@prorocketeers.com"
+  emailForCopy: "peopleandculture@prorocketeers.com",
+  consentToEmailResults: false,
 };
 
 const STORAGE_KEY = 'quizSettings';
