@@ -13,8 +13,11 @@ function Home() {
 
   return (
     <div className="home">
-      <h2>Vítejte v Java Developers Quiz</h2>
-      <p>Otestujte své znalosti z Java ekosystému a získejte rychlou zpětnou vazbu.</p>
+      <h2>Vítejte v kvízu pro softwareové inženýry</h2>
+      <p>
+        Otestujte své znalosti ze světa software engineeringu a získejte rychlou
+        zpětnou vazbu.
+      </p>
 
       <div className="home-card">
         <div className="home-card-header">

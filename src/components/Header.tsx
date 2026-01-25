@@ -8,7 +8,7 @@ function Header() {
       <div className="header-brand">
         <img src={logo} alt="Prorocketeers" className="header-logo" />
         <span className="header-divider">|</span>
-        <h1 className="header-title">Java Developers Quiz</h1>
+        <h1 className="header-title">Kvíz pro softwareové inženýry</h1>
       </div>
       <nav className="header-nav">
         <NavLink
