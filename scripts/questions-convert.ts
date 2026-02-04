@@ -2,9 +2,18 @@
 import fs from "node:fs";
 import path from "node:path";
 
+type Mode = "--to-json" | "--to-md";
+
+type Question = {
+  category: string;
+  question: string;
+  options: string[];
+  correctAnswer: number;
+};
+
 const args = process.argv.slice(2);
-const parsedArgs = new Map();
-let mode = null;
+const parsedArgs = new Map<string, string>();
+let mode: Mode | null = null;
 
 for (let i = 0; i < args.length; i += 1) {
   const arg = args[i];
@@ -23,7 +32,7 @@ for (let i = 0; i < args.length; i += 1) {
   }
 }
 
-const resolvePath = (value, fallback) =>
+const resolvePath = (value: string | undefined, fallback: string) =>
   path.resolve(process.cwd(), value ?? fallback);
 
 const inputPath = resolvePath(parsedArgs.get("input"), "questions.md");
@@ -32,20 +41,20 @@ const outputPath = resolvePath(
   mode === "--to-md" ? "questions.md" : "src/data/questions.json"
 );
 
-const ensureDir = (filePath) => {
+const ensureDir = (filePath: string) => {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
 };
 
-const parseMarkdown = (content) => {
+const parseMarkdown = (content: string) => {
   const lines = content.split(/\r?\n/);
-  const questions = [];
-  let category = null;
-  let currentQuestion = null;
-  let options = [];
-  let correctAnswer = null;
+  const questions: Question[] = [];
+  let category: string | null = null;
+  let currentQuestion: string | null = null;
+  let options: string[] = [];
+  let correctAnswer: number | null = null;
 
   const flushQuestion = () => {
     if (!currentQuestion) {
@@ -120,13 +129,13 @@ const parseMarkdown = (content) => {
   return questions;
 };
 
-const toMarkdown = (questions) => {
-  const groups = new Map();
+const toMarkdown = (questions: Question[]) => {
+  const groups = new Map<string, Question[]>();
   questions.forEach((q) => {
     if (!groups.has(q.category)) {
       groups.set(q.category, []);
     }
-    groups.get(q.category).push(q);
+    groups.get(q.category)?.push(q);
   });
 
   const lines = ["# Quiz otázky"];
@@ -157,7 +166,7 @@ if (mode === "--to-json") {
   );
 } else if (mode === "--to-md") {
   const source = fs.readFileSync(inputPath, "utf8");
-  const questions = JSON.parse(source);
+  const questions = JSON.parse(source) as Question[];
   if (!Array.isArray(questions)) {
     throw new Error("Expected JSON array of questions.");
   }

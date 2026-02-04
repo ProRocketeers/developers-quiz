@@ -1,7 +1,10 @@
 import { NextResponse } from 'next/server'
-import sgMail from '@sendgrid/mail'
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || '')
+import { randomUUID } from 'node:crypto'
+import {
+  createLogger,
+  sendQuizResultsEmail,
+  toSafeEmail
+} from '../../../../../shared/mailgun'
 
 interface Question {
   id: number
@@ -22,75 +25,77 @@ interface EmailRequest {
   answers?: Record<number, number>
 }
 
+interface ErrorWithDetails {
+  details?: unknown
+  response?: {
+    body?: unknown
+  }
+}
+
+const log = createLogger('email-api')
+
 export async function POST(request: Request) {
-
-  console.log('API KEY:', process.env.SENDGRID_API_KEY?.substring(0, 10))
-
+  const requestId = randomUUID()
   try {
     const body: EmailRequest = await request.json()
     const { to, name, score, total, passed, detailed = false, questions, answers } = body
 
     if (!to || !name) {
+      log('warn', 'email_send_validation_failed', {
+        requestId,
+        reason: 'Missing required fields: to, name'
+      })
       return NextResponse.json(
         { error: 'Missing required fields: to, name' },
         { status: 400 }
       )
     }
 
-    const percentage = Math.round((score / total) * 100)
+    log('info', 'email_send_requested', {
+      requestId,
+      to: toSafeEmail(to),
+      detailed,
+      hasQuestions: Boolean(questions?.length),
+      score,
+      total,
+      passed
+    })
 
-    let questionsText = ''
-    if (questions && answers) {
-      if (detailed) {
-        questionsText = questions
-          .map((q, i) => {
-            const userAnswerIndex = answers[i]
-            const isCorrect = userAnswerIndex === q.correctAnswer
-            const optionsText = q.options
-              .map((opt, optIndex) => {
-                const isUserAnswer = optIndex === userAnswerIndex
-                const icon = isUserAnswer ? (isCorrect ? ' ✅' : ' ❌') : ''
-                return `   - ${opt}${icon}`
-              })
-              .join('\n')
-            return `${i + 1}. ${q.question}\n${optionsText}`
-          })
-          .join('\n\n')
-      } else {
-        questionsText = questions
-          .map((q, i) => {
-            const userAnswerIndex = answers[i]
-            const isCorrect = userAnswerIndex === q.correctAnswer
-            return `${i + 1}. ${q.question} ${isCorrect ? '✅' : '❌'}`
-          })
-          .join('\n')
-      }
-    }
-
-    const msg = {
+    await sendQuizResultsEmail({
       to,
-      from: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com',
-      subject: `TEST | Výsledky | Java Developer Quiz | ${name} - ${passed ? 'PROŠEL' : 'NEPROŠEL'} (${percentage}%)`,
-      text: `
-Ahoj ${name},
-
-TEST | Výsledky | Java Developer Quiz | ${name} - ${score}/${total} (${percentage}%)
-Status: ${passed ? 'PROŠEL ✅' : 'NEPROŠEL ❌'}
-
-${questionsText ? `Přehled odpovědí:\n\n${questionsText}` : ''}
-
-Děkujeme za účast!
-Prorocketeers
-      `.trim(),
-    }
-
-    await sgMail.send(msg)
+      name,
+      score,
+      total,
+      passed,
+      detailed,
+      questions,
+      answers,
+      requestId,
+      log
+    })
 
     return NextResponse.json({ success: true, message: 'Email sent' })
   } catch (error) {
-    console.error('SendGrid error:', error)
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    log('error', 'email_send_failed', {
+      requestId,
+      error: errorMessage,
+      status:
+        error && typeof error === 'object' && 'status' in error
+          ? error.status
+          : undefined,
+      details:
+        error && typeof error === 'object'
+          ? (error as ErrorWithDetails).details || (error as ErrorWithDetails).response?.body
+          : undefined
+    })
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      {
+        error:
+          errorMessage === 'Missing Mailgun configuration'
+            ? errorMessage
+            : 'Failed to send email'
+      },
       { status: 500 }
     )
   }

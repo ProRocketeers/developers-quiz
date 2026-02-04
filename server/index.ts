@@ -1,8 +1,17 @@
+import 'dotenv/config'
 import { createServer as createViteServer } from 'vite'
+import type { ViteDevServer } from 'vite'
 import http from 'node:http'
+import type { IncomingMessage, ServerResponse } from 'node:http'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { readFile } from 'node:fs/promises'
+import crypto from 'node:crypto'
+import {
+  createLogger,
+  sendQuizResultsEmail,
+  toSafeEmail
+} from '../shared/mailgun'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const isProduction = process.env.NODE_ENV === 'production'
@@ -10,7 +19,7 @@ const port = Number(process.env.PORT) || 5173
 
 const distPath = path.resolve(__dirname, '../dist')
 
-const mimeTypes = {
+const mimeTypes: Record<string, string> = {
   '.html': 'text/html',
   '.js': 'text/javascript',
   '.css': 'text/css',
@@ -22,16 +31,22 @@ const mimeTypes = {
   '.ico': 'image/x-icon'
 }
 
-const getContentType = (filePath) =>
+const getContentType = (filePath: string) =>
   mimeTypes[path.extname(filePath)] || 'application/octet-stream'
 
-const sendJson = (res, statusCode, payload) => {
+const sendJson = (
+  res: ServerResponse,
+  statusCode: number,
+  payload: unknown
+) => {
   res.writeHead(statusCode, { 'Content-Type': 'application/json' })
   res.end(JSON.stringify(payload))
 }
 
-const readBody = async (req) => {
-  const chunks = []
+const log = createLogger('server')
+
+const readBody = async (req: IncomingMessage) => {
+  const chunks: Buffer[] = []
   for await (const chunk of req) {
     chunks.push(chunk)
   }
@@ -41,84 +56,40 @@ const readBody = async (req) => {
   }
 
   const data = Buffer.concat(chunks).toString('utf-8')
-  return JSON.parse(data)
+  return JSON.parse(data) as unknown
 }
 
-const sendEmail = async ({
-  to,
-  name,
-  score,
-  total,
-  passed,
-  detailed = false,
-  questions,
-  answers
-}) => {
-  const percentage = Math.round((Number(score) / Number(total)) * 100)
+type EmailRequest = {
+  to: string
+  name: string
+  score: number
+  total: number
+  passed: boolean
+  detailed?: boolean
+  questions?: Array<{
+    question: string
+    options: string[]
+    correctAnswer: number
+  }>
+  answers?: Record<number, number>
+}
 
-  let questionsText = ''
-  if (Array.isArray(questions) && answers) {
-    if (detailed) {
-      questionsText = questions
-        .map((question, index) => {
-          const userAnswerIndex = answers[index]
-          const isCorrect = userAnswerIndex === question.correctAnswer
-          const optionsText = question.options
-            .map((option, optionIndex) => {
-              const isUserAnswer = optionIndex === userAnswerIndex
-              const icon = isUserAnswer ? (isCorrect ? ' ✅' : ' ❌') : ''
-              return `   - ${option}${icon}`
-            })
-            .join('\n')
-          return `${index + 1}. ${question.question}\n${optionsText}`
-        })
-        .join('\n\n')
-    } else {
-      questionsText = questions
-        .map((question, index) => {
-          const userAnswerIndex = answers[index]
-          const isCorrect = userAnswerIndex === question.correctAnswer
-          return `${index + 1}. ${question.question} ${isCorrect ? '✅' : '❌'}`
-        })
-        .join('\n')
-    }
-  }
-
-  const subject = `TEST | Výsledky | Java Developer Quiz | ${name} - ${passed ? 'PROŠEL' : 'NEPROŠEL'} (${percentage}%)`
-  const text = `
-Ahoj ${name},
-
-TEST | Výsledky | Java Developer Quiz | ${name} - ${score}/${total} (${percentage}%)
-Status: ${passed ? 'PROŠEL ✅' : 'NEPROŠEL ❌'}
-
-${questionsText ? `Přehled odpovědí:\n\n${questionsText}` : ''}
-
-Děkujeme za účast!
-Prorocketeers
-  `.trim()
-
-  const fromEmail = process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com'
-
-  const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      personalizations: [{ to: [{ email: to }], subject }],
-      from: { email: fromEmail },
-      content: [{ type: 'text/plain', value: text }]
-    })
+const sendEmail = async (payload: EmailRequest & { requestId: string }) => {
+  const startedAt = Date.now()
+  const data = await sendQuizResultsEmail({
+    ...payload,
+    log
   })
-
-  if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(errorText)
-  }
+  log('info', 'mailgun_send_timing', {
+    requestId: payload.requestId,
+    durationMs: Date.now() - startedAt,
+    messageId: data?.id
+  })
 }
 
-const requestHandler = (vite) => async (req, res) => {
+const requestHandler =
+  (vite: ViteDevServer | null) =>
+  async (req: IncomingMessage, res: ServerResponse) => {
   const url = new URL(req.url || '/', 'http://localhost')
 
   if (url.pathname === '/api/send-email') {
@@ -133,24 +104,59 @@ const requestHandler = (vite) => async (req, res) => {
       return
     }
 
+    const requestId = crypto.randomUUID()
+
     try {
-      const body = await readBody(req)
+      const body = (await readBody(req)) as Partial<EmailRequest> | null
       const { to, name } = body || {}
 
       if (!to || !name) {
+        log('warn', 'email_send_validation_failed', {
+          requestId,
+          reason: 'Missing required fields: to, name'
+        })
         sendJson(res, 400, { error: 'Missing required fields: to, name' })
         return
       }
 
-      if (!process.env.SENDGRID_API_KEY) {
-        sendJson(res, 500, { error: 'Missing SENDGRID_API_KEY configuration' })
+      if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
+        log('error', 'email_send_config_missing', {
+          requestId,
+          missing: {
+            MAILGUN_API_KEY: !process.env.MAILGUN_API_KEY,
+            MAILGUN_DOMAIN: !process.env.MAILGUN_DOMAIN
+          }
+        })
+        sendJson(res, 500, { error: 'Missing Mailgun configuration' })
         return
       }
 
-      await sendEmail(body)
+      log('info', 'email_send_requested', {
+        requestId,
+        to: toSafeEmail(to),
+        detailed: Boolean(body?.detailed),
+        hasQuestions: Array.isArray(body?.questions),
+        score: body?.score,
+        total: body?.total,
+        passed: body?.passed
+      })
+
+      await sendEmail({ ...(body as EmailRequest), requestId })
       sendJson(res, 200, { success: true, message: 'Email sent' })
     } catch (error) {
-      console.error('SendGrid error:', error)
+      const errorMessage = error instanceof Error ? error.message : String(error)
+      log('error', 'email_send_failed', {
+        requestId,
+        error: errorMessage,
+        status:
+          error && typeof error === 'object' && 'status' in error
+            ? error.status
+            : undefined,
+        details:
+          error && typeof error === 'object'
+            ? error.details || error.response?.body
+            : undefined
+      })
       sendJson(res, 500, { error: 'Failed to send email' })
     }
 

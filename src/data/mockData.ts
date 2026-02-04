@@ -1,4 +1,6 @@
-export const mockQuestions = [
+import type { Question } from "../types";
+
+export const mockQuestions: Question[] = [
   {
     category: "React",
     question: "What hook is used for state in React?",

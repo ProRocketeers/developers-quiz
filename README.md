@@ -1,23 +1,31 @@
-# React + Vite
+# Developers Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend (React + Vite) a jednoduché API pro odesílání výsledků testu emailem.
 
-Currently, two official plugins are available:
+## Spuštění
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Dev server (frontend + API v `server/index.js`): `npm run dev`
+- Samostatné email API (Next.js): `npm --prefix email-api run dev`
 
-## React Compiler
+## Konfigurace emailu (Mailgun)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Proměnné jsou popsány v `.env.example`. Nastav je v prostředí, případně pro `email-api` použij lokální soubor `.env.local` v adresáři `email-api`.
+Pro `server/index.js` se `.env` načítá automaticky přes `dotenv`.
 
-## Expanding the ESLint configuration
+Používané proměnné:
+- `MAILGUN_API_KEY`
+- `MAILGUN_DOMAIN`
+- `MAILGUN_URL` (volitelné, např. EU endpoint)
+- `MAILGUN_FROM_EMAIL` (pokud není nastaveno, použije se `postmaster@<MAILGUN_DOMAIN>`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Email API
+
+- Endpoint: `POST /api/send-email`
+- Validuje `to` a `name`, ostatní pole jsou volitelná (`score`, `total`, `passed`, `questions`, `answers`, `detailed`)
 
 ## Quiz otázky (Markdown ↔ JSON)
 
-Zdroj pravdy pro otázky může být Markdown soubor `questions.md` v kořeni projektu. Převod na JSON (a zpět) zajišťuje skript `scripts/questions-convert.js`.
+Zdroj pravdy pro otázky může být Markdown soubor `questions.md` v kořeni projektu. Převod na JSON (a zpět) zajišťuje skript `scripts/questions-convert.ts`.
 
 ### Formát `questions.md`
 
