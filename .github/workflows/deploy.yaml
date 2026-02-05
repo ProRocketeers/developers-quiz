@@ -2,9 +2,9 @@ name: Deploy
 
 on:
   workflow_dispatch:
-  #push:
-  #  branches:
-  #    - main
+  push:
+    branches:
+      - main
 
 env:
   SHUTUP: 1
@@ -51,5 +51,5 @@ jobs:
             deploy
             --tag ${{ github.sha }}
             --token ${{ secrets.ARGO_TRIGGER_TOKEN }}
-            --values-file "applications/antivibecoders/values.yaml"
-            --repo "argo-repo-hetzner"
+            --values-file "applications/developer-quiz/values.yaml"
+            --repo "argo-repo-production"
