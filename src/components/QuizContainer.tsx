@@ -92,6 +92,16 @@ function QuizContainer() {
   };
 
   const handleSubmit = () => {
+    const unanswered = Math.max(0, questions.length - answeredCount);
+    if (unanswered > 0) {
+      const confirmed = window.confirm(
+        `Máte ${unanswered} nezodpovězených otázek. Opravdu chcete pokračovat?`,
+      );
+      if (!confirmed) {
+        return;
+      }
+    }
+
     const score = calculateScore();
     const totalDurationMs = quizStartedAtRef.current
       ? Math.max(0, Date.now() - quizStartedAtRef.current)
@@ -175,7 +185,6 @@ function QuizContainer() {
         <button
           className="submit-btn"
           onClick={handleSubmit}
-          disabled={answeredCount < settings.questionCount}
         >
           Submit Quiz
         </button>

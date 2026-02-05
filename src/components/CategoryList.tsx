@@ -1,5 +1,20 @@
+import type { ChangeEvent } from "react";
 import { Form } from "react-bootstrap";
 import "./CategoryList.css";
+
+type Category = {
+  name: string;
+  count: number;
+};
+
+type CategoryListProps = {
+  categories?: Category[];
+  onSelectionChange?: (value: string | string[] | null) => void;
+  multiSelect?: boolean;
+  value?: string | string[] | null;
+  categoryQuestionCounts?: Record<string, number>;
+  onCountChange?: (category: string, value: number) => void;
+};
 
 function CategoryList({
   categories,
@@ -8,25 +23,30 @@ function CategoryList({
   value,
   categoryQuestionCounts = {},
   onCountChange,
-}) {
-  const selected = value ?? "";
+}: CategoryListProps) {
+  const selected = value ?? (multiSelect ? [] : "");
+  const selectedList = Array.isArray(selected) ? selected : [];
 
-  const handleToggle = (categoryName) => {
-    const newSelected = selected.includes(categoryName)
-      ? selected.filter((name) => name !== categoryName)
-      : [...selected, categoryName];
+  const handleToggle = (categoryName: string) => {
+    const newSelected = selectedList.includes(categoryName)
+      ? selectedList.filter((name) => name !== categoryName)
+      : [...selectedList, categoryName];
 
     onSelectionChange?.(newSelected);
   };
 
-  const handleCountChange = (categoryName, val, maxCount) => {
+  const handleCountChange = (
+    categoryName: string,
+    val: string,
+    maxCount: number,
+  ) => {
     const parsed = Number(val);
     if (Number.isNaN(parsed)) return;
     const sanitized = Math.max(0, Math.min(parsed, maxCount));
     onCountChange?.(categoryName, sanitized);
   };
 
-  const handleSelectChange = (e) => {
+  const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value || null;
     onSelectionChange?.(value);
   };
@@ -47,7 +67,7 @@ function CategoryList({
   return (
     <div className="category-list">
       {categories?.map((category) => {
-        const isSelected = selected.includes(category.name);
+        const isSelected = selectedList.includes(category.name);
         const countValue = categoryQuestionCounts[category.name] ?? 0;
 
         return (

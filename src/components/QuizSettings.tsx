@@ -33,6 +33,37 @@ function QuizSettings({
   );
   const [errors, setErrors] = useState({ name: "", email: "" });
   const categoryQuestionCounts = settings.categoryQuestionCounts ?? {};
+  const [bulkCount, setBulkCount] = useState<number | "">("");
+  const [lastManualSelection, setLastManualSelection] = useState<string[]>(
+    settings.selectedCategories,
+  );
+  const [selectAllActive, setSelectAllActive] = useState(false);
+
+  const categoryCountMap = useMemo(() => {
+    const map: Record<string, number> = {};
+    categories.forEach((category) => {
+      map[category.name] = category.count;
+    });
+    return map;
+  }, [categories]);
+
+  const allSelected =
+    settings.multiSelect &&
+    categories.length > 0 &&
+    settings.selectedCategories.length === categories.length;
+  const maxSelectedCount = settings.selectedCategories.reduce(
+    (min, category) => Math.min(min, categoryCountMap[category] ?? 0),
+    Number.POSITIVE_INFINITY,
+  );
+  const resolvedMaxSelectedCount = Number.isFinite(maxSelectedCount)
+    ? maxSelectedCount
+    : 0;
+
+  useEffect(() => {
+    if (settings.multiSelect && !selectAllActive) {
+      setLastManualSelection(settings.selectedCategories);
+    }
+  }, [settings.multiSelect, settings.selectedCategories, selectAllActive]);
 
   const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -133,6 +164,78 @@ function QuizSettings({
     }
   };
 
+  const handleSelectAllToggle = (checked: boolean) => {
+    if (!settings.multiSelect) return;
+
+    if (checked) {
+      setSelectAllActive(true);
+      setLastManualSelection(settings.selectedCategories);
+      const allNames = categories.map((category) => category.name);
+      const nextCounts = { ...categoryQuestionCounts };
+      allNames.forEach((category) => {
+        if (nextCounts[category] == null) {
+          nextCounts[category] = 1;
+        }
+      });
+      const total = allNames.reduce(
+        (sum, category) => sum + (nextCounts[category] ?? 0),
+        0,
+      );
+      updateSettings({
+        selectedCategories: allNames,
+        categoryQuestionCounts: nextCounts,
+        questionCount: total,
+      });
+    } else {
+      setSelectAllActive(false);
+      const restored = lastManualSelection;
+      const nextCounts = { ...categoryQuestionCounts };
+      Object.keys(nextCounts).forEach((category) => {
+        if (!restored.includes(category)) {
+          delete nextCounts[category];
+        }
+      });
+      const total = restored.reduce(
+        (sum, category) => sum + (nextCounts[category] ?? 0),
+        0,
+      );
+      updateSettings({
+        selectedCategories: restored,
+        categoryQuestionCounts: nextCounts,
+        questionCount: total,
+      });
+    }
+  };
+
+  const handleBulkCountChange = (val: number) => {
+    const sanitized = Math.max(0, Math.floor(val));
+    setBulkCount(sanitized);
+
+    const nextCounts = { ...categoryQuestionCounts };
+    settings.selectedCategories.forEach((category) => {
+      const max = categoryCountMap[category] ?? 0;
+      nextCounts[category] = Math.min(sanitized, max);
+    });
+    const total = settings.selectedCategories.reduce(
+      (sum, category) => sum + (nextCounts[category] ?? 0),
+      0,
+    );
+    updateSettings({
+      categoryQuestionCounts: nextCounts,
+      questionCount: total,
+    });
+  };
+
+  const handleBulkInput = (val: string) => {
+    if (val === "") {
+      setBulkCount("");
+      return;
+    }
+    const parsed = Number(val);
+    if (Number.isNaN(parsed)) return;
+    handleBulkCountChange(parsed);
+  };
+
   const handleCategoryCountChange = (category: string, val: number) => {
     const sanitized = Math.max(0, Math.floor(val));
     const nextCounts = {
@@ -207,7 +310,43 @@ function QuizSettings({
 
         <div className="row">
           <div className="col">
-            <label className="field-label">Kategorie</label>
+            <div className="category-header">
+              <label className="field-label">Kategorie</label>
+              {settings.multiSelect && (
+                <label className="select-all-toggle">
+                  <input
+                    type="checkbox"
+                    checked={allSelected}
+                    onChange={(e) => handleSelectAllToggle(e.target.checked)}
+                  />
+                  Vybrat všechny
+                </label>
+              )}
+            </div>
+            {settings.multiSelect && (
+              <div className="bulk-control">
+                <label className="bulk-label" htmlFor="bulk-count-input">
+                  Nastavit počet otázek pro vybrané
+                </label>
+                <div className="bulk-input-row">
+                  <input
+                    id="bulk-count-input"
+                    type="number"
+                    min={0}
+                    max={resolvedMaxSelectedCount}
+                    value={bulkCount}
+                    disabled={settings.selectedCategories.length === 0}
+                    onChange={(e) => handleBulkInput(e.target.value)}
+                  />
+                  <span className="bulk-badge">
+                    Vybráno: {settings.selectedCategories.length}
+                  </span>
+                </div>
+                <span className="bulk-hint">
+                  Zadaná hodnota přepíše počty u všech vybraných kategorií.
+                </span>
+              </div>
+            )}
             <CategoryList
               categories={categories}
               onSelectionChange={handleCategorySelection}
