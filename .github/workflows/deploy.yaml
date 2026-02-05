@@ -13,7 +13,7 @@ env:
 
 jobs:
   build-and-push:
-    runs-on: [self-hosted]
+    runs-on: [self-hosted, public]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6.0.1
@@ -51,5 +51,5 @@ jobs:
             deploy
             --tag ${{ github.sha }}
             --token ${{ secrets.ARGO_TRIGGER_TOKEN }}
-            --values-file "applications/developer-quiz/dev/values.yaml"
+            --values-file "developer-quiz/dev/values.yaml"
             --repo "argo-repo-production"
