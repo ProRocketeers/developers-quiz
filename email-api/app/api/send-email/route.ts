@@ -4,7 +4,7 @@ import {
   createLogger,
   sendQuizResultsEmail,
   toSafeEmail
-} from '../../../../../shared/mailgun'
+} from '@shared/mailgun'
 
 interface Question {
   id: number

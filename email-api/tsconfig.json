@@ -15,6 +15,7 @@
     "types": ["node"],
     "incremental": true,
     "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
     "paths": { 
       "@/*": ["./*"],
       "@shared/*": ["../shared/*"]
