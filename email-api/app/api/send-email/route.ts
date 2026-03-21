@@ -6,6 +6,11 @@ import {
   toSafeEmail
 } from '@shared/mailgun'
 
+const allowedOrigins = new Set([
+  'http://localhost:5173',
+  'https://rapid-europa-0ee.rock8cloud.cz'
+])
+
 interface Question {
   id: number
   question: string
@@ -34,8 +39,25 @@ interface ErrorWithDetails {
 
 const log = createLogger('email-api')
 
+const getCorsHeaders = (request: Request) => {
+  const origin = request.headers.get('origin')
+  const headers = new Headers({
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    Vary: 'Origin'
+  })
+
+  if (origin && allowedOrigins.has(origin)) {
+    headers.set('Access-Control-Allow-Origin', origin)
+  }
+
+  return headers
+}
+
 export async function POST(request: Request) {
   const requestId = randomUUID()
+  const corsHeaders = getCorsHeaders(request)
+
   try {
     const body: EmailRequest = await request.json()
     const { to, name, score, total, passed, detailed = false, questions, answers } = body
@@ -47,7 +69,7 @@ export async function POST(request: Request) {
       })
       return NextResponse.json(
         { error: 'Missing required fields: to, name' },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       )
     }
 
@@ -74,7 +96,10 @@ export async function POST(request: Request) {
       log
     })
 
-    return NextResponse.json({ success: true, message: 'Email sent' })
+    return NextResponse.json(
+      { success: true, message: 'Email sent' },
+      { headers: corsHeaders }
+    )
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error)
     log('error', 'email_send_failed', {
@@ -96,11 +121,11 @@ export async function POST(request: Request) {
             ? errorMessage
             : 'Failed to send email'
       },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     )
   }
 }
 
-export async function OPTIONS() {
-  return NextResponse.json({}, { status: 200 })
+export async function OPTIONS(request: Request) {
+  return NextResponse.json({}, { status: 200, headers: getCorsHeaders(request) })
 }

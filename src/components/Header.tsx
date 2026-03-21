@@ -1,8 +1,15 @@
-import { NavLink } from "react-router-dom";
 import logo from "../data/prorocketeers_logo_horizontal_cut.svg";
 import "./Header.css";
 
-function Header() {
+interface HeaderProps {
+  currentPath?: string;
+}
+
+function Header({ currentPath = "/" }: HeaderProps) {
+  const homeClass = currentPath === "/" ? "nav-link active" : "nav-link";
+  const resultsClass =
+    currentPath === "/results" ? "nav-link active" : "nav-link";
+
   return (
     <header className="header">
       <div className="header-brand">
@@ -11,22 +18,12 @@ function Header() {
         <h1 className="header-title">Kvíz pro softwareové inženýry</h1>
       </div>
       <nav className="header-nav">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "nav-link active" : "nav-link"
-          }
-        >
+        <a href="/" className={homeClass}>
           Home
-        </NavLink>
-        <NavLink
-          to="/results"
-          className={({ isActive }) =>
-            isActive ? "nav-link active" : "nav-link"
-          }
-        >
+        </a>
+        <a href="/results" className={resultsClass}>
           Výsledky
-        </NavLink>
+        </a>
       </nav>
     </header>
   );

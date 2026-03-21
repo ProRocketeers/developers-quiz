@@ -1,16 +1,19 @@
 # Developers Quiz
 
-Frontend (React + Vite) a jednoduché API pro odesílání výsledků testu emailem.
+Frontend běží na Astro + React islands a obsahuje i API pro odesílání výsledků testu emailem.
 
 ## Spuštění
 
-- Dev server (frontend + API v `server/index.js`): `npm run dev`
-- Samostatné email API (Next.js): `npm --prefix email-api run dev`
+- Instalace závislostí: `bun install`
+- Dev server (frontend + API): `bun run dev`
+- Produkční build: `bun run build`
+- Náhled produkčního buildu: `bun run preview`
+- Start produkčního serveru: `bun run start`
 
 ## Konfigurace emailu (Mailgun)
 
-Proměnné jsou popsány v `.env.example`. Nastav je v prostředí, případně pro `email-api` použij lokální soubor `.env.local` v adresáři `email-api`.
-Pro `server/index.js` se `.env` načítá automaticky přes `dotenv`.
+Proměnné jsou popsány v `.env.example`.
+Astro načítá `.env` automaticky pro dev i build.
 
 Používané proměnné:
 - `MAILGUN_API_KEY`
@@ -45,8 +48,8 @@ Právě jeden checkbox musí být označený jako správná odpověď (`[x]`).
 ### Příkazy
 
 ```bash
-npm run questions:to-json
-npm run questions:to-md
+bun run questions:to-json
+bun run questions:to-md
 ```
 
 Výchozí cesty lze přepsat parametry `--input` a `--output`.

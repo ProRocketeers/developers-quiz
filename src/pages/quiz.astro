@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import QuizView from "../views/QuizView";
+---
+
+<BaseLayout title="Quiz | Developers Quiz" currentPath="/quiz">
+  <QuizView client:only="react" />
+</BaseLayout>

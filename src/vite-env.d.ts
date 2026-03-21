@@ -1,4 +1,4 @@
-/// <reference types="vite/client" />
+/// <reference types="astro/client" />
 
 declare module "*.css" {
   const content: { [className: string]: string };

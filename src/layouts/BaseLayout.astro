@@ -1,0 +1,35 @@
+---
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import "../index.css";
+import "./Layout.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+interface Props {
+  title?: string;
+  currentPath?: string;
+}
+
+const {
+  title = "Developers Quiz",
+  currentPath = "/",
+} = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="layout">
+      <Header currentPath={currentPath} />
+      <main class="main">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -61,6 +61,7 @@ function QuizSettings({
 
   useEffect(() => {
     if (settings.multiSelect && !selectAllActive) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLastManualSelection(settings.selectedCategories);
     }
   }, [settings.multiSelect, settings.selectedCategories, selectAllActive]);

@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import QuizQuestion from "./QuizQuestion";
 import Spinner from "./Spinner";
 import QuizSettings from "./QuizSettings";
@@ -7,6 +6,7 @@ import "./QuizContainer.css";
 import { getQuestions } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
 import type { Question } from "../types";
+import { navigateTo } from "../utils/navigation";
 import {
   addQuizHistoryEntry,
   createHistoryEntry,
@@ -16,7 +16,6 @@ import {
 const QUIZ_TIME = 10;
 
 function QuizContainer() {
-  const navigate = useNavigate();
   const { settings } = useQuizSettings();
   const [showSettings, setShowSettings] = useState(false);
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -120,7 +119,7 @@ function QuizContainer() {
       settingsSnapshot,
     );
     addQuizHistoryEntry(entry);
-    navigate("/results");
+    navigateTo("/results");
   };
 
   const handleRefresh = () => {

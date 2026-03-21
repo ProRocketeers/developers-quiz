@@ -1,15 +1,11 @@
-import { useNavigate } from "react-router-dom";
-import QuizSettings from "../components/QuizSettings";
-import "./Home.css";
 import { useState } from "react";
+import QuizSettings from "../components/QuizSettings";
+import { QuizProvider } from "../context/QuizContext";
+import { navigateTo } from "../utils/navigation";
+import "../pages/Home.css";
 
-function Home() {
-  const navigate = useNavigate();
+function HomeContent() {
   const [hasErrors, setHasErrors] = useState(true);
-
-  const handleStartQuiz = () => {
-    navigate("/quiz");
-  };
 
   return (
     <div className="home">
@@ -34,7 +30,7 @@ function Home() {
         <div className="home-actions">
           <button
             className="start-btn"
-            onClick={handleStartQuiz}
+            onClick={() => navigateTo("/quiz")}
             disabled={hasErrors}
           >
             Spustit Quiz
@@ -48,4 +44,10 @@ function Home() {
   );
 }
 
-export default Home;
+export default function HomeView() {
+  return (
+    <QuizProvider>
+      <HomeContent />
+    </QuizProvider>
+  );
+}

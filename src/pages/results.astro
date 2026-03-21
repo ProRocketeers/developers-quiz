@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ResultsView from "../views/ResultsView";
+---
+
+<BaseLayout title="Výsledky | Developers Quiz" currentPath="/results">
+  <ResultsView client:only="react" />
+</BaseLayout>
