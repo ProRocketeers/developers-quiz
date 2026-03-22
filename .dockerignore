@@ -1,0 +1,10 @@
+.git
+.gitignore
+.astro
+dist
+node_modules
+email-api
+.env
+.env.*
+*.log
+.DS_Store

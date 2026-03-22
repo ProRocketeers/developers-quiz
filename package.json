@@ -5,12 +5,12 @@
   "type": "module",
   "packageManager": "bun@1.2.23",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --port 4322",
     "build": "astro build",
     "lint": "eslint .",
-    "preview": "astro preview",
+    "preview": "astro preview --port 4322",
     "format": "prettier --write",
-    "start": "bun ./dist/server/entry.mjs",
+    "start": "PORT=4322 bun ./dist/server/entry.mjs",
     "questions:to-json": "bun scripts/questions-convert.ts --to-json --input questions.md --output src/data/questions.json",
     "questions:to-md": "bun scripts/questions-convert.ts --to-md --input src/data/questions.json --output questions.md"
   },

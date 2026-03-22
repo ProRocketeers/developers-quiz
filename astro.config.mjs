@@ -16,6 +16,12 @@ export default defineConfig({
   output: "server",
   adapter: node({ mode: "standalone" }),
   integrations: [react()],
+  server: {
+    port: 4322,
+  },
+  preview: {
+    port: 4322,
+  },
   vite: {
     server: {
       allowedHosts: [...new Set([...defaultAllowedHosts, ...envAllowedHosts])],

@@ -5,10 +5,10 @@ Frontend běží na Astro + React islands a obsahuje i API pro odesílání výs
 ## Spuštění
 
 - Instalace závislostí: `bun install`
-- Dev server (frontend + API): `bun run dev`
+- Dev server (frontend + API): `bun run dev` na `http://localhost:4322`
 - Produkční build: `bun run build`
-- Náhled produkčního buildu: `bun run preview`
-- Start produkčního serveru: `bun run start`
+- Náhled produkčního buildu: `bun run preview` na `http://localhost:4322`
+- Start produkčního serveru: `bun run start` na `http://localhost:4322`
 
 ## Konfigurace emailu (Mailgun)
 
