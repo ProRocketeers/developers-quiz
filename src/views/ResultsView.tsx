@@ -39,6 +39,24 @@ function ResultsContent() {
   useEffect(() => {
     setHistory(loadQuizHistory(settingsSnapshot));
   }, [settingsSnapshot]);
+
+  useEffect(() => {
+    setSelectedId((currentSelectedId) => {
+      if (history.length === 0) {
+        return null;
+      }
+
+      if (
+        currentSelectedId &&
+        history.some((entry) => entry.id === currentSelectedId)
+      ) {
+        return currentSelectedId;
+      }
+
+      return history[0].id;
+    });
+  }, [history]);
+
   const selectedEntry =
     history.find((entry) => entry.id === selectedId) ?? null;
   const total = selectedEntry?.questions.length ?? 0;
