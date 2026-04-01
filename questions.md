@@ -3487,26 +3487,19 @@
 - [ ] N/A
 
 ### Jaké jsou hlavní typy SQL příkazů?
-- [x] DML (Data Manipulation Language) – SELECT, INSERT, UPDATE, DELETE
-DDL (Data Definition Language) – CREATE, ALTER, DROP
-DCL (Data Control Language) – GRANT, REVOKE
-TCL (Transaction Control Language) – COMMIT, ROLLBACK, SAVEPOINT
+- [x] DML (Data Manipulation Language) – SELECT, INSERT, UPDATE, DELETE; DDL (Data Definition Language) – CREATE, ALTER, DROP; DCL (Data Control Language) – GRANT, REVOKE; TCL (Transaction Control Language) – COMMIT, ROLLBACK, SAVEPOINT.
 - [ ] Pouze SELECT a INSERT
 - [ ] Pouze CREATE a DROP
 - [ ] N/A
 
 ### Jaký je rozdíl mezi INNER JOIN, LEFT JOIN, RIGHT JOIN a FULL JOIN?
-- [x] INNER JOIN vrací pouze odpovídající záznamy z obou tabulek.
-LEFT JOIN vrací všechny záznamy z levé tabulky a odpovídající záznamy z pravé.
-RIGHT JOIN vrací všechny záznamy z pravé tabulky a odpovídající záznamy z levé.
-FULL JOIN vrací všechny záznamy, pokud existuje shoda na jedné nebo druhé straně.
+- [x] INNER JOIN vrací pouze odpovídající záznamy z obou tabulek; LEFT JOIN vrací všechny záznamy z levé tabulky a odpovídající záznamy z pravé; RIGHT JOIN vrací všechny záznamy z pravé tabulky a odpovídající záznamy z levé; FULL JOIN vrací všechny záznamy, pokud existuje shoda na jedné nebo druhé straně.
 - [ ] Všechny JOIN typy jsou totéž
 - [ ] JOIN operace nejsou v SQL podporovány
 - [ ] N/A
 
 ### Jak funguje GROUP BY a HAVING?
-- [x] GROUP BY seskupuje výsledky podle jednoho nebo více sloupců.
-HAVING filtruje seskupené výsledky na základě agregačních funkcí.
+- [x] GROUP BY seskupuje výsledky podle jednoho nebo více sloupců a HAVING filtruje seskupené výsledky na základě agregačních funkcí.
 - [ ] GROUP BY a HAVING jsou totéž
 - [ ] HAVING seskupuje data
 - [ ] N/A
@@ -3536,8 +3529,7 @@ HAVING filtruje seskupené výsledky na základě agregačních funkcí.
 - [ ] N/A
 
 ### Co je UNION a jaký je rozdíl mezi UNION a UNION ALL?
-- [x] UNION kombinuje výsledky dvou dotazů a odstraňuje duplikáty.
-UNION ALL kombinuje výsledky bez odstranění duplikátů.
+- [x] UNION kombinuje výsledky dvou dotazů a odstraňuje duplikáty, zatímco UNION ALL kombinuje výsledky bez odstranění duplikátů.
 - [ ] UNION a UNION ALL jsou totéž
 - [ ] UNION ALL odstraňuje duplikáty
 - [ ] N/A
@@ -3561,8 +3553,7 @@ UNION ALL kombinuje výsledky bez odstranění duplikátů.
 - [ ] N/A
 
 ### Co je PRIMARY KEY a FOREIGN KEY?
-- [x] PRIMARY KEY jednoznačně identifikuje záznam v tabulce.
-FOREIGN KEY je odkaz na primární klíč jiné tabulky.
+- [x] PRIMARY KEY jednoznačně identifikuje záznam v tabulce a FOREIGN KEY je odkaz na primární klíč jiné tabulky.
 - [ ] PRIMARY KEY a FOREIGN KEY jsou totéž
 - [ ] FOREIGN KEY identifikuje záznam
 - [ ] N/A
@@ -3580,8 +3571,7 @@ FOREIGN KEY je odkaz na primární klíč jiné tabulky.
 - [ ] N/A
 
 ### Jaký je rozdíl mezi TRUNCATE a DELETE?
-- [x] TRUNCATE odstraní všechny záznamy bez možnosti rollbacku.
-DELETE odstraní specifické řádky a lze ho vrátit zpět.
+- [x] TRUNCATE odstraní všechny záznamy bez možnosti rollbacku, zatímco DELETE odstraní specifické řádky a lze ho vrátit zpět.
 - [ ] TRUNCATE a DELETE jsou totéž
 - [ ] DELETE je rychlejší než TRUNCATE
 - [ ] N/A
@@ -6103,3 +6093,2721 @@ DELETE odstraní specifické řádky a lze ho vrátit zpět.
 - [ ] Přenos dat není třeba zabezpečovat
 - [ ] Pouze pomocí VPN
 - [ ] N/A
+
+## React.js
+
+### K čemu slouží Virtual DOM v Reactu?
+- [x] K porovnání změn mezi předchozím a novým stromem komponent a k minimalizaci nutných úprav skutečného DOM.
+- [ ] K ukládání globálního stavu celé aplikace.
+- [ ] K automatickému cachování všech API odpovědí.
+- [ ] K nahrazení JavaScriptu při renderování komponent.
+
+### Proč je důležité používat stabilní key při renderování seznamu?
+- [x] Aby React správně poznal, které položky se změnily, přesunuly nebo odstranily.
+- [ ] Aby bylo možné používat useState uvnitř map().
+- [ ] Aby React mohl seznam vyrenderovat pouze na serveru.
+- [ ] Aby byly položky seznamu automaticky seřazené.
+
+### Co se stane po zavolání setteru z useState?
+- [x] React naplánuje nový render komponenty s aktualizovanou hodnotou stavu.
+- [ ] Stav se přepíše okamžitě bez dalšího renderu.
+- [ ] Komponenta se vždy kompletně odpojí a znovu připojí.
+- [ ] Změna se projeví až po reloadu stránky.
+
+### Co typicky znamená useEffect s prázdným dependency polem?
+- [x] Efekt se spustí po prvním renderu komponenty a cleanup při unmountu.
+- [ ] Efekt se spouští po každém renderu.
+- [ ] Efekt se nikdy nespustí.
+- [ ] Efekt se spustí pouze při změně props.
+
+### Kdy má smysl použít useMemo?
+- [x] K memoizaci drahého výpočtu nebo hodnoty, která se nemá přepočítávat při každém renderu bez změny závislostí.
+- [ ] K nahrazení useEffect pro side efekty.
+- [ ] K přímé změně DOM uzlů.
+- [ ] K odeslání HTTP requestu při mountu.
+
+### K čemu slouží useCallback?
+- [x] K memoizaci reference na funkci mezi rendery, pokud se nezmění její závislosti.
+- [ ] K asynchronnímu čekání na dokončení renderu.
+- [ ] K uchování mutable hodnoty bez renderu.
+- [ ] K definici error boundary.
+
+### Kdy je vhodné použít useRef?
+- [x] Pro přístup k DOM elementu nebo uchování mutable hodnoty, která nemá vyvolat render.
+- [ ] Pro uložení globálního sdíleného stavu celé aplikace.
+- [ ] Pro spuštění side efektu po každém renderu.
+- [ ] Pro nahrazení props mezi rodičem a potomkem.
+
+### Co je controlled component ve formuláři?
+- [x] Input, jehož hodnota je řízena React stavem a mění se přes onChange.
+- [ ] Input, který nelze nikdy upravit uživatelem.
+- [ ] Input, který používá výhradně useRef místo state.
+- [ ] Input, který je renderován pouze na serveru.
+
+### Co znamená lifting state up?
+- [x] Přesunutí sdíleného stavu do nejbližšího společného rodiče komponent.
+- [ ] Uložení lokálního stavu do localStorage.
+- [ ] Změnu useState na useRef kvůli výkonu.
+- [ ] Přesunutí komponenty z klientu na server.
+
+### Kdy je vhodné použít React Context?
+- [x] K předávání hodnot napříč více úrovněmi komponent bez opakovaného prop drillingu.
+- [ ] K nahrazení všech lokálních stavů v aplikaci.
+- [ ] K přímé manipulaci s DOM uzly.
+- [ ] Pouze k ukládání formulářových inputů.
+
+### Co dělá React.memo?
+- [x] Brání zbytečnému rerenderu komponenty, pokud se její props nezměnily podle porovnání.
+- [ ] Memoizuje výsledek useEffect.
+- [ ] Automaticky cachuje všechny API requesty.
+- [ ] Převádí class komponentu na function komponentu.
+
+### Proč bývá odvozování stavu z props problematické?
+- [x] Může vést k duplicitnímu zdroji pravdy a k nekonzistentnímu stavu.
+- [ ] Protože React props neumí předat do child komponent.
+- [ ] Protože props nelze číst uvnitř komponenty.
+- [ ] Protože odvozený stav je vždy rychlejší než props.
+
+### Kdy je lepší použít funkční update setState(prev => ...)?
+- [x] Když nová hodnota závisí na předchozí hodnotě stavu.
+- [ ] Když chceme změnit props rodičovské komponenty.
+- [ ] Když používáme uncontrolled input.
+- [ ] Pouze při server-side renderingu.
+
+### Co je custom hook v Reactu?
+- [x] Vlastní funkce využívající jiné hooky pro znovupoužitelnou stavovou nebo side-effect logiku.
+- [ ] Speciální class komponenta pro globální stav.
+- [ ] Hook, který lze použít pouze v produkci.
+- [ ] Nástroj pro definici CSS stylů.
+
+### Proč je důležitý cleanup v useEffect?
+- [x] Aby bylo možné odregistrovat listenery, zrušit timeouty nebo abortnout requesty při změně závislostí či unmountu.
+- [ ] Aby React mohl přeskočit další render.
+- [ ] Aby se props automaticky serializovaly.
+- [ ] Aby se useEffect spouštěl synchronně během renderu.
+
+### Co v React StrictMode typicky uvidíš v developmentu?
+- [x] Některé lifecycle a efekty mohou být záměrně volány vícekrát pro odhalení nečisté logiky.
+- [ ] Produkční build je automaticky dvakrát rychlejší.
+- [ ] React zakáže useEffect a useMemo.
+- [ ] Každá komponenta se musí psát jako class.
+
+### Co umí error boundary zachytit?
+- [x] Chyby při renderu, v lifecycle metodách a v konstruktorech podstromu komponent.
+- [ ] Chyby v asynchronních requestech bez dalšího ošetření.
+- [ ] Všechny chyby v event handlerech automaticky.
+- [ ] Chyby v CSS a layoutu stránky.
+
+### K čemu slouží React Suspense?
+- [x] K deklarativnímu zobrazení fallback UI během čekání na lazy načtené části nebo podporované async zdroje.
+- [ ] K nahrazení všech error boundaries.
+- [ ] K přímému ukládání dat do localStorage.
+- [ ] K měření výkonu renderu v DevTools.
+
+### Co je stale closure problém?
+- [x] Callback nebo efekt pracuje se zastaralou hodnotou proměnných, protože zachytil starší render.
+- [ ] Hook je zavolán mimo React komponentu.
+- [ ] State se zapisuje přímo do DOM.
+- [ ] Props se mění příliš rychle na serveru.
+
+### Co způsobí změna key na stejné komponentě?
+- [x] React komponentu remountne a její lokální stav se vytvoří znovu.
+- [ ] React zachová stav i DOM bez změn.
+- [ ] React změní pouze CSS třídy komponenty.
+- [ ] Změna key nemá žádný efekt.
+
+### Jak správně aktualizovat pole ve state?
+- [x] Immutabilně, tedy vytvořením nového pole například pomocí map, filter nebo spread operátoru.
+- [ ] Přímou mutací původního pole a bez volání setteru.
+- [ ] Pouze přes useRef, aby se předešlo renderu.
+- [ ] Vždy přes JSON.stringify.
+
+### Kdy je vhodné použít useReducer místo useState?
+- [x] Když je logika změn stavu složitější nebo se stav skládá z více souvisejících přechodů.
+- [ ] Když komponenta vůbec nepotřebuje stav.
+- [ ] Pouze pro ukládání DOM referencí.
+- [ ] Jen ve class komponentách.
+
+### Jaký je rozdíl mezi state a ref?
+- [x] Změna state vyvolá render, zatímco změna ref typicky ne.
+- [ ] Ref je jen jiný název pro props.
+- [ ] State lze používat pouze ve formulářích.
+- [ ] Ref se používá jen pro server rendering.
+
+### Co reprezentuje props.children?
+- [x] Obsah vložený mezi otevírací a zavírací tag komponenty.
+- [ ] Automaticky vygenerovaný stav child komponent.
+- [ ] Interní seznam všech hooků v komponentě.
+- [ ] Pouze textový obsah bez JSX.
+
+### K čemu slouží React Portal?
+- [x] K renderování části UI do jiného DOM uzlu mimo aktuální hierarchii rodičovské komponenty.
+- [ ] K vytváření globálního state store.
+- [ ] K dynamickému načítání CSS modulů.
+- [ ] K serializaci props na serveru.
+
+### Co je častý problém indexu jako key v dynamickém seznamu?
+- [x] Při přeuspořádání položek může dojít k chybnému přiřazení stavu nebo DOM prvků.
+- [ ] React pak neumí seznam vůbec vyrenderovat.
+- [ ] Index jako key vždy zvyšuje bezpečnost komponenty.
+- [ ] Index jako key je povinný pro použití useMemo.
+
+### Proč je důležité mít správně dependency pole u useEffect?
+- [x] Aby efekt reagoval na relevantní změny a nepracoval se zastaralými hodnotami.
+- [ ] Aby bylo možné hook volat uvnitř podmínek.
+- [ ] Aby React přeskočil všechny další rendery.
+- [ ] Dependency pole slouží pouze pro typování v TypeScriptu.
+
+### Kdy dává smysl uncontrolled input?
+- [x] Když nechceme hodnotu průběžně držet ve state a stačí nám ji načíst například přes ref při odeslání formuláře.
+- [ ] Když chceme validovat každé stisknutí klávesy přes React state.
+- [ ] Když potřebujeme sdílet input mezi více stránkami.
+- [ ] Pouze pro server components.
+
+### Co je startTransition v Reactu?
+- [x] API pro označení méně urgentních updateů, které mohou být odloženy ve prospěch responzivního UI.
+- [ ] Hook pro přímou změnu URL adresy.
+- [ ] Mechanismus pro synchronní render bez možnosti přerušení.
+- [ ] Náhrada za useEffect při fetchování dat.
+
+### K čemu slouží useDeferredValue?
+- [x] K odložení propagace rychle se měnící hodnoty do nákladnější části UI.
+- [ ] K trvalému uložení hodnoty do localStorage.
+- [ ] K zabránění renderu rodičovské komponenty.
+- [ ] K definici lazy-loaded komponenty.
+
+### Co je hydration mismatch?
+- [x] Situace, kdy HTML vygenerované serverem neodpovídá tomu, co React očekává při hydrataci na klientu.
+- [ ] Stav, kdy server vrátí více CSS souborů než klient.
+- [ ] Situace, kdy useState vrátí undefined.
+- [ ] Chyba vznikající pouze při použití Reduxu.
+
+### Co je synthetic event v Reactu?
+- [x] Wrapper nad nativními browser eventy poskytující konzistentní API napříč prohlížeči.
+- [ ] Událost, která funguje pouze na serveru.
+- [ ] Event vytvořený jen pro testy v Jestu.
+- [ ] DOM node uložený v useRef.
+
+### Co znamená colocate state?
+- [x] Držet stav co nejblíže místu, kde je skutečně používán.
+- [ ] Přesunout všechen stav do globálního contextu.
+- [ ] Ukládat stav pouze do URL parametrů.
+- [ ] Používat vždy jen useReducer.
+
+### Jak React zachovává stav komponenty mezi rendery?
+- [x] Podle pozice komponenty ve stromu a její identity včetně key.
+- [ ] Podle názvu proměnných uvnitř funkce.
+- [ ] Pouze podle pořadí importů v souboru.
+- [ ] Jen pokud komponenta používá useMemo.
+
+### Kdy použít useLayoutEffect místo useEffect?
+- [x] Když potřebujeme číst nebo upravit layout synchronně po zápisu do DOM a před vykreslením do obrazovky.
+- [ ] Když chceme odložit neurgentní update.
+- [ ] Když komponenta vůbec nepracuje s DOM.
+- [ ] Pouze při server-side renderingu.
+
+### Co přinesl automatic batching v novějších verzích Reactu?
+- [x] Více state updateů se může sloučit do menšího počtu renderů i mimo klasické event handlery.
+- [ ] Každý state update vždy způsobí dva rendery navíc.
+- [ ] React vypne asynchronní event handlery.
+- [ ] Batching funguje jen v class komponentách.
+
+### Jaký je doporučený způsob zrušení fetch requestu v effectu?
+- [x] Použít AbortController a cleanup funkci efektu.
+- [ ] Použít setTimeout bez cleanupu.
+- [ ] Uložit promise do state a ignorovat ji.
+- [ ] Spoléhat na to, že React request zruší automaticky.
+
+### Jaká je nevýhoda nadměrného používání Contextu?
+- [x] Může vést k nechtěným rerenderům větší části stromu a ke zhoršení čitelnosti architektury.
+- [ ] Context nelze používat s function komponentami.
+- [ ] Context funguje pouze v produkčním buildu.
+- [ ] Context je vhodný jen pro práci s formuláři.
+
+### K čemu slouží React.lazy?
+- [x] K lazy načítání komponent přes dynamický import.
+- [ ] K memoizaci výsledku renderu celé aplikace.
+- [ ] K nahrazení key v seznamu.
+- [ ] K přímému spuštění async effectu během renderu.
+
+### Jak reaguje reconciliation na stejný typ komponenty se stejnou key?
+- [x] React se pokusí zachovat instanci komponenty i její stav a aktualizovat jen potřebné části.
+- [ ] React komponentu vždy remountne.
+- [ ] React ignoruje nové props.
+- [ ] React přeskočí render child komponent navždy.
+
+### Jaký je přínos render props oproti hardcoded logice v komponentě?
+- [x] Umožňují znovupoužít logiku a nechat volajícího rozhodnout, jak se výsledek vyrenderuje.
+- [ ] Jsou rychlejší než všechny hooks ve všech případech.
+- [ ] Nahrazují potřebu props.children.
+- [ ] Fungují pouze v class komponentách.
+
+### Jak spravovat více inputů v controlled formuláři efektivně?
+- [x] Držet hodnoty ve state a aktualizovat je podle name nebo specifických handlerů.
+- [ ] Každý input renderovat v samostatné aplikaci.
+- [ ] Ukládat změny pouze do useRef bez event handleru.
+- [ ] Přesunout celou validaci do CSS.
+
+### Kdy může useMemo zbytečně škodit?
+- [x] Když memoizujeme levné výpočty bez reálného dopadu a zvyšujeme tak složitost kódu.
+- [ ] Když potřebujeme uložit číslo do state.
+- [ ] Když voláme useMemo bez dependency pole.
+- [ ] Když renderujeme jen jednu komponentu.
+
+### Proč může inline objekt nebo funkce v props způsobovat zbytečné rerendery?
+- [x] Protože při každém renderu vzniká nová reference a shallow compare ji vyhodnotí jako změnu.
+- [ ] Protože React neumí serializovat objekty.
+- [ ] Protože props musí být pouze stringy.
+- [ ] Protože useState nepracuje s referenčními typy.
+
+### Jak se chová Context Provider při změně value objektu?
+- [x] Konzumenti contextu se mohou rerenderovat, pokud se změní identita předané value.
+- [ ] React context změny value nikdy nepropaguje.
+- [ ] Změna value přepíše lokální state všech komponent.
+- [ ] Provider lze aktualizovat pouze při mountu.
+
+### Proč nejsou side efekty vhodné přímo uvnitř render funkce?
+- [x] Render má být čistý a opakovatelný; side efekty v něm vedou k nekonzistentnímu chování.
+- [ ] Protože render funkce běží jen jednou při startu aplikace.
+- [ ] Protože side efekty jsou povoleny pouze v class komponentách.
+- [ ] Protože React neumí volat fetch z JavaScriptu.
+
+### Co je optimistic UI update?
+- [x] Dočasné promítnutí očekávaného výsledku do UI ještě před potvrzením serverem.
+- [ ] Vykreslení dat až po kompletním dokončení všech requestů.
+- [ ] Uložení celého stavu do DOM atributů.
+- [ ] Strategie pro vypnutí loading stavů.
+
+### Jaký je rozdíl mezi props a state?
+- [x] Props přichází zvenčí od rodiče, zatímco state je interně spravovaný stav komponenty.
+- [ ] Props i state se mění pouze přes DOM API.
+- [ ] State je immutable, props mutable.
+- [ ] Props lze používat jen ve class komponentách.
+
+### Co je hlavní výhoda composition přes children nebo props oproti hluboké dědičnosti?
+- [x] Lepší skládání zodpovědností a flexibilnější znovupoužití UI i logiky.
+- [ ] Nižší spotřeba paměti v browseru za všech okolností.
+- [ ] Automatické řešení asynchronních requestů.
+- [ ] Povinnost používat méně komponent.
+
+### Jaké pravidlo platí pro volání hooků?
+- [x] Hooky se mají volat vždy na top levelu React funkce nebo custom hooku, ne podmíněně uvnitř větví a cyklů.
+- [ ] Hooky lze volat pouze uvnitř useEffect.
+- [ ] Hooky musí být vždy obalené v try/catch.
+- [ ] Hooky lze používat jen ve třech importovaných souborech.
+
+## Vue.js
+
+### Co je hlavní přínos Vue reaktivity?
+- [x] Automaticky sleduje závislosti a přerenderuje pouze části UI závislé na změněných datech.
+- [ ] Umožňuje psát komponenty bez JavaScriptu.
+- [ ] Nahrazuje potřebu props a emits.
+- [ ] Funguje pouze při server-side renderingu.
+
+### K čemu slouží Composition API ve Vue?
+- [x] K organizaci znovupoužitelné logiky podle zodpovědností pomocí `setup()`, composables a reaktivních primitiv.
+- [ ] K nahrazení šablon čistým CSS.
+- [ ] K automatickému generování routeru.
+- [ ] Pouze k definici globálního store.
+
+### Jaký je rozdíl mezi ref a reactive?
+- [x] `ref` obaluje typicky jednu hodnotu do objektu s `.value`, zatímco `reactive` vytváří reaktivní proxy pro objekt.
+- [ ] `ref` funguje jen pro DOM uzly a `reactive` jen pro pole.
+- [ ] `reactive` je immutable a `ref` mutable.
+- [ ] Mezi nimi není žádný rozdíl.
+
+### Kdy je vhodné použít computed místo method?
+- [x] Když chceme odvozenou hodnotu s cachováním podle reaktivních závislostí.
+- [ ] Když chceme spouštět side efekty po každém renderu.
+- [ ] Když potřebujeme emitnout event na rodiče.
+- [ ] Když chceme mutovat props.
+
+### K čemu slouží watch?
+- [x] K reakci na změnu konkrétní reaktivní hodnoty nebo výrazu, typicky pro side efekty.
+- [ ] K deklaraci slotů v child komponentě.
+- [ ] K nahrazení `v-if`.
+- [ ] K přímé změně template DOM bez renderu.
+
+### Jak se liší watchEffect od watch?
+- [x] `watchEffect` automaticky sleduje použité závislosti uvnitř callbacku, zatímco `watch` má zdroj sledování definovaný explicitně.
+- [ ] `watchEffect` funguje jen v Options API.
+- [ ] `watch` neumí cleanup a `watchEffect` ano.
+- [ ] `watchEffect` je určený pouze pro SSR.
+
+### Co znamená, že props jsou ve Vue one-way data flow?
+- [x] Parent předává hodnoty child komponentě, ale child je nemá přímo mutovat.
+- [ ] Child může props libovolně měnit a parent to nevidí.
+- [ ] Props mohou téct pouze mezi sibling komponentami.
+- [ ] Props lze použít jen pro boolean hodnoty.
+
+### Jak child komponenta standardně komunikuje změnu směrem k rodiči?
+- [x] Přes emit události, kterou parent zachytí a zareaguje na ni.
+- [ ] Přímou mutací parent state bez eventu.
+- [ ] Přepsáním vlastních props.
+- [ ] Pouze přes globální store.
+
+### K čemu slouží `v-model`?
+- [x] K obousměrnému navázání hodnoty a změnové události mezi UI a stavem komponenty.
+- [ ] K definici slotů pro child komponentu.
+- [ ] K vypnutí reaktivity pro daný input.
+- [ ] K memoizaci výpočtů v template.
+
+### Jaký je rozdíl mezi `v-if` a `v-show`?
+- [x] `v-if` element přidává nebo odebírá z DOM, zatímco `v-show` typicky jen přepíná CSS `display`.
+- [ ] `v-show` odebírá element z DOM a `v-if` ne.
+- [ ] Obě direktivy dělají vždy totéž.
+- [ ] `v-if` lze použít jen na formulářové prvky.
+
+### K čemu slouží sloty?
+- [x] K předávání renderovatelného obsahu do komponenty zvenčí při zachování její obalové struktury.
+- [ ] K ukládání lokálního stavu mezi routami.
+- [ ] K nahrazení props v každé komponentě.
+- [ ] K definici HTTP route handlerů.
+
+### Co jsou scoped slots?
+- [x] Sloty, kde child poskytuje parentu data pro vykreslení slot obsahu.
+- [ ] Sloty, které fungují jen ve scoped CSS.
+- [ ] Sloty dostupné pouze v produkci.
+- [ ] Přímá náhrada za provide/inject.
+
+### Kdy použít provide/inject?
+- [x] K předání hodnot napříč stromem komponent bez prop drillingu, typicky pro technický kontext nebo plugin API.
+- [ ] K ukládání každého formulářového inputu v aplikaci.
+- [ ] K nahrazení routeru.
+- [ ] Pouze pro asynchronní data z backendu.
+
+### Co je composable ve Vue?
+- [x] Funkce zapouzdřující znovupoužitelnou logiku nad Composition API.
+- [ ] Speciální template direktiva pro podmíněný render.
+- [ ] Náhrada za CSS modul.
+- [ ] Povinná struktura každé stránky ve Vue Routeru.
+
+### Co dělá `onMounted`?
+- [x] Registruje callback, který se spustí po mountu komponenty do DOM.
+- [ ] Spouští cleanup po unmountu.
+- [ ] Přidává hodnotu do computed cache.
+- [ ] Funguje pouze na serveru.
+
+### K čemu slouží `onUnmounted`?
+- [x] K vyčištění listenerů, timerů nebo jiných side efektů při odpojení komponenty.
+- [ ] K inicializaci props před prvním renderem.
+- [ ] K definici emit událostí.
+- [ ] K připojení SSR middleware.
+
+### Jaký je smysl key při renderování seznamu ve Vue?
+- [x] Pomáhá frameworku správně identifikovat prvky při updatech seznamu a zachovat správný stav.
+- [ ] Umožňuje používat `v-if` uvnitř `v-for`.
+- [ ] Nahrazuje potřebu `:class`.
+- [ ] Key je nutný jen pro server rendering.
+
+### Proč je problém použít index jako key v dynamickém seznamu?
+- [x] Při změně pořadí může dojít k chybnému reuse DOM nebo lokálního stavu položek.
+- [ ] Vue pak seznam nevyrenderuje vůbec.
+- [ ] Index key automaticky vypíná reaktivitu.
+- [ ] Index key lze použít jen u slotů.
+
+### Co je computed setter?
+- [x] Možnost definovat nejen getter, ale i logiku zápisu do computed hodnoty.
+- [ ] Speciální lifecycle hook.
+- [ ] Povinný parametr `watchEffect`.
+- [ ] Mechanismus pro SSR hydrataci.
+
+### Proč není vhodné dělat side efekty přímo v computed?
+- [x] Computed má být deterministická odvozená hodnota, ne místo pro side efekty.
+- [ ] Protože computed se vyhodnotí vždy jen jednou.
+- [ ] Protože computed neumí pracovat s props.
+- [ ] Protože computed funguje jen v class komponentách.
+
+### Co dělá `nextTick`?
+- [x] Počká na flush pending DOM updateů, aby bylo možné pracovat s aktuálně vyrenderovaným DOM.
+- [ ] Přesune komponentu do další routy.
+- [ ] Vynutí reload celé aplikace.
+- [ ] Nahrazuje `setTimeout`.
+
+### Jaký je účel `defineProps` v `<script setup>`?
+- [x] Deklaruje props přijímané komponentou v syntaxi `<script setup>`.
+- [ ] Slouží k vytvoření globálního store.
+- [ ] Používá se jen v Options API.
+- [ ] Přidává scoped CSS do komponenty.
+
+### K čemu slouží `defineEmits`?
+- [x] K deklaraci a typování událostí, které komponenta emituje.
+- [ ] K přímé změně props rodičovské komponenty.
+- [ ] K vytvoření watcheru na route params.
+- [ ] K vypnutí reaktivity v child komponentě.
+
+### Co umožňuje `<script setup>`?
+- [x] Stručnější zápis Composition API s menším boilerplate a přímou dostupností deklarací v template.
+- [ ] Renderování bez template a bez JSX.
+- [ ] Automatické generování unit testů.
+- [ ] Použití pouze na serveru.
+
+### Kdy použít `shallowRef`?
+- [x] Když chceme sledovat změnu reference, ale nechceme hlubokou reaktivitu vnořeného objektu.
+- [ ] Když potřebujeme computed s cache.
+- [ ] Když chceme přistupovat k DOM elementu v template.
+- [ ] Když potřebujeme deep watcher na každý vnořený klíč.
+
+### K čemu slouží `toRefs`?
+- [x] K převodu reaktivního objektu na jednotlivé refy při zachování reaktivity.
+- [ ] K odstranění všech watcherů z komponenty.
+- [ ] K převodu props na immutable objekt.
+- [ ] K serializaci router state.
+
+### Co je častá chyba při destrukturování reactive objektu?
+- [x] Ztráta reaktivity, pokud hodnoty nevytáhneme přes `toRefs` nebo jiný vhodný mechanismus.
+- [ ] Okamžité spuštění všech watcherů dvakrát.
+- [ ] Změna všech property na readonly.
+- [ ] Není to chyba, reaktivita se vždy zachová.
+
+### Jak Vue obvykle řeší formulářovou validaci?
+- [x] Kombinací reaktivního stavu, computed/watcher logiky a případně validační knihovny.
+- [ ] Pouze přes HTML atribut `required`, nic jiného není možné.
+- [ ] Validace je zabudovaná do `v-model` automaticky pro všechny scénáře.
+- [ ] Jen přes provide/inject.
+
+### Co je hlavní přínos Vue Routeru?
+- [x] Mapuje URL na komponenty a poskytuje mechanismy jako nested routes, guards nebo route params.
+- [ ] Nahrazuje potřebu props a emitů.
+- [ ] Ukládá data do localStorage.
+- [ ] Slouží výhradně pro stylování stránky.
+
+### K čemu slouží navigation guard?
+- [x] K řízení přístupu nebo provedení logiky před nebo během změny routy.
+- [ ] K memoizaci výpočtů v komponentě.
+- [ ] K přímé změně DOM v child komponentě.
+- [ ] K přidání CSS animace na přechod.
+
+### Co je ve Vue teleportační komponenta `Teleport`?
+- [x] Umožňuje renderovat část obsahu do jiného místa v DOM mimo aktuální strom komponent.
+- [ ] Přesouvá aplikaci mezi klientem a serverem.
+- [ ] Nahrazuje sloty i props.
+- [ ] Slouží k definici globálního store.
+
+### K čemu slouží `Suspense` ve Vue?
+- [x] K práci s async komponentami nebo setup logikou a k zobrazení fallback obsahu během čekání.
+- [ ] K ukládání výsledků testů do store.
+- [ ] K vypnutí SSR hydratace.
+- [ ] K měření FPS v aplikaci.
+
+### Co je async component?
+- [x] Komponenta načítaná dynamicky až ve chvíli, kdy je potřeba.
+- [ ] Komponenta, která může mít pouze async methods.
+- [ ] Komponenta bez template.
+- [ ] Komponenta určená jen pro Node.js backend.
+
+### Proč je důležité neporušovat unidirectional data flow?
+- [x] Zjednodušuje to debugování a snižuje riziko skrytých vedlejších efektů mezi parent a child komponentami.
+- [ ] Protože Vue jinak vypne reaktivitu celé aplikace.
+- [ ] Protože props lze používat jen jedním směrem kvůli TypeScriptu.
+- [ ] Protože emit události fungují pouze v SSR.
+
+### Co je hlavní role Pinie ve Vue ekosystému?
+- [x] Poskytovat jednoduchý a typově přívětivý store pro sdílený stav aplikace.
+- [ ] Nahradit Vue Router.
+- [ ] Převádět templates do CSS modulů.
+- [ ] Umožnit render bez DOM.
+
+### Co znamená lazy loading rout ve Vue Routeru?
+- [x] Že komponenty rout se načítají dynamicky až při vstupu na danou route.
+- [ ] Že router čeká na idle CPU před každou navigací.
+- [ ] Že všechny routy jsou renderovány jen na serveru.
+- [ ] Že route params jsou načítány z localStorage.
+
+### Jaký je rozdíl mezi local state a storem?
+- [x] Local state je omezený na konkrétní komponentu, zatímco store slouží ke sdílení stavu napříč aplikací.
+- [ ] Store je pouze jiný název pro props.
+- [ ] Local state nelze ve Vue používat.
+- [ ] Store funguje jen v Options API.
+
+### Co typicky dělá `computed` lépe než `watch`?
+- [x] Reprezentuje odvozenou hodnotu bez side efektu a s interním cachováním.
+- [ ] Umožňuje emitovat event do parent komponenty.
+- [ ] Nahrazuje potřebu route guards.
+- [ ] Slouží k rušení pending requestů.
+
+### Jaký je rozdíl mezi `v-bind` a `v-on`?
+- [x] `v-bind` předává hodnoty do atributů nebo props, zatímco `v-on` připojuje event listenery.
+- [ ] `v-bind` je pro eventy a `v-on` pro props.
+- [ ] Obojí slouží pouze pro CSS classy.
+- [ ] Obě direktivy fungují pouze v Options API.
+
+### Co je výhodou scoped CSS ve Vue single-file komponentách?
+- [x] Omezí dopad stylů na konkrétní komponentu bez nutnosti ručně namespacovat všechny selektory.
+- [ ] Zajišťuje plnou izolaci bez jakýchkoli výjimek i pro globální styly.
+- [ ] Nahrazuje potřebu CSS proměnných.
+- [ ] Funguje pouze s `v-show`.
+
+### Co je hlavní účel `emit` validace nebo typování?
+- [x] Dát jasný kontrakt, jaké události může komponenta vysílat a s jakým payloadem.
+- [ ] Umožnit child komponentě přímo měnit route konfiguraci.
+- [ ] Zakázat parent komponentě reagovat na eventy.
+- [ ] Vypnout reaktivitu props.
+
+### K čemu slouží `keep-alive`?
+- [x] K zachování instance komponenty mezi přepínáním, typicky u dynamických komponent nebo rout.
+- [ ] K trvalému uložení dat do browser storage.
+- [ ] K vynucení rerenderu po každém kliknutí.
+- [ ] K vypnutí transitions.
+
+### Co je hlavní výhoda Single File Components?
+- [x] Umožňují držet template, logiku a styl komponenty pohromadě v jasně strukturovaném souboru.
+- [ ] Jsou povinné pro každou Vue aplikaci.
+- [ ] Lze je používat jen bez bundleru.
+- [ ] Nahrazují potřebu routeru.
+
+### Jaký je smysl performance optimalizace přes rozdělení komponent?
+- [x] Zmenšuje množství reaktivních závislostí na jednom místě a omezuje rozsah updateů.
+- [ ] Vue pak nemusí používat Virtual DOM vůbec.
+- [ ] Umožní přeskakovat všechny guardy routeru.
+- [ ] Zaručí nulový počet rerenderů.
+
+### Co je hydration mismatch ve Vue SSR?
+- [x] Nesoulad mezi serverem vyrenderovaným HTML a tím, co klient očekává při hydrataci.
+- [ ] Vypnutí routeru při přechodu na klient.
+- [ ] Stav, kdy Pinia neobsahuje žádný store.
+- [ ] Chyba syntaxe v `v-bind`.
+
+### K čemu slouží `defineExpose`?
+- [x] K explicitnímu zpřístupnění vybraných hodnot nebo metod rodiči přes template ref.
+- [ ] K exportu všech props do global store.
+- [ ] K definici route guards v komponentě.
+- [ ] K přepnutí z Composition API na Options API.
+
+### Proč může deep watch bolet výkon?
+- [x] Protože sleduje změny vnořených struktur a může být drahý u velkých objektů.
+- [ ] Protože Vue deep watch neumí a vždy spadne.
+- [ ] Protože deep watch funguje jen pro primitivní typy.
+- [ ] Protože watcher automaticky vypne computed.
+
+### Jaký je vhodný přístup k fetchování dat v komponentě?
+- [x] Spouštět ho v odpovídajícím lifecycle nebo composable a řešit loading, error i cleanup scénáře.
+- [ ] Volat fetch přímo v template výrazu.
+- [ ] Ukládat response vždy do props.
+- [ ] Používat jen `watchEffect`, i když to komplikuje kontrolu nad závislostmi.
+
+### Kdy je vhodné použít `readonly` nad reaktivní hodnotou?
+- [x] Když chceme předat stav dál jen pro čtení a zabránit nechtěným mutacím z jiných míst.
+- [ ] Když chceme hodnotu smazat z reaktivního systému.
+- [ ] Když potřebujeme deep watcher.
+- [ ] Jen při použití Vue Routeru.
+
+### Co je hlavní role template compileru ve Vue?
+- [x] Převádí template na render funkce, které framework vykonává.
+- [ ] Ukládá stav komponent do JSON souborů.
+- [ ] Vytváří automaticky unit testy.
+- [ ] Obsluhuje HTTP requesty na backend.
+
+## Node.js
+
+### Co je hlavní charakteristika Node.js runtime?
+- [x] JavaScript runtime nad V8 určený primárně pro server-side a CLI aplikace s event-driven I/O modelem.
+- [ ] Framework pro tvorbu CSS layoutů.
+- [ ] Databáze orientovaná na dokumenty.
+- [ ] Nástroj pouze pro build frontend assetů.
+
+### Co je event loop v Node.js?
+- [x] Mechanismus, který zpracovává callbacky a asynchronní úlohy v jednotlivých fázích běhu.
+- [ ] Fronta pouze pro HTTP requesty.
+- [ ] Nástroj pro serializaci JSON.
+- [ ] API pro vytváření worker threadů.
+
+### Proč je Node.js vhodný pro I/O bound workloady?
+- [x] Protože neblokující I/O umožňuje obsluhovat více čekajících operací bez blokování hlavního vlákna.
+- [ ] Protože každá operace běží automaticky na vlastním procesoru.
+- [ ] Protože JavaScript kód je vždy rychlejší než nativní kód.
+- [ ] Protože Node nepoužívá síťové sockety.
+
+### K čemu v Node.js slouží libuv?
+- [x] Poskytuje event loop, abstrahuje asynchronní I/O a thread pool pro některé operace.
+- [ ] Je to nástroj pro transpile TypeScriptu.
+- [ ] Slouží k rendrování HTML šablon.
+- [ ] Je to package manager pro npm balíčky.
+
+### Co je hlavní rozdíl mezi CommonJS a ESM?
+- [x] CommonJS používá `require/module.exports`, zatímco ESM používá `import/export` a má odlišný modulový systém i načítání.
+- [ ] CommonJS funguje jen v browseru a ESM jen na serveru.
+- [ ] ESM neumí pracovat s async importy.
+- [ ] CommonJS podporuje jen CSS soubory.
+
+### Co znamená, že Node běží nad single-threaded JavaScript execution modelem?
+- [x] JavaScript kód běží v jednom hlavním vlákně, i když některé I/O nebo interní operace mohou využít thread pool či OS.
+- [ ] Node nikdy nepoužívá žádné další thready.
+- [ ] Každý request dostane vlastní JavaScript thread automaticky.
+- [ ] Node umí vykonávat jen synchronní funkce.
+
+### Kdy může synchronní API jako `fs.readFileSync` bolet výkon serveru?
+- [x] Když blokuje event loop a brání obsluze dalších requestů během čtení.
+- [ ] Nikdy, synchronní API je vždy rychlejší.
+- [ ] Jen když se používá v testech.
+- [ ] Pouze na Windows.
+
+### K čemu slouží streamy v Node.js?
+- [x] K postupnému zpracování dat po částech bez nutnosti držet vše v paměti najednou.
+- [ ] K ukládání environment variables.
+- [ ] K definici HTTP route handlerů.
+- [ ] K náhradě Promise API.
+
+### Co je backpressure u streamů?
+- [x] Mechanismus řízení toku dat, aby producer negeneroval data rychleji, než je consumer dokáže zpracovat.
+- [ ] Automatické opakování requestu při chybě.
+- [ ] Název pro memory leak v Bufferech.
+- [ ] Vlastnost dostupná jen u child processů.
+
+### K čemu slouží Buffer v Node.js?
+- [x] K práci s binárními daty mimo běžné JavaScript stringy a pole.
+- [ ] K ukládání React komponent do cache.
+- [ ] K řízení event loopu.
+- [ ] K definici TypeScript generics.
+
+### Jaký je rozdíl mezi `process.nextTick()` a `setTimeout(..., 0)`?
+- [x] `process.nextTick()` se vykoná dříve, ještě před další fází event loopu, zatímco timeout čeká na timers phase.
+- [ ] Obě API jsou v Node zcela identická.
+- [ ] `setTimeout(..., 0)` vždy běží před microtasky.
+- [ ] `process.nextTick()` slouží jen pro child process.
+
+### Co je Promise microtask queue?
+- [x] Fronta callbacků z Promise reakcí, která se zpracovává před přechodem do dalších fází event loopu.
+- [ ] Fronta pouze pro HTTP odpovědi.
+- [ ] Úložiště pro environment variables.
+- [ ] Mechanismus dostupný jen v browseru.
+
+### Kdy má smysl použít worker_threads?
+- [x] Pro CPU náročnou práci, kterou nechceme blokovat v hlavním JavaScript vlákně.
+- [ ] Pro běžné čtení souboru přes `fs.promises`.
+- [ ] Pro nahrazení všech Promise chainů.
+- [ ] Jen pro obsluhu statických assetů.
+
+### Kdy je vhodnější child_process než worker thread?
+- [x] Když potřebujeme oddělený proces, jiný runtime nebo spouštět externí binárky.
+- [ ] Když chceme sdílet JavaScript heap mezi thready.
+- [ ] Při jednoduchém update objektu ve state.
+- [ ] Jen při použití Expressu.
+
+### Co je cluster v Node.js?
+- [x] Mechanismus pro spuštění více procesů využívajících více CPU jader nad stejným serverovým workloadem.
+- [ ] Nativní databázová replikační vrstva.
+- [ ] Název pro skupinu Promise callbacků.
+- [ ] Povinná součást každé Node aplikace.
+
+### Co je hlavní výhoda `fs.promises` API?
+- [x] Umožňuje pohodlně pracovat s file system operacemi přes Promise a async/await.
+- [ ] Všechny operace jsou díky tomu synchronní.
+- [ ] Funguje jen ve worker threadu.
+- [ ] Nahrazuje potřebu importů.
+
+### Jak správně zachytit chybu v async funkci?
+- [x] Použít `try/catch` kolem `await` nebo vrácenou Promise korektně ošetřit.
+- [ ] Spoléhat, že Node všechny chyby vypíše a pokračuje bezpečně dál.
+- [ ] Použít pouze `console.log` bez další logiky.
+- [ ] Zachytit chybu jen na úrovni package.json.
+
+### Co je unhandled promise rejection?
+- [x] Promise, která je odmítnutá a nemá včas připojený handler pro chybu.
+- [ ] Promise, která je pending déle než 5 sekund.
+- [ ] Každý `throw` uvnitř sync funkce.
+- [ ] Situace, kdy `await` vrátí `undefined`.
+
+### K čemu slouží middleware v HTTP frameworku jako Express?
+- [x] K řetězení zpracování requestu a response, například pro auth, logování nebo parsování dat.
+- [ ] K nativnímu ukládání dat do MongoDB.
+- [ ] K překladu TypeScriptu na JavaScript.
+- [ ] K paralelnímu běhu event loopu.
+
+### Co je typický problém memory leaků v Node.js?
+- [x] Dlouho žijící reference, které brání garbage collectoru uvolnit už nepoužívaná data.
+- [ ] Každý `await` automaticky vyvolá memory leak.
+- [ ] Streamy nikdy nealokují paměť.
+- [ ] Memory leak vzniká jen ve frontendu.
+
+### Jaký je rozdíl mezi `spawn` a `exec`?
+- [x] `spawn` je vhodnější pro streamování výstupu, zatímco `exec` buffruje celý output a vrátí ho najednou.
+- [ ] `exec` umí spouštět jen Node soubory a `spawn` jen shell skripty.
+- [ ] `spawn` vždy blokuje event loop.
+- [ ] Mezi nimi není rozdíl.
+
+### K čemu slouží environment variables v Node aplikaci?
+- [x] K oddělení konfigurace od kódu, například pro secrets, URL nebo feature flagy.
+- [ ] K ukládání request body během běhu.
+- [ ] K nahrazení databáze.
+- [ ] K přidání nových dependency bez restartu.
+
+### Proč je vhodné validovat vstup na hraně aplikace?
+- [x] Chrání to interní logiku před neplatnými daty a usnadňuje predikovatelné chování API.
+- [ ] Protože Node jinak neumí pracovat s JSON.
+- [ ] Validace patří pouze do databáze.
+- [ ] Jen kvůli tomu, aby byl menší bundle.
+
+### Co je rozdíl mezi `readable`, `writable` a `transform` streamem?
+- [x] Readable produkuje data, writable data přijímá a transform dělá obojí s úpravou toku.
+- [ ] Všechny tři typy jsou zcela stejné.
+- [ ] Transform stream nelze pipelineovat.
+- [ ] Writable stream jen čte soubory.
+
+### K čemu slouží `pipeline()` ve stream API?
+- [x] K bezpečnému propojení streamů s lepším ošetřením chyb a ukončení.
+- [ ] K definici middleware řetězce v Expressu.
+- [ ] K vytvoření worker threadu.
+- [ ] K serializaci bufferu do JSON.
+
+### Co může způsobit blokování event loopu?
+- [x] Dlouhý synchronní CPU výpočet nebo synchronní I/O v request handleru.
+- [ ] Použití Promise.all pro více requestů.
+- [ ] Běžné použití async/await samo o sobě.
+- [ ] Vracení JSON response klientovi.
+
+### K čemu slouží `package.json`?
+- [x] Popisuje metadata projektu, dependency, skripty a další nastavení balíčku.
+- [ ] Je to interní cache npm registry.
+- [ ] Obsahuje jen TypeScript typy.
+- [ ] Nahrazuje lockfile.
+
+### Proč je důležitý lockfile (`package-lock.json`, `bun.lock`, `pnpm-lock.yaml`)?
+- [x] Fixuje konkrétní verze závislostí pro reprodukovatelné instalace.
+- [ ] Automaticky zrychluje runtime aplikace.
+- [ ] Nahrazuje testy v CI.
+- [ ] Slouží pouze k uložení secrets.
+
+### Co znamená semver zápis `^1.2.3`?
+- [x] Umožňuje aktualizace kompatibilních minor a patch verzí v rámci stejné major verze.
+- [ ] Fixuje přesně jen verzi `1.2.3`.
+- [ ] Povoluje libovolnou další major verzi.
+- [ ] Znamená prerelease balíček.
+
+### K čemu slouží `npm scripts`?
+- [x] K definici opakovaně použitelných příkazů pro build, testy, start a další úlohy projektu.
+- [ ] Jen k instalaci globálních package managerů.
+- [ ] Pouze k definici HTTP rout.
+- [ ] K vypnutí event loopu v produkci.
+
+### Jaká je role `process.env`?
+- [x] Umožňuje číst environment variables dostupné procesu.
+- [ ] Obsahuje pouze command line argumenty.
+- [ ] Je to globální store pro request data.
+- [ ] Slouží výhradně pro debug logy.
+
+### Co dělá `process.argv`?
+- [x] Obsahuje argumenty příkazové řádky, se kterými byl proces spuštěn.
+- [ ] Vrací seznam všech Promise čekajících v event loopu.
+- [ ] Ukládá environment variables.
+- [ ] Je to API pro čtení souborů.
+
+### K čemu slouží `__dirname` nebo jeho ekvivalent v ESM?
+- [x] K odvození cesty k aktuálnímu souboru nebo jeho adresáři pro práci s file systémem.
+- [ ] K získání URL aktuální HTTP requestu.
+- [ ] K získání jména package z npm registru.
+- [ ] K uložení Buffer instance do globálního scope.
+
+### Co je dobrý důvod používat structured logging?
+- [x] Logy se lépe filtrují, agregují a analyzují v observability nástrojích.
+- [ ] Protože stringové logy nelze v Node vůbec vypsat.
+- [ ] Protože structured logy automaticky řeší všechny chyby.
+- [ ] Jen kvůli tomu, aby byl menší memory footprint.
+
+### Co je healthcheck endpoint?
+- [x] Jednoduchý endpoint signalizující, zda je služba na základní úrovni dostupná a připravená odpovídat.
+- [ ] Endpoint pro kompletní export databáze.
+- [ ] Endpoint, který musí vracet celý config aplikace.
+- [ ] Nástroj pro instalaci npm balíčků.
+
+### Jaký je rozdíl mezi liveness a readiness checkem?
+- [x] Liveness říká, zda proces žije, readiness zda je připraven obsluhovat traffic.
+- [ ] Readiness vždy nahrazuje liveness.
+- [ ] Liveness je jen pro frontend a readiness jen pro backend.
+- [ ] Mezi nimi není žádný rozdíl.
+
+### K čemu slouží `AbortController` při práci s fetch?
+- [x] Umožňuje request zrušit, například při timeoutu nebo zrušení operace.
+- [ ] Slouží k automatickému retry requestu.
+- [ ] Přidává response do cache.
+- [ ] Nahrazuje `Promise.race`.
+
+### Co je hlavní riziko callback hell?
+- [x] Horší čitelnost, testovatelnost a práce s chybami při hlubokém zanoření callbacků.
+- [ ] Callbacky jsou vždy pomalejší než Promise.
+- [ ] Callbacky nelze používat s file systémem.
+- [ ] Callback hell se týká jen CSS build pipeline.
+
+### Kdy dává smysl použít `Promise.all`?
+- [x] Když chceme spustit více nezávislých asynchronních operací paralelně a čekat na všechny.
+- [ ] Když musí operace běžet přísně sekvenčně.
+- [ ] Když chceme ignorovat chyby všech Promise.
+- [ ] Jen pro jeden jediný request.
+
+### Co je vhodný přístup k timeoutům síťových volání?
+- [x] Mít explicitní timeout nebo abort strategii a neponechávat requesty viset donekonečna.
+- [ ] Spoléhat, že síťové requesty se vždy vrátí rychle.
+- [ ] Timeouty řešit jen na frontendu.
+- [ ] Vypnout retry i logování.
+
+### K čemu slouží HTTP keep-alive?
+- [x] Umožňuje znovupoužít TCP spojení pro více requestů a snížit overhead navazování spojení.
+- [ ] Zajišťuje automatické šifrování bez TLS.
+- [ ] Vypíná potřebu response headerů.
+- [ ] Funguje jen v browser fetch, ne na serveru.
+
+### Co je důsledkem chybějícího error handleru na streamu?
+- [x] Proces může skončit nebo vznikne neošetřená chyba v toku zpracování dat.
+- [ ] Stream automaticky přejde do retry režimu.
+- [ ] Stream se změní na synchronous mode.
+- [ ] Žádný důsledek, stream chyby ignoruje.
+
+### Proč je důležité graceful shutdown chování serveru?
+- [x] Umožňuje dokončit rozpracované requesty, zavřít spojení a uvolnit zdroje při ukončování procesu.
+- [ ] Jen kvůli tomu, aby se přepsal package-lock.
+- [ ] Protože Node bez něj neumí spustit HTTP server.
+- [ ] Je potřeba pouze v testech.
+
+### Co typicky znamená idempotentní HTTP operace?
+- [x] Opakované provedení stejného požadavku má stejný efekt na stav systému jako jediné provedení.
+- [ ] Request je vždy asynchronní.
+- [ ] Request nikdy nevrací chybu.
+- [ ] Response musí být prázdná.
+
+### K čemu slouží rate limiting na API serveru?
+- [x] Chrání službu před zneužitím, brute-force útoky a přetížením.
+- [ ] Zajišťuje renderování šablon na serveru.
+- [ ] Nahrazuje autentizaci.
+- [ ] Slouží jen ke kompresi response.
+
+### Proč je nebezpečné logovat citlivé hodnoty?
+- [x] Mohou uniknout do log managementu nebo být dostupné lidem, kteří k nim nemají mít přístup.
+- [ ] Citlivé hodnoty se v logu automaticky zašifrují.
+- [ ] Logy se v Node nikdy neukládají.
+- [ ] Je to problém jen v browser console.
+
+### Co je hlavní výhoda schema validace requestů?
+- [x] Jasný kontrakt vstupů, dřívější odhalení chyb a bezpečnější zpracování dat.
+- [ ] Node pak nepotřebuje testy.
+- [ ] Schema validace slouží jen pro GraphQL.
+- [ ] Validace zrychluje síťovou latenci tím, že zkracuje TCP handshake.
+
+### Kdy je vhodné použít connection pooling k databázi?
+- [x] Když nechceme pro každý request vytvářet nové spojení a chceme lépe využívat zdroje.
+- [ ] Když chceme vypnout autentizaci k databázi.
+- [ ] Jen při použití worker threadů.
+- [ ] Pooling je vhodný pouze pro file system.
+
+### Jaký je přínos observability metrik vedle logů?
+- [x] Metriky umožňují rychle sledovat trendy, latence, error rate a kapacitu v čase.
+- [ ] Metriky plně nahrazují potřebu logování.
+- [ ] Metriky jsou určeny pouze pro frontend CSS.
+- [ ] Metriky nelze použít v alertingu.
+
+### Co je typický use-case pro `Readable.from()`?
+- [x] Vytvoření readable streamu z iterovatelného zdroje nebo kolekce.
+- [ ] Převod HTTP serveru na worker thread.
+- [ ] Generování TypeScript deklarací.
+- [ ] Nahrazení package manageru.
+
+## Angular
+
+### Co je Angular komponenta?
+- [x] Základní stavební blok UI definující template, logiku a metadata chování.
+- [ ] Speciální služba pro HTTP komunikaci.
+- [ ] Náhrada za router konfiguraci.
+- [ ] CSS soubor s dekorátorem.
+
+### K čemu slouží dekorátor `@Component`?
+- [x] K přidání metadat o template, selectorech a dalších vlastnostech komponenty.
+- [ ] K registraci dependency v injector tree.
+- [ ] K vytvoření RxJS observable.
+- [ ] K označení route guardu.
+
+### Co je dependency injection v Angularu?
+- [x] Mechanismus pro poskytování instancí služeb a jejich injektování do tříd bez ručního vytváření.
+- [ ] Povinný způsob definice CSS tříd.
+- [ ] Runtime validace všech formulářů.
+- [ ] Mechanismus pro server-side rendering HTML.
+
+### Co typicky reprezentuje service v Angularu?
+- [x] Znovupoužitelnou business nebo integrační logiku oddělenou od komponent.
+- [ ] Pouze HTML template bez TypeScriptu.
+- [ ] Route definovanou v routeru.
+- [ ] Deklaraci modulu aplikace.
+
+### Jaký je přínos standalone komponent v Angularu?
+- [x] Umožňují stavět aplikaci bez nutnosti deklarovat vše v NgModule, s explicitnějšími importy.
+- [ ] Zakazují používat dependency injection.
+- [ ] Fungují jen v testovacím režimu.
+- [ ] Nahrazují RxJS observables.
+
+### K čemu slouží `@Input()`?
+- [x] K příjmu dat z parent komponenty.
+- [ ] K emitování událostí do rodiče.
+- [ ] K registraci service v injector tree.
+- [ ] K definici route parametru.
+
+### K čemu slouží `@Output()`?
+- [x] K vysílání událostí z child komponenty směrem k parentu.
+- [ ] K příjmu dat z backend API.
+- [ ] K vytvoření formulářového controleru.
+- [ ] K deklaraci CSS animace.
+
+### Co je `EventEmitter` v Angularu?
+- [x] Objekt běžně používaný s `@Output()` pro emitování událostí z komponenty.
+- [ ] Globální store celé aplikace.
+- [ ] Náhrada za HTTP client.
+- [ ] Mechanismus pro lazy loading rout.
+
+### Jaký je rozdíl mezi template-driven a reactive forms?
+- [x] Template-driven forms jsou více deklarativní v template, reactive forms staví formulářový model explicitně v TypeScriptu.
+- [ ] Reactive forms fungují jen v SSR.
+- [ ] Template-driven forms neumí validaci.
+- [ ] Mezi nimi není praktický rozdíl.
+
+### Kdy mají větší smysl reactive forms?
+- [x] U složitějších formulářů s dynamičtější validací, kompozicí a lepší testovatelností.
+- [ ] Pouze u checkboxů.
+- [ ] Když formulář obsahuje jediný input.
+- [ ] Jen pokud aplikace nepoužívá router.
+
+### Co je `FormControl`?
+- [x] Objekt reprezentující stav a validaci jednoho formulářového pole.
+- [ ] Angular komponenta pro render inputu.
+- [ ] Route guard pro validaci URL.
+- [ ] CSS direktiva pro styl inputu.
+
+### Co je `FormGroup`?
+- [x] Kolekce více formulářových controlů seskupených do jednoho formulářového modelu.
+- [ ] Seznam služeb registrovaných v provideru.
+- [ ] Mechanismus pro lazy loading.
+- [ ] Wrapper nad HTTP requestem.
+
+### K čemu slouží validator ve formuláři?
+- [x] K ověření, zda vstupní hodnota splňuje požadovaná pravidla.
+- [ ] K serializaci formuláře do CSS.
+- [ ] K registraci komponenty do modulu.
+- [ ] K přepočtu change detection stromu.
+
+### Co je Angular Router?
+- [x] Mechanismus mapující URL na komponenty a podporující guards, lazy loading či nested routes.
+- [ ] Náhrada za dependency injection.
+- [ ] Knihovna pro HTTP requesty.
+- [ ] Runtime pro Node.js backend.
+
+### K čemu slouží route guard?
+- [x] K rozhodnutí, zda lze aktivovat, opustit nebo načíst route podle definované logiky.
+- [ ] K přímému renderování child komponent.
+- [ ] K memoizaci change detection.
+- [ ] K serializaci formuláře do query stringu.
+
+### Co je lazy loading rout v Angularu?
+- [x] Načítání části aplikace nebo feature až při vstupu na příslušnou route.
+- [ ] Pomalé přepínání mezi routami při nízkém CPU.
+- [ ] Načítání HTML přes iframe.
+- [ ] Mechanismus pro vypnutí bundleru.
+
+### K čemu slouží `HttpClient`?
+- [x] K odesílání HTTP requestů a práci s jejich odpověďmi přes observables.
+- [ ] K renderování template.
+- [ ] K vytvoření dependency injector tree.
+- [ ] K práci s DOM elementy přes ViewChild.
+
+### Co je HTTP interceptor?
+- [x] Vrstva, která může upravovat requesty a response nebo řešit cross-cutting concerns jako auth a logging.
+- [ ] Komponenta pro zachytávání kliknutí.
+- [ ] Guard, který se spouští pouze na 404 route.
+- [ ] RxJS operator pro streamování DOM eventů.
+
+### Proč Angular používá RxJS?
+- [x] Pro práci s asynchronními proudy dat, eventy a kompozicí operací nad observables.
+- [ ] Jen pro stylování komponent.
+- [ ] Protože Promise v Angularu nefungují.
+- [ ] Výhradně kvůli DI containeru.
+
+### Co je Observable?
+- [x] Reprezentace proudu hodnot v čase, který lze transformovat a odebírat.
+- [ ] Jednorázová synchronní hodnota.
+- [ ] Dekorátor pro registraci komponent.
+- [ ] HTML prvek pro formulář.
+
+### Kdy je potřeba se od observable odhlásit?
+- [x] Když subscription může žít déle než komponenta a hrozí memory leak nebo nežádoucí side efekty.
+- [ ] Nikdy, Angular vše odhlašuje automaticky.
+- [ ] Jen u HTTP requestů, které se ihned dokončí.
+- [ ] Pouze u standalone komponent.
+
+### Co dělá `async` pipe?
+- [x] Přihlásí se k observable nebo promise v template a při destroy komponenty subscription uklidí.
+- [ ] Vynutí synchronní čtení observable.
+- [ ] Nahrazuje router outlet.
+- [ ] Slouží jen k typování template.
+
+### K čemu slouží operator `map` v RxJS?
+- [x] Transformuje emitované hodnoty na nové hodnoty.
+- [ ] Zastaví observable stream.
+- [ ] Sdílí subscription mezi komponentami.
+- [ ] Vytváří dependency injection mapu.
+
+### Co typicky dělá `switchMap`?
+- [x] Při nové vstupní hodnotě zruší předchozí vnořený stream a přepne se na nový.
+- [ ] Sloučí všechny vnořené streamy paralelně bez rušení.
+- [ ] Převede observable na signal.
+- [ ] Připojí CSS modul ke komponentě.
+
+### Kdy je vhodnější `mergeMap` než `switchMap`?
+- [x] Když chceme ponechat více vnořených asynchronních operací běžet paralelně.
+- [ ] Když chceme vždy zrušit předchozí request.
+- [ ] Jen pro synchronní streamy.
+- [ ] Pouze v route guardech.
+
+### Co znamená change detection v Angularu?
+- [x] Mechanismus, kterým Angular zjišťuje změny dat a promítá je do template.
+- [ ] Generování nového bundlu po změně souboru.
+- [ ] Runtime kontrola typů v TypeScriptu.
+- [ ] Mechanismus pro diff databázových migrací.
+
+### Co přináší strategie `OnPush`?
+- [x] Omezuje běžnou change detection na explicitnější scénáře a může snížit zbytečné přepočty.
+- [ ] Vynucuje rerender po každém ticku.
+- [ ] Funguje pouze v template-driven forms.
+- [ ] Nahrazuje potřebu `@Input()`.
+
+### Co je častý důvod, proč se `OnPush` komponenta neaktualizuje?
+- [x] Mutujeme objekt in-place místo předání nové reference nebo nespustíme vhodný trigger změny.
+- [ ] Angular s OnPush neumí renderovat pole.
+- [ ] OnPush funguje jen na serveru.
+- [ ] OnPush automaticky ignoruje všechny eventy.
+
+### K čemu slouží `ChangeDetectorRef`?
+- [x] K jemnější práci s change detection, například k manuálnímu označení komponenty k přepočtu.
+- [ ] K injektování routy do child komponenty.
+- [ ] K práci s DOM eventy v CSS.
+- [ ] K vytvoření observable ze signálu.
+
+### Co je Angular signal?
+- [x] Reaktivní primitivum reprezentující čitelnou a zapisovatelnou hodnotu se sledováním závislostí.
+- [ ] Typ route guardu.
+- [ ] Náhrada za dependency injection.
+- [ ] Mechanismus pro SSR cache.
+
+### Jaký je vztah mezi signals a change detection?
+- [x] Signals mohou pomáhat přesněji vyjadřovat závislosti a lépe řídit aktualizace UI.
+- [ ] Signals vypínají template renderování.
+- [ ] Signals fungují jen mimo komponenty.
+- [ ] Signals jsou jen alias pro Promise.
+
+### Co je pipe v Angularu?
+- [x] Mechanismus pro transformaci hodnoty v template, například datum nebo formát čísla.
+- [ ] Náhrada za RxJS operator.
+- [ ] API pro HTTP request pipeline.
+- [ ] Komponenta pro lazy loading.
+
+### Kdy dává smysl vlastní pipe?
+- [x] Když chceme opakovaně a čitelně převádět data do prezentačního formátu v template.
+- [ ] Když potřebujeme spravovat dependency injection.
+- [ ] Když chceme mutovat formulářový model.
+- [ ] Jen pro route parametry.
+
+### K čemu slouží `ngFor`?
+- [x] K iteraci přes kolekci a renderování opakujících se prvků v template.
+- [ ] K podmíněnému renderování jednoho elementu.
+- [ ] K registraci nové služby.
+- [ ] K definici CSS scoped stylů.
+
+### K čemu slouží `ngIf`?
+- [x] K podmíněnému zobrazení nebo odstranění části template podle výrazu.
+- [ ] K iteraci přes observable.
+- [ ] K injektování route guardů.
+- [ ] K vytvoření output eventu.
+
+### Proč je dobré používat `trackBy` u velkých seznamů?
+- [x] Umožňuje Angularu efektivněji znovu použít DOM prvky a omezit zbytečné změny při updatech seznamu.
+- [ ] Přidává itemům automaticky unikátní CSS třídy.
+- [ ] Nahrazuje potřebu `ngFor`.
+- [ ] Funguje jen s signals.
+
+### Co je `ViewChild`?
+- [x] Mechanismus pro získání reference na child komponentu, direktivu nebo DOM element z template.
+- [ ] Způsob, jak předat data z child do parentu.
+- [ ] Náhrada za route resolver.
+- [ ] RxJS operátor pro práci s child observables.
+
+### K čemu slouží lifecycle hook `ngOnInit`?
+- [x] K inicializační logice po vytvoření komponenty a nastavení vstupů.
+- [ ] K cleanupu subscription při destroy.
+- [ ] K zachytávání route errorů.
+- [ ] K vytvoření Angular modulu.
+
+### Kdy se používá `ngOnDestroy`?
+- [x] Při úklidu subscription, timerů nebo jiných zdrojů před zničením komponenty či služby.
+- [ ] Pro nastavení default props.
+- [ ] Jen při server-side renderingu.
+- [ ] Pro registraci lazy route.
+
+### Co je hlavní role resolveru v routeru?
+- [x] Připravit data před aktivací route, aby je komponenta měla k dispozici už při vstupu.
+- [ ] Ověřit CSS validitu stránky.
+- [ ] Nahradit všechny HTTP interceptory.
+- [ ] Převest observable na promise bez čekání.
+
+### K čemu slouží `router-outlet`?
+- [x] Označuje místo v template, kam se renderuje komponenta aktuální routy.
+- [ ] Vytváří nový dependency injector.
+- [ ] Převádí URL na query string.
+- [ ] Ukládá historii navigací do localStorage.
+
+### Jaký je rozdíl mezi `CanActivate` a `CanDeactivate` guardem?
+- [x] `CanActivate` rozhoduje o vstupu na route, `CanDeactivate` o možnosti ji opustit.
+- [ ] `CanActivate` je pro SSR a `CanDeactivate` pro CSR.
+- [ ] Oba guardy řeší pouze lazy loading modulů.
+- [ ] Mezi nimi není rozdíl.
+
+### Proč bývá výhodné oddělit smart a presentational komponenty?
+- [x] Zlepšuje to čitelnost, testovatelnost a rozdělení zodpovědností mezi data a prezentaci.
+- [ ] Angular jinak nespustí change detection.
+- [ ] Presentational komponenty nesmí mít template.
+- [ ] Smart komponenty nelze routovat.
+
+### Co je hlavní přínos Angular CLI?
+- [x] Standardizuje build, scaffold, testování a konfiguraci projektu.
+- [ ] Nahrazuje všechny npm balíčky jediným příkazem.
+- [ ] Slouží výhradně k SSR renderu.
+- [ ] Vytváří automaticky backend API.
+
+### Co dělá `providedIn: 'root'` u služby?
+- [x] Registruje službu v root injector tree a typicky z ní dělá singleton pro aplikaci.
+- [ ] Omezuje službu jen na jednu komponentu.
+- [ ] Slouží ke konfiguraci routingu.
+- [ ] Zajišťuje, že se služba nikdy neinicializuje.
+
+### Co je hlavní riziko těsného propojení komponent přes služby s mutable stavem?
+- [x] Může vzniknout skrytá vazba, hůře předvídatelné chování a složitější debugování.
+- [ ] Angular pak zakáže dependency injection.
+- [ ] Service se automaticky stanou immutable.
+- [ ] Mutable stav lze držet jen ve formulářích.
+
+### K čemu slouží testovací utility jako TestBed?
+- [x] K vytvoření testovacího Angular prostředí pro komponenty, služby a DI konfiguraci.
+- [ ] K produkčnímu bootstrapu aplikace.
+- [ ] K přímému nasazení buildu na server.
+- [ ] K převodu observables na signály.
+
+### Proč je důležité nepřetěžovat template složitou logikou?
+- [x] Zhoršuje to čitelnost, testovatelnost i výkon, protože template má sloužit hlavně k deklarativní prezentaci.
+- [ ] Protože Angular template nepodporuje výrazy.
+- [ ] Protože vše musí být vždy v CSS.
+- [ ] Jen kvůli tomu, aby fungoval router.
+
+### Co je hlavní cíl server-side renderingu v Angular aplikaci?
+- [x] Zlepšit first paint, SEO a dostupnost obsahu před plnou hydratací klienta.
+- [ ] Nahradit potřebu browser JavaScriptu ve všech scénářích.
+- [ ] Zakázat routování na klientu.
+- [ ] Vyřešit memory leak ve službách.
+
+### Jaký je typický rozdíl mezi `Subject` a `BehaviorSubject`?
+- [x] `BehaviorSubject` drží a okamžitě poskytuje poslední hodnotu novým subscriberům, `Subject` ne.
+- [ ] `Subject` je immutable a `BehaviorSubject` mutable objekt.
+- [ ] `BehaviorSubject` funguje jen v routeru.
+- [ ] `Subject` nelze použít v service.
+
+## TypeScript
+
+### Jaký je hlavní rozdíl mezi `any` a `unknown`?
+- [x] `unknown` vyžaduje před použitím zúžení typu nebo kontrolu, zatímco `any` vypíná typovou kontrolu.
+- [ ] `any` lze použít jen pro string a `unknown` jen pro object.
+- [ ] `unknown` je totéž co `never`.
+- [ ] `any` je bezpečnější než přesně definovaný typ.
+
+### Co typicky reprezentuje typ `never`?
+- [x] Stav, který by neměl nikdy nastat, nebo funkci, která nikdy normálně nevrátí hodnotu.
+- [ ] Libovolnou hodnotu bez omezení.
+- [ ] Každou hodnotu kromě `null`.
+- [ ] Alias pro `void`.
+
+### Co je union type?
+- [x] Typ, který může nabývat jedné z více specifikovaných variant.
+- [ ] Typ vzniklý spojením vlastností více objektů dohromady.
+- [ ] Typ určený výhradně pro pole.
+- [ ] Mechanismus pro runtime validaci JSON.
+
+### Co je intersection type?
+- [x] Typ kombinující požadavky více typů současně.
+- [ ] Typ pro výběr právě jedné z více variant.
+- [ ] Typ určený jen pro stringové literály.
+- [ ] Typ pro asynchronní funkce.
+
+### Co je type narrowing?
+- [x] Zúžení širšího typu na konkrétnější variantu pomocí kontrol v kódu.
+- [ ] Automatické přidání nových property do objektu.
+- [ ] Převod TypeScriptu na JavaScript během buildu.
+- [ ] Zkrácení názvů typů kvůli výkonu.
+
+### K čemu slouží type guard?
+- [x] K ověření nebo deklaraci, že hodnota odpovídá konkrétnějšímu typu.
+- [ ] K ochraně importů před circular dependency.
+- [ ] K vytvoření readonly objektu.
+- [ ] K serializaci typu do JSON.
+
+### Jaký je praktický rozdíl mezi `interface` a `type`?
+- [x] Obě umí popsat objekty, ale `type` lépe reprezentuje i unie či aliasy a `interface` podporuje declaration merging.
+- [ ] `interface` lze použít jen pro class a `type` jen pro funkce.
+- [ ] `type` se vyhodnocuje za běhu, `interface` jen při buildu.
+- [ ] Mezi nimi není žádný rozdíl ani v možnostech použití.
+
+### Co dělá `extends` u generic constraintu?
+- [x] Omezuje generický parametr na typy splňující danou podmínku.
+- [ ] Vynucuje dědičnost pouze pro class komponenty.
+- [ ] Převádí union na intersection.
+- [ ] Zajišťuje runtime validaci vstupu.
+
+### K čemu slouží generics?
+- [x] K psaní znovupoužitelných typově bezpečných funkcí, tříd a utilit pracujících s různými typy.
+- [ ] K překladu TypeScriptu do JavaScriptu.
+- [ ] K importu typů z externí knihovny.
+- [ ] K vypnutí inference v editoru.
+
+### Co znamená `keyof T`?
+- [x] Sjednocení názvů klíčů typu `T`.
+- [ ] Vrací typ hodnot v objektu `T`.
+- [ ] Získá pouze required property typu `T`.
+- [ ] Vytvoří readonly kopii typu `T`.
+
+### K čemu slouží `typeof` v type position?
+- [x] Umožňuje odvodit typ z existující hodnoty nebo symbolu.
+- [ ] Převádí runtime hodnotu na string.
+- [ ] Nahrazuje `instanceof` v JavaScriptu.
+- [ ] Funguje pouze pro primitivní typy.
+
+### Co je indexed access type jako `T[K]`?
+- [x] Typ hodnoty na klíči `K` v typu `T`.
+- [ ] Operace pro přístup do pole pouze za běhu.
+- [ ] Alias pro `keyof T`.
+- [ ] Vždy vrací `string`.
+
+### Co je mapped type?
+- [x] Typ vytvářený iterací přes klíče jiného typu a transformací jejich vlastností.
+- [ ] Typ určený pouze pro mapové kolekce.
+- [ ] Runtime API pro převod objektů.
+- [ ] Mechanismus pro deduplikaci union typů.
+
+### Co je conditional type?
+- [x] Typ definovaný podmínkou ve stylu `T extends U ? X : Y`.
+- [ ] Typ, který lze použít jen uvnitř `if` bloku.
+- [ ] Alias pro optional property.
+- [ ] Typ dostupný jen v `.d.ts` souborech.
+
+### K čemu slouží utility type `Partial<T>`?
+- [x] Udělá všechny vlastnosti typu `T` volitelnými.
+- [ ] Udělá všechny vlastnosti typu `T` readonly.
+- [ ] Vybere jen polovinu vlastností typu `T`.
+- [ ] Odstraní z typu všechny metody.
+
+### K čemu slouží `Required<T>`?
+- [x] Udělá všechny vlastnosti typu `T` povinnými.
+- [ ] Vybere jen required vlastnosti a zbytek smaže z runtime objektu.
+- [ ] Přidá default values do objektu.
+- [ ] Vynutí, že typ musí obsahovat alespoň jednu metodu.
+
+### K čemu slouží `Pick<T, K>`?
+- [x] Vytvoří nový typ obsahující pouze vybrané klíče `K` z typu `T`.
+- [ ] Odebírá klíče `K` z typu `T`.
+- [ ] Vybírá první hodnotu z union typu.
+- [ ] Mění všechny property na optional.
+
+### K čemu slouží `Omit<T, K>`?
+- [x] Vytvoří nový typ bez klíčů `K` z typu `T`.
+- [ ] Udělá klíče `K` readonly.
+- [ ] Vybere pouze klíče `K`.
+- [ ] Přidá nový klíč `K` do typu `T`.
+
+### K čemu slouží `Record<K, V>`?
+- [x] Vytvoří objektový typ s klíči `K` a hodnotami typu `V`.
+- [ ] Převede pole na tuple.
+- [ ] Umožní serializovat typ do JSON.
+- [ ] Funguje pouze pro stringové hodnoty.
+
+### Co dělá `ReturnType<T>`?
+- [x] Získá návratový typ funkce `T`.
+- [ ] Získá typ prvního argumentu funkce `T`.
+- [ ] Udělá funkci readonly.
+- [ ] Vynutí, že funkce vrací Promise.
+
+### K čemu slouží klíčové slovo `infer`?
+- [x] K zachycení a odvození části typu uvnitř conditional types.
+- [ ] K deklaraci interface implementace.
+- [ ] K ručnímu vypnutí inference v celém souboru.
+- [ ] K překladu TS typů do runtime validátorů.
+
+### Co znamená `foo?: string`?
+- [x] Vlastnost může chybět nebo být typu `string` podle pravidel TypeScriptu a nastavení compileru.
+- [ ] Vlastnost musí být vždy `null`.
+- [ ] Vlastnost je readonly.
+- [ ] Vlastnost musí být funkce vracející string.
+
+### Kdy je `!` non-null assertion riskantní?
+- [x] Když jím umlčíme typovou kontrolu bez jistoty, že hodnota opravdu není `null` nebo `undefined`.
+- [ ] Když ho použijeme uvnitř interface.
+- [ ] Když pracujeme s `string`.
+- [ ] Riskantní není nikdy.
+
+### Co je type assertion jako `value as Foo`?
+- [x] Instrukce pro kompilátor, jak má s hodnotou typově zacházet; sama o sobě neprovádí runtime validaci.
+- [ ] Bezpečná runtime konverze hodnoty do jiného typu.
+- [ ] Povinný zápis pro každé API response.
+- [ ] Způsob, jak vytvořit generický typ.
+
+### Co znamená `readonly` u property?
+- [x] V TypeScriptu brání jejímu přepsání po inicializaci na typové úrovni.
+- [ ] V runtime property zcela zamkne přes `Object.freeze`.
+- [ ] Umožní property smazat.
+- [ ] Dělá property automaticky optional.
+
+### Co je discriminated union?
+- [x] Union typů sdílejících diskriminační klíč, podle kterého lze bezpečně zúžit konkrétní variantu.
+- [ ] Intersection dvou interface se stejným názvem.
+- [ ] Typ určený jen pro enumy.
+- [ ] Mechanismus pro serializaci unie do stringu.
+
+### Jak ověřit exhaustiveness nad discriminated union?
+- [x] Například přes `switch` a helper s typem `never` v default větvi.
+- [ ] Přes `JSON.stringify`.
+- [ ] Jen pomocí runtime `instanceof`.
+- [ ] Exhaustiveness nelze v TypeScriptu řešit.
+
+### K čemu slouží literal types?
+- [x] Umožňují pracovat s konkrétními hodnotami jako typy, například `'open' | 'closed'`.
+- [ ] Slouží jen k typování číselných polí.
+- [ ] Jsou to runtime konstanty vygenerované kompilátorem.
+- [ ] Nahrazují potřebu enumů ve všech případech.
+
+### Co dělá `as const`?
+- [x] Zužuje hodnotu na co nejvíce konkrétní literal typy a označuje vnořené property jako readonly.
+- [ ] Překládá objekt na interface.
+- [ ] Vynucuje deep clone objektu.
+- [ ] Mění pole na mutable seznam.
+
+### Co je tuple?
+- [x] Pole s pevně definovaným počtem a typy prvků na konkrétních pozicích.
+- [ ] Objekt s dynamickými string klíči.
+- [ ] Alias pro union string literalů.
+- [ ] Speciální Promise typ.
+
+### Kdy mají smysl function overloads?
+- [x] Když jedna funkce podporuje více kombinací parametrů a návratových typů s různým kontraktem.
+- [ ] Když chceme vynutit asynchronní chování funkce.
+- [ ] Pouze při exportu default class.
+- [ ] Overload je povinný pro každou generickou funkci.
+
+### Co znamená structural typing v TypeScriptu?
+- [x] Kompatibilita typů se určuje podle tvaru a členů, ne podle nominální identity typu.
+- [ ] Typy jsou kompatibilní pouze, když dědí ze stejné class.
+- [ ] Každý typ musí mít unikátní runtime identifikátor.
+- [ ] TypeScript porovnává typy pouze podle názvu.
+
+### K čemu slouží `satisfies` operátor?
+- [x] Ověří, že hodnota odpovídá zadanému typu, aniž by zbytečně rozšířil nebo přepsal inferovaný typ hodnoty.
+- [ ] Převádí objekt na `unknown`.
+- [ ] Nahrazuje `implements` u tříd.
+- [ ] Funguje jen pro enumy.
+
+### Co je declaration merging?
+- [x] Možnost, aby se více deklarací se stejným jménem v některých případech sloučilo do jednoho typu.
+- [ ] Automatické spojení všech importů v souboru.
+- [ ] Runtime spojení dvou objektů do jednoho.
+- [ ] Funkce dostupná jen v JavaScriptu.
+
+### Co dělá `strictNullChecks`?
+- [x] Vynucuje explicitní práci s `null` a `undefined` místo jejich tichého přehlížení.
+- [ ] Zakazuje používat optional property.
+- [ ] Přidává runtime kontrolu na každý `if`.
+- [ ] Zajistí, že žádná proměnná nikdy nebude undefined.
+
+### Co znamená `noImplicitAny`?
+- [x] Kompilátor hlásí chyby tam, kde typ padá na implicitní `any`.
+- [ ] Všechny explicitní `any` jsou automaticky zakázané v runtime.
+- [ ] TypeScript přestane inferovat typy funkcí.
+- [ ] Mění všechny chybějící typy na `unknown`.
+
+### Co řeší `strict` režim v `tsconfig`?
+- [x] Zapíná sadu přísnějších typových kontrol pro bezpečnější a přesnější práci s typy.
+- [ ] Překládá TypeScript do přísného JavaScript modu.
+- [ ] Vypíná možnost používat generics.
+- [ ] Je určen jen pro testovací build.
+
+### Co znamená, že `implements` u class je jen compile-time kontrakt?
+- [x] TypeScript zkontroluje shodu se smlouvou typu, ale negeneruje kvůli tomu zvláštní runtime chování.
+- [ ] `implements` automaticky vytvoří instance všech metod.
+- [ ] `implements` funguje jen s abstraktní třídou.
+- [ ] `implements` přidá k objektu metadata do JSON.
+
+### K čemu slouží default generic parametr?
+- [x] Umožňuje generiku použít výchozí typ, pokud volající jiný typ nedodá.
+- [ ] Zakáže inference generického typu.
+- [ ] Slouží pouze k typování class decoratorů.
+- [ ] Převádí generický typ na union.
+
+### Co je výhodou inference generického typu z argumentu funkce?
+- [x] Volající často nemusí typový parametr zapisovat ručně a přesto získá přesný typový výsledek.
+- [ ] Funkce se tím stává asynchronní.
+- [ ] Inference vždy vrací `unknown`.
+- [ ] Funguje jen pro pole stringů.
+
+### K čemu slouží template literal types?
+- [x] K vytváření nových string typů skládáním jiných literal typů.
+- [ ] K renderování HTML template na serveru.
+- [ ] K zápisu víceřádkových stringů v runtime.
+- [ ] Jen k typování CSS modulů.
+
+### Co je distribuční conditional type?
+- [x] Conditional type, který se při použití nad union typem aplikuje na každou variantu zvlášť.
+- [ ] Conditional type, který se aplikuje jen na první položku unionu.
+- [ ] Typ, který lze použít jen v distribuovaném systému.
+- [ ] Mechanismus pro rozdělení objektu na dva typy.
+
+### Kdy dává smysl použít branded typ?
+- [x] Když chceme odlišit dvě hodnoty se stejnou runtime reprezentací, ale odlišným významem, například `UserId` a `OrderId`.
+- [ ] Když chceme z objektu udělat readonly typ.
+- [ ] Pouze při definici enumů.
+- [ ] Branded typy jsou povinné pro každé API DTO.
+
+### Co je častý problém s příliš agresivním používáním `as`?
+- [x] Lze obejít typovou bezpečnost a skrýt chyby, které se pak projeví až v runtime.
+- [ ] Kód se kvůli tomu nepřeloží do JavaScriptu.
+- [ ] TypeScript pak vypne všechny utility types.
+- [ ] `as` automaticky změní runtime shape objektu.
+
+### Jak se liší `null` a `undefined` v TypeScriptu?
+- [x] Jsou to dvě odlišné hodnoty a při zapnutém `strictNullChecks` i odlišné typové případy.
+- [ ] Jsou vždy zaměnitelné a TypeScript je nerozlišuje.
+- [ ] `undefined` lze použít jen v browseru.
+- [ ] `null` je v TypeScriptu zakázaný.
+
+### K čemu slouží optional chaining `?.`?
+- [x] Umožňuje bezpečně přistoupit k dalšímu členu jen pokud předchozí hodnota není `null` ani `undefined`.
+- [ ] Převádí `null` automaticky na prázdný string.
+- [ ] Nahrazuje nutnost typového zúžení v celé funkci.
+- [ ] Funguje jen pro Promise.
+
+### Co dělá nullish coalescing `??`?
+- [x] Vrací pravou stranu jen tehdy, když levá je `null` nebo `undefined`, ne pro každou falsy hodnotu.
+- [ ] Vrací pravou stranu pro `0` i prázdný string stejně jako `||`.
+- [ ] Slouží k vytváření union typů.
+- [ ] Je to pouze typová konstrukce bez runtime chování.
+
+### Jaký je přínos `readonly` polí a utilit jako `ReadonlyArray<T>`?
+- [x] Typově zabraňují mutačním operacím nad kolekcí na místech, kde chceme zachovat imutabilitu.
+- [ ] Automaticky deep-clonují data při každém čtení.
+- [ ] Lze je použít jen s tuple.
+- [ ] Znamenají, že pole nelze iterovat.
+
+### Co je smysl `Extract<T, U>` utility typu?
+- [x] Vezme z typu `T` jen ty části, které jsou kompatibilní s `U`.
+- [ ] Odebere z `T` všechny části kompatibilní s `U`.
+- [ ] Vytvoří z `T` readonly kopii.
+- [ ] Vrací první vlastnost objektového typu `T`.
+
+### Co dělá `Exclude<T, U>`?
+- [x] Odebere z typu `T` ty části, které jsou kompatibilní s `U`.
+- [ ] Vybere z `T` jen části kompatibilní s `U`.
+- [ ] Změní `T` na intersection s `U`.
+- [ ] Vytvoří z `T` runtime validátor.
+
+## CSS / Styling
+
+### Co určuje CSS cascade?
+- [x] Jak se rozhodne, které pravidlo se použije, když na stejný element cílí více stylů.
+- [ ] Jak browser řadí HTML elementy v DOM.
+- [ ] Jak se načítají JavaScript moduly.
+- [ ] Jak se serializují CSS variables.
+
+### Co je CSS specificity?
+- [x] Mechanismus určující sílu selektoru při konfliktu více pravidel.
+- [ ] Množství vlastností zapsaných v jednom pravidle.
+- [ ] Počet media query v souboru.
+- [ ] Typ renderovacího engine prohlížeče.
+
+### Který selektor má obecně vyšší specificitu?
+- [x] `#header .item`
+- [ ] `.item`
+- [ ] `div`
+- [ ] `*`
+
+### Co dělá `!important`?
+- [x] Uměle zvýší prioritu deklarace v cascade, a proto by se mělo používat střídmě.
+- [ ] Udělá z vlastnosti animovatelnou.
+- [ ] Zrychlí vykreslení stylu v browseru.
+- [ ] Funguje jen v inline stylech.
+
+### Co je box model?
+- [x] Model zahrnující content, padding, border a margin kolem elementu.
+- [ ] Mechanismus pro flex layout.
+- [ ] API pro práci s CSS variables.
+- [ ] Typ CSS selektoru pro kontejnery.
+
+### Co znamená `box-sizing: border-box`?
+- [x] Šířka a výška elementu zahrnují i padding a border.
+- [ ] Border se vykresluje mimo layout.
+- [ ] Margin se započítává do obsahu.
+- [ ] Element ignoruje padding.
+
+### Jaký je rozdíl mezi margin a padding?
+- [x] Margin vytváří prostor vně elementu, padding uvnitř kolem obsahu.
+- [ ] Margin je uvnitř a padding vně elementu.
+- [ ] Jsou to synonyma.
+- [ ] Padding lze použít jen pro text.
+
+### K čemu slouží `display: flex`?
+- [x] K jednorozměrnému layoutu položek v řádku nebo sloupci s flexibilním rozmisťováním.
+- [ ] K tvorbě dvourozměrné tabulky podobné gridu.
+- [ ] K absolutnímu pozicování potomků.
+- [ ] Jen k centrování textu.
+
+### Co dělá `justify-content` ve flexboxu?
+- [x] Zarovnává položky podél hlavní osy kontejneru.
+- [ ] Zarovnává položky vždy vertikálně.
+- [ ] Nastavuje jejich šířku.
+- [ ] Ovlivňuje pouze grid layout.
+
+### Co dělá `align-items` ve flexboxu?
+- [x] Zarovnává položky napříč vedlejší osou kontejneru.
+- [ ] Řídí pořadí flex položek.
+- [ ] Nastavuje mezeru mezi řádky.
+- [ ] Funguje jen s `position: absolute`.
+
+### K čemu slouží `gap`?
+- [x] Nastavuje mezery mezi položkami ve flexu nebo gridu bez potřeby hacků přes margin.
+- [ ] Přidává prostor jen kolem posledního prvku.
+- [ ] Nahrazuje `padding` uvnitř elementu.
+- [ ] Funguje pouze pro textové uzly.
+
+### Co je hlavní rozdíl mezi flexboxem a gridem?
+- [x] Flexbox je primárně jednorozměrný layout, grid dvourozměrný.
+- [ ] Grid funguje jen na serveru a flexbox jen v browseru.
+- [ ] Flexbox neumí centrovat.
+- [ ] Grid nepodporuje responzivní design.
+
+### K čemu slouží `display: grid`?
+- [x] K definici dvourozměrné mřížky s řádky a sloupci.
+- [ ] K vypnutí layoutu elementu.
+- [ ] K nahrazení media queries.
+- [ ] Jen k pozicování přes pixelové souřadnice.
+
+### Co dělá `grid-template-columns`?
+- [x] Definuje strukturu sloupců grid kontejneru.
+- [ ] Nastavuje počet řádků ve flexboxu.
+- [ ] Přidává border mezi sloupci.
+- [ ] Určuje pořadí HTML prvků v DOM.
+
+### Co znamená jednotka `fr` v CSS Gridu?
+- [x] Podíl z dostupného volného prostoru v grid kontejneru.
+- [ ] Fixní počet pixelů.
+- [ ] Procento z viewport height.
+- [ ] Jednotka pro písmo.
+
+### Kdy použít `minmax()` v gridu?
+- [x] Když chceme definovat minimální a maximální velikost tracku flexibilním způsobem.
+- [ ] Když chceme vypnout responsive chování.
+- [ ] Když potřebujeme absolutně pozicovat child element.
+- [ ] Pouze pro animace.
+
+### Co dělá `position: relative`?
+- [x] Umožní posouvat element relativně k jeho běžné pozici a vytvořit positioning context pro absolutně pozicované potomky.
+- [ ] Vždy vyjme element z dokumentového toku.
+- [ ] Zarovná element doprostřed viewportu.
+- [ ] Zafixuje element při scrollu.
+
+### Co dělá `position: absolute`?
+- [x] Vyjme element z normálního toku a pozicuje ho vůči nejbližšímu vhodnému positioning contextu.
+- [ ] Udržuje element vždy při horním okraji viewportu.
+- [ ] Funguje stejně jako `sticky`.
+- [ ] Lze použít jen v gridu.
+
+### Jak funguje `position: sticky`?
+- [x] Element se chová relativně, dokud nedosáhne definovaného offsetu, pak se přichytí v rámci scroll kontejneru.
+- [ ] Je vždy fixovaný vůči viewportu.
+- [ ] Je to alias pro `absolute`.
+- [ ] Funguje jen na `<header>` elementu.
+
+### Co je stacking context?
+- [x] Kontext určující, jak se skládají elementy na ose Z vůči sobě.
+- [ ] Seznam všech `z-index` hodnot v dokumentu.
+- [ ] Mechanismus pro dědičnost CSS variables.
+- [ ] Grid vrstva pro auto-placement.
+
+### Proč někdy `z-index` „nefunguje“?
+- [x] Protože element není v očekávaném stacking contextu nebo nemá vhodně nastavené positioning podmínky.
+- [ ] Protože `z-index` funguje jen na flex itemech.
+- [ ] Protože browser ignoruje hodnoty větší než 10.
+- [ ] Protože `z-index` lze použít jen s `display: grid`.
+
+### K čemu slouží media queries?
+- [x] K aplikaci stylů podle vlastností zařízení nebo viewportu, například šířky obrazovky.
+- [ ] K asynchronnímu načítání stylů z API.
+- [ ] K transformaci DOM stromu.
+- [ ] Jen k nastavení font-size.
+
+### Co je mobile-first přístup?
+- [x] Návrh základních stylů pro menší zařízení a jejich postupné rozšiřování pro větší breakpointy.
+- [ ] Stylování pouze pro mobily bez desktop verze.
+- [ ] Začínat vždy desktop layoutem a pak vše skrývat.
+- [ ] Používat jen `max-width` media queries.
+
+### Kdy se hodí použít `rem` místo `px`?
+- [x] Když chceme škálování založené na root font-size a lepší práci s dostupností a responzivitou.
+- [ ] Když potřebujeme pevnou hodnotu nezávislou na uživatelském nastavení.
+- [ ] Jen pro border-radius.
+- [ ] `rem` nelze použít pro spacing.
+
+### Jaký je rozdíl mezi `em` a `rem`?
+- [x] `em` se odvíjí od font-size aktuálního kontextu, `rem` od root elementu.
+- [ ] `em` je vždy pevný pixel a `rem` procento.
+- [ ] `rem` funguje jen pro text.
+- [ ] Mezi nimi není rozdíl.
+
+### Co dělá `overflow: hidden`?
+- [x] Skryje obsah přesahující obsahový box elementu.
+- [ ] Zakáže scroll celé stránky.
+- [ ] Přesune obsah do nového stacking contextu vždy.
+- [ ] Zafixuje výšku elementu na viewport.
+
+### K čemu slouží `object-fit: cover`?
+- [x] Umožňuje obrázku vyplnit box se zachováním poměru stran i za cenu ořezu.
+- [ ] Roztáhne obrázek bez zachování poměru stran.
+- [ ] Funguje jen pro background-image.
+- [ ] Přidává obrázku border-box sizing.
+
+### Co je CSS custom property?
+- [x] Uživatelsky definovaná CSS proměnná zapisovaná například jako `--color-primary`.
+- [ ] Typ selektoru pro root element.
+- [ ] JavaScriptová proměnná dostupná v CSS bez explicitního předání.
+- [ ] Pouze alias pro SASS proměnnou.
+
+### Jaký je přínos CSS variables oproti hardcoded hodnotám?
+- [x] Zlepšují znovupoužití, theming a centrální správu hodnot jako barvy nebo spacing.
+- [ ] Automaticky optimalizují bundl na polovinu.
+- [ ] Fungují jen v preprocessorech.
+- [ ] Nelze je kombinovat s media queries.
+
+### Co znamená inheritance v CSS?
+- [x] Některé vlastnosti se dědí z rodiče na potomky, jiné ne.
+- [ ] Všechny vlastnosti se vždy dědí.
+- [ ] Dědičnost funguje jen pro flex kontejnery.
+- [ ] Dědičnost se týká jen CSS modulů.
+
+### Co je častý důvod nechtěných layout shiftů?
+- [x] Pozdě načtené zdroje bez rezervovaného prostoru, například obrázky bez rozměrů.
+- [ ] Použití `display: block`.
+- [ ] Nastavení `box-sizing: border-box`.
+- [ ] Použití CSS variables.
+
+### K čemu slouží pseudo class `:focus-visible`?
+- [x] K stylování focus stavu primárně v případech, kdy je focus relevantní pro klávesnicovou navigaci.
+- [ ] K skrytí focusu pro všechny uživatele.
+- [ ] K označení elementu, který je právě hovernutý.
+- [ ] K výběru všech disabled inputů.
+
+### Proč není dobrý nápad globálně odstranit outline bez náhrady?
+- [x] Zhoršuje to dostupnost pro uživatele navigující klávesnicí.
+- [ ] Protože outline nejde v CSS vypnout.
+- [ ] Protože browser pak přestane podporovat hover.
+- [ ] Je to problém pouze v Safari.
+
+### Co je pseudo element `::before`?
+- [x] Virtuální element vložený před obsah elementu, typicky pro dekorativní nebo pomocný obsah.
+- [ ] Mechanismus pro výběr předchozího sibling elementu.
+- [ ] Alias pro `:first-child`.
+- [ ] Způsob, jak definovat fallback font.
+
+### K čemu slouží `transition`?
+- [x] K plynulému animování změny hodnot určitých CSS vlastností mezi dvěma stavy.
+- [ ] K vykreslení canvas animace po framech.
+- [ ] K přechodu mezi route v SPA bez JavaScriptu.
+- [ ] Jen k animaci `display`.
+
+### Jaký je rozdíl mezi `transition` a `animation`?
+- [x] Transition reaguje na změnu stavu, animation může běžet nezávisle podle keyframes.
+- [ ] Animation je jen jiný název pro transition.
+- [ ] Transition neumí časování.
+- [ ] Animation nelze opakovat.
+
+### Proč se `display` typicky neanimuje dobře?
+- [x] Protože jde o diskrétní vlastnost bez plynulé interpolace mezi hodnotami.
+- [ ] Protože `display` lze animovat jen přes JavaScript.
+- [ ] Protože browser neumí animovat opacity.
+- [ ] Protože `display` funguje jen na inline elementech.
+
+### K čemu slouží `transform: translate(...)` při animacích?
+- [x] Umožňuje vizuální posun elementu často s lepším výkonem než změna layoutových vlastností typu `top/left`.
+- [ ] Přepočítá DOM strom.
+- [ ] Nahrazuje `position: absolute`.
+- [ ] Mění velikost fontu podle viewportu.
+
+### Co je hlavní role semantic HTML ve stylingu a dostupnosti?
+- [x] Poskytuje smysluplnou strukturu pro uživatele i technologie asistivního přístupu a usnadňuje robustnější stylování.
+- [ ] Nahrazuje všechny ARIA atributy ve všech situacích.
+- [ ] Slouží pouze pro SEO a nemá vztah ke stylům.
+- [ ] Zabraňuje použití flexboxu.
+
+### Proč je důležitý dostatečný kontrast textu a pozadí?
+- [x] Zlepšuje čitelnost a dostupnost zejména pro uživatele se zrakovým omezením nebo v horších podmínkách.
+- [ ] Jen kvůli tomu, aby CSS bylo kratší.
+- [ ] Kontrast je důležitý pouze na mobilu.
+- [ ] Browser si kontrast vždy automaticky dopočítá.
+
+### Co je výhoda utility-first přístupu ke stylování?
+- [x] Umožňuje rychle skládat konzistentní vzhled z menších stavebních tříd, pokud je systém dobře navržený.
+- [ ] Úplně eliminuje potřebu design systému.
+- [ ] Funguje jen bez komponentového frameworku.
+- [ ] Zabraňuje použití media queries.
+
+### Jaká je nevýhoda příliš hlubokých selektorů?
+- [x] Zvyšují coupling na strukturu DOM, hůř se udržují a komplikují override pravidel.
+- [ ] Browser je neumí zpracovat.
+- [ ] Jsou automaticky pomalejší než inline styly ve všech situacích o řády.
+- [ ] Fungují pouze v preprocessorech.
+
+### Kdy má smysl používat BEM nebo podobnou naming konvenci?
+- [x] Když chceme zlepšit čitelnost a předvídatelnost CSS ve větších codebase.
+- [ ] Jen když používáme čistě inline styly.
+- [ ] Pouze pro animace.
+- [ ] Když nechceme mít komponenty.
+
+### Co je hlavní přínos CSS modulů?
+- [x] Omezují kolize názvů tříd lokálním scope pro konkrétní komponentu nebo soubor.
+- [ ] Vypínají potřebu bundleru.
+- [ ] Umožňují používat pouze grid.
+- [ ] Přidávají runtime validaci stylelint pravidel.
+
+### Kdy může inline style být nevhodný?
+- [x] Když chceme pseudo třídy, media queries, lepší znovupoužitelnost nebo oddělení design systému od logiky.
+- [ ] Vždy, inline style by se nikdy neměl používat.
+- [ ] Jen u barvy textu.
+- [ ] Pouze v TypeScript projektech.
+
+### Co dělá `clamp()` v CSS?
+- [x] Umožňuje definovat responsivní hodnotu s minimem, preferovanou hodnotou a maximem.
+- [ ] Slouží ke skrytí přetečeného obsahu.
+- [ ] Používá se pouze pro grid sloupce.
+- [ ] Nahrazuje `calc()` ve všech případech.
+
+### K čemu slouží `calc()`?
+- [x] K výpočtu CSS hodnot kombinujících různé jednotky nebo výrazy.
+- [ ] K spouštění JavaScriptu v CSS.
+- [ ] K automatické minifikaci stylů.
+- [ ] Jen pro výpočet barevných kontrastů.
+
+### Co je container query?
+- [x] Mechanismus pro aplikaci stylů podle velikosti kontejneru místo celého viewportu.
+- [ ] Query nad databází stylů v browseru.
+- [ ] Alias pro media query.
+- [ ] Funkce dostupná jen v preprocessorech.
+
+### Proč je dobré rezervovat prostor pro obrázky nebo embedovaný obsah?
+- [x] Snižuje to layout shifts a zlepšuje stabilitu rozložení při načítání.
+- [ ] Umožňuje to používat pouze JPEG obrázky.
+- [ ] Browser jinak nenačte CSS.
+- [ ] Jen kvůli zmenšení velikosti bundle.
+
+### Jaký je přínos design tokenů pro stylování?
+- [x] Zavádějí sdílený slovník hodnot jako barvy, spacing nebo typography pro konzistentní systém napříč aplikací.
+- [ ] Nahrazují potřebu komponent.
+- [ ] Slouží pouze k exportu do Figma.
+- [ ] Fungují jen s CSS-in-JS.
+
+## Next.js
+
+### Co je hlavní role Next.js?
+- [x] Framework nad Reactem poskytující routing, rendering strategie, serverové capability a produkční tooling.
+- [ ] Náhrada za Node.js runtime.
+- [ ] CSS framework pro utility třídy.
+- [ ] Databázový ORM pro React aplikace.
+
+### Co je App Router v Next.js?
+- [x] Moderní routing systém založený na adresářové struktuře v `app/` a React Server Components.
+- [ ] Legacy router dostupný pouze v `public/`.
+- [ ] Nástroj pro navigaci mezi mikroservisami.
+- [ ] API pro správu cookies v browseru bez serveru.
+
+### Jak se v Next.js obvykle definuje route v App Routeru?
+- [x] Přidáním složky a souboru `page.tsx` nebo `page.jsx` do odpovídající cesty v `app/`.
+- [ ] Přidáním záznamu do `routes.json`.
+- [ ] Jen přes JavaScriptové API v `next.config.js`.
+- [ ] Vygenerováním route přes middleware.
+
+### Co je layout v App Routeru?
+- [x] Sdílená obalová komponenta pro část stromu rout, která může přetrvávat mezi navigacemi.
+- [ ] Speciální CSS reset soubor.
+- [ ] Náhrada za React context provider.
+- [ ] Jen stránka s 404 obsahem.
+
+### K čemu slouží `loading.tsx`?
+- [x] K deklaraci loading UI pro route segment během načítání.
+- [ ] K inicializaci globálního fetch klienta.
+- [ ] K typování props stránky.
+- [ ] K vypnutí server components.
+
+### K čemu slouží `error.tsx`?
+- [x] K zobrazení error boundary UI pro chyby v daném route segmentu.
+- [ ] K logování build warningů při instalaci závislostí.
+- [ ] K zachytávání TypeScript chyb v editoru.
+- [ ] K definici HTTP 500 route handleru.
+
+### Co je React Server Component v kontextu Next.js?
+- [x] Komponenta renderovaná na serveru, která se neposílá klientovi jako plně interaktivní JavaScript.
+- [ ] Každá komponenta uvnitř `pages/`.
+- [ ] Komponenta, která umí běžet jen v browseru.
+- [ ] Komponenta určená výhradně pro route handlers.
+
+### Kdy je potřeba `use client`?
+- [x] Když komponenta používá klientské funkce jako hooky, browser API nebo event handlery.
+- [ ] Když chceme zapnout SSR.
+- [ ] Když komponenta vrací JSX.
+- [ ] Pouze při importu CSS modulu.
+
+### Jaký je rozdíl mezi server a client komponentou?
+- [x] Server komponenta běží a renderuje se na serveru, client komponenta se hydratuje a může být interaktivní v browseru.
+- [ ] Client komponenta nemůže přijímat props.
+- [ ] Server komponenta je vždy pomalejší.
+- [ ] Client komponenta nemůže být součástí App Routeru.
+
+### Co je hlavní výhoda server components?
+- [x] Mohou přesunout část práce a data fetching na server, snížit objem klientského JavaScriptu a zlepšit performance.
+- [ ] Umožňují používat browser API na serveru.
+- [ ] Nahrazují potřebu API requestů úplně.
+- [ ] Slouží jen pro stylování.
+
+### Co je SSR?
+- [x] Server-side rendering, kdy se HTML vyrenderuje na serveru při requestu.
+- [ ] Statický export všech stránek při buildu.
+- [ ] Vykreslení stránky pouze po hydrataci klientem.
+- [ ] Streamování CSS do browseru.
+
+### Co je SSG?
+- [x] Static Site Generation, tedy vygenerování HTML při buildu před samotnými requesty uživatelů.
+- [ ] Rendering pouze v browseru po načtení bundle.
+- [ ] Server rendering při každém requestu.
+- [ ] Tvorba sitemap souboru.
+
+### Co je ISR?
+- [x] Incremental Static Regeneration, tedy možnost periodicky nebo podmíněně obnovovat staticky generovaný obsah.
+- [ ] Režim pouze pro image optimalizaci.
+- [ ] Náhrada za middleware.
+- [ ] Mechanismus pro invalidaci localStorage.
+
+### K čemu slouží `revalidate` v Next.js?
+- [x] K určení, po jaké době lze cacheovaný nebo statický obsah znovu obnovit.
+- [ ] K přidání route guardu.
+- [ ] K vynucení client component režimu.
+- [ ] Jen k nastavení session cookie.
+
+### Co dělá `generateStaticParams`?
+- [x] Vrací sadu dynamických parametrů pro předgenerování dynamických rout při buildu.
+- [ ] Vytváří TypeScript typy pro route parametry.
+- [ ] Slouží k načtení env proměnných.
+- [ ] Funguje jen v `pages/` routeru.
+
+### Co je route handler v App Routeru?
+- [x] Serverový handler pro HTTP metody definovaný souborem `route.ts` v `app/` stromu.
+- [ ] React komponenta pro render API dokumentace.
+- [ ] Build hook pro Vite pluginy.
+- [ ] Náhrada za middleware.
+
+### Kdy použít route handler místo klasické stránky?
+- [x] Když chceme obsloužit HTTP request a vrátit data nebo jinou response místo HTML stránky.
+- [ ] Když potřebujeme pouze zobrazit formulář.
+- [ ] Když chceme client-side navigaci mezi stránkami.
+- [ ] Jen pro statické assety.
+
+### Co je middleware v Next.js?
+- [x] Kód běžící před dokončením requestu, vhodný například pro přesměrování, auth kontrolu nebo rewrite logiku.
+- [ ] React hook pro navigaci.
+- [ ] Utility pro změnu CSS při scrollu.
+- [ ] Vrstva pro databázové migrace.
+
+### K čemu slouží `next/link`?
+- [x] K klientské navigaci mezi stránkami s prefetchingem a SPA-like chováním.
+- [ ] K vytváření externích URL na serveru.
+- [ ] K načítání dat z API route.
+- [ ] K definici canonical URL v metadatech.
+
+### K čemu slouží `next/navigation`?
+- [x] Poskytuje API pro navigaci a práci s route stavem v App Routeru.
+- [ ] Nahrazuje `fetch`.
+- [ ] Je určený pouze pro Pages Router.
+- [ ] Slouží ke konfiguraci webpacku.
+
+### Jaký je přínos `next/image`?
+- [x] Nabízí optimalizaci obrázků, responzivní sizing a další performance benefity.
+- [ ] Automaticky ukládá obrázky do databáze.
+- [ ] Převádí všechny obrázky na SVG.
+- [ ] Funguje jen pro lokální soubory bez externích URL.
+
+### Proč je potřeba dávat pozor na šířku a výšku obrázků?
+- [x] Pomáhá to rezervovat prostor a omezit layout shifts během načítání.
+- [ ] Bez toho Next obrázek vůbec nenačte.
+- [ ] Je to důležité jen pro PNG.
+- [ ] Jen kvůli správnému exportu do PDF.
+
+### K čemu slouží `generateMetadata`?
+- [x] K výpočtu nebo doplnění metadat stránky, například title, description nebo Open Graph.
+- [ ] K tvorbě TypeScript deklarací.
+- [ ] K bootstrapu server actions.
+- [ ] Jen k nastavení cookies.
+
+### Co je server action?
+- [x] Serverová funkce volaná z UI pro mutaci dat nebo formulářové operace bez nutnosti ručně vytvářet samostatné API endpointy pro každý případ.
+- [ ] Funkce, která se vždy vykoná v browseru.
+- [ ] Middleware pro SSR cache.
+- [ ] Náhrada za React state.
+
+### Kdy může být server action nevhodná?
+- [x] Když potřebujeme veřejné API rozhraní nezávislé na Next UI vrstvě nebo přesnější kontrolu nad separací backendu.
+- [ ] Když zpracováváme formulář.
+- [ ] Když pracujeme s databází na serveru.
+- [ ] Server action je vhodná vždy a bez výjimek.
+
+### Co je data fetching cache v Next.js?
+- [x] Systém, který může cachovat výsledky fetchů podle kontextu renderu a konfigurace.
+- [ ] Browser localStorage wrapper.
+- [ ] Jen interní cache pro CSS moduly.
+- [ ] Mechanismus pro serializaci React props.
+
+### Jaký je význam `cache: 'no-store'` u fetch?
+- [x] Říká, že data se nemají cachovat a mají se načítat vždy čerstvě.
+- [ ] Uloží response natrvalo do CDN.
+- [ ] Vypne HTTP request a vrátí prázdný objekt.
+- [ ] Funguje pouze v browser fetch, ne na serveru.
+
+### Co znamená `dynamic = 'force-dynamic'`?
+- [x] Vynucuje dynamické renderování segmentu namísto statické optimalizace.
+- [ ] Zakáže používání client komponent.
+- [ ] Umožní route parametru být volitelný.
+- [ ] Přepne build do development modu.
+
+### Co je hydration mismatch v Next.js?
+- [x] Rozdíl mezi serverem vygenerovaným výstupem a tím, co klient očekává při hydrataci.
+- [ ] Stav, kdy route handler vrací 404.
+- [ ] Chyba při generování sitemap.
+- [ ] Výsledek špatného importu CSS modulu.
+
+### Proč může použití `Date.now()` nebo `Math.random()` přímo v renderu způsobovat problémy?
+- [x] Může vést k odlišnému výstupu na serveru a klientu a tím k hydration mismatch.
+- [ ] Protože tyto funkce v Node neexistují.
+- [ ] Protože Next renderuje pouze statický JSON.
+- [ ] Protože vypnou image optimization.
+
+### Co je edge runtime?
+- [x] Lehčí runtime určený pro běh blízko uživateli s určitými omezeními oproti plnému Node runtime.
+- [ ] Režim pro GPU rendering Reactu.
+- [ ] Databázová replika běžící v browseru.
+- [ ] Jen jiný název pro client components.
+
+### Kdy může být edge runtime nevhodný?
+- [x] Když potřebujeme Node-specifická API nebo knihovny, které edge prostředí nepodporuje.
+- [ ] Když chceme rychlejší response.
+- [ ] Když používáme statické obrázky.
+- [ ] Edge runtime je vždy lepší než Node runtime.
+
+### Co je `notFound()` v App Routeru?
+- [x] Helper pro ukončení renderu segmentu 404 scénářem.
+- [ ] Funkce pro přesměrování na externí URL.
+- [ ] API pro kontrolu existence souboru na disku.
+- [ ] Hook pro získání route parametru.
+
+### Co dělá `redirect()`?
+- [x] Ukončí aktuální tok a vrátí přesměrování na jinou cestu.
+- [ ] Překreslí pouze child komponentu bez změny URL.
+- [ ] Slouží jen pro route handlers.
+- [ ] Přidá meta refresh tag do HTML bez serveru.
+
+### Jaký je rozdíl mezi statickým a dynamickým route segmentem?
+- [x] Dynamický segment obsahuje parametr, například `[id]`, zatímco statický má pevnou cestu.
+- [ ] Dynamický segment funguje jen na klientu.
+- [ ] Statický segment nelze předgenerovat.
+- [ ] Mezi nimi není rozdíl.
+
+### Co je catch-all segment jako `[...slug]`?
+- [x] Segment zachytávající více částí cesty do jednoho parametru.
+- [ ] Route handler pro všechny HTTP metody.
+- [ ] Mechanismus pro fallback CSS.
+- [ ] Syntaxe pro optional chaining v URL.
+
+### K čemu slouží `route groups` v App Routeru?
+- [x] K logickému seskupení segmentů bez vlivu na výslednou URL strukturu.
+- [ ] K definici API rate limit skupin.
+- [ ] K vytvoření CSS namespace.
+- [ ] Jen ke generování sitemap.
+
+### Co je hlavní přínos streaming renderingu?
+- [x] Část UI lze posílat klientovi postupně, takže uživatel vidí obsah dříve.
+- [ ] Zajistí, že všechny requesty doběhnou paralelně bez chyb.
+- [ ] Nahradí potřebu loading UI.
+- [ ] Funguje pouze s Pages Routerem.
+
+### Jaký je rozdíl mezi Pages Routerem a App Routerem?
+- [x] App Router staví na novějším modelu segmentů, layoutů a server components, zatímco Pages Router používá starší `pages/` přístup.
+- [ ] Pages Router funguje jen na serveru a App Router jen v browseru.
+- [ ] Pages Router nepodporuje dynamické routy.
+- [ ] App Router neumí metadata.
+
+### Kdy dává smysl použít `useSearchParams`?
+- [x] Když v client komponentě potřebujeme číst query parametry URL.
+- [ ] Když chceme na serveru zapisovat env proměnné.
+- [ ] Když chceme generovat statické parametry při buildu.
+- [ ] Pouze pro route handlers.
+
+### Co je důležité při práci s cookies v serverové části Next.js?
+- [x] Uvědomit si, že přístup ke cookie může ovlivnit cachování a dynamic rendering chování.
+- [ ] Cookies lze číst jen v client komponentě.
+- [ ] Cookies se vždy ignorují při SSR.
+- [ ] Next cookies automaticky ukládá do localStorage.
+
+### Proč může být nevhodné tahat celý databázový klient do client komponenty?
+- [x] Protože client bundle má běžet v browseru a nemá obsahovat serverové tajné přístupy ani zbytečný kód.
+- [ ] Protože client komponenty neumí importovat JavaScript.
+- [ ] Protože databázový klient musí být vždy v CSS modulu.
+- [ ] Jen kvůli tomu, že TypeScript nepodporuje class.
+
+### Co je hlavní role `next/font`?
+- [x] Optimalizované načítání fontů s lepší kontrolou nad performance a layout stabilitou.
+- [ ] Převod fontů do SVG ikon.
+- [ ] Nastavení fallback rout pro chybějící fonty.
+- [ ] Nástroj pro generování Open Graph obrázků.
+
+### K čemu slouží `generateViewport` nebo metadata viewportu?
+- [x] K deklaraci informací o viewportu a souvisejících metadat pro stránku.
+- [ ] K získání aktuální šířky browser okna v server componentě.
+- [ ] K definici breakpoints pro CSS.
+- [ ] Jen k SSR cachování.
+
+### Co je častý anti-pattern při data fetchingu v Next.js?
+- [x] Zbytečně přesouvat data fetching do klienta, i když mohou být levněji a bezpečněji načtena na serveru.
+- [ ] Použít `await` v server komponentě.
+- [ ] Rozdělit layout a stránku do více souborů.
+- [ ] Použít route handler pro API logiku.
+
+### Jaký je přínos colocace dat a UI v server komponentě?
+- [x] Komponenta může sama získat data blízko místa použití bez nadbytečného prop drillingu přes několik vrstev.
+- [ ] Znamená to, že komponentu už nelze testovat.
+- [ ] Funguje to jen u client komponent.
+- [ ] Vyžaduje to vždy Redux store.
+
+### Kdy použít client component i v aplikaci s App Routerem?
+- [x] Když potřebujeme interaktivitu v browseru, lokální stav, event handlery nebo browser-only API.
+- [ ] Když stránka obsahuje textový obsah.
+- [ ] Když chceme snížit velikost bundle.
+- [ ] Když potřebujeme route handler.
+
+### Co je hlavní trade-off ISR?
+- [x] Kombinuje rychlost statického obsahu s potřebou řešit, kdy a jak často se má obsah obnovovat.
+- [ ] ISR znamená, že obsah už nikdy nezastará.
+- [ ] ISR lze použít jen pro klientské komponenty.
+- [ ] ISR vždy nahrazuje potřebu databáze.
+
+### Proč je důležité rozumět boundary mezi server a client komponentami?
+- [x] Ovlivňuje to velikost bundle, dostupnost API, způsob data fetchingu i bezpečnost práce se secrets.
+- [ ] Jen kvůli pojmenování souborů.
+- [ ] Protože jinak nefungují CSS moduly.
+- [ ] Jde pouze o rozdíl v tom, kde se vykreslí `console.log`.
+
+### Kdy dává smysl číst `searchParams` přímo na serverové stránce?
+- [x] Když potřebujeme odvodit serverový výstup nebo data fetching z query parametrů bez nutnosti klientské hydratace.
+- [ ] Jen když chceme přidat click handler na tlačítko.
+- [ ] Pouze v middleware.
+- [ ] Serverová stránka query parametry nevidí.
+
+## Frontend Testing
+
+### Jaký je rozdíl mezi unit a integration testem?
+- [x] Unit test ověřuje malý izolovaný kus logiky, integration test spolupráci více částí dohromady.
+- [ ] Unit test běží v browseru a integration test jen na serveru.
+- [ ] Integration test je vždy pomalejší o řád.
+- [ ] Mezi nimi není praktický rozdíl.
+
+### Co je e2e test?
+- [x] Test simulující chování uživatele přes celou aplikaci včetně skutečných nebo realisticky stubovaných integračních bodů.
+- [ ] Test jediné utility funkce bez DOM.
+- [ ] Jen screenshot test CSS.
+- [ ] Typová kontrola při buildu.
+
+### Co popisuje test pyramid?
+- [x] Preferenci většího množství levnějších nižších testů a menšího množství dražších e2e testů.
+- [ ] Povinnost psát jen e2e testy.
+- [ ] Hierarchii CSS selektorů v testu.
+- [ ] Sadu pravidel pro snapshoty.
+
+### Proč jsou flaky testy problém?
+- [x] Snižují důvěru v test suite a ztěžují rozlišení skutečných regresí od náhodných selhání.
+- [ ] Znamenají, že test pokrývá příliš mnoho edge cases.
+- [ ] Jsou výhodné pro chaos engineering.
+- [ ] Flaky testy jsou problém jen lokálně, ne v CI.
+
+### Co je dobrá vlastnost kvalitního testu?
+- [x] Je čitelný, deterministický a ověřuje uživatelsky nebo business relevantní chování.
+- [ ] Obsahuje co nejvíc `setTimeout`.
+- [ ] Testuje interní implementační detail každé řádky.
+- [ ] Spouští celý stack i pro triviální pure function.
+
+### Proč bývá lepší testovat chování než implementační detail?
+- [x] Test je pak odolnější vůči refactoru, pokud se nezmění skutečné chování systému.
+- [ ] Implementační detail nelze v JS nikdy ověřit.
+- [ ] Browser neumí číst DOM.
+- [ ] Jen kvůli tomu, že snapshot testy jsou zakázané.
+
+### K čemu slouží mocking?
+- [x] K nahrazení závislostí kontrolovanými doubles, aby byl test izolovanější a predikovatelnější.
+- [ ] K automatickému generování produkčního API.
+- [ ] K nahrazení všech integration testů.
+- [ ] Jen k testování CSS modulů.
+
+### Kdy může být nadměrný mocking škodlivý?
+- [x] Když testujeme spíš mock implementaci než reálné chování a ztrácíme důvěru v integraci částí systému.
+- [ ] Když mockujeme síťové volání v unit testu.
+- [ ] Když používáme stub data.
+- [ ] Mocking není škodlivý nikdy.
+
+### Co je stub?
+- [x] Test double vracející předem připravené odpovědi bez nutnosti plného chování originální závislosti.
+- [ ] Test sledující, kolikrát byla funkce zavolána.
+- [ ] Nástroj pro měření coverage.
+- [ ] Pouze snapshot HTML stránky.
+
+### Co je spy?
+- [x] Obal nebo záznam nad funkcí umožňující ověřit, jak byla volaná.
+- [ ] Náhrada za HTTP server.
+- [ ] Typ CSS selektoru v testu.
+- [ ] Funkce pro paralelní spuštění browserů.
+
+### K čemu slouží fake timer?
+- [x] K řízení času v testu bez čekání na skutečné timeouty nebo intervaly.
+- [ ] K vytváření výkonnostních benchmarků produkce.
+- [ ] K náhradě Promise API.
+- [ ] Jen pro e2e testy.
+
+### Co je accessibility query v komponentových testech?
+- [x] Výběr prvku podle role, labelu nebo textového významu blízký tomu, jak uživatel UI vnímá.
+- [ ] Výběr prvku výhradně podle `.class-name`.
+- [ ] Přístup jen pro screen readery, ne pro testy.
+- [ ] Query, které funguje pouze v Safari.
+
+### Proč bývá `getByRole` často preferovaný selector?
+- [x] Testuje UI z pohledu uživatelské sémantiky a obvykle vede k odolnějším testům.
+- [ ] Je vždy rychlejší než všechny jiné query.
+- [ ] Funguje i bez renderování DOM.
+- [ ] Umí vybrat libovolný element bez role.
+
+### Kdy může být selector přes `.class` křehký?
+- [x] Když se třídy mění kvůli refactoru nebo stylům, aniž by se změnilo skutečné chování UI.
+- [ ] Nikdy, class je nejstabilnější kontrakt aplikace.
+- [ ] Jen při použití Tailwindu.
+- [ ] Jen když test běží v CI.
+
+### Co je síla testování formuláře přes uživatelské interakce?
+- [x] Ověřuje reálný tok zadávání hodnot, validace a submitu podobně jako to dělá uživatel.
+- [ ] Umožní obejít potřebu renderovat komponentu.
+- [ ] Funguje jen pro uncontrolled inputy.
+- [ ] Nahrazuje unit test validační logiky.
+
+### Proč je důležité čekat na asynchronní změny správným způsobem?
+- [x] Aby test nebyl race-condition dependent a neselhával náhodně podle rychlosti prostředí.
+- [ ] Protože async kód v testech nelze ověřit.
+- [ ] Jen kvůli tomu, aby coverage byla vyšší.
+- [ ] Všechny asynchronní změny se projeví synchronně po clicku.
+
+### K čemu slouží `waitFor` nebo podobné utility?
+- [x] K opakovanému ověřování podmínky do chvíle, než se splní nebo timeoutne.
+- [ ] K vytvoření snapshotu DOM.
+- [ ] K mockování HTTP requestů.
+- [ ] K nastavení fake timerů.
+
+### Co je network stub v e2e testu?
+- [x] Náhrada skutečné síťové odpovědi kontrolovaným výsledkem, aby byl test determinističtější.
+- [ ] Logika produkčního backendu.
+- [ ] Automatický retry neúspěšného requestu.
+- [ ] Jen browser cache response.
+
+### Kdy je lepší použít skutečný backend místo stubu?
+- [x] Když chceme ověřit reálnou integraci, kontrakty a chování celého flow end-to-end.
+- [ ] Nikdy, backend se v testech nepoužívá.
+- [ ] Jen pro CSS vizuální regresi.
+- [ ] Pouze při testování utility funkcí.
+
+### Co je snapshot test?
+- [x] Test porovnávající aktuální výstup s uloženým snapshotem.
+- [ ] Výkonnostní profilování browseru.
+- [ ] Test běžící jen nad produkčním bundlem.
+- [ ] Typová kontrola komponenty.
+
+### Kdy mohou být snapshot testy problematické?
+- [x] Když zachytí příliš velký nebo špatně čitelný výstup a změny se pak reviewují bez pochopení dopadu.
+- [ ] Když snapshot obsahuje text.
+- [ ] Jen při použití TypeScriptu.
+- [ ] Snapshot test nikdy nemůže přinést hodnotu.
+
+### Co je visual regression test?
+- [x] Test porovnávající vzhled UI, často přes screenshoty nebo pixel diff.
+- [ ] Test validující pouze response status kód API.
+- [ ] Unit test pro CSS parser.
+- [ ] Integrační test databáze.
+
+### Jaký je přínos testování přístupnosti?
+- [x] Pomáhá odhalit problémy v sémantice, fokusu, labelech nebo kontrastu ještě před produkcí.
+- [ ] Nahrazuje všechny manuální UX testy.
+- [ ] Je relevantní jen pro státní weby.
+- [ ] Týká se pouze backend API.
+
+### Co je hlavní rozdíl mezi smoke a regression testem?
+- [x] Smoke test rychle ověřuje základní průchodnost systému, regression test hlouběji pokrývá, že nic dříve funkčního se nerozbilo.
+- [ ] Regression test je vždy kratší než smoke test.
+- [ ] Smoke test je jen pro backend.
+- [ ] Mezi nimi není rozdíl.
+
+### Proč je důležité testy izolovat od sdíleného stavu?
+- [x] Aby se navzájem neovlivňovaly a jejich výsledek nezávisel na pořadí spuštění.
+- [ ] Jen kvůli menšímu bundle size.
+- [ ] Protože sdílený stav nelze v testech vytvořit.
+- [ ] Izolace je nutná jen u e2e testů.
+
+### Co je test fixture?
+- [x] Předpřipravená sada dat nebo prostředí používaná opakovaně v testech.
+- [ ] Produkční seed databáze.
+- [ ] Výstup coverage reportu.
+- [ ] CSS reset soubor.
+
+### Jaký je přínos page object pattern v e2e testech?
+- [x] Zapouzdří opakující se interakce a selektory, čímž zlepšuje údržbu testů.
+- [ ] Nahrazuje potřebu assertions.
+- [ ] Funguje jen v Selenium.
+- [ ] Je určen pouze pro snapshot testy.
+
+### Proč není dobré spoléhat v e2e testech na pevné `sleep`?
+- [x] Testy jsou pomalejší a náchylnější k flaky chování než při čekání na skutečnou podmínku.
+- [ ] Protože browser neumí čekat.
+- [ ] Sleep je zakázaný pouze v CI.
+- [ ] Sleep vždy způsobí memory leak.
+
+### Co je coverage report?
+- [x] Přehled o tom, jaká část kódu byla během testů vykonána.
+- [ ] Přesný důkaz, že aplikace nemá bugy.
+- [ ] Nástroj pro mockování HTTP.
+- [ ] Jen seznam neúspěšných testů.
+
+### Proč samotná vysoká coverage nestačí?
+- [x] Kód může být vykonaný, ale bez kvalitních assertions a bez pokrytí důležitého chování.
+- [ ] Protože coverage je vždy škodlivá metrika.
+- [ ] Vysoká coverage znamená, že testů je příliš málo.
+- [ ] Coverage nelze měřit u frontendu.
+
+### Co je contract testing v integracích?
+- [x] Ověření, že komunikující systémy dodržují očekávaný tvar a význam rozhraní.
+- [ ] Test layoutu podle design tokenů.
+- [ ] Snapshot route konfigurace.
+- [ ] Jednotkový test CSS modulů.
+
+### Kdy je vhodné testovat custom hook nebo composable izolovaně?
+- [x] Když obsahuje netriviální logiku, kterou chceme ověřit mimo konkrétní prezentační komponentu.
+- [ ] Nikdy, hooky se testovat nedají.
+- [ ] Jen v e2e testu přes browser.
+- [ ] Pouze pokud hook pracuje se CSS.
+
+### Co je dobrý přístup k testování error state UI?
+- [x] Explicitně nasimulovat chybový scénář a ověřit, jaké sdělení nebo fallback uživatel uvidí.
+- [ ] Error stavy netestovat, protože jsou vzácné.
+- [ ] Ověřit jen HTTP status bez renderu UI.
+- [ ] Použít snapshot bez assertions.
+
+### Proč testovat loading state?
+- [x] Protože uživatel loading vidí a jeho správné zobrazení či skrytí je součástí funkčního chování.
+- [ ] Loading state se ve frontendu nikdy nevykresluje.
+- [ ] Jen kvůli coverage.
+- [ ] Loading lze testovat pouze manuálně.
+
+### Co je fake backend nebo mock server v testech?
+- [x] Kontrolované serverové prostředí vracející očekávané odpovědi pro test scénářů.
+- [ ] Produkční backend spuštěný v read-only režimu.
+- [ ] Jen statický JSON soubor bez HTTP vrstvy.
+- [ ] Browser plugin pro zvýraznění chyb.
+
+### K čemu slouží test runner?
+- [x] K objevování, spouštění a reportování výsledků testů.
+- [ ] K vykreslení aplikace v produkci.
+- [ ] K definici TypeScript typů.
+- [ ] K transformaci CSS do JavaScriptu.
+
+### Co je assertion?
+- [x] Ověření očekávaného výsledku testu.
+- [ ] Každé vykreslení komponenty.
+- [ ] Mock databázové odpovědi.
+- [ ] Struktura CI pipeline.
+
+### Proč může být příliš široký integrační test drahý na údržbu?
+- [x] Má více závislostí, více důvodů selhání a hůř se v něm hledá příčina problému.
+- [ ] Protože integrační testy nesmí mít assertions.
+- [ ] Protože browser neumí renderovat více komponent.
+- [ ] Široké integrační testy jsou vždy lepší než menší testy.
+
+### Co je role CI při testování?
+- [x] Automaticky spouštět testy nad změnami a bránit regresím před nasazením.
+- [ ] Nahrazuje veškerý lokální vývoj.
+- [ ] Slouží jen ke generování screenshotů.
+- [ ] CI pipeline nemusí obsahovat testy.
+
+### Proč je dobré mít rychlé testy blízko kódu?
+- [x] Zrychlují feedback loop a usnadňují bezpečný refactor během vývoje.
+- [ ] Jen kvůli menšímu počtu souborů v repozitáři.
+- [ ] Rychlé testy jsou potřeba jen na backendu.
+- [ ] Protože pomalé testy nelze spouštět v CI.
+
+### K čemu slouží test doubles obecně?
+- [x] K nahrazení nebo sledování chování externích závislostí v testu.
+- [ ] K duplikaci produkčních dat do dvou databází.
+- [ ] K zajištění vyšší FPS v browseru.
+- [ ] Pouze k testování CSS transformací.
+
+### Co je hlavní výhoda explicitních testovacích dat oproti náhodně generovaným bez kontroly?
+- [x] Lépe se z nich čte záměr testu a snáz se reprodukují selhání.
+- [ ] Náhodná data se nemohou v testech používat nikdy.
+- [ ] Explicitní data vždy pokryjí více edge cases.
+- [ ] Náhodná data jsou vhodná jen pro load testing.
+
+### Proč je dobré oddělit testy na úrovni logiky, komponent a celých flow?
+- [x] Každá vrstva má jinou cenu, rychlost a typ chyb, které umí efektivně odhalit.
+- [ ] Protože test runner neumí spustit více typů testů v jednom projektu.
+- [ ] Jen kvůli coverage reportu.
+- [ ] Všechny chyby lze stejně najít pouze e2e testem.
+
+### Co je anti-pattern při testování komponenty?
+- [x] Příliš silná vazba testu na interní strukturu implementace místo uživatelsky pozorovatelného chování.
+- [ ] Ověření textu tlačítka podle role.
+- [ ] Mocknutí HTTP requestu v unit testu.
+- [ ] Použití fixture dat.
+
+### Kdy dává smysl použít `data-testid`?
+- [x] Když sémantický selector není praktický nebo dostupný, ale chceme stále stabilní testovací kontrakt.
+- [ ] Vždy místo role nebo label query.
+- [ ] Pouze v e2e testech, nikdy v komponentových.
+- [ ] Jen pro CSS screenshot testy.
+
+### Proč je důležitý cleanup mezi testy?
+- [x] Brání únikům stavu, DOM nebo mocků mezi scénáři a zvyšuje determinismus testů.
+- [ ] Jen kvůli menší velikosti snapshotu.
+- [ ] Protože jinak test runner odmítne spustit další soubor.
+- [ ] Cleanup je nutný jen u pure funkcí.
+
+### Kdy je vhodné mockovat browser API jako `IntersectionObserver` nebo `ResizeObserver`?
+- [x] Když testované prostředí API neposkytuje nebo chceme deterministicky řídit jejich chování v testu.
+- [ ] Nikdy, browser API se v testech nemockují.
+- [ ] Jen při testování backendu.
+- [ ] Pouze v produkčním buildu.
+
+### Co je test data builder pattern?
+- [x] Způsob tvorby testovacích dat přes čitelné továrny nebo buildery s rozumnými defaulty a snadnými overridy.
+- [ ] Mechanismus pro build frontend bundle.
+- [ ] Snapshot celého API kontraktu.
+- [ ] CSS utility třída pro fixture data.
+
+### Proč je opatrnost s retry v CI důležitá?
+- [x] Retry může maskovat flaky testy místo toho, aby řešil skutečnou příčinu nestability.
+- [ ] Retry vždy zaručí, že test není flaky.
+- [ ] Retry lze použít jen u unit testů.
+- [ ] Retry zrychluje všechny pipeline.
+
+### Co je smysl testu zaměřeného na kritický user journey?
+- [x] Ověřit klíčové obchodní flow, jehož rozbití by mělo vysoký dopad na uživatele nebo byznys.
+- [ ] Testovat v něm všechny utility funkce v projektu.
+- [ ] Nahradit jím veškeré unit testy.
+- [ ] Používat ho jen při vizuální regresi.
+
+## State Management
+
+### Co je hlavní rozdíl mezi local a shared state?
+- [x] Local state je omezený na konkrétní komponentu nebo malý podstrom, shared state je potřeba na více místech aplikace.
+- [ ] Shared state lze používat jen na serveru.
+- [ ] Local state se neukládá v paměti.
+- [ ] Mezi nimi není rozdíl.
+
+### Kdy dává smysl liftovat state výš?
+- [x] Když stejná data potřebuje více sibling komponent a je potřeba je synchronizovat.
+- [ ] Když chceme zmenšit počet props v jediné komponentě.
+- [ ] Jen když používáme Redux.
+- [ ] Vždy, jakmile komponenta obsahuje useState.
+
+### Co je derived state?
+- [x] Hodnota odvozená z jiného stavu nebo dat, kterou často není nutné držet jako samostatný zdroj pravdy.
+- [ ] Stav uložený pouze v URL.
+- [ ] Výsledek HTTP requestu bez cache.
+- [ ] Libovolná hodnota v localStorage.
+
+### Proč bývá špatné duplikovat stejná data do více stavových míst?
+- [x] Zvyšuje to riziko nekonzistence a složitější synchronizace updateů.
+- [ ] Protože frontend neumí ukládat stejná data dvakrát.
+- [ ] Jen kvůli velikosti bundle.
+- [ ] Duplicitní stav je vždy rychlejší.
+
+### Kdy je Context dostačující a není nutné sahat po store knihovně?
+- [x] Když sdílíme relativně jednoduchá data nebo services bez složitých update pravidel a debug potřeb.
+- [ ] Nikdy, Context se pro state nepoužívá.
+- [ ] Jen pokud aplikace nemá router.
+- [ ] Pouze pro formuláře.
+
+### Jaké je riziko používání Contextu jako univerzálního globálního storu?
+- [x] Může vést k nechtěným rerenderům a ke složitěji udržovatelné architektuře bez jasných hranic odpovědností.
+- [ ] Context automaticky vypne memoizaci komponent.
+- [ ] Context nefunguje s TypeScriptem.
+- [ ] Context je vždy rychlejší než dedikovaný store.
+
+### Co je hlavní myšlenka reducer patternu?
+- [x] Změny stavu se popisují explicitními akcemi a čistou funkcí, která z předchozího stavu vytvoří nový.
+- [ ] Reducer přímo mutuje DOM a props.
+- [ ] Reducer je jen jiný název pro API client.
+- [ ] Reducer funguje pouze na serveru.
+
+### Proč je imutabilita užitečná při správě stavu?
+- [x] Ulehčuje porovnávání změn, debugování a předvídatelné update flow.
+- [ ] Zajišťuje automatické šifrování dat.
+- [ ] Vynucuje synchronní render.
+- [ ] Je povinná jen v Angularu.
+
+### Co je selector ve state managementu?
+- [x] Funkce vybírající nebo odvozující konkrétní část stavu pro spotřebitele.
+- [ ] Event handler pro změnu stavu.
+- [ ] API endpoint pro načtení store.
+- [ ] CSS selektor z template.
+
+### Proč má smysl memoizovat selectory nebo derived data?
+- [x] Aby se drahé přepočty neopakovaly zbytečně, pokud se relevantní vstupy nezměnily.
+- [ ] Protože memoizace vždy řeší všechny performance problémy.
+- [ ] Jen kvůli menšímu bundle.
+- [ ] Derived data nelze počítat bez memoizace.
+
+### Co je normalizace stavu?
+- [x] Uložení dat do struktury bez zbytečných duplicit, často podle ID map a seznamů referencí.
+- [ ] Převod všech hodnot na string.
+- [ ] Reset stavu po každém renderu.
+- [ ] Uložení všeho do jednoho velkého objektu bez struktury.
+
+### Kdy je normalizace přínosná?
+- [x] U komplexnějších propojených dat, kde by denormalizace vedla k duplicitám a složitým updateům.
+- [ ] U jediného boolean flagem v komponentě.
+- [ ] Jen při použití Pinie.
+- [ ] Pouze v backend databázi, nikdy ve frontendu.
+
+### Co je server state?
+- [x] Data pocházející ze serveru, která mají vlastní lifecycle, cache a synchronizaci oddělenou od čistě lokálního UI stavu.
+- [ ] Jakýkoli stav držený v Node procesu při SSR.
+- [ ] Stav uložený pouze v cookies.
+- [ ] To samé co theme state.
+
+### Proč je užitečné rozlišovat server state a client/UI state?
+- [x] Mají jiné potřeby ohledně cachování, invalidace, persistence i ownership logiky.
+- [ ] Protože se jinak TypeScript nepřeloží.
+- [ ] Jen kvůli názvům souborů.
+- [ ] Ve skutečnosti jde vždy o stejný typ dat.
+
+### Co je cache invalidation ve state layeru?
+- [x] Rozhodnutí, kdy data považujeme za zastaralá a je potřeba je znovu načíst nebo přepočítat.
+- [ ] Vymazání localStorage při refreshi.
+- [ ] Převod immutable stavu na mutable.
+- [ ] Nastavení `z-index` pro overlay komponentu.
+
+### Kdy může optimistic update zlepšit UX?
+- [x] Když uživatel vidí očekávanou změnu hned a případný rollback při chybě je zvládnutelný.
+- [ ] Když backend vrací výsledek do několika mikrosekund.
+- [ ] Jen u read-only operací.
+- [ ] Optimistic update není nikdy vhodný.
+
+### Co je rollback při optimistic update?
+- [x] Vrácení UI nebo store do předchozího stavu, pokud server mutaci nepotvrdí.
+- [ ] Uložení nového stavu do persistent storage.
+- [ ] Přepnutí z Reduxu na Zustand.
+- [ ] Route přesměrování po každém submitu.
+
+### Kdy je vhodné perzistovat část stavu do localStorage?
+- [x] U preferencí nebo dat, která mají přežít reload a nejsou citlivá ani vysoce konfliktní.
+- [ ] U přístupových tokenů bez dalších bezpečnostních úvah vždy.
+- [ ] U každého dočasného hover stavu.
+- [ ] Jen pokud používáme Redux Toolkit.
+
+### Co je riziko ukládání příliš velkého množství stavu do localStorage?
+- [x] Zastaralá data, migrační problémy, bezpečnostní rizika a složitější synchronizace mezi taby.
+- [ ] Browser pak zakáže CSS.
+- [ ] localStorage je neomezené.
+- [ ] Údaje v localStorage jsou automaticky šifrované.
+
+### Jaký je přínos devtools u store knihoven?
+- [x] Usnadňují inspekci změn stavu, akčních toků a ladění problematických updateů.
+- [ ] Nahrazují potřebu logování a testů.
+- [ ] Fungují jen v produkci.
+- [ ] Umožňují změnit typy v TypeScriptu za běhu.
+
+### K čemu je dobrý Redux reducer bez side efektů?
+- [x] Je predikovatelný, snadno testovatelný a nezávislý na vnějším prostředí.
+- [ ] Je díky tomu automaticky asynchronní.
+- [ ] Může přímo volat API bez middleware.
+- [ ] Vyžaduje menší počet akcí.
+
+### Co je middleware v Redux-like architektuře?
+- [x] Vrstva mezi dispatch a reducerem pro side efekty, logging, async logiku nebo transformaci akcí.
+- [ ] CSS vrstva mezi komponentami.
+- [ ] Typ selectoru pro store.
+- [ ] Mechanismus pro SSR layout.
+
+### Jaký je přínos Redux Toolkit oproti „ručnímu“ Reduxu?
+- [x] Méně boilerplate, bezpečnější patterns a pohodlnější práce s reducermi, akcemi i async logikou.
+- [ ] Vypíná potřebu reducerů.
+- [ ] Funguje pouze bez TypeScriptu.
+- [ ] Nahrazuje React Router.
+
+### Co je hlavní charakteristika Zustand přístupu?
+- [x] Lehčí store API s menším boilerplate, často založené na hook-based přístupu.
+- [ ] Povinné používání reducerů a action typů jako string konstant.
+- [ ] Store dostupný jen ve Vue.
+- [ ] Nativní cache HTTP klient pro server state.
+
+### Co je hlavní charakteristika Pinie?
+- [x] Moderní store řešení pro Vue s jednoduchým API, dobrou typovostí a integrací do Vue ekosystému.
+- [ ] Redux wrapper pro Angular.
+- [ ] Nástroj pro vizuální snapshot testy.
+- [ ] Jen CSS theming vrstva.
+
+### Co byl historický use-case Vuex?
+- [x] Centrální store pro sdílený stav ve Vue aplikacích před nástupem Pinie jako doporučenější volby.
+- [ ] Router pro Vue aplikace.
+- [ ] Build tool pro single-file komponenty.
+- [ ] CSS preprocessor pro Vue.
+
+### Kdy může být globální store overkill?
+- [x] Když řešíme jednoduchý stav lokální jedné komponentě nebo malé části stromu.
+- [ ] Když aplikace obsahuje víc než tři stránky.
+- [ ] Když používáme TypeScript.
+- [ ] Nikdy, globální store je vždy správná volba.
+
+### Co je ownership stavu?
+- [x] Rozhodnutí, která vrstva nebo komponenta je zdrojem pravdy pro konkrétní data.
+- [ ] Pouze jméno maintainer týmu v repozitáři.
+- [ ] Počet subscriberů na store.
+- [ ] Mechanismus pro šifrování stavu.
+
+### Proč je důležité mít jasný zdroj pravdy?
+- [x] Zabraňuje konfliktům mezi více kopiemi stejného stavu a usnadňuje reasoning o updatech.
+- [ ] Jen kvůli coverage reportu.
+- [ ] Jinak nelze použít React Context.
+- [ ] Zdroj pravdy je relevantní jen pro databázi.
+
+### K čemu slouží action ve store architektuře?
+- [x] Popisuje úmysl změnit stav nebo spustit určité workflow.
+- [ ] Ukládá DOM uzel do cache.
+- [ ] Slouží jen pro CSS animace.
+- [ ] Nahrazuje selector.
+
+### Co je anti-pattern při práci s globálním stavem?
+- [x] Ukládat do něj všechno bez rozlišení, včetně čistě lokálních a krátkodobých UI detailů.
+- [ ] Mít selektory pro odvozená data.
+- [ ] Testovat reducery izolovaně.
+- [ ] Držet theme preference mimo URL.
+
+### Proč může být nested mutable state problém?
+- [x] Hůř se sledují změny, roste riziko nechtěné mutace a složitějšího debugování.
+- [ ] Protože JavaScript neumí vnořené objekty.
+- [ ] Protože nested state nelze serializovat.
+- [ ] Jen kvůli CSS-in-JS.
+
+### Kdy má smysl stav reprezentovat state machine přístupem?
+- [x] Když má proces jasné stavy a přechody, například loading, success, error, retry, a chceme explicitní model.
+- [ ] Když ukládáme barvu tlačítka při hoveru.
+- [ ] Jen pokud používáme Angular.
+- [ ] State machine je nutná pro každý formulář.
+
+### Co je přínos explicitních status flagů nebo state machine pro async flow?
+- [x] Zvyšují čitelnost a snižují počet nevalidních kombinací stavů.
+- [ ] Vždy zrychlí síťové requesty.
+- [ ] Nahrazují potřebu error handlingu.
+- [ ] Slouží jen pro backend.
+
+### Proč je důležité řešit race conditions při async updatech stavu?
+- [x] Pozdější příchod starší odpovědi může přepsat novější relevantní data a rozbít konzistenci UI.
+- [ ] Race conditions existují jen v multithread aplikacích.
+- [ ] Protože async update stav nemůže měnit.
+- [ ] Jen kvůli layout shiftům.
+
+### Co může pomoci omezit zbytečné rerendery při odběru store?
+- [x] Selektivní subscription, memoizované selectory a rozumné dělení stavu podle odpovědností.
+- [ ] Uložit celý store do jedné string proměnné.
+- [ ] Vypnout všechny subscriptions.
+- [ ] Používat pouze deep equals nad celým storem pokaždé.
+
+### Kdy je vhodné mít více menších store modulů místo jednoho velkého?
+- [x] Když chceme jasnější hranice domén, lepší ownership a menší coupling mezi částmi aplikace.
+- [ ] Jen pokud framework nepodporuje jeden store.
+- [ ] Nikdy, jeden velký store je vždy lepší.
+- [ ] Jen pro testovací prostředí.
+
+### Co je selector invalidation problém?
+- [x] Odvozená data nebo subscription se přepočítávají častěji, než je nutné, protože závislosti nejsou dobře ohraničené.
+- [ ] Selector přestane vracet hodnotu typu string.
+- [ ] Selector změní store na readonly.
+- [ ] Vzniká pouze v CSS selektorech.
+
+### Jaký je přínos time-travel debugingu?
+- [x] Umožňuje procházet historii změn stavu a analyzovat, kdy se systém dostal do chybného stavu.
+- [ ] Automaticky vrací produkční data do minulosti.
+- [ ] Funguje jen v backend log managementu.
+- [ ] Nahrazuje potřebu unit testů.
+
+### Kdy může být vhodné držet část stavu v URL?
+- [x] Když má stav reprezentovat sdílitelný nebo bookmarkovatelný pohled, například filtry, stránkování nebo sort.
+- [ ] Když jde o citlivý token.
+- [ ] Když chceme skrýt stav před uživatelem.
+- [ ] Jen při použití Next.js middleware.
+
+### Co je trade-off držení filtru v URL oproti lokálnímu stavu?
+- [x] Lepší sdílení a obnovitelnost stavu za cenu větší synchronizační a navigační complexity.
+- [ ] URL stav je vždy jednodušší a bez nevýhod.
+- [ ] Lokální stav nelze pro filtry použít.
+- [ ] URL se při změně query nemůže měnit bez reloadu.
+
+### Co je hlavní role invalidace cache po mutaci server state?
+- [x] Zajistit, aby UI po změně dat znovu načetlo nebo přepočítalo zastaralé informace.
+- [ ] Vymazat všechny CSS classy ze stránky.
+- [ ] Vynutit remount celé aplikace.
+- [ ] Jen uložit poslední akci do localStorage.
+
+### Jaký je dobrý přístup k testování reducerů nebo store akcí?
+- [x] Ověřovat vstupní stav, akci a očekávaný výsledný stav izolovaně a deterministicky.
+- [ ] Testovat je výhradně přes e2e browser flow.
+- [ ] Nikdy je netestovat, protože jsou to jen detail implementace.
+- [ ] Validovat pouze TypeScript typy bez assertions.
+
+### Proč je dobré oddělit doménový stav od čistě prezentačního UI stavu?
+- [x] Každý typ stavu má jiné lifecycle, konzumenty a požadavky na persistence či sdílení.
+- [ ] Protože UI stav nelze serializovat.
+- [ ] Jen kvůli tomu, aby bylo méně souborů.
+- [ ] Doménový a UI stav jsou vždy totéž.
+
+### Co je hlavní signál, že architektura stavu potřebuje refactor?
+- [x] Časté nekonzistence dat, těžké debugování, nejasný source of truth a změny s vysokým rizikem vedlejších efektů.
+- [ ] Počet komponent přesáhne deset.
+- [ ] Aplikace používá dark mode.
+- [ ] Build trvá déle než minutu.
+
+### Co je rehydratace persistovaného stavu?
+- [x] Obnovení dříve uloženého stavu do runtime aplikace po reloadu nebo novém spuštění.
+- [ ] Vymazání všech cache po každé mutaci.
+- [ ] Převod local state na server state.
+- [ ] Renderování HTML na serveru.
+
+### Proč může být nebezpečné persistovat celý store bez filtrace?
+- [x] Můžeme ukládat zbytečná, citlivá nebo rychle zastarávající data a zkomplikovat migrace mezi verzemi.
+- [ ] Protože browser neumí uložit objekty.
+- [ ] Persistovat lze jen stringy a nic jiného.
+- [ ] Persistovaný store se nikdy nenačte zpět.
+
+### Co je stale state problém?
+- [x] UI nebo logika pracuje se starou verzí dat, která už neodpovídá aktuálnímu zdroji pravdy.
+- [ ] Stav, kdy store obsahuje příliš mnoho booleanů.
+- [ ] Situace, kdy TypeScript nezná typ proměnné.
+- [ ] Název pro memory leak v CSS-in-JS.
+
+### Kdy dává smysl použít transient UI state mimo globální store?
+- [x] U krátkodobých detailů jako otevření dropdownu, hover nebo lokální editace, které nepotřebují sdílení napříč aplikací.
+- [ ] Když chceme sdílet data mezi mnoha nesouvisejícími stránkami.
+- [ ] Když jde o výsledek backend dotazu s cache politikou.
+- [ ] Vždy, i pro autentizační stav celé aplikace.
+
+### Co je hlavní přínos jasně definovaných write path do store?
+- [x] Změny stavu jsou lépe dohledatelné, auditovatelné a méně náchylné k nekontrolovaným side efektům.
+- [ ] Store díky tomu nepotřebuje selektory.
+- [ ] Zabrání to potřebě invalidace cache.
+- [ ] Umožní přímo mutovat state odkudkoli bez rizika.

@@ -89,6 +89,9 @@ const parseMarkdown = (content: string) => {
     if (!trimmed) {
       return;
     }
+    if (trimmed.startsWith("# ")) {
+      return;
+    }
     if (trimmed.startsWith("## ")) {
       flushQuestion();
       category = trimmed.slice(3).trim();
