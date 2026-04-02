@@ -142,11 +142,13 @@ function CategoryList({
                     {group.description}
                   </span>
                 </span>
-                <span className="category-group-summary">
-                  {selectedInGroup}/{group.categories.length}
-                </span>
-                <span className="category-group-chevron" aria-hidden="true">
-                  {isExpanded ? "-" : "+"}
+                <span className="category-group-controls">
+                  <span className="category-group-summary">
+                    {selectedInGroup}/{group.categories.length}
+                  </span>
+                  <span className="category-group-chevron" aria-hidden="true">
+                    {isExpanded ? "-" : "+"}
+                  </span>
                 </span>
               </button>
 

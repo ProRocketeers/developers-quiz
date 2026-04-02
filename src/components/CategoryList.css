@@ -25,7 +25,6 @@
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
   padding: 0;
   border: none;
@@ -38,6 +37,15 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
+}
+
+.category-group-controls {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .category-group-title {
@@ -184,12 +192,13 @@
   }
 
   .category-group-toggle {
-    flex-direction: column;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 
-  .category-group-summary {
-    align-self: flex-start;
+  .category-group-controls {
+    margin-left: 0;
+    align-self: flex-end;
   }
 
   .category-group-select {
