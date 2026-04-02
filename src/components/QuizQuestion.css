@@ -1,15 +1,27 @@
 .quiz-question {
-  background: var(--color-surface);
-  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(250, 245, 239, 0.96));
+  border-radius: 24px;
   padding: 24px;
-  margin-bottom: 16px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-question::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-strong));
 }
 
 .question-title {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   color: var(--color-text);
+  padding-left: 4px;
+  line-height: 1.35;
 }
 
 .options {
@@ -22,24 +34,25 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 14px;
+  padding: 14px 16px;
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s,
     transform 0.2s;
-  background-color: #fafbff;
+  background-color: rgba(245, 242, 255, 0.6);
 }
 
 .option:hover {
-  background-color: #f1f4ff;
+  background-color: rgba(255, 247, 230, 0.9);
   transform: translateY(-1px);
 }
 
 .option.selected {
-  background-color: rgba(47, 91, 255, 0.12);
-  border-color: rgba(47, 91, 255, 0.6);
-  box-shadow: 0 0 0 2px rgba(47, 91, 255, 0.15);
+  background:
+    linear-gradient(135deg, rgba(242, 191, 58, 0.16), rgba(237, 123, 67, 0.12));
+  border-color: rgba(237, 123, 67, 0.5);
+  box-shadow: 0 0 0 3px rgba(237, 123, 67, 0.12);
 }
 
 .option input[type="radio"]:focus-visible + .option-text {
@@ -50,8 +63,10 @@
 
 .option input[type="radio"] {
   cursor: pointer;
+  accent-color: var(--color-accent-strong);
 }
 
 .option-text {
   flex: 1;
+  color: var(--color-text);
 }

@@ -176,8 +176,11 @@ function ResultsContent() {
   if (!selectedEntry) {
     return (
       <div className="results-page">
-        <h2>Výsledky</h2>
-        <p>Zatím nemáte žádné výsledky.</p>
+        <div className="results-empty">
+          <span className="results-kicker">Výsledky</span>
+          <h2>Zatím tu není žádný dokončený běh</h2>
+          <p>Spusťte nový kvíz a po vyhodnocení se vám tady uloží kompletní historie výsledků.</p>
+        </div>
         <button className="btn" onClick={() => navigateTo("/quiz")}>
           Spustit nový Quiz
         </button>
@@ -190,6 +193,12 @@ function ResultsContent() {
 
   return (
     <div className="results-page">
+      <div className="results-intro">
+        <span className="results-kicker">Vyhodnocení</span>
+        <h2>Souhrn a historie výsledků</h2>
+        <p>Aktivní záznam je zvýrazněný nahoře, v historii si můžete kdykoli otevřít detail starších pokusů.</p>
+      </div>
+
       <QuizSummary
         score={score}
         total={total}
@@ -233,7 +242,7 @@ function ResultsContent() {
                     className="toggle-btn history-toggle"
                     onClick={() => toggleDetails(entry.id)}
                   >
-                    {isExpanded ? "Hide Details" : "Show Details"}
+                    {isExpanded ? "Skrýt detail" : "Zobrazit detail"}
                   </button>
                 </div>
                 {isExpanded && (

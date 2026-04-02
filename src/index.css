@@ -6,21 +6,34 @@
 
 :root {
   color-scheme: light;
-  --color-primary: #2f5bff;
-  --color-primary-hover: #2346c7;
-  --color-accent: #f5c542;
+  --font-heading:
+    "Sora",
+    "Avenir Next",
+    "Trebuchet MS",
+    sans-serif;
+  --font-body:
+    "Manrope",
+    "Avenir Next",
+    "Segoe UI",
+    sans-serif;
+  --color-primary: #27245c;
+  --color-primary-hover: #1d1b47;
+  --color-primary-soft: #5d61a7;
+  --color-accent: #f2bf3a;
+  --color-accent-strong: #ed7b43;
   --color-success: #2f9e44;
   --color-danger: #e03131;
-  --color-surface: #ffffff;
-  --color-background: #f6f7fb;
-  --color-text: #1f2233;
-  --color-muted: #5f6172;
-  --color-border: #e3e6f1;
-  --shadow-sm: 0 4px 12px rgba(31, 34, 51, 0.08);
-  --shadow-md: 0 12px 32px rgba(31, 34, 51, 0.12);
+  --color-surface: #fffdf9;
+  --color-surface-alt: #f5f2ff;
+  --color-background: #f3f0fb;
+  --color-text: #26254d;
+  --color-muted: #666886;
+  --color-border: rgba(39, 36, 92, 0.12);
+  --shadow-sm: 0 10px 26px rgba(39, 36, 92, 0.08);
+  --shadow-md: 0 24px 60px rgba(39, 36, 92, 0.14);
   --radius-sm: 10px;
   --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-lg: 28px;
 }
 
 .app {
@@ -34,22 +47,15 @@
 }
 
 body {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  font-family: var(--font-body);
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background:
+    radial-gradient(circle at top left, rgba(242, 191, 58, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(93, 97, 167, 0.18), transparent 26%),
+    linear-gradient(180deg, #f1eefb 0%, #f7f4fd 45%, #f8f4ee 100%);
   line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
 img {
@@ -62,6 +68,16 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
 button {
   font-family: inherit;
 }
@@ -70,8 +86,20 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid rgba(47, 91, 255, 0.35);
+  outline: 3px solid rgba(237, 123, 67, 0.28);
   outline-offset: 2px;
+}
+
+.toggle-btn,
+.submit-btn,
+.start-btn,
+.reset-btn,
+.results-page .btn {
+  min-height: 48px;
+}
+
+::selection {
+  background: rgba(242, 191, 58, 0.35);
 }
 
 .quiz-header-filter {

@@ -19,7 +19,7 @@ function Header({ currentPath = "/" }: HeaderProps) {
       </div>
       <nav className="header-nav">
         <a href="/" className={homeClass}>
-          Home
+          Domů
         </a>
         <a href="/results" className={resultsClass}>
           Výsledky

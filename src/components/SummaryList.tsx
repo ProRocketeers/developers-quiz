@@ -86,23 +86,23 @@ function SummaryList({
     <div className="summary-list">
       <div className="user-info">
         <h2>Souhrn pro {userName || "Neznámý uživatel"}</h2>
-        <div className="d-flex flex-column gap-2">
-          <div>
+        <div className="summary-meta">
+          <div className="summary-meta-row">
             <strong>Email:</strong> {userEmail || "Neuvedeno"}
           </div>
-          <div>
+          <div className="summary-meta-row">
             <strong>Stav emailu:</strong> {emailStatusLabel}
           </div>
-          <div>
+          <div className="summary-meta-row">
             <strong>Skóre:</strong> {score}/{total}
           </div>
-          <div>
+          <div className="summary-meta-row">
             <strong>Výsledek:</strong> {passed ? "✓" : "✗"}
           </div>
-          <div>
+          <div className="summary-meta-row">
             <strong>Celkový čas:</strong> {formatDuration(totalDurationMs)}
           </div>
-          <div>
+          <div className="summary-meta-actions">
             <button
               className="toggle-btn"
               onClick={handleSendEmail}
@@ -113,7 +113,7 @@ function SummaryList({
                 : emailStatus === "sent"
                   ? "Odesláno ✓"
                   : emailStatus === "error"
-                    ? "Chyba - zkusit znovu"
+                  ? "Chyba - zkusit znovu"
                     : "Odeslat email"}
             </button>
           </div>

@@ -138,21 +138,34 @@ function QuizContainer() {
 
   return (
     <div className="quiz-container">
-      {settings.useTimeLimit ? (
-        <div className="quiz-timer" aria-live="polite">
-          ⏱️ Zbývá: {timeLeft}s
+      <div className="quiz-toolbar">
+        <div className="quiz-intro">
+          <span className="quiz-kicker">Aktivní test</span>
+          <h2>Technický kvíz</h2>
+          <p>
+            {settings.questionCount} otázek
+            {settings.useTimeLimit ? " • s časovým limitem" : " • bez časového limitu"}
+          </p>
         </div>
-      ) : null}
 
-      <div className="quiz-settings-toggle">
-        <button
-          className="toggle-btn"
-          onClick={() => setShowSettings((prev) => !prev)}
-          aria-expanded={showSettings}
-          aria-controls="quiz-settings-panel"
-        >
-          {showSettings ? "Skrýt nastavení" : "Ukázat nastavení"}
-        </button>
+        <div className="quiz-toolbar-actions">
+          {settings.useTimeLimit ? (
+            <div className="quiz-timer" aria-live="polite">
+              ⏱️ Zbývá: {timeLeft}s
+            </div>
+          ) : null}
+
+          <div className="quiz-settings-toggle">
+            <button
+              className="toggle-btn"
+              onClick={() => setShowSettings((prev) => !prev)}
+              aria-expanded={showSettings}
+              aria-controls="quiz-settings-panel"
+            >
+              {showSettings ? "Skrýt nastavení" : "Ukázat nastavení"}
+            </button>
+          </div>
+        </div>
       </div>
 
       {showSettings && (
@@ -179,13 +192,13 @@ function QuizContainer() {
 
       <div className="quiz-footer">
         <span className="progress">
-          Answered: {answeredCount} / {settings.questionCount}
+          Zodpovězeno: {answeredCount} / {settings.questionCount}
         </span>
         <button
           className="submit-btn"
           onClick={handleSubmit}
         >
-          Submit Quiz
+          Vyhodnotit kvíz
         </button>
       </div>
     </div>

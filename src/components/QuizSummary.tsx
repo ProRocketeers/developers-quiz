@@ -20,21 +20,21 @@ function QuizSummary({
 }: QuizSummaryProps) {
   return (
     <div className={`quiz-summary ${passed ? "passed" : "failed"}`}>
-      <div className="text-end">
-        <span className={`badge ${passed ? "bg-success" : "bg-danger"}`}>
-          min : {minimalRequiredScore}
-        </span>
+      <div className="summary-topline">
+        <span className="threshold-badge">Minimum: {minimalRequiredScore}</span>
       </div>
-      <h2>Quiz Complete!</h2>
+      <h2>{passed ? "Skvělý výsledek" : "Výsledek kvízu"}</h2>
       <div className="score">
         {score} / {total}
       </div>
       <div className="score-time">Čas: {formatDuration(totalDurationMs)}</div>
       <p className="result-text">
-        {passed ? "Congratulations! You passed!" : "Try again!"}
+        {passed
+          ? "Limit jste splnili a můžete pokračovat k detailnímu rozpisu odpovědí."
+          : "Tentokrát to nevyšlo, ale detailní rozpis vám ukáže, kde máte největší prostor ke zlepšení."}
       </p>
       <button className="reset-btn" onClick={onReset}>
-        Try Again
+        Spustit nový kvíz
       </button>
     </div>
   );
