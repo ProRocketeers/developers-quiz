@@ -1,5 +1,7 @@
+import { useEffect, useMemo, useState } from "react";
 import type { ChangeEvent } from "react";
 import { Form } from "react-bootstrap";
+import { groupCategories } from "../utils/categoryGroups";
 import "./CategoryList.css";
 
 type Category = {
@@ -26,6 +28,36 @@ function CategoryList({
 }: CategoryListProps) {
   const selected = value ?? (multiSelect ? [] : "");
   const selectedList = Array.isArray(selected) ? selected : [];
+  const groupedCategories = useMemo(
+    () => groupCategories(categories ?? []),
+    [categories],
+  );
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(
+    {},
+  );
+
+  useEffect(() => {
+    if (!multiSelect || groupedCategories.length === 0) return;
+
+    setExpandedGroups((prev) => {
+      const nextState = { ...prev };
+      let hasChanges = false;
+
+      groupedCategories.forEach((group, index) => {
+        if (nextState[group.id] != null) {
+          return;
+        }
+
+        const shouldExpand =
+          index === 0 ||
+          group.categories.some((category) => selectedList.includes(category.name));
+        nextState[group.id] = shouldExpand;
+        hasChanges = true;
+      });
+
+      return hasChanges ? nextState : prev;
+    });
+  }, [groupedCategories, multiSelect, selectedList]);
 
   const handleToggle = (categoryName: string) => {
     const newSelected = selectedList.includes(categoryName)
@@ -51,6 +83,26 @@ function CategoryList({
     onSelectionChange?.(value);
   };
 
+  const handleGroupToggle = (groupId: string) => {
+    setExpandedGroups((prev) => ({
+      ...prev,
+      [groupId]: !prev[groupId],
+    }));
+  };
+
+  const handleGroupSelectionToggle = (
+    categoryNames: string[],
+    shouldSelect: boolean,
+  ) => {
+    if (!multiSelect) return;
+
+    const nextSelected = shouldSelect
+      ? [...new Set([...selectedList, ...categoryNames])]
+      : selectedList.filter((name) => !categoryNames.includes(name));
+
+    onSelectionChange?.(nextSelected);
+  };
+
   if (!multiSelect) {
     return (
       <Form.Select value={selected} onChange={handleSelectChange}>
@@ -66,42 +118,94 @@ function CategoryList({
 
   return (
     <div className="category-list">
-      {categories?.map((category) => {
-        const isSelected = selectedList.includes(category.name);
-        const countValue = categoryQuestionCounts[category.name] ?? 0;
+      {groupedCategories.map((group) => {
+        const groupNames = group.categories.map((category) => category.name);
+        const selectedInGroup = groupNames.filter((name) =>
+          selectedList.includes(name),
+        ).length;
+        const allInGroupSelected =
+          groupNames.length > 0 && selectedInGroup === groupNames.length;
+        const isExpanded = expandedGroups[group.id] ?? false;
 
         return (
-          <div
-            key={category.name}
-            className={`category-item ${isSelected ? "selected" : ""}`}
-          >
-            <label className="category-info">
-              <input
-                type="checkbox"
-                checked={isSelected}
-                onChange={() => handleToggle(category.name)}
-              />
-              <span className="category-name">{category.name}</span>
-              <span className="category-meta">{category.count} otázek</span>
-            </label>
-            <div className="category-count">
-              <span>Počet</span>
-              <input
-                type="number"
-                min={0}
-                max={category.count}
-                value={countValue}
-                disabled={!isSelected}
-                onChange={(e) =>
-                  handleCountChange(
-                    category.name,
-                    e.target.value,
-                    category.count,
-                  )
+          <section key={group.id} className="category-group">
+            <div className="category-group-header">
+              <button
+                type="button"
+                className="category-group-toggle"
+                onClick={() => handleGroupToggle(group.id)}
+                aria-expanded={isExpanded}
+              >
+                <span className="category-group-title-wrap">
+                  <span className="category-group-title">{group.label}</span>
+                  <span className="category-group-description">
+                    {group.description}
+                  </span>
+                </span>
+                <span className="category-group-summary">
+                  {selectedInGroup}/{group.categories.length}
+                </span>
+                <span className="category-group-chevron" aria-hidden="true">
+                  {isExpanded ? "-" : "+"}
+                </span>
+              </button>
+
+              <button
+                type="button"
+                className="category-group-select"
+                onClick={() =>
+                  handleGroupSelectionToggle(groupNames, !allInGroupSelected)
                 }
-              />
+              >
+                {allInGroupSelected ? "Odebrat vše" : "Vybrat vše"}
+              </button>
             </div>
-          </div>
+
+            {isExpanded && (
+              <div className="category-group-items">
+                {group.categories.map((category) => {
+                  const isSelected = selectedList.includes(category.name);
+                  const countValue = categoryQuestionCounts[category.name] ?? 0;
+
+                  return (
+                    <div
+                      key={category.name}
+                      className={`category-item ${isSelected ? "selected" : ""}`}
+                    >
+                      <label className="category-info">
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={() => handleToggle(category.name)}
+                        />
+                        <span className="category-name">{category.name}</span>
+                        <span className="category-meta">
+                          {category.count} otázek
+                        </span>
+                      </label>
+                      <div className="category-count">
+                        <span>Počet</span>
+                        <input
+                          type="number"
+                          min={0}
+                          max={category.count}
+                          value={countValue}
+                          disabled={!isSelected}
+                          onChange={(e) =>
+                            handleCountChange(
+                              category.name,
+                              e.target.value,
+                              category.count,
+                            )
+                          }
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </section>
         );
       })}
     </div>
