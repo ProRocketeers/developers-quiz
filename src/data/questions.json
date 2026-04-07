@@ -16025,5 +16025,698 @@
       "Umožní přímo mutovat state odkudkoli bez rizika."
     ],
     "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je pravda o `readonly struct` v C#?",
+    "options": [
+      "Zaručuje, že instance nelze po zkonstruování měnit a kompilátor může omezit kopírování při volání metod.",
+      "Zaručuje, že typ bude alokován vždy na stacku a nikdy na heapu.",
+      "Způsobí, že všechny reference uvnitř structu budou automaticky deep-cloned při přiřazení.",
+      "Způsobí, že se struct bude chovat jako `record` a automaticky získá hodnotovou rovnost."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je praktický rozdíl mezi `IEnumerable<T>` a `IAsyncEnumerable<T>`?",
+    "options": [
+      "`IAsyncEnumerable<T>` umožňuje asynchronní iteraci pomocí `await foreach`, typicky při čekání na I/O mezi prvky.",
+      "`IAsyncEnumerable<T>` je jen syntaktický cukr; ve skutečnosti je vždy materializováno do `List<T>` před iterací.",
+      "`IAsyncEnumerable<T>` je určeno výhradně pro paralelní běh na více vláknech.",
+      "`IAsyncEnumerable<T>` je určené jen pro UI aplikace a bez `SynchronizationContext` nefunguje."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co platí pro `Span<T>`?",
+    "options": [
+      "`Span<T>` je stack-only typ a nelze jej bezpečně uložit jako field do běžné třídy.",
+      "`Span<T>` je vždy neměnný pohled na paměť (immutable), takže nelze měnit jeho obsah.",
+      "`Span<T>` funguje pouze nad spravovanou pamětí v heapu a neumí pracovat se stackem ani unmanaged pamětí.",
+      "`Span<T>` lze libovolně zachytit do lambda výrazu a používat později bez omezení."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o `record class` vs `class` je správné (C# 9+)?",
+    "options": [
+      "`record class` má defaultně hodnotovou rovnost (value-based) přes generované `Equals`/`GetHashCode` dle komponent.",
+      "`record class` je vždy immutable typ a kompilátor zakáže jakékoli settery.",
+      "`record class` se vždy alokuje na stacku, protože je optimalizován pro přenos dat.",
+      "`record class` se liší jen tím, že má povinný bezparametrický konstruktor."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak se liší `throw;` a `throw ex;` uvnitř `catch` bloku?",
+    "options": [
+      "`throw;` zachová původní stack trace, zatímco `throw ex;` jej typicky resetuje na místo rethrow.",
+      "`throw ex;` zachová původní stack trace, zatímco `throw;` jej resetuje.",
+      "Neliší se nijak; v obou případech je stack trace identický.",
+      "`throw ex;` je rychlejší varianta, která zachová stack trace a navíc přidá informaci o catch bloku."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je pravda o `using` deklaraci (C# 8) oproti klasickému `using (...) { }`?",
+    "options": [
+      "`using var x = ...;` zavolá `Dispose` na konci scope, nikoli hned po bloku ve složených závorkách.",
+      "`using var x = ...;` volá `Dispose` okamžitě po řádku deklarace, aby minimalizoval životnost.",
+      "`using var x = ...;` je jen alias pro finalizer; `Dispose` se nevolá deterministicky.",
+      "`using var x = ...;` zavolá `Dispose` pouze při úspěšném dokončení scope (bez výjimky)."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o LINQ je správné?",
+    "options": [
+      "Většina LINQ operátorů je deferred (odložená) a provede se až při enumeraci výsledku.",
+      "LINQ dotazy se vždy provedou okamžitě při zavolání `Where`/`Select` a výsledek se uloží do interní kolekce.",
+      "LINQ garantuje single-pass enumeraci zdroje bez ohledu na použitý operátor.",
+      "LINQ automaticky paralelizuje dotaz, pokud je zdroj větší než určitý práh."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je rozdíl mezi `AssemblyLoadContext` a `AppDomain` v .NET (Core/5+)?",
+    "options": [
+      "`AssemblyLoadContext` je primární mechanismus pro izolované načítání/odpojování assembly; `AppDomain` izolaci jako v .NET Frameworku v podstatě nenahrazuje.",
+      "`AppDomain` je stále hlavní doporučený způsob plugin izolace a umožňuje spolehlivé unloadování v .NET 6+.",
+      "`AssemblyLoadContext` slouží jen pro reflection; načítání assembly mimo default context není podporované.",
+      "`AssemblyLoadContext` nahrazuje `AppDomain` plně včetně bezpečnostních sandboxů a CAS."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o Garbage Collectoru v .NET je správné?",
+    "options": [
+      "LOH (Large Object Heap) je historicky méně často kompaktní než SOH a velké objekty se typicky alokují od ~85 000 bytů.",
+      "Gen 2 je sbírána vždy častěji než Gen 0, protože obsahuje krátce žijící objekty.",
+      "Použití `GC.Collect()` je doporučený způsob, jak pravidelně udržovat nízkou latenci aplikace.",
+      "Objekty se vždy přesunou do vyšší generace při každé kolekci, bez ohledu na to, zda přežily."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Proč se doporučuje `HttpClient` znovu používat (nebo použít `IHttpClientFactory`) místo vytváření nového pro každý request?",
+    "options": [
+      "Kvůli správě connection poolingu a prevenci vyčerpání ephemerálních portů / socketů při častém vytváření.",
+      "Protože `HttpClient` není thread-safe a musí se vždy používat jen pro jeden request.",
+      "`HttpClientFactory` je nutný pouze pro podporu HTTP/2; jinak je opakované použití `HttpClient` škodlivé.",
+      "Protože nový `HttpClient` vždy zahodí DNS cache celého procesu a přepíše systémový resolver."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak se liší lifetimes v DI (`Singleton`, `Scoped`, `Transient`) v ASP.NET Core?",
+    "options": [
+      "`Scoped` typicky znamená jedna instance na HTTP request; `Singleton` je jedna instance na celý container; `Transient` je nová instance při každém resolve.",
+      "`Singleton` znamená jedna instance na HTTP request; `Scoped` je jedna instance na celý container; `Transient` je jedna instance na vlákno.",
+      "`Scoped` a `Singleton` jsou v ASP.NET Core ekvivalentní, liší se jen výkonem při resolve.",
+      "`Transient` znamená jedna instance per request, protože request je nejmenší jednotka v ASP.NET Core."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o `ConfigureAwait(false)` je nejpřesnější?",
+    "options": [
+      "Zabraňuje pokusu o návrat na zachycený synchronization context; je užitečné hlavně v knihovnách a v prostředích se synchronization contextem.",
+      "Zaručuje, že continuations poběží vždy na thread poolu a nikdy na původním vlákně.",
+      "Způsobí paralelní provedení continuations a tím zrychlí každé `await`.",
+      "Je nutné ho použít u každého `await` v ASP.NET Core, jinak vznikne deadlock."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Kdy dává smysl preferovat `ValueTask<T>` před `Task<T>`?",
+    "options": [
+      "Když metoda často dokončí synchronně a chcete snížit alokace, přičemž volající respektuje omezení `ValueTask` (např. nečekat vícekrát).",
+      "Vždy, protože `ValueTask<T>` je obecně rychlejší a nemá žádná omezení oproti `Task<T>`.",
+      "Pouze tehdy, když chcete automaticky spouštět pokračování paralelně na více vláknech.",
+      "Když chcete, aby se výjimky nikdy nepropagovaly a místo toho se vracely jako default hodnoty."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je pravda o `CancellationToken` v asynchronních API?",
+    "options": [
+      "Token sám o sobě nic \"nezastaví\"; je to kooperativní mechanismus a API musí token aktivně kontrolovat/posílat dál.",
+      "`CancellationToken` automaticky ukončí běžící vlákno (ThreadAbort) při zrušení.",
+      "Když zrušíte token, runtime vždy vyhodí `OperationCanceledException` i když metoda token ignoruje.",
+      "`CancellationToken` zaručuje, že se po zrušení ukončí i všechny child tasky vytvořené uvnitř metody."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak se chová `Task.WhenAll(...)`, pokud více tasků skončí výjimkou?",
+    "options": [
+      "Vrátí task, který skončí jako Faulted a obsahuje agregované výjimky (typicky v `AggregateException` přes `Exception.InnerExceptions`).",
+      "Vrátí task, který propaguje pouze první výjimku a ostatní se zahodí.",
+      "Vrátí task, který skončí jako Canceled, protože výjimka je interně mapována na cancel.",
+      "Vrátí task, který skončí jako Faulted, ale výjimky se uloží do `TaskScheduler.UnobservedTaskException` a jinak jsou skryté."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o `async void` je nejpřesnější?",
+    "options": [
+      "`async void` je vhodné primárně pro event handlery; výjimky se typicky propagují do SynchronizationContextu a nelze je `await`-nout.",
+      "`async void` je doporučený návratový typ pro veřejná API, protože snižuje alokace oproti `Task`.",
+      "`async void` se chová stejně jako `async Task`, jen se liší syntakticky.",
+      "`async void` je bezpečné použít, pokud uvnitř metody obalíte tělo do `try/catch`."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je rozdíl mezi `Task.Run(...)` a `new Thread(...)` pro CPU-bound práci?",
+    "options": [
+      "`Task.Run` používá thread pool a je vhodné pro krátké jednotky práce; `new Thread` vytváří dedikované vlákno s větší režii a jinými vlastnostmi (např. priorita, apartment).",
+      "`new Thread` interně vždy používá thread pool, takže jde jen o stylistický rozdíl.",
+      "`Task.Run` je deterministicky realtime plánovač, který garantuje okamžité spuštění na novém vlákně.",
+      "`new Thread` je vždy lepší volba, protože thread pool je určen jen pro I/O operace."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co přesně dělá `lock(obj)` v C#?",
+    "options": [
+      "Je to syntaktický cukr nad `Monitor.Enter(obj)`/`Monitor.Exit(obj)` v `try/finally` bloku.",
+      "Používá kernelový mutex (`Mutex`) a tedy vždy přepíná do kernel módu.",
+      "Zajišťuje reentrantnost napříč procesy (cross-process) stejně jako named mutex.",
+      "Garantuje férovost (FIFO) čekajících vláken, takže starvation není možný."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je pravda o `ExecutionContext` vs `SynchronizationContext`?",
+    "options": [
+      "`ExecutionContext` přenáší ambientní data (např. `AsyncLocal`, bezpečnostní kontext) napříč async/ThreadPool; `SynchronizationContext` ovlivňuje, kde se spustí continuation po `await`.",
+      "`SynchronizationContext` přenáší `AsyncLocal` hodnoty a `ExecutionContext` rozhoduje o thread affinity GUI aplikací.",
+      "Oba jsou v .NET totožné a liší se jen názvem v různých namespaces.",
+      "`ExecutionContext` existuje pouze v .NET Frameworku; v .NET 6+ byl odstraněn."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak se liší `Span<T>` a `Memory<T>`?",
+    "options": [
+      "`Span<T>` je stack-only a neuchovatelný přes async/iterátory; `Memory<T>` je heap-friendly a lze jej držet a používat i přes async hranice.",
+      "`Memory<T>` je vždy rychlejší než `Span<T>`, protože je to ref struct bez kontrol životnosti.",
+      "`Span<T>` lze běžně uložit jako field do třídy, zatímco `Memory<T>` ne.",
+      "`Memory<T>` je jen alias na `T[]` a neumí reprezentovat slice bez kopírování."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "K čemu slouží `ArrayPool<T>` a jaké je typické riziko při jeho použití?",
+    "options": [
+      "Snižuje alokace tím, že půjčuje pole z poolu; riziko je únik citlivých dat, pokud nevyčistíte obsah (nebo nepoužijete `clearArray: true`).",
+      "Zaručuje nulové kopírování při každém zvětšení pole a automaticky šifruje obsah.",
+      "Je určen pouze pro unmanaged paměť a vrací ukazatele (`T*`) místo managed polí.",
+      "Zaručuje, že vrácené pole bude přesně požadované délky, nikdy větší."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o `string` interningu v .NET je správné?",
+    "options": [
+      "Literály jsou typicky internované; `string.Intern` může přidat řetězec do intern poolu, což může zvýšit životnost objektu až na dobu běhu procesu.",
+      "`new string(...)` vždy internuje řetězec automaticky, takže reference equality vždy funguje.",
+      "Intern pool je per-thread, takže stejné literály v různých vláknech mají různé instance.",
+      "Internování se děje pouze v Debug buildu; v Release se literály neinernují kvůli výkonu."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je nejpodstatnější rozdíl mezi `DateTime` a `DateTimeOffset`?",
+    "options": [
+      "`DateTimeOffset` nese i offset vůči UTC, takže reprezentuje jednoznačný bod v čase lépe než `DateTime` s `Kind=Unspecified`.",
+      "`DateTime` vždy ukládá čas v UTC a nikdy nemůže být lokální.",
+      "`DateTimeOffset` automaticky aplikuje time zone pravidla (DST) bez potřeby `TimeZoneInfo`.",
+      "`DateTimeOffset` ukládá vždy time zone ID (např. \"Europe/Prague\"), takže je vhodný pro plánování v lokálním čase."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je nejčastější úskalí při práci s `TimeZoneInfo` a převodech času?",
+    "options": [
+      "Ambiguous/invalid lokální časy během změny DST (např. \"přeskočená\" hodina nebo čas, který nastane dvakrát).",
+      "To, že `TimeZoneInfo` ukládá offset v sekundách, což vede k zaokrouhlovacím chybám v milisekundách.",
+      "Že `TimeZoneInfo` neumí pracovat s UTC a vždy konvertuje přes lokální čas.",
+      "Že `TimeZoneInfo` používá vždy jen Windows registry a na Linuxu nefunguje vůbec."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaké je pořadí běhu middleware v ASP.NET Core pipeline?",
+    "options": [
+      "Ve stejném pořadí, v jakém jsou přidána (průchod dolů), a při návratu odpovědi v opačném pořadí (unwinding).",
+      "Vždy se spouští paralelně a pořadí není deterministické.",
+      "Od nejnovějšího přidaného k nejstaršímu, aby se minimalizovaly závislosti.",
+      "Pořadí je určeno abecedně podle názvu middleware třídy."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o `IOptions<T>`, `IOptionsSnapshot<T>` a `IOptionsMonitor<T>` je správné?",
+    "options": [
+      "`IOptions<T>` je typicky singleton-friendly; `IOptionsSnapshot<T>` je scoped (nové hodnoty per request); `IOptionsMonitor<T>` podporuje notifikace změn a čtení aktuální hodnoty kdykoli.",
+      "`IOptionsSnapshot<T>` je singleton a je nejvhodnější pro background services.",
+      "`IOptionsMonitor<T>` vytváří vždy novou instanci options při každém `Value` a nikdy necachuje.",
+      "`IOptions<T>` automaticky sleduje změny configu a vždy vrací aktuální hodnoty bez restartu."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak se chová model binding v Minimal APIs (ASP.NET Core) u jednoduchých typů?",
+    "options": [
+      "Jednoduché typy se typicky bindují z route/query, komplexní typy často z body (JSON), pokud není uvedeno jinak.",
+      "Vše se binduje vždy pouze z body, route/query se ignorují.",
+      "Jednoduché typy se bindují výhradně z headerů, aby se zamezilo kolizím.",
+      "Komplexní typy se v Minimal APIs nikdy nebindingují automaticky; vždy musíte ručně parsovat `HttpRequest`."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co znamená `AsNoTracking()` v EF Core?",
+    "options": [
+      "Výsledné entity nejsou trackované změnovým trackerem, což snižuje overhead pro read-only scénáře.",
+      "Entity jsou trackované, ale změny se nikdy neuloží do databáze.",
+      "`AsNoTracking()` přepne dotaz do režimu \"snapshot isolation\" na úrovni databáze.",
+      "`AsNoTracking()` vypne lazy loading pro daný dotaz."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "K čemu slouží concurrency token (např. `rowversion`/`Timestamp`) v EF Core?",
+    "options": [
+      "K detekci konkurenčních změn: při `SaveChanges` se kontroluje, zda se od načtení nezměnila verze řádku.",
+      "K šifrování řádků v databázi bez potřeby TLS.",
+      "K automatickému lockování tabulky po dobu trackování entity v DbContextu.",
+      "K automatickému merge změn z více DbContextů bez konfliktů."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je rozdíl mezi `Select` a `SelectMany` v LINQ?",
+    "options": [
+      "`Select` mapuje prvek na prvek; `SelectMany` \"zplošťuje\" (flatten) sekvenci sekvencí do jedné sekvence.",
+      "`SelectMany` je jen optimalizovaná verze `Select` a nikdy nemění tvar výsledku.",
+      "`SelectMany` je určen pouze pro paralelní LINQ (PLINQ).",
+      "`SelectMany` je ekvivalent `GroupBy`, jen s jiným názvem."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je pravda o `GroupBy` v LINQ to Objects?",
+    "options": [
+      "Typicky enumeruje zdroj a buduje skupiny (materializuje) při první enumeraci výsledku; skupiny pak drží prvky v paměti.",
+      "`GroupBy` je vždy streaming operátor a nikdy nedrží prvky v paměti.",
+      "`GroupBy` je vždy proveden kompilátorem na úrovni IL bez běhové režie.",
+      "`GroupBy` garantuje stabilní pořadí skupin i prvků uvnitř skupin podle klíče (seřazení)."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak funguje `ConcurrentDictionary<TKey,TValue>.GetOrAdd` při souběhu?",
+    "options": [
+      "Factory delegát může být zavolán vícekrát paralelně; dictionary garantuje, že uložená hodnota pro klíč bude jedna z nich.",
+      "Factory delegát je garantovaně zavolán přesně jednou na klíč, i při vysokém souběhu.",
+      "Metoda interně používá globální lock, takže paralelní volání na různé klíče se serializují.",
+      "Metoda nikdy nepoužije factory delegát, pokud už hodnota existuje, ale přesto ji vždy znovu přepočítá pro validaci."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o `Channel<T>` (System.Threading.Channels) je správné?",
+    "options": [
+      "Bounded channel může backpressure-ovat (čekat při zápisu) nebo zahazovat dle nastavení; unbounded channel může růst bez limitu a zvýšit tlak na paměť/GC.",
+      "Unbounded channel nikdy nealokuje, protože používá čistě stackové struktury.",
+      "Bounded channel garantuje, že všechny čtení poběží paralelně bez čekání.",
+      "`Channel<T>` je jen wrapper nad `BlockingCollection<T>` a má stejné vlastnosti i performance profil."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak se liší `SemaphoreSlim` od `Semaphore`?",
+    "options": [
+      "`SemaphoreSlim` je čistě managed a optimalizovaný pro async čekání (`WaitAsync`); `Semaphore` je kernelový objekt vhodný i pro cross-process scénáře (named semaphore).",
+      "`SemaphoreSlim` je kernelový objekt a lze jej sdílet mezi procesy.",
+      "`Semaphore` je rychlejší pro async čekání, protože je integrován do task scheduleru.",
+      "`SemaphoreSlim` nemá žádnou podporu pro synchronní čekání a lze ho použít pouze s `await`."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je pravda o nullable reference types (NRT) v C#?",
+    "options": [
+      "Jde primárně o statickou analýzu kompilátoru; v runtime se typ `string` a `string?` neliší.",
+      "V runtime se `string?` ukládá do jiné CLR reprezentace a má jinou velikost objektu.",
+      "Zapnutí NRT automaticky přidá runtime kontroly, které vyhodí výjimku při přiřazení null do `string`.",
+      "NRT mění JIT tak, že pro `string?` generuje jiný strojový kód než pro `string` i bez dalších rozdílů."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co dělá null-forgiving operátor `!` (např. `value!`) v C#?",
+    "options": [
+      "Potlačí varování kompilátoru o možném null, ale nemění runtime chování (může stále spadnout na `NullReferenceException`).",
+      "Vynutí runtime kontrolu a vyhodí `ArgumentNullException`, pokud je hodnota null.",
+      "Způsobí, že se hodnota zkopíruje (defenzivně) a už nikdy nemůže být null.",
+      "Přepne výraz do režimu, kde se automaticky používá `?.` (null-conditional) pro všechny přístupy."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je pravda o variance (kovariance/kontravariance) u generik v .NET?",
+    "options": [
+      "Variance je podporována pouze u rozhraní a delegátů a jen na typech parametrů označených `out`/`in`.",
+      "Variance je podporována u všech generických typů včetně tříd (např. `List<out T>`).",
+      "Variance umožňuje bezpečně castovat `IEnumerable<object>` na `IEnumerable<string>` bez ohledu na směr.",
+      "Variance se vyhodnocuje jen za běhu (runtime) a kompilátor ji nijak nekontroluje."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je pravda o default interface methods (DIM) v .NET?",
+    "options": [
+      "Rozhraní může obsahovat default implementaci metody; volání se dispatchuje přes rozhraní a může ovlivnit verzování API.",
+      "DIM jsou syntaktický cukr; kompilátor vždy vygeneruje abstraktní metody a implementace se musí přidat do tříd.",
+      "DIM fungují pouze pro `internal` rozhraní a nelze je použít ve veřejných knihovnách.",
+      "DIM znamená, že třídy automaticky dědí implementace z rozhraní jako by šlo o vícenásobnou dědičnost tříd."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co jsou exception filtry (`catch (...) when (...)`) v C# z pohledu běhu výjimky?",
+    "options": [
+      "Filtr se vyhodnocuje před vstupem do `catch`; pokud je false, stack unwind pokračuje jako by `catch` neexistoval.",
+      "Filtr se vyhodnocuje až po provedení `catch` a rozhoduje, zda se výjimka znovu vyhodí.",
+      "Použití filtru vždy resetuje stack trace stejně jako `throw ex;`.",
+      "Filtr je vyhodnocen až po dokončení `finally` bloků ve stejném scope, takže nemá vliv na selekci handleru."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je vztah `init` setterů a neměnnosti objektů?",
+    "options": [
+      "`init` umožní nastavení pouze během inicializace (např. object initializer / konstruktor); neznamená to automaticky hlubokou neměnnost celého objektu.",
+      "`init` zaručuje transitive immutability všech referencí v objektu.",
+      "`init` znamená, že vlastnost je compile-time konstanta.",
+      "`init` vynutí, že typ bude `readonly` a zakáže všechny mutující metody na instanci."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co znamenají `required` members (C# 11) pro konstrukci objektu?",
+    "options": [
+      "Kompilátor vyžaduje, aby byly `required` členy inicializované při vytvoření objektu (konstruktor/object initializer), jinak je to chyba.",
+      "Runtime vynutí inicializaci a vyhodí výjimku při prvním přístupu k nevyplněnému `required` členu.",
+      "`required` funguje pouze pro `record` a nelze jej použít v běžných třídách.",
+      "`required` způsobí, že se hodnota property serializuje vždy, i když je default/null."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak se chová `System.Text.Json` při serializaci vlastností s `private set`?",
+    "options": [
+      "Defaultně umí deserializovat do vlastností s `public get` a `private set` (pokud je setter přístupný přes reflexi), ale může to záviset na konfiguraci/atributech a zdrojovém generátoru.",
+      "Nikdy nedeserializuje do `private set`; jediná možnost je veřejný setter.",
+      "`System.Text.Json` vždy preferuje pole (fields) a vlastnosti ignoruje, pokud nejsou označeny `[DataMember]`.",
+      "Vlastnosti s `private set` serializuje jen v případě, že je na typu atribut `[Serializable]`."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jak řeší `System.Text.Json` cyklické reference v objektovém grafu ve výchozím nastavení?",
+    "options": [
+      "Ve výchozím stavu typicky selže (vyhodí výjimku); cykly lze řešit např. `ReferenceHandler.Preserve` nebo ignorováním.",
+      "Automaticky vždy zachová reference a serializuje je jako `$id`/`$ref` bez konfigurace.",
+      "Automaticky cyklus \"usekne\" a zbytek objektu serializuje jako `null` bez výjimky.",
+      "Ve výchozím stavu cykly zvládá, ale pouze do hloubky 2; pak teprve vyhazuje výjimku."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký problém může nastat u dlouho žijícího `HttpClient` bez správného nastavení handleru v souvislosti s DNS?",
+    "options": [
+      "Může držet staré DNS záznamy kvůli dlouho žijícím connectionům; řešení je např. `SocketsHttpHandler.PooledConnectionLifetime` nebo použití `IHttpClientFactory`.",
+      "`HttpClient` bude u každého requestu dělat nový TCP handshake a tím zhorší latenci.",
+      "`HttpClient` není schopný používat keep-alive, pokud je instance sdílená.",
+      "Dlouho žijící `HttpClient` vždy vypne SNI a tím zhorší kompatibilitu s HTTPS endpointy."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o opakovaném použití `HttpRequestMessage` je správné?",
+    "options": [
+      "`HttpRequestMessage` není obecně určen k opakovanému použití; obsah (`HttpContent`) může být jednorázový stream a message se po odeslání často považuje za \"consumed\".",
+      "`HttpRequestMessage` je plně immutable a bezpečně znovupoužitelný bez výjimky.",
+      "Opakované použití `HttpRequestMessage` je doporučené, protože to automaticky zapne HTTP pipelining.",
+      "`HttpRequestMessage` lze znovu použít vždy, pokud jen změníte `RequestUri`; hlavičky a content se automaticky resetují."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Proč je vhodné `CancellationTokenSource` typicky `Dispose()`-nout?",
+    "options": [
+      "Může držet timer/registrace a další prostředky; `Dispose` pomáhá uvolnit interní zdroje a callbacky včas.",
+      "Protože bez `Dispose` dojde vždy k memory leak v GC (objekt nebude nikdy sebrán).",
+      "`CancellationTokenSource` je unmanaged objekt a bez `Dispose` dojde ke ztrátě handleů OS pokaždé.",
+      "`Dispose` je nutné vždy zavolat před `Cancel()`, jinak se zrušení neprojeví."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je správně o LOH kompakci v moderních .NET verzích?",
+    "options": [
+      "LOH se historicky nekompaktoval často; existuje možnost požádat o kompakci (např. přes `GCSettings.LargeObjectHeapCompactionMode`) a při full GC se může zkompaktovat.",
+      "LOH se kompaktně defragmentuje při každém Gen0 collection, protože velké objekty jsou nejčastější.",
+      "LOH kompakce je zakázaná navždy a nelze ji žádným způsobem ovlivnit.",
+      "LOH kompakce je automaticky aktivní vždy, když máte zapnutý server GC."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je význam `SafeHandle` oproti držení `IntPtr` v interopu?",
+    "options": [
+      "`SafeHandle` pomáhá se spolehlivým uvolněním nativních handleů, integruje se s finalizací a snižuje riziko leaků i při výjimkách.",
+      "`IntPtr` je bezpečnější než `SafeHandle`, protože CLR automaticky pozná, kdy ho uvolnit.",
+      "`SafeHandle` je pomalejší a nikdy by se neměl používat v produkci; je určen jen pro debug.",
+      "`SafeHandle` je určen pouze pro file-handly; pro sockety a procesy se používat nesmí."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "K čemu slouží atribut/koncept \"trimming\" a proč je problematická reflexe při publish trim?",
+    "options": [
+      "Trimming odstraňuje nepoužitý kód; reflexe/dynamické načítání může odkazovat na členy, které linker nevidí, takže je může odstranit a aplikace pak selže bez anotací (např. `DynamicDependency`).",
+      "Trimming pouze minifikuje názvy symbolů a nemůže odstranit žádný IL kód, takže reflexe není problém.",
+      "Trimming je ekvivalentní kompresi ZIP a nemá vliv na běh aplikace.",
+      "Trimming je jen pro Blazor WebAssembly; na serveru a v konzolových aplikacích se nikdy nepoužívá."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o `AssemblyVersion`, `FileVersion` a `InformationalVersion` je nejpřesnější?",
+    "options": [
+      "`AssemblyVersion` ovlivňuje binding/identitu assembly; `FileVersion` je pro souborovou verzi (Win file properties); `InformationalVersion` je typicky \"produktová\" (např. semver + metadata) a není pro binding.",
+      "`FileVersion` ovlivňuje binding v CLR a je důležitější než `AssemblyVersion`.",
+      "`InformationalVersion` musí být vždy čisté číslo `major.minor.build.revision`, jinak aplikace nenastartuje.",
+      "`AssemblyVersion` se používá jen při NuGet restore; za běhu aplikace nemá žádný význam."
+    ],
+    "correctAnswer": 0
+  },
+    {
+    "category": ".NET",
+    "question": "Jaký návratový typ má typicky asynchronní metoda, kterou chcete `await`-nout (bez návratové hodnoty)?",
+    "options": [
+      "Task",
+      "void",
+      "Thread",
+      "ValueTuple"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je výsledek `string.IsNullOrWhiteSpace(\"  \")`?",
+    "options": [
+      "true",
+      "false",
+      "Vyhodí výjimku `ArgumentException`",
+      "Vrátí `null`"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "K čemu slouží klíčové slovo `await` v C#?",
+    "options": [
+      "Pozastaví provádění metody, dokud nedokončí awaitovaný `Task`, a potom pokračuje.",
+      "Vynutí spuštění metody na novém vlákně.",
+      "Okamžitě zruší běžící operaci, pokud trvá příliš dlouho.",
+      "Způsobí, že metoda poběží synchronně (blokuje vlákno)."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je rozdíl mezi `List<T>` a `T[]`?",
+    "options": [
+      "`List<T>` je dynamicky zvětšovaná kolekce, zatímco pole (`T[]`) má pevnou délku.",
+      "`T[]` se může automaticky zvětšovat, ale `List<T>` má vždy pevnou velikost.",
+      "`List<T>` je value type, zatímco `T[]` je reference type.",
+      "`List<T>` nelze procházet pomocí `foreach`, ale pole ano."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co udělá `int.TryParse(\"123\", out var x)`?",
+    "options": [
+      "Vrátí `true` a do `x` uloží 123.",
+      "Vrátí `false` a do `x` uloží 123.",
+      "Vyhodí `FormatException`, pokud je vstup text.",
+      "Vrátí `true`, ale `x` bude vždy 0."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je účel bloku `finally` v `try/catch/finally`?",
+    "options": [
+      "Kód ve `finally` se spustí i v případě výjimky (typicky pro úklid zdrojů).",
+      "`finally` se spustí pouze tehdy, když žádná výjimka nenastala.",
+      "`finally` nahradí `catch` a zachytí všechny výjimky automaticky.",
+      "`finally` se spustí pouze u asynchronních metod."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "K čemu slouží `using` blok/deklarace u objektů implementujících `IDisposable`?",
+    "options": [
+      "Zajistí deterministické zavolání `Dispose()` při opuštění scope.",
+      "Zajistí, že GC objekt sebere okamžitě po skončení bloku.",
+      "Způsobí, že se objekt stane thread-safe.",
+      "Zabrání vyhození výjimky v kódu uvnitř bloku."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Co je hlavní rozdíl mezi `class` a `struct` v C# (základní pohled)?",
+    "options": [
+      "`class` je reference type, `struct` je value type.",
+      "`class` se vždy ukládá na stack, `struct` vždy na heap.",
+      "`struct` může dědit z libovolné jiné třídy, `class` nemůže dědit vůbec.",
+      "`class` nemůže implementovat rozhraní, `struct` může."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký je výchozí (default) hodnotový stav `int` proměnné jako field v třídě?",
+    "options": [
+      "0",
+      "null",
+      "1",
+      "Je nedefinovaný a závisí na paměti"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Jaký modifikátor přístupu znamená, že člen je dostupný pouze uvnitř stejné třídy?",
+    "options": [
+      "private",
+      "public",
+      "internal",
+      "protected internal"
+    ],
+    "correctAnswer": 0
+  },
+    {
+    "category": ".NET",
+    "question": "Jaký je rozdíl mezi `First()` a `FirstOrDefault()` v LINQ?",
+    "options": [
+      "`First()` vyhodí výjimku, pokud sekvence neobsahuje žádný prvek; `FirstOrDefault()` vrátí default hodnotu typu.",
+      "`First()` vrátí default hodnotu typu, pokud je sekvence prázdná; `FirstOrDefault()` vyhodí výjimku.",
+      "`First()` i `FirstOrDefault()` vždy vrací `null`, když je sekvence prázdná, bez ohledu na typ.",
+      "`FirstOrDefault()` je vždy pomalejší, protože prohledá celou sekvenci, i když první prvek existuje."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "Které tvrzení o `var` v C# je správné?",
+    "options": [
+      "`var` znamená implicitně typovanou lokální proměnnou; konkrétní typ se určí v compile-time z přiřazeného výrazu.",
+      "`var` je dynamický typ a typ proměnné se určuje až za běhu (runtime).",
+      "`var` lze použít pro fieldy a property bez uvedení typu.",
+      "`var` způsobí boxing u value typů, protože typ není explicitně uveden."
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "category": ".NET",
+    "question": "K čemu slouží `IQueryable<T>` oproti `IEnumerable<T>` (typicky v EF Core)?",
+    "options": [
+      "`IQueryable<T>` reprezentuje dotaz, který lze překládat (např. do SQL) a provést až později; `IEnumerable<T>` typicky znamená iteraci nad už materializovanými daty v paměti.",
+      "`IQueryable<T>` je vždy jen in-memory LINQ a nelze ho nikdy přeložit do SQL.",
+      "`IEnumerable<T>` umožňuje \"deferred execution\", zatímco `IQueryable<T>` se vždy provede okamžitě.",
+      "`IQueryable<T>` je určené pouze pro paralelní dotazy (PLINQ) a v EF Core se nepoužívá."
+    ],
+    "correctAnswer": 0
   }
 ]
