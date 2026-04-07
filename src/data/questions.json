@@ -16259,17 +16259,6 @@
   },
   {
     "category": ".NET",
-    "question": "Které tvrzení o `string` interningu v .NET je správné?",
-    "options": [
-      "Literály jsou typicky internované; `string.Intern` může přidat řetězec do intern poolu, což může zvýšit životnost objektu až na dobu běhu procesu.",
-      "`new string(...)` vždy internuje řetězec automaticky, takže reference equality vždy funguje.",
-      "Intern pool je per-thread, takže stejné literály v různých vláknech mají různé instance.",
-      "Internování se děje pouze v Debug buildu; v Release se literály neinernují kvůli výkonu."
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "category": ".NET",
     "question": "Jaký je nejpodstatnější rozdíl mezi `DateTime` a `DateTimeOffset`?",
     "options": [
       "`DateTimeOffset` nese i offset vůči UTC, takže reprezentuje jednoznačný bod v čase lépe než `DateTime` s `Kind=Unspecified`.",
@@ -16298,17 +16287,6 @@
       "Vždy se spouští paralelně a pořadí není deterministické.",
       "Od nejnovějšího přidaného k nejstaršímu, aby se minimalizovaly závislosti.",
       "Pořadí je určeno abecedně podle názvu middleware třídy."
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "category": ".NET",
-    "question": "Které tvrzení o `IOptions<T>`, `IOptionsSnapshot<T>` a `IOptionsMonitor<T>` je správné?",
-    "options": [
-      "`IOptions<T>` je typicky singleton-friendly; `IOptionsSnapshot<T>` je scoped (nové hodnoty per request); `IOptionsMonitor<T>` podporuje notifikace změn a čtení aktuální hodnoty kdykoli.",
-      "`IOptionsSnapshot<T>` je singleton a je nejvhodnější pro background services.",
-      "`IOptionsMonitor<T>` vytváří vždy novou instanci options při každém `Value` a nikdy necachuje.",
-      "`IOptions<T>` automaticky sleduje změny configu a vždy vrací aktuální hodnoty bez restartu."
     ],
     "correctAnswer": 0
   },
