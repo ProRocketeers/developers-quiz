@@ -8811,3 +8811,365 @@
 - [ ] Store díky tomu nepotřebuje selektory.
 - [ ] Zabrání to potřebě invalidace cache.
 - [ ] Umožní přímo mutovat state odkudkoli bez rizika.
+
+## React Native
+
+### Co je React Native?
+- [x] Framework pro tvorbu mobilních aplikací v JavaScriptu nebo TypeScriptu, který renderuje nativní komponenty.
+- [ ] Knihovna pro server-side rendering webových aplikací.
+- [ ] Databázový framework pro iOS a Android.
+- [ ] Nástroj jen pro tvorbu design systemů.
+
+### Jaký je hlavní rozdíl mezi React Native a Reactem pro web?
+- [x] React Native používá nativní mobilní komponenty místo HTML DOM.
+- [ ] React Native nepoužívá React.
+- [ ] React Native funguje jen v prohlížeči.
+- [ ] React Native vždy renderuje přes WebView.
+
+### K čemu slouží Metro v React Native?
+- [x] Je to bundler a dev server pro React Native aplikace.
+- [ ] Je to mobilní databáze.
+- [ ] Je to CI nástroj pro release.
+- [ ] Je to Android emulátor.
+
+### Co je JSI?
+- [x] Vrstva, která umožňuje JavaScriptu volat nativní objekty a funkce efektivněji než starý bridge.
+- [ ] Nástroj na stylování komponent.
+- [ ] Typ navigátoru.
+- [ ] Datový store.
+
+### Co je bridge mezi JavaScriptem a nativní částí aplikace?
+- [x] Komunikační vrstva, která přenáší volání mezi JS a nativním kódem.
+- [ ] Stylovací API pro komponenty.
+- [ ] Databázová vrstva pro ukládání state.
+- [ ] Kompilátor TypeScriptu.
+
+### K čemu slouží `StyleSheet.create`?
+- [x] Vytváří pojmenovaný objekt stylů a pomáhá s validací i optimalizací.
+- [ ] Překládá CSS do HTML.
+- [ ] Zajišťuje animace komponent.
+- [ ] Ukládá data do AsyncStorage.
+
+### Jaké je výchozí `flexDirection` v React Native?
+- [x] `column`
+- [ ] `row`
+- [ ] `grid`
+- [ ] `absolute`
+
+### K čemu slouží `SafeAreaView`?
+- [x] Chrání obsah před zářezy, horní lištou a dalšími bezpečnými okraji obrazovky.
+- [ ] Zajišťuje offline ukládání dat.
+- [ ] Nahrazuje `ScrollView`.
+- [ ] Slouží k validaci formulářů.
+
+### K čemu je `FlatList`?
+- [x] Pro efektivní renderování dlouhých seznamů s virtualizací.
+- [ ] Pro jednorázové zobrazení jednoho obrázku.
+- [ ] Pro ukládání lokálního stavu.
+- [ ] Pro správu navigace mezi obrazovkami.
+
+### Jaký je rozdíl mezi `ScrollView` a `FlatList`?
+- [x] `ScrollView` renderuje děti najednou, zatímco `FlatList` renderuje položky průběžně a je vhodnější pro velké seznamy.
+- [ ] `FlatList` neumí scrollovat.
+- [ ] `ScrollView` je určený jen pro text.
+- [ ] Mezi nimi není žádný rozdíl.
+
+### K čemu slouží `Pressable`?
+- [x] K obsluze stisků s možností reagovat na stav jako hover, press nebo long press.
+- [ ] K renderování tabulky.
+- [ ] K práci s kamerou.
+- [ ] K ukládání formulářových dat.
+
+### Co reprezentuje `TextInput`?
+- [x] Komponentu pro zadávání textu uživatelem.
+- [ ] Komponentu pro kreslení canvasu.
+- [ ] Komponentu pro přehrávání videa.
+- [ ] Komponentu pro přepínání obrazovek.
+
+### Jak vytvoříš kontrolovaný input v React Native?
+- [x] Propojíš hodnotu přes `value` a změny obsloužíš přes `onChangeText` nebo `onChange`.
+- [ ] Použiješ pouze `placeholder` bez stavu.
+- [ ] Nastavíš `defaultValue` a stav už neřešíš.
+- [ ] Vložíš input do `FlatList`.
+
+### K čemu slouží `KeyboardAvoidingView`?
+- [x] Pomáhá posunout obsah tak, aby ho nepřekrývala softwarová klávesnice.
+- [ ] Překládá klávesové zkratky do nativního kódu.
+- [ ] Zrychluje bundlování.
+- [ ] Slouží k renderování formulářových chyb.
+
+### K čemu je `Platform.select`?
+- [x] Umožňuje vybrat jinou hodnotu podle platformy, například iOS nebo Android.
+- [ ] Slouží ke zjištění verze bundleru.
+- [ ] Přepíná mezi staging a production buildem.
+- [ ] Nahrazuje `if` v TypeScriptu.
+
+### K čemu slouží `Linking`?
+- [x] K otevírání URL, deep linků a komunikaci s externími aplikacemi.
+- [ ] K práci s lokální databází.
+- [ ] K přepínání témat.
+- [ ] K měření výkonu renderu.
+
+### Co sleduje `AppState`?
+- [x] Zda je aplikace aktivní, na pozadí nebo neaktivní.
+- [ ] Zda je zařízení online.
+- [ ] Zda je uživatel přihlášen.
+- [ ] Zda má obrazovka dark mode.
+
+### K čemu slouží `BackHandler`?
+- [x] K zachycení hardwarového tlačítka zpět, hlavně na Androidu.
+- [ ] K automatickému ukládání formuláře.
+- [ ] K detekci dvojkliku na obrazovku.
+- [ ] K exportu dat do CSV.
+
+### Co zobrazuje `ActivityIndicator`?
+- [x] Loader nebo spinner během načítání.
+- [ ] Chybové hlášení při pádu aplikace.
+- [ ] Hlavní navigační menu.
+- [ ] Statistiky výkonu.
+
+### K čemu slouží `Modal`?
+- [x] K zobrazení obsahu nad zbytkem aplikace v samostatné vrstvě.
+- [ ] K ukládání dat do cloudu.
+- [ ] K definici témat aplikace.
+- [ ] K práci s obrázky.
+
+### Co spravuje `StatusBar`?
+- [x] Vzhled a chování systémové horní lišty.
+- [ ] Stav Redux store.
+- [ ] Cache pro síťové requesty.
+- [ ] Navigační stack.
+
+### K čemu je `SectionList`?
+- [x] Pro seznamy rozdělené do sekcí s vlastním headerem.
+- [ ] Pro animované přechody mezi obrazovkami.
+- [ ] Pro čtení lokálních souborů.
+- [ ] Pro odesílání push notifikací.
+
+### Co je `VirtualizedList`?
+- [x] Nízkourovňový základ pro virtualizované seznamy s vlastním řízením renderu.
+- [ ] Komponenta jen pro malé seznamy.
+- [ ] API pro správu push notifikací.
+- [ ] Hook pro práci s gesty.
+
+### K čemu slouží `RefreshControl`?
+- [x] K pull-to-refresh chování v scrollovatelných komponentech.
+- [ ] K obnově bundlu po startu aplikace.
+- [ ] K resetování navigace.
+- [ ] K přepínání barevného schématu.
+
+### K čemu je `useWindowDimensions`?
+- [x] Vrací aktuální rozměry okna a reaguje na změny jako rotace obrazovky.
+- [ ] Měří rychlost sítě.
+- [ ] Ukládá rozměry do cache.
+- [ ] Zjišťuje velikost textu v `TextInput`.
+
+### Co řeší `PixelRatio`?
+- [x] Přepočet mezi density-independent rozměry a fyzickými pixely.
+- [ ] Správu barev v dark mode.
+- [ ] Kompresi obrázků na backendu.
+- [ ] Povolování notifikací.
+
+### K čemu slouží `Image`?
+- [x] K zobrazování obrázků z lokálního zdroje nebo z URL.
+- [ ] K renderování SVG výhradně přes DOM.
+- [ ] K přehrávání zvuku.
+- [ ] K práci s formuláři.
+
+### K čemu slouží `Animated`?
+- [x] K vytváření animací v React Native.
+- [ ] K práci s databází SQLite.
+- [ ] K měření rozlišení zařízení.
+- [ ] K definici rout v navigaci.
+
+### Co dělá `useNativeDriver`?
+- [x] Přesouvá podporované animace na nativní vrstvu, aby méně zatěžovala JavaScript.
+- [ ] Zapíná TypeScript generics.
+- [ ] Zajišťuje offline režim.
+- [ ] Ukládá animace do AsyncStorage.
+
+### K čemu se používá `react-native-gesture-handler`?
+- [x] K lepší a výkonnější správě gest a dotykových interakcí.
+- [ ] K renderování SVG ikon.
+- [ ] K přístupu do kamerového modulu.
+- [ ] K práci s lokálními soubory.
+
+### Co je stack navigator v React Navigation?
+- [x] Navigátor založený na zásobníku obrazovek, kde se nové obrazovky vrství nad sebe.
+- [ ] Tabulka pro ukládání parametrů.
+- [ ] Komponenta pro animace.
+- [ ] Hook pro načítání dat.
+
+### Co je bottom tab navigator?
+- [x] Navigace s kartami dole na obrazovce, mezi kterými uživatel přepíná.
+- [ ] Způsob ukládání cache.
+- [ ] Typ build pipeline.
+- [ ] Komponenta pro text input.
+
+### Co je deep linking?
+- [x] Otevření konkrétní obrazovky aplikace přes URL nebo externí odkaz.
+- [ ] Režim pro offline build.
+- [ ] Typ animace pro přechod.
+- [ ] Způsob komprese obrázků.
+
+### Jak předáš parametry na jinou obrazovku?
+- [x] Přes navigaci, například `navigate("Screen", { id: 1 })`.
+- [ ] Přes `StyleSheet.create`.
+- [ ] Přes `AppState`.
+- [ ] Přes `StatusBar`.
+
+### Co je `route` prop v React Navigation?
+- [x] Objekt s informacemi o aktuální trase, včetně `params`.
+- [ ] Objekt pro práci s bezpečností.
+- [ ] Konfigurace bundleru.
+- [ ] Stav systému klávesnice.
+
+### Co je `navigation` prop v React Navigation?
+- [x] Objekt s metodami pro navigaci, například `navigate`, `goBack` nebo `reset`.
+- [ ] Objekt pro správu stylů.
+- [ ] Hook pro animace.
+- [ ] Složka s assety.
+
+### K čemu slouží `AsyncStorage`?
+- [x] K jednoduchému asynchronnímu ukládání malých dat přímo na zařízení.
+- [ ] K ukládání velkých binárních souborů.
+- [ ] K ukládání hesel do zdrojového kódu.
+- [ ] K překladu JSX.
+
+### Proč použít `React.memo`?
+- [x] K omezení zbytečných re-renderů komponenty při stejných props.
+- [ ] K překladu nativního kódu do JavaScriptu.
+- [ ] K práci s formulářem bez stavu.
+- [ ] K volání API bez await.
+
+### Proč použít `useMemo`?
+- [x] K memoizaci nákladného výpočtu mezi rendery.
+- [ ] K práci s animacemi na nativní vrstvě.
+- [ ] K ukládání dat do AsyncStorage.
+- [ ] K vytvoření navigačního stacku.
+
+### Proč použít `useCallback`?
+- [x] K memoizaci funkce, aby se neměnila referencí při každém renderu.
+- [ ] K renderování seznamu bez klíčů.
+- [ ] K detekci změny orientace zařízení.
+- [ ] K práci s obrázky z kamery.
+
+### K čemu slouží `key` v seznamu?
+- [x] Pomáhá Reactu stabilně identifikovat položky při renderování a změnách seznamu.
+- [ ] Slouží jako bezpečnostní token.
+- [ ] Nahrazuje `id` v databázi.
+- [ ] Určuje barvu komponenty.
+
+### Co přináší Expo?
+- [x] Nástroje a ekosystém pro rychlejší vývoj, buildy a správu React Native aplikací.
+- [ ] Pouze grafické téma pro aplikace.
+- [ ] Náhradu za JavaScript.
+- [ ] Databázový engine pro mobilní zařízení.
+
+### Co je Expo Go?
+- [x] Mobilní aplikace pro rychlé spouštění a testování Expo projektů.
+- [ ] Production build pro App Store.
+- [ ] Nástroj pro správu licencí.
+- [ ] Debugger pro Android Studio.
+
+### K čemu slouží EAS Build?
+- [x] Ke cloudovému sestavení aplikací pro iOS a Android.
+- [ ] K designu obrazovek.
+- [ ] K ukládání lokálních dat.
+- [ ] K definici navigace.
+
+### Co jsou OTA updates v Expo?
+- [x] Aktualizace JavaScript bundle a assetů bez nového nativního store releasu.
+- [ ] Aktualizace kernelu zařízení.
+- [ ] Povinný reinstall aplikace po změně stylů.
+- [ ] Změna App Store metadata bez buildů.
+
+### Co je native module?
+- [x] Nativní kód, který vystavuje funkce JavaScriptu přes React Native rozhraní.
+- [ ] Stylový objekt vytvořený v `StyleSheet.create`.
+- [ ] Webový iframe uvnitř aplikace.
+- [ ] Typ navigačního parametru.
+
+### Co jsou TurboModules?
+- [x] Novější systém nativních modulů s efektivnějším načítáním a komunikací.
+- [ ] Náhradní název pro `FlatList`.
+- [ ] Typ testing knihovny.
+- [ ] Starý název pro `AsyncStorage`.
+
+### Co je Fabric?
+- [x] Nová architektura rendereru React Native pro rychlejší a konzistentnější UI.
+- [ ] Systém pro ukládání obrázků.
+- [ ] Balíček pro push notifikace.
+- [ ] Datový model pro SQLite.
+
+### Co je Hermes?
+- [x] JavaScript engine optimalizovaný pro React Native.
+- [ ] UI framework pro web.
+- [ ] Typ navigačního stacku.
+- [ ] Cloudová služba pro buildy.
+
+### Proč je `FlatList` vhodnější než `ScrollView` pro velké seznamy?
+- [x] Protože virtualizuje položky a nerenderuje celý seznam najednou.
+- [ ] Protože neumí zobrazit data z pole.
+- [ ] Protože se nedá stylovat.
+- [ ] Protože funguje jen v Expo.
+
+### K čemu slouží `react-native-reanimated`?
+- [x] K výkonným animacím a interakcím s možností běhu mimo hlavní JS thread.
+- [ ] K ukládání dat do zařízení.
+- [ ] K práci s navigací.
+- [ ] K vytváření formulářů.
+
+### K čemu slouží `react-native-screens`?
+- [x] K lepší výkonnosti a správě obrazovek v navigaci.
+- [ ] K renderování SVG ikon.
+- [ ] K práci s fotografiemi.
+- [ ] K odesílání analytics.
+
+### Jak podpoříš platformně specifické soubory?
+- [x] Použiješ například `.ios.tsx` a `.android.tsx` nebo podmíněnou logiku přes `Platform`.
+- [ ] Přidáš soubor do `public/`.
+- [ ] Přepneš `useMock` na `true`.
+- [ ] Zabalíš komponentu do `Modal`.
+
+### K čemu je `Platform.OS`?
+- [x] K rozlišení platformy, například `ios` nebo `android`.
+- [ ] K získání verze Node.js.
+- [ ] K detekci jazyka uživatele.
+- [ ] K výběru barvy v `StyleSheet`.
+
+### K čemu slouží `Detox`?
+- [x] K end-to-end testování mobilních aplikací.
+- [ ] K tvorbě ikon.
+- [ ] K ukládání lokálních preferencí.
+- [ ] K překladu TypeScriptu.
+
+### K čemu se používá React Native Testing Library?
+- [x] K testování komponent z pohledu uživatele a jejich interakcí.
+- [ ] K buildům do App Store.
+- [ ] K práci s native moduly.
+- [ ] K měření FPS.
+
+### K čemu slouží Flipper?
+- [x] K debugování, inspekci requestů a prohlížení stavu aplikace.
+- [ ] K návrhu obrazovek.
+- [ ] K publikování do stores.
+- [ ] K ukládání dat offline.
+
+### Jak deklaruješ iOS permissiony?
+- [x] Přes klíče v `Info.plist`, například s popisem použití kamery nebo lokace.
+- [ ] Pouze v `AndroidManifest.xml`.
+- [ ] Přes `StyleSheet.create`.
+- [ ] V `index.js` bez konfigurace.
+
+### Jak deklaruješ Android permissiony?
+- [x] Přes `AndroidManifest.xml`.
+- [ ] Přes `Info.plist`.
+- [ ] Přes `app.json` výhradně bez buildů.
+- [ ] Přes `Metro.config.js`.
+
+### K čemu slouží `testID` v React Native?
+- [x] K označení prvku pro automatizované testy a E2E selektory.
+- [ ] K nastavení barvy textu.
+- [ ] K ukládání hodnoty inputu.
+- [ ] K překladu navigačních parametrů.

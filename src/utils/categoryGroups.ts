@@ -29,8 +29,8 @@ const GROUP_DEFINITIONS: GroupDefinition[] = [
   {
     id: "react-ecosystem",
     label: "React",
-    description: "React a související okruhy kolem Next.js.",
-    matchers: ["React.js", "Next.js"],
+    description: "React, React Native a související okruhy kolem Next.js.",
+    matchers: ["React.js", "React Native", "Next.js"],
   },
   {
     id: "angular-ecosystem",
