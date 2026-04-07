@@ -16226,17 +16226,6 @@
   },
   {
     "category": ".NET",
-    "question": "Co je pravda o `ExecutionContext` vs `SynchronizationContext`?",
-    "options": [
-      "`ExecutionContext` přenáší ambientní data (např. `AsyncLocal`, bezpečnostní kontext) napříč async/ThreadPool; `SynchronizationContext` ovlivňuje, kde se spustí continuation po `await`.",
-      "`SynchronizationContext` přenáší `AsyncLocal` hodnoty a `ExecutionContext` rozhoduje o thread affinity GUI aplikací.",
-      "Oba jsou v .NET totožné a liší se jen názvem v různých namespaces.",
-      "`ExecutionContext` existuje pouze v .NET Frameworku; v .NET 6+ byl odstraněn."
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "category": ".NET",
     "question": "Jak se liší `Span<T>` a `Memory<T>`?",
     "options": [
       "`Span<T>` je stack-only a neuchovatelný přes async/iterátory; `Memory<T>` je heap-friendly a lze jej držet a používat i přes async hranice.",
@@ -16353,17 +16342,6 @@
       "Factory delegát je garantovaně zavolán přesně jednou na klíč, i při vysokém souběhu.",
       "Metoda interně používá globální lock, takže paralelní volání na různé klíče se serializují.",
       "Metoda nikdy nepoužije factory delegát, pokud už hodnota existuje, ale přesto ji vždy znovu přepočítá pro validaci."
-    ],
-    "correctAnswer": 0
-  },
-  {
-    "category": ".NET",
-    "question": "Které tvrzení o `Channel<T>` (System.Threading.Channels) je správné?",
-    "options": [
-      "Bounded channel může backpressure-ovat (čekat při zápisu) nebo zahazovat dle nastavení; unbounded channel může růst bez limitu a zvýšit tlak na paměť/GC.",
-      "Unbounded channel nikdy nealokuje, protože používá čistě stackové struktury.",
-      "Bounded channel garantuje, že všechny čtení poběží paralelně bez čekání.",
-      "`Channel<T>` je jen wrapper nad `BlockingCollection<T>` a má stejné vlastnosti i performance profil."
     ],
     "correctAnswer": 0
   },
