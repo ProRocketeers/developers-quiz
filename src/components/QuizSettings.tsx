@@ -73,7 +73,6 @@ function QuizSettings({
     [validateEmail],
   );
 
-  // Compute totalQuestions
   const totalQuestions = settings.multiSelect
     ? settings.selectedCategories.reduce(
         (sum, category) => sum + (categoryQuestionCounts[category] ?? 0),
