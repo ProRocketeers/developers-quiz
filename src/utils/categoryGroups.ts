@@ -55,6 +55,7 @@ const GROUP_DEFINITIONS: GroupDefinition[] = [
       "HTTP(s)",
       "Microservice Architecture",
       "Node.js",
+      ".NET",
     ],
   },
   {
