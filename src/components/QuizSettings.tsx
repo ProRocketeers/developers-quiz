@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import type { KeyboardEvent } from "react";
 import { getCategoriesWithCount } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
@@ -23,20 +23,14 @@ function QuizSettings({
     () => getCategoriesWithCount(settings.useMock),
     [settings.useMock],
   );
-  const [inputMaxQuestions, setInputMaxQuestions] = useState(
-    settings.questionCount,
-  );
+  const [inputMaxQuestions, setInputMaxQuestions] = useState(settings.questionCount);
   const [inputEmail, setInputEmail] = useState(settings.email);
   const [inputName, setInputName] = useState(settings.name);
-  const [consentGiven, setConsentGiven] = useState(
-    settings.consentToEmailResults ?? false,
-  );
+  const [consentGiven, setConsentGiven] = useState(settings.consentToEmailResults ?? false);
   const [errors, setErrors] = useState({ name: "", email: "" });
   const categoryQuestionCounts = settings.categoryQuestionCounts ?? {};
   const [bulkCount, setBulkCount] = useState<number | "">("");
-  const [lastManualSelection, setLastManualSelection] = useState<string[]>(
-    settings.selectedCategories,
-  );
+  const [lastManualSelection, setLastManualSelection] = useState<string[]>(settings.selectedCategories);
   const [selectAllActive, setSelectAllActive] = useState(false);
 
   const categoryCountMap = useMemo(() => {
@@ -55,9 +49,7 @@ function QuizSettings({
     (min, category) => Math.min(min, categoryCountMap[category] ?? 0),
     Number.POSITIVE_INFINITY,
   );
-  const resolvedMaxSelectedCount = Number.isFinite(maxSelectedCount)
-    ? maxSelectedCount
-    : 0;
+  const resolvedMaxSelectedCount = Number.isFinite(maxSelectedCount) ? maxSelectedCount : 0;
 
   useEffect(() => {
     if (settings.multiSelect && !selectAllActive) {
@@ -66,27 +58,49 @@ function QuizSettings({
     }
   }, [settings.multiSelect, settings.selectedCategories, selectAllActive]);
 
-  const validateEmail = (email: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateEmail = useCallback(
+    (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+    [],
+  );
 
-  const validateField = (field: string, val: string) => {
-    if (!val) return "Povinné pole";
-    if (field === "name" && val.length < 2) return "Min. 2 znaky";
-    if (field === "email" && !validateEmail(val)) return "Neplatný email";
-    return "";
-  };
+  const validateField = useCallback(
+    (field: string, val: string) => {
+      if (!val) return "Povinné pole";
+      if (field === "name" && val.length < 2) return "Min. 2 znaky";
+      if (field === "email" && !validateEmail(val)) return "Neplatný email";
+      return "";
+    },
+    [validateEmail],
+  );
+
+  // Compute totalQuestions
+  const totalQuestions = settings.multiSelect
+    ? settings.selectedCategories.reduce(
+        (sum, category) => sum + (categoryQuestionCounts[category] ?? 0),
+        0,
+      )
+    : inputMaxQuestions;
 
   useEffect(() => {
     if (!showNamePrompt) return;
 
-    const nameError = validateField("name", settings.name);
-    const emailError = validateField("email", settings.email);
+    const nameError = validateField("name", inputName);
+    const emailError = validateField("email", inputEmail);
     const hasError = !!nameError || !!emailError;
-    const notFilled = !settings.name || !settings.email;
-    const consentMissing = !settings.consentToEmailResults;
+    const notFilled = !inputName || !inputEmail;
+    const consentMissing = !consentGiven;
+    const countZeroOrLower = totalQuestions <= 0;
 
-    onValidationChange?.(hasError || notFilled || consentMissing);
-  }, []);
+    onValidationChange?.(hasError || notFilled || consentMissing || countZeroOrLower);
+  }, [
+    showNamePrompt,
+    inputName,
+    inputEmail,
+    consentGiven,
+    totalQuestions,
+    onValidationChange,
+    validateField,
+  ]);
 
   const handleMaxQuestionsKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -105,56 +119,40 @@ function QuizSettings({
   };
 
   const handleInput = (field: "name" | "email", val: string) => {
-    if (field !== "name" && field !== "email") return;
-
     const newError = validateField(field, val);
     const newErrors = { ...errors, [field]: newError };
     setErrors(newErrors);
-    const hasError = !!newErrors.name || !!newErrors.email;
-    const currentName = field === "name" ? val : inputName;
-    const currentEmail = field === "email" ? val : inputEmail;
-    const notFilled = !currentName || !currentEmail;
-    const consentMissing = !consentGiven;
 
     const setters = { name: setInputName, email: setInputEmail };
     setters[field](val);
-    updateSettings({ [field]: val });
 
-    onValidationChange?.(hasError || notFilled || consentMissing);
+    updateSettings({ [field]: val });
+    // validation is handled by the useEffect now
   };
 
   const handleConsentChange = (checked: boolean) => {
     setConsentGiven(checked);
     updateSettings({ consentToEmailResults: checked });
-
-    if (!showNamePrompt) return;
-
-    const nameError = validateField("name", inputName);
-    const emailError = validateField("email", inputEmail);
-    const hasError = !!nameError || !!emailError;
-    const notFilled = !inputName || !inputEmail;
-    const consentMissing = !checked;
-
-    onValidationChange?.(hasError || notFilled || consentMissing);
+    // validation is handled by the useEffect now
   };
 
   const handleCategorySelection = (selected: string | string[]) => {
     if (Array.isArray(selected)) {
       const nextCounts = { ...categoryQuestionCounts };
+
       selected.forEach((category) => {
-        if (nextCounts[category] == null) {
-          nextCounts[category] = 1;
-        }
+        if (nextCounts[category] == null) nextCounts[category] = 1;
       });
+
       Object.keys(nextCounts).forEach((category) => {
-        if (!selected.includes(category)) {
-          delete nextCounts[category];
-        }
+        if (!selected.includes(category)) delete nextCounts[category];
       });
+
       const total = selected.reduce(
         (sum, category) => sum + (nextCounts[category] ?? 0),
         0,
       );
+
       updateSettings({
         selectedCategories: selected,
         categoryQuestionCounts: nextCounts,
@@ -163,6 +161,7 @@ function QuizSettings({
     } else {
       updateSettings({ category: selected });
     }
+    // validation is handled by the useEffect now
   };
 
   const handleSelectAllToggle = (checked: boolean) => {
@@ -174,9 +173,7 @@ function QuizSettings({
       const allNames = categories.map((category) => category.name);
       const nextCounts = { ...categoryQuestionCounts };
       allNames.forEach((category) => {
-        if (nextCounts[category] == null) {
-          nextCounts[category] = 1;
-        }
+        if (nextCounts[category] == null) nextCounts[category] = 1;
       });
       const total = allNames.reduce(
         (sum, category) => sum + (nextCounts[category] ?? 0),
@@ -192,9 +189,7 @@ function QuizSettings({
       const restored = lastManualSelection;
       const nextCounts = { ...categoryQuestionCounts };
       Object.keys(nextCounts).forEach((category) => {
-        if (!restored.includes(category)) {
-          delete nextCounts[category];
-        }
+        if (!restored.includes(category)) delete nextCounts[category];
       });
       const total = restored.reduce(
         (sum, category) => sum + (nextCounts[category] ?? 0),
@@ -225,6 +220,7 @@ function QuizSettings({
       categoryQuestionCounts: nextCounts,
       questionCount: total,
     });
+    // validation is handled by the useEffect now
   };
 
   const handleBulkInput = (val: string) => {
@@ -251,14 +247,8 @@ function QuizSettings({
       categoryQuestionCounts: nextCounts,
       questionCount: total,
     });
+    // validation is handled by the useEffect now
   };
-
-  const totalQuestions = settings.multiSelect
-    ? settings.selectedCategories.reduce(
-        (sum, category) => sum + (categoryQuestionCounts[category] ?? 0),
-        0,
-      )
-    : inputMaxQuestions;
 
   return (
     <div className="quiz-settings">
@@ -275,11 +265,10 @@ function QuizSettings({
                   className="form-control"
                   placeholder="Např. Jana Nováková"
                 />
-                {errors.name && (
-                  <span className="text-danger small">{errors.name}</span>
-                )}
+                {errors.name && <span className="text-danger small">{errors.name}</span>}
               </label>
             </div>
+
             <div className="col">
               <label className="field-label">
                 Email
@@ -290,11 +279,10 @@ function QuizSettings({
                   className="form-control"
                   placeholder="jmeno@firma.cz"
                 />
-                {errors.email && (
-                  <span className="text-danger small">{errors.email}</span>
-                )}
+                {errors.email && <span className="text-danger small">{errors.email}</span>}
               </label>
             </div>
+
             <div className="col-12">
               <label className="consent-label">
                 <input
@@ -302,8 +290,7 @@ function QuizSettings({
                   checked={consentGiven}
                   onChange={(e) => handleConsentChange(e.target.checked)}
                 />
-                Souhlasím se zpracováním osobních údajů pouze za účelem
-                odeslání emailu s výsledky.
+                Souhlasím se zpracováním osobních údajů pouze za účelem odeslání emailu s výsledky.
               </label>
             </div>
           </div>
@@ -324,6 +311,7 @@ function QuizSettings({
                 </label>
               )}
             </div>
+
             {settings.multiSelect && (
               <div className="bulk-control">
                 <label className="bulk-label" htmlFor="bulk-count-input">
@@ -339,27 +327,23 @@ function QuizSettings({
                     disabled={settings.selectedCategories.length === 0}
                     onChange={(e) => handleBulkInput(e.target.value)}
                   />
-                  <span className="bulk-badge">
-                    Vybráno: {settings.selectedCategories.length}
-                  </span>
+                  <span className="bulk-badge">Vybráno: {settings.selectedCategories.length}</span>
                 </div>
                 <span className="bulk-hint">
                   Zadaná hodnota přepíše počty u všech vybraných kategorií.
                 </span>
               </div>
             )}
+
             <CategoryList
               categories={categories}
               onSelectionChange={handleCategorySelection}
               multiSelect={settings.multiSelect}
-              value={
-                settings.multiSelect
-                  ? settings.selectedCategories
-                  : settings.category
-              }
+              value={settings.multiSelect ? settings.selectedCategories : settings.category}
               categoryQuestionCounts={categoryQuestionCounts}
               onCountChange={handleCategoryCountChange}
             />
+
             {settings.multiSelect && (
               <div className="category-total">
                 Celkem otázek: <strong>{totalQuestions}</strong>
@@ -374,9 +358,7 @@ function QuizSettings({
                 <input
                   type="number"
                   value={inputMaxQuestions}
-                  onChange={(e) =>
-                    handleInputMaxQuestions(Number(e.target.value))
-                  }
+                  onChange={(e) => handleInputMaxQuestions(Number(e.target.value))}
                   onKeyDown={handleMaxQuestionsKeyDown}
                   min={1}
                   className="form-control"
@@ -385,6 +367,7 @@ function QuizSettings({
             </div>
           )}
         </div>
+
         <div className="row">
           <div className="col">
             {showRefresh && (
