@@ -13,7 +13,7 @@ function Header({ currentPath = "/" }: HeaderProps) {
   return (
     <header className="header">
       <div className="header-brand">
-        <img src={logo} alt="Prorocketeers" className="header-logo" />
+        <img src={logo.src} alt="Prorocketeers" className="header-logo" />
         <span className="header-divider">|</span>
         <h1 className="header-title">Kvíz pro softwareové inženýry</h1>
       </div>
