@@ -13909,7 +13909,7 @@
     "options": [
       "K jednorozměrnému layoutu položek v řádku nebo sloupci s flexibilním rozmisťováním.",
       "K tvorbě dvourozměrné tabulky podobné gridu.",
-      "K absolutnímu pozicování potomků: jakmile nastavíš `display: flex`, všechny děti se přepnou na `position: absolute` a lze je posouvat přes `top/left`.",
+      "K absolutnímu pozicování potomků: jakmile nastavíš `display: flex`, přepnou se všechni potomci na `position: absolute` a lze je posouvat přes `top/left`.",
       "Jen k centrování textu, protože flexbox byl navržen pouze jako náhrada za `text-align: center` a pro layout víc prvků se nepoužívá."
     ],
     "correctAnswer": 0
@@ -13930,7 +13930,7 @@
     "question": "Co dělá `align-items` ve flexboxu?",
     "options": [
       "Zarovnává položky napříč vedlejší osou kontejneru.",
-      "Řídí pořadí flex položek, `align-items` přerovná děti podle jejich `order` a automaticky je seřadí od nejmenší po největší.",
+      "Řídí pořadí flex položek, `align-items` přerovná potomky podle jejich `order` a automaticky je seřadí od nejmenší po největší.",
       "Nastavuje mezeru mezi řádky, tedy je ekvivalent `row-gap`; pokud máš `flex-wrap`, `align-items` určuje vzdálenost řádků.",
       "Funguje jen s `position: absolute`, protože zarovnání přes vedlejší osu je možné pouze u absolutně pozicovaných elementů."
     ],
