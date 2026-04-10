@@ -13920,7 +13920,7 @@
     "options": [
       "Zarovnává položky podél hlavní osy kontejneru.",
       "Zarovnává položky vždy vertikálně bez ohledu na `flex-direction`, takže je to univerzální „vertikální align“ vlastnost pro flexbox.",
-      "Nastavuje jejich šířku tak, aby se všechny položky roztáhly na stejnou velikost, `justify-content` tedy funguje jako automatický `width` pro děti.",
+      "Nastavuje jejich šířku tak, aby se všechny položky roztáhly na stejnou velikost, `justify-content` tedy funguje jako automatický `width`.",
       "Ovlivňuje pouze grid layout, ve flexboxu se `justify-content` ignoruje a místo něj se používá pouze `align-content`."
     ],
     "correctAnswer": 0
@@ -15806,7 +15806,7 @@
     ],
     "correctAnswer": 0
   },
-  {{
+  {
     "category": "State Management",
     "question": "Co je anti-pattern při práci s globálním stavem?",
     "options": [
