@@ -4,6 +4,7 @@ import { getCategoriesWithCount } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
 import "./QuizSettings.css";
 import CategoryList from "./CategoryList";
+import { MAX_TOTAL_QUESTIONS } from "../constants/quiz";
 
 interface Props {
   showRefresh?: boolean;
@@ -27,10 +28,12 @@ function QuizSettings({
   const [inputEmail, setInputEmail] = useState(settings.email);
   const [inputName, setInputName] = useState(settings.name);
   const [consentGiven, setConsentGiven] = useState(settings.consentToEmailResults ?? false);
-  const [errors, setErrors] = useState({ name: "", email: "" });
+  const [errors, setErrors] = useState({ name: "", email: "", totalQuestions: "" });
   const categoryQuestionCounts = settings.categoryQuestionCounts ?? {};
   const [bulkCount, setBulkCount] = useState<number | "">("");
-  const [lastManualSelection, setLastManualSelection] = useState<string[]>(settings.selectedCategories);
+  const [lastManualSelection, setLastManualSelection] = useState<string[]>(
+    settings.selectedCategories,
+  );
   const [selectAllActive, setSelectAllActive] = useState(false);
 
   const categoryCountMap = useMemo(() => {
@@ -73,6 +76,11 @@ function QuizSettings({
     [validateEmail],
   );
 
+  const validateTotalQuestions = useCallback((count: number) => {
+    if (count > MAX_TOTAL_QUESTIONS) return `Max. ${MAX_TOTAL_QUESTIONS} otázek`;
+    return "";
+  }, []);
+
   const totalQuestions = settings.multiSelect
     ? settings.selectedCategories.reduce(
         (sum, category) => sum + (categoryQuestionCounts[category] ?? 0),
@@ -82,12 +90,20 @@ function QuizSettings({
 
   useEffect(() => {
     if (!showNamePrompt) return;
+    const nameError = showNamePrompt ? validateField("name", inputName) : "";
+    const emailError = showNamePrompt ? validateField("email", inputEmail) : "";
+    const totalQuestionsError = validateTotalQuestions(totalQuestions);
 
-    const nameError = validateField("name", inputName);
-    const emailError = validateField("email", inputEmail);
-    const hasError = !!nameError || !!emailError;
-    const notFilled = !inputName || !inputEmail;
-    const consentMissing = !consentGiven;
+    setErrors((prev) => ({
+      ...prev,
+      name: nameError,
+      email: emailError,
+      totalQuestions: totalQuestionsError,
+    }));
+
+    const hasError = !!nameError || !!emailError || !!totalQuestionsError;
+    const notFilled = showNamePrompt ? !inputName || !inputEmail : false;
+    const consentMissing = showNamePrompt ? !consentGiven : false;
     const countZeroOrLower = totalQuestions <= 0;
 
     onValidationChange?.(hasError || notFilled || consentMissing || countZeroOrLower);
@@ -99,6 +115,7 @@ function QuizSettings({
     totalQuestions,
     onValidationChange,
     validateField,
+    validateTotalQuestions,
   ]);
 
   const handleMaxQuestionsKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -346,6 +363,11 @@ function QuizSettings({
             {settings.multiSelect && (
               <div className="category-total">
                 Celkem otázek: <strong>{totalQuestions}</strong>
+                {errors.totalQuestions && (
+                  <div>
+                    <span className="text-danger small">{errors.totalQuestions}</span>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -360,8 +382,12 @@ function QuizSettings({
                   onChange={(e) => handleInputMaxQuestions(Number(e.target.value))}
                   onKeyDown={handleMaxQuestionsKeyDown}
                   min={1}
+                  max={MAX_TOTAL_QUESTIONS}
                   className="form-control"
                 />
+                {errors.totalQuestions && (
+                  <span className="text-danger small">{errors.totalQuestions}</span>
+                )}
               </label>
             </div>
           )}
