@@ -6115,12 +6115,12 @@
     ],
     "correctAnswer": 0
   },
-  {
+    {
     "category": "ElasticSearch",
     "question": "Jak ElasticSearch indexuje data?",
     "options": [
       "Každý dokument je analyzován a uložen ve formátu inverted index.",
-      "Data jsou uložena jako prostý text",
+      "Data jsou uložena jako prostý text, který se při každém dotazu sekvenčně prochází podobně jako v log souboru, takže není potřeba žádná speciální indexová struktura.",
       "Indexování probíhá pouze při vyhledávání",
       "N/A"
     ],
@@ -6131,7 +6131,7 @@
     "question": "Jaký je rozdíl mezi soft delete a hard delete?",
     "options": [
       "Soft delete skrývá dokument, hard delete jej trvale odstraní.",
-      "Soft delete a hard delete jsou totéž",
+      "Soft delete a hard delete jsou totéž, protože ElasticSearch údajně vždy okamžitě fyzicky smaže dokument ze všech segmentů a nikdy v indexu nedrží „označené“ záznamy.",
       "Hard delete pouze skrývá dokument",
       "N/A"
     ],
@@ -6142,7 +6142,7 @@
     "question": "Jak zabezpečit ElasticSearch cluster?",
     "options": [
       "Použitím TLS, autentizace, autorizace a firewall pravidel.",
-      "ElasticSearch nelze zabezpečit",
+      "ElasticSearch nelze zabezpečit, protože je navržen jako otevřený vyhledávač; jakékoli zapnutí bezpečnostních funkcí by prý rozbilo vyhledávání a proto se doporučuje jen „nedávat to na internet“.",
       "Pouze pomocí hesla",
       "N/A"
     ],
@@ -6153,7 +6153,7 @@
     "question": "Jak integrovat ElasticSearch s databázemi?",
     "options": [
       "Použitím ETL procesů, Logstash nebo JDBC konektorů.",
-      "Integrace není možná",
+      "Integrace není možná, protože ElasticSearch neumí pracovat s daty mimo vlastní indexy; jediný správný přístup je přesunout všechna data z databáze do Elasticu a DB přestat používat.",
       "Pouze manuálním kopírováním",
       "N/A"
     ],
@@ -6164,7 +6164,7 @@
     "question": "Jak funguje cross-cluster search v ElasticSearch?",
     "options": [
       "Umožňuje dotazování přes více clusterů.",
-      "Cross-cluster search není podporován",
+      "Cross-cluster search není podporován, takže pokud máš více clusterů, musíš dotazy posílat zvlášť na každý z nich a výsledky pak sloučit až v aplikační vrstvě ručně.",
       "Vyžaduje kopírování dat mezi clustery",
       "N/A"
     ],
@@ -6175,7 +6175,7 @@
     "question": "Jak ElasticSearch zvládá update-heavy workload?",
     "options": [
       "Pomocí verzování dokumentů a optimalizace indexace.",
-      "Update operace nejsou podporovány",
+      "Update operace nejsou podporovány; jakmile dokument jednou naindexuješ, už ho nelze změnit a jediný způsob je smazat celý index a znovu ho kompletně vytvořit od začátku.",
       "Pouze mazáním a vkládáním nových dokumentů",
       "N/A"
     ],
@@ -6186,7 +6186,7 @@
     "question": "Jak implementovat geo-vyhledávání v ElasticSearch?",
     "options": [
       "Použitím geo_point typu a geo_distance dotazů.",
-      "Geo-vyhledávání není podporováno",
+      "Geo-vyhledávání není podporováno, protože ElasticSearch neumí počítat vzdálenosti ani pracovat se souřadnicemi; je nutné použít externí GIS databázi pro jakékoli dotazy podle polohy.",
       "Pouze pomocí externích knihoven",
       "N/A"
     ],
@@ -6197,7 +6197,7 @@
     "question": "Jak ElasticSearch zvládá near real-time vyhledávání?",
     "options": [
       "Použitím refresh intervalů a segment merge.",
-      "Real-time vyhledávání není podporováno",
+      "Real-time vyhledávání není podporováno, protože Elasticsearch indexuje jen dávkově; nová data se prý projeví až po nočním reindexu a během dne je nelze vyhledat.",
       "Pouze s delay 1 hodina",
       "N/A"
     ],
@@ -6208,7 +6208,7 @@
     "question": "Jak řešit problémy s vysokou latencí v ElasticSearch?",
     "options": [
       "Optimalizací dotazů, tuningem shardů a cachováním výsledků.",
-      "Latenci nelze snížit",
+      "Latenci nelze snížit, protože je daná interním limitem Elasticsearch; hardware, počet nodů ani změna dotazu na to prý nemají prakticky žádný vliv.",
       "Přidáním více dokumentů",
       "N/A"
     ],
@@ -6219,7 +6219,7 @@
     "question": "Jaké jsou hlavní výzvy při škálování ElasticSearch clusteru?",
     "options": [
       "Správná konfigurace shardů, optimalizace dotazů, rovnoměrné rozložení dat mezi nody.",
-      "ElasticSearch nelze škálovat",
+      "ElasticSearch nelze škálovat, protože cluster je omezen na jeden node; jakmile potřebuješ víc výkonu, musíš přejít na jiný systém a horizontální škálování v ES neexistuje.",
       "Škálování je automatické bez výzev",
       "N/A"
     ],
@@ -6230,7 +6230,7 @@
     "question": "Jak funguje snapshot a restore v ElasticSearch?",
     "options": [
       "Snapshoty umožňují zálohování indexů do vzdáleného úložiště a jejich následné obnovení.",
-      "Snapshot pouze komprimuje data",
+      "Snapshot pouze komprimuje data a slouží jen k úspoře místa na disku; není to záloha a nedá se z něj obnovit index do jiného clusteru ani po incidentu.",
       "Restore vytváří nový cluster",
       "N/A"
     ],
@@ -6241,7 +6241,7 @@
     "question": "Jak lze efektivně spravovat staré indexy v ElasticSearch?",
     "options": [
       "Použitím Index Lifecycle Management (ILM) pro automatickou rotaci, archivaci a mazání.",
-      "Staré indexy nelze spravovat",
+      "Staré indexy nelze spravovat; jakmile jsou vytvořené, musí zůstat v clusteru navždy a jediný způsob je průběžně přidávat diskový prostor.",
       "Pouze manuálním mazáním",
       "N/A"
     ],
@@ -6252,7 +6252,7 @@
     "question": "Co je frozen index a k čemu slouží?",
     "options": [
       "Frozen index umožňuje uchovávat historická data s minimálními nároky na paměť.",
-      "Frozen index je poškozený index",
+      "Frozen index je poškozený index, který vzniká při chybě disku nebo pádu nodu; „frozen“ znamená, že se nedá opravit ani použít a musí se vždy smazat a znovu naindexovat.",
       "Frozen index nelze číst",
       "N/A"
     ],
@@ -6264,7 +6264,7 @@
     "options": [
       "Použitím časově řazených indexů a optimalizovaných dotazů pro agregaci.",
       "Časové řady nejsou podporovány",
-      "Pouze pomocí externích nástrojů",
+      "Pouze pomocí externích nástrojů, protože Elasticsearch neumí časové agregace ani práci s timestampy; externí systém musí data nejdřív zpracovat a do ES poslat už hotové denní/týdenní souhrny.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -6275,7 +6275,7 @@
     "options": [
       "Použitím X-Pack Alerting nebo kombinací Kibana Watcher a Logstash.",
       "Alerting není podporován",
-      "Pouze pomocí e-mailových notifikací",
+      "Pouze pomocí e-mailových notifikací, protože Elasticsearch/Kibana prý neumí webhooky ani integrace typu Slack/PagerDuty; alert může jen poslat email a navíc bez podmínek nad dotazy.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -6285,7 +6285,7 @@
     "question": "Jak řešit duplicitní dokumenty v ElasticSearch?",
     "options": [
       "Pomocí deduplikace při indexaci nebo použitím update API místo index API.",
-      "Duplicity nelze řešit",
+      "Duplicity nelze řešit, protože Elasticsearch nemá žádný identifikátor dokumentu a vždy vytvoří nový záznam; proto se duplicitám nelze bránit ani při správném nastavování `_id`.",
       "Mazáním celého indexu",
       "N/A"
     ],
@@ -6297,7 +6297,7 @@
     "options": [
       "Použitím profile API pro detailní analýzu a optimalizaci dotazů.",
       "Výkon dotazů nelze analyzovat",
-      "Pouze pomocí stopek",
+      "Pouze pomocí stopek na straně klienta, protože interní profilační nástroje Elasticsearch jsou prý nepřesné; nejlepší praxe je měřit celkový čas requestu a z toho odvodit, co je pomalé.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -7886,12 +7886,12 @@
     ],
     "correctAnswer": 0
   },
-  {
+{
     "category": "Authentication / Authorization / JWT",
     "question": "Jak řešit session timeout v aplikacích s JWT?",
     "options": [
       "Krátkou expirací tokenu a použitím refresh tokenu.",
-      "Session timeout nelze řešit s JWT",
+      "Session timeout nelze řešit s JWT, protože JWT je statický token a jakmile je vydaný, server už ho nemůže nijak časově omezit ani vynutit odhlášení bez kompletního vypnutí celé autentizace.",
       "Použitím nekonečné expirace",
       "N/A"
     ],
@@ -7902,7 +7902,7 @@
     "question": "Jak zabránit útoku typu session fixation?",
     "options": [
       "Regenerací session ID při přihlášení uživatele.",
-      "Session fixation nelze zabránit",
+      "Session fixation nelze zabránit, protože session ID je vždy součástí cookies a útočník si ho může v prohlížeči oběti nastavit předem; jediná možnost je session vůbec nepoužívat.",
       "Použitím stejného session ID",
       "N/A"
     ],
@@ -7913,7 +7913,7 @@
     "question": "Co jsou OAuth scopes a jak se používají?",
     "options": [
       "Scopes definují oprávnění pro přístup k API.",
-      "Scopes jsou typy tokenů",
+      "Scopes jsou typy tokenů, například „read token“ a „write token“, a určují, jestli jde o JWT nebo opaque token; podle typu tokenu se pak rozhoduje, na jaké endpointy může volající přistupovat.",
       "Scopes definují uživatelské role",
       "N/A"
     ],
@@ -7924,7 +7924,7 @@
     "question": "Jak implementovat logout v aplikaci s JWT?",
     "options": [
       "Smazáním tokenu, přidáním na blacklist, invalidací refresh tokenu.",
-      "Logout nelze implementovat s JWT",
+      "Logout nelze implementovat s JWT, protože token je samostatný a vždy platí až do expirace; uživatel se tedy nemůže odhlásit dřív a jediné řešení je čekat, než token sám vyprší.",
       "Pouze smazáním tokenu z localStorage",
       "N/A"
     ],
@@ -7935,7 +7935,7 @@
     "question": "Jaká je role Identity Provideru (IdP)?",
     "options": [
       "IdP poskytuje autentizační služby a vydává tokeny.",
-      "IdP ukládá data uživatelů",
+      "IdP ukládá data uživatelů v podobě celé aplikace (UI i backendu) a funguje jako univerzální databáze pro všechny služby; bez IdP prý nelze mít žádnou uživatelskou tabulku ani profilová data.",
       "IdP je typ databáze",
       "N/A"
     ],
@@ -7946,7 +7946,7 @@
     "question": "Jak se řeší Single Logout (SLO) v SAML a OpenID Connect?",
     "options": [
       "Notifikací všech připojených služeb o odhlášení uživatele.",
-      "SLO nelze implementovat",
+      "SLO nelze implementovat, protože po odhlášení z jedné aplikace není možné informovat ostatní služby; jediná reálná možnost je vždy jen lokální logout a uživatel se musí odhlásit ručně v každé aplikaci.",
       "Pouze lokálním odhlášením",
       "N/A"
     ],
@@ -7957,7 +7957,7 @@
     "question": "Jak chránit REST API pomocí OAuth 2.0?",
     "options": [
       "Použitím přístupových tokenů s kontrolou scopes a oprávnění.",
-      "OAuth 2.0 nelze použít pro REST API",
+      "OAuth 2.0 nelze použít pro REST API, protože je určený pouze pro přihlášení uživatelů do webových stránek; pro API se musí vždy používat jen Basic Auth nebo session cookies.",
       "Pouze pomocí API klíčů",
       "N/A"
     ],
@@ -7968,7 +7968,7 @@
     "question": "Jak funguje federovaná autentizace?",
     "options": [
       "Umožňuje přihlášení uživatele pomocí externí identity (např. Google, Facebook, Azure AD).",
-      "Federovaná autentizace používá pouze lokální účty",
+      "Federovaná autentizace používá pouze lokální účty, jen je „federuje“ mezi zařízeními; uživatel se vždy vytvoří v databázi aplikace a externí poskytovatelé identity se nepoužívají.",
       "Federovaná autentizace je typ šifrování",
       "N/A"
     ],
@@ -7979,7 +7979,7 @@
     "question": "Jaké jsou nejlepší praktiky pro zabezpečení JWT?",
     "options": [
       "Použití krátkých expirací, HTTPS, podpisu, omezení rozsahu informací v tokenu.",
-      "JWT nepotřebuje zabezpečení",
+      "JWT nepotřebuje zabezpečení, protože je „self-contained“ a podepsaný; může se tedy posílat klidně přes HTTP, dávat mu dlouhou expiraci a ukládat do localStorage bez dalších opatření.",
       "Použití dlouhých expirací a HTTP",
       "N/A"
     ],
@@ -7990,7 +7990,7 @@
     "question": "Jak funguje token introspection v OAuth 2.0?",
     "options": [
       "Endpoint umožňující validaci a kontrolu aktivních tokenů.",
-      "Token introspection vytváří nové tokeny",
+      "Token introspection vytváří nové tokeny, protože „introspekce“ znamená obnovu; klient pošle starý token na introspection endpoint a server vrátí čerstvý access token s prodlouženou expirací.",
       "Token introspection šifruje tokeny",
       "N/A"
     ],
@@ -8001,7 +8001,7 @@
     "question": "Jaký je rozdíl mezi OAuth 1.0 a OAuth 2.0?",
     "options": [
       "OAuth 2.0 je jednodušší, nepoužívá podpisy requestů, podporuje více grant typů.",
-      "OAuth 1.0 a 2.0 jsou totéž",
+      "OAuth 1.0 a 2.0 jsou totéž, jen mají jiné číslo verze kvůli marketingu; protokoly jsou plně kompatibilní a lze míchat tokeny i flow mezi verzemi bez úprav.",
       "OAuth 1.0 je novější",
       "N/A"
     ],
@@ -8012,7 +8012,7 @@
     "question": "Jak OAuth řeší bezpečné sdílení přístupových práv mezi aplikacemi?",
     "options": [
       "Pomocí delegované autorizace a přístupových tokenů.",
-      "OAuth nesdílí přístupová práva",
+      "OAuth nesdílí přístupová práva; každá aplikace si musí udržovat vlastní hesla a vlastní session a OAuth se používá maximálně na „přesměrování“ na login stránku bez tokenů.",
       "Pomocí sdílení hesel",
       "N/A"
     ],
@@ -8023,7 +8023,7 @@
     "question": "Jaký je rozdíl mezi API Gateway a OAuth Authorization Serverem?",
     "options": [
       "API Gateway směruje provoz, Authorization Server vydává tokeny.",
-      "API Gateway a Authorization Server jsou totéž",
+      "API Gateway a Authorization Server jsou totéž: obě komponenty vždy vydávají tokeny, validují uživatele a zároveň směrují requesty na mikroservisy, takže se v architektuře používá jen jedna z nich.",
       "API Gateway vydává tokeny",
       "N/A"
     ],
@@ -8034,7 +8034,7 @@
     "question": "Jaká je role aud claimu v JWT?",
     "options": [
       "Definuje, pro kterou službu je token určen.",
-      "aud claim obsahuje uživatelské jméno",
+      "aud claim obsahuje uživatelské jméno, protože „audience“ označuje publikum tokenu, tedy konkrétní osobu; proto se do `aud` obvykle ukládá login nebo email uživatele.",
       "aud claim definuje expiraci",
       "N/A"
     ],
@@ -8046,7 +8046,7 @@
     "options": [
       "Odstraňuje zastaralé granty, přidává bezpečnostní vylepšení.",
       "OAuth 2.1 a 2.0 jsou totéž",
-      "OAuth 2.1 přidává nové grant typy",
+      "OAuth 2.1 přidává nové grant typy jako povinný „password grant v2“ a „implicit grant+“, aby bylo možné jednodušeji přihlašovat SPA aplikace bez nutnosti PKCE nebo autorizace přes redirect.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -8216,12 +8216,12 @@
     ],
     "correctAnswer": 0
   },
-  {
+ {
     "category": "HTTP(s)",
     "question": "Co je HTTP persistentní spojení?",
     "options": [
       "Drží spojení otevřené pro více požadavků místo opakovaného navazování spojení.",
-      "Spojení které nikdy nevyprší",
+      "Spojení které nikdy nevyprší, takže klient zůstane připojený k serveru permanentně i po zavření prohlížeče a spojení se udržuje napříč dny bez ohledu na timeouty nebo síťové změny.",
       "Spojení uložené v databázi",
       "N/A"
     ],
@@ -8232,7 +8232,7 @@
     "question": "Jak HTTP/2 řeší problém s latencí?",
     "options": [
       "Použitím multiplexingu, komprese hlaviček a server push.",
-      "Zvýšením velikosti paketů",
+      "Zvýšením velikosti paketů tak, aby se do jednoho přenosu vešlo víc dat; větší pakety znamenají méně round-tripů, a proto HTTP/2 primárně zrychluje web tím, že posílá maximum dat v jednom „velkém“ balíku.",
       "Použitím více TCP spojení současně",
       "N/A"
     ],
@@ -8243,7 +8243,7 @@
     "question": "Co je HSTS a k čemu slouží?",
     "options": [
       "HTTP Strict Transport Security (HSTS) vynucuje používání HTTPS.",
-      "HSTS je typ HTTP metody",
+      "HSTS je typ HTTP metody používaný pro bezpečné mazání dat (podobně jako DELETE), kde server garantuje, že požadavek proběhne jen přes šifrovaný kanál.",
       "HSTS je kompresní algoritmus",
       "N/A"
     ],
@@ -8254,7 +8254,7 @@
     "question": "Jak lze zabezpečit přenos citlivých dat přes HTTP?",
     "options": [
       "Použitím HTTPS, správným nastavením TLS, ochranou proti MITM útokům.",
-      "Stačí použít silné heslo",
+      "Stačí použít silné heslo – když je heslo dostatečně komplexní, může se posílat klidně přes nešifrované HTTP, protože útočník ho stejně nebude schopný uhodnout ani využít.",
       "HTTP je vždy bezpečné, není třeba dalších opatření",
       "N/A"
     ],
@@ -8266,7 +8266,7 @@
     "options": [
       "Hlavička Authorization: Basic <encoded-credentials> obsahuje zakódované přihlašovací údaje.",
       "Heslo se posílá v URL adrese",
-      "Autentizace probíhá pouze na straně klienta",
+      "Autentizace probíhá pouze na straně klienta; prohlížeč si uživatele „ověří“ lokálně a server už žádné přihlašovací údaje nedostává, protože by to bylo nebezpečné.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -8276,7 +8276,7 @@
     "question": "Co je HTTP Keep-Alive?",
     "options": [
       "Mechanismus umožňující udržet spojení mezi klientem a serverem pro více požadavků.",
-      "Pravidelné kontroly dostupnosti serveru",
+      "Pravidelné kontroly dostupnosti serveru (health-check), kdy klient každých pár sekund posílá „keep-alive ping“ a server odpovídá, aby se změřila dostupnost a latency; nesouvisí to se znovupoužitím spojení pro více requestů.",
       "Automatické obnovení vypršeného spojení",
       "N/A"
     ],
@@ -8287,7 +8287,7 @@
     "question": "Jaké jsou hlavní hrozby při používání HTTP?",
     "options": [
       "MITM útoky, odposlechy dat, spoofing, injekční útoky.",
-      "HTTP nemá žádné bezpečnostní hrozby",
+      "HTTP nemá žádné bezpečnostní hrozby, protože jde jen o textový protokol a útočník bez znalosti interního formátu aplikace nedokáže z odposlechu nic zjistit ani data změnit.",
       "Pouze pomalé načítání stránek",
       "N/A"
     ],
@@ -8298,7 +8298,7 @@
     "question": "Jaké jsou výhody QUIC oproti TCP v HTTP/3?",
     "options": [
       "Rychlejší navázání spojení, menší latence, lepší výkon na nestabilních sítích.",
-      "QUIC je pomalejší ale bezpečnější",
+      "QUIC je pomalejší ale bezpečnější, protože vždy posílá data dvakrát pro kontrolu integrity; tím zvyšuje latenci, ale zaručuje, že paket nikdy nedorazí poškozený.",
       "QUIC a TCP jsou identické protokoly",
       "N/A"
     ],
@@ -8309,7 +8309,7 @@
     "question": "Co znamená idempotence v HTTP metodách?",
     "options": [
       "Opakované volání metody by mělo mít stejný výsledek (např. GET, PUT, DELETE jsou idempotentní, ale POST není).",
-      "Metoda může být volána pouze jednou",
+      "Metoda může být volána pouze jednou; pokud klient pošle stejný request podruhé, server ho musí odmítnout chybou, protože idempotence znamená „jednorázovost“ operace.",
       "Metoda automaticky opakuje požadavek při chybě",
       "N/A"
     ],
@@ -8711,12 +8711,12 @@
     ],
     "correctAnswer": 0
   },
-  {
+    {
     "category": "API",
     "question": "Jak se liší public, private a partner API?",
     "options": [
       "Public API je otevřené pro všechny, private API pouze pro interní použití, partner API je omezeno na důvěryhodné třetí strany.",
-      "Všechny typy jsou stejné",
+      "Všechny typy jsou stejné a liší se jen názvem v dokumentaci; z pohledu autentizace, limitů, verzování i právního rámce se k nim přistupuje identicky, protože API je prostě API.",
       "Private API je nejbezpečnější typ",
       "N/A"
     ],
@@ -8727,7 +8727,7 @@
     "question": "Jak funguje OpenAPI (Swagger)?",
     "options": [
       "Specifikace pro dokumentaci a testování REST API.",
-      "Programovací jazyk pro API",
+      "OpenAPI (Swagger) je programovací jazyk pro API, ve kterém se píšou endpointy a server je pak „spustí“ podobně jako skripty; specifikace je tedy vlastně zdrojový kód, který runtime přímo vykonává.",
       "Typ databáze",
       "N/A"
     ],
@@ -8738,7 +8738,7 @@
     "question": "Jaké jsou hlavní bezpečnostní hrozby pro API?",
     "options": [
       "SQL Injection, XSS, CSRF, man-in-the-middle útoky, brute force.",
-      "API nemá bezpečnostní hrozby",
+      "API nemá bezpečnostní hrozby, protože běží na serveru a uživatel k němu nemá přímý přístup; pokud je UI zabezpečené, API je automaticky bezpečné a není potřeba řešit autentizaci ani rate limiting.",
       "Pouze DDoS útoky",
       "N/A"
     ],
@@ -8749,7 +8749,7 @@
     "question": "Jak API zvládá vysokou dostupnost (HA)?",
     "options": [
       "Použitím load balancing, failover strategií, auto-scaling.",
-      "HA není možná",
+      "HA není možná, protože API je vždy závislé na jednom serveru a jednom IP; jakmile tento server spadne, služba musí být nedostupná a žádné load balancery ani replikace to nemohou vyřešit.",
       "Pouze jedním serverem",
       "N/A"
     ],
@@ -8760,8 +8760,8 @@
     "question": "Jak lze zlepšit API DX (developer experience)?",
     "options": [
       "Kvalitní dokumentací, testovacími sandboxy, rychlou podporou a jasně definovanými standardy.",
-      "DX není důležité",
-      "Pouze rychlejší odpovědí",
+      "DX není důležité, protože vývojáři si API vždy nějak zjistí z kódu nebo sniffováním requestů; stačí mít endpointy funkční a jakákoli dokumentace či konzistence odpovědí je jen zbytečná práce navíc.",
+      "Pouze rychlejšími odpověďmi API (nižší latencí a vyšším throughputem), protože když endpointy vrací data rychle, vývojáři už nepotřebují řešit dokumentaci, příklady, verzování ani konzistenci chybových stavů — výkon sám o sobě prý zaručí dobrou developer experience.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -9211,7 +9211,7 @@
     "question": "Jak AWS podporuje serverless architekturu?",
     "options": [
       "Pomocí služeb jako Lambda, DynamoDB, API Gateway, Step Functions.",
-      "AWS nepodporuje serverless",
+      "AWS nepodporuje serverless, protože všechny aplikace v AWS musí běžet na předem vytvořených virtuálních serverech.",
       "Pouze pomocí EC2",
       "N/A"
     ],
@@ -9222,7 +9222,7 @@
     "question": "Jak funguje AWS Transit Gateway?",
     "options": [
       "Umožňuje propojení více VPC a on-premise sítí.",
-      "Transit Gateway je databáze",
+      "Transit Gateway je databáze, která ukládá routovací tabulky do tabulek podobně jako RDS a umožňuje nad nimi spouštět SQL dotazy pro řízení síťového provozu.",
       "Transit Gateway je storage služba",
       "N/A"
     ],
@@ -9233,7 +9233,7 @@
     "question": "Jak lze zabezpečit AWS účet?",
     "options": [
       "Použitím MFA, IAM Policies, AWS Organizations.",
-      "AWS účet nelze zabezpečit",
+      "AWS účet nelze zabezpečit, protože root uživatel má vždy plný přístup a jakmile jednou existuje, AWS prý nedovolí omezit oprávnění ani zapnout další ochrany.",
       "Pouze silným heslem",
       "N/A"
     ],
@@ -9244,7 +9244,7 @@
     "question": "Co je AWS Outposts?",
     "options": [
       "Hybridní cloudové řešení umožňující provoz AWS služeb v on-premise prostředí.",
-      "Outposts je databáze",
+      "Outposts je databáze, která běží výhradně v datacentru zákazníka a nahrazuje RDS.",
       "Outposts je storage služba",
       "N/A"
     ],
@@ -9795,7 +9795,7 @@
     "options": [
       "Direct, Fanout, Topic, Headers.",
       "Pouze Direct a Fanout. Topic a Headers neexistují a směrování přes vzory nebo hlavičky RabbitMQ nepodporuje kvůli výkonu.",
-      "RabbitMQ má pouze jeden typ exchange (Universal); typ se automaticky odvodí z routing key při publikování zprávy.",
+      "RabbitMQ má pouze jeden typ exchange (Universal). Typ se automaticky odvodí z routing key při publikování zprávy.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -10465,7 +10465,7 @@
     "question": "Co je digitální podpis?",
     "options": [
       "Kryptografická metoda ověřování pravosti a integrity zprávy pomocí asymetrické kryptografie.",
-      "Digitální podpis je obrázek podpisu vložený do PDF (např. JPEG/PNG); jeho přítomnost sama o sobě zajišťuje právní závaznost i kryptografickou integritu dokumentu.",
+      "Digitální podpis je obrázek podpisu vložený do PDF (např. JPEG/PNG).",
       "Digitální podpis je heslo, které se připojí na konec zprávy. příjemce ho porovná se svým heslem a tím ověří, kdo zprávu poslal.",
       "N/A"
     ],
@@ -10884,7 +10884,7 @@
     "options": [
       "Použitím moderních knihoven místo XML parserů, zakázáním externích entit v XML parseru.",
       "XXE útoku nelze zabránit, protože XML vždy musí umět načítat externí entity. maximum je pravidelně měnit hesla a monitorovat server.",
-      "Proti XXE stačí přepnout aplikaci na HTTPS a přidat WAF pravidlo na blokování řetězce `<!DOCTYPE`; to zcela eliminuje všechny varianty XXE.",
+      "Proti XXE stačí přepnout aplikaci na HTTPS a přidat WAF pravidlo na blokování řetězce `<!DOCTYPE>`.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -11148,7 +11148,7 @@
     "options": [
       "Pro přístup k DOM elementu nebo uchování mutable hodnoty, která nemá vyvolat render.",
       "Pro uložení globálního sdíleného stavu celé aplikace, protože useRef je „jedna instance“ pro celou aplikaci a funguje podobně jako store.",
-      "Pro spuštění side efektu po každém renderu, jelikož useRef se automaticky aktualizuje a tím „trigeruje“ efekty bez nutnosti dependency pole.",
+      "Pro spuštění side efektu po každém renderu.",
       "Pro nahrazení props mezi rodičem a potomkem, protože ref se předává automaticky a zaručuje, že potomci uvidí vždy aktuální hodnotu bez renderování."
     ],
     "correctAnswer": 0
@@ -11159,7 +11159,7 @@
     "options": [
       "Input, jehož hodnota je řízena React stavem a mění se přes onChange.",
       "Input, který nelze nikdy upravit uživatelem, protože je „kontrolovaný“ Reactem a všechny pokusy o změnu se zablokují na úrovni prohlížeče.",
-      "Input, který používá výhradně useRef místo state, a proto je považován za controlled; jeho hodnota je čtena přímo z DOM až při odeslání formuláře.",
+      "Input, který používá výhradně useRef místo state, a proto je považován za controlled.",
       "Input, který je renderován pouze na serveru a na klientovi se už nikdy neaktualizuje, takže je „controlled“ serverem během SSR."
     ],
     "correctAnswer": 0
@@ -11237,7 +11237,7 @@
       "Aby bylo možné odregistrovat listenery, zrušit timeouty nebo abortnout requesty při změně závislostí či unmountu.",
       "Aby React mohl přeskočit další render, protože cleanup „vynuluje“ frontu aktualizací a tím zabrání zbytečnému překreslování UI.",
       "Aby se props automaticky serializovaly a znovu načetly při unmountu/mountu, což umožní zachovat stav komponenty i bez externího úložiště.",
-      "Aby se useEffect spouštěl synchronně během renderu; cleanup zajistí, že se efekt provede dříve než React aktualizuje DOM."
+      "Aby se useEffect spouštěl synchronně během renderu. Cleanup zajistí, že se efekt provede dříve než React aktualizuje DOM."
     ],
     "correctAnswer": 0
   },
@@ -11644,7 +11644,7 @@
       "K organizaci znovupoužitelné logiky podle zodpovědností pomocí `setup()`, composables a reaktivních primitiv.",
       "K nahrazení šablon čistým CSS: místo template se komponenta „složí“ z CSS selektorů a Vue pak podle nich automaticky generuje HTML strukturu.",
       "K automatickému generování routeru ze struktury složek (file-based routing), kdy Composition API skenuje adresáře a vytváří za tebe všechny route záznamy.",
-      "Pouze k definici globálního store celé aplikace; bez Composition API není možné sdílet stav mezi komponentami a je to v podstatě vestavěná náhrada Vuex/Pinia."
+      "Pouze k definici globálního store celé aplikace. Bez Composition API není možné sdílet stav mezi komponentami a je to v podstatě vestavěná náhrada Vuex/Pinia."
     ],
     "correctAnswer": 0
   },
@@ -11655,7 +11655,7 @@
       "`ref` obaluje typicky jednu hodnotu do objektu s `.value`, zatímco `reactive` vytváří reaktivní proxy pro objekt.",
       "`ref` funguje jen pro DOM uzly (podobně jako v Reactu) a používá se výhradně pro získání elementu z template, zatímco `reactive` je určený jen pro pole a kolekce.",
       "`reactive` je immutable (nejde měnit), protože Vue vyžaduje čisté funkce, zatímco `ref` je mutable a dá se přepisovat přímo jako běžná proměnná.",
-      "Mezi nimi není žádný rozdíl; `ref` a `reactive` jsou jen dvě jména pro stejný mechanismus a Vue je interně vždy převádí na totožnou strukturu."
+      "Mezi nimi není žádný rozdíl: `ref` a `reactive` jsou jen dvě jména pro stejný mechanismus a Vue je interně vždy převádí na totožnou strukturu."
     ],
     "correctAnswer": 0
   },
@@ -11686,7 +11686,7 @@
     "question": "Jak se liší watchEffect od watch?",
     "options": [
       "`watchEffect` automaticky sleduje použité závislosti uvnitř callbacku, zatímco `watch` má zdroj sledování definovaný explicitně.",
-      "`watchEffect` funguje jen v Options API a používá se místo `mounted/updated`; v Composition API není k dispozici, protože tam se side efekty řeší výhradně přes computed.",
+      "`watchEffect` funguje jen v Options API a používá se místo `mounted/updated`.",
       "`watch` neumí cleanup (zrušení listenerů apod.) a proto se hodí jen na jednoduché logování; cleanup podporuje pouze `watchEffect`, který je pro to přímo navržen.",
       "`watchEffect` je určený pouze pro SSR, protože na klientu by automatické sledování závislostí bylo příliš pomalé a Vue ho proto vypíná."
     ],
@@ -11709,7 +11709,7 @@
     "options": [
       "Přes emit události, kterou parent zachytí a zareaguje na ni.",
       "Přímou mutací parent state bez eventu, protože Vue automaticky propojí všechny nested komponenty a child může bezpečně přepisovat proměnné rodiče.",
-      "Přepsáním vlastních props, protože props jsou obousměrné a child je může změnit; Vue pak změnu automaticky synchronizuje zpět do parentu.",
+      "Přepsáním vlastních props, protože props jsou obousměrné a child je může změnit.",
       "Pouze přes globální store, protože bez Pinia/Vuex neexistuje oficiální způsob, jak poslat informaci z child do parent."
     ],
     "correctAnswer": 0
@@ -11730,9 +11730,9 @@
     "question": "Jaký je rozdíl mezi `v-if` a `v-show`?",
     "options": [
       "`v-if` element přidává nebo odebírá z DOM, zatímco `v-show` typicky jen přepíná CSS `display`.",
-      "`v-show` odebírá element z DOM a `v-if` ne; `v-if` prý jen nastavuje `visibility: hidden`, aby se element „neklikalo“, ale v DOM pořád zůstává.",
-      "Obě direktivy dělají vždy totéž a jde jen o syntaktický sugar; Vue si je interně přepíše na stejný kód a výkon je identický.",
-      "`v-if` lze použít jen na formulářové prvky (input/select), protože pouze ty mají podporu pro podmíněné renderování; pro ostatní elementy se musí použít `v-show`."
+      "`v-show` odebírá element z DOM a `v-if` ne. `v-if` prý jen nastavuje `visibility: hidden`, aby se element „neklikalo“, ale v DOM pořád zůstává.",
+      "Obě direktivy dělají vždy totéž a jde jen o syntaktický sugar. Vue si je interně přepíše na stejný kód a výkon je identický.",
+      "`v-if` lze použít jen na formulářové prvky (input/select), protože pouze ty mají podporu pro podmíněné renderování. Pro ostatní elementy se musí použít `v-show`."
     ],
     "correctAnswer": 0
   },
@@ -11742,8 +11742,8 @@
     "options": [
       "K předávání renderovatelného obsahu do komponenty zvenčí při zachování její obalové struktury.",
       "K ukládání lokálního stavu mezi routami, protože slot představuje „zásobník“ UI, který Vue uchová a znovu vloží při návratu na stránku.",
-      "K nahrazení props v každé komponentě; místo předávání dat přes props se ve Vue doporučuje předávat vše přes sloty, protože jsou typově bezpečnější.",
-      "K definici HTTP route handlerů, tedy pro mapování URL na komponenty; sloty jsou základní mechanismus Vue Routeru pro zpracování požadavků."
+      "K nahrazení props v každé komponentě - místo předávání dat přes props se ve Vue doporučuje předávat vše přes sloty, protože jsou typově bezpečnější.",
+      "K definici HTTP route handlerů, tedy pro mapování URL na komponenty."
     ],
     "correctAnswer": 0
   },
@@ -11753,7 +11753,7 @@
     "options": [
       "Sloty, kde child poskytuje parentu data pro vykreslení slot obsahu.",
       "Sloty, které fungují jen ve scoped CSS: pokud komponenta nemá `scoped` atribut ve stylech, scoped sloty se nevykreslí a Vue je ignoruje.",
-      "Sloty dostupné pouze v produkci, protože ve vývoji by přenášely příliš mnoho dat a zpomalovaly hot-reload; Vue je proto zapíná až při build.",
+      "Sloty dostupné pouze v produkci, protože ve vývoji by přenášely příliš mnoho dat a zpomalovaly hot-reload - Vue je proto zapíná až při build.",
       "Přímá náhrada za provide/inject, protože scoped sloty automaticky injektují hodnoty do všech potomků bez nutnosti předávání props nebo kontextu."
     ],
     "correctAnswer": 0
@@ -11787,7 +11787,7 @@
       "Registruje callback, který se spustí po mountu komponenty do DOM.",
       "Spouští cleanup po unmountu: používá se k odregistrování listenerů a zrušení timerů, protože jeho název znamená „když se komponenta odmontuje“. ",
       "Přidává hodnotu do computed cache, aby se computed vyhodnotilo jen jednou po mountu a už se nikdy nepřepočítávalo, dokud se nezmění route.",
-      "Funguje pouze na serveru během SSR; na klientu se lifecycle hooky nepoužívají a místo toho se pracuje jen s watchery."
+      "Funguje pouze na serveru během SSR."
     ],
     "correctAnswer": 0
   },
@@ -11820,7 +11820,7 @@
       "Při změně pořadí může dojít k chybnému reuse DOM nebo lokálního stavu položek.",
       "Vue pak seznam nevyrenderuje vůbec, protože index je jen číslo a Vue vyžaduje key výhradně jako UUID string; číselné key jsou neplatné.",
       "Index key automaticky vypíná reaktivitu: Vue považuje položky za „statické“ a přestane sledovat změny, dokud nezměníš celý array objekt.",
-      "Index key lze použít jen u slotů, protože indexy jsou interně rezervované pro slot props; v běžném `v-for` se index nesmí použít jako key."
+      "Index key lze použít jen u slotů, protože indexy jsou interně rezervované pro slot props."
     ],
     "correctAnswer": 0
   },
@@ -11841,7 +11841,7 @@
     "options": [
       "Computed má být deterministická odvozená hodnota, ne místo pro side efekty.",
       "Protože computed se vyhodnotí vždy jen jednou po startu aplikace a už nikdy znovu; side efekty by se tedy nespouštěly spolehlivě při dalších změnách dat.",
-      "Protože computed neumí pracovat s props a má přístup jen k lokálnímu state; jakmile použiješ props, computed se přepne do režimu „read-only“ a přestane fungovat.",
+      "Protože computed neumí pracovat s props a má přístup jen k lokálnímu state.",
       "Protože computed funguje jen v class komponentách (podobně jako v jiných frameworkách) a v moderním Vue s Composition API je computed pouze alias pro method."
     ],
     "correctAnswer": 0
@@ -11875,7 +11875,7 @@
       "K deklaraci a typování událostí, které komponenta emituje.",
       "K přímé změně props rodičovské komponenty, protože emits jsou obousměrné a `defineEmits` umožní child komponentě přepsat hodnoty parentu bez explicitních handlerů.",
       "K vytvoření watcheru na route params; `defineEmits` je součást Vue Routeru a používá se k tomu, aby se při změně URL automaticky emitovala událost do komponent.",
-      "K vypnutí reaktivity v child komponentě, protože emitování událostí je nákladné; `defineEmits` přepne komponentu do „statického“ režimu."
+      "K vypnutí reaktivity v child komponentě, protože emitování událostí je nákladné. `defineEmits` přepne komponentu do „statického“ režimu."
     ],
     "correctAnswer": 0
   },
@@ -12192,9 +12192,9 @@
     "question": "Co je event loop v Node.js?",
     "options": [
       "Mechanismus, který zpracovává callbacky a asynchronní úlohy v jednotlivých fázích běhu.",
-      "Fronta pouze pro HTTP requesty, kterou Node používá místo TCP socketů; všechny ostatní typy I/O se zpracovávají synchronně mimo event loop.",
+      "Fronta pouze pro HTTP requesty, kterou Node používá místo TCP socketů. Všechny ostatní typy I/O se zpracovávají synchronně mimo event loop.",
       "Nástroj pro serializaci JSON, který „točí“ objekty v paměti, aby se daly bezpečně převést na string bez cyklických referencí.",
-      "API pro vytváření worker threadů; event loop je vlastně název pro pool vláken, který Node automaticky spouští pro každý request."
+      "API pro vytváření worker threadů."
     ],
     "correctAnswer": 0
   },
@@ -12214,8 +12214,8 @@
     "question": "K čemu v Node.js slouží libuv?",
     "options": [
       "Poskytuje event loop, abstrahuje asynchronní I/O a thread pool pro některé operace.",
-      "Je to nástroj pro transpile TypeScriptu do JavaScriptu, který se spouští před V8; bez libuv by Node neuměl číst `.ts` soubory.",
-      "Slouží k rendrování HTML šablon na serveru a obsahuje vestavěný template engine; Express ho používá jako výchozí view renderer.",
+      "Je to nástroj pro transpile TypeScriptu do JavaScriptu, který se spouští před V8.",
+      "Slouží k rendrování HTML šablon na serveru a obsahuje vestavěný template engine. Express ho používá jako výchozí view renderer.",
       "Je to package manager pro npm balíčky a zajišťuje instalaci závislostí nativních modulů do složky `libuv_modules/`."
     ],
     "correctAnswer": 0
@@ -12237,7 +12237,7 @@
     "options": [
       "JavaScript kód běží v jednom hlavním vlákně, i když některé I/O nebo interní operace mohou využít thread pool či OS.",
       "Node nikdy nepoužívá žádné další thready ani na interní operace; všechno včetně čtení souborů a DNS běží vždy čistě v jediném vlákně JavaScriptu.",
-      "Každý request dostane vlastní JavaScript thread automaticky, podobně jako v tradičních serverech; proto je Node „single-threaded“ jen z pohledu jednoho requestu.",
+      "Každý request dostane vlastní JavaScript thread automaticky, podobně jako v tradičních serverech. Proto je Node „single-threaded“ jen z pohledu jednoho requestu.",
       "Node umí vykonávat jen synchronní funkce; asynchronní kód v Node neexistuje a callbacky jsou jen syntaktický trik pro zápis synchronních operací."
     ],
     "correctAnswer": 0
@@ -12248,7 +12248,7 @@
     "options": [
       "Když blokuje event loop a brání obsluze dalších requestů během čtení.",
       "Nikdy, synchronní API je vždy rychlejší, protože běží „přímo“ a Node u něj nepoužívá žádný overhead; proto je doporučené ho používat v každém request handleru.",
-      "Jen když se používá v testech, protože test runner umí měřit čas a synchronní volání by zkreslovala výsledky; v produkci na výkon nemá vliv.",
+      "Jen když se používá v testech, protože test runner umí měřit čas a synchronní volání by zkreslovala výsledky.",
       "Pouze na Windows, protože na Linuxu Node automaticky převede `readFileSync` na asynchronní operaci přes libuv a event loop se tím neblokuje."
     ],
     "correctAnswer": 0
@@ -12304,7 +12304,7 @@
       "Fronta callbacků z Promise reakcí, která se zpracovává před přechodem do dalších fází event loopu.",
       "Fronta pouze pro HTTP odpovědi, kam Node ukládá callbacky z `res.end()`; Promise se do ní ve skutečnosti vůbec neplánují.",
       "Úložiště pro environment variables, protože microtasky potřebují mít přístup ke konfiguraci; Node je proto ukládá do zvláštní „queue“ u Promise implementace.",
-      "Mechanismus dostupný jen v browseru; v Node Promise callbacky běží vždy až v další iteraci event loopu jako běžné macrotasky."
+      "Mechanismus dostupný jen v browseru, v Node Promise callbacky běží vždy až v další iteraci event loopu jako běžné macrotasky."
     ],
     "correctAnswer": 0
   },
@@ -12347,7 +12347,7 @@
     "options": [
       "Umožňuje pohodlně pracovat s file system operacemi přes Promise a async/await.",
       "Všechny operace jsou díky tomu synchronní, protože Promise v Node znamená „počká to“, a tím pádem se event loop při práci se soubory zastaví až do dokončení.",
-      "Funguje jen ve worker threadu, protože Promise API pro filesystem vyžaduje paralelní vlákno; v hlavním threadu je `fs.promises` vypnuté.",
+      "Funguje jen ve worker threadu, protože Promise API pro filesystem vyžaduje paralelní vlákno, v hlavním threadu je `fs.promises` vypnuté.",
       "Nahrazuje potřebu importů, protože když použiješ `fs.promises`, Node automaticky naimportuje všechny core moduly do globálního scope."
     ],
     "correctAnswer": 0
@@ -12357,7 +12357,7 @@
     "question": "Jak správně zachytit chybu v async funkci?",
     "options": [
       "Použít `try/catch` kolem `await` nebo vrácenou Promise korektně ošetřit.",
-      "Spoléhat, že Node všechny chyby vypíše a pokračuje bezpečně dál; async chyby se prý nikdy nepropagují a Node je vždy jen zaloguje do konzole.",
+      "Spoléhat, že Node všechny chyby vypíše a pokračuje bezpečně dál, async chyby se prý nikdy nepropagují a Node je vždy jen zaloguje do konzole.",
       "Použít pouze `console.log` bez další logiky, protože vypsáním chyby se Promise automaticky označí jako „handled“ a aplikace už ji nebude považovat za problém.",
       "Zachytit chybu jen na úrovni package.json přidáním pole `errors: true`, čímž Node zapne globální handler a lokální try/catch není potřeba."
     ],
@@ -12368,9 +12368,9 @@
     "question": "Co je unhandled promise rejection?",
     "options": [
       "Promise, která je odmítnutá a nemá včas připojený handler pro chybu.",
-      "Promise, která je pending déle než 5 sekund; Node to vyhodnotí jako rejection, aby se předešlo nekonečnému čekání, a označí to jako unhandled.",
+      "Promise, která je pending déle než 5 sekund, Node to vyhodnotí jako rejection, aby se předešlo nekonečnému čekání, a označí to jako unhandled.",
       "Každý `throw` uvnitř sync funkce, protože Node si to interně převádí na Promise rejection a pokud nemáš `await`, bere se to jako unhandled.",
-      "Situace, kdy `await` vrátí `undefined`; Node to interpretuje jako odmítnutí Promise bez hodnoty a vyhodí unhandled rejection warning."
+      "Situace, kdy `await` vrátí `undefined`, Node to interpretuje jako odmítnutí Promise bez hodnoty a vyhodí unhandled rejection warning."
     ],
     "correctAnswer": 0
   },
@@ -12380,7 +12380,7 @@
     "options": [
       "K řetězení zpracování requestu a response, například pro auth, logování nebo parsování dat.",
       "K nativnímu ukládání dat do MongoDB, protože middleware je databázová vrstva Expressu a bez něj nelze pracovat s kolekcemi ani modely.",
-      "K překladu TypeScriptu na JavaScript za běhu serveru; Express middleware kompiluje `.ts` soubory při každém requestu pro aktuální endpoint.",
+      "K překladu TypeScriptu na JavaScript za běhu serveru, Express middleware kompiluje `.ts` soubory při každém requestu pro aktuální endpoint.",
       "K paralelnímu běhu event loopu, protože každý middleware se spustí na vlastním vlákně a tím Express automaticky škáluje přes CPU jádra."
     ],
     "correctAnswer": 0
@@ -12391,8 +12391,8 @@
     "options": [
       "Dlouho žijící reference, které brání garbage collectoru uvolnit už nepoužívaná data.",
       "Každý `await` automaticky vyvolá memory leak, protože při čekání se musí uložit celý stack do paměti a Node ho nikdy neuvolní.",
-      "Streamy nikdy nealokují paměť, proto memory leaky v Node obvykle pochází jen z Buffers; pokud nepoužíváš Buffer, leak se nemůže stát.",
-      "Memory leak vzniká jen ve frontendu; na backendu Node používá „serverový GC“, který paměť vždy pravidelně vyčistí bez ohledu na reference."
+      "Streamy nikdy nealokují paměť, proto memory leaky v Node obvykle pochází jen z Buffers, pokud nepoužíváš Buffer, leak se nemůže stát.",
+      "Memory leak vzniká jen ve frontendu, na backendu Node používá „serverový GC“, který paměť vždy pravidelně vyčistí bez ohledu na reference."
     ],
     "correctAnswer": 0
   },
@@ -13358,7 +13358,7 @@
     "question": "Co dělá `extends` u generic constraintu?",
     "options": [
       "Omezuje generický parametr na typy splňující danou podmínku.",
-      "Vynucuje dědičnost pouze pro class komponenty; pokud generikem předáš interface nebo primitivum, `extends` se ignoruje a kompilátor ho přeskočí.",
+      "Vynucuje dědičnost pouze pro class komponenty, pokud generikem předáš interface nebo primitivum, `extends` se ignoruje a kompilátor ho přeskočí.",
       "Převádí union na intersection.",
       "Zajišťuje runtime validaci vstupu: při spuštění programu TypeScript zkontroluje, že `T` opravdu dědí z constraintu, a pokud ne, vyhodí výjimku."
     ],
@@ -13369,7 +13369,7 @@
     "question": "K čemu slouží generics?",
     "options": [
       "K psaní znovupoužitelných typově bezpečných funkcí, tříd a utilit pracujících s různými typy.",
-      "K překladu TypeScriptu do JavaScriptu; generics jsou kompilátorové direktivy, které řídí, jak bude vypadat výsledný JS kód a jak se budou optimalizovat importy.",
+      "K překladu TypeScriptu do JavaScriptu, generics jsou kompilátorové direktivy, které řídí, jak bude vypadat výsledný JS kód a jak se budou optimalizovat importy.",
       "K importu typů z externí knihovny bez `import` statementů, protože generics se umí „dotáhnout“ z npm balíčků automaticky podle názvu typu.",
       "K vypnutí inference v editoru: pokud použiješ generics, TypeScript přestane odvozovat typy a všechny musíš vždy zadat explicitně."
     ],
@@ -13391,9 +13391,9 @@
     "question": "K čemu slouží `typeof` v type position?",
     "options": [
       "Umožňuje odvodit typ z existující hodnoty nebo symbolu.",
-      "Převádí runtime hodnotu na string i v type pozici; například `typeof 123` se stane typem `'number'` a lze ho pak použít jako string literal typ.",
+      "Převádí runtime hodnotu na string i v type pozici, například `typeof 123` se stane typem `'number'` a lze ho pak použít jako string literal typ.",
       "Nahrazuje `instanceof` v JavaScriptu tím, že provádí runtime kontrolu prototypu.",
-      "Funguje pouze pro primitivní typy; pro objekty a funkce TypeScript `typeof` v type pozici zakazuje, protože by to bylo příliš nejednoznačné."
+      "Funguje pouze pro primitivní typy, pro objekty a funkce TypeScript `typeof` v type pozici zakazuje, protože by to bylo příliš nejednoznačné."
     ],
     "correctAnswer": 0
   },
@@ -13426,7 +13426,7 @@
       "Typ definovaný podmínkou ve stylu `T extends U ? X : Y`.",
       "Typ, který lze použít jen uvnitř `if` bloku, protože je navázaný na control flow analýzu a mimo podmínky TypeScript conditional types nevyhodnocuje.",
       "Alias pro optional property, protože conditional types jsou jen jiný zápis pro `?` u vlastností a používají se k tomu, aby se vlastnost stala volitelnou podle nastavení kompilátoru.",
-      "Typ dostupný jen v `.d.ts` souborech; v běžných `.ts` souborech conditional types nejdou použít, protože by zpomalovaly build."
+      "Typ dostupný jen v `.d.ts` souborech, v běžných `.ts` souborech conditional types nejdou použít, protože by zpomalovaly build."
     ],
     "correctAnswer": 0
   },
@@ -13437,7 +13437,7 @@
       "Udělá všechny vlastnosti typu `T` volitelnými.",
       "Udělá všechny vlastnosti typu `T` readonly a zároveň je „zamkne“ i v runtime, takže při pokusu o změnu TypeScript přidá `Object.freeze()`.",
       "Vybere jen polovinu vlastností typu `T` (např. prvních 50 % podle pořadí deklarace) a zbytek zahodí, aby se typ zjednodušil.",
-      "Odstraní z typu všechny metody a nechá jen datové property; používá se, když chceš vytvořit čisté DTO bez funkcí."
+      "Odstraní z typu všechny metody a nechá jen datové property, používá se, když chceš vytvořit čisté DTO bez funkcí."
     ],
     "correctAnswer": 0
   },
@@ -13448,7 +13448,7 @@
       "Udělá všechny vlastnosti typu `T` povinnými.",
       "Vybere jen required vlastnosti a zbytek smaže z runtime objektu, takže po kompilaci skutečně zmizí optional property a objekt se zmenší.",
       "Přidá default values do objektu: `Required<T>` vygeneruje inicializační funkci, která doplní chybějící hodnoty podle typu a zabrání `undefined`.",
-      "Vynutí, že typ musí obsahovat alespoň jednu metodu; pokud typ nemá metody, `Required<T>` ho označí jako neplatný a kompilace skončí chybou."
+      "Vynutí, že typ musí obsahovat alespoň jednu metodu, pokud typ nemá metody, `Required<T>` ho označí jako neplatný a kompilace skončí chybou."
     ],
     "correctAnswer": 0
   },
@@ -13458,8 +13458,8 @@
     "options": [
       "Vytvoří nový typ obsahující pouze vybrané klíče `K` z typu `T`.",
       "Odebírá klíče `K` z typu `T` (je to opak `Pick`), takže výsledný typ obsahuje všechno kromě vyjmenovaných vlastností.",
-      "Vybírá první hodnotu z union typu, protože „pick“ znamená vybrat jednu variantu; `Pick<A | B, ...>` vždy zredukuje union na jednu větev.",
-      "Mění všechny property na optional, protože vybírá jen ty, které jsou volitelné; required property v `Pick` nejdou použít."
+      "Vybírá první hodnotu z union typu, protože „pick“ znamená vybrat jednu variantu, `Pick<A | B, ...>` vždy zredukuje union na jednu větev.",
+      "Mění všechny property na optional, protože vybírá jen ty, které jsou volitelné, required property v `Pick` nejdou použít."
     ],
     "correctAnswer": 0
   },
@@ -13468,7 +13468,7 @@
     "question": "K čemu slouží `Omit<T, K>`?",
     "options": [
       "Vytvoří nový typ bez klíčů `K` z typu `T`.",
-      "Udělá klíče `K` readonly, protože `Omit` znamená „omezit“ změny; vlastnosti zůstávají, ale nelze je přepsat.",
+      "Udělá klíče `K` readonly, protože `Omit` znamená „omezit“ změny, vlastnosti zůstávají, ale nelze je přepsat.",
       "Vybere pouze klíče `K`, tedy chová se stejně jako `Pick`; v TypeScriptu jsou `Pick` a `Omit` jen historické aliasy pro stejný utility typ.",
       "Přidá nový klíč `K` do typu `T`, protože omitting v praxi znamená „přidat vynechané klíče“ zpět do objektu."
     ],
@@ -13479,8 +13479,8 @@
     "question": "K čemu slouží `Record<K, V>`?",
     "options": [
       "Vytvoří objektový typ s klíči `K` a hodnotami typu `V`.",
-      "Převede pole na tuple, protože record je „záznam“ s pevnou délkou; `Record` se používá primárně pro typování tuple struktur.",
-      "Umožní serializovat typ do JSON; `Record` přidá do typu metadata, která pak lze vyčíst za běhu a automaticky vytvořit JSON schema.",
+      "Převede pole na tuple, protože record je „záznam“ s pevnou délkou, `Record` se používá primárně pro typování tuple struktur.",
+      "Umožní serializovat typ do JSON, `Record` přidá do typu metadata, která pak lze vyčíst za běhu a automaticky vytvořit JSON schema.",
       "Funguje pouze pro stringové hodnoty, protože `Record` je interně definovaný jako `Record<string, string>` a jiné typy hodnot TypeScript nepovolí."
     ],
     "correctAnswer": 0
@@ -13490,9 +13490,9 @@
     "question": "Co dělá `ReturnType<T>`?",
     "options": [
       "Získá návratový typ funkce `T`.",
-      "Získá typ prvního argumentu funkce `T` a ignoruje zbytek; používá se, když chceš vynutit stejný vstupní typ pro jinou funkci.",
-      "Udělá funkci readonly, takže ji nelze volat víckrát; `ReturnType` označí funkci jako čistou a TypeScript pak zakáže její vedlejší efekty.",
-      "Vynutí, že funkce vrací Promise; `ReturnType` automaticky obalí návratový typ do `Promise<...>` a z async udělá standard."
+      "Získá typ prvního argumentu funkce `T` a ignoruje zbytek, používá se, když chceš vynutit stejný vstupní typ pro jinou funkci.",
+      "Udělá funkci readonly, takže ji nelze volat víckrát, `ReturnType` označí funkci jako čistou a TypeScript pak zakáže její vedlejší efekty.",
+      "Vynutí, že funkce vrací Promise, `ReturnType` automaticky obalí návratový typ do `Promise<...>` a z async udělá standard."
     ],
     "correctAnswer": 0
   },
@@ -13502,7 +13502,7 @@
     "options": [
       "K zachycení a odvození části typu uvnitř conditional types.",
       "K deklaraci interface implementace, podobně jako `implements`; `infer` řekne kompilátoru, že třída splňuje daný typ a má se podle toho vygenerovat kód.",
-      "K ručnímu vypnutí inference v celém souboru, aby TypeScript nepřepočítával typy a build byl rychlejší; typy se pak musí všude psát explicitně.",
+      "K ručnímu vypnutí inference v celém souboru, aby TypeScript nepřepočítával typy a build byl rychlejší, typy se pak musí všude psát explicitně.",
       "K překladu TS typů do runtime validátorů, kdy `infer` vygeneruje funkce, které při běhu ověřují strukturu dat proti definovaným typům."
     ],
     "correctAnswer": 0
@@ -13513,7 +13513,7 @@
     "options": [
       "Vlastnost může chybět nebo být typu `string` podle pravidel TypeScriptu a nastavení compileru.",
       "Vlastnost musí být vždy `null`, protože `?` znamená „nullable“ a TypeScript tak vynucuje, že hodnota je buď `null` nebo se kompilace zastaví chybou.",
-      "Vlastnost je readonly; otazník je zkratka pro „immutable“, takže `foo?: string` znamená, že property nejde nikdy změnit po inicializaci objektu.",
+      "Vlastnost je readonly, otazník je zkratka pro „immutable“, takže `foo?: string` znamená, že property nejde nikdy změnit po inicializaci objektu.",
       "Vlastnost musí být funkce vracející string, protože `?` označuje volitelný call signature a TypeScript to používá pro typování metod."
     ],
     "correctAnswer": 0
@@ -13533,7 +13533,7 @@
     "category": "TypeScript",
     "question": "Co je type assertion jako `value as Foo`?",
     "options": [
-      "Instrukce pro kompilátor, jak má s hodnotou typově zacházet; sama o sobě neprovádí runtime validaci.",
+      "Instrukce pro kompilátor, jak má s hodnotou typově zacházet, sama o sobě neprovádí runtime validaci.",
       "Bezpečná runtime konverze hodnoty do jiného typu.",
       "Povinný zápis pro každé API response.",
       "Způsob, jak vytvořit generický typ."
@@ -13866,7 +13866,7 @@
       "Uměle zvýší prioritu deklarace v cascade, a proto by se mělo používat střídmě.",
       "Udělá z vlastnosti animovatelnou, takže přechody (`transition`) začnou fungovat i pro vlastnosti, které normálně animovat nejdou.",
       "Zrychlí vykreslení stylu v browseru.",
-      "Funguje jen v inline stylech; pokud `!important` použiješ v externím CSS souboru, prohlížeč ho ignoruje."
+      "Funguje jen v inline stylech, pokud `!important` použiješ v externím CSS souboru, prohlížeč ho ignoruje."
     ],
     "correctAnswer": 0
   },
@@ -13897,9 +13897,9 @@
     "question": "Jaký je rozdíl mezi margin a padding?",
     "options": [
       "Margin vytváří prostor vně elementu, padding uvnitř kolem obsahu.",
-      "Margin je uvnitř a padding vně elementu; padding tedy zvětšuje „vnější odstup“ od sousedních prvků, zatímco margin zvětšuje prostor pro obsah.",
-      "Jsou to synonyma a browser je interpretuje stejně; rozdíl je jen historický a záleží na tom, jestli píšeš styly pro blokové nebo inline prvky.",
-      "Padding lze použít jen pro text, protože vymezuje vnitřní odsazení řádků; pro boxy a obrázky se používá pouze margin."
+      "Margin je uvnitř a padding vně elementu, padding tedy zvětšuje „vnější odstup“ od sousedních prvků, zatímco margin zvětšuje prostor pro obsah.",
+      "Jsou to synonyma a browser je interpretuje stejně, rozdíl je jen historický a záleží na tom, jestli píšeš styly pro blokové nebo inline prvky.",
+      "Padding lze použít jen pro text, protože vymezuje vnitřní odsazení řádků, pro boxy a obrázky se používá pouze margin."
     ],
     "correctAnswer": 0
   },
@@ -13920,8 +13920,8 @@
     "options": [
       "Zarovnává položky podél hlavní osy kontejneru.",
       "Zarovnává položky vždy vertikálně bez ohledu na `flex-direction`, takže je to univerzální „vertikální align“ vlastnost pro flexbox.",
-      "Nastavuje jejich šířku tak, aby se všechny položky roztáhly na stejnou velikost; `justify-content` tedy funguje jako automatický `width` pro děti.",
-      "Ovlivňuje pouze grid layout; ve flexboxu se `justify-content` ignoruje a místo něj se používá pouze `align-content`."
+      "Nastavuje jejich šířku tak, aby se všechny položky roztáhly na stejnou velikost, `justify-content` tedy funguje jako automatický `width` pro děti.",
+      "Ovlivňuje pouze grid layout, ve flexboxu se `justify-content` ignoruje a místo něj se používá pouze `align-content`."
     ],
     "correctAnswer": 0
   },
@@ -13930,7 +13930,7 @@
     "question": "Co dělá `align-items` ve flexboxu?",
     "options": [
       "Zarovnává položky napříč vedlejší osou kontejneru.",
-      "Řídí pořadí flex položek; `align-items` přerovná děti podle jejich `order` a automaticky je seřadí od nejmenší po největší.",
+      "Řídí pořadí flex položek, `align-items` přerovná děti podle jejich `order` a automaticky je seřadí od nejmenší po největší.",
       "Nastavuje mezeru mezi řádky, tedy je ekvivalent `row-gap`; pokud máš `flex-wrap`, `align-items` určuje vzdálenost řádků.",
       "Funguje jen s `position: absolute`, protože zarovnání přes vedlejší osu je možné pouze u absolutně pozicovaných elementů."
     ],
@@ -13941,9 +13941,9 @@
     "question": "K čemu slouží `gap`?",
     "options": [
       "Nastavuje mezery mezi položkami ve flexu nebo gridu bez potřeby hacků přes margin.",
-      "Přidává prostor jen kolem posledního prvku v kontejneru, aby se při scrollu nedotýkal okraje; mezi ostatními prvky se mezera nemění.",
+      "Přidává prostor jen kolem posledního prvku v kontejneru, aby se při scrollu nedotýkal okraje, mezi ostatními prvky se mezera nemění.",
       "Nahrazuje `padding` uvnitř elementu, takže `gap` je univerzální vnitřní odsazení a funguje i u jednoho jediného child prvku.",
-      "Funguje pouze pro textové uzly a přidá mezery mezi slovy; pro layout blokových elementů se používá jen `margin`."
+      "Funguje pouze pro textové uzly a přidá mezery mezi slovy, pro layout blokových elementů se používá jen `margin`."
     ],
     "correctAnswer": 0
   },
@@ -13952,9 +13952,9 @@
     "question": "Co je hlavní rozdíl mezi flexboxem a gridem?",
     "options": [
       "Flexbox je primárně jednorozměrný layout, grid dvourozměrný.",
-      "Grid funguje jen na serveru a flexbox jen v browseru; u SSR se musí používat grid, protože flexbox potřebuje klientský JavaScript.",
-      "Flexbox neumí centrovat, protože nemá žádné zarovnávací vlastnosti; centrování je možné jen v CSS Gridu.",
-      "Grid nepodporuje responzivní design, protože má pevně daný počet řádků a sloupců; pro responzivní layout se vždy používá pouze flexbox."
+      "Grid funguje jen na serveru a flexbox jen v browseru, u SSR se musí používat grid, protože flexbox potřebuje klientský JavaScript.",
+      "Flexbox neumí centrovat, protože nemá žádné zarovnávací vlastnosti, centrování je možné jen v CSS Gridu.",
+      "Grid nepodporuje responzivní design, protože má pevně daný počet řádků a sloupců, pro responzivní layout se vždy používá pouze flexbox."
     ],
     "correctAnswer": 0
   },
@@ -13965,7 +13965,7 @@
       "K definici dvourozměrné mřížky s řádky a sloupci.",
       "K vypnutí layoutu elementu: `display: grid` zruší box model a prohlížeč přestane element měřit i vykreslovat jeho potomky.",
       "K nahrazení media queries, protože grid automaticky pozná šířku zařízení a sám přepočítá sloupce bez potřeby breakpointů.",
-      "Jen k pozicování přes pixelové souřadnice; grid je v podstatě vizuální wrapper nad `position: absolute`."
+      "Jen k pozicování přes pixelové souřadnice, grid je v podstatě vizuální wrapper nad `position: absolute`."
     ],
     "correctAnswer": 0
   },
@@ -13975,7 +13975,7 @@
     "options": [
       "Definuje strukturu sloupců grid kontejneru.",
       "Nastavuje počet řádků ve flexboxu, protože `grid-template-columns` určuje, kolikrát se má flex řádek zalomit do dalšího řádku.",
-      "Přidává border mezi sloupci automaticky; prohlížeč vykreslí čáry mezi tracky a není potřeba používat `border` na jednotlivých položkách.",
+      "Přidává border mezi sloupci automaticky, prohlížeč vykreslí čáry mezi tracky a není potřeba používat `border` na jednotlivých položkách.",
       "Určuje pořadí HTML prvků v DOM: podle hodnot v `grid-template-columns` se prvky přeuspořádají v dokumentu i pro screen readery."
     ],
     "correctAnswer": 0
@@ -13986,7 +13986,7 @@
     "options": [
       "Podíl z dostupného volného prostoru v grid kontejneru.",
       "Fixní počet pixelů, jen se zapisuje zkráceně jako `fr` (např. `1fr` = `100px`), aby byl kód čitelnější pro grid layouty.",
-      "Procento z viewport height (vh), tedy relativní výška sloupce; `fr` je speciálně pro vertikální rozměry, protože grid pracuje ve 2D.",
+      "Procento z viewport height (vh), tedy relativní výška sloupce, `fr` je speciálně pro vertikální rozměry, protože grid pracuje ve 2D.",
       "Jednotka pro písmo (font ratio), která mění velikost textu v závislosti na počtu sloupců v mřížce."
     ],
     "correctAnswer": 0
@@ -13997,7 +13997,7 @@
     "options": [
       "Když chceme definovat minimální a maximální velikost tracku flexibilním způsobem.",
       "Když chceme vypnout responsive chování, protože `minmax()` uzamkne rozměry tracků a zabrání gridu přepočítat velikosti při změně viewportu.",
-      "Když potřebujeme absolutně pozicovat child element; `minmax()` určuje minimální a maximální `top/left` souřadnice pro položku v gridu.",
+      "Když potřebujeme absolutně pozicovat child element, `minmax()` určuje minimální a maximální `top/left` souřadnice pro položku v gridu.",
       "Pouze pro animace."
     ],
     "correctAnswer": 0
@@ -14008,7 +14008,7 @@
     "options": [
       "Umožní posouvat element relativně k jeho běžné pozici a vytvořit positioning context pro absolutně pozicované potomky.",
       "Vždy vyjme element z dokumentového toku, takže jeho místo se uvolní a ostatní prvky se posunou, jako by element vůbec neexistoval.",
-      "Zarovná element doprostřed viewportu, protože „relative“ znamená relativně k oknu prohlížeče; funguje jako zkratka pro centrování.",
+      "Zarovná element doprostřed viewportu, protože „relative“ znamená relativně k oknu prohlížeče, funguje jako zkratka pro centrování.",
       "Zafixuje element při scrollu, takže se bude posouvat spolu s horním okrajem stránky a zůstane stále viditelný."
     ],
     "correctAnswer": 0
@@ -14018,9 +14018,9 @@
     "question": "Co dělá `position: absolute`?",
     "options": [
       "Vyjme element z normálního toku a pozicuje ho vůči nejbližšímu vhodnému positioning contextu.",
-      "Udržuje element vždy při horním okraji viewportu, protože `absolute` znamená absolutně vůči oknu; element se tedy chová jako `position: fixed`.",
+      "Udržuje element vždy při horním okraji viewportu, protože `absolute` znamená absolutně vůči oknu, element se tedy chová jako `position: fixed`.",
       "Funguje stejně jako `sticky`.",
-      "Lze použít jen v gridu, protože absolutní pozicování potřebuje mřížkové buňky; mimo `display: grid` se `position: absolute` ignoruje."
+      "Lze použít jen v gridu, protože absolutní pozicování potřebuje mřížkové buňky, mimo `display: grid` se `position: absolute` ignoruje."
     ],
     "correctAnswer": 0
   },
@@ -14029,7 +14029,7 @@
     "question": "Jak funguje `position: sticky`?",
     "options": [
       "Element se chová relativně, dokud nedosáhne definovaného offsetu, pak se přichytí v rámci scroll kontejneru.",
-      "Je vždy fixovaný vůči viewportu bez ohledu na rodiče; sticky je jen jiné slovo pro `fixed` a prohlížeče ho mapují na stejnou implementaci.",
+      "Je vždy fixovaný vůči viewportu bez ohledu na rodiče, sticky je jen jiné slovo pro `fixed` a prohlížeče ho mapují na stejnou implementaci.",
       "Je to alias pro `absolute`, který pouze přidá výchozí `top: 0`; proto se sticky používá hlavně pro tooltipy a dropdowny.",
       "Funguje jen na `<header>` elementu, protože sticky pozicování je speciální vlastnost určená pro navigační lišty a jiné tagy ho nepodporují."
     ],
@@ -14040,7 +14040,7 @@
     "question": "Co je stacking context?",
     "options": [
       "Kontext určující, jak se skládají elementy na ose Z vůči sobě.",
-      "Seznam všech `z-index` hodnot v dokumentu, který je možné vypsat v DevTools; prohlížeč si ho udržuje jako tabulku a podle ní rozhoduje, co je nahoře.",
+      "Seznam všech `z-index` hodnot v dokumentu, který je možné vypsat v DevTools, prohlížeč si ho udržuje jako tabulku a podle ní rozhoduje, co je nahoře.",
       "Mechanismus pro dědičnost CSS variables, kdy se proměnné skládají „nad sebe“ a nejvyšší definice přepíše hodnoty z nižších vrstev.",
       "Grid vrstva pro auto-placement, která určuje pořadí skládání grid položek do buněk, když nejsou explicitně definované řádky a sloupce."
     ],
@@ -14051,8 +14051,8 @@
     "question": "Proč někdy `z-index` „nefunguje“?",
     "options": [
       "Protože element není v očekávaném stacking contextu nebo nemá vhodně nastavené positioning podmínky.",
-      "Protože `z-index` funguje jen na flex itemech; pokud element není přímé dítě flex kontejneru, prohlížeč hodnotu ignoruje.",
-      "Protože browser ignoruje hodnoty větší než 10, aby se zabránilo extrémním vrstvám; pro vyšší vrstvy se musí použít `z-index: max`.",
+      "Protože `z-index` funguje jen na flex itemech, pokud element není přímé dítě flex kontejneru, prohlížeč hodnotu ignoruje.",
+      "Protože browser ignoruje hodnoty větší než 10, aby se zabránilo extrémním vrstvám, pro vyšší vrstvy se musí použít `z-index: max`.",
       "Protože `z-index` lze použít jen s `display: grid`; mimo grid kontejner je vrstvění vypnuté a pořadí určuje jen DOM."
     ],
     "correctAnswer": 0
@@ -14086,7 +14086,7 @@
       "Když chceme škálování založené na root font-size a lepší práci s dostupností a responzivitou.",
       "Když potřebujeme pevnou hodnotu nezávislou na uživatelském nastavení, protože `rem` je absolutní jednotka uzamčená na 16px a nikdy se nemění.",
       "Jen pro border-radius, protože `rem` se v CSS smí použít pouze u zaoblených rohů a u margin/padding ho prohlížeč ignoruje.",
-      "`rem` nelze použít pro spacing; funguje jen pro `font-size` a ostatní vlastnosti ho nepodporují."
+      "`rem` nelze použít pro spacing, funguje jen pro `font-size` a ostatní vlastnosti ho nepodporují."
     ],
     "correctAnswer": 0
   },
@@ -14097,7 +14097,7 @@
       "`em` se odvíjí od font-size aktuálního kontextu, `rem` od root elementu.",
       "`em` je vždy pevný pixel a `rem` procento, takže `em` je vhodné pro přesné hodnoty a `rem` pro relativní layout.",
       "`rem` funguje jen pro text (font-size/line-height) a nelze ho použít třeba pro margin, padding nebo width, zatímco `em` tyto vlastnosti podporuje normálně.",
-      "Mezi nimi není rozdíl; `em` a `rem` jsou dvě jména pro stejnou jednotku a liší se jen v tom, jak je prohlížeče zobrazují v DevTools."
+      "Mezi nimi není rozdíl, `em` a `rem` jsou dvě jména pro stejnou jednotku a liší se jen v tom, jak je prohlížeče zobrazují v DevTools."
     ],
     "correctAnswer": 0
   },
@@ -14382,7 +14382,7 @@
     "options": [
       "Framework nad Reactem poskytující routing, rendering strategie, serverové capability a produkční tooling.",
       "Náhrada za Node.js runtime, která obsahuje vlastní JavaScript engine a místo V8 používá interní „Next Engine“, takže Node už není potřeba instalovat.",
-      "CSS framework pro utility třídy podobný Tailwindu; Next.js je primárně knihovna tříd jako `next-flex` a `next-grid` pro rychlé stylování komponent.",
+      "CSS framework pro utility třídy podobný Tailwindu, Next.js je primárně knihovna tříd jako `next-flex` a `next-grid` pro rychlé stylování komponent.",
       "Databázový ORM pro React aplikace, který mapuje komponenty na tabulky a automaticky generuje migrace podle JSX struktury."
     ],
     "correctAnswer": 0
@@ -14392,7 +14392,7 @@
     "question": "Co je App Router v Next.js?",
     "options": [
       "Moderní routing systém založený na adresářové struktuře v `app/` a React Server Components.",
-      "Legacy router dostupný pouze v `public/`, který slouží k mapování statických souborů na URL; moderní aplikace ho používají místo `app/`.",
+      "Legacy router dostupný pouze v `public/`, který slouží k mapování statických souborů na URL, moderní aplikace ho používají místo `app/`.",
       "Nástroj pro navigaci mezi mikroservisami, který běží v Kubernetes a rozhoduje, na jaký backend se má request přeposlat podle Next konfigurace.",
       "API pro správu cookies v browseru bez serveru, které nahrazuje `document.cookie` a funguje i v čistě statickém exportu bez jakýchkoli rout."
     ],
@@ -14414,9 +14414,9 @@
     "question": "Co je layout v App Routeru?",
     "options": [
       "Sdílená obalová komponenta pro část stromu rout, která může přetrvávat mezi navigacemi.",
-      "Speciální CSS reset soubor, který Next přidá automaticky do každé stránky; layout je vlastně místo, kam se zapisují globální styly.",
+      "Speciální CSS reset soubor, který Next přidá automaticky do každé stránky, layout je vlastně místo, kam se zapisují globální styly.",
       "Náhrada za React context provider: pokud použiješ layout, Context už není potřeba, protože layout automaticky sdílí state do všech potomků bez rerenderů.",
-      "Jen stránka s 404 obsahem; layout je fallback, který se zobrazí, když Next nenajde žádný `page.tsx` pro danou cestu."
+      "Jen stránka s 404 obsahem, layout je fallback, který se zobrazí, když Next nenajde žádný `page.tsx` pro danou cestu."
     ],
     "correctAnswer": 0
   },
@@ -14436,8 +14436,8 @@
     "question": "K čemu slouží `error.tsx`?",
     "options": [
       "K zobrazení error boundary UI pro chyby v daném route segmentu.",
-      "K logování build warningů při instalaci závislostí; `error.tsx` se vyhodnocuje jen při `next install` a vypisuje chyby npm do UI.",
-      "K zachytávání TypeScript chyb v editoru; když TypeScript najde chybu, Next ji „pošle“ do `error.tsx` a komponenta ji vykreslí ve stránce.",
+      "K logování build warningů při instalaci závislostí, `error.tsx` se vyhodnocuje jen při `next install` a vypisuje chyby npm do UI.",
+      "K zachytávání TypeScript chyb v editoru, když TypeScript najde chybu, Next ji „pošle“ do `error.tsx` a komponenta ji vykreslí ve stránce.",
       "K definici HTTP 500 route handleru: `error.tsx` se chová jako backend endpoint, který vrací status 500 a JSON s detailem chyby."
     ],
     "correctAnswer": 0
@@ -14448,7 +14448,7 @@
     "options": [
       "Komponenta renderovaná na serveru, která se neposílá klientovi jako plně interaktivní JavaScript.",
       "Každá komponenta uvnitř `pages/`, protože Pages Router automaticky renderuje všechny komponenty na serveru a tím z nich dělá Server Components bez dalších pravidel.",
-      "Komponenta, která umí běžet jen v browseru a má přístup k `window` a `document` bez omezení; označení „server“ znamená, že se načítá ze serveru, ne že tam běží.",
+      "Komponenta, která umí běžet jen v browseru a má přístup k `window` a `document` bez omezení, označení „server“ znamená, že se načítá ze serveru, ne že tam běží.",
       "Komponenta určená výhradně pro route handlers, která se používá místo `Response.json()` a vrací JSX jako HTTP odpověď pro API endpointy."
     ],
     "correctAnswer": 0
@@ -14459,7 +14459,7 @@
     "options": [
       "Když komponenta používá klientské funkce jako hooky, browser API nebo event handlery.",
       "Když chceme zapnout SSR, protože `use client` říká Nextu, aby stránku vyrenderoval na serveru a potom ji poslal do prohlížeče jako HTML.",
-      "Když komponenta vrací JSX; bez `use client` Next JSX nezpracuje a komponenta musí vracet čistý string s HTML.",
+      "Když komponenta vrací JSX, bez `use client` Next JSX nezpracuje a komponenta musí vracet čistý string s HTML.",
       "Pouze při importu CSS modulu, protože CSS moduly jsou klientská feature a bez `use client` se styly nepřipojí."
     ],
     "correctAnswer": 0
@@ -14469,9 +14469,9 @@
     "question": "Jaký je rozdíl mezi server a client komponentou?",
     "options": [
       "Server komponenta běží a renderuje se na serveru, client komponenta se hydratuje a může být interaktivní v browseru.",
-      "Client komponenta nemůže přijímat props, protože props se posílají jen ze serveru; klientské komponenty si musí data načítat výhradně přes `localStorage` nebo query parametry.",
-      "Server komponenta je vždy pomalejší, protože server musí generovat HTML při každém requestu a nikdy nemůže používat cache ani streamování; klientská komponenta je naopak vždy rychlá.",
-      "Client komponenta nemůže být součástí App Routeru; App Router podporuje pouze server komponenty a pro interaktivitu je nutné použít Pages Router."
+      "Client komponenta nemůže přijímat props, protože props se posílají jen ze serveru, klientské komponenty si musí data načítat výhradně přes `localStorage` nebo query parametry.",
+      "Server komponenta je vždy pomalejší, protože server musí generovat HTML při každém requestu a nikdy nemůže používat cache ani streamování, klientská komponenta je naopak vždy rychlá.",
+      "Client komponenta nemůže být součástí App Routeru, App Router podporuje pouze server komponenty a pro interaktivitu je nutné použít Pages Router."
     ],
     "correctAnswer": 0
   },
@@ -14492,7 +14492,7 @@
     "options": [
       "Server-side rendering, kdy se HTML vyrenderuje na serveru při requestu.",
       "Statický export všech stránek při buildu, kdy se SSR provede jednorázově a výsledné HTML se už nikdy nemění ani při dalších requestech.",
-      "Vykreslení stránky pouze po hydrataci klientem; SSR znamená, že prohlížeč nejdřív stáhne JS bundle a teprve potom se UI vykreslí.",
+      "Vykreslení stránky pouze po hydrataci klientem, SSR znamená, že prohlížeč nejdřív stáhne JS bundle a teprve potom se UI vykreslí.",
       "Streamování CSS do browseru: SSR je zkratka pro „Style Sheet Rendering“ a znamená, že server posílá styly postupně podle potřeby."
     ],
     "correctAnswer": 0
@@ -14502,9 +14502,9 @@
     "question": "Co je SSG?",
     "options": [
       "Static Site Generation, tedy vygenerování HTML při buildu před samotnými requesty uživatelů.",
-      "Rendering pouze v browseru po načtení bundle; SSG znamená „Single Script Generation“, kdy se vše generuje na klientu jedním JS skriptem.",
-      "Server rendering při každém requestu; SSG je režim, kdy se server pokaždé znovu vyrenderuje, aby byl obsah vždy aktuální.",
-      "Tvorba sitemap souboru; SSG je nástroj, který prochází routy a vytvoří `sitemap.xml`, aby vyhledávače našly všechny stránky."
+      "Rendering pouze v browseru po načtení bundle, SSG znamená „Single Script Generation“, kdy se vše generuje na klientu jedním JS skriptem.",
+      "Server rendering při každém requestu, SSG je režim, kdy se server pokaždé znovu vyrenderuje, aby byl obsah vždy aktuální.",
+      "Tvorba sitemap souboru, SSG je nástroj, který prochází routy a vytvoří `sitemap.xml`, aby vyhledávače našly všechny stránky."
     ],
     "correctAnswer": 0
   },
@@ -14525,7 +14525,7 @@
     "options": [
       "K určení, po jaké době lze cacheovaný nebo statický obsah znovu obnovit.",
       "K přidání route guardu: `revalidate` určuje, po kolika sekundách se má znovu ověřit uživatelova session a případně zablokovat přístup na stránku.",
-      "K vynucení client component režimu; když nastavíš `revalidate`, Next přepne stránku na klientský render, aby mohl obsah častěji aktualizovat.",
+      "K vynucení client component režimu, když nastavíš `revalidate`, Next přepne stránku na klientský render, aby mohl obsah častěji aktualizovat.",
       "Jen k nastavení session cookie, protože `revalidate` je zkratka pro „refresh cookie validity“ a ovlivňuje TTL cookies na odpovědi."
     ],
     "correctAnswer": 0
@@ -14557,9 +14557,9 @@
     "question": "Kdy použít route handler místo klasické stránky?",
     "options": [
       "Když chceme obsloužit HTTP request a vrátit data nebo jinou response místo HTML stránky.",
-      "Když potřebujeme pouze zobrazit formulář; route handler je „stránka pro formuláře“ a je doporučený způsob, jak renderovat inputy bez React komponent.",
-      "Když chceme client-side navigaci mezi stránkami; route handler nahrazuje `next/link` a umožní přepínat UI bez reloadu.",
-      "Jen pro statické assety, například pro servírování obrázků a CSS; route handlery jsou ekvivalent jednoduchého file serveru."
+      "Když potřebujeme pouze zobrazit formulář, route handler je „stránka pro formuláře“ a je doporučený způsob, jak renderovat inputy bez React komponent.",
+      "Když chceme client-side navigaci mezi stránkami, route handler nahrazuje `next/link` a umožní přepínat UI bez reloadu.",
+      "Jen pro statické assety, například pro servírování obrázků a CSS, route handlery jsou ekvivalent jednoduchého file serveru."
     ],
     "correctAnswer": 0
   },
@@ -14569,7 +14569,7 @@
     "options": [
       "Kód běžící před dokončením requestu, vhodný například pro přesměrování, auth kontrolu nebo rewrite logiku.",
       "React hook pro navigaci, který se volá v komponentách jako `useMiddleware()` a umožní přesměrování při kliknutí bez routeru.",
-      "Utility pro změnu CSS při scrollu; middleware v Next sleduje scroll pozici a dynamicky přepíná třídy, aby bylo možné snadno dělat sticky navigaci.",
+      "Utility pro změnu CSS při scrollu, middleware v Next sleduje scroll pozici a dynamicky přepíná třídy, aby bylo možné snadno dělat sticky navigaci.",
       "Vrstva pro databázové migrace, která se spustí před každým nasazením a automaticky upraví schéma databáze podle `prisma` konfigurace."
     ],
     "correctAnswer": 0
@@ -14579,8 +14579,8 @@
     "question": "K čemu slouží `next/link`?",
     "options": [
       "K klientské navigaci mezi stránkami s prefetchingem a SPA-like chováním.",
-      "K vytváření externích URL na serveru; `next/link` je server-only utilita, která podepisuje odkazy a přidává bezpečnostní tokeny pro ochranu proti CSRF.",
-      "K načítání dat z API route; když dáš do `href` endpoint, `next/link` ho zavolá a odpověď automaticky uloží do cache pro komponentu.",
+      "K vytváření externích URL na serveru, `next/link` je server-only utilita, která podepisuje odkazy a přidává bezpečnostní tokeny pro ochranu proti CSRF.",
+      "K načítání dat z API route, když dáš do `href` endpoint, `next/link` ho zavolá a odpověď automaticky uloží do cache pro komponentu.",
       "K definici canonical URL v metadatech, protože `<Link>` přidá do `<head>` tag `<link rel=\"canonical\">` pro SEO."
     ],
     "correctAnswer": 0
@@ -14590,8 +14590,8 @@
     "question": "K čemu slouží `next/navigation`?",
     "options": [
       "Poskytuje API pro navigaci a práci s route stavem v App Routeru.",
-      "Nahrazuje `fetch` a je to doporučený způsob, jak v Next dělat HTTP requesty; `next/navigation` automaticky cachuje a revaliduje data podle rout.",
-      "Je určený pouze pro Pages Router; v App Routeru se navigace dělá přes `next/router` a `next/navigation` je jen kompatibilitní vrstva.",
+      "Nahrazuje `fetch` a je to doporučený způsob, jak v Next dělat HTTP requesty, `next/navigation` automaticky cachuje a revaliduje data podle rout.",
+      "Je určený pouze pro Pages Router, v App Routeru se navigace dělá přes `next/router` a `next/navigation` je jen kompatibilitní vrstva.",
       "Slouží ke konfiguraci webpacku: exportuje funkce pro přidání loaderů a pluginů a podle navigace mezi stránkami přepíná bundler konfiguraci."
     ],
     "correctAnswer": 0
@@ -14601,9 +14601,9 @@
     "question": "Jaký je přínos `next/image`?",
     "options": [
       "Nabízí optimalizaci obrázků, responzivní sizing a další performance benefity.",
-      "Automaticky ukládá obrázky do databáze, aby byly dostupné offline; `next/image` při prvním requestu stáhne obrázek a persistuje ho do SQLite.",
-      "Převádí všechny obrázky na SVG, protože SVG je nejlehčí formát; Next tedy při buildu rasterizuje fotky do vektorů a tím zmenší velikost.",
-      "Funguje jen pro lokální soubory bez externích URL; pokud použiješ externí URL, Next obrázek odmítne a komponenta se nevykreslí."
+      "Automaticky ukládá obrázky do databáze, aby byly dostupné offline, `next/image` při prvním requestu stáhne obrázek a persistuje ho do SQLite.",
+      "Převádí všechny obrázky na SVG, protože SVG je nejlehčí formát, Next tedy při buildu rasterizuje fotky do vektorů a tím zmenší velikost.",
+      "Funguje jen pro lokální soubory bez externích URL, pokud použiješ externí URL, Next obrázek odmítne a komponenta se nevykreslí."
     ],
     "correctAnswer": 0
   },
@@ -14614,7 +14614,7 @@
       "Pomáhá to rezervovat prostor a omezit layout shifts během načítání.",
       "Bez toho Next obrázek vůbec nenačte, protože `width` a `height` jsou povinné i u běžného `<img>` a prohlížeč jinak request zablokuje.",
       "Je to důležité jen pro PNG, protože u JPEG/WebP prohlížeč rozměry pozná vždy dopředu a žádné layout shifts z toho nevznikají.",
-      "Jen kvůli správnému exportu do PDF; rozměry se používají hlavně v tiskových stylech a nemají žádný dopad na webové vykreslení."
+      "Jen kvůli správnému exportu do PDF, rozměry se používají hlavně v tiskových stylech a nemají žádný dopad na webové vykreslení."
     ],
     "correctAnswer": 0
   },
@@ -14625,7 +14625,7 @@
       "K výpočtu nebo doplnění metadat stránky, například title, description nebo Open Graph.",
       "K tvorbě TypeScript deklarací, protože Next z metadat vygeneruje `.d.ts` soubory a tím zrychlí typování celé aplikace.",
       "K bootstrapu server actions: `generateMetadata` se spouští před každou server action a nastaví pro ni hlavičky a cache politiku.",
-      "Jen k nastavení cookies; metadata jsou v Next ukládána do cookie `__meta`, aby se mohla sdílet mezi stránkami bez serveru."
+      "Jen k nastavení cookies, metadata jsou v Next ukládána do cookie `__meta`, aby se mohla sdílet mezi stránkami bez serveru."
     ],
     "correctAnswer": 0
   },
@@ -15806,14 +15806,14 @@
     ],
     "correctAnswer": 0
   },
-  {
+  {{
     "category": "State Management",
     "question": "Co je anti-pattern při práci s globálním stavem?",
     "options": [
       "Ukládat do něj všechno bez rozlišení, včetně čistě lokálních a krátkodobých UI detailů.",
-      "Mít selektory pro odvozená data.",
-      "Testovat reducery izolovaně.",
-      "Držet theme preference mimo URL."
+      "Mít selektory pro odvozená data, například `getVisibleTodos()` nebo `selectTotalPrice()`, aby komponenty nemusely ručně počítat agregace při každém renderu a logika byla na jednom místě.",
+      "Testovat reducery izolovaně tak, že jim předáš vstupní stav a akci a ověříš nový stav, protože to často vede k „přetestování“ implementace a prý to zbytečně zpomaluje refaktoring.",
+      "Držet theme preference mimo URL, aby se nešířily mezi stránkami a uživatel nemohl sdílet odkaz; doporučuje se naopak zapisovat téma vždy do query parametru, protože je to bezpečnější než localStorage."
     ],
     "correctAnswer": 0
   },
@@ -15822,9 +15822,9 @@
     "question": "Proč může být nested mutable state problém?",
     "options": [
       "Hůř se sledují změny, roste riziko nechtěné mutace a složitějšího debugování.",
-      "Protože JavaScript neumí vnořené objekty.",
-      "Protože nested state nelze serializovat.",
-      "Jen kvůli CSS-in-JS."
+      "Protože JavaScript neumí vnořené objekty a při přístupu typu `a.b.c` může vracet náhodné výsledky podle optimalizací JIT; proto se doporučuje držet stav vždy jen jako ploché primitivní hodnoty.",
+      "Protože nested state nelze serializovat do JSON bez ztráty informací; jakmile máš vnoření, `JSON.stringify` to prý ořízne a uloží jen první úroveň, takže se stav nedá persistovat.",
+      "Jen kvůli CSS-in-JS, protože hluboké objekty se používají pro styly a když je stav nested, stylovací knihovny ho začnou interpretovat jako theme objekt a přepíšou ti hodnoty."
     ],
     "correctAnswer": 0
   },
@@ -15833,9 +15833,9 @@
     "question": "Kdy má smysl stav reprezentovat state machine přístupem?",
     "options": [
       "Když má proces jasné stavy a přechody, například loading, success, error, retry, a chceme explicitní model.",
-      "Když ukládáme barvu tlačítka při hoveru.",
-      "Jen pokud používáme Angular.",
-      "State machine je nutná pro každý formulář."
+      "Když ukládáme barvu tlačítka při hoveru a potřebujeme ji synchronizovat mezi všemi stránkami aplikace.",
+      "Jen pokud používáme Angular, protože state machine je součást Angular change detection a v Reactu/Vue se nepoužívá; mimo Angular to údajně vede k nekonzistentním renderům.",
+      "State machine je nutná pro každý formulář: bez ní nejde správně validovat inputy, protože každé pole musí mít stavy `idle/typing/valid/invalid/submitting` a jinak se formulář považuje za špatně navržený."
     ],
     "correctAnswer": 0
   },
@@ -15844,9 +15844,9 @@
     "question": "Co je přínos explicitních status flagů nebo state machine pro async flow?",
     "options": [
       "Zvyšují čitelnost a snižují počet nevalidních kombinací stavů.",
-      "Vždy zrychlí síťové requesty.",
-      "Nahrazují potřebu error handlingu.",
-      "Slouží jen pro backend."
+      "Vždy zrychlí síťové requesty, protože když máš flag `isLoading`, prohlížeč automaticky použije HTTP/2 prioritizaci a server pošle odpověď dřív než bez flagu.",
+      "Nahrazují potřebu error handlingu: když máš `status = 'error'`.",
+      "Slouží jen pro backend, protože frontend prý nemá žádný skutečný async stav; UI se vždy jen překreslí po dokončení requestu a žádné mezistavy není nutné modelovat."
     ],
     "correctAnswer": 0
   },
@@ -15855,9 +15855,9 @@
     "question": "Proč je důležité řešit race conditions při async updatech stavu?",
     "options": [
       "Pozdější příchod starší odpovědi může přepsat novější relevantní data a rozbít konzistenci UI.",
-      "Race conditions existují jen v multithread aplikacích.",
-      "Protože async update stav nemůže měnit.",
-      "Jen kvůli layout shiftům."
+      "Race conditions existují jen v multithread aplikacích; JavaScript je single-threaded, takže se dvě asynchronní operace nikdy nemohou „předběhnout“ a vždy doběhnou ve stejném pořadí, v jakém byly zavolány.",
+      "Protože async update stav nemůže měnit: jakmile je operace asynchronní, výsledek se nesmí propsat do UI a musí se vždy uložit do localStorage a aplikace se musí refreshnout.",
+      "Jen kvůli layout shiftům, protože závody v datech se projeví hlavně vizuálně (poskočením layoutu) a když máš správně nastavené `min-height`, race conditions tím prakticky eliminuješ."
     ],
     "correctAnswer": 0
   },
@@ -15866,9 +15866,9 @@
     "question": "Co může pomoci omezit zbytečné rerendery při odběru store?",
     "options": [
       "Selektivní subscription, memoizované selectory a rozumné dělení stavu podle odpovědností.",
-      "Uložit celý store do jedné string proměnné.",
-      "Vypnout všechny subscriptions.",
-      "Používat pouze deep equals nad celým storem pokaždé."
+      "Uložit celý store do jedné string proměnné (např. přes `JSON.stringify`) a tu pak porovnávat, protože stringy se porovnávají rychleji než objekty a tím se sníží počet renderů skoro na nulu.",
+      "Vypnout všechny subscriptions a místo toho číst store jen při startu aplikace; UI se pak nebude nikdy zbytečně překreslovat a pro změny stačí udělat reload stránky.",
+      "Používat pouze deep equals nad celým storem pokaždé, protože čím hlubší porovnání, tím přesněji poznáš změnu; nejlepší je porovnat úplně vše při každém dispatchi, i když to může být O(n) až O(n²)."
     ],
     "correctAnswer": 0
   },
@@ -15998,7 +15998,7 @@
     "question": "Co je stale state problém?",
     "options": [
       "UI nebo logika pracuje se starou verzí dat, která už neodpovídá aktuálnímu zdroji pravdy.",
-      "Stav, kdy store obsahuje příliš mnoho booleanů.",
+      "Stav, kdy store obsahuje příliš mnoho booleanů (feature flagů) a kvůli jejich kombinacím se UI „rozjede“ do nesprávného režimu, takže pak působí, jako by aplikace pracovala se starými hodnotami i po updatech.",
       "Situace, kdy TypeScript nezná typ proměnné.",
       "Název pro memory leak v CSS-in-JS."
     ],
@@ -16009,7 +16009,7 @@
     "question": "Kdy dává smysl použít transient UI state mimo globální store?",
     "options": [
       "U krátkodobých detailů jako otevření dropdownu, hover nebo lokální editace, které nepotřebují sdílení napříč aplikací.",
-      "Když chceme sdílet data mezi mnoha nesouvisejícími stránkami.",
+      "Když chceme sdílet data mezi mnoha nesouvisejícími stránkami a zároveň je udržet konzistentní při navigaci, refreshi i návratu zpět (typicky uživatelská session, košík, oprávnění nebo cross-page filtry).",
       "Když jde o výsledek backend dotazu s cache politikou.",
       "Vždy, i pro autentizační stav celé aplikace."
     ],
@@ -16022,7 +16022,7 @@
       "Změny stavu jsou lépe dohledatelné, auditovatelné a méně náchylné k nekontrolovaným side efektům.",
       "Store díky tomu nepotřebuje selektory.",
       "Zabrání to potřebě invalidace cache.",
-      "Umožní přímo mutovat state odkudkoli bez rizika."
+      "Umožní přímo mutovat state odkudkoli bez rizika, protože když má store „jasné write path“, může jakákoli komponenta nebo utilita zapisovat do libovolné části storu a systém si to sám bezpečně zmergeuje bez konfliktů."
     ],
     "correctAnswer": 0
   },
@@ -16030,7 +16030,7 @@
     "category": "React Native",
     "question": "Co je React Native?",
     "options": [
-      "Framework pro tvorbu mobilních aplikací v JavaScriptu nebo TypeScriptu, který renderuje nativní komponenty.",
+      "Framework pro tvorbu mobilních aplikací v JavaScriptu nebo TypeScriptu, který renderuje nativní komponenty a umožňuje sdílet velkou část logiky napříč iOS a Androidem.",
       "Knihovna pro server-side rendering webových aplikací, která generuje HTML na serveru a do prohlížeče posílá už hotové stránky podobně jako tradiční templating.",
       "Databázový framework pro iOS a Android, který poskytuje tabulky, migrace a dotazovací jazyk a integruje se přímo do nativního UI bez potřeby JavaScriptu.",
       "Nástroj jen pro tvorbu design systemů."
@@ -16041,7 +16041,7 @@
     "category": "React Native",
     "question": "Jaký je hlavní rozdíl mezi React Native a Reactem pro web?",
     "options": [
-      "React Native používá nativní mobilní komponenty místo HTML DOM.",
+      "React Native používá nativní mobilní komponenty místo HTML DOM, takže výsledné UI není tvořené značkami jako `div/span`, ale nativními view prvky platformy.",
       "React Native nepoužívá React, ale úplně jiný renderovací engine, který nepodporuje komponenty ani hooky a funguje spíš jako šablonovací jazyk pro mobilní UI.",
       "React Native funguje jen v prohlížeči.",
       "React Native vždy renderuje přes WebView, takže výsledkem je vlastně zabalená webová stránka s HTML/CSS/JS běžící uvnitř aplikace."
@@ -16052,7 +16052,7 @@
     "category": "React Native",
     "question": "K čemu slouží Metro v React Native?",
     "options": [
-      "Je to bundler a dev server pro React Native aplikace.",
+      "Je to bundler a dev server pro React Native aplikace, který řeší bundlování, hot reload a práci s assety v dev režimu.",
       "Je to mobilní databáze optimalizovaná pro offline-first aplikace, která ukládá kolekce do zařízení a automaticky je synchronizuje po připojení k internetu.",
       "Je to CI nástroj pro release, který podepisuje buildy, uploaduje je do App Store/Google Play a spravuje verzování pomocí semver pravidel.",
       "Je to Android emulátor."
