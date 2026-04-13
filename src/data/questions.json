@@ -7863,14 +7863,13 @@
       "N/A"
     ],
     "correctAnswer": 0
-  },
-  {
+  },{
     "category": "Authentication / Authorization / JWT",
     "question": "Jaký je rozdíl mezi signed a encrypted JWT?",
     "options": [
       "Signed JWT chrání integritu dat, encrypted JWT šifruje celý payload.",
       "Signed a encrypted JWT jsou totéž",
-      "Encrypted JWT chrání pouze integritu",
+      "Encrypted JWT chrání pouze integritu (tj. je to v praxi jen „silnější podpis“), ale payload zůstává čitelný; rozdíl je hlavně v tom, jaký algoritmus se použije a jestli se klíč sdílí symetricky nebo asymetricky.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -7880,13 +7879,13 @@
     "question": "Jaký je problém se sdílením JWT mezi subdoménami?",
     "options": [
       "Potřeba správného nastavení CORS a cookie domén.",
-      "JWT nelze sdílet mezi subdoménami",
+      "JWT nelze sdílet mezi subdoménami, protože prohlížeč považuje token za „origin-bound“ podobně jako sessionStorage a automaticky ho blokuje mimo původní subdoménu, i když nastavíš cookie na `.example.com`.",
       "Žádný problém neexistuje",
       "N/A"
     ],
     "correctAnswer": 0
   },
-{
+  {
     "category": "Authentication / Authorization / JWT",
     "question": "Jak řešit session timeout v aplikacích s JWT?",
     "options": [
@@ -13369,7 +13368,7 @@
     "question": "K čemu slouží generics?",
     "options": [
       "K psaní znovupoužitelných typově bezpečných funkcí, tříd a utilit pracujících s různými typy.",
-      "K překladu TypeScriptu do JavaScriptu, generics jsou kompilátorové direktivy, které řídí, jak bude vypadat výsledný JS kód a jak se budou optimalizovat importy.",
+      "K překladu TypeScriptu do JavaScriptu.",
       "K importu typů z externí knihovny bez `import` statementů, protože generics se umí „dotáhnout“ z npm balíčků automaticky podle názvu typu.",
       "K vypnutí inference v editoru: pokud použiješ generics, TypeScript přestane odvozovat typy a všechny musíš vždy zadat explicitně."
     ],
@@ -13393,7 +13392,7 @@
       "Umožňuje odvodit typ z existující hodnoty nebo symbolu.",
       "Převádí runtime hodnotu na string i v type pozici, například `typeof 123` se stane typem `'number'` a lze ho pak použít jako string literal typ.",
       "Nahrazuje `instanceof` v JavaScriptu tím, že provádí runtime kontrolu prototypu.",
-      "Funguje pouze pro primitivní typy, pro objekty a funkce TypeScript `typeof` v type pozici zakazuje, protože by to bylo příliš nejednoznačné."
+      "Funguje pouze pro primitivní typy."
     ],
     "correctAnswer": 0
   },
@@ -13437,7 +13436,7 @@
       "Udělá všechny vlastnosti typu `T` volitelnými.",
       "Udělá všechny vlastnosti typu `T` readonly a zároveň je „zamkne“ i v runtime, takže při pokusu o změnu TypeScript přidá `Object.freeze()`.",
       "Vybere jen polovinu vlastností typu `T` (např. prvních 50 % podle pořadí deklarace) a zbytek zahodí, aby se typ zjednodušil.",
-      "Odstraní z typu všechny metody a nechá jen datové property, používá se, když chceš vytvořit čisté DTO bez funkcí."
+      "Odstraní z typu všechny metody a nechá jen datové property."
     ],
     "correctAnswer": 0
   },
@@ -13650,14 +13649,14 @@
     ],
     "correctAnswer": 0
   },
-  {
+    {
     "category": "TypeScript",
     "question": "Co dělá `strictNullChecks`?",
     "options": [
       "Vynucuje explicitní práci s `null` a `undefined` místo jejich tichého přehlížení.",
-      "Zakazuje používat optional property.",
-      "Přidává runtime kontrolu na každý `if`.",
-      "Zajistí, že žádná proměnná nikdy nebude undefined."
+      "Zakazuje používat optional property, protože optional hodnoty jsou interně reprezentované jako `T | undefined`.",
+      "Přidává runtime kontrolu na každý `if`, aby se zabránilo vstupu `null`/`undefined` do větví kódu.",
+      "Zajistí, že žádná proměnná nikdy nebude `undefined`, protože kompilátor automaticky doplní výchozí hodnoty a zúží typy tak, aby `undefined` nemohlo „protéct“ do kódu."
     ],
     "correctAnswer": 0
   },
@@ -13666,9 +13665,9 @@
     "question": "Co znamená `noImplicitAny`?",
     "options": [
       "Kompilátor hlásí chyby tam, kde typ padá na implicitní `any`.",
-      "Všechny explicitní `any` jsou automaticky zakázané v runtime.",
-      "TypeScript přestane inferovat typy funkcí.",
-      "Mění všechny chybějící typy na `unknown`."
+      "Všechny explicitní `any` jsou automaticky zakázané v runtime a při překladu se nahradí typem `never`, aby se zabránilo volání takových hodnot.",
+      "TypeScript přestane inferovat typy funkcí a vyžaduje, aby každá funkce měla u parametrů i návratové hodnoty explicitní anotace.",
+      "Mění všechny chybějící typy na `unknown`, aby se zabránilo únikům `any` a vynutilo se následné zúžení pomocí type guardů."
     ],
     "correctAnswer": 0
   },
@@ -13677,9 +13676,9 @@
     "question": "Co řeší `strict` režim v `tsconfig`?",
     "options": [
       "Zapíná sadu přísnějších typových kontrol pro bezpečnější a přesnější práci s typy.",
-      "Překládá TypeScript do přísného JavaScript modu.",
+      "Překládá TypeScript do „přísného“ JavaScript módu, tj. automaticky přidává na začátek každého souboru `'use strict'` bez ohledu na `target` a nastavení bundleru.",
       "Vypíná možnost používat generics.",
-      "Je určen jen pro testovací build."
+      "Je určen jen pro testovací build: v produkci se běžně vypíná, aby se zrychlila kompilace a zmenšil výsledný JavaScript."
     ],
     "correctAnswer": 0
   },
@@ -13688,9 +13687,9 @@
     "question": "Co znamená, že `implements` u class je jen compile-time kontrakt?",
     "options": [
       "TypeScript zkontroluje shodu se smlouvou typu, ale negeneruje kvůli tomu zvláštní runtime chování.",
-      "`implements` automaticky vytvoří instance všech metod.",
-      "`implements` funguje jen s abstraktní třídou.",
-      "`implements` přidá k objektu metadata do JSON."
+      "`implements` automaticky vytvoří instance všech metod definovaných v interfacu (pokud chybí), aby třída vždy splnila kontrakt i bez ruční implementace.",
+      "`implements` funguje jen s abstraktní třídou, protože u interface není možné na úrovni runtime ověřit existenci členů.",
+      "`implements` přidá k objektu metadata."
     ],
     "correctAnswer": 0
   },
@@ -13699,7 +13698,7 @@
     "question": "K čemu slouží default generic parametr?",
     "options": [
       "Umožňuje generiku použít výchozí typ, pokud volající jiný typ nedodá.",
-      "Zakáže inference generického typu.",
+      "Zakáže inference generického typu, protože při existenci defaultu TypeScript preferuje výchozí typ a nepokouší se typ odvodit z argumentů.",
       "Slouží pouze k typování class decoratorů.",
       "Převádí generický typ na union."
     ],
@@ -13710,7 +13709,7 @@
     "question": "Co je výhodou inference generického typu z argumentu funkce?",
     "options": [
       "Volající často nemusí typový parametr zapisovat ručně a přesto získá přesný typový výsledek.",
-      "Funkce se tím stává asynchronní.",
+      "Funkce se tím stává asynchronní, protože inference probíhá „později“ a TypeScript ji interně vyhodnocuje až po vyřešení hodnot v runtime.",
       "Inference vždy vrací `unknown`.",
       "Funguje jen pro pole stringů."
     ],
@@ -13721,9 +13720,9 @@
     "question": "K čemu slouží template literal types?",
     "options": [
       "K vytváření nových string typů skládáním jiných literal typů.",
-      "K renderování HTML template na serveru.",
-      "K zápisu víceřádkových stringů v runtime.",
-      "Jen k typování CSS modulů."
+      "K renderování HTML template na serveru, protože TypeScript z těchto typů umí vygenerovat odpovídající runtime šablony.",
+      "K zápisu víceřádkových stringů v runtime: typ automaticky vynutí správné odsazení a escapování znaků jako `\\n` a `\\t`.",
+      "Jen k typování CSS modulů: TypeScript je používá výhradně pro pojmenování tříd a nehodí se pro obecné skládání string typů."
     ],
     "correctAnswer": 0
   },
@@ -13732,9 +13731,9 @@
     "question": "Co je distribuční conditional type?",
     "options": [
       "Conditional type, který se při použití nad union typem aplikuje na každou variantu zvlášť.",
-      "Conditional type, který se aplikuje jen na první položku unionu.",
-      "Typ, který lze použít jen v distribuovaném systému.",
-      "Mechanismus pro rozdělení objektu na dva typy."
+      "Conditional type, který se aplikuje jen na první položku unionu, aby se zlepšil výkon kompilátoru u velkých union typů.",
+      "Typ, který lze použít jen v distribuovaném systému (např. microservices), protože vyžaduje speciální nastavení kompilace pro více balíčků.",
+      "Mechanismus pro rozdělení objektu na dva typy (např. `Pick` a `Omit`) pomocí podmínky, která oddělí povinné a nepovinné klíče."
     ],
     "correctAnswer": 0
   },
@@ -14112,13 +14111,13 @@
     ],
     "correctAnswer": 0
   },
-  {
+    {
     "category": "CSS / Styling",
     "question": "K čemu slouží `object-fit: cover`?",
     "options": [
       "Umožňuje obrázku vyplnit box se zachováním poměru stran i za cenu ořezu.",
       "Roztáhne obrázek bez zachování poměru stran.",
-      "Funguje jen pro background-image.",
+      "Funguje jen pro background-image a u klasického `<img>` se ignoruje, protože obrázek je už „nahrazený element“ a řídí se jen `background-size`.",
       "Přidává obrázku border-box sizing."
     ],
     "correctAnswer": 0
@@ -14129,7 +14128,7 @@
     "options": [
       "Uživatelsky definovaná CSS proměnná zapisovaná například jako `--color-primary`.",
       "Typ selektoru pro root element.",
-      "JavaScriptová proměnná dostupná v CSS bez explicitního předání.",
+      "JavaScriptová proměnná dostupná v CSS bez explicitního předání, kterou prohlížeč automaticky „namapuje“ z globálního scope do stylů.",
       "Pouze alias pro SASS proměnnou."
     ],
     "correctAnswer": 0
@@ -14140,7 +14139,7 @@
     "options": [
       "Zlepšují znovupoužití, theming a centrální správu hodnot jako barvy nebo spacing.",
       "Automaticky optimalizují bundl na polovinu.",
-      "Fungují jen v preprocessorech.",
+      "Fungují jen v preprocessorech, protože čisté CSS neumí proměnné vyhodnocovat a vždy je musí „přepočítat“ SASS/LESS při buildu.",
       "Nelze je kombinovat s media queries."
     ],
     "correctAnswer": 0
@@ -14150,7 +14149,7 @@
     "question": "Co znamená inheritance v CSS?",
     "options": [
       "Některé vlastnosti se dědí z rodiče na potomky, jiné ne.",
-      "Všechny vlastnosti se vždy dědí.",
+      "Všechny vlastnosti se vždy dědí, jen některé mohou být přepsané vyšší specificitou, takže to vypadá, že se nedědí.",
       "Dědičnost funguje jen pro flex kontejnery.",
       "Dědičnost se týká jen CSS modulů."
     ],
@@ -14163,7 +14162,7 @@
       "Pozdě načtené zdroje bez rezervovaného prostoru, například obrázky bez rozměrů.",
       "Použití `display: block`.",
       "Nastavení `box-sizing: border-box`.",
-      "Použití CSS variables."
+      "Použití CSS variables, protože se vyhodnocují až po načtení CSSOM a tím dodatečně přepočítají layout, což způsobí posun prvků."
     ],
     "correctAnswer": 0
   },
@@ -14172,7 +14171,7 @@
     "question": "K čemu slouží pseudo class `:focus-visible`?",
     "options": [
       "K stylování focus stavu primárně v případech, kdy je focus relevantní pro klávesnicovou navigaci.",
-      "K skrytí focusu pro všechny uživatele.",
+      "K skrytí focusu pro všechny uživatele, protože `:focus-visible` přepíše běžný `:focus` a zabrání zobrazení outline i při navigaci klávesnicí.",
       "K označení elementu, který je právě hovernutý.",
       "K výběru všech disabled inputů."
     ],
@@ -14185,7 +14184,7 @@
       "Zhoršuje to dostupnost pro uživatele navigující klávesnicí.",
       "Protože outline nejde v CSS vypnout.",
       "Protože browser pak přestane podporovat hover.",
-      "Je to problém pouze v Safari."
+      "Je to problém pouze v Safari, protože ostatní prohlížeče automaticky doplní vlastní focus indikátor, i když outline odstraníš."
     ],
     "correctAnswer": 0
   },
@@ -14194,7 +14193,7 @@
     "question": "Co je pseudo element `::before`?",
     "options": [
       "Virtuální element vložený před obsah elementu, typicky pro dekorativní nebo pomocný obsah.",
-      "Mechanismus pro výběr předchozího sibling elementu.",
+      "Mechanismus pro výběr předchozího sibling elementu, takže lze stylovat element „před“ aktuálním v DOM bez použití `:has()`.",
       "Alias pro `:first-child`.",
       "Způsob, jak definovat fallback font."
     ],
@@ -14207,7 +14206,7 @@
       "K plynulému animování změny hodnot určitých CSS vlastností mezi dvěma stavy.",
       "K vykreslení canvas animace po framech.",
       "K přechodu mezi route v SPA bez JavaScriptu.",
-      "Jen k animaci `display`."
+      "Jen k animaci `display`, protože `transition` je navržená primárně pro přepínání layoutových režimů (block/inline/flex) v čase."
     ],
     "correctAnswer": 0
   },
@@ -14216,7 +14215,7 @@
     "question": "Jaký je rozdíl mezi `transition` a `animation`?",
     "options": [
       "Transition reaguje na změnu stavu, animation může běžet nezávisle podle keyframes.",
-      "Animation je jen jiný název pro transition.",
+      "Animation je jen jiný název pro transition, rozdíl je pouze syntaktický: `animation` je zkrácený zápis pro `transition` s keyframes.",
       "Transition neumí časování.",
       "Animation nelze opakovat."
     ],
@@ -14227,7 +14226,7 @@
     "question": "Proč se `display` typicky neanimuje dobře?",
     "options": [
       "Protože jde o diskrétní vlastnost bez plynulé interpolace mezi hodnotami.",
-      "Protože `display` lze animovat jen přes JavaScript.",
+      "Protože `display` lze animovat jen přes JavaScript, jelikož CSS neumí měnit hodnoty `display` v čase a musí se to řešit ručním přepínáním tříd po framech.",
       "Protože browser neumí animovat opacity.",
       "Protože `display` funguje jen na inline elementech."
     ],
@@ -15305,7 +15304,7 @@
     "question": "Co je fake backend nebo mock server v testech?",
     "options": [
       "Kontrolované serverové prostředí vracející očekávané odpovědi pro test scénářů.",
-      "Produkční backend spuštěný v read-only režimu.",
+      "Produkční backend spuštěný v read-only režimu, který se používá jako „bezpečný“ zdroj pravdy pro testy, protože nemůže měnit data a tím pádem se chová deterministicky.",
       "Jen statický JSON soubor bez HTTP vrstvy.",
       "Browser plugin pro zvýraznění chyb."
     ],
@@ -15316,7 +15315,7 @@
     "question": "K čemu slouží test runner?",
     "options": [
       "K objevování, spouštění a reportování výsledků testů.",
-      "K vykreslení aplikace v produkci.",
+      "K vykreslení aplikace v produkci, tj. funguje jako runtime „launcher“, který sestaví bundle a spustí ho v prohlížeči na cílovém prostředí.",
       "K definici TypeScript typů.",
       "K transformaci CSS do JavaScriptu."
     ],
@@ -15327,7 +15326,7 @@
     "question": "Co je assertion?",
     "options": [
       "Ověření očekávaného výsledku testu.",
-      "Každé vykreslení komponenty.",
+      "Každé vykreslení komponenty, protože samotný fakt, že render nehodil výjimku, je považovaný za implicitní assertion úspěchu.",
       "Mock databázové odpovědi.",
       "Struktura CI pipeline."
     ],
@@ -15338,7 +15337,7 @@
     "question": "Proč může být příliš široký integrační test drahý na údržbu?",
     "options": [
       "Má více závislostí, více důvodů selhání a hůř se v něm hledá příčina problému.",
-      "Protože integrační testy nesmí mít assertions.",
+      "Protože integrační testy nesmí mít assertions, a tak se musí udržovat přes screenshots a logy, což je časově náročné.",
       "Protože browser neumí renderovat více komponent.",
       "Široké integrační testy jsou vždy lepší než menší testy."
     ],
@@ -15349,7 +15348,7 @@
     "question": "Co je role CI při testování?",
     "options": [
       "Automaticky spouštět testy nad změnami a bránit regresím před nasazením.",
-      "Nahrazuje veškerý lokální vývoj.",
+      "Nahrazuje veškerý lokální vývoj tím, že vývojář už testy nespouští u sebe a spoléhá výhradně na to, že CI po pushi rozhodne, jestli změna „projde“. ",
       "Slouží jen ke generování screenshotů.",
       "CI pipeline nemusí obsahovat testy."
     ],
@@ -15360,7 +15359,7 @@
     "question": "Proč je dobré mít rychlé testy blízko kódu?",
     "options": [
       "Zrychlují feedback loop a usnadňují bezpečný refactor během vývoje.",
-      "Jen kvůli menšímu počtu souborů v repozitáři.",
+      "Jen kvůli menšímu počtu souborů v repozitáři: když jsou testy „blízko“ implementace, nevznikají další adresáře a build je díky tomu rychlejší.",
       "Rychlé testy jsou potřeba jen na backendu.",
       "Protože pomalé testy nelze spouštět v CI."
     ],
@@ -15371,7 +15370,7 @@
     "question": "K čemu slouží test doubles obecně?",
     "options": [
       "K nahrazení nebo sledování chování externích závislostí v testu.",
-      "K duplikaci produkčních dat do dvou databází.",
+      "K duplikaci produkčních dat do dvou databází, aby testy mohly porovnávat výsledky „A/B“ a ověřit konzistenci mezi kopiemi.",
       "K zajištění vyšší FPS v browseru.",
       "Pouze k testování CSS transformací."
     ],
@@ -15382,7 +15381,7 @@
     "question": "Co je hlavní výhoda explicitních testovacích dat oproti náhodně generovaným bez kontroly?",
     "options": [
       "Lépe se z nich čte záměr testu a snáz se reprodukují selhání.",
-      "Náhodná data se nemohou v testech používat nikdy.",
+      "Náhodná data se nemohou v testech používat nikdy, protože tím porušují determinismus a test runner je automaticky vyhodnotí jako flaky.",
       "Explicitní data vždy pokryjí více edge cases.",
       "Náhodná data jsou vhodná jen pro load testing."
     ],
@@ -15393,7 +15392,7 @@
     "question": "Proč je dobré oddělit testy na úrovni logiky, komponent a celých flow?",
     "options": [
       "Každá vrstva má jinou cenu, rychlost a typ chyb, které umí efektivně odhalit.",
-      "Protože test runner neumí spustit více typů testů v jednom projektu.",
+      "Protože test runner neumí spustit více typů testů v jednom projektu, takže se musí fyzicky rozdělit, jinak by se testy navzájem blokovaly v jednom procesu.",
       "Jen kvůli coverage reportu.",
       "Všechny chyby lze stejně najít pouze e2e testem."
     ],
@@ -15404,7 +15403,7 @@
     "question": "Co je anti-pattern při testování komponenty?",
     "options": [
       "Příliš silná vazba testu na interní strukturu implementace místo uživatelsky pozorovatelného chování.",
-      "Ověření textu tlačítka podle role.",
+      "Ověření textu tlačítka podle role, protože role selektory jsou závislé na DOM struktuře a tím pádem jsou stejně křehké jako testování tříd a ID.",
       "Mocknutí HTTP requestu v unit testu.",
       "Použití fixture dat."
     ],
