@@ -13000,12 +13000,12 @@
     ],
     "correctAnswer": 0
   },
-  {
+{
     "category": "Angular",
     "question": "Co znamená change detection v Angularu?",
     "options": [
       "Mechanismus, kterým Angular zjišťuje změny dat a promítá je do template.",
-      "Generování nového bundlu po změně souboru.",
+      "Generování nového bundlu po změně souboru, tedy interní „watch“ mechanismus Angularu (přes Zone.js), který při každé změně v aplikaci přebalí JavaScript a znovu ho načte do stránky.",
       "Runtime kontrola typů v TypeScriptu.",
       "Mechanismus pro diff databázových migrací."
     ],
@@ -13016,7 +13016,7 @@
     "question": "Co přináší strategie `OnPush`?",
     "options": [
       "Omezuje běžnou change detection na explicitnější scénáře a může snížit zbytečné přepočty.",
-      "Vynucuje rerender po každém ticku.",
+      "Vynucuje rerender po každém ticku, protože komponenta se přepíná do „agresivního“ módu, který při každé mikro-task (Promise, timer) pro jistotu znovu zkontroluje celý subtree.",
       "Funguje pouze v template-driven forms.",
       "Nahrazuje potřebu `@Input()`."
     ],
@@ -13029,7 +13029,7 @@
       "Mutujeme objekt in-place místo předání nové reference nebo nespustíme vhodný trigger změny.",
       "Angular s OnPush neumí renderovat pole.",
       "OnPush funguje jen na serveru.",
-      "OnPush automaticky ignoruje všechny eventy."
+      "OnPush automaticky ignoruje všechny eventy (click, input, output emit), takže UI nereaguje, dokud explicitně nezavoláš `detectChanges()` v každém handleru."
     ],
     "correctAnswer": 0
   },
@@ -13038,7 +13038,7 @@
     "question": "K čemu slouží `ChangeDetectorRef`?",
     "options": [
       "K jemnější práci s change detection, například k manuálnímu označení komponenty k přepočtu.",
-      "K injektování routy do child komponenty.",
+      "K injektování routy do child komponenty, protože `ChangeDetectorRef` interně drží odkaz na aktuální `ActivatedRoute` a umožňuje přepnout route bez použití `Router` služby.",
       "K práci s DOM eventy v CSS.",
       "K vytvoření observable ze signálu."
     ],
@@ -13051,7 +13051,7 @@
       "Reaktivní primitivum reprezentující čitelnou a zapisovatelnou hodnotu se sledováním závislostí.",
       "Typ route guardu.",
       "Náhrada za dependency injection.",
-      "Mechanismus pro SSR cache."
+      "Mechanismus pro SSR cache, kde „signal“ funguje jako serverový cache key a Angular podle něj sdílí vyrenderovaný HTML mezi uživateli."
     ],
     "correctAnswer": 0
   },
@@ -13060,7 +13060,7 @@
     "question": "Jaký je vztah mezi signals a change detection?",
     "options": [
       "Signals mohou pomáhat přesněji vyjadřovat závislosti a lépe řídit aktualizace UI.",
-      "Signals vypínají template renderování.",
+      "Signals vypínají template renderování: když použiješ signal, Angular už změny v template nepočítá přes change detection a template se přestane přerenderovávat, dokud ho ručně „neprobudíš“ voláním `render()`.",
       "Signals fungují jen mimo komponenty.",
       "Signals jsou jen alias pro Promise."
     ],
@@ -13071,7 +13071,7 @@
     "question": "Co je pipe v Angularu?",
     "options": [
       "Mechanismus pro transformaci hodnoty v template, například datum nebo formát čísla.",
-      "Náhrada za RxJS operator.",
+      "Náhrada za RxJS operator: pipe v Angularu je v podstatě totéž co `rxjs.pipe()`, takže do ní můžeš přímo v template zapisovat operátory jako `map`/`switchMap` a Angular je vyhodnotí nad streamem.",
       "API pro HTTP request pipeline.",
       "Komponenta pro lazy loading."
     ],
@@ -13082,7 +13082,7 @@
     "question": "Kdy dává smysl vlastní pipe?",
     "options": [
       "Když chceme opakovaně a čitelně převádět data do prezentačního formátu v template.",
-      "Když potřebujeme spravovat dependency injection.",
+      "Když potřebujeme spravovat dependency injection, protože vlastní pipe je doporučený způsob, jak registrovat a konfigurovat providery (je to „lehčí“ než service).",
       "Když chceme mutovat formulářový model.",
       "Jen pro route parametry."
     ],
@@ -13095,7 +13095,7 @@
       "K iteraci přes kolekci a renderování opakujících se prvků v template.",
       "K podmíněnému renderování jednoho elementu.",
       "K registraci nové služby.",
-      "K definici CSS scoped stylů."
+      "K definici CSS scoped stylů: `ngFor` prý vytváří pro každou iteraci unikátní scope a automaticky přepisuje selektory, aby se styly nepřenášely mezi položkami seznamu."
     ],
     "correctAnswer": 0
   },
@@ -13104,7 +13104,7 @@
     "question": "K čemu slouží `ngIf`?",
     "options": [
       "K podmíněnému zobrazení nebo odstranění části template podle výrazu.",
-      "K iteraci přes observable.",
+      "K iteraci přes observable: `*ngIf=\"items$\"` údajně funguje jako „for-each“ nad emisemi a při každé emisi vytvoří novou instanci template.",
       "K injektování route guardů.",
       "K vytvoření output eventu."
     ],
@@ -13115,7 +13115,7 @@
     "question": "Proč je dobré používat `trackBy` u velkých seznamů?",
     "options": [
       "Umožňuje Angularu efektivněji znovu použít DOM prvky a omezit zbytečné změny při updatech seznamu.",
-      "Přidává itemům automaticky unikátní CSS třídy.",
+      "Přidává itemům automaticky unikátní CSS třídy (např. `.item-42`) podle klíče z `trackBy`, aby šly položky snadno stylovat bez dalších atributů.",
       "Nahrazuje potřebu `ngFor`.",
       "Funguje jen s signals."
     ],
@@ -13126,7 +13126,7 @@
     "question": "Co je `ViewChild`?",
     "options": [
       "Mechanismus pro získání reference na child komponentu, direktivu nebo DOM element z template.",
-      "Způsob, jak předat data z child do parentu.",
+      "Způsob, jak předat data z child do parentu: `@ViewChild` údajně automaticky „vytáhne“ vybrané hodnoty z potomka a synchronizuje je do rodiče bez potřeby `@Output()`.",
       "Náhrada za route resolver.",
       "RxJS operátor pro práci s child observables."
     ],
@@ -13137,7 +13137,7 @@
     "question": "K čemu slouží lifecycle hook `ngOnInit`?",
     "options": [
       "K inicializační logice po vytvoření komponenty a nastavení vstupů.",
-      "K cleanupu subscription při destroy.",
+      "K cleanupu subscription při destroy, protože `ngOnInit` se volá i při odpojení komponenty z DOM a je to doporučené místo pro odhlašování listenerů.",
       "K zachytávání route errorů.",
       "K vytvoření Angular modulu."
     ],
@@ -13149,7 +13149,7 @@
     "options": [
       "Při úklidu subscription, timerů nebo jiných zdrojů před zničením komponenty či služby.",
       "Pro nastavení default props.",
-      "Jen při server-side renderingu.",
+      "Jen při server-side renderingu, protože v prohlížeči komponenty nikdy „neumírají“ a Angular je pouze schovává, takže `ngOnDestroy` se na klientovi nevolá.",
       "Pro registraci lazy route."
     ],
     "correctAnswer": 0
@@ -13160,7 +13160,7 @@
     "options": [
       "Připravit data před aktivací route, aby je komponenta měla k dispozici už při vstupu.",
       "Ověřit CSS validitu stránky.",
-      "Nahradit všechny HTTP interceptory.",
+      "Nahradit všechny HTTP interceptory: resolver prý obalí všechny requesty pro danou routu, přidá hlavičky a logování, takže interceptory už nejsou potřeba.",
       "Převest observable na promise bez čekání."
     ],
     "correctAnswer": 0
@@ -13172,7 +13172,7 @@
       "Označuje místo v template, kam se renderuje komponenta aktuální routy.",
       "Vytváří nový dependency injector.",
       "Převádí URL na query string.",
-      "Ukládá historii navigací do localStorage."
+      "Ukládá historii navigací do localStorage, aby se po reloadu stránky obnovil stack navigace a uživatel se vrátil na stejnou obrazovku bez jakékoli další konfigurace."
     ],
     "correctAnswer": 0
   },
@@ -13181,7 +13181,7 @@
     "question": "Jaký je rozdíl mezi `CanActivate` a `CanDeactivate` guardem?",
     "options": [
       "`CanActivate` rozhoduje o vstupu na route, `CanDeactivate` o možnosti ji opustit.",
-      "`CanActivate` je pro SSR a `CanDeactivate` pro CSR.",
+      "`CanActivate` je pro SSR a `CanDeactivate` pro CSR: na serveru se prý vyhodnocuje jen `CanActivate`, zatímco na klientovi se používá jen `CanDeactivate`, aby se šetřily přepočty.",
       "Oba guardy řeší pouze lazy loading modulů.",
       "Mezi nimi není rozdíl."
     ],
@@ -16322,13 +16322,13 @@
     ],
     "correctAnswer": 0
   },
-  {
+    {
     "category": "React Native",
     "question": "K čemu slouží `Animated`?",
     "options": [
       "K vytváření animací v React Native.",
       "K práci s databází SQLite.",
-      "K měření rozlišení zařízení.",
+      "K měření rozlišení zařízení a přepočtu DPI na pixely, aby se animace správně škálovaly na různých displejích.",
       "K definici rout v navigaci."
     ],
     "correctAnswer": 0
@@ -16340,7 +16340,7 @@
       "Přesouvá podporované animace na nativní vrstvu, aby méně zatěžovala JavaScript.",
       "Zapíná TypeScript generics.",
       "Zajišťuje offline režim.",
-      "Ukládá animace do AsyncStorage."
+      "Ukládá animace do AsyncStorage, aby se daly po restartu aplikace znovu přehrát přesně od posledního frame bez nutnosti je znovu počítat."
     ],
     "correctAnswer": 0
   },
@@ -16350,7 +16350,7 @@
     "options": [
       "K lepší a výkonnější správě gest a dotykových interakcí.",
       "K renderování SVG ikon.",
-      "K přístupu do kamerového modulu.",
+      "K přístupu do kamerového modulu a zpracování gest jako pinch-to-zoom přímo nad kamerovým preview (včetně autofocus triggerů).",
       "K práci s lokálními soubory."
     ],
     "correctAnswer": 0
@@ -16361,7 +16361,7 @@
     "options": [
       "Navigátor založený na zásobníku obrazovek, kde se nové obrazovky vrství nad sebe.",
       "Tabulka pro ukládání parametrů.",
-      "Komponenta pro animace.",
+      "Komponenta pro animace přechodů, která pouze vizuálně „vrství“ obrazovky, ale sama o sobě neřeší historii navigace ani návrat zpět.",
       "Hook pro načítání dat."
     ],
     "correctAnswer": 0
@@ -16371,7 +16371,7 @@
     "question": "Co je bottom tab navigator?",
     "options": [
       "Navigace s kartami dole na obrazovce, mezi kterými uživatel přepíná.",
-      "Způsob ukládání cache.",
+      "Způsob ukládání cache pro jednotlivé obrazovky tak, aby se po přepnutí záložky vždy načetly ze storage a ne z paměti.",
       "Typ build pipeline.",
       "Komponenta pro text input."
     ],
@@ -16383,7 +16383,7 @@
     "options": [
       "Otevření konkrétní obrazovky aplikace přes URL nebo externí odkaz.",
       "Režim pro offline build.",
-      "Typ animace pro přechod.",
+      "Typ animace pro přechod mezi obrazovkami, kde se „hlubší“ obrazovka zasune pod tu aktuální a vytváří dojem vrstvení.",
       "Způsob komprese obrázků."
     ],
     "correctAnswer": 0
@@ -16394,7 +16394,7 @@
     "options": [
       "Přes navigaci, například `navigate(\"Screen\", { id: 1 })`.",
       "Přes `StyleSheet.create`.",
-      "Přes `AppState`.",
+      "Přes `AppState`, kde se do globálního stavu aplikace uloží hodnoty a cílová obrazovka si je při aktivaci sama načte.",
       "Přes `StatusBar`."
     ],
     "correctAnswer": 0
@@ -16406,7 +16406,7 @@
       "Objekt s informacemi o aktuální trase, včetně `params`.",
       "Objekt pro práci s bezpečností.",
       "Konfigurace bundleru.",
-      "Stav systému klávesnice."
+      "Stav systému klávesnice, který React Navigation předává do obrazovek přes `route`, aby šlo upravit layout podle toho, jestli je klávesnice otevřená."
     ],
     "correctAnswer": 0
   },
@@ -16416,7 +16416,7 @@
     "options": [
       "Objekt s metodami pro navigaci, například `navigate`, `goBack` nebo `reset`.",
       "Objekt pro správu stylů.",
-      "Hook pro animace.",
+      "Hook pro animace, který řídí přechody mezi obrazovkami a poskytuje API typu `startTransition()` a `stopTransition()`.",
       "Složka s assety."
     ],
     "correctAnswer": 0
@@ -16426,7 +16426,7 @@
     "question": "K čemu slouží `AsyncStorage`?",
     "options": [
       "K jednoduchému asynchronnímu ukládání malých dat přímo na zařízení.",
-      "K ukládání velkých binárních souborů.",
+      "K ukládání velkých binárních souborů (např. videí a obrázků) ve formě blobů, protože je optimalizované na streamování a má vyšší limit než file system API.",
       "K ukládání hesel do zdrojového kódu.",
       "K překladu JSX."
     ],
@@ -16438,7 +16438,7 @@
     "options": [
       "K omezení zbytečných re-renderů komponenty při stejných props.",
       "K překladu nativního kódu do JavaScriptu.",
-      "K práci s formulářem bez stavu.",
+      "K práci s formulářem bez stavu, protože `React.memo` automaticky ukládá hodnoty inputů mezi rendery a nahrazuje tak `useState`.",
       "K volání API bez await."
     ],
     "correctAnswer": 0
@@ -16448,7 +16448,7 @@
     "question": "Proč použít `useMemo`?",
     "options": [
       "K memoizaci nákladného výpočtu mezi rendery.",
-      "K práci s animacemi na nativní vrstvě.",
+      "K práci s animacemi na nativní vrstvě, protože `useMemo` umí „zafixovat“ hodnoty tak, aby je nativní driver mohl plynule interpolovat bez zásahu JS threadu.",
       "K ukládání dat do AsyncStorage.",
       "K vytvoření navigačního stacku."
     ],
@@ -16460,7 +16460,7 @@
     "options": [
       "K memoizaci funkce, aby se neměnila referencí při každém renderu.",
       "K renderování seznamu bez klíčů.",
-      "K detekci změny orientace zařízení.",
+      "K detekci změny orientace zařízení, protože `useCallback` se přepočítá pouze při otočení displeje a tím slouží jako listener pro rotation eventy.",
       "K práci s obrázky z kamery."
     ],
     "correctAnswer": 0
@@ -16470,7 +16470,7 @@
     "question": "K čemu slouží `key` v seznamu?",
     "options": [
       "Pomáhá Reactu stabilně identifikovat položky při renderování a změnách seznamu.",
-      "Slouží jako bezpečnostní token.",
+      "Slouží jako bezpečnostní token, který React používá k ověření, že položky seznamu nebyly podvržené a pochází ze stejného zdroje dat.",
       "Nahrazuje `id` v databázi.",
       "Určuje barvu komponenty."
     ],
@@ -16483,7 +16483,7 @@
       "Nástroje a ekosystém pro rychlejší vývoj, buildy a správu React Native aplikací.",
       "Pouze grafické téma pro aplikace.",
       "Náhradu za JavaScript.",
-      "Databázový engine pro mobilní zařízení."
+      "Databázový engine pro mobilní zařízení, který Expo automaticky přibalí do aplikace a poskytne jednotné API pro SQL i NoSQL úložiště bez dalších knihoven."
     ],
     "correctAnswer": 0
   },
@@ -16492,7 +16492,7 @@
     "question": "Co je Expo Go?",
     "options": [
       "Mobilní aplikace pro rychlé spouštění a testování Expo projektů.",
-      "Production build pro App Store.",
+      "Production build pro App Store, který se vždy generuje z Expo Go a je binárně identický s tím, co pak uživatelé stáhnou z obchodu.",
       "Nástroj pro správu licencí.",
       "Debugger pro Android Studio."
     ],
@@ -16503,7 +16503,7 @@
     "question": "K čemu slouží EAS Build?",
     "options": [
       "Ke cloudovému sestavení aplikací pro iOS a Android.",
-      "K designu obrazovek.",
+      "K designu obrazovek (UI builder), kde se layout nakliká a EAS Build z toho vygeneruje React Native komponenty i navigaci.",
       "K ukládání lokálních dat.",
       "K definici navigace."
     ],
@@ -16516,7 +16516,7 @@
       "Aktualizace JavaScript bundle a assetů bez nového nativního store releasu.",
       "Aktualizace kernelu zařízení.",
       "Povinný reinstall aplikace po změně stylů.",
-      "Změna App Store metadata bez buildů."
+      "Změna App Store metadata bez buildů, protože OTA update umí upravit i název aplikace, ikonu a popis v obchodě jen přes publikaci nové OTA verze."
     ],
     "correctAnswer": 0
   },
@@ -16526,7 +16526,7 @@
     "options": [
       "Nativní kód, který vystavuje funkce JavaScriptu přes React Native rozhraní.",
       "Stylový objekt vytvořený v `StyleSheet.create`.",
-      "Webový iframe uvnitř aplikace.",
+      "Webový iframe uvnitř aplikace, který se používá jako „native module“ pro načítání webových widgetů a jejich propojení s JavaScriptem.",
       "Typ navigačního parametru."
     ],
     "correctAnswer": 0
