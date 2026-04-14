@@ -397,7 +397,7 @@ function QuizSettings({
           <div className="col">
             {showRefresh && (
               <button className="btn btn-success" onClick={handleRefresh}>
-                Refresh
+                Obnovit
               </button>
             )}
           </div>
