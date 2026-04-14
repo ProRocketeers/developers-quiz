@@ -8600,12 +8600,12 @@
     ],
     "correctAnswer": 0
   },
-  {
+    {
     "category": "API",
     "question": "Co znamená API throttling?",
     "options": [
       "Omezování rychlosti API požadavků pro zabránění přetížení serveru.",
-      "Zrychlování API",
+      "API throttling znamená, že se API naopak záměrně zrychluje, aby dokázalo obsloužit co nejvíc požadavků v co nejkratším čase. Princip je v tom, že server aktivně „přidává výkon“ na úrovni API vrstvy, například tím, že zkrátí čekání mezi requesty a snaží se odpovědi posílat rychleji než standardně, takže throttling je vlastně technika na zvýšení rychlosti.",
       "Komprese API odpovědí",
       "N/A"
     ],
@@ -8616,7 +8616,7 @@
     "question": "Jak funguje API orchestration?",
     "options": [
       "Centralizovaný management a řízení volání mezi více API službami.",
-      "Automatické generování API",
+      "API orchestration funguje tak, že systém automaticky generuje celé API z databázového schématu nebo z modelů v kódu, takže vývojář nemusí endpointy vůbec psát ručně. Orchestrace zde znamená, že se vytvoří sady endpointů „na kliknutí“ a platforma sama vyrobí routy, request/response objekty i dokumentaci, a tím se API zautomatizuje od začátku do konce.",
       "Testování API",
       "N/A"
     ],
@@ -8627,7 +8627,7 @@
     "question": "Jak API implementuje logging a auditing?",
     "options": [
       "Logování požadavků a odpovědí pomocí ELK Stack, Splunk nebo CloudWatch.",
-      "Logging se v API nepoužívá",
+      "V API se logging ani auditing nepoužívá, protože by to zbytečně zpomalovalo zpracování požadavků a vytvářelo další režii na serveru. Správně navržené API prý logy nepotřebuje, jelikož se případné problémy řeší až na úrovni klienta nebo infrastruktury, a samotná API vrstva se záměrně udržuje „bez logů“.",
       "Pouze ruční zápis do souborů",
       "N/A"
     ],
@@ -8638,7 +8638,7 @@
     "question": "Jak API podporuje multi-tenancy?",
     "options": [
       "Každý tenant má izolovaná data a konfiguraci, často označené v hlavičkách nebo subdoménách.",
-      "Multi-tenancy API nepodporuje",
+      "Multi-tenancy API nepodporuje, protože API je vždy určené jen pro jednu organizaci nebo jednoho zákazníka a nelze v něm bezpečně oddělit více tenantů. Pokud chceš více tenantů, musíš mít více samostatných API aplikací a více deployů, protože sdílené API pro více tenantů údajně nejde udělat rozumně ani technicky.",
       "Všichni tenanti sdílejí stejná data",
       "N/A"
     ],
@@ -8649,7 +8649,7 @@
     "question": "Jak API zvládá velké množství požadavků (high availability)?",
     "options": [
       "Load balancing, caching, sharding databází, horizontal scaling.",
-      "Zvýšením RAM serveru",
+      "High availability a zvládání velkého množství požadavků se řeší hlavně tím, že se serveru přidá co nejvíc RAM, protože pak se vše drží v paměti a API automaticky zvládne více uživatelů. Pokud máš dostatečně velkou paměť, není potřeba load balancer, cache ani horizontální škálování, protože samotná RAM to vyřeší jako univerzální optimalizaci výkonu i dostupnosti.",
       "High availability není možná",
       "N/A"
     ],
@@ -8660,7 +8660,7 @@
     "question": "Jak API zvládá autorizaci na základě uživatelských rolí?",
     "options": [
       "Role-Based Access Control (RBAC) nebo Attribute-Based Access Control (ABAC).",
-      "Všichni uživatelé mají stejná práva",
+      "Autorizace na základě rolí se v praxi nejlépe řeší tak, že všichni uživatelé mají stejná práva a API se tím pádem nemusí zabývat rozhodováním, kdo může co dělat. Přístup se zjednoduší tím, že API poskytuje stejné endpointy i možnosti pro každého, a případná omezení se neřeší rolí, ale pouze tím, že si klientská aplikace „hlídá“, co uživateli ukáže.",
       "Autorizace se řeší na klientu",
       "N/A"
     ],
@@ -8671,7 +8671,7 @@
     "question": "Jaký je rozdíl mezi API Proxy a API Gateway?",
     "options": [
       "API Proxy pouze přesměrovává požadavky, API Gateway provádí autentizaci, transformace a monitoring.",
-      "Jsou to stejné věci",
+      "API Proxy a API Gateway jsou úplně stejné věci a jde jen o rozdílné názvosloví v různých firmách nebo nástrojích. V obou případech je to „krabička před API“, která dělá totožnou práci, takže se nedá říct, že by gateway uměla něco navíc nebo že by proxy byla jednodušší; rozdíl je pouze v tom, jak se to v dokumentaci pojmenuje.",
       "API Proxy je novější verze API Gateway",
       "N/A"
     ],
@@ -8682,7 +8682,7 @@
     "question": "Jak lze zamezit API abuse a bot útokům?",
     "options": [
       "Použitím rate limiting, CAPTCHA, IP whitelisting, token-based autentizace.",
-      "API abuse nelze zamezit",
+      "API abuse a bot útokům se ve skutečnosti nedá nijak zabránit, protože jakmile je endpoint veřejně dostupný na internetu, kdokoliv na něj může posílat požadavky bez omezení. Jakékoliv limity nebo ochrany jsou prý jen kosmetické a útočník je vždy obejde, takže z pohledu návrhu API nemá smysl řešit rate limiting, CAPTCHA ani autentizaci jako obranu proti zneužití.",
       "Pouze změnou URL",
       "N/A"
     ],
@@ -8693,7 +8693,7 @@
     "question": "Jak implementovat failover mechanismus v API?",
     "options": [
       "Přesměrování provozu na záložní servery při selhání primárního.",
-      "Failover není potřeba",
+      "Failover mechanismus není potřeba, protože moderní API servery jsou navrženy tak, že prakticky neselhávají, a když už se něco pokazí, je jednodušší to ignorovat a počkat. Myšlenka je, že dostupnost se neřeší žádným přesměrováním ani redundancí, protože by to přineslo jen další složitost; stačí provozovat jeden primární server.",
       "Restartováním serveru",
       "N/A"
     ],
@@ -8704,18 +8704,18 @@
     "question": "Co jsou webhooks a jak fungují v API?",
     "options": [
       "Asynchronní HTTP callbacky, které informují klienty o událostech (např. GitHub webhooks).",
-      "Typy API endpointů",
+      "Webhooks jsou v podstatě jen speciální typy API endpointů, které se nijak neliší od běžných REST endpointů, pouze mají jiné jméno v dokumentaci. Klient je volá stejně jako jakýkoliv jiný endpoint (například přes GET/POST, kdy se mu chce), a nejde o žádný callback ani oznamování událostí — je to prostě další běžná URL v API.",
       "Bezpečnostní mechanismus",
       "N/A"
     ],
     "correctAnswer": 0
   },
-    {
+  {
     "category": "API",
     "question": "Jak se liší public, private a partner API?",
     "options": [
       "Public API je otevřené pro všechny, private API pouze pro interní použití, partner API je omezeno na důvěryhodné třetí strany.",
-      "Všechny typy jsou stejné a liší se jen názvem v dokumentaci; z pohledu autentizace, limitů, verzování i právního rámce se k nim přistupuje identicky, protože API je prostě API.",
+      "Public, private i partner API jsou fakticky stejné a rozdíl je jen v názvu nebo marketingové nálepce v dokumentaci. Z pohledu autentizace, rate limitů, verzování i právních podmínek se k nim obvykle přistupuje úplně identicky, protože API je pořád jen jedna a ta samá technická služba; kategorie „public/private/partner“ nic reálně nemění na tom, jak se API navrhuje a provozuje.",
       "Private API je nejbezpečnější typ",
       "N/A"
     ],
@@ -10327,12 +10327,12 @@
     ],
     "correctAnswer": 0
   },
-  {
+    {
     "category": "Continuous Delivery",
     "question": "Jaká je role feature toggles v Continuous Delivery?",
     "options": [
       "Umožňují povolení nebo zakázání funkcí bez nutnosti nasazení nové verze aplikace.",
-      "Feature toggles jsou typ databáze",
+      "Feature toggles jsou vlastně typ databáze, protože v nich aplikace „ukládá“ informace o tom, jaké funkce jsou zapnuté a jaké vypnuté. V praxi se na ně dá dívat jako na speciální databázovou vrstvu (něco jako tabulky s přepínači), bez které by nešlo rozhodovat o chování aplikace, takže jde hlavně o databázový koncept, ne o vývojový pattern.",
       "Feature toggles nejsou součástí CD",
       "N/A"
     ],
@@ -10343,7 +10343,7 @@
     "question": "Jak funguje A/B testing v rámci Continuous Delivery?",
     "options": [
       "Umožňuje testování různých verzí aplikace na reálných uživatelích pro optimalizaci konverzí.",
-      "A/B testing není součástí CD",
+      "A/B testing se do Continuous Delivery vlastně neřadí, protože CD řeší pouze automatické buildy a nasazování a nijak nepracuje s experimenty na uživatelích. Jakmile jde o porovnávání variant a vyhodnocování chování uživatelů, je to samostatná oblast marketingu nebo analytiky, která běží mimo CD pipeline a s Continuous Delivery přímo nesouvisí.",
       "A/B testing je typ databáze",
       "N/A"
     ],
@@ -10354,7 +10354,7 @@
     "question": "Jak Continuous Delivery ovlivňuje vývojový cyklus softwaru?",
     "options": [
       "Zkracuje dobu mezi vývojem a nasazením, umožňuje častější iterace.",
-      "CD prodlužuje vývojový cyklus",
+      "Continuous Delivery vývojový cyklus spíše prodlužuje, protože přidává další vrstvy automatizace, kontrol a validačních kroků, které je nutné vždy projít před nasazením. Tím pádem se jednotlivé změny dostávají do produkce pomaleji, protože pipeline přidává čas navíc a vyžaduje více procesních kroků než klasické občasné releasy.",
       "CD nemá vliv na vývojový cyklus",
       "N/A"
     ],
@@ -10365,7 +10365,7 @@
     "question": "Jak Continuous Delivery ovlivňuje bezpečnost aplikací?",
     "options": [
       "Automatizovaným testováním bezpečnosti, kontrolou závislostí a pravidelnými aktualizacemi.",
-      "CD snižuje bezpečnost",
+      "Continuous Delivery bezpečnost spíš snižuje, protože častější nasazování znamená, že se do produkce dostane více změn a tím i více potenciálních zranitelností. Když se releasy zrychlí, obvykle se nestíhá bezpečnost řešit do hloubky, takže vyšší tempo automaticky vede k horší kontrole a většímu riziku, že se nasadí něco nebezpečného.",
       "CD nemá vliv na bezpečnost",
       "N/A"
     ],
@@ -10376,7 +10376,7 @@
     "question": "Jak zajistit dohled nad Continuous Delivery pipeline?",
     "options": [
       "Použitím monitorovacích nástrojů, alertů a logování.",
-      "Dohled není potřeba",
+      "Dohled nad pipeline není potřeba, protože CD je ze své podstaty automatizované a pokud je jednou správně nastavené, běží už vždy spolehlivě samo. Jakmile je pipeline „hotová“, není nutné mít monitoring, alerty ani logování, protože případné problémy by se údajně projevily jen velmi zřídka a dají se řešit až tehdy, když si toho někdo manuálně všimne.",
       "Pouze manuální kontrolou",
       "N/A"
     ],
@@ -10387,7 +10387,7 @@
     "question": "Jak se Continuous Delivery implementuje v mikroservisní architektuře?",
     "options": [
       "Pomocí oddělených pipeline pro jednotlivé služby a nezávislým nasazováním.",
-      "CD nelze použít v mikroservisách",
+      "V mikroservisní architektuře se Continuous Delivery nedá použít, protože mikroslužby jsou mezi sebou příliš provázané a vyžadují koordinaci verzí. Jakmile je systém rozdělen na více služeb, automatizované nasazování přestává dávat smysl, a proto se CD typicky vypíná a nasazuje se jen ručně ve větších, méně častých release blocích.",
       "Všechny služby se nasazují společně",
       "N/A"
     ],
@@ -10398,7 +10398,7 @@
     "question": "Jak Continuous Delivery podporuje Infrastructure as Code (IaC)?",
     "options": [
       "Automatizovaným nasazováním infrastruktury pomocí Terraform, CloudFormation nebo Ansible.",
-      "CD nepodporuje IaC",
+      "Continuous Delivery IaC nepodporuje, protože CD se týká pouze aplikace (kódu) a infrastruktura se musí nastavovat mimo tento proces. Infrastruktura je podle tohoto pohledu vždy oddělená disciplína, která se řeší separátně a manuálně, takže ji není vhodné dávat do pipeline, protože by to jen zbytečně komplikovalo release.",
       "IaC je manuální proces",
       "N/A"
     ],
@@ -10409,7 +10409,7 @@
     "question": "Jaké metriky jsou důležité pro Continuous Delivery?",
     "options": [
       "Frekvence nasazení, průměrná doba nasazení, míra selhání nasazení, čas na opravu selhání.",
-      "CD nevyžaduje metriky",
+      "Continuous Delivery žádné metriky vlastně nevyžaduje, protože cílem je automatizace a ta se nedá smysluplně měřit. Pokud pipeline běží a nasazuje, je to samo o sobě důkaz, že funguje dobře, takže není nutné sledovat frekvenci nasazení, dobu dodání ani chybovost; tyto hodnoty jsou v CD údajně zbytečné a jen odvádějí pozornost.",
       "Pouze počet nasazení",
       "N/A"
     ],
