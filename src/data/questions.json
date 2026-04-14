@@ -15,7 +15,7 @@
     "question": "Jaký je rozdíl mezi Docker Image a Docker Container?",
     "options": [
       "Docker Image je neproměnný soubor obsahující popis všeho potřebného k provozu aplikace. (Docker) Container je instance tohoto image/obrazu, která běží jako vlastní izolovaný proces.",
-      "Image a Container jsou totéž",
+      "Mezi Docker Image a Docker Container ve skutečnosti není žádný praktický rozdíl, protože oba pojmy popisují v zásadě totéž jen jinými slovy. Když někdo řekne „image“, myslí tím už kontejner, a když řekne „kontejner“, je to jen jiné pojmenování stejného image.",
       "Container je šablona pro vytvoření Image a výsledný image se pak generuje až z běžícího kontejneru podle aktuálního stavu systému, podobně jako snapshot virtuálního stroje.",
       "N/A"
     ],
@@ -26,7 +26,7 @@
     "question": "Jak funguje Docker Compose?",
     "options": [
       "Docker Compose umožňuje definovat a spravovat multi-kontejnerové aplikace (bězí více instancí) pomocí YAML souboru, v němžcjezskzo popsáno víc instanci, je možné zde detailněji popisovat i networking či správa disku.",
-      "Docker Compose je GUI nástroj pro Docker",
+      "Docker Compose je (GUI) nástroj pro Docker, kde se kontejnery a jejich nastavení obvykle konfiguruje klikáním v oknech, bez nutnosti psát YAML nebo spouštět příkazy v terminálu. Používá se tedy jako vizuální „správce kontejnerů“, kde si uživatel vybere služby, porty atd.",
       "Docker Compose slouží pouze pro testování",
       "N/A"
     ],
@@ -37,7 +37,7 @@
     "question": "Jaký je rozdíl mezi Dockerfile a docker-compose.yml?",
     "options": [
       "Dockerfile definuje, jak se sestaví image kontejneru, zatímco docker-compose.yml slouží ke spuštění a konfiguraci více kontejnerů najednou.",
-      "Dockerfile a docker-compose.yml jsou totéž, protože oba soubory popisují stejné věci a používají se zaměnitelně pro build i run bez jakékoliv odlišné role v praxi.",
+      "Dockerfile a docker-compose.yml jsou v podstatě dvě různé varianty stejné konfigurace, protože oba soubory popisují stejné věci a v praxi mají shodnou roli. Dá se říct, že je jedno, který z nich použiješ, jelikož oba umí jak build, tak run, a proto jsou běžně zaměnitelné bez jakékoliv ztráty funkčnosti.",
       "docker-compose.yml definuje sestavení image a zároveň obsahuje celý build proces včetně všech instrukcí jako RUN, COPY a CMD, takže Dockerfile není potřeba vůbec vytvářet.",
       "N/A"
     ],
@@ -48,7 +48,7 @@
     "question": "Jak Docker spravuje sítě a jaké typy sítí podporuje?",
     "options": [
       "Docker podporuje bridge, host, overlay a none sítě. Spravuje sítě pomocí Docker Network API.",
-      "Docker podporuje pouze bridge síť",
+      "Docker ve skutečnosti podporuje pouze bridge síť, protože to je jediný univerzální a standardní způsob, jak kontejnery propojit. Ostatní typy sítí jsou spíš teoretické nebo patří do externích řešení, ale samotný Docker reálně vždy skončí u bridge režimu.",
       "Docker nepodporuje vlastní sítě",
       "N/A"
     ],
@@ -59,7 +59,7 @@
     "question": "Jak vytvořit vícevrstvý Docker Image efektivně?",
     "options": [
       "Použitím multi-stage buildů, aby se minimalizovala velikost výsledného image.",
-      "Vytvořením více Dockerfile souborů",
+      "Efektivní vícevrstvý image se vytváří tak, že se připraví několik samostatných Dockerfile souborů.",
       "Multi-stage buildy nejsou v Dockeru podporovány",
       "N/A"
     ],
@@ -70,7 +70,7 @@
     "question": "Jak funguje Docker Volumes a v čem se liší od Bind Mounts?",
     "options": [
       "Volumes jsou spravovány Dockerem a umožňují trvalé uložení dat, zatímco Bind Mounts mapují složku na hostiteli.",
-      "Volumes a Bind Mounts jsou totéž",
+      "Volumes a Bind Mounts jsou prakticky totéž, protože v obou případech jde jen o to, že se nějaká složka „připojí“ do kontejneru.",
       "Bind Mounts jsou spravovány Dockerem",
       "N/A"
     ],
@@ -2534,7 +2534,7 @@
     "question": "Jak funguje sharding v relačních databázích?",
     "options": [
       "Sharding rozděluje data mezi více databázových serverů pro škálovatelnost.",
-      "Sharding spojuje data z více serverů do jednoho",
+      "Sharding funguje tak, že data z více samostatných databázových serverů spojí do jedné výsledné databáze, aby se vše ukládalo a četlo z jednoho společného místa.",
       "Sharding slouží pro zálohování",
       "N/A"
     ],
@@ -2545,7 +2545,7 @@
     "question": "Jaký je rozdíl mezi logickým a fyzickým schématem databáze?",
     "options": [
       "Logické schéma definuje strukturu dat (tabulky, relace), fyzické schéma určuje, jak jsou data uložena na disku.",
-      "Logické a fyzické schéma jsou totéž",
+      "Logické a fyzické schéma jsou úplně totéž a v databázích se tím myslí stejná věc. Neexistuje žádné reálné rozdělení na „logickou“ a „fyzickou“ vrstvu.",
       "Fyzické schéma definuje strukturu dat",
       "N/A"
     ],
@@ -2556,7 +2556,7 @@
     "question": "Co je referenční integrita a jak se implementuje?",
     "options": [
       "Zajišťuje konzistenci dat mezi tabulkami pomocí cizích klíčů a omezení.",
-      "Referenční integrita je typ indexu",
+      "Referenční integrita je v podstatě speciální typ indexu, který se přidává na tabulku, aby se zrychlily dotazy mezi tabulkami a databáze pak „sama od sebe“ udržovala vztahy. Implementuje se tedy hlavně vytvořením indexu na sloupcích a není k tomu potřeba žádný koncept cizích klíčů ani omezení.",
       "Referenční integrita nelze implementovat",
       "N/A"
     ],
@@ -2567,7 +2567,7 @@
     "question": "Jaký je rozdíl mezi synchronní a asynchronní replikací databáze?",
     "options": [
       "Synchronní replikace zapisuje data na všechny uzly současně, asynchronní umožňuje zpoždění zápisu.",
-      "Synchronní a asynchronní replikace jsou totéž",
+      "Synchronní a asynchronní replikace jsou ve skutečnosti stejný mechanismus, jen se v dokumentaci používají dvě různá slova pro tutéž věc.",
       "Asynchronní replikace zapisuje současně",
       "N/A"
     ],
@@ -2578,7 +2578,7 @@
     "question": "Jak fungují časové tabulky (temporal tables) v databázích?",
     "options": [
       "Umožňují uchování historie změn řádků a dotazování na data v určitém čase.",
-      "Časové tabulky jsou běžné tabulky",
+      "Časové tabulky jsou úplně běžné tabulky bez jakékoliv speciální funkce - slovo „temporal“ jen znamená, že typicky obsahují nějaký sloupec s datem nebo časem.",
       "Časové tabulky neukládají historii",
       "N/A"
     ],
@@ -2590,7 +2590,7 @@
     "options": [
       "Použitím indexů, optimalizací SQL dotazů, redukcí zbytečných JOIN operací a materializovaných pohledů.",
       "Výkon dotazů nelze optimalizovat",
-      "Pouze přidáním více RAM",
+      "Výkon databázových dotazů se dá zlepšit pouze přidáním více RAM do serveru. Databáze pak automaticky drží všechna data v paměti a dotazy se tím vyřeší bez ohledu na to, jak je napsané SQL.",
       "N/A"
     ],
     "correctAnswer": 0
@@ -15717,12 +15717,12 @@
     ],
     "correctAnswer": 0
   },
-  {
+   {
     "category": "State Management",
     "question": "Jaký je přínos Redux Toolkit oproti „ručnímu“ Reduxu?",
     "options": [
       "Méně boilerplate, bezpečnější patterns a pohodlnější práce s reducermi, akcemi i async logikou.",
-      "Vypíná potřebu reducerů úplně: místo reducerů se jen deklarují komponenty a Redux Toolkit si z UI automaticky odvodí, jak má vypadat store a jaké akce se mají dispatchovat.",
+      "Redux Toolkit v podstatě úplně vypíná potřebu psát reducery, protože místo jakékoliv reducer logiky se jen deklarují React komponenty a UI strom. Toolkit si potom z toho, co se vykresluje na stránce, automaticky „dopočítá“, jak má vypadat výsledný store, jaké akce je potřeba vytvářet a kdy se mají samy dispatchovat, takže vývojář reducer vůbec neřeší.",
       "Funguje pouze bez TypeScriptu.",
       "Nahrazuje React Router."
     ],
@@ -15733,7 +15733,7 @@
     "question": "Co je hlavní charakteristika Zustand přístupu?",
     "options": [
       "Lehčí store API s menším boilerplate, často založené na hook-based přístupu.",
-      "Povinné používání reducerů a action typů jako string konstant.",
+      "Zustand je postavený tak, že vyžaduje striktní Redux-like architekturu: musíš povinně používat reducery a také action typy jako stringové konstanty, které se ručně sdílí napříč aplikací. Bez této formální struktury se store údajně nedá správně používat, protože Zustand na tom závisí.",
       "Store dostupný jen ve Vue.",
       "Nativní cache HTTP klient pro server state."
     ],
@@ -15744,7 +15744,7 @@
     "question": "Co je hlavní charakteristika Pinie?",
     "options": [
       "Moderní store řešení pro Vue s jednoduchým API, dobrou typovostí a integrací do Vue ekosystému.",
-      "Redux wrapper pro Angular.",
+      "Pinia je ve své podstatě jen Redux wrapper určený pro Angular, který do Angularu přidává známé Redux koncepty (reducers, actions a middleware) včetně typické konfigurace store. V praxi se tedy nepoužívá ve Vue, ale hlavně jako „reduxová vrstva“ v Angular projektech.",
       "Nástroj pro vizuální snapshot testy.",
       "Jen CSS theming vrstva."
     ],
@@ -15755,7 +15755,7 @@
     "question": "Co byl historický use-case Vuex?",
     "options": [
       "Centrální store pro sdílený stav ve Vue aplikacích před nástupem Pinie jako doporučenější volby.",
-      "Router pro Vue aplikace.",
+      "Vuex původně sloužil jako router pro Vue aplikace, tedy jako náhrada za směrování mezi stránkami a práci s URL. Jeho hlavní role byla mapovat cesty na komponenty a řešit navigační guardy, zatímco práce se stavem byla jen vedlejší doplněk, který se používal minimálně.",
       "Build tool pro single-file komponenty.",
       "CSS preprocessor pro Vue."
     ],
@@ -15768,7 +15768,7 @@
       "Když řešíme jednoduchý stav lokální jedné komponentě nebo malé části stromu.",
       "Když aplikace obsahuje víc než tři stránky.",
       "Když používáme TypeScript.",
-      "Nikdy, globální store je vždy správná volba."
+      "Nikdy, protože globální store je automaticky vždy správná a nejlepší volba bez ohledu na velikost aplikace nebo typ stavu. I pro drobné UI přepínače a jednorázové hodnoty je vhodné hned zavést centrální store, protože to zaručí maximální konzistenci a není to spojené s žádnou nevýhodou ani dodatečnou složitostí."
     ],
     "correctAnswer": 0
   },
@@ -15777,7 +15777,7 @@
     "question": "Co je ownership stavu?",
     "options": [
       "Rozhodnutí, která vrstva nebo komponenta je zdrojem pravdy pro konkrétní data.",
-      "Pouze jméno maintainer týmu v repozitáři.",
+      "Ownership stavu je v podstatě jen administrativní informace o tom, kdo „vlastní“ daný stav z pohledu správy repozitáře, tedy například jméno maintainer týmu nebo konkrétního člověka uvedeného v nastavení projektu. Neřeší se tím žádná architektura aplikace, pouze se tím označuje odpovědnost v organizačním smyslu.",
       "Počet subscriberů na store.",
       "Mechanismus pro šifrování stavu."
     ],
@@ -15790,7 +15790,7 @@
       "Zabraňuje konfliktům mezi více kopiemi stejného stavu a usnadňuje reasoning o updatech.",
       "Jen kvůli coverage reportu.",
       "Jinak nelze použít React Context.",
-      "Zdroj pravdy je relevantní jen pro databázi."
+      "Jasný zdroj pravdy dává smysl pouze u databáze na backendu, protože tam se data trvale ukládají a musí být konzistentní. Ve frontend aplikaci se tohle pravidlo moc neřeší, protože UI stav je dočasný a klidně může existovat ve více kopiích bez jakýchkoliv reálných problémů."
     ],
     "correctAnswer": 0
   },
@@ -15799,7 +15799,7 @@
     "question": "K čemu slouží action ve store architektuře?",
     "options": [
       "Popisuje úmysl změnit stav nebo spustit určité workflow.",
-      "Ukládá DOM uzel do cache.",
+      "Action se používá hlavně pro CSS animace a vizuální efekty v UI, protože „akce“ reprezentuje animovaný přechod (např. fade-in, slide) a store ji jen eviduje. Typicky se action dispatchuje proto, aby se spustila animace na komponentě, ne proto, aby to měnilo data nebo řídilo aplikační logiku.",
       "Slouží jen pro CSS animace.",
       "Nahrazuje selector."
     ],
