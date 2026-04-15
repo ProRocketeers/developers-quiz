@@ -3,6 +3,7 @@ import type { ChangeEvent } from "react";
 import { Form } from "react-bootstrap";
 import { groupCategories } from "../utils/categoryGroups";
 import "./CategoryList.css";
+import { useI18n } from "../i18n/I18nContext";
 
 type Category = {
   name: string;
@@ -26,12 +27,14 @@ function CategoryList({
   categoryQuestionCounts = {},
   onCountChange,
 }: CategoryListProps) {
+  const { t, lang } = useI18n();  
   const selected = value ?? (multiSelect ? [] : "");
   const selectedList = Array.isArray(selected) ? selected : [];
   const groupedCategories = useMemo(
-    () => groupCategories(categories ?? []),
-    [categories],
+    () => groupCategories(lang, categories ?? []), // <-- pass lang
+    [lang, categories],                            // <-- include lang in deps
   );
+
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(
     {},
   );
@@ -137,9 +140,9 @@ function CategoryList({
                 aria-expanded={isExpanded}
               >
                 <span className="category-group-title-wrap">
-                  <span className="category-group-title">{group.label}</span>
+                  <span className="category-group-title">{t(group.labelKey)}</span>
                   <span className="category-group-description">
-                    {group.description}
+                    {t(group.descriptionKey)}
                   </span>
                 </span>
                 <span className="category-group-controls">

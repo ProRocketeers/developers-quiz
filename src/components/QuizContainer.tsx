@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { useI18n } from "../i18n/I18nContext";
 import QuizQuestion from "./QuizQuestion";
 import Spinner from "./Spinner";
 import QuizSettings from "./QuizSettings";
@@ -17,6 +18,7 @@ const QUIZ_TIME = 10;
 
 function QuizContainer() {
   const { settings } = useQuizSettings();
+  const { lang } = useI18n(); // add
   const [showSettings, setShowSettings] = useState(false);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -41,14 +43,11 @@ function QuizContainer() {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    loadQuestions();
-  }, [settings.category]);
-
-  const loadQuestions = () => {
+  const loadQuestions = useCallback(() => {
     setLoading(true);
     setTimeout(() => {
       const loadedQuestions = getQuestions(
+        lang, 
         settings.questionCount,
         settings.useMock,
         settings.multiSelect ? settings.selectedCategories : settings.category,
@@ -60,7 +59,19 @@ function QuizContainer() {
       quizStartedAtRef.current = Date.now();
       setLoading(false);
     }, 1000);
-  };
+  }, [
+    lang,
+    settings.questionCount,
+    settings.useMock,
+    settings.multiSelect,
+    settings.selectedCategories,
+    settings.category,
+    settings.categoryQuestionCounts,
+  ]);
+
+  useEffect(() => {
+    loadQuestions();
+  }, [loadQuestions]);
 
   const handleAnswerSelect = (questionIndex: number, answerIndex: number) => {
     setQuestionDurationsMs((prev) => {

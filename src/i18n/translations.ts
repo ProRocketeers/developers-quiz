@@ -41,7 +41,68 @@ export type TranslationKey =
   | "home.card.title"
   | "home.card.text"
   | "home.start"
-  | "home.hint";
+  | "home.hint"
+  
+  //questions grouping
+  | "groups.frontend.label"
+  | "groups.frontend.description"
+  | "groups.react.label"
+  | "groups.react.description"
+  | "groups.angular.label"
+  | "groups.angular.description"
+  | "groups.vue.label"
+  | "groups.vue.description"
+  | "groups.backend.label"
+  | "groups.backend.description"
+  | "groups.java.label"
+  | "groups.java.description"
+  | "groups.dataMessaging.label"
+  | "groups.dataMessaging.description"
+  | "groups.infrastructureDevops.label"
+  | "groups.infrastructureDevops.description"
+  | "groups.securityQuality.label"
+  | "groups.securityQuality.description"
+  | "groups.other.label"
+  | "groups.other.description"
+  
+  //matchers
+  | "cat.cssStyling"
+  | "cat.frontendTesting"
+  | "cat.stateManagement"
+  | "cat.typescript"
+  | "cat.reactJs"
+  | "cat.reactNative"
+  | "cat.nextJs"
+  | "cat.angular"
+  | "cat.vueJs"
+  | "cat.api"
+  | "cat.asyncCommunication"
+  | "cat.authJwt"
+  | "cat.http"
+  | "cat.microservices"
+  | "cat.nodeJs"
+  | "cat.dotnet"
+  | "cat.hibernate"
+  | "cat.javaxConcurrent"
+  | "cat.mavenGradle"
+  | "cat.springBoot"
+  | "cat.springCore"
+  | "cat.testingJunitSpock"
+  | "cat.elasticsearch"
+  | "cat.kafka"
+  | "cat.rabbitmq"
+  | "cat.relationalDatabases"
+  | "cat.sql"
+  | "cat.aws"
+  | "cat.continuousDelivery"
+  | "cat.docker"
+  | "cat.flywayLiquibase"
+  | "cat.gitGithub"
+  | "cat.kubernetes"
+  | "cat.productionIncidents"
+  | "cat.cleanCode"
+  | "cat.cryptography"
+  | "cat.owasp";
 
 export const translations: Record<Lang, Record<TranslationKey, string>> = {
   cs: {
@@ -91,6 +152,83 @@ export const translations: Record<Lang, Record<TranslationKey, string>> = {
       "Zvolte oblast, počet otázek a vyplňte kontaktní údaje pro zaslání výsledků.",
     "home.start": "Spustit kvíz",
     "home.hint": "Vyplňte jméno, email a potvrďte souhlas se zpracováním údajů.",
+
+    //questions grouping
+    "groups.frontend.label": "Frontend",
+    "groups.frontend.description": "TypeScript, styling, state management a frontend testing.",
+
+    "groups.react.label": "React",
+    "groups.react.description": "React, React Native a související okruhy kolem Next.js.",
+
+    "groups.angular.label": "Angular",
+    "groups.angular.description": "Angular platforma a její specifika.",
+
+    "groups.vue.label": "Vue",
+    "groups.vue.description": "Vue.js a jeho reaktivní ekosystém.",
+
+    "groups.backend.label": "Backend",
+    "groups.backend.description": "Node.js, API komunikace a backendové základy.",
+
+    "groups.java.label": "Java",
+    "groups.java.description": "Spring, Hibernate, build nástroje a concurrency.",
+
+    "groups.dataMessaging.label": "Data & Messaging",
+    "groups.dataMessaging.description": "Databáze, fulltext a messaging platformy.",
+
+    "groups.infrastructureDevops.label": "Infrastructure & DevOps",
+    "groups.infrastructureDevops.description": "Cloud, kontejnery, delivery pipeline a provoz.",
+
+    "groups.securityQuality.label": "Security & Quality",
+    "groups.securityQuality.description": "Bezpečnostní témata a kvalita kódu.",
+
+    "groups.other.label": "Ostatní",
+    "groups.other.description": "Kategorie, které zatím nejsou zařazené do větší platformy.",
+
+    // matchers
+    "cat.cssStyling": "CSS / Styling",
+    "cat.frontendTesting": "Frontend Testing",
+    "cat.stateManagement": "State Management",
+    "cat.typescript": "TypeScript",
+
+    "cat.reactJs": "React.js",
+    "cat.reactNative": "React Native",
+    "cat.nextJs": "Next.js",
+
+    "cat.angular": "Angular",
+    "cat.vueJs": "Vue.js",
+
+    "cat.api": "API",
+    "cat.asyncCommunication": "Asynchronous Communication",
+    "cat.authJwt": "Authentication / Authorization / JWT",
+    "cat.http": "HTTP(s)",
+    "cat.microservices": "Microservice Architecture",
+    "cat.nodeJs": "Node.js",
+    "cat.dotnet": ".NET",
+
+    "cat.hibernate": "Hibernate",
+    "cat.javaxConcurrent": "javax.concurrent",
+    "cat.mavenGradle": "Maven / Gradle",
+    "cat.springBoot": "Spring Boot",
+    "cat.springCore": "Spring Core",
+    "cat.testingJunitSpock": "Testing (JUnit, Spock)",
+
+    "cat.elasticsearch": "ElasticSearch",
+    "cat.kafka": "Kafka",
+    "cat.rabbitmq": "RabbitMQ",
+    "cat.relationalDatabases": "Relational Databases",
+    "cat.sql": "SQL",
+
+    "cat.aws": "AWS",
+    "cat.continuousDelivery": "Continuous Delivery",
+    "cat.docker": "Docker",
+    "cat.flywayLiquibase": "Flyway/Liquibase",
+    "cat.gitGithub": "Git/GitHub",
+    "cat.kubernetes": "Kubernetes",
+    "cat.productionIncidents": "Production Incidents",
+
+    "cat.cleanCode": "Clean Code",
+    "cat.cryptography": "Cryptography",
+    "cat.owasp": "OWASP"
   },
 
   en: {
@@ -140,5 +278,82 @@ export const translations: Record<Lang, Record<TranslationKey, string>> = {
       "Choose the area, number of questions, and fill in contact details to send the results.",
     "home.start": "Start quiz",
     "home.hint": "Fill in name, email, and confirm consent to data processing.",
+
+    //questions grouping
+    "groups.frontend.label": "Frontend",
+    "groups.frontend.description": "TypeScript, styling, state management, and frontend testing.",
+
+    "groups.react.label": "React",
+    "groups.react.description": "React, React Native, and related topics around Next.js.",
+
+    "groups.angular.label": "Angular",
+    "groups.angular.description": "The Angular platform and its specifics.",
+
+    "groups.vue.label": "Vue",
+    "groups.vue.description": "Vue.js and its reactive ecosystem.",
+
+    "groups.backend.label": "Backend",
+    "groups.backend.description": "Node.js, API communication, and backend foundations.",
+
+    "groups.java.label": "Java",
+    "groups.java.description": "Spring, Hibernate, build tools, and concurrency.",
+
+    "groups.dataMessaging.label": "Data & Messaging",
+    "groups.dataMessaging.description": "Databases, full-text search, and messaging platforms.",
+
+    "groups.infrastructureDevops.label": "Infrastructure & DevOps",
+    "groups.infrastructureDevops.description": "Cloud, containers, delivery pipelines, and operations.",
+
+    "groups.securityQuality.label": "Security & Quality",
+    "groups.securityQuality.description": "Security topics and code quality.",
+
+    "groups.other.label": "Other",
+    "groups.other.description": "Categories not yet assigned to a larger platform group.",
+
+    //matchers
+    "cat.cssStyling": "CSS / Styling",
+    "cat.frontendTesting": "Frontend Testing",
+    "cat.stateManagement": "State Management",
+    "cat.typescript": "TypeScript",
+
+    "cat.reactJs": "React.js",
+    "cat.reactNative": "React Native",
+    "cat.nextJs": "Next.js",
+
+    "cat.angular": "Angular",
+    "cat.vueJs": "Vue.js",
+
+    "cat.api": "API",
+    "cat.asyncCommunication": "Asynchronous Communication",
+    "cat.authJwt": "Authentication / Authorization / JWT",
+    "cat.http": "HTTP(s)",
+    "cat.microservices": "Microservice Architecture",
+    "cat.nodeJs": "Node.js",
+    "cat.dotnet": ".NET",
+
+    "cat.hibernate": "Hibernate",
+    "cat.javaxConcurrent": "javax.concurrent",
+    "cat.mavenGradle": "Maven / Gradle",
+    "cat.springBoot": "Spring Boot",
+    "cat.springCore": "Spring Core",
+    "cat.testingJunitSpock": "Testing (JUnit, Spock)",
+
+    "cat.elasticsearch": "ElasticSearch",
+    "cat.kafka": "Kafka",
+    "cat.rabbitmq": "RabbitMQ",
+    "cat.relationalDatabases": "Relational Databases",
+    "cat.sql": "SQL",
+
+    "cat.aws": "AWS",
+    "cat.continuousDelivery": "Continuous Delivery",
+    "cat.docker": "Docker",
+    "cat.flywayLiquibase": "Flyway/Liquibase",
+    "cat.gitGithub": "Git/GitHub",
+    "cat.kubernetes": "Kubernetes",
+    "cat.productionIncidents": "Production Incidents",
+
+    "cat.cleanCode": "Clean Code",
+    "cat.cryptography": "Cryptography",
+    "cat.owasp": "OWASP",
   },
 };
