@@ -1,9 +1,9 @@
 ---
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../index.css";
 import "./Layout.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import HeaderIsland from "../components/HeaderIsland";
 
 interface Props {
   title?: string;
@@ -25,7 +25,7 @@ const {
   </head>
   <body>
     <div class="layout">
-      <Header currentPath={currentPath} />
+      <HeaderIsland client:load currentPath={currentPath} />
       <main class="main">
         <slot />
       </main>

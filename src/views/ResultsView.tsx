@@ -6,6 +6,7 @@ import { sendResultsEmail } from "../services/emailService";
 import type { QuizHistoryEntry } from "../types";
 import { formatDuration } from "../utils/formatDuration";
 import { navigateTo } from "../utils/navigation";
+import { I18nProvider } from "../i18n/I18nContext";
 import {
   createSettingsSnapshot,
   loadQuizHistory,
@@ -276,8 +277,10 @@ function ResultsContent() {
 
 export default function ResultsView() {
   return (
-    <QuizProvider>
-      <ResultsContent />
-    </QuizProvider>
+    <I18nProvider>
+      <QuizProvider>
+        <ResultsContent />
+      </QuizProvider>
+    </I18nProvider>
   );
 }

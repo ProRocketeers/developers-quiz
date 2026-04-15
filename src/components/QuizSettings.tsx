@@ -4,7 +4,8 @@ import { getCategoriesWithCount } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
 import "./QuizSettings.css";
 import CategoryList from "./CategoryList";
-import { MAX_TOTAL_QUESTIONS } from "../constants/quiz";
+import { MAX_TOTAL_QUESTIONS, FIELD_NAME, FIELD_EMAIL } from "../constants/quiz";
+import { useI18n } from "../i18n/I18nContext";
 
 interface Props {
   showRefresh?: boolean;
@@ -35,6 +36,7 @@ function QuizSettings({
     settings.selectedCategories,
   );
   const [selectAllActive, setSelectAllActive] = useState(false);
+  const { t } = useI18n();
 
   const categoryCountMap = useMemo(() => {
     const map: Record<string, number> = {};
@@ -66,15 +68,15 @@ function QuizSettings({
     [],
   );
 
-  const validateField = useCallback(
-    (field: string, val: string) => {
-      if (!val) return "Povinné pole";
-      if (field === "name" && val.length < 2) return "Min. 2 znaky";
-      if (field === "email" && !validateEmail(val)) return "Neplatný email";
-      return "";
-    },
-    [validateEmail],
-  );
+const validateField = useCallback(
+  (field: string, val: string) => {
+    if (!val) return t("validation.required");
+    if (field === "name" && val.length < 2) return t("validation.min2");
+    if (field === "email" && !validateEmail(val)) return t("validation.invalidEmail");
+    return "";
+  },
+  [validateEmail, t],
+);
 
   const validateTotalQuestions = useCallback((count: number) => {
     if (count > MAX_TOTAL_QUESTIONS) return `Max. ${MAX_TOTAL_QUESTIONS} otázek`;
@@ -90,8 +92,8 @@ function QuizSettings({
 
   useEffect(() => {
     if (!showNamePrompt) return;
-    const nameError = showNamePrompt ? validateField("name", inputName) : "";
-    const emailError = showNamePrompt ? validateField("email", inputEmail) : "";
+    const nameError = showNamePrompt ? validateField(FIELD_NAME, inputName) : "";
+    const emailError = showNamePrompt ? validateField(FIELD_EMAIL, inputEmail) : "";
     const totalQuestionsError = validateTotalQuestions(totalQuestions);
 
     setErrors((prev) => ({
@@ -134,7 +136,7 @@ function QuizSettings({
     if (onRefresh) onRefresh();
   };
 
-  const handleInput = (field: "name" | "email", val: string) => {
+  const handleInput = (field: typeof FIELD_NAME | typeof FIELD_EMAIL, val: string) => {
     const newError = validateField(field, val);
     const newErrors = { ...errors, [field]: newError };
     setErrors(newErrors);
@@ -273,11 +275,11 @@ function QuizSettings({
           <div className="row">
             <div className="col">
               <label className="field-label">
-                Jméno
+                {t("field.name")}
                 <input
                   type="text"
                   value={inputName}
-                  onChange={(e) => handleInput("name", e.target.value)}
+                  onChange={(e) => handleInput(FIELD_NAME, e.target.value)}
                   className="form-control"
                   placeholder="Např. Jana Nováková"
                 />
@@ -287,11 +289,11 @@ function QuizSettings({
 
             <div className="col">
               <label className="field-label">
-                Email
+                {t("field.email")}
                 <input
                   type="email"
                   value={inputEmail}
-                  onChange={(e) => handleInput("email", e.target.value)}
+                  onChange={(e) => handleInput(FIELD_EMAIL, e.target.value)}
                   className="form-control"
                   placeholder="jmeno@firma.cz"
                 />
@@ -306,7 +308,7 @@ function QuizSettings({
                   checked={consentGiven}
                   onChange={(e) => handleConsentChange(e.target.checked)}
                 />
-                Souhlasím se zpracováním osobních údajů pouze za účelem odeslání emailu s výsledky.
+                {t("consent.text")}
               </label>
             </div>
           </div>
