@@ -21,10 +21,7 @@ function QuizSettings({
   onValidationChange,
 }: Props) {
   const { settings, updateSettings } = useQuizSettings();
-  const categories = useMemo(
-    () => getCategoriesWithCount(settings.useMock),
-    [settings.useMock],
-  );
+  const { t, lang } = useI18n();
   const [inputMaxQuestions, setInputMaxQuestions] = useState(settings.questionCount);
   const [inputEmail, setInputEmail] = useState(settings.email);
   const [inputName, setInputName] = useState(settings.name);
@@ -36,7 +33,11 @@ function QuizSettings({
     settings.selectedCategories,
   );
   const [selectAllActive, setSelectAllActive] = useState(false);
-  const { t } = useI18n();
+
+  const categories = useMemo(
+    () => getCategoriesWithCount(lang, settings.useMock),
+    [lang, settings.useMock],
+  );
 
   const categoryCountMap = useMemo(() => {
     const map: Record<string, number> = {};
@@ -78,10 +79,15 @@ const validateField = useCallback(
   [validateEmail, t],
 );
 
-  const validateTotalQuestions = useCallback((count: number) => {
-    if (count > MAX_TOTAL_QUESTIONS) return `Max. ${MAX_TOTAL_QUESTIONS} otázek`;
+const validateTotalQuestions = useCallback(
+  (count: number) => {
+    if (count > MAX_TOTAL_QUESTIONS) {
+      return t("validation.maxQuestions", { max: MAX_TOTAL_QUESTIONS });
+    }
     return "";
-  }, []);
+  },
+  [t],
+);
 
   const totalQuestions = settings.multiSelect
     ? settings.selectedCategories.reduce(
@@ -281,7 +287,7 @@ const validateField = useCallback(
                   value={inputName}
                   onChange={(e) => handleInput(FIELD_NAME, e.target.value)}
                   className="form-control"
-                  placeholder="Např. Jana Nováková"
+                  placeholder={t("placeholder.name")}
                 />
                 {errors.name && <span className="text-danger small">{errors.name}</span>}
               </label>
@@ -295,7 +301,7 @@ const validateField = useCallback(
                   value={inputEmail}
                   onChange={(e) => handleInput(FIELD_EMAIL, e.target.value)}
                   className="form-control"
-                  placeholder="jmeno@firma.cz"
+                  placeholder={t("placeholder.email")}
                 />
                 {errors.email && <span className="text-danger small">{errors.email}</span>}
               </label>
@@ -317,7 +323,7 @@ const validateField = useCallback(
         <div className="row">
           <div className="col">
             <div className="category-header">
-              <label className="field-label">Kategorie</label>
+              <label className="field-label">{t("field.category")}</label>
               {settings.multiSelect && (
                 <label className="select-all-toggle">
                   <input
@@ -325,7 +331,7 @@ const validateField = useCallback(
                     checked={allSelected}
                     onChange={(e) => handleSelectAllToggle(e.target.checked)}
                   />
-                  Vybrat všechny
+                  {t("selectAll")}
                 </label>
               )}
             </div>
@@ -333,7 +339,7 @@ const validateField = useCallback(
             {settings.multiSelect && (
               <div className="bulk-control">
                 <label className="bulk-label" htmlFor="bulk-count-input">
-                  Nastavit počet otázek pro vybrané
+                  {t("bulk.setCount")}
                 </label>
                 <div className="bulk-input-row">
                   <input
@@ -345,11 +351,11 @@ const validateField = useCallback(
                     disabled={settings.selectedCategories.length === 0}
                     onChange={(e) => handleBulkInput(e.target.value)}
                   />
-                  <span className="bulk-badge">Vybráno: {settings.selectedCategories.length}</span>
+                  <span className="bulk-badge">
+                    {t("bulk.selected", { count: settings.selectedCategories.length })}
+                  </span>
                 </div>
-                <span className="bulk-hint">
-                  Zadaná hodnota přepíše počty u všech vybraných kategorií.
-                </span>
+                <span className="bulk-hint">{t("bulk.hint")}</span>
               </div>
             )}
 
@@ -364,7 +370,7 @@ const validateField = useCallback(
 
             {settings.multiSelect && (
               <div className="category-total">
-                Celkem otázek: <strong>{totalQuestions}</strong>
+                {t("totalQuestions", { count: totalQuestions })} <strong />
                 {errors.totalQuestions && (
                   <div>
                     <span className="text-danger small">{errors.totalQuestions}</span>
@@ -377,7 +383,7 @@ const validateField = useCallback(
           {!settings.multiSelect && (
             <div className="col">
               <label className="field-label">
-                Počet otázek
+                {t("settings.questionCountLabel")}
                 <input
                   type="number"
                   value={inputMaxQuestions}
@@ -399,7 +405,7 @@ const validateField = useCallback(
           <div className="col">
             {showRefresh && (
               <button className="btn btn-success" onClick={handleRefresh}>
-                Obnovit
+                {t("refresh")}
               </button>
             )}
           </div>

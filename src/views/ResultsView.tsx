@@ -6,7 +6,7 @@ import { sendResultsEmail } from "../services/emailService";
 import type { QuizHistoryEntry } from "../types";
 import { formatDuration } from "../utils/formatDuration";
 import { navigateTo } from "../utils/navigation";
-import { I18nProvider } from "../i18n/I18nContext";
+import { I18nProvider, useI18n } from "../i18n/I18nContext";
 import {
   createSettingsSnapshot,
   loadQuizHistory,
@@ -16,6 +16,8 @@ import "../pages/Results.css";
 
 function ResultsContent() {
   const { settings } = useQuizSettings();
+  const { t, lang } = useI18n();
+
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [expandedIds, setExpandedIds] = useState<string[]>([]);
 
@@ -43,14 +45,9 @@ function ResultsContent() {
 
   useEffect(() => {
     setSelectedId((currentSelectedId) => {
-      if (history.length === 0) {
-        return null;
-      }
+      if (history.length === 0) return null;
 
-      if (
-        currentSelectedId &&
-        history.some((entry) => entry.id === currentSelectedId)
-      ) {
+      if (currentSelectedId && history.some((entry) => entry.id === currentSelectedId)) {
         return currentSelectedId;
       }
 
@@ -58,18 +55,16 @@ function ResultsContent() {
     });
   }, [history]);
 
-  const selectedEntry =
-    history.find((entry) => entry.id === selectedId) ?? null;
+  const selectedEntry = history.find((entry) => entry.id === selectedId) ?? null;
   const total = selectedEntry?.questions.length ?? 0;
+
   const minimalRequiredScore = selectedEntry
     ? Math.ceil(selectedEntry.settingsSnapshot.thresholdForSuccess * total)
     : 0;
 
   const toggleDetails = (entryId: string) => {
     setExpandedIds((prev) =>
-      prev.includes(entryId)
-        ? prev.filter((id) => id !== entryId)
-        : [...prev, entryId],
+      prev.includes(entryId) ? prev.filter((id) => id !== entryId) : [...prev, entryId],
     );
   };
 
@@ -87,14 +82,10 @@ function ResultsContent() {
   );
 
   useEffect(() => {
-    if (!selectedEntry || selectedEntry.emailStatus !== "idle") {
-      return;
-    }
+    if (!selectedEntry || selectedEntry.emailStatus !== "idle") return;
 
     const userEmail = selectedEntry.settingsSnapshot.email;
-    if (!userEmail) {
-      return;
-    }
+    if (!userEmail) return;
 
     let isCancelled = false;
 
@@ -106,8 +97,8 @@ function ResultsContent() {
 
       handleEmailStatusChange(selectedEntry.id, "sending");
 
-      const resolvedName =
-        selectedEntry.settingsSnapshot.name || "Neznámý uživatel";
+      const resolvedName = selectedEntry.settingsSnapshot.name || t("summaryList.unknownUser");
+
       const primaryResult = await sendResultsEmail({
         name: resolvedName,
         score: selectedEntry.score,
@@ -139,9 +130,7 @@ function ResultsContent() {
         copySuccess = copyResult.success;
       }
 
-      if (isCancelled) {
-        return;
-      }
+      if (isCancelled) return;
 
       console.info("Email: auto-send finished", {
         entryId: selectedEntry.id,
@@ -172,18 +161,19 @@ function ResultsContent() {
     selectedEntry?.settingsSnapshot.email,
     selectedEntry?.settingsSnapshot.emailForCopy,
     selectedEntry?.settingsSnapshot.name,
+    t,
   ]);
 
   if (!selectedEntry) {
     return (
       <div className="results-page">
         <div className="results-empty">
-          <span className="results-kicker">Výsledky</span>
-          <h2>Zatím tu není žádný dokončený běh</h2>
-          <p>Spusťte nový kvíz a po vyhodnocení se vám tady uloží kompletní historie výsledků.</p>
+          <span className="results-kicker">{t("results.empty.kicker")}</span>
+          <h2>{t("results.empty.title")}</h2>
+          <p>{t("results.empty.text")}</p>
         </div>
         <button className="btn" onClick={() => navigateTo("/quiz")}>
-          Spustit nový Quiz
+          {t("results.empty.cta")}
         </button>
       </div>
     );
@@ -195,9 +185,9 @@ function ResultsContent() {
   return (
     <div className="results-page">
       <div className="results-intro">
-        <span className="results-kicker">Vyhodnocení</span>
-        <h2>Souhrn a historie výsledků</h2>
-        <p>Aktivní záznam je zvýrazněný nahoře, v historii si můžete kdykoli otevřít detail starších pokusů.</p>
+        <span className="results-kicker">{t("results.intro.kicker")}</span>
+        <h2>{t("results.intro.title")}</h2>
+        <p>{t("results.intro.text")}</p>
       </div>
 
       <QuizSummary
@@ -210,7 +200,7 @@ function ResultsContent() {
       />
 
       <div className="results-history">
-        <h3>Historie výsledků</h3>
+        <h3>{t("results.history.title")}</h3>
         <div className="history-list">
           {history.map((entry) => {
             const entryTotal = entry.questions.length;
@@ -219,6 +209,8 @@ function ResultsContent() {
             );
             const isActive = entry.id === selectedEntry.id;
             const isExpanded = expandedIds.includes(entry.id);
+
+            const locale = lang === "en" ? "en-US" : "cs-CZ";
 
             return (
               <div
@@ -231,21 +223,29 @@ function ResultsContent() {
                     onClick={() => setSelectedId(entry.id)}
                   >
                     <div className="history-title">
-                      {new Date(entry.createdAt).toLocaleString("cs-CZ")}
+                      {new Date(entry.createdAt).toLocaleString(locale)}
                     </div>
+
                     <div className="history-meta">
-                      Skóre {entry.score}/{entryTotal} • Minimum{" "}
-                      {entryMinimalScore} • Čas{" "}
-                      {formatDuration(entry.totalDurationMs)}
+                      {t("results.history.meta", {
+                        score: entry.score,
+                        total: entryTotal,
+                        min: entryMinimalScore,
+                        time: formatDuration(entry.totalDurationMs),
+                      })}
                     </div>
                   </button>
+
                   <button
                     className="toggle-btn history-toggle"
                     onClick={() => toggleDetails(entry.id)}
                   >
-                    {isExpanded ? "Skrýt detail" : "Zobrazit detail"}
+                    {isExpanded
+                      ? t("results.history.hideDetail")
+                      : t("results.history.showDetail")}
                   </button>
                 </div>
+
                 {isExpanded && (
                   <div className="history-details">
                     <SummaryList

@@ -2,6 +2,7 @@ import "./SummaryList.css";
 import { sendResultsEmail } from "../services/emailService";
 import type { Question } from "../types";
 import { formatDuration } from "../utils/formatDuration";
+import { useI18n } from "../i18n/I18nContext";
 
 type SummaryListProps = {
   questions: Question[];
@@ -32,13 +33,16 @@ function SummaryList({
   totalDurationMs,
   questionDurationsMs,
 }: SummaryListProps) {
+  const { t } = useI18n();
+
+  const resolvedName = userName || t("summaryList.unknownUser");
+
   const handleSendEmail = async () => {
-    if (!userEmail) {
-      return;
-    }
+    if (!userEmail) return;
+
     console.info("Email: start sending results", { to: userEmail });
     onEmailStatusChange("sending");
-    const resolvedName = userName || "Neznámý uživatel";
+
     const primaryResult = await sendResultsEmail({
       name: resolvedName,
       score,
@@ -49,6 +53,7 @@ function SummaryList({
       answers,
       detailed: false,
     });
+
     let copySuccess = true;
     if (emailForCopy) {
       console.info("Email: sending copy", { to: emailForCopy });
@@ -64,57 +69,72 @@ function SummaryList({
       });
       copySuccess = copyResult.success;
     }
+
     const isSuccess = primaryResult.success && copySuccess;
+
     console.info("Email: send finished", {
       to: userEmail,
       status: isSuccess ? "sent" : "error",
       message: primaryResult.message,
     });
+
     onEmailStatusChange(isSuccess ? "sent" : "error");
   };
 
   const emailStatusLabel =
     emailStatus === "sending"
-      ? "Odesílám..."
+      ? t("summaryList.emailStatus.sending")
       : emailStatus === "sent"
-        ? "Odesláno"
+        ? t("summaryList.emailStatus.sent")
         : emailStatus === "error"
-          ? "Odeslání selhalo"
-          : "Neodesláno";
+          ? t("summaryList.emailStatus.error")
+          : t("summaryList.emailStatus.idle");
+
+  const emailButtonLabel =
+    emailStatus === "sending"
+      ? t("summaryList.emailButton.sending")
+      : emailStatus === "sent"
+        ? t("summaryList.emailButton.sent")
+        : emailStatus === "error"
+          ? t("summaryList.emailButton.errorRetry")
+          : t("summaryList.emailButton.send");
 
   return (
     <div className="summary-list">
       <div className="user-info">
-        <h2>Souhrn pro {userName || "Neznámý uživatel"}</h2>
+        <h2>{t("summaryList.title", { name: resolvedName })}</h2>
+
         <div className="summary-meta">
           <div className="summary-meta-row">
-            <strong>Email:</strong> {userEmail || "Neuvedeno"}
+            <strong>{t("summaryList.label.email")}</strong>{" "}
+            {userEmail || t("summaryList.notProvided")}
           </div>
+
           <div className="summary-meta-row">
-            <strong>Stav emailu:</strong> {emailStatusLabel}
+            <strong>{t("summaryList.label.emailStatus")}</strong> {emailStatusLabel}
           </div>
+
           <div className="summary-meta-row">
-            <strong>Skóre:</strong> {score}/{total}
+            <strong>{t("summaryList.label.score")}</strong> {score}/{total}
           </div>
+
           <div className="summary-meta-row">
-            <strong>Výsledek:</strong> {passed ? "✓" : "✗"}
+            <strong>{t("summaryList.label.result")}</strong>{" "}
+            {passed ? "✓" : "✗"}
           </div>
+
           <div className="summary-meta-row">
-            <strong>Celkový čas:</strong> {formatDuration(totalDurationMs)}
+            <strong>{t("summaryList.label.totalTime")}</strong>{" "}
+            {formatDuration(totalDurationMs)}
           </div>
+
           <div className="summary-meta-actions">
             <button
               className="toggle-btn"
               onClick={handleSendEmail}
               disabled={emailStatus === "sending" || !userEmail}
             >
-              {emailStatus === "sending"
-                ? "Odesílám..."
-                : emailStatus === "sent"
-                  ? "Odesláno ✓"
-                  : emailStatus === "error"
-                  ? "Chyba - zkusit znovu"
-                    : "Odeslat email"}
+              {emailButtonLabel}
             </button>
           </div>
         </div>
@@ -134,6 +154,7 @@ function SummaryList({
                 ⏱️ {formatDuration(questionDuration)}
               </span>
             </div>
+
             <div className="summary-options">
               {q.options.map((option, oIndex) => {
                 const isUserAnswer = userAnswer === oIndex;

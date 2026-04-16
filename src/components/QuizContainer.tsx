@@ -3,6 +3,7 @@ import { useI18n } from "../i18n/I18nContext";
 import QuizQuestion from "./QuizQuestion";
 import Spinner from "./Spinner";
 import QuizSettings from "./QuizSettings";
+import { QUIZ_TIME } from "../constants/quiz";
 import "./QuizContainer.css";
 import { getQuestions } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
@@ -14,11 +15,10 @@ import {
   createSettingsSnapshot,
 } from "../utils/quizResults";
 
-const QUIZ_TIME = 10;
 
 function QuizContainer() {
   const { settings } = useQuizSettings();
-  const { lang } = useI18n(); // add
+  const { lang, t } = useI18n();
   const [showSettings, setShowSettings] = useState(false);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -105,7 +105,7 @@ function QuizContainer() {
     const unanswered = Math.max(0, questions.length - answeredCount);
     if (unanswered > 0) {
       const confirmed = window.confirm(
-        `Máte ${unanswered} nezodpovězených otázek. Opravdu chcete pokračovat?`,
+        t("quiz.confirmUnanswered", { count: unanswered }),
       );
       if (!confirmed) {
         return;
@@ -151,18 +151,20 @@ function QuizContainer() {
     <div className="quiz-container">
       <div className="quiz-toolbar">
         <div className="quiz-intro">
-          <span className="quiz-kicker">Aktivní test</span>
-          <h2>Technický kvíz</h2>
+          <span className="quiz-kicker">{t("quiz.kicker")}</span>
+          <h2>{t("quiz.title")}</h2>
           <p>
-            {settings.questionCount} otázek
-            {settings.useTimeLimit ? " • s časovým limitem" : " • bez časového limitu"}
+            {t("quiz.questionCount", { count: settings.questionCount })}
+            {settings.useTimeLimit
+              ? t("quiz.timeLimit.on")
+              : t("quiz.timeLimit.off")}
           </p>
         </div>
 
         <div className="quiz-toolbar-actions">
           {settings.useTimeLimit ? (
             <div className="quiz-timer" aria-live="polite">
-              ⏱️ Zbývá: {timeLeft}s
+              {t("quiz.timerLeft", { seconds: timeLeft })}
             </div>
           ) : null}
 
@@ -173,7 +175,7 @@ function QuizContainer() {
               aria-expanded={showSettings}
               aria-controls="quiz-settings-panel"
             >
-              {showSettings ? "Skrýt nastavení" : "Ukázat nastavení"}
+              {showSettings ? t("quiz.settings.hide") : t("quiz.settings.show")}
             </button>
           </div>
         </div>
@@ -181,11 +183,7 @@ function QuizContainer() {
 
       {showSettings && (
         <div id="quiz-settings-panel">
-          <QuizSettings
-            showRefresh={true}
-            onRefresh={handleRefresh}
-            showNamePrompt={false}
-          />
+          <QuizSettings showRefresh={true} onRefresh={handleRefresh} showNamePrompt={false} />
         </div>
       )}
 
@@ -195,21 +193,16 @@ function QuizContainer() {
           questionNumber={index + 1}
           question={q}
           selectedAnswer={answers[index]}
-          onAnswerSelect={(answerIndex) =>
-            handleAnswerSelect(index, answerIndex)
-          }
+          onAnswerSelect={(answerIndex) => handleAnswerSelect(index, answerIndex)}
         />
       ))}
 
       <div className="quiz-footer">
         <span className="progress">
-          Zodpovězeno: {answeredCount} / {settings.questionCount}
+          {t("quiz.answeredProgress", { answered: answeredCount, total: settings.questionCount })}
         </span>
-        <button
-          className="submit-btn"
-          onClick={handleSubmit}
-        >
-          Vyhodnotit kvíz
+        <button className="submit-btn" onClick={handleSubmit}>
+          {t("quiz.submit")}
         </button>
       </div>
     </div>
