@@ -29,6 +29,11 @@ function QuizContainer() {
   const [loading, setLoading] = useState(true);
   const quizStartedAtRef = useRef<number | null>(null);
 
+  const langRef = useRef(lang);
+  useEffect(() => {
+    langRef.current = lang;
+  }, [lang]);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((t) => {
@@ -47,7 +52,7 @@ function QuizContainer() {
     setLoading(true);
     setTimeout(() => {
       const loadedQuestions = getQuestions(
-        lang, 
+        langRef.current,
         settings.questionCount,
         settings.useMock,
         settings.multiSelect ? settings.selectedCategories : settings.category,
@@ -60,7 +65,6 @@ function QuizContainer() {
       setLoading(false);
     }, 1000);
   }, [
-    lang,
     settings.questionCount,
     settings.useMock,
     settings.multiSelect,
