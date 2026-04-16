@@ -23,7 +23,6 @@ function Header({ currentPath = "/" }: HeaderProps) {
       </div>
 
       <nav className="header-nav">
-        {/* language switch LEFT from nav items */}
         <LanguageSwitch />
 
         <a href="/" className={homeClass}>
