@@ -4,7 +4,8 @@ import { getCategoriesWithCount } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
 import "./QuizSettings.css";
 import CategoryList from "./CategoryList";
-import { MAX_TOTAL_QUESTIONS } from "../constants/quiz";
+import { MAX_TOTAL_QUESTIONS, FIELD_NAME, FIELD_EMAIL } from "../constants/quiz";
+import { useI18n } from "../i18n/I18nContext";
 
 interface Props {
   showRefresh?: boolean;
@@ -20,10 +21,7 @@ function QuizSettings({
   onValidationChange,
 }: Props) {
   const { settings, updateSettings } = useQuizSettings();
-  const categories = useMemo(
-    () => getCategoriesWithCount(settings.useMock),
-    [settings.useMock],
-  );
+  const { t, lang } = useI18n();
   const [inputMaxQuestions, setInputMaxQuestions] = useState(settings.questionCount);
   const [inputEmail, setInputEmail] = useState(settings.email);
   const [inputName, setInputName] = useState(settings.name);
@@ -35,6 +33,11 @@ function QuizSettings({
     settings.selectedCategories,
   );
   const [selectAllActive, setSelectAllActive] = useState(false);
+
+  const categories = useMemo(
+    () => getCategoriesWithCount(lang, settings.useMock),
+    [lang, settings.useMock],
+  );
 
   const categoryCountMap = useMemo(() => {
     const map: Record<string, number> = {};
@@ -66,20 +69,25 @@ function QuizSettings({
     [],
   );
 
-  const validateField = useCallback(
-    (field: string, val: string) => {
-      if (!val) return "Povinné pole";
-      if (field === "name" && val.length < 2) return "Min. 2 znaky";
-      if (field === "email" && !validateEmail(val)) return "Neplatný email";
-      return "";
-    },
-    [validateEmail],
-  );
-
-  const validateTotalQuestions = useCallback((count: number) => {
-    if (count > MAX_TOTAL_QUESTIONS) return `Max. ${MAX_TOTAL_QUESTIONS} otázek`;
+const validateField = useCallback(
+  (field: string, val: string) => {
+    if (!val) return t("validation.required");
+    if (field === "name" && val.length < 2) return t("validation.min2");
+    if (field === "email" && !validateEmail(val)) return t("validation.invalidEmail");
     return "";
-  }, []);
+  },
+  [validateEmail, t],
+);
+
+const validateTotalQuestions = useCallback(
+  (count: number) => {
+    if (count > MAX_TOTAL_QUESTIONS) {
+      return t("validation.maxQuestions", { max: MAX_TOTAL_QUESTIONS });
+    }
+    return "";
+  },
+  [t],
+);
 
   const totalQuestions = settings.multiSelect
     ? settings.selectedCategories.reduce(
@@ -90,8 +98,8 @@ function QuizSettings({
 
   useEffect(() => {
     if (!showNamePrompt) return;
-    const nameError = showNamePrompt ? validateField("name", inputName) : "";
-    const emailError = showNamePrompt ? validateField("email", inputEmail) : "";
+    const nameError = showNamePrompt ? validateField(FIELD_NAME, inputName) : "";
+    const emailError = showNamePrompt ? validateField(FIELD_EMAIL, inputEmail) : "";
     const totalQuestionsError = validateTotalQuestions(totalQuestions);
 
     setErrors((prev) => ({
@@ -134,7 +142,7 @@ function QuizSettings({
     if (onRefresh) onRefresh();
   };
 
-  const handleInput = (field: "name" | "email", val: string) => {
+  const handleInput = (field: typeof FIELD_NAME | typeof FIELD_EMAIL, val: string) => {
     const newError = validateField(field, val);
     const newErrors = { ...errors, [field]: newError };
     setErrors(newErrors);
@@ -273,13 +281,13 @@ function QuizSettings({
           <div className="row">
             <div className="col">
               <label className="field-label">
-                Jméno
+                {t("field.name")}
                 <input
                   type="text"
                   value={inputName}
-                  onChange={(e) => handleInput("name", e.target.value)}
+                  onChange={(e) => handleInput(FIELD_NAME, e.target.value)}
                   className="form-control"
-                  placeholder="Např. Jana Nováková"
+                  placeholder={t("placeholder.name")}
                 />
                 {errors.name && <span className="text-danger small">{errors.name}</span>}
               </label>
@@ -287,13 +295,13 @@ function QuizSettings({
 
             <div className="col">
               <label className="field-label">
-                Email
+                {t("field.email")}
                 <input
                   type="email"
                   value={inputEmail}
-                  onChange={(e) => handleInput("email", e.target.value)}
+                  onChange={(e) => handleInput(FIELD_EMAIL, e.target.value)}
                   className="form-control"
-                  placeholder="jmeno@firma.cz"
+                  placeholder={t("placeholder.email")}
                 />
                 {errors.email && <span className="text-danger small">{errors.email}</span>}
               </label>
@@ -306,7 +314,7 @@ function QuizSettings({
                   checked={consentGiven}
                   onChange={(e) => handleConsentChange(e.target.checked)}
                 />
-                Souhlasím se zpracováním osobních údajů pouze za účelem odeslání emailu s výsledky.
+                {t("consent.text")}
               </label>
             </div>
           </div>
@@ -315,7 +323,7 @@ function QuizSettings({
         <div className="row">
           <div className="col">
             <div className="category-header">
-              <label className="field-label">Kategorie</label>
+              <label className="field-label">{t("field.category")}</label>
               {settings.multiSelect && (
                 <label className="select-all-toggle">
                   <input
@@ -323,7 +331,7 @@ function QuizSettings({
                     checked={allSelected}
                     onChange={(e) => handleSelectAllToggle(e.target.checked)}
                   />
-                  Vybrat všechny
+                  {t("selectAll")}
                 </label>
               )}
             </div>
@@ -331,7 +339,7 @@ function QuizSettings({
             {settings.multiSelect && (
               <div className="bulk-control">
                 <label className="bulk-label" htmlFor="bulk-count-input">
-                  Nastavit počet otázek pro vybrané
+                  {t("bulk.setCount")}
                 </label>
                 <div className="bulk-input-row">
                   <input
@@ -343,11 +351,11 @@ function QuizSettings({
                     disabled={settings.selectedCategories.length === 0}
                     onChange={(e) => handleBulkInput(e.target.value)}
                   />
-                  <span className="bulk-badge">Vybráno: {settings.selectedCategories.length}</span>
+                  <span className="bulk-badge">
+                    {t("bulk.selected", { count: settings.selectedCategories.length })}
+                  </span>
                 </div>
-                <span className="bulk-hint">
-                  Zadaná hodnota přepíše počty u všech vybraných kategorií.
-                </span>
+                <span className="bulk-hint">{t("bulk.hint")}</span>
               </div>
             )}
 
@@ -362,7 +370,7 @@ function QuizSettings({
 
             {settings.multiSelect && (
               <div className="category-total">
-                Celkem otázek: <strong>{totalQuestions}</strong>
+                {t("totalQuestions", { count: totalQuestions })} <strong />
                 {errors.totalQuestions && (
                   <div>
                     <span className="text-danger small">{errors.totalQuestions}</span>
@@ -375,7 +383,7 @@ function QuizSettings({
           {!settings.multiSelect && (
             <div className="col">
               <label className="field-label">
-                Počet otázek
+                {t("settings.questionCountLabel")}
                 <input
                   type="number"
                   value={inputMaxQuestions}
@@ -397,7 +405,7 @@ function QuizSettings({
           <div className="col">
             {showRefresh && (
               <button className="btn btn-success" onClick={handleRefresh}>
-                Obnovit
+                {t("refresh")}
               </button>
             )}
           </div>

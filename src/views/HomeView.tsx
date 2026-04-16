@@ -1,36 +1,37 @@
 import { useState } from "react";
 import QuizSettings from "../components/QuizSettings";
 import { QuizProvider } from "../context/QuizContext";
+import { I18nProvider, useI18n } from "../i18n/I18nContext";
 import { navigateTo } from "../utils/navigation";
 import "../pages/Home.css";
 
 function HomeContent() {
   const [hasErrors, setHasErrors] = useState(true);
+  const { t } = useI18n();
 
   return (
     <div className="home">
       <section className="home-hero">
         <div className="home-hero-copy">
-          <span className="home-eyebrow">Prorocketeers Engineering Quiz</span>
-          <h2>Technický kvíz pro vývojáře</h2>
-          <p>
-            Vyberte si okruhy, nastavte rozsah testu a během pár minut získáte
-            přehledný výsledek v čistém vizuálu laděném do firemních barev.
-          </p>
+          <span className="home-eyebrow">{t("home.eyebrow")}</span>
+          <h2>{t("home.hero.title")}</h2>
+          <p>{t("home.hero.lead")}</p>
+
           <div className="home-hero-tags">
-            <span>Nové frontend okruhy</span>
-            <span>Rychlé vyhodnocení</span>
-            <span>Firemní barevnost</span>
+            <span>{t("home.tags.frontend")}</span>
+            <span>{t("home.tags.fast")}</span>
+            <span>{t("home.tags.branding")}</span>
           </div>
         </div>
+
         <aside className="home-hero-panel">
           <div className="hero-panel-card">
-            <strong>Co vás čeká</strong>
-            <p>Otázky jsou rozdělené po technických okruzích a výsledky se ukládají do historie.</p>
+            <strong>{t("home.panel.what.title")}</strong>
+            <p>{t("home.panel.what.text")}</p>
           </div>
           <div className="hero-panel-card">
-            <strong>Doporučený průchod</strong>
-            <p>Vyberte menší sadu okruhů a 15 až 25 otázek, pokud chcete rychlé interní ověření.</p>
+            <strong>{t("home.panel.recommended.title")}</strong>
+            <p>{t("home.panel.recommended.text")}</p>
           </div>
         </aside>
       </section>
@@ -38,13 +39,11 @@ function HomeContent() {
       <section className="home-grid">
         <div className="home-card">
           <div className="home-card-header">
-            <span className="card-kicker">Nastavení testu</span>
-            <h3>Připravte si vlastní běh kvízu</h3>
-            <p>
-              Zvolte oblast, počet otázek a vyplňte kontaktní údaje pro zaslání
-              výsledků.
-            </p>
+            <span className="card-kicker">{t("home.card.kicker")}</span>
+            <h3>{t("home.card.title")}</h3>
+            <p>{t("home.card.text")}</p>
           </div>
+
           <div className="home-settings-wrap">
             <QuizSettings
               showRefresh={false}
@@ -52,17 +51,16 @@ function HomeContent() {
               onValidationChange={setHasErrors}
             />
           </div>
+
           <div className="home-actions">
             <button
               className="start-btn"
               onClick={() => navigateTo("/quiz")}
               disabled={hasErrors}
             >
-              Spustit kvíz
+              {t("home.start")}
             </button>
-            <span className="home-hint">
-              Vyplňte jméno, email a potvrďte souhlas se zpracováním údajů.
-            </span>
+            <span className="home-hint">{t("home.hint")}</span>
           </div>
         </div>
       </section>
@@ -72,8 +70,10 @@ function HomeContent() {
 
 export default function HomeView() {
   return (
-    <QuizProvider>
-      <HomeContent />
-    </QuizProvider>
+    <I18nProvider>
+      <QuizProvider>
+        <HomeContent />
+      </QuizProvider>
+    </I18nProvider>
   );
 }

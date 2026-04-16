@@ -7863,7 +7863,8 @@
       "N/A"
     ],
     "correctAnswer": 0
-  },{
+  },
+  {
     "category": "Authentication / Authorization / JWT",
     "question": "Jaký je rozdíl mezi signed a encrypted JWT?",
     "options": [

@@ -1,5 +1,6 @@
 import "./QuizSummary.css";
 import { formatDuration } from "../utils/formatDuration";
+import { useI18n } from "../i18n/I18nContext";
 
 type QuizSummaryProps = {
   score: number;
@@ -18,23 +19,32 @@ function QuizSummary({
   minimalRequiredScore,
   totalDurationMs,
 }: QuizSummaryProps) {
+  const { t } = useI18n();
+
   return (
     <div className={`quiz-summary ${passed ? "passed" : "failed"}`}>
       <div className="summary-topline">
-        <span className="threshold-badge">Minimum: {minimalRequiredScore}</span>
+        <span className="threshold-badge">
+          {t("summary.minimum", { value: minimalRequiredScore })}
+        </span>
       </div>
-      <h2>{passed ? "Skvělý výsledek" : "Výsledek kvízu"}</h2>
+
+      <h2>{passed ? t("summary.title.passed") : t("summary.title.failed")}</h2>
+
       <div className="score">
-        {score} / {total}
+        {t("summary.score", { score, total })}
       </div>
-      <div className="score-time">Čas: {formatDuration(totalDurationMs)}</div>
+
+      <div className="score-time">
+        {t("summary.time", { time: formatDuration(totalDurationMs) })}
+      </div>
+
       <p className="result-text">
-        {passed
-          ? "Limit jste splnili a můžete pokračovat k detailnímu rozpisu odpovědí."
-          : "Tentokrát to nevyšlo, ale detailní rozpis vám ukáže, kde máte největší prostor ke zlepšení."}
+        {passed ? t("summary.text.passed") : t("summary.text.failed")}
       </p>
+
       <button className="reset-btn" onClick={onReset}>
-        Spustit nový kvíz
+        {t("summary.reset")}
       </button>
     </div>
   );

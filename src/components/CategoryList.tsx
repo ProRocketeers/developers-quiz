@@ -3,6 +3,7 @@ import type { ChangeEvent } from "react";
 import { Form } from "react-bootstrap";
 import { groupCategories } from "../utils/categoryGroups";
 import "./CategoryList.css";
+import { useI18n } from "../i18n/I18nContext";
 
 type Category = {
   name: string;
@@ -26,15 +27,17 @@ function CategoryList({
   categoryQuestionCounts = {},
   onCountChange,
 }: CategoryListProps) {
+  const { t, lang } = useI18n();
+
   const selected = value ?? (multiSelect ? [] : "");
   const selectedList = Array.isArray(selected) ? selected : [];
+
   const groupedCategories = useMemo(
-    () => groupCategories(categories ?? []),
-    [categories],
+    () => groupCategories(lang, categories ?? []),
+    [lang, categories],
   );
-  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(
-    {},
-  );
+
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     if (!multiSelect || groupedCategories.length === 0) return;
@@ -44,13 +47,12 @@ function CategoryList({
       let hasChanges = false;
 
       groupedCategories.forEach((group, index) => {
-        if (nextState[group.id] != null) {
-          return;
-        }
+        if (nextState[group.id] != null) return;
 
         const shouldExpand =
           index === 0 ||
           group.categories.some((category) => selectedList.includes(category.name));
+
         nextState[group.id] = shouldExpand;
         hasChanges = true;
       });
@@ -67,11 +69,7 @@ function CategoryList({
     onSelectionChange?.(newSelected);
   };
 
-  const handleCountChange = (
-    categoryName: string,
-    val: string,
-    maxCount: number,
-  ) => {
+  const handleCountChange = (categoryName: string, val: string, maxCount: number) => {
     const parsed = Number(val);
     if (Number.isNaN(parsed)) return;
     const sanitized = Math.max(0, Math.min(parsed, maxCount));
@@ -84,16 +82,10 @@ function CategoryList({
   };
 
   const handleGroupToggle = (groupId: string) => {
-    setExpandedGroups((prev) => ({
-      ...prev,
-      [groupId]: !prev[groupId],
-    }));
+    setExpandedGroups((prev) => ({ ...prev, [groupId]: !prev[groupId] }));
   };
 
-  const handleGroupSelectionToggle = (
-    categoryNames: string[],
-    shouldSelect: boolean,
-  ) => {
+  const handleGroupSelectionToggle = (categoryNames: string[], shouldSelect: boolean) => {
     if (!multiSelect) return;
 
     const nextSelected = shouldSelect
@@ -106,7 +98,7 @@ function CategoryList({
   if (!multiSelect) {
     return (
       <Form.Select value={selected} onChange={handleSelectChange}>
-        <option value="">All categories</option>
+        <option value="">{t("categories.all")}</option>
         {categories?.map((category) => (
           <option key={category.name} value={category.name}>
             {category.name} ({category.count})
@@ -120,9 +112,7 @@ function CategoryList({
     <div className="category-list">
       {groupedCategories.map((group) => {
         const groupNames = group.categories.map((category) => category.name);
-        const selectedInGroup = groupNames.filter((name) =>
-          selectedList.includes(name),
-        ).length;
+        const selectedInGroup = groupNames.filter((name) => selectedList.includes(name)).length;
         const allInGroupSelected =
           groupNames.length > 0 && selectedInGroup === groupNames.length;
         const isExpanded = expandedGroups[group.id] ?? false;
@@ -137,9 +127,9 @@ function CategoryList({
                 aria-expanded={isExpanded}
               >
                 <span className="category-group-title-wrap">
-                  <span className="category-group-title">{group.label}</span>
+                  <span className="category-group-title">{t(group.labelKey)}</span>
                   <span className="category-group-description">
-                    {group.description}
+                    {t(group.descriptionKey)}
                   </span>
                 </span>
                 <span className="category-group-controls">
@@ -155,11 +145,11 @@ function CategoryList({
               <button
                 type="button"
                 className="category-group-select"
-                onClick={() =>
-                  handleGroupSelectionToggle(groupNames, !allInGroupSelected)
-                }
+                onClick={() => handleGroupSelectionToggle(groupNames, !allInGroupSelected)}
               >
-                {allInGroupSelected ? "Odebrat vše" : "Vybrat vše"}
+                {allInGroupSelected
+                  ? t("categories.group.removeAll")
+                  : t("categories.group.selectAll")}
               </button>
             </div>
 
@@ -182,11 +172,12 @@ function CategoryList({
                         />
                         <span className="category-name">{category.name}</span>
                         <span className="category-meta">
-                          {category.count} otázek
+                          {t("categories.questionsCount", { count: category.count })}
                         </span>
                       </label>
+
                       <div className="category-count">
-                        <span>Počet</span>
+                        <span>{t("categories.countLabel")}</span>
                         <input
                           type="number"
                           min={0}
@@ -194,11 +185,7 @@ function CategoryList({
                           value={countValue}
                           disabled={!isSelected}
                           onChange={(e) =>
-                            handleCountChange(
-                              category.name,
-                              e.target.value,
-                              category.count,
-                            )
+                            handleCountChange(category.name, e.target.value, category.count)
                           }
                         />
                       </div>
