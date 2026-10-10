@@ -3,7 +3,7 @@ import type { QuizHistoryEntry, QuizResults, QuizSettingsSnapshot } from "../typ
 const HISTORY_STORAGE_KEY = "quizResultsHistory";
 const LEGACY_STORAGE_KEY = "quizResults";
 
-const createId = () => {
+export const createId = () => {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
     return crypto.randomUUID();
   }

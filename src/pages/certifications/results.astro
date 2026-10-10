@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CertificationResultsView from "../../views/CertificationResultsView";
+---
+
+<BaseLayout title="Výsledky | Certifikace | Developers Quiz" currentPath="/certifications">
+  <CertificationResultsView client:only="react" />
+</BaseLayout>

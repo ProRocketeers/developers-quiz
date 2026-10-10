@@ -1,0 +1,2162 @@
+[
+  {
+    "topic": "intro-framework",
+    "question": "Co je ArchiMate?",
+    "options": [
+      "Otevřený, na dodavateli nezávislý modelovací jazyk The Open Group pro popis, analýzu a komunikaci podnikové architektury",
+      "Metoda pro postupný vývoj podnikové architektury v cyklu fází, která určuje kroky a výstupy práce architekta",
+      "Klasifikační schéma, které třídí architektonické artefakty do matice podle perspektiv a otázek co, jak, kde, kdo, kdy a proč",
+      "Notace pro detailní modelování procesů s branami, událostmi a toky zpráv, určená především pro automatizaci workflow"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ArchiMate je otevřený standard The Open Group – vizuální modelovací jazyk pro popis, analýzu a komunikaci podnikové architektury napříč doménami. Není to metoda: postup vývoje architektury (fáze, kroky, výstupy) poskytuje TOGAF ADM, klasifikační matici Zachman Framework a detailní procesní notaci BPMN."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Jaký je vztah mezi ArchiMate a TOGAF Standard?",
+    "options": [
+      "Doplňují se: TOGAF poskytuje metodu a rámec pro vývoj architektury, ArchiMate jazyk pro její modelování",
+      "ArchiMate nahrazuje TOGAF ADM, protože definuje vlastní fáze vývoje architektury včetně správy požadavků",
+      "ArchiMate lze používat jen spolu s TOGAF, protože jeho prvky jsou definovány podle jednotlivých fází ADM",
+      "TOGAF je modelovací notace a ArchiMate metoda, která určuje pořadí tvorby jednotlivých architektonických pohledů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ArchiMate je jazyk, nikoli metoda – nepředepisuje žádný postup. TOGAF (s metodou ADM) popisuje, jak architekturu vyvíjet, a ArchiMate poskytuje jazyk a viewpointy, jimiž lze výsledky modelovat a vizualizovat. Oba standardy spravuje The Open Group a vzájemně se doplňují; prvky ArchiMate definuje jeho vlastní metamodel, ne fáze ADM."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Proč ArchiMate záměrně neobsahuje například brány (gateways) pro detailní větvení procesů nebo atributy a operace tříd?",
+    "options": [
+      "Jazyk je navržen co nejmenší a pokrývá asi 80 % běžných potřeb; pro detaily jsou určeny např. BPMN či UML",
+      "Tyto detaily se v ArchiMate vyjadřují kombinací junction a specialization, takže samostatné konstrukce nejsou potřeba",
+      "ArchiMate je určen pro strategickou úroveň, a proto procesy ani data jednotlivých aplikací nemodeluje",
+      "Specifikace je ponechává na dodavatelích nástrojů, kteří je doplňují vlastními rozšířeními metamodelu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Návrhovým principem ArchiMate je, aby jazyk byl co nejmenší a přitom pokryl pověstných 80 % praktických situací modelování podnikové architektury. Pro detailní návrh (větvení procesů, třídy s atributy) jsou vhodnější specializované jazyky jako BPMN nebo UML. ArchiMate přitom procesy i data modeluje, jen na vyšší úrovni abstrakce."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "K čemu slouží Open Exchange Format definovaný pro ArchiMate?",
+    "options": [
+      "K výměně modelů a diagramů mezi nástroji různých dodavatelů ve standardizovaném formátu založeném na XML",
+      "K výměně modelů mezi ArchiMate, BPMN a UML, při níž se prvky automaticky převádějí do notace cílového jazyka",
+      "K výměně hotových pohledů ve formě obrázků (např. PNG či SVG) určených k publikaci na webu či intranetu",
+      "K výměně modelů mezi verzemi jazyka, při níž se koncepty z ArchiMate 2.x automaticky převedou na verzi 3.2"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Open Exchange Format je standardizovaný formát založený na XML pro přenos modelů a diagramů (pohledů) mezi nástroji různých dodavatelů – podporuje tak nezávislost na konkrétním nástroji. Samotný formát modely do jiných jazyků ani mezi verzemi ArchiMate nepřevádí a nejde ani o obrázkový formát pro publikaci."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Model v ArchiMate je kolekcí konceptů. Co může být podle struktury jazyka nejvyšší úrovně (top-level language structure) konceptem?",
+    "options": [
+      "Element, relationship nebo relationship connector (junction)",
+      "Element, view nebo viewpoint určený pro konkrétního stakeholdera",
+      "Layer, aspect nebo element zařazený do buňky Core Framework",
+      "Element, attribute nebo profile připojený k elementu či vztahu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Podle struktury jazyka je model kolekcí konceptů a koncept je element, relationship, nebo relationship connector (junction). Elementy se dále dělí na behavior, structure, motivation a composite elements. Views a viewpoints slouží k prezentaci modelu, vrstvy a aspekty ke klasifikaci a profily k přidání atributů – nejsou to koncepty modelu."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Jak je tvořen ArchiMate Core Framework?",
+    "options": [
+      "Vrstvami Business, Application a Technology a aspekty active structure, behavior a passive structure (9 buněk)",
+      "Vrstvami Business, Application a Technology a aspekty active structure, behavior, passive structure a motivation (12 buněk)",
+      "Vrstvami Strategy, Business, Application, Technology a Implementation and Migration a třemi aspekty (15 buněk)",
+      "Vrstvami Business, Application, Technology a Physical a aspekty active structure, behavior a passive structure (12 buněk)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Core Framework je matice 3 × 3: jádrové vrstvy Business, Application a Technology krát aspekty active structure, behavior a passive structure. Aspekt Motivation a vrstvy Strategy a Implementation and Migration přidává až Full Framework a fyzické prvky jsou ve verzi 3.2 součástí Technology Layer, nikoli samostatnou vrstvou."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Která dvě z následujících tvrzení o ArchiMate Full Framework (verze 3.2) jsou pravdivá?\n1. Strategy a Implementation and Migration jsou vrstvy přidané nad a pod jádrové vrstvy.\n2. Motivation je přidán jako samostatný aspekt (sloupec).\n3. Physical je samostatný aspekt (sloupec), podobně jako Motivation.\n4. Rámec předepisuje, že prvky ve view musí být rozmístěny po vrstvách shora dolů.",
+    "options": [
+      "1 a 2",
+      "2 a 3",
+      "1 a 3",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Full Framework rozšiřuje jádro o vrstvy Strategy (nahoře) a Implementation and Migration (dole) a o aspekt Motivation. Fyzické prvky (equipment, facility, distribution network, material) samostatný aspekt netvoří – ve verzi 3.2 patří do Technology Layer jako její aktivní a pasivní struktura. Rámec slouží jen ke klasifikaci konceptů a rozvržení diagramů nepředepisuje."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Které přiřazení vrstvy a jejího hlavního obsahu je správné?",
+    "options": [
+      "Technology Layer – služby zpracování, ukládání a komunikace a hardware a systémový software, který je realizuje",
+      "Application Layer – hardware, komunikační sítě a systémový software, na kterých jsou aplikace nasazeny a provozovány",
+      "Business Layer – aplikační služby, které podporují činnost organizace, a aplikace, které tyto služby realizují",
+      "Strategy Layer – projekty a programy, které realizují přechod z výchozí do cílové architektury organizace"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technology Layer popisuje technologické služby (zpracování, ukládání, komunikace) potřebné pro běh aplikací a hardware a systémový software, které je realizují. Aplikační služby a aplikace patří do Application Layer, infrastruktura nikoli. Projekty a programy modeluje vrstva Implementation and Migration (work package), ne Strategy."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Architekt chce odlišit logickou aplikační komponentu „Platební systém“ od konkrétního softwarového produktu, který ji implementuje. Jak to lze v ArchiMate vyjádřit?",
+    "options": [
+      "Fyzická komponenta realizuje logickou (realization), případně se použijí specializace logical/physical",
+      "Logická komponenta se modeluje v Business Layer a fyzická v Application Layer a propojí se vztahem serving",
+      "Logická komponenta se modeluje jako Data Object a fyzická jako Artifact, které propojuje vztah realization",
+      "Logická komponenta se modeluje jako Capability a fyzická jako Resource, který je k ní přiřazen (assignment)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Rozlišení logické a fyzické úrovně je jedním z abstrakčních mechanismů jazyka: konkrétnější (fyzická) komponenta může realizovat obecnější (logickou) komponentu, případně lze použít specializace typu logical a physical application component. Logická a fyzická úroveň neodpovídá rozdílu mezi business a aplikační vrstvou a nesouvisí s datovými ani strategickými prvky."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Kde se v ArchiMate modelují informace a data?",
+    "options": [
+      "Pasivní strukturou ve všech vrstvách (Business Object, Data Object, Artifact); informační vrstva neexistuje",
+      "V samostatné Information Layer, která leží mezi Business Layer a Application Layer a obsahuje datové entity",
+      "Pouze v Application Layer pomocí Data Object, protože Business Layer obsahuje jen procesy, role a aktéry",
+      "V aspektu Motivation pomocí prvku Meaning, který popisuje obsah a strukturu informací v organizaci"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ArchiMate nemá samostatnou informační vrstvu – informace se modelují prvky pasivní struktury v každé vrstvě: Business Object (konceptuálně), Data Object (logicky) a Artifact (fyzicky). Meaning vyjadřuje význam či interpretaci konceptu, ne strukturu dat."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Co v ArchiMate vyjadřuje rozlišení externího a interního pohledu (external vs. internal)?",
+    "options": [
+      "Externí pohled ukazuje, co prvek nabízí okolí (service, interface), interní pohled, jak je to uvnitř zajištěno",
+      "Externí pohled zahrnuje prvky partnerů mimo organizaci, interní pohled jen prvky vlastních oddělení a systémů",
+      "Externí pohled zobrazuje fyzickou realizaci (artifact, device), interní pohled logický návrh bez technologií",
+      "Externí pohled je určen pro zákazníky a management, interní pohled pro architekty a vývojáře řešení"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Rozlišení external/internal je jedním z abstrakčních mechanismů jazyka: externí (black-box) pohled zachycuje, co prvek poskytuje okolí – službu (external behavior) a rozhraní (external active structure) – bez ohledu na vnitřní uspořádání. Interní (white-box) pohled ukazuje, jak je to realizováno procesy, funkcemi a komponentami. Nejde o rozlišení vlastní organizace a partnerů ani druhů stakeholderů."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Lze každý prvek ArchiMate jednoznačně zařadit do právě jedné buňky rámce (vrstva × aspekt)?",
+    "options": [
+      "Ne, rámec je jen obecné vodítko; např. composite elements sdružují prvky více aspektů i vrstev",
+      "Ano, každý prvek patří právě do jedné buňky a vztahy mezi buňkami jsou dovoleny jen přes serving",
+      "Ano, s výjimkou motivation elements, které stojí zcela mimo rámec a nemají vlastní aspekt",
+      "Ne, buňku, do které prvek patří, určuje modelář barvou, kterou mu v diagramu přiřadí"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Rozdělení do vrstev a aspektů slouží jen jako obecné vodítko: některé prvky stojí na hranici aspektů a composite elements (např. product, plateau či grouping) mohou sdružovat prvky z více aspektů i vrstev. Motivation je v úplném rámci samostatným aspektem a barvy nemají v ArchiMate formální význam."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Business Process „Vyřízení reklamace“ je v modelu zakreslen jednou. Co tento prvek představuje?",
+    "options": [
+      "Typ procesu, tedy všechna jeho provedení, nikoli jedno konkrétní vyřízení reklamace",
+      "Jedno konkrétní provedení procesu, které proběhlo v určitém čase pro určitou reklamaci",
+      "Pouze aktuální verzi procesu; předchozí verze se modelují ve vrstvě Implementation and Migration",
+      "Instanci procesu, kterou lze opakovat jen tehdy, pokud ji spouští Business Event"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ArchiMate modeluje typy (exempláře), nikoli instance: proces „Vyřízení reklamace“ reprezentuje všechna jeho provedení, podobně jako business object představuje typ objektu (obdobně jako třída v UML). Výjimkou jsou jedinečné prvky (singletony), například jedna konkrétní databáze."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Který z následujících prvků je core element, tedy prvek struktury nebo chování v jádrové vrstvě?",
+    "options": [
+      "Data Object",
+      "Capability",
+      "Work Package",
+      "Requirement"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Core element je prvek aktivní či pasivní struktury nebo chování v jádrových vrstvách Business, Application a Technology – Data Object je pasivní struktura Application Layer. Capability patří do vrstvy Strategy, Work Package do Implementation and Migration a Requirement je motivation element."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Kterou část specifikace ArchiMate 3.2 smí nástroj (conforming implementation) podporovat pouze volitelně („may“)?",
+    "options": [
+      "Příklady viewpointů uvedené v informativní příloze specifikace",
+      "Viewpoint mechanismus, kterým si organizace definují vlastní viewpointy",
+      "Standardní notaci (iconography) všech prvků a vztahů jazyka",
+      "Povolené vztahy mezi prvky uvedené v normativní příloze B"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Conforming nástroj musí („shall“) podporovat mimo jiné strukturu jazyka, generický metamodel, vztahy včetně tabulek přílohy B, standardní notaci, přizpůsobení jazyka a viewpoint mechanismus. Konkrétní příklady viewpointů jsou informativní, a jejich podpora je proto volitelná („may“)."
+  },
+  {
+    "topic": "intro-framework",
+    "question": "Které tvrzení o certifikačním programu ArchiMate 3 je správné?",
+    "options": [
+      "Practitioner navíc ověřuje schopnost jazyk aplikovat a analyzovat a vyžaduje složení Part 1 i Part 2",
+      "Foundation ověřuje schopnost aplikovat jazyk ve scénářích, Practitioner jen znalost terminologie a notace",
+      "Practitioner lze získat i bez Part 1, pokud kandidát doloží alespoň dva roky praxe s modelováním",
+      "Part 2 je zkouška bez materiálů se 40 jednoduchými otázkami a hranicí úspěšnosti 60 %"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Program má dvě úrovně: Foundation (Part 1) ověřuje znalost a porozumění terminologii, struktuře a konceptům jazyka, Practitioner navíc schopnost jazyk aplikovat a analyzovat. Pro Practitioner je nutné složit Part 1 i Part 2 (lze i ve stejný den). Part 2 je open book s 8 scénářovými otázkami bodovanými 5/3/1/0; 40 otázek bez materiálů s hranicí 60 % má Part 1."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Ve větě „Úvěrový analytik posuzuje žádost o úvěr“ odpovídají jednotlivé části aspektům ArchiMate. Které přiřazení je správné?",
+    "options": [
+      "Analytik = active structure, posuzuje = behavior, žádost = passive structure",
+      "Analytik = behavior, posuzuje = active structure, žádost = passive structure",
+      "Analytik = active structure, posuzuje = passive structure, žádost = behavior",
+      "Analytik = passive structure, posuzuje = behavior, žádost = active structure"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Generický metamodel využívá analogii s větou: podmět odpovídá aktivní struktuře (kdo jedná – aktér, role, komponenta), sloveso chování (proces, funkce, služba) a předmět pasivní struktuře (objekt, se kterým se pracuje). Žádost o úvěr sama nic nevykonává, proto nemůže být aktivní strukturou."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Jak generický metamodel ArchiMate klasifikuje interface a service?",
+    "options": [
+      "Interface je external active structure element, service je external behavior element",
+      "Interface je external behavior element, service je internal behavior element",
+      "Interface je internal active structure element, service je external behavior element",
+      "Interface je passive structure element, service je external active structure element"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Interface je přístupový bod, přes který jsou služby zpřístupněny okolí – jde o externí aktivní strukturu, jež skrývá vnitřek poskytovatele (komponenty, role či uzlu). Service je explicitně definované chování nabízené okolí, tedy externí chování. Častou chybou je považovat rozhraní za chování nebo za interní aktivní strukturu."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Co podle generického metamodelu obecně vyjadřují motivation elements?",
+    "options": [
+      "Kontext či důvody, které stojí za architekturou – proč vzniká a proč se mění",
+      "Chování, které vykonávají prvky aktivní struktury – co se v organizaci dělá",
+      "Entity schopné vykonávat chování – kdo nebo co v organizaci jedná a odpovídá",
+      "Objekty, se kterými chování pracuje – informace, data a fyzické předměty"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Motivation elements vyjadřují kontext architektury a důvody, které za ní stojí (stakeholdeři, drivery, cíle, principy, požadavky…); v notaci mají zkosené rohy. Chování (co se dělá), aktivní struktura (kdo jedná) a pasivní struktura (s čím se pracuje) jsou ostatní kategorie prvků generického metamodelu."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Mezi kterými prvky generický metamodel přímo definuje dynamické vztahy triggering a flow?",
+    "options": [
+      "Mezi prvky chování – interním chováním, službami a událostmi",
+      "Pouze mezi procesy, protože jen procesy mají definované pořadí kroků",
+      "Mezi prvky pasivní struktury, které si předávají data a materiál",
+      "Pouze mezi událostmi a službami, nikoli mezi interním chováním"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Generický metamodel definuje triggering a flow mezi prvky chování – interním chováním (procesy, funkcemi, interakcemi), službami a událostmi; pro aktivní strukturu je lze pouze odvodit. Spouštět se a předávat si informace tedy mohou i funkce či služby, nejen procesy, kdežto pasivní struktura je jen předmětem přenosu."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Čím se liší process od function v ArchiMate?",
+    "options": [
+      "Process je posloupnost chování s konkrétním výsledkem; function seskupuje chování podle kritérií (zdroje, kompetence)",
+      "Function je posloupnost chování s konkrétním výsledkem; process seskupuje chování podle kritérií (zdroje, kompetence)",
+      "Process je interní chování prvku, kdežto function je externí chování, které je okolí nabízeno přes interface",
+      "Process smí vykonávat jen Business Actor nebo Business Role, function pouze Application Component nebo Node"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Process je posloupnost chování (s daným pořadím) vedoucí ke konkrétnímu výsledku, kdežto function seskupuje chování podle zvolených kritérií, typicky potřebných zdrojů, kompetencí nebo lokality, a pořadí nemá. Obojí je interní chování, které může realizovat službu; externím chováním je service. Procesy i funkce existují ve všech jádrových vrstvách."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Kterým prvkům může service podle generického metamodelu sloužit (serving)?",
+    "options": [
+      "Internímu chování i interní aktivní struktuře, např. procesu i roli",
+      "Internímu chování (procesům, funkcím); aktivní struktuře přímo sloužit nemůže",
+      "Prvkům z vyšší vrstvy; v rámci téže vrstvy se místo serving používá triggering",
+      "Pasivní struktuře, ke které služba zprostředkovává přístup (např. business objektu)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Podle generického metamodelu služba obsluhuje (serving) interní chování i prvky interní aktivní struktury – např. business service může sloužit procesu i roli „Klient“. Serving se používá i v rámci jedné vrstvy, nejen mezi vrstvami, a k pasivní struktuře vede od služby access, nikoli serving."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Jaký je rozdíl mezi collaboration a grouping?",
+    "options": [
+      "Collaboration je aktivní struktura, která vykonává společné chování; grouping jen seskupuje koncepty se společnou vlastností",
+      "Grouping je aktivní struktura, která vykonává společné chování; collaboration jen seskupuje koncepty se společnou vlastností",
+      "Collaboration je druh view, který ukazuje spolupracující týmy; grouping je viewpoint určený pro seskupení prvků",
+      "Jde o totožné koncepty – collaboration je pouze starší název pro grouping, který se používal v ArchiMate 2.x"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Collaboration je agregace dvou či více prvků interní aktivní struktury, které společně vykonávají chování (je přiřazena k interaction). Grouping je composite element, který seskupuje libovolné koncepty (prvky různých typů i vztahy) podle společné vlastnosti a slouží jen k seskupení. Žádný z nich není view ani viewpoint."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Která dvě z následujících tvrzení o generickém metamodelu jsou pravdivá?\n1. Interaction může vykonávat i jediný aktér, role či komponenta bez dalších spolupracujících prvků.\n2. Abstraktní prvky metamodelu (např. internal behavior element) se v modelech přímo nepoužívají.\n3. Location je prvek aktivní struktury, ke kterému se chování přiřazuje vztahem assignment.\n4. Prvek pasivní struktury nemůže sám vykonávat chování.",
+    "options": [
+      "2 a 4",
+      "1 a 4",
+      "2 a 3",
+      "1 a 3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Abstraktní třídy metamodelu (internal behavior element, active structure element apod.) se neinstanciují – v modelu se používají konkrétní prvky, např. Business Process. Pasivní struktura je objekt, se kterým chování pracuje, sama nic nevykonává. Interaction vyžaduje nejméně dva vykonavatele (přiřazené přímo, nebo sdružené v collaboration) a Location je composite element, který prvky agreguje."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Jak jsou v generickém metamodelu propojeny prvek interní aktivní struktury, jeho interface a service?",
+    "options": [
+      "Prvek interní aktivní struktury je složen (composition) z interface a interface je ke službě přiřazen (assignment)",
+      "Interface je složen (composition) z prvku interní aktivní struktury a službu realizuje (realization)",
+      "Prvek interní aktivní struktury je přiřazen (assignment) k interface a interface službu realizuje (realization)",
+      "Služba je složena (composition) z interface a interface je přiřazen (assignment) k prvku aktivní struktury"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Rozhraní je součástí prvku, který služby poskytuje: komponenta, role či uzel je z interface složen (composition). Interface je ke službě přiřazen (assignment) – služba je přes něj zpřístupněna okolí. Službu realizuje interní chování (process, function), nikoli interface."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Které tři vztahy smí podle generického metamodelu mít každý prvek s jiným prvkem téhož typu?",
+    "options": [
+      "Composition, aggregation a specialization",
+      "Assignment, realization a specialization",
+      "Composition, aggregation a access",
+      "Association, realization a influence"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Generický metamodel stanoví, že každý prvek může mít vztahy composition, aggregation a specialization s prvky stejného typu (např. role složená z dílčích rolí, specializace aktéra). Association je navíc dovolena mezi libovolnými dvěma prvky. Assignment či access naopak spojují prvky různých aspektů – aktivní strukturu s chováním, chování s pasivní strukturou."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Které prvky ArchiMate 3.2 patří mezi composite elements?",
+    "options": [
+      "Grouping, Location, Product a Plateau",
+      "Grouping, Location, Node a Capability",
+      "Product, Contract, Collaboration a Junction",
+      "Grouping, Collaboration, Value Stream a Plateau"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Composite elements se skládají z jiných konceptů, případně z více aspektů či vrstev: obecné Grouping a Location, v Business Layer Product a ve vrstvě Implementation and Migration Plateau. Node je technologická aktivní struktura, Capability a Value Stream strategické chování, Collaboration aktivní struktura a Junction relationship connector, nikoli element."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Které tvrzení o prvku Grouping platí?",
+    "options": [
+      "Může seskupovat prvky různých typů i vztahy a jeden koncept smí patřit do více skupin",
+      "Je to zvláštní druh view, který zobrazuje vybranou část modelu pro jednoho stakeholdera",
+      "Smí obsahovat pouze prvky stejného typu a stejné vrstvy; pro ostatní případy se používá Location",
+      "Je to aktivní struktura, která vykonává chování přiřazené všem prvkům, jež obsahuje"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Grouping agreguje nebo skládá koncepty (prvky i vztahy, stejného i různého typu), které k sobě patří podle společné vlastnosti; skupiny se mohou překrývat. Grouping není view, ale prvek modelu, a vztahy ke skupině se vykládají souhrnně pro její obsah. Location vyjadřuje místo, ne obecné seskupení."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Jak se v ArchiMate 3.2 správně vyjádří, že Business Actor „Pobočka Brno“ sídlí v Location „Brno“?",
+    "options": [
+      "Aggregation z Location „Brno“ na Business Actor „Pobočka Brno“",
+      "Assignment z Business Actor „Pobočka Brno“ na Location „Brno“",
+      "Aggregation z Business Actor „Pobočka Brno“ na Location „Brno“",
+      "Realization z Business Actor „Pobočka Brno“ na Location „Brno“"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Umístění se v ArchiMate 3.x modeluje vztahem aggregation od Location k prvku, který se v daném místě nachází nebo v něm probíhá (aktér, proces, zařízení…). Přiřazení lokality (assignment) pochází z ArchiMate 2.x a ve verzi 3.0 bylo nahrazeno agregací; vztahy od aktéra k lokalitě (assignment, aggregation, realization) dovoleny nejsou."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Lze v ArchiMate modelovat, že Business Process je složen (composition) z Business Function, případně naopak?",
+    "options": [
+      "Ano, procesy, funkce a interakce téže vrstvy se mohou navzájem skládat i agregovat",
+      "Ne, composition se používá mezi prvky stejného typu, proces se tedy skládá z dílčích procesů",
+      "Jen opačně – funkce může obsahovat procesy, proces se však z funkcí skládat nemůže",
+      "Ne, process a function se propojují vztahy triggering či flow, ne strukturními vztahy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V rámci jedné vrstvy mohou procesy, funkce a interakce obsahovat (composition) nebo agregovat (aggregation) jedna druhou – proces se tedy může skládat z funkcí a funkce z procesů. Obecné pravidlo, že composition je dovolena mezi prvky stejného typu, neznamená, že mezi různými typy dovolena není."
+  },
+  {
+    "topic": "generic-metamodel",
+    "question": "Který z následujících prvků NENÍ prvkem pasivní struktury?",
+    "options": [
+      "Facility",
+      "Material",
+      "Artifact",
+      "Contract"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Facility (budova, továrna, sklad, datové centrum) je fyzická aktivní struktura, která může např. hostit equipment. Material (fyzická hmota či energie), Artifact (soubor či jiný datový prvek technologické vrstvy) i Contract (specializace business objectu) jsou prvky pasivní struktury, se kterými chování pracuje."
+  },
+  {
+    "topic": "relationships",
+    "question": "Která skupina obsahuje POUZE structural relationships?",
+    "options": [
+      "Composition, aggregation, assignment a realization",
+      "Composition, aggregation, specialization a association",
+      "Assignment, realization, serving a access",
+      "Composition, aggregation, triggering a flow"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Structural relationships (composition, aggregation, assignment, realization) popisují statickou soudržnost prvků. Serving, access, influence a association jsou dependency relationships, triggering a flow dynamic relationships a specialization patří do kategorie ostatních vztahů (other)."
+  },
+  {
+    "topic": "relationships",
+    "question": "Které vztahy ArchiMate řadí do kategorie dependency relationships?",
+    "options": [
+      "Serving, access, influence a association",
+      "Serving, access, triggering a flow",
+      "Realization, serving, access a influence",
+      "Assignment, serving, flow a association"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dependency relationships popisují, jak prvky podporují nebo využívají jiné prvky: serving, access, influence a association. Triggering a flow jsou dynamické vztahy (časové závislosti a přenosy) a realization i assignment patří mezi strukturní vztahy."
+  },
+  {
+    "topic": "relationships",
+    "question": "Která dvě z následujících tvrzení o composition a aggregation jsou pravdivá?\n1. U composition části existenčně závisejí na celku.\n2. Aggregation vyjadřuje, že celek nemůže existovat bez svých částí.\n3. Jeden prvek může být současně agregován více celky.\n4. Composition i aggregation se smí použít pouze mezi prvky téhož typu.",
+    "options": [
+      "1 a 3",
+      "2 a 3",
+      "1 a 4",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Obojí je vztah celek–část. Composition navíc vyjadřuje existenční závislost části na celku (části zanikají s celkem), aggregation ji nevyjadřuje a část může patřit do více agregací. Oba vztahy se používají i mezi různými typy prvků, např. komponenta je složena z rozhraní nebo grouping agreguje libovolné koncepty."
+  },
+  {
+    "topic": "relationships",
+    "question": "Projektový tým (Business Collaboration) sdružuje role z několika oddělení. Role existují i po rozpuštění týmu a některé jsou současně členy jiných týmů. Který vztah od týmu k rolím je nejvhodnější?",
+    "options": [
+      "Aggregation",
+      "Composition",
+      "Realization",
+      "Specialization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business Collaboration agreguje (aggregation) role či aktéry, kteří spolupracují. Role existují i bez týmu a mohou patřit do více týmů, takže nejde o existenční závislost a composition by byla chybná. Specialization je možná jen mezi prvky stejného typu a realization nevyjadřuje vztah celek–část."
+  },
+  {
+    "topic": "relationships",
+    "question": "Jak se graficky znázorňuje aggregation?",
+    "options": [
+      "Plnou čarou s prázdným kosočtvercem u celku",
+      "Plnou čarou s vyplněným kosočtvercem u celku",
+      "Plnou čarou s prázdným kosočtvercem u části",
+      "Tečkovanou čarou s prázdným trojúhelníkem u celku"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Aggregation se kreslí plnou čarou s prázdným (nevyplněným) kosočtvercem na straně celku, tedy agregujícího prvku; composition má kosočtverec vyplněný. Tečkovaná čára s prázdným trojúhelníkem označuje realization."
+  },
+  {
+    "topic": "relationships",
+    "question": "Co vyjadřuje vztah assignment a jak se kreslí?",
+    "options": [
+      "Přidělení odpovědnosti, vykonávání chování, uložení či spuštění; plná čára s tečkou u zdroje a šipkou u cíle",
+      "Přidělení odpovědnosti, vykonávání chování, uložení či spuštění; čárkovaná čára s plnou šipkou směřující k cíli",
+      "Převod abstraktního prvku na konkrétnější; tečkovaná čára s prázdným trojúhelníkem u konkrétního prvku",
+      "Poskytnutí funkcionality jinému prvku; plná čára s otevřenou šipkou u prvku, který funkcionalitu využívá"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Assignment vyjadřuje přidělení odpovědnosti, vykonávání chování, uložení či spuštění (např. role → process, node → artifact). Kreslí se plnou čarou s tečkou u zdroje a šipkou u cíle. Čárkovaná čára s plnou šipkou je flow a plná čára s otevřenou šipkou serving."
+  },
+  {
+    "topic": "relationships",
+    "question": "Role „Pojistný poradce“ vykonává Business Process „Sjednání pojistky“, který poskytuje Business Service „Uzavření pojištění“; tuto službu využívá role „Klient“. Které vztahy to v uvedeném pořadí vyjadřují?",
+    "options": [
+      "assignment (poradce → proces), realization (proces → služba), serving (služba → Klient)",
+      "assignment (poradce → proces), serving (proces → služba), realization (služba → Klient)",
+      "realization (poradce → proces), assignment (proces → služba), serving (Klient → služba)",
+      "assignment (proces → poradce), realization (služba → proces), serving (služba → Klient)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Role proces vykonává (assignment role → proces), proces službu poskytuje tím, že ji realizuje (realization proces → služba), a služba obsluhuje svého uživatele (serving služba → role „Klient“). Assignment vede od aktivní struktury k chování, realization od konkrétnějšího k abstraktnějšímu a serving od poskytovatele k uživateli."
+  },
+  {
+    "topic": "relationships",
+    "question": "Co vyjadřuje vztah realization?",
+    "options": [
+      "Konkrétnější prvek hraje zásadní roli při vytvoření, dosažení, udržení či provozu abstraktnějšího prvku",
+      "Abstraktnější prvek určuje, jak má být konkrétnější prvek vytvořen, a proto šipka míří ke konkrétnímu",
+      "Prvek aktivní struktury vykonává chování nebo je zodpovědný za jeho provedení v daném kontextu",
+      "Prvek částečně a případně i negativně ovlivňuje dosažení motivačního prvku, např. cíle či požadavku"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Realization vyjadřuje, že konkrétnější prvek hraje zásadní roli při vytvoření, dosažení, udržení či provozu abstraktnějšího prvku (proces → služba, data object → business object, komponenta → requirement). Kreslí se tečkovanou čarou s prázdným trojúhelníkem u abstraktnějšího prvku. Vykonávání chování je assignment, částečný a případně negativní vliv influence."
+  },
+  {
+    "topic": "relationships",
+    "question": "Které tvrzení o serving relationship platí?",
+    "options": [
+      "Vede od poskytovatele k uživateli funkcionality; dříve se nazýval „used by“ a jeho směr se nezměnil",
+      "Vede od uživatele k poskytovateli funkcionality, stejně jako závislost v UML, a nahradil vztah „used by“",
+      "Vede od poskytovatele k uživateli, ale starší vztah „used by“ měl opačný směr a modely je nutné otočit",
+      "Vyjadřuje i to, kdo interakci iniciuje, proto se šipka kreslí od iniciátora k obsluhovanému prvku"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Serving vede od prvku, který funkcionalitu poskytuje, k prvku, který ji využívá; šipka míří k uživateli (tedy „nahoru“, opačně než závislost v UML). Dřívější název „used by“ měl stejný význam i směr. Serving abstrahuje od toho, kdo interakci iniciuje – iniciativu lze vyjádřit vztahem triggering."
+  },
+  {
+    "topic": "relationships",
+    "question": "Business Process „Vyřízení objednávky“ pouze čte Business Object „Objednávka“. Jak se tento vztah v ArchiMate správně modeluje?",
+    "options": [
+      "Access z procesu na objekt se šipkou na straně procesu",
+      "Access z procesu na objekt se šipkou na straně objektu",
+      "Access z objektu na proces, protože data tečou k procesu",
+      "Flow z objektu na proces s plnou šipkou na straně procesu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Access se v modelu vede vždy od chování (nebo aktivní struktury) k pasivnímu objektu; čtení či zápis vyjadřuje jen umístění šipky: šipka u chování znamená čtení, šipka u objektu zápis. Pasivní objekt nemůže být zdrojem access ani flow, protože sám nic nevykonává; flow navíc vyjadřuje přenos mezi prvky chování."
+  },
+  {
+    "topic": "relationships",
+    "question": "Application Function „Výpočet pojistného“ čte i zapisuje Data Object „Smlouva“. Jak se to vyjádří?",
+    "options": [
+      "Jedním vztahem access se šipkami na obou koncích",
+      "Jedním vztahem access bez šipek, který znamená čtení i zápis",
+      "Dvěma vztahy flow – jedním k objektu a druhým zpět k funkci",
+      "Vztahem assignment od funkce k objektu, který značí vlastnictví dat"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Access se šipkami na obou koncích znamená čtení i zápis. Šipka jen u chování značí čtení, jen u objektu zápis a access bez šipek ponechává způsob přístupu nespecifikovaný. Flow vyjadřuje přenos mezi prvky chování a assignment se mezi funkcí a datovým objektem nepoužívá."
+  },
+  {
+    "topic": "relationships",
+    "question": "Application Component „Chatbot“ přispívá ke splnění Requirement „Odpověď klientovi do 1 hodiny“ jen částečně – sám jeho splnění nezajistí. Který vztah od komponenty k požadavku je nejvhodnější?",
+    "options": [
+      "Influence",
+      "Realization",
+      "Serving",
+      "Assignment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Influence vyjadřuje, že prvek ovlivňuje dosažení či implementaci motivačního prvku, aniž by ho sám plně zajistil; vliv může být pozitivní i negativní. Realization by znamenala, že komponenta hraje při naplnění požadavku zásadní roli. Serving ani assignment od komponenty k požadavku vést nelze."
+  },
+  {
+    "topic": "relationships",
+    "question": "Jak lze u influence relationship vyjádřit, zda je vliv pozitivní či negativní a jak je silný?",
+    "options": [
+      "Volitelným popiskem vztahu, např. +, ++, − a −− nebo hodnotou na stupnici 0 až 10",
+      "Barvou čáry – zelená značí pozitivní vliv a červená negativní, jak to předepisuje standard",
+      "Typem šipky – plná šipka značí pozitivní vliv a otevřená šipka negativní vliv",
+      "Nelze; influence je vždy pozitivní a negativní vliv se modeluje vztahem association"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Influence se kreslí čárkovanou čarou s otevřenou šipkou. Znaménko a sílu vlivu lze vyjádřit volitelným atributem, který se zobrazuje jako popisek vztahu, např. +, ++, −, −− nebo 0–10; bez něj jsou znaménko i síla nespecifikované. Barvy nemají ve standardu formální význam a typ šipky se u influence nemění."
+  },
+  {
+    "topic": "relationships",
+    "question": "Které tvrzení o association relationship v ArchiMate 3.2 platí?",
+    "options": [
+      "Je dovolena mezi libovolnými dvěma prvky; běžně je neorientovaná, existuje však i orientovaná varianta",
+      "Je dovolena jen mezi prvky téže vrstvy; mezi vrstvami se místo ní musí použít serving nebo realization",
+      "Je vždy orientovaná od zdroje k cíli a v odvozování vztahů má stejnou sílu jako composition",
+      "Lze ji použít jen mezi prvky motivace, například mezi stakeholderem, driverem a assessmentem"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Association vyjadřuje nespecifikovaný vztah nebo vztah, který jiný typ nepokrývá, a je dovolena mezi libovolnými dvěma prvky (i mezi prvkem a vztahem). Standardně je neorientovaná; od verze 3.1 existuje i orientovaná varianta, kreslená s polovinou šipky. Jde o nejslabší vztah jazyka."
+  },
+  {
+    "topic": "relationships",
+    "question": "Čím se liší triggering od flow?",
+    "options": [
+      "Triggering vyjadřuje časovou či příčinnou návaznost, flow přenos (např. informací či peněz) bez příčinnosti",
+      "Flow vyjadřuje časovou či příčinnou návaznost, triggering přenos (např. informací či peněz) bez příčinnosti",
+      "Triggering se smí použít jen mezi procesy v rámci jedné vrstvy, flow pouze mezi prvky z různých vrstev",
+      "Jde o synonyma – flow je jen novější název pro triggering, který byl do jazyka zaveden ve verzi 3.1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Triggering znamená, že (část) zdrojového chování musí skončit, než může cílové začít – jde o časovou či příčinnou návaznost. Flow vyjadřuje přenos něčeho (informací, zboží, peněz) od jednoho prvku k druhému a příčinnost nepředpokládá. Oba jsou dynamické vztahy mezi prvky chování (odvozeně i mezi aktivní strukturou)."
+  },
+  {
+    "topic": "relationships",
+    "question": "Proces „Podpis smlouvy“ smí začít až po dokončení procesu „Schválení úvěru“. Jaký vztah mezi nimi použít?",
+    "options": [
+      "Triggering z procesu „Schválení úvěru“ na „Podpis smlouvy“",
+      "Triggering z procesu „Podpis smlouvy“ na „Schválení úvěru“",
+      "Flow z procesu „Schválení úvěru“ na „Podpis smlouvy“",
+      "Serving z procesu „Schválení úvěru“ na „Podpis smlouvy“"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Časovou či příčinnou návaznost („B smí začít až po skončení A“) vyjadřuje triggering, který vede od předcházejícího chování k následujícímu. Flow by popisoval jen přenos (např. dat) mezi procesy bez nároku na pořadí a serving poskytování funkcionality bez ohledu na čas."
+  },
+  {
+    "topic": "relationships",
+    "question": "Která dvě z následujících tvrzení o notaci vztahů jsou pravdivá?\n1. Flow se kreslí čárkovanou čarou s plnou šipkou.\n2. Influence se kreslí čárkovanou čarou s otevřenou šipkou.\n3. Triggering se kreslí tečkovanou čarou s prázdným trojúhelníkem.\n4. Serving se kreslí čárkovanou čarou s plnou šipkou.",
+    "options": [
+      "1 a 2",
+      "2 a 3",
+      "1 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Flow se kreslí čárkovanou čarou s plnou šipkou a influence čárkovanou čarou s otevřenou šipkou. Triggering má plnou čáru s plnou šipkou a serving plnou čáru s otevřenou šipkou; tečkovaná čára s prázdným trojúhelníkem označuje realization."
+  },
+  {
+    "topic": "relationships",
+    "question": "Mezi kterými prvky lze použít specialization relationship?",
+    "options": [
+      "Jen mezi prvky stejného typu, např. Business Actor „Firemní klient“ → „Klient“",
+      "Mezi prvky stejného aspektu, např. Business Actor „Klient“ → Business Role „Zákazník“",
+      "Mezi libovolnými prvky téže vrstvy, např. Business Process → Business Function",
+      "Mezi prvky různých vrstev, které popisují totéž, např. Data Object → Business Object"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Specialization vyjadřuje, že prvek je zvláštním druhem jiného prvku, a je dovolena jen mezi prvky stejného typu; kreslí se plnou čarou s prázdným trojúhelníkem u obecnějšího prvku. Aktér tedy nemůže specializovat roli a proces funkci. Mezi data objectem a business objectem se používá realization (od data objectu k business objectu), nikoli specialization."
+  },
+  {
+    "topic": "relationships",
+    "question": "Co znamená plný (vyplněný) a prázdný kroužek junction v diagramu ArchiMate?",
+    "options": [
+      "Plný kroužek je AND junction, prázdný kroužek je OR junction",
+      "Plný kroužek je OR junction, prázdný kroužek je AND junction",
+      "Plný kroužek označuje začátek procesu, prázdný jeho konec",
+      "Plný kroužek je triggering junction, prázdný kroužek flow junction"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Junction je relationship connector: plný kroužek označuje AND (platí všechny větve), prázdný OR (výběr; zda inkluzivní, či exkluzivní, je vhodné upřesnit popiskem). Typ junction neurčuje druh vztahu – junction vždy spojuje vztahy jednoho typu – a neoznačuje ani začátek či konec procesu."
+  },
+  {
+    "topic": "relationships",
+    "question": "Které pravidlo pro použití junction platí?",
+    "options": [
+      "Spojené vztahy musí být stejného typu a vztah vedený přes junction musí být dovolen i přímo",
+      "Junction smí spojit vztahy různých typů, pokud vedou mezi prvky stejné vrstvy a mají shodný směr",
+      "Junction umožňuje propojit i dvojici prvků, mezi nimiž by přímý vztah daného typu jinak nebyl dovolen",
+      "Junction se smí používat pouze se vztahem triggering, protože přesně odpovídá bráně (gateway) v BPMN"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Junction spojuje pouze vztahy jednoho typu a vztah vedený přes junction je dovolen jen tehdy, pokud by byl dovolen i přímo mezi koncovými prvky – junction tedy nemůže obejít pravidla metamodelu. Nepoužívá se jen s triggering (např. i s flow) a branám BPMN se podobá jen vzdáleně, protože nemá prováděcí sémantiku."
+  },
+  {
+    "topic": "relationships",
+    "question": "Z procesu „Přijetí objednávky“ vedou dva samostatné triggering vztahy (bez junction), k procesům „Expedice“ a „Fakturace“. Co to znamená?",
+    "options": [
+      "Po dokončení přijetí objednávky jsou spuštěny oba následující procesy",
+      "Spustí se právě jeden z procesů podle podmínky, kterou určí modelář",
+      "Procesy „Expedice“ a „Fakturace“ musí proběhnout v uvedeném pořadí",
+      "Zápis je neplatný, dva triggering vztahy musí vždy spojit OR junction"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dva samostatné triggering vztahy ze stejného prvku znamenají, že jsou spuštěny oba cílové procesy. Výběr jedné z větví se modeluje pomocí OR junction, případně s popisky podmínek. O vzájemném pořadí obou následných procesů takový zápis nic neříká."
+  },
+  {
+    "topic": "relationships",
+    "question": "K Business Process „Schválení výjimky“ jsou dvěma samostatnými assignment vztahy přiřazeny role „Vedoucí pobočky“ a „Risk manažer“. Jak se to podle specifikace vykládá?",
+    "options": [
+      "Může jej vykonat kterákoli z obou rolí; nutnou účast obou vyjádří AND junction či collaboration",
+      "Proces vykonávají obě role společně, protože každé přiřazení vyjadřuje povinnou účast na jeho provedení",
+      "Proces vykonává role zakreslená v diagramu jako první, druhá role ji při nepřítomnosti pouze zastupuje",
+      "Zápis je neplatný, protože k jednomu procesu smí být přiřazen nejvýše jeden prvek aktivní struktury"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Je-li k jednomu chování přiřazeno více prvků aktivní struktury samostatnými assignment vztahy, znamená to, že chování může vykonat kterýkoli z nich. Má-li je vykonat více prvků společně, použije se AND junction, grouping nebo collaboration (případně s interaction)."
+  },
+  {
+    "topic": "relationships",
+    "question": "Mezi procesy „Fakturace“ a „Účetnictví“ vede flow relationship. Jak vyjádřit, že předmětem toku je Business Object „Faktura“?",
+    "options": [
+      "Business Object „Faktura“ propojit vztahem association přímo s daným flow",
+      "Business Object „Faktura“ propojit vztahem access přímo s daným flow",
+      "Business Object „Faktura“ vložit jako zdroj flow místo procesu „Fakturace“",
+      "Mezi flow a dalším vztahem access vést triggering, který obsah toku označí"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vztah z prvku na jiný vztah smí být jen association (z composite elementu, např. grouping či plateau, také aggregation či composition); takto lze k flow připojit objekt, který „teče“. Access na vztah ani vztah mezi dvěma vztahy dovoleny nejsou a pasivní objekt nemůže být zdrojem flow, protože flow spojuje prvky chování."
+  },
+  {
+    "topic": "relationships",
+    "question": "Která dvě z následujících tvrzení o vztazích v ArchiMate jsou pravdivá?\n1. Serving lze použít jen mezi prvky různých vrstev.\n2. Vztahy mezi prvky různých vrstev mohou být jen association.\n3. Každý vztah má právě jeden zdroj a právě jeden cíl.\n4. Vztah mezi dvěma vztahy není dovolen.",
+    "options": [
+      "3 a 4",
+      "1 a 4",
+      "2 a 3",
+      "1 a 2"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Každý vztah spojuje právě jeden zdroj s právě jedním cílem a vztah mezi dvěma vztahy dovolen není. Serving se používá i v rámci jedné vrstvy (např. služba obsluhuje proces téže vrstvy) a mezi vrstvami se běžně používají serving a realization, nejen association."
+  },
+  {
+    "topic": "derivation",
+    "question": "K čemu slouží odvozování vztahů (derivation) v ArchiMate?",
+    "options": [
+      "Ke shrnutí podrobného modelu vynecháním mezilehlých prvků, např. pro přehledové pohledy či analýzu dopadů",
+      "K automatickému doplnění chybějících podrobností do obecného modelu, např. konkrétních funkcí a procesů",
+      "K převodu vztahů na jiné typy tak, aby každý diagram obsahoval pouze vztahy jedné kategorie (např. dynamické)",
+      "Ke kontrole dodržení notace, např. barev vrstev a umístění ikon v pravém horním rohu prvků"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Odvozování umožňuje z řetězce vztahů získat přímý vztah mezi vzdálenějšími prvky, a tím abstrahovat od mezilehlých prvků – hodí se pro přehledové pohledy a analýzu dopadů. Postupuje vždy od detailu k abstrakci, chybějící podrobnosti doplnit neumí."
+  },
+  {
+    "topic": "derivation",
+    "question": "Jaký je rozdíl mezi platným (valid) a potenciálním (potential) odvozením vztahu?",
+    "options": [
+      "Platné odvození platí vždy, když platí výchozí vztahy; potenciální platit může a rozhodne o něm modelář",
+      "Platné odvození se týká jen jádrových vrstev, potenciální odvození vztahů k prvkům Motivation a Strategy",
+      "Potenciální odvození popisuje vztahy cílové architektury, které budou platit po dokončení projektů",
+      "Platné odvození využívá pouze strukturní vztahy, potenciální pouze vztahy kategorie dependency a dynamic"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Od verze 3.1 specifikace rozlišuje platná odvození, která jsou pravdivá vždy, když platí výchozí vztahy, a potenciální odvození, která pravdivá být mohou, ale nemusí – o jejich platnosti rozhoduje modelář podle skutečné situace. Rozdíl nesouvisí s vrstvami ani s plánovanou budoucí architekturou a platná odvození existují i pro závislostní a dynamické vztahy."
+  },
+  {
+    "topic": "derivation",
+    "question": "Jak jsou podle pravidel odvozování seřazeny strukturní vztahy od nejslabšího po nejsilnější?",
+    "options": [
+      "Realization – assignment – aggregation – composition",
+      "Composition – aggregation – assignment – realization",
+      "Assignment – realization – composition – aggregation",
+      "Aggregation – realization – assignment – composition"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Pro odvozování platí pořadí síly realization < assignment < aggregation < composition. Při řetězení strukturních vztahů je výsledkem vždy nejslabší vztah v řetězci, takže např. composition následovaná realization dává realization."
+  },
+  {
+    "topic": "derivation",
+    "question": "Business Process „Vyřízení reklamace“ je složen (composition) z podprocesu „Posouzení nároku“, který realizuje (realization) Business Service „Posouzení reklamace“. Jaký vztah lze platně odvodit mezi procesem „Vyřízení reklamace“ a touto službou?",
+    "options": [
+      "Realization",
+      "Composition",
+      "Aggregation",
+      "Assignment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Řetězec dvou strukturních vztahů dává vztah, který je slabší z obou – realization je slabší než composition. Proces „Vyřízení reklamace“ tedy službu realizuje. Composition, aggregation ani assignment mezi procesem a službou ani nejsou dovoleny."
+  },
+  {
+    "topic": "derivation",
+    "question": "Business Role „Likvidátor“ je přiřazena (assignment) k Business Process „Likvidace škody“, který čte (access) Business Object „Pojistná smlouva“. Jaký vztah mezi rolí a objektem lze platně odvodit?",
+    "options": [
+      "Likvidátor –access→ Pojistná smlouva",
+      "Likvidátor –assignment→ Pojistná smlouva",
+      "Pojistná smlouva –access→ Likvidátor",
+      "Likvidátor –realization→ Pojistná smlouva"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Strukturní vztah následovaný závislostním dává podle pravidel odvozování týž závislostní vztah: role vykonává proces, který objekt čte, takže role k objektu přistupuje (access). Access vede vždy od aktivní struktury či chování k pasivnímu objektu, nikdy opačně; assignment ani realization mezi rolí a business objektem dovoleny nejsou."
+  },
+  {
+    "topic": "derivation",
+    "question": "Vztah serving vede od Application Service „Ověření platby“ k podprocesu „Kontrola platby“, který je součástí (composition) procesu „Vyřízení objednávky“. Ten zahrnuje i podproces „Expedice“. Které tvrzení platí?",
+    "options": [
+      "Platně lze odvodit, že služba obsluhuje „Vyřízení objednávky“; obsluhu „Expedice“ platně odvodit nelze",
+      "Platně lze odvodit, že služba obsluhuje „Vyřízení objednávky“ i podproces „Expedice“, který je jeho součástí",
+      "Nelze odvodit nic, protože serving a composition patří do různých kategorií vztahů",
+      "Platně lze odvodit pouze to, že „Vyřízení objednávky“ realizuje službu „Ověření platby“"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Závislost (serving) směřující do části se platně přenáší na celek: služba obsluhující podproces obsluhuje i celý proces. Opačně to neplatí – obsluha jiné části celku z toho plyne nanejvýš jako potenciální odvození, o kterém musí rozhodnout modelář. Proces navíc službu „Ověření platby“ nerealizuje, jen ji využívá."
+  },
+  {
+    "topic": "derivation",
+    "question": "Které z následujících odvození mezi procesy A, B a C je platné (valid), nikoli jen potenciální?",
+    "options": [
+      "A –triggering→ B a B –triggering→ C ⇒ A –triggering→ C",
+      "A –serving→ B a B –serving→ C ⇒ A –serving→ C",
+      "A –flow→ B a B –flow→ C ⇒ A –flow→ C (přímý tok z A do C)",
+      "A –serving→ C ⇒ A –serving→ libovolný podproces procesu C"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Triggering je tranzitivní – jde o platné odvození. Řetězení dvou serving vztahů, tranzitivita flow i přenos závislosti z celku na jeho části jsou jen potenciální odvození: platit mohou, ale nemusí, a modelář je musí posoudit."
+  },
+  {
+    "topic": "derivation",
+    "question": "Která dvě z následujících tvrzení o odvozených vztazích jsou pravdivá?\n1. Odvozený vztah je platný vztah ArchiMate a lze jej v pohledu zakreslit přímo.\n2. Z odvozeného vztahu „komponenta realizuje službu“ lze zpětně určit, která funkce službu realizuje.\n3. Odvozování vždy postupuje od podrobnějšího modelu k méně podrobnému.\n4. Potenciální odvození je pravdivé vždy, když platí výchozí vztahy.",
+    "options": [
+      "1 a 3",
+      "1 a 2",
+      "2 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Odvozené vztahy jsou plnohodnotné vztahy, které lze kreslit přímo (mezilehlé prvky se pak předpokládají). Odvozování vede vždy od detailu k abstrakci a detail zpětně doplnit neumí – ze vztahu komponenta → služba nelze zjistit konkrétní funkci. Potenciální odvození pravdivé být nemusí, rozhoduje o něm modelář."
+  },
+  {
+    "topic": "motivation",
+    "question": "Jak ArchiMate definuje Stakeholder?",
+    "options": [
+      "Jako roli jednotlivce, týmu či organizace (nebo jejich třídy), která má zájem na účincích architektury",
+      "Jako konkrétní osobu nebo oddělení, které vykonává business procesy a je k nim přiřazeno (assignment)",
+      "Jako vnější či vnitřní podmínku, která organizaci motivuje ke stanovení cílů a k provedení změn",
+      "Jako pracovníka, který schvaluje architektonické výstupy a odpovídá za řízení architektonického projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stakeholder je motivation element: role jednotlivce, týmu nebo organizace (či jejich třídy), která má zájem na účincích architektury – např. CEO, zákazníci či regulátor. Konkrétní osoba nebo oddělení vykonávající chování je Business Actor; vnější či vnitřní podmínka motivující ke změně je Driver."
+  },
+  {
+    "topic": "motivation",
+    "question": "Jak propojit Business Actor „Finanční ředitel“ se Stakeholder „CFO“, kterého tento aktér v architektuře představuje?",
+    "options": [
+      "Business Actor –assignment→ Stakeholder",
+      "Stakeholder –assignment→ Business Actor",
+      "Business Actor –specialization→ Stakeholder",
+      "Stakeholder –realization→ Business Actor"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stakeholder je motivation element (role se zájmem na architektuře), nikoli aktér. Business Actor, Business Role či Business Collaboration lze ke stakeholderovi přiřadit vztahem assignment ve směru od aktéra ke stakeholderovi; opačným směrem je dovolena jen association. Specialization mezi různými typy prvků dovolena není."
+  },
+  {
+    "topic": "motivation",
+    "question": "Co v ArchiMate představuje Driver a co vyjadřuje jeho asociace se stakeholderem?",
+    "options": [
+      "Vnější či vnitřní podmínku, která motivuje ke změně; asociace se stakeholderem vyjadřuje jeho concern",
+      "Výsledek analýzy stavu organizace (např. SWOT); asociace se stakeholderem určuje vlastníka této analýzy",
+      "Vysokoúrovňový záměr či požadovaný stav; asociace se stakeholderem určuje, kdo za cíl odpovídá",
+      "Konkrétní měřitelný výsledek; asociace se stakeholderem určuje, kdo výsledek převezme a schválí"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Driver je vnější či vnitřní podmínka, která organizaci motivuje ke stanovení cílů a ke změně (např. legislativa, ziskovost, spokojenost zákazníků). Driver asociovaný se stakeholderem představuje jeho concern (zájem); vnější drivery stakeholdera mít nemusí. Výsledek analýzy je Assessment, záměr Goal a konkrétní výsledek Outcome."
+  },
+  {
+    "topic": "motivation",
+    "question": "Banka sleduje oblast „Spokojenost klientů“. Průzkum ukázal, že spokojenost s mobilní aplikací klesla o 15 %. Jak tyto skutečnosti nejlépe modelovat?",
+    "options": [
+      "„Spokojenost klientů“ jako Driver a zjištěný pokles jako Assessment asociovaný s tímto driverem",
+      "„Spokojenost klientů“ jako Goal a zjištěný pokles jako Outcome, který tento cíl realizuje",
+      "„Spokojenost klientů“ jako Stakeholder a zjištěný pokles jako Driver asociovaný se stakeholderem",
+      "„Spokojenost klientů“ jako Driver a zjištěný pokles jako Constraint, který omezuje realizaci cílů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Driver je oblast či podmínka, která organizaci motivuje (zde spokojenost klientů); Assessment je výsledek analýzy stavu vzhledem k driveru, typicky ve formě SWOT (zde slabina – pokles o 15 %), a s driverem se propojuje vztahem association. Zjištěný pokles cíl nenaplňuje, takže ho jako outcome realizovat nemůže, a constraint je omezení řešení, ne výsledek analýzy."
+  },
+  {
+    "topic": "motivation",
+    "question": "Strategie pojišťovny obsahuje formulace „Zvýšit loajalitu klientů“ a „Míra odchodu klientů snížena na 5 % do konce roku 2027“. Jak je nejlépe modelovat?",
+    "options": [
+      "První jako Goal, druhou jako Outcome; Outcome –realization→ Goal",
+      "První jako Outcome, druhou jako Goal; Goal –realization→ Outcome",
+      "Obě jako Outcome, přičemž první realizuje (realization) druhou",
+      "První jako Driver, druhou jako Requirement; Requirement –realization→ Driver"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Goal vyjadřuje kvalitativní záměr či směr („zvýšit“, „zlepšit“), outcome konkrétní, měřitelný a časově určený výsledek. Realization vede od outcome ke goal, nikoli naopak – v motivační části směřuje realizace vždy k abstraktnějšímu záměru. Realization mezi dvěma outcomes dovolena není a driver se s ostatními prvky propojuje jen vztahy association či influence."
+  },
+  {
+    "topic": "motivation",
+    "question": "Které tvrzení o prvku Outcome v ArchiMate 3.2 platí?",
+    "options": [
+      "Je to koncový výsledek, efekt či důsledek určitého stavu; může být i nežádoucí, na rozdíl od cíle",
+      "Je to obecný záměr či požadovaný stav, který se formuluje kvalitativně, např. „zlepšit služby“",
+      "Je to vlastnost, kterou musí mít konkrétní systém popsaný architekturou, např. dostupnost 99,9 %",
+      "Je to výstup projektu (work package), který zadavatel formálně přebírá a schvaluje"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ve verzi 3.2 je outcome definován jako koncový výsledek, efekt či důsledek určitého stavu věcí; bývá hmatatelný, měřitelný a časově určený a na rozdíl od cíle může být i nežádoucí. Kvalitativní záměr je goal, vlastnost konkrétního systému requirement a výstup projektu deliverable."
+  },
+  {
+    "topic": "motivation",
+    "question": "Architektonická rada schválila pravidlo „Každý údaj o klientovi se ukládá pouze na jednom místě“, které platí pro všechny systémy banky. Který motivation element použít?",
+    "options": [
+      "Principle",
+      "Requirement",
+      "Constraint",
+      "Goal"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Principle je záměr, který definuje obecnou vlastnost platnou pro jakýkoli systém v daném kontextu – je obecnější a abstraktnější než requirement, který se týká konkrétního systému. Realization vede od principu k cíli či outcome a principy samy jsou realizovány požadavky."
+  },
+  {
+    "topic": "motivation",
+    "question": "Jaký je hlavní rozdíl mezi Requirement a Principle?",
+    "options": [
+      "Requirement definuje vlastnost konkrétního systému, principle obecnou vlastnost pro všechny systémy v daném kontextu",
+      "Principle definuje vlastnost konkrétního systému, requirement obecnou vlastnost pro všechny systémy v daném kontextu",
+      "Requirement se týká pouze funkcionality systému, principle naopak jen omezení času, rozpočtu a technologií",
+      "Realization vede od principle k requirement, protože z obecných zásad se vždy odvozují konkrétní požadavky"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Requirement vyjadřuje potřebu – vlastnost, kterou musí mít konkrétní systém popsaný architekturou; principle definuje obecnou vlastnost platnou pro jakýkoli systém v daném kontextu. Realization vede od konkrétnějšího k obecnějšímu, tedy od requirement k principle; opačný směr dovolen není. Omezení času, rozpočtu či technologií vyjadřuje constraint."
+  },
+  {
+    "topic": "motivation",
+    "question": "Nové řešení pro hlášení regulátorovi musí být v provozu do 31. 3. 2027 a jeho pořízení nesmí přesáhnout 5 mil. Kč. Který motivation element je pro tyto podmínky nejvhodnější?",
+    "options": [
+      "Constraint",
+      "Principle",
+      "Assessment",
+      "Outcome"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Constraint omezuje aspekty architektury, její implementační proces nebo realizaci – typicky termín, rozpočet, volbu technologie či právní limity – a nepředepisuje požadovanou funkcionalitu; je to specializace requirement. Principle by platil obecně pro všechny systémy a outcome by popisoval dosažený výsledek, ne omezení."
+  },
+  {
+    "topic": "motivation",
+    "question": "Která dvě z následujících tvrzení o motivation elements jsou pravdivá?\n1. Constraint je specializací prvku Requirement.\n2. Driver realizuje Goal vztahem realization.\n3. Principle se vždy týká jen jednoho konkrétního systému.\n4. Assessment je typicky výsledkem analýzy, například SWOT.",
+    "options": [
+      "1 a 4",
+      "2 a 4",
+      "1 a 3",
+      "2 a 3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Constraint je v ArchiMate specializací requirement, a proto mezi nimi lze použít i specialization, composition či aggregation. Assessment je výsledek analýzy stavu vzhledem k driveru, typicky SWOT. Driver se s cílem propojuje jen vztahy influence či association a principle definuje obecnou vlastnost pro všechny systémy v daném kontextu."
+  },
+  {
+    "topic": "motivation",
+    "question": "Likvidátor chápe Business Object „Pojistná událost“ jako „nárok na plnění“, kdežto účetní jako „rezervu“. Který prvek tyto rozdílné výklady vyjadřuje?",
+    "options": [
+      "Meaning",
+      "Value",
+      "Assessment",
+      "Representation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Meaning vyjadřuje znalost či interpretaci, kterou má koncept v určitém kontextu; různí stakeholdeři mu mohou přisuzovat různý význam. K libovolnému konceptu, typicky k pasivní struktuře, se váže vztahem association. Value vyjadřuje hodnotu či užitečnost a representation vnímatelnou podobu business objektu, ne jeho výklad."
+  },
+  {
+    "topic": "motivation",
+    "question": "Produkt „Cestovní pojištění“ přináší klientovi „klid na cestách bez finančních rizik“. Který prvek a vztah to nejlépe vyjádří?",
+    "options": [
+      "Value asociovaná (association) s produktem, případně i se stakeholderem klienta",
+      "Meaning asociovaný (association) s produktem, který vyjadřuje výklad jeho podmínek",
+      "Driver agregovaný (aggregation) v produktu jako motivace klienta ke koupi",
+      "Assessment asociovaný (association) s produktem jako výsledek hodnocení klientem"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Value vyjadřuje relativní hodnotu, užitečnost či důležitost konceptu – peněžní i nepeněžní (např. pocit bezpečí). S konceptem (produktem, službou, value streamem…) se spojuje vztahem association, volitelně i se stakeholderem, pro kterého hodnota platí. Meaning popisuje výklad konceptu, assessment výsledek analýzy a produkt driver agregovat nemůže."
+  },
+  {
+    "topic": "motivation",
+    "question": "Který z následujících vztahů mezi motivation elements NENÍ v ArchiMate 3.2 dovolen?",
+    "options": [
+      "Goal –realization→ Outcome",
+      "Outcome –realization→ Goal",
+      "Requirement –realization→ Principle",
+      "Principle –realization→ Outcome"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Realizace v motivační části směřuje vždy k abstraktnějšímu záměru: requirement → principle → outcome → goal (odvozeně i requirement či principle → goal). Realization proto nemůže vést od goal k outcome – outcome je konkrétní výsledek, který cíl naplňuje, nikoli naopak."
+  },
+  {
+    "topic": "motivation",
+    "question": "Jak se v ArchiMate typicky zajišťuje sledovatelnost od cíle (Goal) až k prvku jádra, který k jeho dosažení přispívá?",
+    "options": [
+      "Prvek jádra –realization→ Requirement –realization→ Goal, případně přes Principle či Outcome",
+      "Goal –realization→ Requirement –assignment→ prvek jádra, který požadavek v provozu splní",
+      "Goal je agregován (aggregation) v prvku jádra, který cíl vykonává a za jeho splnění odpovídá",
+      "Prvek jádra –serving→ Goal přímo, protože požadavky jsou v modelu jen nepovinným doplňkem"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sledovatelnost vede od prvků jádra směrem vzhůru: realization vede od prvku jádra (struktury či chování) k požadavku a od požadavku k cíli – přímo, nebo přes principle či outcome. Od motivation elementů k prvkům jádra vede jen association, takže cíl ani požadavek nemohou prvek jádra realizovat ani mu být přiřazeny."
+  },
+  {
+    "topic": "motivation",
+    "question": "Cíl „Snížit provozní náklady“ chcete rozpracovat na dílčí cíle a ty dále na konkrétní požadavky. Jaké vztahy jsou pro to typické?",
+    "options": [
+      "Cíl agreguje dílčí cíle (aggregation) a realization vede od požadavků k dílčím cílům",
+      "Dílčí cíle specializují cíl (specialization) a realization vede od cílů k požadavkům",
+      "Dílčí cíle realizují cíl (realization) a požadavky jsou k cílům přiřazeny (assignment)",
+      "Cíl spouští dílčí cíle (triggering) a požadavky jsou s cíli asociovány (association)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cíle se zpřesňují rozkladem na dílčí cíle vztahem aggregation (případně composition) a ty se dále konkretizují požadavky, které je realizují – takto pracuje i Goal Realization viewpoint. Realizace vede vždy od konkrétnějšího k abstraktnějšímu, tedy od požadavku k cíli, nikoli opačně; triggering ani assignment se mezi motivation elements nepoužívají."
+  },
+  {
+    "topic": "motivation",
+    "question": "Která skupina obsahuje POUZE motivation elements?",
+    "options": [
+      "Stakeholder, Driver, Assessment, Meaning",
+      "Goal, Outcome, Capability, Requirement",
+      "Principle, Constraint, Course of Action, Value",
+      "Driver, Goal, Business Role, Value"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Motivation elements jsou stakeholder, driver, assessment, goal, outcome, principle, requirement, constraint, meaning a value – vyjadřují kontext a důvody architektury. Capability a Course of Action patří do vrstvy Strategy a Business Role je aktivní struktura Business Layer."
+  },
+  {
+    "topic": "strategy",
+    "question": "Banka chce v modelu zachytit svou silnou značku, patenty a know-how analytiků jako aktiva, se kterými strategie počítá. Který prvek použít?",
+    "options": [
+      "Resource",
+      "Capability",
+      "Business Object",
+      "Value"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Resource je aktivum, které jednotlivec či organizace vlastní nebo ovládá – hmotné (finance, budovy), nehmotné (značka, patenty, technologie, kultura) i lidské (dovednosti, know-how). Je to strukturní prvek, který však není aktivní ani pasivní strukturou; capability je schopnost (chování) a value vyjadřuje hodnotu konceptu, ne vlastněné aktivum."
+  },
+  {
+    "topic": "strategy",
+    "question": "Které tvrzení nejlépe vystihuje Capability?",
+    "options": [
+      "Schopnost, kterou organizace, osoba či systém má; popisuje, co organizace dělá, nikoli jak",
+      "Posloupnost činností, která vytváří celkový výsledek pro zákazníka, např. „Získat hypotéku“",
+      "Přístup či plán, jak konfigurovat schopnosti a zdroje k dosažení cíle, např. strategie či taktika",
+      "Aktivum, které organizace vlastní nebo ovládá, např. kapitál, zařízení, značka či znalosti"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Capability je schopnost, kterou má prvek aktivní struktury (organizace, osoba, systém); zaměřuje se na výsledky a popisuje „co“, nikoli „jak“. Posloupnost činností vytvářející hodnotu je value stream, plán konfigurace schopností a zdrojů course of action a vlastněné aktivum resource."
+  },
+  {
+    "topic": "strategy",
+    "question": "Jaký je vztah mezi Capability a Business Function?",
+    "options": [
+      "Capability je strategická schopnost (co), business function provozní chování, které ji může realizovat",
+      "Jde o synonyma; capability je pouze název business function používaný na úrovni vedení organizace",
+      "Business function vyjadřuje strategickou schopnost, kdežto capability provozní chování, které ji realizuje",
+      "Capability obsluhuje (serving) business function, protože jí poskytuje potřebné zdroje a kompetence"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Capability patří do vrstvy Strategy a popisuje, co organizace umí, bez ohledu na to, jak je to zajištěno; business function je provozní (operační) chování Business Layer. Business functions (a další prvky chování jádra) capability realizují; od capability k business function vést serving nelze, dovolena je jen association."
+  },
+  {
+    "topic": "strategy",
+    "question": "Architekt chce na strategické úrovni zachytit posloupnost fází, kterými pojišťovna klientovi přináší celkový výsledek – od prvního zájmu až po vyplacené plnění. Který prvek je nejvhodnější?",
+    "options": [
+      "Value Stream",
+      "Business Process",
+      "Capability",
+      "Course of Action"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Value stream je posloupnost činností, která vytváří celkový výsledek pro zákazníka, stakeholdera či koncového uživatele; dělí se na fáze (stages) propojené vztahem flow. Business process popisuje provozní kroky, jimiž se value stream realizuje, capability vyjadřuje schopnost a course of action plán, nikoli tok hodnoty."
+  },
+  {
+    "topic": "strategy",
+    "question": "Jaký vztah se v ArchiMate 3.2 použije mezi Business Process a fází value streamu, kterou tento proces provozně zajišťuje?",
+    "options": [
+      "Business Process –realization→ Value Stream",
+      "Value Stream –composition→ Business Process",
+      "Business Process –assignment→ Value Stream",
+      "Value Stream –serving→ Business Process"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Value stream i jeho jednotlivé fáze jsou realizovány business procesy – jeden proces může realizovat více fází a jednu fázi může realizovat více procesů. Value stream se nemůže skládat z business procesů ani je obsluhovat (v tomto směru je dovolena jen association) a assignment od procesu k value streamu dovolen není."
+  },
+  {
+    "topic": "strategy",
+    "question": "Capability „Hodnocení rizik“ umožňuje fázi „Posoudit žádost“ ve value streamu „Poskytnout úvěr“. Jak to vyjádřit?",
+    "options": [
+      "Capability –serving→ fáze value streamu",
+      "Capability –realization→ fáze value streamu",
+      "Fáze value streamu –assignment→ Capability",
+      "Fáze value streamu –composition→ Capability"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Capabilities umožňují (enable) jednotlivé fáze value streamu, což se modeluje vztahem serving od capability k fázi. Value stream je chování, takže nemůže být ke capability přiřazen ani ji obsahovat, a realization od capability k value streamu dovolena není – value stream realizují business procesy."
+  },
+  {
+    "topic": "strategy",
+    "question": "Resource „Datový sklad klientských dat“ je nezbytný pro capability „Analýza chování klientů“. Jaký vztah je správný?",
+    "options": [
+      "Resource –assignment→ Capability",
+      "Capability –assignment→ Resource",
+      "Resource –realization→ Capability",
+      "Capability –composition→ Resource"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Zdroje se ke capabilities přiřazují vztahem assignment ve směru resource → capability (zdroj je schopnosti k dispozici). Opačný assignment ani realizace capability zdrojem dovoleny nejsou; resource sám bývá realizován prvky aktivní či pasivní struktury, např. aktérem nebo business objektem."
+  },
+  {
+    "topic": "strategy",
+    "question": "Vedení pojišťovny schválilo přístup „Přesunout prodej do digitálních kanálů a posílit k tomu potřebné schopnosti a zdroje“. Který prvek tento záměr nejlépe vyjadřuje?",
+    "options": [
+      "Course of Action",
+      "Work Package",
+      "Value Stream",
+      "Requirement"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Course of action je přístup či plán, jak nakonfigurovat capabilities a resources k dosažení cíle; jeho specializacemi mohou být strategie a taktiky. Work package by modeloval konkrétní projekt či program ve vrstvě Implementation and Migration, value stream tok hodnoty pro zákazníka a requirement vlastnost konkrétního systému."
+  },
+  {
+    "topic": "strategy",
+    "question": "Jak se Course of Action typicky propojuje s capabilities a s outcome?",
+    "options": [
+      "Capability –realization→ Course of Action; Course of Action –realization→ Outcome",
+      "Course of Action –realization→ Capability; Outcome –realization→ Course of Action",
+      "Course of Action –assignment→ Capability; Outcome –serving→ Course of Action",
+      "Capability –composition→ Course of Action; Course of Action –aggregation→ Outcome"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Course of action je přístup či plán, jak nakonfigurovat capabilities a resources k dosažení cíle; capabilities (případně value streams a resources) ho realizují. Course of action pak realizuje či ovlivňuje outcomes a requirements, a tím nepřímo i goals. Opačný směr realizace dovolen není."
+  },
+  {
+    "topic": "strategy",
+    "question": "Které prvky mohou v ArchiMate 3.2 realizovat (realization) Capability?",
+    "options": [
+      "Business Function, Business Process i Application Component",
+      "Resource, protože capability vzniká z aktiv, která organizace vlastní",
+      "Value Stream a Course of Action ze stejné vrstvy Strategy",
+      "Outcome a Goal, protože capability popisuje dosažený výsledek"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Capability je realizována prvky chování jádra – typicky business functions a business processes, ale např. i aplikačním chováním – a nepřímo také aktivní strukturou, jako je Application Component. Resource se ke capability přiřazuje (assignment), value stream ani course of action ji nerealizují (capabilities naopak course of action realizují) a realization vede od capability k outcome, nikoli od outcome ke capability."
+  },
+  {
+    "topic": "strategy",
+    "question": "Která dvě z následujících tvrzení o Value Stream jsou pravdivá?\n1. Value stream je strukturní prvek, ke kterému se přiřazují business procesy.\n2. Fáze (stages) value streamu se propojují vztahem flow.\n3. Value stream se pojmenovává aktivním tvarem sloveso–podstatné jméno, např. „Pořídit pojištění“.\n4. Value stream byl do jazyka přidán už ve verzi 2.1 jako prvek Business Layer.",
+    "options": [
+      "2 a 3",
+      "1 a 3",
+      "2 a 4",
+      "1 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Value stream je prvek chování vrstvy Strategy, přidaný ve verzi 3.1; jeho fáze se skládají do celku a propojují vztahem flow. Pojmenovává se aktivním tvarem sloveso–podstatné jméno. Business procesy value stream realizují, nejsou k němu přiřazeny."
+  },
+  {
+    "topic": "strategy",
+    "question": "Která dvě z následujících tvrzení o strategických prvcích jsou pravdivá?\n1. Capabilities a value streams odrážejí business model, business functions a processes operating model.\n2. Capabilities a business functions popisují podnik „v klidu“ (at rest), value streams a processes podnik „v pohybu“ (in motion).\n3. Fáze value streamu jsou realizovány capabilities.\n4. Resource je prvek aktivní struktury, který vykonává capabilities.",
+    "options": [
+      "1 a 2",
+      "2 a 3",
+      "1 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Capabilities a value streams (vrstva Strategy) odrážejí business model, business functions a processes (Business Layer) operating model. Capabilities a functions zachycují podnik „v klidu“, value streams a processes podnik „v pohybu“. Capabilities obsluhují (serving) fáze value streamu, nerealizují je, a resource je strukturní prvek, který není aktivní ani pasivní – ke capability se přiřazuje (assignment)."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Pojišťovna chce v modelu zachytit své „Oddělení likvidace pojistných událostí“ jako organizační jednotku, která vykonává práci. Který prvek je pro ni nejvhodnější?",
+    "options": [
+      "Business actor",
+      "Business collaboration",
+      "Business role",
+      "Business function"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business actor je business entita schopná vykonávat chování – osoba, oddělení, organizační jednotka nebo externí partner. Business collaboration je (často dočasné) spojení dvou a více aktérů či rolí pro společné chování, nikoli samostatné oddělení, a business role vyjadřuje odpovědnost, kterou aktér zastává, ne organizační jednotku samotnou."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Ve stavební spořitelně smí úvěry schvalovat kterýkoli pověřený zaměstnanec centrály i poboček. Jak nejlépe modelovat odpovědnost „Schvalovatel úvěru“ nezávisle na konkrétních osobách?",
+    "options": [
+      "Jako business role, ke které jsou přiřazeni jednotliví aktéři",
+      "Jako business actor, který agreguje všechny pověřené zaměstnance",
+      "Jako stakeholder, protože jde o osobu se zájmem na výsledku",
+      "Jako business function seskupující všechny schvalovací činnosti"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business role vyjadřuje odpovědnost za určité chování, kterou mohou převzít různí aktéři; aktéři se k ní přiřazují vztahem assignment. Business actor představuje konkrétní entitu (osobu, oddělení), ne odpovědnost, a stakeholder je motivační prvek popisující zájem na architektuře, nikoli provozní odpovědnost."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Jakým vztahem se v ArchiMate 3.2 vyjádří, že business actor „Jana Nováková“ zastává business role „Pokladní“?",
+    "options": [
+      "Assignment z business actor na business role",
+      "Assignment z business role na business actor",
+      "Specialization z business actor na business role",
+      "Realization z business actor na business role"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Aktér se k roli, kterou hraje, přiřazuje vztahem assignment ve směru aktér → role; opačný směr dovolen není. Specialization lze použít jen mezi prvky stejného typu a realization mezi aktérem a rolí v ArchiMate 3.2 neexistuje."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Které tvrzení o business collaboration v ArchiMate 3.2 platí?",
+    "options": [
+      "Může být i dočasná a bez formálního statusu; agreguje aktéry, role či jiné spolupráce",
+      "Má formální status organizační jednotky; neformální spolupráce se modeluje jako grouping",
+      "Agreguje business roles z různých útvarů; business actors se do ní nezahrnují",
+      "Je to prvek chování, který vykonávají alespoň dva aktéři nebo dvě role společně"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business collaboration je agregace dvou či více business aktérů, rolí nebo jiných spoluprací, které společně vykonávají kolektivní chování (business interaction); může být dočasná a nemusí mít formální status – např. partnerství banky a pojišťovny. Omezení pouze na role platilo v ArchiMate 2.x a společné chování samo je business interaction, ne collaboration."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Klienti pojišťovny mohou nahlásit škodu telefonicky na zákaznické lince nebo osobně na přepážce pobočky. Jakým prvkem business vrstvy se modelují tyto kanály?",
+    "options": [
+      "Business interface",
+      "Business service",
+      "Business interaction",
+      "Business event"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business interface je přístupový bod, přes který je business service zpřístupněna okolí – typicky kanál jako telefon, web, pobočka nebo e-mail. Business service je samotné nabízené chování (např. „Hlášení škody“), které je přes rozhraní dostupné, a business interaction by modelovala společné chování více aktérů, nikoli kanál."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Které přiřazení názvů k typům prvků odpovídá konvencím pojmenování v ArchiMate?",
+    "options": [
+      "„Vyřídit reklamaci“ – business process; „Správa zákazníků“ – business function; „Reklamace přijata“ – business event",
+      "„Vyřídit reklamaci“ – business event; „Správa zákazníků“ – business process; „Reklamace přijata“ – business function",
+      "„Vyřídit reklamaci“ – business function; „Správa zákazníků“ – business event; „Reklamace přijata“ – business process",
+      "„Vyřídit reklamaci“ – business process; „Správa zákazníků“ – business event; „Reklamace přijata“ – business function"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business process se pojmenovává slovesem či spojením sloveso + podstatné jméno („Vyřídit reklamaci“), business function podstatným jménem vyjadřujícím oblast činnosti („Správa zákazníků“) a business event jako dokončený stav („Reklamace přijata“). Konzistentní pojmenování pomáhá rozpoznat typ prvku i bez ikony."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Který prvek nejlépe modeluje „Vyřízení žádosti o hypotéku“ – posloupnost kroků od přijetí žádosti až po odeslání rozhodnutí klientovi?",
+    "options": [
+      "Business process",
+      "Business function",
+      "Business service",
+      "Business interaction"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business process je posloupnost business chování vedoucí ke konkrétnímu výsledku; má začátek, pořadí kroků a výsledek. Business function seskupuje chování podle kompetencí či zdrojů bez pevného pořadí a business service popisuje navenek nabízené chování, nikoli vnitřní postup."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Výrobní podnik chce zachytit „Účetnictví“ jako stabilní soubor činností, které spojují stejné odborné znalosti a zdroje, bez ohledu na jejich pořadí. Který prvek business vrstvy je nejvhodnější?",
+    "options": [
+      "Business function",
+      "Business process",
+      "Business collaboration",
+      "Business event"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business function je kolekce business chování seskupená podle zvolených kritérií, typicky podle potřebných zdrojů a kompetencí; bývá stabilní v čase a nemá pevné pořadí kroků. Business process naopak popisuje časově uspořádaný sled kroků vedoucí k určitému výsledku a business collaboration je aktivní struktura, ne chování."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Personální oddělení poskytuje službu „Nábor zaměstnanců“ pouze ostatním útvarům firmy, nikoli zákazníkům. Lze ji v ArchiMate modelovat jako business service?",
+    "options": [
+      "Ano, business service může být externí i interní (podpůrná pro jiné útvary)",
+      "Ne, business service je definována jako nabídka externím zákazníkům organizace",
+      "Ne, interní služby útvarů se modelují jako business function, ne jako služby",
+      "Ano, ale za podmínky, že ji útvar zpřístupňuje přes business interface typu web"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business service může být externí (nabízená zákazníkům) i interní, která podporuje procesy či útvary uvnitř organizace; podstatné je, že jde o explicitně definované chování s hodnotou pro jeho uživatele. Business function je interní chování seskupené podle kompetencí, ne služba nabízená okolí, a existence služby nezávisí na typu kanálu."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Která dvě z následujících tvrzení o business event jsou pravdivá?\n1. Může mít vnější původ (např. podání reklamace zákazníkem) i vnitřní původ (např. konec účetního období).\n2. Může přistupovat (access) k business objectu, např. k údajům přijaté objednávky.\n3. Je to specializace business processu, která má jediný krok.\n4. Na rozdíl od procesu ji jiné chování nemůže spustit (triggering).",
+    "options": [
+      "1 a 2",
+      "2 a 3",
+      "3 a 4",
+      "1 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business event je okamžitá změna stavu, která může mít vnější (např. od zákazníka) i vnitřní původ a může přistupovat k business objectům, např. nést údaje objednávky. Není specializací procesu – proces trvá a vede k výsledku – a události mohou chování spouštět i být jím spuštěny."
+  },
+  {
+    "topic": "business-layer",
+    "question": "V nákupním procesu se objevuje pojem „Dodavatel“. Podle čeho se rozhodnout, zda jej modelovat jako business actor, nebo jako business role?",
+    "options": [
+      "Jako actor, jde-li o organizaci; jako role, jde-li o odpovědnost, kterou mohou převzít různé firmy",
+      "Jako business actor, protože externí organizace v ArchiMate business role zastávat nemohou",
+      "Jako business role, protože externí subjekty se v ArchiMate modelují jako role, nikoli jako aktéři",
+      "Jako stakeholder, protože dodavatel má zájem na výsledcích architektury organizace"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tentýž obecný pojem lze modelovat oběma způsoby podle toho, co vyjadřuje: business actor představuje organizaci či osobu (konkrétní i obecnou, např. „Zákazník“), business role odpovědnost za určité chování, kterou mohou převzít různí aktéři. Externí subjekty mohou být aktéry i rolemi a stakeholder je motivační prvek popisující zájem na architektuře."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Logistická firma chce zachytit pojem „Přepravní objednávka“ jako informační koncept, se kterým pracují její procesy, bez ohledu na to, zda existuje na papíře či v databázi. Který prvek použije?",
+    "options": [
+      "Business object",
+      "Data object",
+      "Representation",
+      "Artifact"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business object modeluje pojem (typ informace) používaný v business doméně nezávisle na jeho fyzické podobě; procesy k němu přistupují vztahem access. Representation je jeho vnímatelná podoba (např. tištěný formulář) a data object data pro automatizované zpracování v aplikační vrstvě – oba business object realizují; artifact je soubor v technologické vrstvě."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Čím je contract (smlouva) v metamodelu ArchiMate 3.2?",
+    "options": [
+      "Specializací prvku business object",
+      "Specializací prvku business service",
+      "Složeným prvkem, který agreguje služby",
+      "Zvláštním druhem prvku representation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Contract je specializace business objectu – formální či neformální specifikace dohody mezi poskytovatelem a spotřebitelem o právech a povinnostech, může jít i o SLA. Není to služba ani složený prvek; naopak contract bývá spolu se službami agregován v productu."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Která dvě z následujících tvrzení o prvku representation jsou pravdivá?\n1. Je to vnímatelná podoba informace nesené business objectem, např. tištěný formulář.\n2. Je to specializace business objectu, stejně jako contract.\n3. Je to prvek technologické vrstvy, který realizuje artifact.\n4. Jeden business object může mít více různých representations.",
+    "options": [
+      "1 a 4",
+      "1 a 2",
+      "2 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Representation je vnímatelná podoba informace nesené business objectem (dokument, formulář, zpráva); realization vede od representation k business objectu a jeden business object může mít více reprezentací. Specializací business objectu je contract, nikoli representation, a representation patří do business vrstvy – digitální soubor v technologické vrstvě je artifact."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Banka nabízí „Studentský balíček“: vedení běžného účtu, platební kartu a internetové bankovnictví za zvýhodněných podmínek uvedených ve smlouvě. Který prvek nejlépe modeluje tuto nabídku jako celek?",
+    "options": [
+      "Product",
+      "Business service",
+      "Value stream",
+      "Grouping"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Product je složený prvek – ucelená kolekce služeb a/nebo pasivních prvků doprovázená smlouvou (contract), nabízená jako celek interním či externím zákazníkům. Business service je jen jedno nabízené chování, value stream popisuje sled činností vytvářejících hodnotu a grouping nemá význam nabídky se smluvními podmínkami."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Která dvě z následujících tvrzení o prvku product v ArchiMate 3.2 jsou pravdivá?\n1. Product je specializací prvku business service.\n2. Product může agregovat business services, application services i technology services.\n3. Product může agregovat contract a business objects.\n4. Product může agregovat business actors, kteří jeho služby poskytují.",
+    "options": [
+      "2 a 3",
+      "1 a 2",
+      "3 a 4",
+      "1 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Product je složený prvek, který může agregovat či skládat služby ze všech vrstev, pasivní prvky (business objects, data objects, artifacts, material) a contract. Aktivní strukturu, např. aktéry či aplikační komponenty, neagreguje a není druhem služby – nákup produktu bývá jen jednou z jeho služeb."
+  },
+  {
+    "topic": "business-layer",
+    "question": "Která trojice obsahuje pouze prvky pasivní struktury business vrstvy?",
+    "options": [
+      "Business object, contract, representation",
+      "Business object, business event, contract",
+      "Contract, representation, business interface",
+      "Representation, product, business object"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Pasivní strukturu business vrstvy tvoří business object, jeho specializace contract a representation. Business event je prvek chování, business interface patří k (externí) aktivní struktuře a product je složený prvek kombinující služby a pasivní prvky."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Které tvrzení nejlépe vystihuje application component v ArchiMate 3.2?",
+    "options": [
+      "Zapouzdření aplikační funkcionality sladěné se strukturou implementace, modulární a nahraditelné",
+      "Automatizované chování, které aplikace vykonává a které realizuje aplikační služby",
+      "Fyzický soubor se spustitelným kódem (např. .jar nebo .exe) nasazovaný na server či zařízení",
+      "Přístupový bod, přes který aplikace zpřístupňuje své služby uživatelům a jiným aplikacím"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application component zapouzdřuje aplikační funkcionalitu v souladu se strukturou implementace; je modulární, nahraditelná, samostatně nasaditelná a může modelovat celou aplikaci i její část. Vykonávané chování je application function, soubor se spustitelným kódem je artifact (komponentu realizuje) a přístupový bod je application interface."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Systém správy pojistných smluv interně počítá výši pojistného; tato činnost není přímo vystavena uživatelům. Jakým prvkem se modeluje toto interní automatizované chování komponenty?",
+    "options": [
+      "Application function",
+      "Application service",
+      "Application interaction",
+      "Application event"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application function je interní automatizované chování, které vykonává application component (vztah assignment); seskupuje chování a abstrahuje od implementace. Application service je naopak externí chování vystavené okolí – function ji realizuje – a application interaction vyžaduje alespoň dvě spolupracující komponenty."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Která dvě z následujících tvrzení o application interface jsou pravdivá?\n1. Může představovat grafické uživatelské rozhraní (GUI) i programové rozhraní (API).\n2. Je to prvek chování, který realizuje application service.\n3. K application service, kterou zpřístupňuje, je přiřazen vztahem assignment.\n4. S application component, které patří, je spojen vztahem specialization.",
+    "options": [
+      "1 a 3",
+      "1 a 2",
+      "2 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application interface je přístupový bod (externí aktivní struktura), přes který jsou aplikační služby dostupné uživateli, jiné komponentě či nodu – zahrnuje GUI i API. Ke službě je přiřazen vztahem assignment a s komponentou je spojen vztahem composition (komponenta se z rozhraní skládá); není prvkem chování a specialization je možná jen mezi prvky stejného typu."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Účetní systém každou noc spouští dávkovou úlohu „Uzávěrka dne“, která v pevném pořadí zaúčtuje transakce, přepočítá zůstatky a vygeneruje výkazy. Který prvek ji nejlépe modeluje?",
+    "options": [
+      "Application process",
+      "Application function",
+      "Application event",
+      "Application interaction"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application process je posloupnost aplikačního chování vedoucí ke konkrétnímu výsledku – typicky dávková úloha s pevným pořadím kroků. Application function seskupuje chování bez daného pořadí a application event by modeloval jen okamžik spuštění (např. „každý den v 1:00“), nikoli samotný sled kroků."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Platební modul e-shopu čeká na okamžik, kdy z platební brány dorazí potvrzení platby; poté spustí zpracování objednávky. Jak tento okamžik modelovat?",
+    "options": [
+      "Application event spouštějící (triggering) application process",
+      "Application service obsluhující (serving) application process",
+      "Data object spouštějící (triggering) application process",
+      "Application interaction mezi platebním modulem a platební bránou"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application event je okamžitá změna stavu v aplikační vrstvě (např. přijatá zpráva nebo časový spouštěč) a vztahem triggering může spouštět application process. Data object je pasivní struktura a nemůže nic spouštět; serving vyjadřuje poskytování funkcionality, ne okamžik, kdy něco nastalo."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Jaký je rozdíl mezi application collaboration a application interaction?",
+    "options": [
+      "Collaboration agreguje spolupracující komponenty; interaction je jejich společné (kolektivní) chování",
+      "Interaction agreguje spolupracující komponenty; collaboration je jejich společné (kolektivní) chování",
+      "Collaboration je fyzický integrační server; interaction je tok dat, který server mezi aplikacemi přenáší",
+      "Collaboration lze použít jen v aplikační vrstvě, interaction jen v business vrstvě"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application collaboration je aktivní struktura – agregace dvou či více application components, které spolupracují, a může být i dočasná či logická. Application interaction je kolektivní chování, které tyto komponenty společně vykonávají; collaboration je k ní přiřazena vztahem assignment. Spolupráce i interakce existují v business, aplikační i technologické vrstvě."
+  },
+  {
+    "topic": "application-layer",
+    "question": "V CRM existuje logická datová entita „Zákazník“ (jméno, IČO, adresa), která je fyzicky uložena v databázové tabulce CUSTOMER. Jak obojí modelovat?",
+    "options": [
+      "Entitu jako data object, tabulku jako artifact realizující tento data object",
+      "Entitu jako artifact, tabulku jako data object realizující tento artifact",
+      "Entitu i tabulku jako dva data objects spojené vztahem composition",
+      "Entitu jako business object, tabulku jako data object realizující tento business object"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data object představuje data strukturovaná pro automatizované zpracování (logickou úroveň), zatímco artifact je fyzický kus dat v technologické vrstvě – soubor, skript či databázová tabulka; realization vede od artifactu k data objectu. Business object by modeloval pojem „Zákazník“ v business doméně nezávisle na IT, nikoli entitu konkrétního systému."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Která dvě z následujících tvrzení o data object jsou pravdivá?\n1. Může vztahem triggering spustit application process.\n2. Přistupují k němu application functions, processes, interactions i events.\n3. Je přiřazen (assignment) k application component, která s ním pracuje.\n4. Může realizovat business object.",
+    "options": [
+      "2 a 4",
+      "1 a 2",
+      "3 a 4",
+      "1 a 3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data object je pasivní struktura: aplikační chování k němu přistupuje vztahem access a data object může realizovat business object. Pasivní prvek nemůže nic spouštět a od data objectu ke komponentě vede pouze association – naopak komponenta k data objectu přistupuje (access)."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Mobilní bankovnictví umožňuje klientům zobrazit zůstatek účtu. Jak modelovat tuto funkcionalitu z pohledu uživatele, nezávisle na tom, jak je uvnitř aplikace realizována?",
+    "options": [
+      "Application service",
+      "Application function",
+      "Application interface",
+      "Application component"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application service je externí chování aplikace – explicitně definovaná funkcionalita vystavená uživatelům či jiným aplikacím, bez ohledu na vnitřní realizaci. Realizuje ji application function (interní chování), zpřístupňuje ji application interface (např. obrazovka mobilní aplikace) a vykonává ji application component."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Který z následujících prvků NEPATŘÍ k aktivní struktuře aplikační vrstvy?",
+    "options": [
+      "Application service",
+      "Application component",
+      "Application collaboration",
+      "Application interface"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application service je prvek chování (externí chování), proto k aktivní struktuře nepatří. Application component a application collaboration jsou interní aktivní struktura a application interface je externí aktivní struktura – přístupový bod ke službám."
+  },
+  {
+    "topic": "application-layer",
+    "question": "Komponenta „E-shop“ volá službu „Správa zákazníků“, kterou poskytuje komponenta CRM. Jak modelovat, že tuto application service využívá komponenta E-shop?",
+    "options": [
+      "Serving z application service na komponentu E-shop",
+      "Serving z komponenty E-shop na application service",
+      "Realization z application service na komponentu E-shop",
+      "Composition z komponenty E-shop na application service"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Serving vede od poskytovatele k uživateli: application service obsluhuje komponentu E-shop, která ji využívá, takže šipka směřuje k E-shopu. Opačný směr by tvrdil, že E-shop poskytuje svou funkcionalitu službě CRM; realization ani composition mezi službou a cizí komponentou metamodel v uvedených směrech nedovoluje."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Který prvek technologické vrstvy představuje výpočetní či fyzický zdroj, který hostuje nebo zpracovává jiné zdroje – například aplikační platformu tvořenou serverem, operačním systémem a aplikačním serverem?",
+    "options": [
+      "Node",
+      "Device",
+      "System software",
+      "Technology collaboration"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Node je obecný výpočetní či fyzický zdroj, který hostuje, zpracovává nebo komunikuje s jinými zdroji; typicky se skládá z device a system software (např. aplikační platforma). Device je samotný hardware, system software prostředí pro běh softwaru a technology collaboration agregace několika spolupracujících technologických prvků."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Kterým prvkem se v ArchiMate modeluje notebook obchodního zástupce nebo síťový router jako fyzický IT prostředek?",
+    "options": [
+      "Device",
+      "Equipment",
+      "Facility",
+      "System software"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Device je fyzický IT prostředek, na kterém lze uložit nebo spustit system software a artifacts – PC, mainframe, router, mobilní zařízení. Equipment je naproti tomu fyzický stroj či nástroj, který vytváří, používá nebo přetváří materiál (výrobní linka, vozidlo), a facility je budova či fyzické prostředí."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Firma provozuje databázový systém PostgreSQL a aplikační server Tomcat. Kterým prvkem se tyto produkty v ArchiMate obvykle modelují?",
+    "options": [
+      "System software",
+      "Application component",
+      "Artifact",
+      "Device"
+    ],
+    "correctAnswer": 0,
+    "explanation": "System software poskytuje prostředí pro ukládání, běh a používání softwaru či dat, které jsou v něm nasazeny – operační systém, DBMS, aplikační server, middleware. Application component modeluje aplikaci, která v takovém prostředí běží, a artifact konkrétní soubor (např. nasazený .war)."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Která dvě z následujících tvrzení platí v ArchiMate 3.2?\n1. Device a system software jsou specializacemi prvku node.\n2. Node může být složen (composition) z device a system software.\n3. Device může být přiřazen (assignment) k system software, které na něm běží.\n4. Equipment je specializací prvku device.",
+    "options": [
+      "2 a 3",
+      "1 a 2",
+      "3 a 4",
+      "1 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V ArchiMate 3.2 už device, system software, equipment a facility nejsou specializacemi node – jsou to samostatné technologické aktivní prvky a node se z nich může skládat (composition, aggregation). Device se přiřazuje k system software, které na něm běží; tvrzení 1 platilo pouze ve verzi 3.1 a equipment není druhem device."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Soubor „objednavky.war“ je nasazen na aplikačním serveru, který je modelován jako system software. Jak se toto nasazení vyjádří v ArchiMate 3.2?",
+    "options": [
+      "Assignment ze system software na artifact",
+      "Assignment z artifactu na system software",
+      "Aggregation ze system software na artifact",
+      "Composition z artifactu na system software"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Nasazení se modeluje vztahem assignment od prvku, který artifact hostuje (node, device nebo system software), k artifactu. Opačný směr assignment neexistuje – od artifactu k hostitelskému prvku vede jen association – a aggregation či composition by vyjadřovaly vztah celku a části, nikoli nasazení."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Architekt chce vyjádřit, že servery ve dvou datových centrech si vyměňují data, a přitom abstrahovat od fyzické síťové infrastruktury. Který prvek použije?",
+    "options": [
+      "Path",
+      "Communication network",
+      "Distribution network",
+      "Technology interface"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Path je logické spojení mezi dvěma či více technologickými aktivními prvky, přes které si vyměňují data, energii nebo materiál; abstrahuje od fyzické realizace. Communication network je fyzická komunikační infrastruktura, která path realizuje, a distribution network slouží k přepravě materiálu či energie."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Jakým vztahem se v ArchiMate 3.2 vyjádří, že firemní síť WAN zajišťuje logické spojení (path) mezi servery poboček?",
+    "options": [
+      "Realization z communication network na path",
+      "Realization z path na communication network",
+      "Assignment z communication network na path",
+      "Composition z path na communication network"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Communication network je fyzická síťová infrastruktura, která realizuje path – logický komunikační vztah mezi uzly; vlastnosti path (např. propustnost či latence) jsou dány realizujícími sítěmi. Opačný směr by tvrdil, že logické spojení uskutečňuje fyzickou síť, a assignment se mezi sítí a path nepoužívá."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Databázový server zpřístupňuje své služby aplikacím přes síťový port pro připojení klientů. Kterým prvkem se tento přístupový bod modeluje?",
+    "options": [
+      "Technology interface",
+      "Application interface",
+      "Technology service",
+      "Path"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technology interface je přístupový bod, přes který mohou jiné prvky (nody či application components) využívat technologické služby nabízené technologickým aktivním prvkem. Application interface zpřístupňuje aplikační služby a technology service je samotné nabízené chování (např. „Databázová služba“), nikoli přístupový bod."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Který z následujících příkladů je typickou technology service?",
+    "options": [
+      "Ukládání souborů nebo zasílání zpráv poskytované aplikacím",
+      "Výpočet pojistného dostupný uživatelům pojistného systému",
+      "Telefonická podpora zákazníků poskytovaná call centrem",
+      "Noční replikace databáze probíhající jako sled kroků"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technology service je explicitně definované vystavené technologické chování – např. ukládání dat, zasílání zpráv, pojmenování či adresářové služby –, které obsluhuje application components a nody. Výpočet pojistného je aplikační služba, telefonická podpora business služba a replikace se sledem kroků je technology process, tedy interní chování."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Plánovač na serveru spouští každou noc ve 2:00 zálohu databáze. Kterým prvkem se modeluje tento časový okamžik spuštění?",
+    "options": [
+      "Technology event",
+      "Technology process",
+      "Technology function",
+      "Implementation event"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technology event je okamžitá změna stavu v technologické vrstvě (např. plánovaný čas zálohy či výpadek); může mít časový atribut a spouštět technology process. Samotná záloha jako sled kroků je technology process a implementation event se týká implementace a migrace (milníky změnových projektů), nikoli provozu."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Ve strojírenském závodě zpracovává lisovací linka ocelové plechy na díly karoserie. Kterým prvkem se modeluje samotná lisovací linka?",
+    "options": [
+      "Equipment",
+      "Device",
+      "Facility",
+      "Material"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Equipment představuje jeden či více fyzických strojů, nástrojů nebo přístrojů, které vytvářejí, používají, skladují, přemísťují či přetvářejí materiál. Device je IT hardware pro běh softwaru, facility budova či prostředí, kde je equipment umístěno, a material zpracovávaná hmota (zde plechy)."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Jaký je rozdíl mezi prvky facility a location?",
+    "options": [
+      "Facility je fyzická struktura (budova, továrna), která hostí equipment; location je místo, které agreguje prvky na něm umístěné",
+      "Facility je logické seskupení zařízení bez vlastní fyzické podoby; location je konkrétní budova, v níž jsou zařízení instalována",
+      "Facility a location jsou synonyma; facility je pouze starší název prvku location z verze ArchiMate 2.x",
+      "Facility je specializací location určenou pro datová centra; location se používá pro všechna ostatní místa"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Facility je fyzická struktura nebo prostředí (továrna, sklad, laboratoř, datové centrum), patří k aktivní struktuře a může hostit equipment. Location je obecný prvek pro konceptuální či fyzické místo, který vztahem aggregation sdružuje prvky, jež se na něm nacházejí nebo tam probíhají – facility tak může být v location agregována."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Energetická společnost modeluje fyzickou přenosovou soustavu vysokého napětí, která přepravuje elektřinu mezi elektrárnou a rozvodnami. Který prvek je vhodný?",
+    "options": [
+      "Distribution network",
+      "Communication network",
+      "Path",
+      "Equipment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Distribution network je fyzická síť pro přepravu materiálu nebo energie – silnice, železnice, potrubí, elektrická síť – a může realizovat path. Communication network slouží k přenosu dat a path je jen logické spojení, které od fyzické infrastruktury abstrahuje."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Které tvrzení o prvku material v ArchiMate 3.2 platí?",
+    "options": [
+      "Pasivní prvek pro fyzickou hmotu či energii, ke kterému přistupují equipment a technology processes",
+      "Aktivní prvek fyzické vrstvy, který sám vykonává výrobní procesy přiřazené k equipment",
+      "Strategický prvek (specializace resource) pro hmotný majetek organizace, například suroviny a zásoby",
+      "Fyzický zdroj energie, který vztahem serving obsluhuje equipment i facility v areálu závodu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Material je pasivní struktura (technology object) pro hmatatelnou fyzickou hmotu nebo energii – suroviny, výrobky, palivo, elektřinu; technology processes a equipment k němu přistupují vztahem access. Resource je strategický prvek, který může být materiálem realizován, ale material sám resource ani jeho specializací není."
+  },
+  {
+    "topic": "technology-physical",
+    "question": "Plnicí linka v pivovaru (equipment) automaticky plní lahve. Kterým prvkem chování se činnost „Plnění lahví“ v ArchiMate 3.2 modeluje?",
+    "options": [
+      "Technology process",
+      "Physical process",
+      "Business process",
+      "Application process"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Fyzické prvky nemají vlastní prvky chování – činnosti strojů se modelují technologickým chováním, např. technology process, ke kterému je equipment přiřazeno vztahem assignment. Prvek „physical process“ v ArchiMate neexistuje a business process vykonávají business aktéři a role, ne stroje."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Aplikační proces „Zpracování žádosti o dávku“ v jednom kroku čeká na ruční ověření dokladů, které back office poskytuje jako business service „Ruční ověření dokladů“. Jak vyjádřit, že tato služba aplikační proces podporuje?",
+    "options": [
+      "Serving z business service na application process",
+      "Realization z business service na application process",
+      "Assignment z business service na application process",
+      "Composition z application process na business service"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Obsluha mezi vrstvami nemusí vést jen zdola nahoru: business service může vztahem serving obsluhovat i aplikační chování a business interface aplikační komponentu, např. když automatizovaný proces využívá ruční krok. Realization ani assignment mezi službou a procesem v tomto směru dovoleny nejsou a composition by vyjadřovala vztah celku a části."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Aplikační služba „Ověření bonity klienta“ podporuje úvěrové poradce v procesu „Schválení úvěru“, který však stále vykonávají lidé. Který vztah to vyjadřuje?",
+    "options": [
+      "Serving z application service na business process",
+      "Realization z application service na business process",
+      "Assignment z application service na business process",
+      "Composition z business process na application service"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Serving vyjadřuje, že aplikační služba poskytuje svou funkcionalitu procesu, který ji využívá; šipka směřuje k uživateli služby. Realization by znamenala, že aplikace proces sama uskutečňuje (automatizace) – tu vyjadřuje application process či komponenta, nikoli application service – a assignment mezi dvěma prvky chování neexistuje."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Proces „Automatické schválení drobné škody“ probíhá celý v systému bez zásahu člověka. Jak v ArchiMate 3.2 vyjádřit, že aplikace tento business process plně automatizuje?",
+    "options": [
+      "Realization z application process na business process",
+      "Serving z application process na business process",
+      "Assignment z application component na business process",
+      "Realization z business process na application process"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plnou automatizaci vyjadřuje realization, která vede od application process (případně function či interaction) k business process; odvozeně business process realizuje i komponenta, která aplikační proces vykonává. Serving znamená jen podporu procesu, který stále vykonávají lidé, a přiřazení komponenty k business procesu bylo dovoleno pouze v ArchiMate 2.x."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Řidiči rozvozu (business role) používají při práci dodávková vozidla, modelovaná jako equipment. Jak vyjádřit, že vozidlo slouží této roli?",
+    "options": [
+      "Serving z equipment na business role",
+      "Assignment z business role na equipment",
+      "Realization z equipment na business role",
+      "Composition z business role na equipment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Fyzické vybavení může vztahem serving obsluhovat business aktéry a role, kteří je při své práci používají – podobně jako aplikační rozhraní slouží uživatelům. Role se přiřazuje k chování, ne ke strojům, a realization ani composition mezi equipment a business rolí metamodel nedovoluje."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Architekt chce vyjádřit vztah aplikační komponenty CRM k business procesu „Prodej“. Který z následujících vztahů NENÍ v ArchiMate 3.2 dovolen?",
+    "options": [
+      "Assignment z application component na business process",
+      "Serving z application component na business process",
+      "Realization z application component na business process",
+      "Association mezi application component a business process"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Přiřazení (assignment) aplikační komponenty k business procesu bylo možné v ArchiMate 2.x; od verze 3.0 se nahrazuje vztahem realization (automatizace, odvozeně přes application process) nebo serving (podpora). Association je dovolena mezi libovolnými dvěma prvky."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Operátoři call centra (business role) pracují s obrazovkou CRM systému. Jak vyjádřit, že grafické rozhraní aplikace slouží této roli?",
+    "options": [
+      "Serving z application interface na business role",
+      "Assignment z business role na application interface",
+      "Realization z application interface na business role",
+      "Composition z business interface na application interface"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application interface (např. GUI) obsluhuje vztahem serving business roli či aktéra, který s aplikací pracuje. Realizace business role aplikací v ArchiMate neexistuje – aplikace roli podporuje, nenahrazuje ji – a role se přiřazuje k chování, nikoli k aplikačnímu rozhraní."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Aplikace „E-shop“ ukládá data do databázové služby, kterou poskytuje platforma. Jak modelovat vztah mezi technology service „Databázová služba“ a application component „E-shop“?",
+    "options": [
+      "Serving z technology service na application component",
+      "Realization z technology service na application component",
+      "Assignment z application component na technology service",
+      "Access z technology service na application component"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technologická služba poskytuje svou funkcionalitu aplikační komponentě či aplikačnímu chování vztahem serving, šipka směřuje k uživateli služby. Fyzickou realizaci komponenty v technologické vrstvě vyjadřuje artifact, ne technologická služba, a access lze použít jen vůči pasivním prvkům."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Která dvě z následujících tvrzení o vztazích mezi aplikační a technologickou vrstvou jsou pravdivá?\n1. Serving může vést od technology interface k application component.\n2. Realization může vést od technology service k application component.\n3. Realization může vést od application service k technology service.\n4. Serving může vést od application interface k node.",
+    "options": [
+      "1 a 4",
+      "1 a 2",
+      "2 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Obsluha mezi vrstvami funguje oběma směry: serving může vést od technology interface k application component i od application interface k node. Realization však vede jen od technologie k aplikacím (např. od technology service k application service nebo od artifactu ke komponentě), nikoli obráceně, a od technology service k application component vést nemůže."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Jak se v ArchiMate 3.2 správně vyjádří, že aplikační komponenta „Portál“ běží na aplikačním serveru (node)?",
+    "options": [
+      "Node je přiřazen k artifactu a artifact realizuje komponentu",
+      "Node je přiřazen (assignment) přímo k application component",
+      "Realization vede od application component k nodu prostřednictvím artifactu",
+      "Artifact je přiřazen k nodu a node realizuje komponentu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Komponenta se na node nenasazuje přímo: node (případně device či system software) je vztahem assignment přiřazen k artifactu (např. portal.war) a ten komponentu realizuje. Node tak komponentu realizuje jen odvozeně; přímé assignment z nodu na komponentu ani assignment z artifactu na node dovoleny nejsou."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Oddělení archivace přímo využívá síťové úložiště souborů, bez jakékoli aplikace mezi nimi. Může v ArchiMate 3.2 vést serving přímo od technology service k business process?",
+    "options": [
+      "Ano, technologická služba může obsluhovat i chování business vrstvy",
+      "Ne, technologická vrstva obsluhuje aplikační vrstvu a business vrstvu podporuje až přes ni",
+      "Ano, ale vztahem realization, protože proces službu technologicky využívá",
+      "Ne, takovou vazbu vyjadřuje association mezi groupingy obou vrstev"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vztahy mezi business a technologickou vrstvou fungují obdobně jako mezi business a aplikační vrstvou: serving může vést od technology service k business behavior a od technology interface k business aktérovi či roli. Model tak může aplikační vrstvu vynechat tam, kde ji skutečnost nevyžaduje; realization by naopak znamenala, že technologie proces uskutečňuje."
+  },
+  {
+    "topic": "cross-layer",
+    "question": "Jak souvisejí data object „Faktura“ v účetním systému a tištěná faktura (representation) s business objectem „Faktura“?",
+    "options": [
+      "Data object i representation realizují business object",
+      "Representation realizuje data object a ten realizuje business object",
+      "Business object realizuje data object i representation",
+      "Data object realizuje representation a ta realizuje business object"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business object může mít více realizací: data object (data pro automatizované zpracování v aplikační vrstvě) i representation (vnímatelná podoba, např. tištěný dokument) jej realizují přímo. Mezi representation a data objectem je dovolena pouze association a business object jako abstraktnější prvek nic z toho nerealizuje."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Banka zahajuje projekt „Náhrada core bankingu“ s pevným začátkem, koncem a rozpočtem. Kterým prvkem ArchiMate se projekt modeluje?",
+    "options": [
+      "Work package",
+      "Deliverable",
+      "Plateau",
+      "Course of action"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Work package je série činností navržená k dosažení konkrétních výsledků v daném čase a s danými zdroji; modeluje úkoly, projekty i programy a má jasný začátek a konec. Deliverable je výsledek práce, plateau stabilní stav architektury a course of action strategický přístup ke konfiguraci capabilities a resources."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Výsledkem projektu je podepsaná analytická zpráva a nasazená nová verze mobilní aplikace. Jakým prvkem se tyto výsledky modelují?",
+    "options": [
+      "Deliverable",
+      "Work package",
+      "Implementation event",
+      "Outcome"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Deliverable je přesně definovaný výsledek work packagu – zpráva, software, služba, fyzický produkt či organizační změna; často bývá smluvně specifikován a formálně převzat. Outcome je motivační prvek pro dosažený výsledný stav či efekt (např. „náklady sníženy o 10 %“), nikoli konkrétní projektový výstup."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Kterým prvkem se modeluje milník „Program schválen řídicím výborem“, po kterém mohou začít práce na projektech?",
+    "options": [
+      "Implementation event",
+      "Business event",
+      "Work package",
+      "Plateau"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Implementation event je změna stavu související s implementací či migrací – typicky milník jako schválení programu nebo nasazení do produkce; může spouštět work packages a mít časový atribut. Business event se týká provozní změny stavu v business vrstvě, nikoli průběhu změnového projektu."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Co v ArchiMate představuje plateau?",
+    "options": [
+      "Relativně stabilní stav architektury, který existuje po omezenou dobu",
+      "Rozdíl mezi výchozí a cílovou architekturou, který byl zjištěn při gap analýze",
+      "Časově ohraničený soubor činností vedoucí ke konkrétnímu výsledku",
+      "Přesně definovaný výsledek projektu, který převzal zadavatel"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plateau je relativně stabilní stav architektury během omezeného období; výchozí (baseline), přechodové (transition) i cílová (target) architektura se modelují jako plateaus. Rozdíl mezi dvěma plateaus vyjadřuje gap, činnosti work package a jejich výsledky deliverables."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Architekt porovnal výchozí a cílovou aplikační architekturu: starý CRM bude nahrazen novým. Jak tento rozdíl modelovat v ArchiMate 3.2?",
+    "options": [
+      "Gap asociovaný s oběma plateaus i s oběma CRM komponentami",
+      "Deliverable, který realizuje cílové plateau a nahrazuje starý CRM",
+      "Work package, který realizuje přechod mezi oběma plateaus",
+      "Assessment, který výsledek srovnání přiřazuje cílové architektuře"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Gap je výrok o rozdílu mezi dvěma plateaus (výsledek gap analýzy) a vztahem association se váže k oběma plateaus i k prvkům, které existují jen v jednom z nich (starý a nový CRM). Deliverable a work package popisují realizaci změny, ne samotný rozdíl, a assessment je motivační prvek pro výsledek analýzy driveru."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Který z následujících vztahů mezi prvky implementace a migrace NENÍ v ArchiMate 3.2 dovolen?",
+    "options": [
+      "Realization z deliverable na work package",
+      "Realization z work package na deliverable",
+      "Realization z deliverable na plateau",
+      "Realization z deliverable na application component"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Work package vytváří deliverable, takže realization vede od work packagu k deliverablu, a od deliverablů vede realization k plateaus i ke konkrétním prvkům architektury, např. k nově nasazené application component. Opačný směr – od deliverablu k work packagu – dovolen není; v tomto směru je mezi nimi pouze association."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Jak se v ArchiMate vyjadřuje časová posloupnost výchozí, přechodové a cílové architektury?",
+    "options": [
+      "Plateaus propojené vztahem triggering",
+      "Gaps propojené vztahem triggering",
+      "Implementation events, které realizují plateaus",
+      "Plateaus agregované do společného work packagu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plateaus se v čase řadí vztahem triggering, který vede od výchozího plateau k přechodovému a od něj k cílovému. Gap jen popisuje rozdíl mezi dvěma plateaus (association), implementation events mohou plateaus spouštět, ale nerealizují je, a work package plateaus neagreguje."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Projektový manažer (business role) odpovídá za řízení projektu „Zavedení e-fakturace“. Jak modelovat jeho vztah k tomuto work packagu?",
+    "options": [
+      "Assignment z business role na work package",
+      "Assignment z business role na deliverable",
+      "Realization z business role na work package",
+      "Serving z work package na business role"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Work package je prvek chování, a proto se k němu business aktivní struktura (actor, role, collaboration) přiřazuje vztahem assignment – kdo práci vykonává či za ni odpovídá. K deliverablu se role přiřadit nedá (jen asociace) a realization ani serving mezi rolí a work packagem v uvedených směrech dovoleny nejsou."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Která dvě z následujících tvrzení o plateau v ArchiMate 3.2 jsou pravdivá?\n1. Plateau je prvek chování, ke kterému se přiřazují role.\n2. Plateau může agregovat core elements platné v daném stavu architektury.\n3. Plateau realizuje gap, který vede k dalšímu stavu.\n4. Plateau může agregovat i goals a outcomes, které mají v daném stavu platit.",
+    "options": [
+      "2 a 4",
+      "1 a 2",
+      "3 a 4",
+      "1 a 3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plateau je složený prvek, který agreguje či skládá core elements, capabilities, requirements, goals i outcomes platné v daném stavu architektury (vztah plateau → outcome doplnila do tabulek vztahů verze 3.2). Plateau není prvkem chování a realization mezi plateau a gapem neexistuje – gap je s plateaus pouze asociován."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Jak v modelu vyjádřit, že deliverable „Nasazený modul elektronického podpisu“ naplňuje requirement „Dokumenty musí být elektronicky podepsány“?",
+    "options": [
+      "Realization z deliverable na requirement",
+      "Realization z requirement na deliverable",
+      "Assignment z deliverable na requirement",
+      "Triggering z deliverable na requirement"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Realization může vést od deliverablu k requirement (a tím nepřímo k principles, outcomes a goals), čímž vzniká sledovatelnost mezi změnovými projekty a motivací. Opačný směr – od requirement k deliverablu – dovolen není a assignment ani triggering metamodel mezi nimi nedovoluje."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Ve kterých fázích TOGAF ADM se podle specifikace ArchiMate uplatňují především prvky vrstvy Implementation and Migration?",
+    "options": [
+      "Ve fázích E, F a G",
+      "Ve fázích B, C a D",
+      "Ve fázi A a v Requirements Management",
+      "V přípravné fázi (Preliminary)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Specifikace ArchiMate uvádí, že jádrové vrstvy odpovídají fázím B, C a D, zatímco prvky implementace a migrace připadají především na fáze E (Opportunities and Solutions), F (Migration Planning) a G (Implementation Governance) – plánování přechodových architektur, projektů a jejich výstupů. Plateaus a gaps lze použít i při gap analýze ve fázích B–D, těžiště je však v plánování migrace a řízení implementace."
+  },
+  {
+    "topic": "implementation-migration",
+    "question": "Milník „Release 2.0 nasazen“ nastane po dokončení projektu „Vývoj Release 2.0“ a zahájí projekt „Migrace dat“. Jak to modelovat?",
+    "options": [
+      "Triggering z work packagu na implementation event a z něj na další work package",
+      "Realization z work packagu na implementation event a z něj na další work package",
+      "Implementation event je složen (composition) z obou work packages",
+      "Triggering z deliverablu na implementation event i na navazující work package"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Implementation events a work packages se řetězí vztahem triggering: dokončení práce vede k milníku a milník spouští navazující práci. Realization vede od work packagu k deliverablu, ne k události, a deliverable jako pasivní prvek nemůže nic spouštět."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Jaký je v ArchiMate rozdíl mezi viewpointem a view?",
+    "options": [
+      "Viewpoint určuje konvence pro určitý druh pohledů; view je konkrétní reprezentace vytvořená podle nich",
+      "View určuje konvence pro určitý druh pohledů; viewpoint je konkrétní diagram vytvořený podle těchto konvencí",
+      "Viewpoint je pohled určený pro management, view je technický diagram určený pro architekty",
+      "Viewpoint a view jsou synonyma; view je pouze kratší název používaný v modelovacích nástrojích"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Viewpoint je specifikace konvencí (které koncepty a jaká reprezentace) pro tvorbu a použití určitého druhu view; view je reprezentace systému z pohledu souvisejících concerns, která se viewpointem řídí. Zjednodušeně: view je to, co vidíte, a viewpoint místo, odkud se díváte."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Která dvě z následujících tvrzení odpovídají konceptuálnímu modelu popisu architektury podle ISO/IEC/IEEE 42010, ze kterého ArchiMate vychází?\n1. Viewpoint rámuje (frames) jeden či více concerns.\n2. Každý concern může být rámován nejvýše jedním viewpointem.\n3. View se řídí (is governed by) viewpointem.\n4. Stakeholder je v ArchiMate specializací prvku business actor.",
+    "options": [
+      "1 a 3",
+      "1 a 2",
+      "2 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V modelu 42010 mají stakeholdeři concerns, viewpoint rámuje jeden či více concerns a view se viewpointem řídí a adresuje dané concerns. Jeden concern může být rámován více viewpointy a stakeholder je v ArchiMate motivační prvek, nikoli specializace business actora."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Ze kterých dvou kroků se podle ArchiMate skládá vytvoření viewpointu (viewpoint mechanism)?",
+    "options": [
+      "Výběr podmnožiny konceptů metamodelu a definice reprezentace srozumitelné stakeholderovi",
+      "Výběr jedné vrstvy jádrového rámce a určení barev pro jednotlivé typy prvků",
+      "Identifikace stakeholderů a schválení pohledu architektonickou radou",
+      "Vytvoření nového typu prvku pomocí profilu a jeho zakreslení do diagramu v modelovacím nástroji"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Viewpoint mechanism znamená (1) vybrat z metamodelu podmnožinu konceptů a vztahů relevantních pro concerns stakeholdera a (2) určit jejich reprezentaci – diagram, katalog, matici či jinou vizualizaci. Pohled tedy nemusí být grafický a barvy samy o sobě formální význam nemají."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Manažer potřebuje rozhodnout o prioritách investic a dostává k tomu křížové tabulky, mapy aplikační krajiny a přehledové seznamy. Jakému účelu (purpose) viewpointu to odpovídá?",
+    "options": [
+      "Deciding",
+      "Designing",
+      "Informing",
+      "Coherence"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Viewpoints s účelem Deciding pomáhají manažerům v rozhodování – typicky křížové tabulky, landscape mapy, seznamy a reporty. Designing podporuje návrh (architekti a designéři, diagramy podobné UML) a Informing informuje libovolné stakeholdery ilustracemi či letáky; Coherence patří do dimenze obsahu, ne účelu."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Viewpoint zobrazuje prvky z více vrstev, ale jen jednoho aspektu. Do které úrovně obsahu (content) podle klasifikace viewpointů v ArchiMate patří?",
+    "options": [
+      "Coherence",
+      "Details",
+      "Overview",
+      "Informing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Úroveň Coherence pokrývá více vrstev nebo více aspektů (např. pro provozní manažery), Details jednu vrstvu a jeden aspekt (např. pro softwarového inženýra) a Overview více vrstev i více aspektů (pro podnikové architekty a vedení). Informing je účel (purpose) viewpointu, nikoli úroveň obsahu."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Které tvrzení o příkladových viewpoints ze specifikace ArchiMate 3.2 NEPLATÍ?",
+    "options": [
+      "Konformní nástroj musí podporovat všechny příkladové viewpoints",
+      "Jsou uvedeny v informativní (nikoli normativní) příloze specifikace",
+      "Organizace je mohou upravit nebo si vytvořit vlastní viewpoints",
+      "V kterémkoli z nich lze použít grouping a junction"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Příkladové viewpoints (příloha C) jsou informativní, nikoli normativní ani vyčerpávající: konformní nástroj je podporovat smí, ale nemusí – povinný je jen samotný viewpoint mechanism. Organizace je mohou upravovat či definovat vlastní podle concerns svých stakeholderů a grouping i junction lze použít v kterémkoli viewpointu."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Vlastník procesu „Vyřízení objednávky“ chce vidět, které aplikace podporují jednotlivé kroky jeho procesu. Který viewpoint je nejvhodnější?",
+    "options": [
+      "Application Usage",
+      "Application Cooperation",
+      "Application Structure",
+      "Technology Usage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application Usage viewpoint ukazuje, jak aplikace podporují business procesy a další business prvky; slouží např. procesním architektům a provozním manažerům. Application Cooperation se zaměřuje na vztahy a toky mezi aplikacemi navzájem, Application Structure na vnitřní strukturu aplikace a Technology Usage na to, jak aplikace využívají technologii."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "CIO chce přehled aplikační krajiny: které aplikace si navzájem předávají data a jak jsou propojeny. Který viewpoint zvolí?",
+    "options": [
+      "Application Cooperation",
+      "Application Usage",
+      "Information Structure",
+      "Implementation and Deployment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Application Cooperation viewpoint zobrazuje vztahy mezi aplikačními komponentami – informační toky, služby, které si navzájem poskytují, a jejich orchestraci; slouží k přehledu aplikační krajiny. Application Usage se zaměřuje na podporu business procesů a Information Structure na strukturu dat, nikoli na vazby mezi aplikacemi."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Architekt řešení chce zachytit, kterými artifacts jsou realizovány komponenty nového systému a jeho data a na jakém system software poběží. Který viewpoint je nejvhodnější?",
+    "options": [
+      "Implementation and Deployment",
+      "Technology Usage",
+      "Application Structure",
+      "Implementation and Migration"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Implementation and Deployment viewpoint ukazuje, jak jsou aplikace realizovány na infrastruktuře: kterými artifacts jsou realizovány komponenty a data a na jakém system software běží. Technology Usage zdůrazňuje, jak aplikace využívají technologické služby a infrastrukturu, Application Structure vnitřní skladbu aplikace a Implementation and Migration propojuje projekty s částmi architektury."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Personální ředitel chce vidět strukturu útvarů, rolí a jejich umístění v pobočkách firmy. Který viewpoint je vhodný?",
+    "options": [
+      "Organization",
+      "Business Process Cooperation",
+      "Stakeholder",
+      "Product"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Organization viewpoint zobrazuje strukturu podniku – business actors, roles, collaborations, locations a business interfaces – a řeší kompetence, pravomoci a odpovědnosti. Stakeholder viewpoint patří k motivačním viewpointům (stakeholdeři, drivers, goals) a Business Process Cooperation řeší vazby mezi procesy."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Datový architekt chce zachytit, jak business objects souvisejí s data objects a artifacts, které je realizují. Který viewpoint použije?",
+    "options": [
+      "Information Structure",
+      "Application Structure",
+      "Technology",
+      "Service Realization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Information Structure viewpoint ukazuje strukturu informací podniku – business objects, representations, data objects a artifacts a jejich vzájemné realizace a závislosti; je určen doménovým a informačním architektům. Application Structure se soustředí na skladbu aplikace (komponenty, rozhraní, data objects) a Service Realization na realizaci business služeb."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Architekt potřebuje znázornit pouze posloupnost výchozí, přechodových a cílové architektury a rozdíly mezi nimi. Který viewpoint je nejvhodnější?",
+    "options": [
+      "Migration",
+      "Project",
+      "Implementation and Migration",
+      "Strategy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Migration viewpoint obsahuje plateaus a gaps a ukazuje přechod od výchozí k cílové architektuře. Project viewpoint se zaměřuje na řízení změny (work packages, implementation events, deliverables, goals) a Implementation and Migration propojuje programy a projekty s částmi architektury a plateaus, které realizují."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Jaký je hlavní rozdíl mezi viewpoints Product a Service Realization?",
+    "options": [
+      "Product ukazuje skladbu a hodnotu nabídky (služby, contract); Service Realization to, jak jsou business služby realizovány procesy a aplikacemi",
+      "Product ukazuje, jak jsou business služby realizovány procesy a aplikacemi; Service Realization skladbu a hodnotu nabídky (služby, contract)",
+      "Product patří mezi strategické viewpoints, zatímco Service Realization mezi viewpoints implementace a migrace",
+      "Product je určen pro infrastrukturní architekty, Service Realization pro produktové manažery a obchod"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Product viewpoint ukazuje hodnotu, kterou produkt nabízí zákazníkům, a jeho skladbu ze služeb, contractu a dalších prvků; je určen produktovým manažerům. Service Realization viewpoint ukazuje, jak jsou business služby realizovány podkladovými procesy a aplikacemi; oba patří k základním viewpoints, ne ke strategickým ani k viewpoints implementace a migrace."
+  },
+  {
+    "topic": "viewpoints",
+    "question": "Podnikový architekt potřebuje jeden přehledový pohled přes všechny vrstvy – od business služeb a procesů přes aplikace až po infrastrukturu –, aby posoudil dopad plánované změny. Který viewpoint je nejvhodnější?",
+    "options": [
+      "Layered",
+      "Application Cooperation",
+      "Service Realization",
+      "Implementation and Deployment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Layered viewpoint poskytuje přehled přes více vrstev i aspektů najednou (může obsahovat všechny jádrové prvky a vztahy) a slouží architektům k ověření konzistence a k analýze dopadů změn. Service Realization ukazuje jen realizaci business služeb, Application Cooperation vazby mezi aplikacemi a Implementation and Deployment mapování aplikací na technologii."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Jaký formální význam mají barvy prvků v ArchiMate 3.2?",
+    "options": [
+      "Žádný – barvy volí modelář, např. pro zvýraznění nebo heat mapy",
+      "Určují vrstvu prvku a jejich změna mění typ prvku v modelu",
+      "Rozlišují aspekty: žlutá je chování, modrá aktivní a zelená pasivní struktura",
+      "Odlišují výchozí a cílovou architekturu, jak to vyžaduje viewpoint Migration"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Barvy nemají ve standardu žádnou formální sémantiku – modelář je může použít libovolně, např. pro zvýraznění nebo heat mapy. V příkladech se konvenčně používá žlutá pro business, modrá pro aplikace a zelená pro technologii, typ prvku však určuje jeho koncept (a ikona), nikoli barva."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Jak se v boxové notaci ArchiMate 3.2 vizuálně odlišují prvky struktury, chování a motivace?",
+    "options": [
+      "Hranaté rohy značí strukturu, zaoblené chování a zkosené rohy motivační prvky",
+      "Plná obrysová čára značí strukturu, čárkovaná chování a tečkovaná čára motivační prvky",
+      "Zaoblené rohy značí strukturu, hranaté chování a zkosené rohy strategické prvky",
+      "Strukturu, chování a motivaci rozlišuje pouze barva výplně prvku"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tvar rohů je notační vodítko: hranaté (pravoúhlé) rohy mají prvky struktury, zaoblené rohy prvky chování a zkosené (diagonálně seříznuté) rohy motivační prvky. Barva formální význam nemá a typ čáry rozlišuje vztahy, nikoli kategorie prvků."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Která dvě z následujících tvrzení o notaci ArchiMate 3.2 jsou pravdivá?\n1. Ikona prvku se umisťuje vždy do levého dolního rohu boxu.\n2. Písmeno vrstvy v rohu prvku je povinné, jinak diagram není konformní.\n3. Do levého horního rohu prvku lze volitelně umístit písmeno vrstvy, např. „A“ pro aplikační vrstvu.\n4. U řady prvků lze místo boxu s ikonou použít i samotnou ikonu.",
+    "options": [
+      "3 a 4",
+      "1 a 3",
+      "2 a 4",
+      "1 a 2"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Standardní notace prvku je box s ikonou v pravém horním rohu a u řady prvků lze použít i samotnou ikonu. Volitelné písmeno v levém horním rohu (M, S, B, A, T, P, I) označuje, do které vrstvy či aspektu prvek patří; jde o notační pomůcku, ne o povinnost."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Prvek má v pravém horním rohu ikonu ozubených kol. O jaký prvek jde?",
+    "options": [
+      "Equipment",
+      "Device",
+      "Facility",
+      "System software"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ikonou ozubených kol se značí equipment – fyzické stroje, nástroje a přístroje. Device má ikonu monitoru s klávesnicí, facility ikonu továrny a system software ikonu kruhu (disku) s vnitřním kruhem."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Co platí pro vnoření (nesting) prvků v diagramu ArchiMate?",
+    "options": [
+      "Je to alternativní notace vztahu (např. composition, assignment); model přitom nese konkrétní vztah",
+      "Je to samostatný typ vztahu, který vyjadřuje, že vnořený prvek se fyzicky nachází uvnitř nadřazeného prvku",
+      "Smí se použít pouze pro composition a vždy znamená existenční závislost části na celku",
+      "Vnořený prvek automaticky dědí všechny vztahy prvku, do kterého je vnořen"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vnoření je jen grafická alternativa k vykreslení vztahu – lze jím zobrazit composition, aggregation, assignment, realization, specialization či access (např. funkce vnořená do komponenty = assignment). V pohledu může být nejednoznačné, proto model vždy obsahuje jeden konkrétní vztah; nejde o samostatný typ vztahu."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Architekt chce ke každé application component evidovat roční náklady, kritičnost a vlastníka a z těchto údajů vytvářet heat mapy. Který mechanismus ArchiMate je k tomu určen?",
+    "options": [
+      "Profil s typovanými atributy připojený k prvkům",
+      "Specializace komponenty pro každou úroveň kritičnosti",
+      "Grouping komponent podle jejich kritičnosti",
+      "Nový typ vztahu „costs“ přidaný do metamodelu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Atributy se do ArchiMate přidávají pomocí profilů – datových struktur typovaných atributů (s výchozími hodnotami), které se připojují k prvkům či vztahům; hodnoty atributů lze pak vizualizovat např. heat mapou. Specializace definuje nový typ prvku, ne sadu vlastností, a nové typy vztahů customization mechanismy nezavádějí."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Banka chce v modelech odlišit „Mobilní aplikace“ jako zvláštní druh application component. Jak se taková specializace standardně zobrazuje?",
+    "options": [
+      "Názvem specializace v uvozovkách «», např. «Mobilní aplikace»",
+      "Odlišnou barvou výplně, protože barva určuje typ prvku",
+      "Vztahem specialization od každé aplikace k obecné komponentě",
+      "Novým tvarem rohů boxu vyhrazeným pro specializované prvky"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Specializace jako mechanismus přizpůsobení jazyka definuje nový typ prvku odvozený od existujícího (dědí jeho vlastnosti a povolené vztahy) a standardně se značí jménem v uvozovkách «» ve stylu stereotypu UML; volitelně může mít vlastní ikonu či barvu. Barva typ prvku neurčuje a vztah specialization propojuje dva prvky v modelu, nový typ nezavádí."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Jaký je rozdíl mezi vztahem specialization a specializací jako mechanismem přizpůsobení jazyka?",
+    "options": [
+      "Vztah spojuje dva prvky stejného typu v modelu; mechanismus definuje nový typ prvku",
+      "Vztah definuje nový typ prvku v metamodelu; mechanismus spojuje dva prvky stejného typu v modelu",
+      "Jde o totéž – mechanismus je jen jiný název pro vztah specialization používaný v nástrojích",
+      "Vztah lze použít jen mezi motivačními prvky, mechanismus jen mezi prvky jádrových vrstev"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vztah specialization je běžný vztah v modelu mezi dvěma prvky stejného typu (např. obecný a specifický business process). Specializace jako customization mechanism naproti tomu definuje nový typ konceptu (např. «Projekt» odvozený z work package), který dědí vlastnosti a povolené vztahy rodiče; implementuje se profilem a značí se «»."
+  },
+  {
+    "topic": "customization-notation",
+    "question": "Proč ArchiMate odděluje koncepty metamodelu od jejich notace?",
+    "options": [
+      "Aby šlo stejné koncepty zobrazit různým stakeholderům v jim srozumitelné podobě",
+      "Aby si každý nástroj mohl definovat vlastní metamodel a přitom zachovat standardní ikony",
+      "Protože notace je normativní jen pro business vrstvu a ostatní vrstvy ji mohou měnit",
+      "Aby bylo možné kreslit vztahy mezi dvěma vztahy, které metamodel jinak nepovoluje"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Jazyk odděluje koncepty od jejich zobrazení, protože různí stakeholdeři mohou potřebovat různé formy reprezentace (na rozdíl např. od UML či BPMN s jedinou notací). Standardní notace by přesto měla mít přednost, aby diagramům rozuměl každý, kdo ArchiMate zná; metamodel ani pravidla vztahů se tím nemění."
+  }
+]

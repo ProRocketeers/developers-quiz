@@ -1,0 +1,233 @@
+.practice-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: clamp(22px, 3.5vw, 34px);
+  border-radius: 30px;
+  border: 1px solid var(--color-border);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 249, 0.98),
+    rgba(251, 247, 241, 0.96)
+  );
+  box-shadow: var(--shadow-md);
+}
+
+.practice-setup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.practice-setup-header h3 {
+  margin: 8px 0 6px;
+  color: var(--color-primary);
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+}
+
+.practice-setup-header p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.practice-setup-kicker {
+  color: var(--color-accent-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.practice-setup-close,
+.practice-setup-toolbar button,
+.practice-count-controls button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(39, 36, 92, 0.14);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-primary);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+}
+
+.practice-setup-close:hover,
+.practice-setup-toolbar button:hover,
+.practice-count-controls button:hover {
+  border-color: rgba(237, 123, 67, 0.45);
+  background: rgba(255, 249, 235, 0.96);
+}
+
+.practice-count-controls button.is-active {
+  border-color: rgba(237, 123, 67, 0.6);
+  background: rgba(242, 191, 58, 0.2);
+}
+
+.practice-setup-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+}
+
+.practice-setup-toolbar strong {
+  margin-right: auto;
+}
+
+.practice-topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.practice-topic {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 253, 249, 0.96);
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background-color 0.2s;
+}
+
+.practice-topic.is-selected {
+  border-color: rgba(237, 123, 67, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 249, 235, 0.98),
+    rgba(255, 245, 232, 0.94)
+  );
+  box-shadow: 0 10px 24px rgba(237, 123, 67, 0.1);
+}
+
+.practice-topic input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
+}
+
+.practice-topic-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.practice-topic-label {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.practice-topic-description {
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.practice-topic-count {
+  flex-shrink: 0;
+  min-width: 40px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(39, 36, 92, 0.08);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.practice-setup-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+
+.practice-count {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.practice-count label {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.practice-count-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.practice-count-controls input {
+  width: 96px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: rgba(245, 242, 255, 0.8);
+  text-align: center;
+}
+
+.practice-count-hint {
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
+.practice-start {
+  min-height: 48px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-strong)
+  );
+  color: #231f49;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 16px 32px rgba(237, 123, 67, 0.24);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.practice-start:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.practice-start:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .practice-topics {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-setup-header {
+    flex-direction: column;
+  }
+
+  .practice-start {
+    width: 100%;
+  }
+}

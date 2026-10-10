@@ -1,0 +1,216 @@
+.cert-question {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: 24px;
+  border: 1px solid var(--color-border);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 249, 0.98),
+    rgba(250, 245, 239, 0.96)
+  );
+  box-shadow: var(--shadow-sm);
+}
+
+.cert-question::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(
+    180deg,
+    var(--color-accent),
+    var(--color-accent-strong)
+  );
+}
+
+.cert-question-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cert-question-meta span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.cert-question-number {
+  background: rgba(39, 36, 92, 0.08);
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.cert-question-topic {
+  background: rgba(242, 191, 58, 0.18);
+  color: #7a5200;
+}
+
+.cert-question-scoring {
+  background: rgba(93, 97, 167, 0.14);
+  color: var(--color-primary-soft);
+}
+
+.cert-question-scenario {
+  padding: 16px 18px;
+  border-radius: 16px;
+  border-left: 4px solid var(--color-primary-soft);
+  background: rgba(245, 242, 255, 0.85);
+}
+
+.cert-question-scenario strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cert-question-scenario p {
+  margin: 0;
+  color: var(--color-text);
+  white-space: pre-line;
+}
+
+.cert-question-title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.cert-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cert-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background-color: rgba(245, 242, 255, 0.6);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+}
+
+.cert-option:hover {
+  background-color: rgba(255, 247, 230, 0.9);
+}
+
+.cert-option input[type="radio"] {
+  margin-top: 5px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--color-accent-strong);
+}
+
+.cert-option input[type="radio"]:disabled {
+  cursor: default;
+}
+
+.cert-option-text {
+  flex: 1;
+  color: var(--color-text);
+}
+
+.cert-option.is-selected {
+  border-color: rgba(237, 123, 67, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(242, 191, 58, 0.16),
+    rgba(237, 123, 67, 0.12)
+  );
+  box-shadow: 0 0 0 3px rgba(237, 123, 67, 0.12);
+}
+
+.cert-option.is-correct {
+  border-color: rgba(47, 158, 68, 0.55);
+  background: rgba(47, 158, 68, 0.1);
+  box-shadow: 0 0 0 3px rgba(47, 158, 68, 0.1);
+}
+
+.cert-option.is-incorrect {
+  border-color: rgba(224, 49, 49, 0.5);
+  background: rgba(224, 49, 49, 0.08);
+}
+
+.cert-option.is-partial {
+  border-color: rgba(237, 123, 67, 0.55);
+  background: rgba(242, 191, 58, 0.14);
+}
+
+.cert-option.is-dimmed {
+  opacity: 0.72;
+}
+
+.cert-option.is-correct,
+.cert-option.is-incorrect,
+.cert-option.is-partial,
+.cert-option.is-dimmed {
+  cursor: default;
+}
+
+.cert-option-points {
+  flex-shrink: 0;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(39, 36, 92, 0.08);
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.cert-feedback {
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+}
+
+.cert-feedback--correct {
+  border-color: rgba(47, 158, 68, 0.3);
+  background: rgba(47, 158, 68, 0.08);
+}
+
+.cert-feedback--partial {
+  border-color: rgba(237, 123, 67, 0.3);
+  background: rgba(242, 191, 58, 0.12);
+}
+
+.cert-feedback--incorrect {
+  border-color: rgba(224, 49, 49, 0.25);
+  background: rgba(224, 49, 49, 0.06);
+}
+
+.cert-feedback-verdict {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-primary);
+}
+
+.cert-feedback-explanation {
+  margin: 0;
+  color: var(--color-text);
+  white-space: pre-line;
+}
+
+.cert-feedback--unanswered {
+  border-color: rgba(93, 97, 167, 0.25);
+  background: rgba(245, 242, 255, 0.85);
+}

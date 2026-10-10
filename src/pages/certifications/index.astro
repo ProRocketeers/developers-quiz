@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { countQuestionsByExam } from "../../services/certificationQuestionService";
+import CertificationHomeView from "../../views/CertificationHomeView";
+
+const questionCounts = await countQuestionsByExam();
+---
+
+<BaseLayout title="Certifikace | Developers Quiz" currentPath="/certifications">
+  <CertificationHomeView questionCounts={questionCounts} client:only="react" />
+</BaseLayout>

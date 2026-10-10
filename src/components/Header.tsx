@@ -9,6 +9,8 @@ function Header({ currentPath = "/" }: HeaderProps) {
   const homeClass = currentPath === "/" ? "nav-link active" : "nav-link";
   const resultsClass =
     currentPath === "/results" ? "nav-link active" : "nav-link";
+  const certificationsClass =
+    currentPath === "/certifications" ? "nav-link active" : "nav-link";
 
   return (
     <header className="header">
@@ -23,6 +25,9 @@ function Header({ currentPath = "/" }: HeaderProps) {
         </a>
         <a href="/results" className={resultsClass}>
           Výsledky
+        </a>
+        <a href="/certifications" className={certificationsClass}>
+          Certifikace
         </a>
       </nav>
     </header>

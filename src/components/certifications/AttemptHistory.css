@@ -1,0 +1,65 @@
+.attempt-history {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.attempt-history-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "title score"
+    "meta score";
+  gap: 2px 16px;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(39, 36, 92, 0.1);
+  background: rgba(255, 253, 249, 0.95);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+.attempt-history-item:hover {
+  border-color: rgba(237, 123, 67, 0.34);
+  transform: translateY(-1px);
+}
+
+.attempt-history-item.is-active {
+  border-color: rgba(237, 123, 67, 0.5);
+  box-shadow: 0 14px 30px rgba(39, 36, 92, 0.12);
+}
+
+.attempt-history-title {
+  grid-area: title;
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.attempt-history-meta {
+  grid-area: meta;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
+.attempt-history-score {
+  grid-area: score;
+  align-self: center;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.attempt-history-score.is-passed {
+  color: var(--color-success);
+}
+
+.attempt-history-score.is-failed {
+  color: var(--color-danger);
+}

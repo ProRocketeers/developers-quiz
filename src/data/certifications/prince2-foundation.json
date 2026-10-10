@@ -1,0 +1,2402 @@
+[
+  {
+    "topic": "overview",
+    "question": "Jak PRINCE2 7 definuje projekt?",
+    "options": [
+      "Dočasná organizace, která má dodat jeden či více obchodních produktů podle dohodnutého business casu",
+      "Soubor opakujících se činností, jimiž organizace dlouhodobě provozuje a udržuje své produkty a služby",
+      "Trvalá organizační struktura, která koordinuje skupinu souvisejících změn k dosažení strategických cílů",
+      "Sled plánovaných činností řízených projektovým manažerem v rámci rozpočtu schváleného vedením firmy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 chápe projekt jako dočasnou organizaci, která vzniká kvůli dodání jednoho či více obchodních produktů v souladu s dohodnutým business casem. Opakující se činnosti představují běžný provoz (business as usual) a trvalá struktura koordinující související změny neodpovídá dočasné povaze projektu. Pouhý sled činností pod vedením PM pomíjí podstatné – dočasnou organizaci a vazbu na business case."
+  },
+  {
+    "topic": "overview",
+    "question": "Které dvě z následujících položek patří mezi pět integrovaných prvků (integrated elements) PRINCE2 7?\n1. Themes\n2. People\n3. Project environment\n4. Project context",
+    "options": [
+      "2 a 4",
+      "1 a 3",
+      "1 a 2",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 stojí na pěti integrovaných prvcích: principles, people, practices, processes a project context. Themes a project environment jsou pojmy ze 6. edice – témata nahradily praktiky (practices) a místo prostředí projektu se nyní hovoří o kontextu projektu (project context)."
+  },
+  {
+    "topic": "overview",
+    "question": "Jaké organizační uspořádání projektu PRINCE2 7 předpokládá?",
+    "options": [
+      "Žádné konkrétní; vždy však existují uživatelé, dodavatelé a ti, kdo rozhodují o investici",
+      "Vztah zákazníka s externím dodavatelem, který je upraven smlouvou o dodávce hotových produktů",
+      "Projekt jako součást programu, který mu poskytuje business case i projektový mandát",
+      "Projekt uvnitř jedné organizace, v níž jsou všichni členové týmu jejími zaměstnanci"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 nevychází z žádného konkrétního uspořádání: projekt může být samostatný i součástí programu či portfolia a dodavatelé mohou být interní i externí. V každém projektu však existují uživatelé, dodavatelé a ti, kdo rozhodují o investici – odtud tři zájmy business, user a supplier. Obchodní vztahy s externími dodavateli pak řeší commercial management approach."
+  },
+  {
+    "topic": "overview",
+    "question": "Doplňte chybějící slovo: PRINCE2 7 řídí výkonnost projektu v sedmi oblastech (performance targets) – benefits, costs, time, quality, scope, risk a ______.",
+    "options": [
+      "sustainability",
+      "communication",
+      "stakeholder engagement",
+      "compliance"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sedm výkonnostních cílů PRINCE2 7 tvoří benefits, costs, time, quality, scope, risk a nově sustainability (udržitelnost); pro každý z nich lze stanovit toleranci. 6. edice pracovala jen se šesti oblastmi bez udržitelnosti. Komunikace, stakeholdeři ani compliance samostatnými výkonnostními cíli nejsou."
+  },
+  {
+    "topic": "overview",
+    "question": "Která charakteristika projektu vyjadřuje, že projekt přináší více hrozeb i příležitostí než běžný provoz (business as usual)?",
+    "options": [
+      "Uncertainty (nejistota)",
+      "Unique (jedinečnost)",
+      "Cross-functional (napříč útvary)",
+      "Temporary (dočasnost)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Změna, kterou projekt dodává, s sebou nese více hrozeb i příležitostí než běžný provoz – tuto vlastnost PRINCE2 označuje jako uncertainty. Jedinečnost (unique) znamená, že se každý projekt v něčem liší od ostatních; nejistotu sice zvyšuje, ale neoznačuje ji. Dočasnost a zapojení lidí napříč útvary popisují jiné vlastnosti projektu."
+  },
+  {
+    "topic": "overview",
+    "question": "Které dvě z následujících vlastností patří mezi charakteristiky, jimiž se projekt liší od běžného provozu?\n1. Temporary\n2. Cross-functional\n3. Repetitive\n4. Predictable",
+    "options": [
+      "1 a 2",
+      "3 a 4",
+      "1 a 3",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 uvádí pět charakteristik projektu: change, temporary, cross-functional, unique a uncertainty. Opakovatelnost a předvídatelnost jsou naopak typické pro běžný provoz – projekt je jedinečný a nese s sebou vyšší nejistotu."
+  },
+  {
+    "topic": "overview",
+    "question": "Které způsoby dodávky (delivery methods) PRINCE2 7 výslovně rozlišuje?",
+    "options": [
+      "Linear-sequential, iterative-incremental a hybrid",
+      "Plan-driven, change-driven a hybrid",
+      "Waterfall, iterative-incremental a continuous delivery",
+      "Linear-sequential, parallel-concurrent a iterative"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 popisuje tři způsoby dodávky: lineárně-sekvenční (linear-sequential), iterativně-inkrementální (iterative-incremental) a hybridní kombinaci obou. Projekt jich může využít i více a řízení podle PRINCE2 funguje s kterýmkoli z nich. Ostatní trojice míchají pojmy z jiných rámců nebo kategorie, které PRINCE2 nepoužívá."
+  },
+  {
+    "topic": "overview",
+    "question": "Doplňte chybějící slovo: Při ______ způsobu dodávky vzniká řešení v opakovaných cyklech, každý cyklus přidá další funkční část a požadavky se průběžně zpřesňují.",
+    "options": [
+      "iterativně-inkrementálním",
+      "lineárně-sekvenčním",
+      "prediktivním",
+      "vodopádovém"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Iterativně-inkrementální způsob dodávky (iterative-incremental) dodává řešení v opakovaných cyklech po přírůstcích a požadavky se v jeho průběhu upřesňují – typicky jde o agilní způsoby práce. Lineárně-sekvenční (vodopádový, prediktivní) přístup naopak postupuje v navazujících krocích a produkty jsou z velké části specifikovány předem."
+  },
+  {
+    "topic": "overview",
+    "question": "Jak PRINCE2 7 popisuje portfolio, v jehož rámci může projekt probíhat?",
+    "options": [
+      "Jako celkovou investici organizace do změn potřebných k dosažení jejích strategických cílů",
+      "Jako dočasnou strukturu, která koordinuje související projekty a práce kvůli dosažení přínosů",
+      "Jako zadávající úroveň, která projekt objednává, jmenuje executive a stanovuje mu tolerance",
+      "Jako soubor všech produktů, které projekt předává do běžného provozu, včetně dokumentace"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Portfolio představuje celkovou investici organizace do změn, kterými chce dosáhnout svých strategických cílů. Dočasná struktura koordinující související projekty a práci kvůli přínosům je program (programme) a zadávající úroveň projektu je business layer. Projekt může být součástí programu nebo portfolia, ale i samostatný."
+  },
+  {
+    "topic": "overview",
+    "question": "Které tvrzení o metodě PRINCE2 7 je správné?",
+    "options": [
+      "Je univerzální – lze ji použít na projekt jakéhokoli rozsahu i odvětví spolu s odbornými modely práce",
+      "Obsahuje odborné techniky pro specializovanou práci, například pro návrh a vývoj softwaru či staveb",
+      "Hodí se hlavně pro lineární projekty; při iterativní dodávce se musí nahradit jinou metodou projektového řízení",
+      "Předepisuje jednotnou podobu všech manažerských produktů, kterou projekt nesmí nijak přizpůsobit"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Jednou z hlavních vlastností PRINCE2 je univerzálnost: metodu lze použít na jakýkoli projekt bez ohledu na rozsah, typ či odvětví a funguje vedle odborných (specializovaných) modelů. Samotnou odbornou práci PRINCE2 neřeší, je slučitelná se všemi způsoby dodávky včetně iterativně-inkrementálního a manažerské produkty se přizpůsobují projektu."
+  },
+  {
+    "topic": "principles",
+    "question": "Co platí o uplatnění sedmi principů PRINCE2 7 v projektu?",
+    "options": [
+      "Musí se uplatnit všechny; přizpůsobuje se jen způsob, jakým se v projektu naplňují",
+      "Uplatní se ty, které project board při iniciaci vybere jako relevantní pro projekt",
+      "U malých projektů stačí principy business casu, etap a výjimek, ostatní jsou volitelné",
+      "Jde o doporučení dobré praxe, která lze při tailoringu nahradit vlastními pravidly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Principy jsou závazná vodítka (guiding obligations): projekt, který neuplatňuje všech sedm, není projektem PRINCE2. Přizpůsobit (tailor) lze to, jak se principy naplňují, nikoli je vynechat. Výběr principů boardem nebo jejich nahrazení vlastními pravidly by popřelo samotnou podstatu metody."
+  },
+  {
+    "topic": "principles",
+    "question": "Co platí v PRINCE2 7 o tzv. minimálních požadavcích (minimum requirements) pro jednotlivé praktiky?",
+    "options": [
+      "Nejsou stanoveny; metoda se opírá o uplatnění principů a o dohodnuté tolerance",
+      "Každá praktika má pevně dané minimum, které nelze při tailoringu nijak vynechat ani upravit",
+      "Jsou stanoveny jen pro praktiky Business case a Progress, ostatní je nemají",
+      "Určuje je business layer pro každý projekt zvlášť a board je zapíše do PID"
+    ],
+    "correctAnswer": 0,
+    "explanation": "6. edice definovala pro každé téma minimální požadavky. PRINCE2 7 je zrušila – metoda stojí na dodržení sedmi principů a na tolerancích dohodnutých mezi úrovněmi řízení. Možnost s pevným minimem pro každou praktiku tedy popisuje stav z předchozí edice."
+  },
+  {
+    "topic": "principles",
+    "question": "Co vyžaduje princip Ensure continued business justification?",
+    "options": [
+      "Aby existoval platný důvod projekt zahájit a aby tento důvod trval po celou dobu projektu",
+      "Aby business case před každou etapou i před uzavřením projektu formálně schválil business layer",
+      "Aby projekt dodal všechny přínosy uvedené v business casu ještě před svým uzavřením",
+      "Aby byl business case jednou provždy schválen při iniciaci a v dalších etapách se už neměnil"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Princip vyžaduje, aby pro zahájení projektu existovalo zdůvodnění a aby zůstávalo platné po celou dobu; pokud pomine, má být projekt změněn nebo zastaven. Business case se proto průběžně aktualizuje a project board ho kontroluje na rozhodovacích bodech. Většina přínosů se navíc projeví až po skončení projektu, takže je nelze vyžadovat před jeho uzavřením."
+  },
+  {
+    "topic": "principles",
+    "question": "Doplňte chybějící slovo: Jeden z principů PRINCE2 7 zní „Define roles, responsibilities and ______“.",
+    "options": [
+      "relationships",
+      "reporting lines",
+      "accountabilities",
+      "authorities"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V 7. edici byl princip rozšířen na Define roles, responsibilities and relationships: kromě dohodnutých rolí a odpovědností, které zapojují zájmy business, user a supplier, zdůrazňuje budování vztahů s interními i externími stakeholdery a mezi nimi. V 6. edici se princip jmenoval Defined roles and responsibilities."
+  },
+  {
+    "topic": "principles",
+    "question": "Která dvě z následujících tvrzení o principu Learn from experience jsou pravdivá?\n1. Ponaučení se zaznamenávají až při uzavření projektu do lessons reportu.\n2. Za ponaučení odpovídá výhradně project support, který vede lessons log.\n3. Ponaučení z dřívějších projektů se vyhledávají už při startu projektu.\n4. Vyhledávat ponaučení je odpovědností každého, kdo se na projektu podílí.",
+    "options": [
+      "3 a 4",
+      "1 a 2",
+      "1 a 3",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ponaučení se hledají na začátku (z dřívějších projektů), zaznamenávají a uplatňují se v průběhu celého projektu a při uzavření se předávají organizaci; vyhledávat je má každý zúčastněný. Lessons log se proto vede po celou dobu projektu, ne až při uzavření, a project support ho může nanejvýš administrovat."
+  },
+  {
+    "topic": "principles",
+    "question": "Který z následujících kroků je přípustným přizpůsobením (tailoring) PRINCE2 7?",
+    "options": [
+      "Sloučit highlight report s pravidelným měsíčním přehledem, který organizace již používá",
+      "Vynechat princip Manage by stages, protože projekt má trvat jen čtyři měsíce a je jednoduchý",
+      "Svěřit roli executive projektovému manažerovi, aby se zrychlilo rozhodování",
+      "Nestanovovat žádné tolerance a místo toho eskalovat boardu každou, i sebemenší odchylku"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tailoring může spojovat či zjednodušovat manažerské produkty, slaďovat terminologii a formu reportingu se zvyklostmi organizace nebo upravovat míru formálnosti. Nelze však vynechat princip (projekt musí mít alespoň dvě etapy), spojit roli executive s rolí project managera ani se vzdát tolerancí, na nichž stojí řízení výjimkami."
+  },
+  {
+    "topic": "principles",
+    "question": "Kolik řídicích etap (management stages) musí mít projekt podle principu Manage by stages nejméně?",
+    "options": [
+      "Dvě – iniciační etapu a alespoň jednu další etapu",
+      "Dvě – Starting up a project a jednu realizační etapu",
+      "Tři – iniciační, realizační a uzavírací etapu",
+      "Jednu – u malých projektů postačí jediná etapa"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projekt PRINCE2 má nejméně dvě řídicí etapy: iniciační etapu a alespoň jednu další (realizační) etapu. Starting up a project probíhá ještě před projektem (pre-project) a etapou není. Uzavření projektu probíhá na konci poslední etapy, nikoli jako samostatná etapa."
+  },
+  {
+    "topic": "principles",
+    "question": "Jaký je hlavní přínos rozdělení projektu na řídicí etapy podle principu Manage by stages?",
+    "options": [
+      "Hranice etap slouží boardu jako rozhodovací body, zda a jak v projektu pokračovat",
+      "Každá etapa odpovídá jedné odborné fázi práce, například analýze, vývoji či testování",
+      "Project board se může omezit na kontrolu projektu jen při jeho iniciaci a uzavření",
+      "Celý projekt lze hned při iniciaci podrobně naplánovat na úrovni jednotlivých úkolů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Řízení po etapách dává project boardu na každé hranici etapy rozhodovací bod: zhodnotí dosažené výsledky a platnost business casu a rozhodne, zda schválí další etapu. Podrobně se plánuje jen v rámci plánovacího horizontu, tedy etapu po etapě. Řídicí etapy přitom nemusejí odpovídat odborným (technickým) fázím práce."
+  },
+  {
+    "topic": "principles",
+    "question": "Doplňte chybějící slovo: Princip Manage by exception vymezuje delegovanou pravomoc každé úrovně řízení pomocí ______ stanovených pro jednotlivé výkonnostní cíle.",
+    "options": [
+      "tolerancí",
+      "rozpočtů na změny",
+      "akceptačních kritérií",
+      "kontrolních milníků"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Manage by exception stanovuje pro výkonnostní cíle (čas, náklady, kvalitu, rozsah, přínosy, riziko a udržitelnost) tolerance, tedy povolené odchylky, na každé úrovni řízení. Dokud se odchylka drží v toleranci, řeší ji nižší úroveň sama; nadřízená úroveň zasahuje, až když se předpovídá překročení tolerance (výjimka). Rozpočet na změny a akceptační kritéria jsou jiné nástroje."
+  },
+  {
+    "topic": "principles",
+    "question": "Pojišťovna zastaví projekt nového produktu, protože po změně regulace by produkt už nepřinesl očekávané přínosy. Který princip se tím uplatňuje?",
+    "options": [
+      "Ensure continued business justification",
+      "Define roles, responsibilities and relationships",
+      "Focus on products",
+      "Learn from experience"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Podle principu Ensure continued business justification musí zdůvodnění projektu trvat po celou dobu; když pomine (zde kvůli změně regulace), má být projekt změněn, nebo zastaven. Ostatní principy se týkají rolí a vztahů, produktů a ponaučení, nikoli trvání důvodu investice."
+  },
+  {
+    "topic": "principles",
+    "question": "Projektová manažerka e-shopu si při přípravě projektu vyžádá závěrečné zprávy dvou podobných dřívějších projektů a jejich doporučení zohlední v přístupu k projektu. Který princip uplatňuje?",
+    "options": [
+      "Learn from experience",
+      "Focus on products",
+      "Manage by exception",
+      "Define roles, responsibilities and relationships"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vyhledání a využití ponaučení z dřívějších projektů hned na začátku je typickým projevem principu Learn from experience (v procesu Starting up a project jde o aktivitu Assess previous lessons). Ponaučení se pak zaznamenávají do lessons logu a uplatňují po celou dobu projektu. Ostatní principy se týkají produktů, tolerancí a rolí."
+  },
+  {
+    "topic": "principles",
+    "question": "Které tvrzení nejlépe vystihuje princip Focus on products?",
+    "options": [
+      "Projekt definuje a dodává produkty se zvláštním důrazem na požadavky a očekávání uživatelů ohledně kvality",
+      "Projekt dodává produkty co nejrychleji, a proto jejich popisy vznikají až po dokončení a předání produktů",
+      "Projekt se soustředí hlavně na řízení činností; produkty jsou jen vedlejším výsledkem dobře řízené práce",
+      "Projekt se snaží dodat co nejvíce produktů v rámci schváleného rozpočtu bez ohledu na jejich využití"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Focus on products znamená, že projekt nejprve jasně definuje produkty – jejich účel, složení a požadavky na kvalitu v popisech produktů – a ty pak řídí plánování, kontrolu kvality i akceptaci. Plánování proto vychází z produktů, nikoli z činností, a popisy produktů vznikají před jejich tvorbou, ne až po ní."
+  },
+  {
+    "topic": "principles",
+    "question": "Proč se podle principu Manage by stages podrobně plánuje vždy jen nejbližší etapa?",
+    "options": [
+      "Přesně plánovat lze jen v rámci plánovacího horizontu, který je časově omezený",
+      "Stage plan nahrazuje plán projektu, který se po iniciaci už dále neudržuje",
+      "Plán projektu vzniká až v poslední etapě, kdy jsou známy všechny produkty",
+      "Podrobný plán celého projektu by porušil princip Manage by exception"
+    ],
+    "correctAnswer": 0,
+    "explanation": "S dostatečnou přesností lze plánovat jen na omezenou dobu dopředu (planning horizon). Proto PRINCE2 kombinuje přehledový plán projektu, vytvořený už při iniciaci a aktualizovaný na hranicích etap, s podrobným plánem nejbližší etapy. Stage plan tedy plán projektu nenahrazuje, ale doplňuje."
+  },
+  {
+    "topic": "principles",
+    "question": "Které dvě z následujících položek patří mezi faktory, podle nichž se PRINCE2 7 přizpůsobuje projektu?\n1. Osobní preference executive\n2. Použitý způsob dodávky (delivery method)\n3. Schopnosti (capability) projektového týmu\n4. Počet principů, které chce board uplatnit",
+    "options": [
+      "2 a 3",
+      "1 a 4",
+      "1 a 2",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Princip Tailor to suit the project přizpůsobuje metodu velikosti, složitosti, důležitosti a rizikovosti projektu, jeho prostředí, použitému způsobu dodávky a schopnostem týmu. Osobní preference jednotlivce nejsou objektivním faktorem a počet uplatňovaných principů se nevolí – platí vždy všech sedm."
+  },
+  {
+    "topic": "principles",
+    "question": "Projektový manažer malého interního projektu navrhuje praktiku Risk úplně vynechat, protože projekt považuje za jednoduchý. Co platí podle PRINCE2 7?",
+    "options": [
+      "Praktiku lze zjednodušit a přizpůsobit, ale její účel musí zůstat naplněn",
+      "Praktiku lze vynechat, pokud to project board při iniciaci výslovně schválí a zapíše do PID",
+      "Praktiku lze vynechat, protože praktiky jsou na rozdíl od principů jen doporučené",
+      "Praktiku nelze nijak upravit; přizpůsobovat lze jen procesy, role a manažerské produkty"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tailoring znamená praktiky přizpůsobit kontextu – například zjednodušit postup nebo spojit dokumenty –, nikoli je vynechat; účel praktiky musí zůstat naplněn. Ani souhlas boardu z praktiky Risk volitelnou součást neudělá. Zároveň neplatí, že praktiky nelze upravovat – přizpůsobují se stejně jako procesy."
+  },
+  {
+    "topic": "principles",
+    "question": "Ve kterém manažerském produktu se dokumentuje, jak bude metoda PRINCE2 v projektu přizpůsobena (tailoring)?",
+    "options": [
+      "V project initiation documentation (PID)",
+      "V projektovém mandátu od business layer",
+      "V lessons logu jako součásti project logu",
+      "V end stage reportu první etapy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Požadavky na tailoring se dohodnou během iniciace (aktivita Agree tailoring requirements v procesu Initiating a project) a zdokumentují se v PID, kterou schvaluje project board. Projektový mandát přichází od business layer ještě před startem projektu a lessons log slouží k zaznamenávání ponaučení, nikoli k rozhodnutím o přizpůsobení metody."
+  },
+  {
+    "topic": "principles",
+    "question": "Kdo schvaluje přizpůsobení metody (tailoring), které je zachyceno v PID?",
+    "options": [
+      "Project board při autorizaci projektu",
+      "Project manager, který PID sestavuje",
+      "Project assurance po kontrole celé PID",
+      "Business layer při vydání mandátu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Přizpůsobení metody je zachyceno v PID a project board ji schvaluje při autorizaci projektu – tím schvaluje i navržený tailoring. Project manager PID sestavuje, ale sám si ji neschvaluje; project assurance může vhodnost přizpůsobení posoudit a radit boardu. Business layer může tailoring omezit svými standardy, o PID však nerozhoduje."
+  },
+  {
+    "topic": "people",
+    "question": "Co v PRINCE2 7 označuje pojem organizační ekosystém (organizational ecosystem)?",
+    "options": [
+      "Vnitřní části organizace i její vnější vztahy, například se zákazníky, partnery, dodavateli či regulátory",
+      "Části podniku, uživatele a dodavatele, kteří se na konkrétním projektu podílejí nebo jsou jím ovlivněni",
+      "Strukturu rolí project management teamu včetně vazeb na business layer a na externí dodavatele",
+      "Soubor informačních systémů, dat a nástrojů, které organizace využívá při řízení svých projektů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Organizační ekosystém zahrnuje vnitřní části organizace (zaměstnance, řízení, vlastníky) i její vnější vztahy – zákazníky, partnery, dodavatele, regulátory či konkurenty. Části podniku, uživatelé a dodavatelé zapojení do konkrétního projektu nebo jím ovlivnění tvoří projektový ekosystém. Struktura rolí je project management team structure."
+  },
+  {
+    "topic": "people",
+    "question": "Doplňte chybějící slovo: Části podniku, uživatelé a dodavatelé, kteří se na projektu podílejí nebo jsou jím ovlivněni, tvoří ______.",
+    "options": [
+      "project ecosystem",
+      "project team",
+      "project management team",
+      "organizational ecosystem"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projektový ekosystém (project ecosystem) tvoří všechny části podniku, uživatelé a dodavatelé, kteří jsou do projektu zapojeni nebo jsou jím ovlivněni. Project team a project management team zahrnují jen ty, kdo na projektu pracují nebo ho řídí, nikoli ovlivněné strany. Organizační ekosystém je širší – zahrnuje celou organizaci a její vnější vztahy."
+  },
+  {
+    "topic": "people",
+    "question": "Jaký je vztah mezi projektovým ekosystémem a organizačními ekosystémy?",
+    "options": [
+      "Projektový ekosystém leží v jednom či více organizačních ekosystémech a prolíná se s nimi",
+      "Organizační ekosystém je součástí projektového ekosystému a projekt ho po dobu trvání řídí",
+      "Oba ekosystémy jsou oddělené a propojuje je pouze executive jako zástupce business layer",
+      "Jde o synonyma, která PRINCE2 7 rozlišuje jen podle toho, zda je dodavatel interní, či externí"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projekt vzniká uvnitř organizace (nebo několika organizací, např. zákazníka a dodavatelů), proto jeho ekosystém leží v organizačních ekosystémech a překrývá se s nimi. Projekt neřídí celou organizaci a oba ekosystémy nejsou ani oddělené, ani totožné; vztahy na jejich rozhraní je naopak třeba aktivně řídit."
+  },
+  {
+    "topic": "people",
+    "question": "Obyvatelé sídliště se mylně domnívají, že nové logistické centrum zvýší hluk v jejich čtvrti, a organizují petici. Jsou podle PRINCE2 7 stakeholdery projektu?",
+    "options": [
+      "Ano, stakeholderem je i ten, kdo pouze vnímá, že ho projekt ovlivní",
+      "Ne, pouhé domněnky o dopadu nestačí, protože projekt je ve skutečnosti neovlivní",
+      "Ne, stakeholderem je jen ten, kdo má v projektu formální roli nebo smlouvu",
+      "Ano, ale jen pokud je v project boardu formálně zastupuje senior user"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stakeholder je jakákoli osoba, skupina či organizace, která může projekt ovlivnit, může jím být ovlivněna, nebo se domnívá, že jím ovlivněna bude. Obyvatelé tedy stakeholdery jsou a projekt by s nimi měl komunikovat, i když jejich obava není oprávněná. Formální role v projektu ani zastoupení v boardu podmínkou nejsou."
+  },
+  {
+    "topic": "people",
+    "question": "Co v PRINCE2 7 znamená pojem change management?",
+    "options": [
+      "Způsob, jakým organizace přechází ze současného stavu do požadovaného cílového stavu",
+      "Řízení požadavků na změnu (requests for change) produktů zahrnutých v baseline projektu",
+      "Postup, jímž change authority schvaluje změny v rámci rozpočtu na změny (change budget)",
+      "Aktualizaci business casu a plánů na hranici etapy podle změn v prostředí projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Change management se v PRINCE2 7 týká organizační změny – toho, jak organizace a její lidé přejdou ze současného do cílového stavu a novou situaci přijmou. Řízení požadavků na změnu baseline (change control) včetně rozhodování change authority patří do praktiky Issues. Záměna těchto dvou pojmů je častou chybou."
+  },
+  {
+    "topic": "people",
+    "question": "Které dvě z následujících součástí PID patří k prvku People?\n1. Change management approach\n2. Issue management approach\n3. Commercial management approach\n4. Communication management approach",
+    "options": [
+      "1 a 4",
+      "2 a 3",
+      "1 a 2",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "K prvku People patří PID: change management approach (jak projekt podpoří organizační změnu) a PID: communication management approach (komunikace s projektovým ekosystémem). Issue management approach patří k praktice Issues a commercial management approach k praktice Organizing."
+  },
+  {
+    "topic": "people",
+    "question": "Co platí podle PRINCE2 7 o kultuře projektu?",
+    "options": [
+      "Má být sladěna s kulturou organizačního ekosystému, v němž projekt působí",
+      "Projekt má vytvořit vlastní kulturu nezávislou na zapojených organizacích",
+      "Kulturu projektu určuje dodavatel, protože jeho lidé odvádějí většinu práce",
+      "V celé organizaci je jen jedna kultura, kterou projekt přebírá beze změn"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Kulturu tvoří sdílené hodnoty, postoje, cíle a pracovní postupy. Různé části organizace i různé organizace mohou mít odlišné kultury, a projekt proto musí svou kulturu se svým organizačním ekosystémem sladit – nemá ji nahrazovat vlastní kulturou ani přebírat jen kulturu dodavatele."
+  },
+  {
+    "topic": "people",
+    "question": "Doplňte chybějící slovo: ______ je soubor sdílených hodnot, postojů, cílů a pracovních postupů, které charakterizují organizaci nebo její část.",
+    "options": [
+      "Culture",
+      "Leadership",
+      "Governance",
+      "Ecosystem"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Kulturu (culture) PRINCE2 7 popisuje jako sdílené hodnoty, postoje, cíle a pracovní postupy skupiny lidí; v jedné organizaci jich může existovat více. Leadership je ovlivňování a motivace lidí, governance je rámec řízení a rozhodování a ekosystém označuje části organizace či projektu a jejich vztahy."
+  },
+  {
+    "topic": "people",
+    "question": "Co v PRINCE2 7 znamená co-creation (spoluvytváření)?",
+    "options": [
+      "Zapojení uživatelů a dalších klíčových osob do návrhu produktů a způsobů práce",
+      "Společné financování projektu více organizacemi na základě sdíleného business casu",
+      "Rozdělení práce mezi několik dodavatelů, z nichž každý dodá vlastní část produktu",
+      "Společné schvalování manažerských produktů executive, senior userem a supplierem"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Co-creation znamená, že uživatelé a další klíčoví ovlivňovatelé se aktivně podílejí na podobě produktů i na tom, jak se bude pracovat. Díky tomu změnu snáze přijmou za vlastní. Nejde o společné financování, rozdělení dodávky mezi dodavatele ani o schvalovací mechanismus project boardu."
+  },
+  {
+    "topic": "people",
+    "question": "Které tvrzení správně rozlišuje leadership a management?",
+    "options": [
+      "Leadership motivuje a ovlivňuje lidi k dosažení cílů; management řídí provádění úkolů podle dohodnutých postupů",
+      "Management motivuje a ovlivňuje lidi k dosažení cílů; leadership řídí provádění úkolů podle dohodnutých postupů",
+      "Leadership je vyhrazen project boardu, kdežto management vykonávají project manager a team manageři",
+      "Leadership je potřeba jen při iterativní dodávce, management naopak při lineárně-sekvenční dodávce"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Leadership je o motivování a ovlivňování lidí, aby společně dosáhli cílů (vliv, spolupráce, zpětná vazba); management je o řízení provádění úkolů podle dohodnutých způsobů práce. Obojí potřebují všechny úrovně řízení i všechny způsoby dodávky – nejde o výsadu boardu ani o záležitost jednoho typu projektu."
+  },
+  {
+    "topic": "people",
+    "question": "Proč PRINCE2 7 u projektových týmů upřednostňuje vedení založené na vlivu a spolupráci před přístupem „command and control“?",
+    "options": [
+      "Týmy jsou dočasné a často napříč organizacemi, takže formální autorita vedoucího je omezená",
+      "Metoda zakazuje, aby byli členové týmu podřízeni projektovému manažerovi nebo team managerovi",
+      "Direktivní řízení smí uplatňovat jen project board, který jako jediný má formální pravomoc",
+      "Spolupráce snižuje náklady projektu, a je proto povinnou součástí každého business casu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projektové týmy jsou dočasné a spojují lidi z různých útvarů i organizací, takže projektový manažer či team manager nad nimi má slabší formální autoritu než liniový nadřízený. Proto PRINCE2 7 zdůrazňuje leadership postavený na vlivu, spolupráci a časté zpětné vazbě. Ostatní možnosti uvádějí pravidla, která metoda nestanovuje."
+  },
+  {
+    "topic": "people",
+    "question": "Koho zahrnuje prvek People v PRINCE2 7?",
+    "options": [
+      "Lidi, kteří na projektu pracují, i lidi, kterých se změna dodaná projektem dotkne",
+      "Jen členy project management teamu, tedy board, PM, team managery a project support",
+      "Personální agendu projektu, tedy nábor, odměňování a hodnocení výkonu členů týmu",
+      "Stakeholdery mimo projekt; lidi, kteří na projektu pracují, pokrývá praktika Organizing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Prvek People se týká lidí, kteří na projektu pracují, a jejich vzájemných vztahů, ale také lidí, kterých se dodaná změna dotkne – například uživatelů v běžném provozu. Omezení na project management team by přehlíželo ty, na jejichž přijetí změny závisí přínosy, a naopak vyčlenění projektového týmu by pominulo vedení týmů a spolupráci, kterým se prvek People věnuje. Personální agenda (nábor, odměňování) jeho náplní není."
+  },
+  {
+    "topic": "people",
+    "question": "Proč je řízení organizační změny (change management) pro projekt PRINCE2 7 podstatné?",
+    "options": [
+      "Přínosy vzniknou, jen když lidé dotčení projektem změnu přijmou a začnou ji využívat",
+      "Bez něj nelze v projektu evidovat ani posuzovat requests for change a off-specifications",
+      "Je to jediný způsob, jak udržet projekt v rámci tolerancí času, nákladů a rozsahu",
+      "Nahrazuje komunikaci se stakeholdery, kterou pak již není nutné samostatně plánovat"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projekty dodávají změnu, která zasahuje do běžného provozu. Výstupy samy přínosy nepřinesou – ty vzniknou až tehdy, když lidé novou situaci přijmou a změnu skutečně využívají; proto je řízení organizační změny klíčové. Zpracování requests for change a off-specifications patří do praktiky Issues (change control)."
+  },
+  {
+    "topic": "people",
+    "question": "Při analýze stakeholderů projektový manažer zjistí, že vedoucí směny ve skladu nemá v projektu žádnou formální roli, ale kolegové na jeho názor velmi dají. Jak má projekt podle PRINCE2 7 postupovat?",
+    "options": [
+      "Aktivně ho zapojit, protože i lidé bez formální role mohou výrazně ovlivnit přijetí změny",
+      "Nezapojovat ho, protože stakeholder engagement se týká jen držitelů formálních rolí",
+      "Navrhnout executive, aby ho kvůli jeho vlivu jmenoval do project boardu jako senior usera",
+      "Komunikovat s ním až při předání produktů do provozu, kdy se ho změna skutečně dotkne"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 zdůrazňuje, že vedle držitelů formálních rolí je třeba aktivně zapojovat i klíčové osoby bez formální role, které mají na projekt vliv nebo jsou jím zasaženy – například neformální názorové lídry mezi uživateli. Vedoucí směny se kvůli tomu nemusí stát členem boardu – role senior user nese odpovědnost za uživatelské požadavky a přínosy, nejde o způsob, jak zapojit vlivné osoby – a odkládat jeho zapojení až na předání produktů by ohrozilo přijetí změny."
+  },
+  {
+    "topic": "people",
+    "question": "Co definuje PID: communication management approach?",
+    "options": [
+      "Prostředky a frekvenci komunikace s projektovým ekosystémem i způsob získávání zpětné vazby",
+      "Jednosměrné šíření informací o projektu tak, aby se omezily dotazy a připomínky stakeholderů",
+      "Formát a frekvenci highlight reportů, jimiž project manager komunikuje výhradně s boardem",
+      "Způsob, jakým se zaznamenávají a vyhodnocují požadavky na změnu baseline projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Communication management approach popisuje, jakými prostředky a jak často bude projekt komunikovat se svým ekosystémem a jak bude získávat zpětnou vazbu – jde o řízený obousměrný tok informací. Jednosměrné „vysílání“ je typický omyl. Highlight reporty jsou jen jednou z forem komunikace a změny baseline řeší issue management approach."
+  },
+  {
+    "topic": "people",
+    "question": "Která dvě z následujících tvrzení o komunikaci v PRINCE2 7 jsou pravdivá?\n1. Komunikace má být obousměrná a zahrnovat zpětnou vazbu od stakeholderů.\n2. Způsob komunikace se přizpůsobuje tomu, zda tým pracuje na místě, na dálku, nebo hybridně.\n3. Neformální komunikace v projektu nemá význam a nemá se jí věnovat pozornost.\n4. S externími stakeholdery smí komunikovat výhradně executive.",
+    "options": [
+      "1 a 2",
+      "3 a 4",
+      "1 a 3",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Komunikace v PRINCE2 7 je řízený obousměrný tok informací se zpětnou vazbou a přizpůsobuje se tomu, zda tým pracuje společně na místě, na dálku nebo hybridně. Důležitá je i neformální komunikace a s externími stakeholdery komunikují různé role podle communication management approach, nikoli jen executive."
+  },
+  {
+    "topic": "people",
+    "question": "Jak se u efektivních týmů v PRINCE2 7 liší schopnost (capability) a kompetence (competence)?",
+    "options": [
+      "Capability vyjadřuje, co dokáže tým jako celek; competence jsou dovednosti jednotlivých členů",
+      "Competence vyjadřuje, co dokáže tým jako celek; capability jsou dovednosti jednotlivých členů",
+      "Capability je dosažená certifikace členů týmu; competence je jejich praxe v daném oboru",
+      "Capability posuzuje senior supplier u dodavatele; competence posuzuje PM u interních lidí"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Capability týmu popisuje, čeho je tým jako celek schopen dosáhnout, kdežto competence se týká dovedností jednotlivců. Spolu s rozmanitostí (diversity) jde o vlastnosti efektivního týmu a zjištěné mezery se řeší například školením nebo doplněním týmu. Pozor: v praktice Business case znamená capability něco jiného – ucelený soubor výstupů."
+  },
+  {
+    "topic": "people",
+    "question": "Projektový manažer zjistí, že týmu chybí kompetence v oblasti kybernetické bezpečnosti, kterou projekt potřebuje. Jak by měl podle PRINCE2 7 postupovat?",
+    "options": [
+      "Mezeru řešit, například školením stávajících členů nebo doplněním týmu o odborníka",
+      "Zaznamenat ji jako off-specification, protože produkty nesplní specifikaci kvality",
+      "Ihned předložit boardu exception report, protože jde o překročení tolerance projektu",
+      "Snížit akceptační kritéria tak, aby odpovídala aktuálním dovednostem členů týmu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 počítá s tím, že se mezery ve schopnostech a kompetencích týmu aktivně řeší – školením nebo náborem, tedy doplněním týmu. Off-specification se týká produktu, který nesplní specifikaci, nikoli dovedností týmu, a exception report přichází v úvahu až při předpovědi překročení tolerance. Snížení akceptačních kritérií by problém jen zakrylo."
+  },
+  {
+    "topic": "people",
+    "question": "Tým projektu tvoří lidé tří dodavatelů, kteří pracují převážně na dálku a téměř se neznají. Co PRINCE2 7 v takové situaci zdůrazňuje?",
+    "options": [
+      "Cíleně budovat důvěru a soudržnost týmu i ve virtuálním či hybridním prostředí",
+      "Rozdělit práci tak, aby lidé různých dodavatelů nemuseli vůbec spolupracovat",
+      "Nahradit týmové schůzky písemnými checkpoint reporty jednotlivých členů týmu",
+      "Přenést odpovědnost za vedení týmu na senior suppliera, protože jde o externí lidi"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Efektivní týmy potřebují důvěru a sociální soudržnost; u virtuálních a hybridních týmů je třeba je budovat záměrně – společnými aktivitami, pravidly spolupráce a pravidelnou interakcí. Oddělení lidí, nahrazení komunikace písemnými reporty nebo přesun vedení týmu mimo PM a team managery by soudržnost naopak oslabily."
+  },
+  {
+    "topic": "people",
+    "question": "Jak se prvek People promítá do ostatních prvků PRINCE2 7?",
+    "options": [
+      "Lidské aspekty se objevují ve všech principech, praktikách i procesech",
+      "People je osmou praktikou, která doplňuje praktiky Organizing a Progress",
+      "Týká se jen procesu Starting up a project, ve kterém se jmenuje tým",
+      "Nahrazuje praktiku Organizing, která byla v PRINCE2 7 zrušena"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 staví lidi do středu metody: lidské aspekty se promítají do všech principů (např. vztahy), praktik (role, komunikace v reportingu, vstupy stakeholderů do požadavků, kultura rizik) i procesů (jmenování týmu, dohodnutí přístupů, předání a přijetí produktů). People není praktika a praktika Organizing v 7. edici existuje dál."
+  },
+  {
+    "topic": "people",
+    "question": "Doplňte chybějící slovo: Jak projekt podpoří organizaci a její lidi při přechodu na nový způsob práce, popisuje PID: ______ management approach.",
+    "options": [
+      "change",
+      "issue",
+      "benefits",
+      "communication"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Change management approach popisuje, jak projekt podpoří organizační změnu, tedy přechod organizace a jejích lidí ze současného do cílového stavu. Issue management approach řeší issues a kontrolu změn baseline (change control), benefits management approach měření přínosů a communication management approach komunikaci s projektovým ekosystémem."
+  },
+  {
+    "topic": "people",
+    "question": "Které dvě z následujících vlastností uvádí PRINCE2 7 jako znaky efektivního týmu?\n1. Uniformity (jednotnost)\n2. Seniority (seniorita)\n3. Diversity (rozmanitost)\n4. Competence (kompetence)",
+    "options": [
+      "3 a 4",
+      "1 a 2",
+      "1 a 3",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 spojuje efektivní týmy s rozmanitostí (diversity), schopnostmi týmu jako celku (capability) a kompetencemi jednotlivců (competence). Jednotnost členů ani jejich seniorita nejsou samy o sobě znakem efektivního týmu – rozmanité zkušenosti a pohledy jsou naopak výhodou."
+  },
+  {
+    "topic": "people",
+    "question": "Co v PRINCE2 7 vyjadřuje pojem collaboration?",
+    "options": [
+      "Společnou práci lidí napříč projektovým a organizačním ekosystémem na sdílených cílech",
+      "Smluvně upravený vztah mezi zákazníkem a externím dodavatelem podle commercial approach",
+      "Sdílení dopadu rizika s partnerem tak, aby se dělil o případné ztráty i zisky projektu",
+      "Delegování pravomocí mezi úrovněmi řízení projektu prostřednictvím stanovených tolerancí"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Collaboration znamená, že lidé z různých částí projektového i organizačního ekosystému spolu aktivně pracují na společných cílech; úzce s ní souvisí co-creation, kdy uživatelé spoluutvářejí produkty a způsoby práce. Smluvní vztahy řeší commercial management approach, sdílení rizika je reakce na riziko (share) a delegování přes tolerance odpovídá principu Manage by exception."
+  },
+  {
+    "topic": "people",
+    "question": "Kde se podle PRINCE2 7 často nacházejí klíčoví stakeholdeři projektu?",
+    "options": [
+      "Na rozhraní projektového ekosystému a organizačního ekosystému",
+      "Výhradně uvnitř project management teamu, nejčastěji v boardu",
+      "Převážně mimo organizaci, například mezi regulátory a konkurenty",
+      "Na úrovni delivering, protože tam vznikají produkty projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projektový ekosystém leží uvnitř organizačních ekosystémů a prolíná se s nimi; klíčoví stakeholdeři se často nacházejí právě na jejich rozhraní – například vedoucí provozních útvarů, kteří budou změnu přebírat. Proto je třeba vztahy na této hranici aktivně řídit. Stakeholdeři nejsou omezeni na project management team a nenacházejí se ani převážně mimo organizaci."
+  },
+  {
+    "topic": "people",
+    "question": "Která z následujících oblastí NENÍ součástí kapitoly People v PRINCE2 7?",
+    "options": [
+      "Change control (řízení změn baseline)",
+      "Leading successful change (vedení změny)",
+      "Leading successful teams (vedení týmů)",
+      "Communication (komunikace)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Kapitola People se zabývá vedením úspěšné změny, vedením úspěšných týmů, komunikací a tím, že lidé stojí ve středu metody. Change control, tedy řízení změn baseline, patří do praktiky Issues – nesmí se zaměňovat s řízením organizační změny (change management)."
+  },
+  {
+    "topic": "people",
+    "question": "Proč PRINCE2 7 u projektových týmů zdůrazňuje kulturní inteligenci (cultural intelligence)?",
+    "options": [
+      "Týmy často spojují lidi z různých organizací, profesí a zemí s odlišnými kulturami",
+      "Projekt má v týmu prosadit jednotnou kulturu a odlišnosti členů postupně odstranit",
+      "Je to kritérium, podle něhož senior supplier vybírá členy týmu na straně dodavatele",
+      "Kulturní inteligence patří mezi sedm výkonnostních cílů, které board sleduje"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projektové týmy bývají dočasné a složené z lidí různých organizací, oborů i zemí, kteří si s sebou nesou odlišné kultury. Kulturní inteligence pomáhá těmto rozdílům porozumět a efektivně s nimi pracovat, místo aby se potlačovaly. Mezi sedm výkonnostních cílů (benefits, costs, time, quality, scope, sustainability, risk) nepatří."
+  },
+  {
+    "topic": "management-products",
+    "question": "Jaký je hlavní účel project initiation documentation (PID)?",
+    "options": [
+      "Shrnout informace z iniciace, podle nichž board projekt autorizuje a které tvoří jeho baseline",
+      "Poskytnout informace, na jejichž základě board rozhodne, zda projekt vůbec zahájit iniciací",
+      "Zaznamenávat průběžně issues, rizika, ponaučení a stav produktů po celou dobu trvání projektu",
+      "Formálně předat business layer zhodnocení výsledků projektu a doporučení navazujících kroků"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PID je souhrn produktů vytvořených či aktualizovaných během iniciace; slouží k získání autorizace projektu a poté jako baseline, která se reviduje na každé hranici etapy. Podkladem pro rozhodnutí o zahájení iniciace je project brief, průběžné záznamy patří do project logu a hodnocení projektu na konci obsahuje end project report."
+  },
+  {
+    "topic": "management-products",
+    "question": "Které dvě z následujících položek jsou součástí project logu v PRINCE2 7?\n1. Business case\n2. Product register\n3. Daily log\n4. Work package description",
+    "options": [
+      "2 a 3",
+      "1 a 4",
+      "1 a 2",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project log sdružuje záznamy (records): daily log, lessons log, issue register, risk register, quality register a product register. Business case je baseline, nikoli záznam v project logu, a work package description je samostatný manažerský produkt, kterým PM předává práci týmu."
+  },
+  {
+    "topic": "management-products",
+    "question": "Doplňte chybějící slovo: PRINCE2 dělí manažerské produkty na tři typy – baselines, records a ______.",
+    "options": [
+      "reports",
+      "registers",
+      "plans",
+      "approaches"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Manažerské produkty jsou buď baselines (schválené a dále změnově řízené, např. business case, plány, PID), records (dynamické záznamy, např. obsah project logu), nebo reports (zprávy zachycující stav k určitému okamžiku, např. highlight či end stage report). Registry, plány i approaches do těchto typů spadají, samostatným typem nejsou."
+  },
+  {
+    "topic": "management-products",
+    "question": "Který z následujících manažerských produktů je baseline, tedy po schválení podléhá řízení změn?",
+    "options": [
+      "Business case",
+      "Highlight report",
+      "Risk register",
+      "Daily log"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business case se po schválení stává součástí baseline a mění se jen řízeným způsobem (aktualizuje se zejména na hranicích etap). Highlight report je zpráva (report) zachycující stav k určitému datu a risk register i daily log jsou záznamy (records), které se průběžně doplňují bez změnového řízení."
+  },
+  {
+    "topic": "management-products",
+    "question": "Co v PRINCE2 7 nahradilo configuration item records a product status account ze 6. edice?",
+    "options": [
+      "Product register jako součást project logu",
+      "Quality register jako součást project logu",
+      "Product breakdown structure v plánu projektu",
+      "Configuration management approach v PID"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V 7. edici eviduje produkty, které má projekt dodat, včetně jejich stavu a akceptace, product register uložený v project logu; nahradil configuration item records i product status account. Quality register naproti tomu zaznamenává plánované a provedené činnosti kontroly kvality. Configuration management approach mezi přístupy v PID 7. edice není."
+  },
+  {
+    "topic": "management-products",
+    "question": "Který z následujících přístupů NENÍ součástí PID v PRINCE2 7?",
+    "options": [
+      "Change control approach",
+      "Digital and data management approach",
+      "Sustainability management approach",
+      "Commercial management approach"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PID v PRINCE2 7 obsahuje devět přístupů: benefits, change (organizační změna), commercial, communication, digital and data, issue, quality, risk a sustainability management approach. Change control approach je název ze 6. edice – řízení změn baseline dnes popisuje issue management approach."
+  },
+  {
+    "topic": "management-products",
+    "question": "Které tvrzení o benefits management approach v PRINCE2 7 je správné?",
+    "options": [
+      "Je součástí PID, kde je uveden vedle ostatních přístupů",
+      "Je samostatným produktem mimo PID, který vlastní business layer",
+      "Je kapitolou project briefu a po iniciaci se už neaktualizuje",
+      "Je součástí end project reportu a vzniká až při uzavření projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V PRINCE2 7 je benefits management approach jedním z devíti přístupů v PID; v 6. edici šlo o samostatný produkt mimo PID. Vzniká při iniciaci, reviduje se na hranicích etap a při uzavření projektu se aktualizuje o plán revizí přínosů po skončení projektu."
+  },
+  {
+    "topic": "management-products",
+    "question": "Co platí o project briefu po dokončení iniciace?",
+    "options": [
+      "Je nahrazen PID a dále se již neaktualizuje",
+      "Aktualizuje se na každé hranici etapy jako baseline",
+      "Stává se součástí project logu jako jeden z jeho záznamů",
+      "Předává se business layer jako zpráva o výsledku iniciace"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project brief vzniká v procesu Starting up a project jako podklad pro rozhodnutí o zahájení iniciace. Během iniciace se jeho obsah rozpracuje do PID, která ho nahradí, a brief se pak už neudržuje. Baseline, která se reviduje na hranicích etap, je PID."
+  },
+  {
+    "topic": "business-case",
+    "question": "Jaký je účel praktiky Business case?",
+    "options": [
+      "Umožnit posoudit, zda je projekt žádoucí, životaschopný a dosažitelný, a podpořit rozhodování o investici",
+      "Definovat a zavést strukturu odpovědností projektu, tedy určit, kdo v projektu za co a komu odpovídá",
+      "Sledovat a porovnávat skutečné výsledky s plánem a předpovídat, zda projekt dosáhne svých cílů včas",
+      "Shromažďovat a vyhodnocovat issues a udržovat všechny změny baseline projektu pod řádnou kontrolou"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Praktika Business case odpovídá na otázku „proč“: dává mechanismy k posouzení, zda je projekt (a zůstává) žádoucí, životaschopný a dosažitelný, a tím podporuje rozhodování o zahájení a pokračování investice. Struktura odpovědností je účelem praktiky Organizing, srovnání skutečnosti s plánem praktiky Progress a kontrola změn baseline praktiky Issues."
+  },
+  {
+    "topic": "business-case",
+    "question": "Doplňte chybějící slovo: Hmatatelný nebo nehmatatelný specializovaný produkt, který vznikne činností projektu, se v praktice Business case označuje jako ______.",
+    "options": [
+      "output",
+      "outcome",
+      "benefit",
+      "capability"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Output (výstup) je specializovaný produkt, který projekt dodá – například nový informační systém nebo příručka pro uživatele. Outcome je výsledek změny, tedy změněné chování či okolnosti, benefit je měřitelné zlepšení plynoucí z outcome a capability je ucelená sada výstupů potřebná k dosažení outcome."
+  },
+  {
+    "topic": "business-case",
+    "question": "Co označuje pojem capability v praktice Business case?",
+    "options": [
+      "Ucelenou sadu výstupů, která je potřebná k dosažení výsledku (outcome)",
+      "Měřitelné zlepšení, které investující organizace vnímá jako výhodu",
+      "Dovednosti a zkušenosti týmu potřebné k vytvoření výstupů projektu",
+      "Změnu chování nebo okolností, kterou přinese používání výstupů v praxi"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Capability je v PRINCE2 7 kompletní soubor výstupů, který umožní dosáhnout výsledku: výstupy tvoří schopnost, ta se zavede do provozu a vznikne outcome. Měřitelné zlepšení je benefit a změna chování či okolností je outcome. Dovednosti týmu (team capability) jsou jiný pojem, který patří k prvku People."
+  },
+  {
+    "topic": "business-case",
+    "question": "Nemocnice zavádí systém elektronického objednávání pacientů. Která z následujících položek je outcome (výsledek)?",
+    "options": [
+      "Pacienti se objednávají online a recepce telefonické objednávky už nevyřizuje",
+      "Nasazený objednávací systém včetně mobilní aplikace a uživatelské dokumentace",
+      "Snížení nákladů na objednávání pacientů o 15 % ročně oproti stavu před projektem",
+      "Systém, vyškolený personál a nové postupy připravené společně k použití"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Outcome je výsledek změny – změněné chování nebo okolnosti, zde to, že se pacienti skutečně objednávají online. Nasazený systém je output, ucelený soubor výstupů připravený k použití je capability a měřitelné snížení nákladů je benefit, který z outcome plyne."
+  },
+  {
+    "topic": "business-case",
+    "question": "Co je podle PRINCE2 7 dis-benefit?",
+    "options": [
+      "Měřitelné zhoršení plynoucí z výsledku, které některá strana vnímá jako negativní",
+      "Riziko, že některý z plánovaných přínosů projektu nebude dosažen v plné výši nebo včas",
+      "Náklad projektu, který převyšuje částku schválenou v business casu o více než toleranci",
+      "Přínos, který se projeví až po uzavření projektu, a proto ho board nemůže nijak ověřit"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dis-benefit je měřitelný negativní důsledek výsledku (outcome), který některý stakeholder vnímá jako zhoršení – například delší čekání určité skupiny klientů. Na rozdíl od rizika jde o důsledek očekávaný, ne o nejistou událost. Překročení nákladů ani odložený přínos dis-benefitem nejsou."
+  },
+  {
+    "topic": "business-case",
+    "question": "Které pořadí správně vystihuje řetězec, jímž projekt přispívá ke strategii organizace?",
+    "options": [
+      "Outputs → capabilities → outcomes → benefits → business objectives",
+      "Outputs → outcomes → capabilities → benefits → business objectives",
+      "Capabilities → outputs → outcomes → business objectives → benefits",
+      "Outcomes → outputs → capabilities → benefits → business objectives"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Výstupy (outputs) se skládají do schopností (capabilities); jejich zavedením do provozu vznikají výsledky (outcomes), které se měří přínosy (benefits) a dis-benefity, a ty vedou k podnikovým cílům (business objectives). Capability tedy leží mezi výstupy a výsledky – 6. edice znala jen zkrácený řetězec outputs → outcomes → benefits."
+  },
+  {
+    "topic": "business-case",
+    "question": "Doplňte chybějící slovo: Vlastníkem business casu je v PRINCE2 7 ______.",
+    "options": [
+      "executive",
+      "project manager",
+      "senior user",
+      "business layer"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Vlastníkem business casu je executive, který je jediným bodem odpovědnosti za projekt a odpovídá za zajištění financování i za trvalé zdůvodnění projektu. Projektový manažer může obsah business casu připravovat a aktualizovat, vlastníkem však není; senior user odpovídá za specifikaci a realizaci přínosů a business layer projekt zadává."
+  },
+  {
+    "topic": "business-case",
+    "question": "Která role odpovídá za specifikaci přínosů a za prokázání, že se předpokládané přínosy skutečně realizují?",
+    "options": [
+      "Senior user",
+      "Executive",
+      "Senior supplier",
+      "Project manager"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Senior user zastupuje ty, kdo budou výstupy používat a díky nim přínosy realizovat; proto přínosy specifikuje a odpovídá za prokázání, že předpokládané přínosy jsou na dobré cestě a realizují se. Executive vlastní business case jako celek a odpovídá za trvalé zdůvodnění projektu, přínosy za uživatele však nespecifikuje."
+  },
+  {
+    "topic": "business-case",
+    "question": "Která dvě z následujících tvrzení o vývoji business casu jsou pravdivá?\n1. Outline business case vzniká v procesu Starting up a project.\n2. Full business case vzniká v procesu Controlling a stage.\n3. Business case se aktualizuje v procesu Managing a stage boundary.\n4. Po autorizaci projektu se business case už nemění.",
+    "options": [
+      "1 a 3",
+      "1 a 2",
+      "2 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Outline business case se připraví při Starting up a project, full business case při Initiating a project a na každé hranici etapy (Managing a stage boundary) se business case aktualizuje. Po autorizaci projektu se tedy dál udržuje, aby board mohl ověřovat trvalé zdůvodnění projektu."
+  },
+  {
+    "topic": "business-case",
+    "question": "Které kroky tvoří techniku řízení business casu v PRINCE2 7?",
+    "options": [
+      "Develop, check, maintain, confirm benefits",
+      "Develop, verify, maintain, confirm benefits",
+      "Identify, assess, plan, implement, communicate",
+      "Capture, assess, recommend, decide, implement"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technika řízení business casu v PRINCE2 7 má kroky develop (vytvořit), check (zkontrolovat), maintain (udržovat) a confirm benefits (potvrdit přínosy). Krok „verify“ pochází ze 6. edice; Identify–Assess–Plan–Implement–Communicate je technika řízení rizik a Capture–Assess–Recommend–Decide–Implement technika řízení issues."
+  },
+  {
+    "topic": "business-case",
+    "question": "Kdy project board kontroluje (check) business case podle techniky řízení business casu?",
+    "options": [
+      "Na každém rozhodovacím bodě – při autorizaci iniciace, projektu i každé další etapy",
+      "Pouze jednou, při autorizaci projektu, kdy posuzuje full business case obsažený v PID",
+      "Až při uzavření projektu, kdy porovná skutečné náklady a přínosy s těmi plánovanými",
+      "Jen na žádost senior usera, který odpovídá za specifikaci i realizaci přínosů projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Board kontroluje business case na každém rozhodovacím bodě: outline business case při autorizaci iniciace, full business case při autorizaci projektu a aktualizovaný business case při autorizaci každé další etapy. Jednorázová kontrola nebo kontrola až na konci by neumožnila zajistit trvalé zdůvodnění projektu."
+  },
+  {
+    "topic": "business-case",
+    "question": "Kdy se podle PRINCE2 7 potvrzují (confirm) přínosy projektu?",
+    "options": [
+      "Během pozdějších etap, pokud se přínosy projeví už v průběhu projektu, a hlavně po jeho uzavření",
+      "Výhradně při uzavření projektu, kdy je PM uvede do end project reportu a lessons reportu",
+      "Pouze na hranicích etap, kdy project manager aktualizuje business case a plán projektu",
+      "Před autorizací projektu, aby board mohl ověřit, že přínosy uvedené v business casu jsou reálné"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Přínosy se potvrzují, jakmile je lze změřit: některé už během pozdějších etap projektu, většina ale až po jeho skončení, kdy se výstupy používají v běžném provozu. Revize po projektu leží mimo životní cyklus projektu a plánují se v benefits management approach. Při autorizaci projektu se přínosy teprve předpovídají, nelze je tedy potvrdit."
+  },
+  {
+    "topic": "business-case",
+    "question": "Co popisuje PID: benefits management approach?",
+    "options": [
+      "Kdo, jak a kdy bude měřit přínosy a jaké revize přínosů proběhnou i po skončení projektu",
+      "Výpočet návratnosti investice a porovnání variant řešení, ze kterých board vybírá tu nejlepší",
+      "Způsob, jakým projekt podpoří lidi při přechodu ze současného do cílového stavu",
+      "Seznam všech produktů, které projekt dodá, včetně jejich aktuálního stavu a data akceptace"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Benefits management approach popisuje kroky, které zajistí dosažení výsledků a potvrzení přínosů: co se bude měřit, kdo a kdy měření provede, výchozí hodnoty a plán revizí přínosů včetně těch po skončení projektu. Porovnání variant a návratnost investice patří do business casu, podpora přechodu lidí do change management approach a seznam produktů do product registeru."
+  },
+  {
+    "topic": "business-case",
+    "question": "K čemu slouží PID: sustainability management approach?",
+    "options": [
+      "Popisuje činnosti, revize a kontroly, jež zajistí splnění cílů projektu pro udržitelnost",
+      "Popisuje, jak budou získávána, ukládána a zabezpečena data a digitální nástroje projektu",
+      "Stanovuje, jak se budou vybírat dodavatelé a jak se bude spravovat smluvní vztah s nimi",
+      "Určuje, jak se po skončení projektu ověří, že jeho produkty skutečně přinesly očekávané přínosy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sustainability management approach popisuje kroky, revize a kontroly, které zajistí, že projekt splní své výkonnostní cíle v oblasti udržitelnosti (sustainability je jedním ze sedmi výkonnostních cílů). Práci s daty a digitálními nástroji řeší digital and data management approach, vztahy s dodavateli commercial management approach a ověřování přínosů benefits management approach."
+  },
+  {
+    "topic": "business-case",
+    "question": "Podle čeho by se měla v business casu zvolit preferovaná varianta řešení?",
+    "options": [
+      "Měla by udržet všech sedm výkonnostních cílů v tolerancích, i když nemusí být nejlevnější",
+      "Měla by mít nejnižší náklady, protože právě ty nejvíce omezují investiční riziko organizace",
+      "Měla by mít nejkratší dobu dodání, aby se přínosy dostavily co nejdříve po zahájení",
+      "Měla by slibovat nejvyšší přínosy; náklady a rizika se posoudí až v plánu projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 zdůrazňuje, že preferovaná varianta má vyvažovat všech sedm výkonnostních cílů (včetně udržitelnosti) v rámci tolerancí; nejlevnější nebo nejrychlejší varianta nemusí být nejlepší. Volba podle jediného kritéria ignoruje rovnováhu mezi přínosy, náklady a riziky, na které business case stojí."
+  },
+  {
+    "topic": "organizing",
+    "question": "Jaký je účel praktiky Organizing?",
+    "options": [
+      "Definovat a zavést strukturu odpovědností projektu – kdo za co odpovídá a komu se zodpovídá",
+      "Posoudit, zda je projekt žádoucí, životaschopný a dosažitelný, a podpořit rozhodnutí o investici",
+      "Zajistit, aby organizace a její lidé úspěšně přešli ze současného do požadovaného cílového stavu",
+      "Usnadnit komunikaci a kontrolu tím, že se definují produkty a prostředky, jakými se dodají"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Praktika Organizing odpovídá na otázku „kdo“: definuje a zavádí strukturu odpovědností projektu – role, jejich odpovědnosti a vazby mezi nimi. Posouzení žádoucnosti a životaschopnosti je účelem praktiky Business case, přechod do cílového stavu je oblastí change managementu (prvek People) a definice produktů a prostředků jejich dodání patří praktice Plans."
+  },
+  {
+    "topic": "organizing",
+    "question": "Které tři zájmy (interests) musí být podle PRINCE2 7 zastoupeny v project boardu?",
+    "options": [
+      "Business, user a supplier",
+      "Business, user a project manager",
+      "Customer, supplier a regulator",
+      "Sponsor, user a project office"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Projekt musí vyvažovat tři zájmy: business (zda investice dává smysl – zastupuje executive), user (ti, kdo budou produkty používat a realizovat přínosy – senior user) a supplier (ti, kdo poskytují zdroje a odbornost – senior supplier). Project manager členem boardu není a regulátor je stakeholder, nikoli jeden ze tří zájmů."
+  },
+  {
+    "topic": "organizing",
+    "question": "Doplňte chybějící slovo: Úroveň, která stojí mimo project management team, projekt zadává, poskytuje projektový mandát a stanovuje toleranci projektu, se v PRINCE2 7 nazývá ______.",
+    "options": [
+      "business layer",
+      "project board",
+      "programme office",
+      "directing level"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business layer je zadávající úroveň mimo project management team: poskytuje projektový mandát, určuje executive a stanovuje toleranci projektu (project tolerances). Project board tvoří úroveň directing uvnitř projektu a řídí projekt v rámci tolerancí, které mu business layer stanovil. V 6. edici se tato úroveň označovala jako corporate, programme management or customer."
+  },
+  {
+    "topic": "organizing",
+    "question": "Jaký je rozdíl mezi project management team a project team?",
+    "options": [
+      "Project team zahrnuje všechny, kdo na projektu pracují; PMT tvoří role řízení projektu",
+      "PMT zahrnuje všechny, kdo na projektu pracují; project team tvoří jen project board a PM",
+      "Project team je tým jednoho dodavatele; PMT je souhrn všech projektových týmů",
+      "Jde o synonyma, která PRINCE2 7 používá podle velikosti a složitosti konkrétního projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project management team je struktura rolí řízení projektu – project board, project manager a podle potřeby team manageři, project assurance, project support a change authority. Project team je širší pojem: patří do něj každý, kdo projektu věnuje svůj čas, včetně členů týmů, kteří produkty vytvářejí."
+  },
+  {
+    "topic": "organizing",
+    "question": "Jak se podle PRINCE2 přijímají rozhodnutí v project boardu?",
+    "options": [
+      "Rozhoduje executive, kterému senior user a senior supplier poskytují podporu a rady",
+      "Hlasováním – každý ze tří zájmů má jeden hlas a rozhoduje prostá většina hlasů členů",
+      "Konsenzem – bez souhlasu všech členů boardu nelze přijmout žádné závazné rozhodnutí",
+      "Rozhoduje project manager jako předseda boardu na základě doporučení ostatních členů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project board není demokracie řízená hlasováním: konečné rozhodnutí náleží executive, který je jediným bodem odpovědnosti za projekt, a senior user se senior supplierem mu poskytují podporu a rady za své oblasti. Project manager členem boardu není – boardu předkládá informace a doporučení."
+  },
+  {
+    "topic": "organizing",
+    "question": "Která dvě z následujících tvrzení o roli executive jsou pravdivá?\n1. V projektu je vždy právě jeden executive.\n2. Executive odpovídá za zajištění financování projektu.\n3. V malém projektu může executive zároveň zastávat roli project managera.\n4. Executive je volen členy project boardu.",
+    "options": [
+      "1 a 2",
+      "3 a 4",
+      "1 a 3",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Executive je jediným bodem odpovědnosti za projekt, a proto je v projektu vždy právě jeden; vlastní business case a zajišťuje financování. Roli executive nelze spojit s rolí project managera ani v malém projektu. Executive není volen boardem – jmenuje ho business layer."
+  },
+  {
+    "topic": "organizing",
+    "question": "Za co odpovídá senior user?",
+    "options": [
+      "Za způsob zachycení požadavků uživatelů a za přijetí produktů uživateli",
+      "Za kvalitu produktů dodávaných dodavateli a za technickou integritu celého řešení",
+      "Za vlastnictví business casu, zajištění financování a trvalé zdůvodnění projektu",
+      "Za každodenní řízení projektu v rámci tolerancí, které mu stanovil project board"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Senior user zastupuje ty, kdo budou produkty používat, provozovat či udržovat: odpovídá za to, jak jsou zachyceny požadavky uživatelů, sleduje, zda produkty požadavkům odpovídají, a zajišťuje jejich předání a přijetí uživateli. Kvalita dodavatelských produktů je odpovědností senior suppliera, vlastníkem business casu je executive a každodenní řízení je úkolem PM."
+  },
+  {
+    "topic": "organizing",
+    "question": "Která role poskytuje zdroje pro tvorbu produktů projektu a odpovídá za jejich kvalitu i za technickou integritu řešení?",
+    "options": [
+      "Senior supplier",
+      "Senior user",
+      "Project assurance",
+      "Executive"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Senior supplier zastupuje zájmy dodavatelů: zajišťuje jejich zdroje a lidi a odpovídá za kvalitu produktů, které dodavatelé dodají, i za technickou integritu řešení. Senior user zastupuje uživatele a jejich požadavky, executive business zájem a project assurance pouze nezávisle ověřuje, že je projekt řízen správně."
+  },
+  {
+    "topic": "organizing",
+    "question": "Kdo NESMÍ vykonávat project assurance?",
+    "options": [
+      "Project manager, který projekt řídí",
+      "Interní auditor, kterého pro projekt pověřil executive",
+      "Zástupce uživatelů, kterého pověřil senior user",
+      "Externí expert, kterého najal senior supplier"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project assurance musí být nezávislá na project managerovi – nesmí ji proto vykonávat PM, team manager ani project support. Členové boardu odpovídají za assurance svých oblastí a mohou ji svěřit jiným osobám, například internímu auditorovi (business assurance), zástupci uživatelů (user assurance) nebo technickému expertovi (supplier assurance)."
+  },
+  {
+    "topic": "organizing",
+    "question": "Kdo odpovídá za project assurance v projektu PRINCE2?",
+    "options": [
+      "Členové project boardu, každý za oblast zájmu, kterou zastupuje",
+      "Project manager, který k tomu může využít project support nebo PMO",
+      "Oddělení zajištění kvality celé organizace (quality assurance)",
+      "Change authority, která posuzuje všechny navrhované změny v projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Za project assurance odpovídají členové project boardu – executive za business assurance, senior user za user assurance a senior supplier za supplier assurance; mohou ji vykonávat sami, nebo pověřit jiné osoby. Quality assurance je nezávislá funkce organizace mimo projekt, kdežto project assurance slouží boardu. PM ani project support assurance vykonávat nesmějí."
+  },
+  {
+    "topic": "organizing",
+    "question": "Doplňte chybějící slovo: Pokud pravomoc rozhodovat o požadavcích na změnu a off-specifications nebyla nikomu delegována, plní roli change authority ______.",
+    "options": [
+      "project board",
+      "project manager",
+      "senior user",
+      "business layer"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Change authority je osoba nebo skupina, které board deleguje rozhodování o požadavcích na změnu a off-specifications v určených mezích a s rozpočtem na změny (change budget). Pokud board tuto pravomoc nedeleguje, je change authority sám project board. Project manager může být change authority jen tehdy, když mu ji board výslovně svěří."
+  },
+  {
+    "topic": "organizing",
+    "question": "Které tvrzení o roli team manager je správné?",
+    "options": [
+      "Je volitelná; pokud ji nikdo nezastává, řídí project manager členy týmu přímo",
+      "Je povinná; každý pracovní balík musí převzít jmenovaný team manager",
+      "Team manager podává checkpoint reporty přímo project boardu a executive",
+      "Team manager stanovuje toleranci etapy, v jejímž rámci pracuje project manager"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Role team managera je volitelná – v menších projektech ji může zastávat sám PM, který pak řídí členy týmu přímo. Team manager přebírá pracovní balíky od PM, dodává jejich produkty v dohodnutých tolerancích a podává checkpoint reporty projektovému manažerovi, nikoli boardu. Toleranci etapy stanovuje project board."
+  },
+  {
+    "topic": "organizing",
+    "question": "Kdo odpovídá za project support, pokud pro tuto roli nikdo není jmenován?",
+    "options": [
+      "Project manager",
+      "Executive",
+      "Project assurance",
+      "Team manager"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project support (administrativa, podpora plánování, správa registrů a nástrojů) je odpovědností projektového manažera; PM ji může delegovat například na projektovou kancelář (PMO). Project support musí být oddělen od project assurance, aby bylo zachováno nezávislé ověřování."
+  },
+  {
+    "topic": "organizing",
+    "question": "Která dvě z následujících tvrzení o stanovení tolerancí jsou pravdivá?\n1. Toleranci projektu stanovuje business layer.\n2. Toleranci etapy stanovuje project manager.\n3. Toleranci etapy stanovuje project board.\n4. Toleranci pracovního balíku stanovuje team manager.",
+    "options": [
+      "1 a 3",
+      "1 a 2",
+      "2 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tolerance se delegují shora dolů: business layer stanovuje toleranci projektu, project board toleranci etapy a project manager toleranci pracovního balíku (ve work package description). Team manager pak může stanovit tolerance členům svého týmu, toleranci pracovního balíku však neurčuje."
+  },
+  {
+    "topic": "organizing",
+    "question": "Co je v PRINCE2 7 work breakdown structure (WBS)?",
+    "options": [
+      "Hierarchie veškeré práce projektu, která propojuje rozpad produktů s pracovními balíky",
+      "Hierarchický rozpad všech produktů, které má projekt dodat, od projektového produktu po dílčí produkty",
+      "Diagram znázorňující pořadí, v němž se produkty projektu vytvářejí, a vzájemné závislosti mezi nimi",
+      "Schéma rolí project management teamu s liniemi delegace pravomocí a reportingu mezi úrovněmi"
+    ],
+    "correctAnswer": 0,
+    "explanation": "WBS je v PRINCE2 7 nově součástí praktiky Organizing: jde o hierarchii veškeré práce projektu, která propojuje rozpad produktů (product breakdown structure) s pracovními balíky. Hierarchický rozpad produktů je product breakdown structure, pořadí a závislosti produktů ukazuje product flow diagram a schéma rolí je project management team structure."
+  },
+  {
+    "topic": "organizing",
+    "question": "Čím začíná technika organizational design and development?",
+    "options": [
+      "Porozuměním organizačnímu ekosystému, v němž bude projekt působit",
+      "Jmenováním executive, který pak jmenuje project managera",
+      "Návrhem organizační struktury project management teamu a linií reportingu",
+      "Sepsáním popisů rolí pro všechny členy project boardu a týmu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technika organizational design and development má pět kroků: porozumět organizačnímu ekosystému, navrhnout projektový ekosystém, rozvíjet ho, řídit jeho změny a nakonec převést projekt do organizačního ekosystému. Návrh struktury týmu a popisy rolí přicházejí na řadu až po porozumění prostředí, ve kterém bude projekt působit."
+  },
+  {
+    "topic": "organizing",
+    "question": "Který přístup v PID popisuje, jak bude projekt řídit vztahy s externími dodavateli, které upravují smlouvy?",
+    "options": [
+      "Commercial management approach",
+      "Communication management approach",
+      "Issue management approach",
+      "Benefits management approach"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Commercial management approach patří k praktice Organizing a popisuje, jak projekt řídí obchodní (smluvní) vztahy s dodavateli. Communication management approach řeší komunikaci s projektovým ekosystémem, issue management approach řízení issues a změn a benefits management approach měření a potvrzování přínosů."
+  },
+  {
+    "topic": "organizing",
+    "question": "Kterou kombinaci rolí PRINCE2 7 připouští?",
+    "options": [
+      "Project manager zároveň zastává roli team managera",
+      "Executive zároveň zastává roli project managera",
+      "Project manager zároveň vykonává project assurance",
+      "Projekt má dva executive se sdílenou odpovědností"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project manager může v menších projektech zastávat i roli team managera nebo project support. Executive nesmí být zároveň project managerem a v projektu je vždy jen jeden executive. Project assurance musí být nezávislá na project managerovi, a PM ji proto vykonávat nesmí."
+  },
+  {
+    "topic": "plans",
+    "question": "Jaký je účel praktiky Plans v PRINCE2 7?",
+    "options": [
+      "Usnadnit komunikaci a kontrolu tím, že definuje produkty a způsob, jak, kdy, kým a za kolik budou dodány",
+      "Poskytnout mechanismy k posouzení, zda je projekt žádoucí, životaschopný a dosažitelný a zda takový zůstává",
+      "Porovnávat skutečný a plánovaný postup, předpovídat vývoj cílů projektu a řídit odchylky vedoucí k výjimce",
+      "Definovat a ustavit strukturu odpovědností projektu, tedy kdo za co v projektu odpovídá a komu se zodpovídá"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Praktika Plans usnadňuje komunikaci a kontrolu: definuje produkty (co) a prostředky k jejich dodání (kdo, jak, kde, odhad kdy a za kolik), aby byl naplněn business case (proč). Posouzení žádoucnosti, životaschopnosti a dosažitelnosti je účelem praktiky Business case, porovnávání skutečnosti s plánem a řízení odchylek praktiky Progress a struktura odpovědností praktiky Organizing."
+  },
+  {
+    "topic": "plans",
+    "question": "Kdo a ve kterém procesu připravuje plán iniciační etapy (initiation stage plan)?",
+    "options": [
+      "Projektový manažer v procesu Starting up a project",
+      "Projektový manažer v procesu Initiating a project, spolu s plánem projektu",
+      "Project Board v procesu Directing a project při autorizaci iniciace",
+      "Projektový manažer v procesu Managing a stage boundary na konci SU"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plán iniciační etapy připravuje projektový manažer už ve Starting up a project a Project Board ho spolu s project brief schvaluje při autorizaci iniciace (Directing a project). Plán projektu vzniká až v Initiating a project a Managing a stage boundary se poprvé použije až na konci iniciační etapy – SU není etapa."
+  },
+  {
+    "topic": "plans",
+    "question": "Které tvrzení o team plánech (team plans) odpovídá PRINCE2 7?",
+    "options": [
+      "Jsou volitelné a připravuje je team manager pro provedení přiděleného work packagu",
+      "Jsou povinné pro každý work package a schvaluje je Project Board při autorizaci etapy",
+      "Připravuje je projektový manažer v procesu Managing a stage boundary pro každý tým",
+      "Nahrazují stage plan, pokud etapu realizuje externí dodavatel s vlastní metodikou"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Team plan je volitelný; připravuje ho team manager (typicky při přijetí work packagu v Managing product delivery) a dohodne ho s projektovým manažerem. Board team plány neschvaluje a stage plan nenahrazují – ten zůstává podkladem PM pro řízení etapy i tehdy, když práci dodává externí dodavatel."
+  },
+  {
+    "topic": "plans",
+    "question": "Doplňte chybějící slovo: Grafické znázornění plánu, které ukazuje časový sled úkolů a přidělené zdroje, se v praktice Plans nazývá ______.",
+    "options": [
+      "schedule",
+      "product flow diagram",
+      "product breakdown structure",
+      "work breakdown structure"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Schedule (harmonogram) je grafické znázornění plánu, typicky Ganttův diagram, které ukazuje, kdy budou úkoly probíhat a jaké zdroje jsou jim přiděleny. Product flow diagram ukazuje jen pořadí vytváření produktů a závislosti mezi nimi, bez časového rozvržení a zdrojů. Product breakdown structure je hierarchie produktů a work breakdown structure hierarchie veškeré práce, která propojuje produkty s pracovními balíky."
+  },
+  {
+    "topic": "plans",
+    "question": "Která dvě z následujících tvrzení o exception plan jsou pravdivá?\n1. Připravuje ho team manager, když hrozí překročení tolerance work packagu.\n2. Připravuje se na žádost Project Boardu poté, co board posoudí exception report.\n3. Po schválení nahrazuje plán, jehož tolerance měla být překročena.\n4. Schvaluje ho projektový manažer, pokud odchylka nepřekročí toleranci projektu.",
+    "options": [
+      "2 a 3",
+      "1 a 2",
+      "3 a 4",
+      "1 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Exception plan připravuje projektový manažer v Managing a stage boundary na žádost Project Boardu, který předtím posoudil exception report; po schválení nahradí stage plan nebo project plan, kterého se výjimka týká. Pro work packages se exception plány nevytvářejí (team manager vznese issue) a PM exception plan neschvaluje – schvaluje ho board, u výjimky na úrovni projektu až po rozhodnutí business layer."
+  },
+  {
+    "topic": "plans",
+    "question": "Který krok plánovací techniky PRINCE2 7 následuje bezprostředně po přípravě odhadů (preparing estimates)?",
+    "options": [
+      "Preparing the schedule",
+      "Preparing the budget",
+      "Organizing work packages",
+      "Documenting the plan"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plánovací technika postupuje takto: defining and analysing products → organizing work packages → preparing estimates → preparing the schedule → preparing the budget → documenting the plan. Rozpočet navazuje na harmonogram, protože je třeba vědět, kdy se budou zdroje čerpat; analýza rizik přitom běží souběžně se všemi kroky."
+  },
+  {
+    "topic": "plans",
+    "question": "Kdy se při tvorbě plánu podle plánovací techniky PRINCE2 7 analyzují rizika?",
+    "options": [
+      "Souběžně se všemi kroky, od analýzy produktů až po dokumentaci plánu",
+      "Jednorázově po sestavení harmonogramu, ještě před přípravou rozpočtu plánu",
+      "Až v posledním kroku, kdy se plán dokumentuje a předkládá ke schválení",
+      "Pouze při tvorbě plánu projektu; u stage a team plánů se analýza vynechává"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Analyzing risks není samostatný závěrečný krok, ale činnost, která běží souběžně s každým krokem plánovací techniky – produkty, odhady, harmonogram i rozpočet mohou odhalit nová rizika a reakce na ně se promítají zpět do plánu. Technika se stejně používá pro plán projektu, plán etapy i team plán."
+  },
+  {
+    "topic": "plans",
+    "question": "Která dvě z následujících tvrzení o plánování založeném na produktech (product-based planning) jsou pravdivá?\n1. Product flow diagram ukazuje pořadí vytváření produktů a závislosti mezi nimi.\n2. Product breakdown structure obsahuje i činnosti týmů a jejich harmonogram.\n3. Plánování založené na produktech se používá jen pro plán projektu.\n4. Project product description se píše pouze pro plán projektu.",
+    "options": [
+      "1 a 4",
+      "1 a 2",
+      "2 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project product description popisuje hlavní produkt projektu, proto se píše jen pro plán projektu; product breakdown structure, product descriptions a product flow diagram se vytvářejí na všech úrovních plánů. Product flow diagram ukazuje pořadí vytváření produktů a jejich závislosti, kdežto product breakdown structure je hierarchický rozpad produktů – činnosti a harmonogram v něm nejsou."
+  },
+  {
+    "topic": "plans",
+    "question": "Který z následujících kroků NENÍ součástí plánování založeného na produktech (product-based planning)?",
+    "options": [
+      "Sestavení rozpočtu plánu",
+      "Vytvoření product breakdown structure",
+      "Napsání product descriptions",
+      "Vytvoření product flow diagramu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plánování založené na produktech zahrnuje napsání project product description (jen u plánu projektu), vytvoření product breakdown structure, napsání product descriptions a vytvoření product flow diagramu. Sestavení rozpočtu je pozdější krok plánovací techniky (preparing the budget), který navazuje na odhady a harmonogram."
+  },
+  {
+    "topic": "plans",
+    "question": "K čemu v PRINCE2 7 slouží work package description?",
+    "options": [
+      "Formálně předává odpovědnost za vytvoření a předání produktů team managerovi nebo členovi týmu",
+      "Popisuje specifikace kvality jednoho konkrétního produktu, podle kterých se provádí jeho kontrola",
+      "Žádá Project Board o autorizaci další etapy a shrnuje výsledky dosavadní práce všech týmů",
+      "Eviduje dokončené work packages a stav akceptace jejich produktů v rámci celého project logu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Work package description je formální předání práce: popisuje, jak mají být produkty v balíku vytvořeny a předány (produkty a jejich product descriptions, techniky, rozhraní, tolerance, omezení, frekvence checkpoint reportů, eskalace, způsob schválení), a předává odpovědnost team managerovi nebo členovi týmu. Specifikace kvality produktu obsahuje product description a stav produktů eviduje product register."
+  },
+  {
+    "topic": "plans",
+    "question": "Co podle PRINCE2 7 ovlivňuje počet a délku řídicích etap projektu?",
+    "options": [
+      "Míra rizika a složitosti, plánovací horizont a body, v nichž má board rozhodovat",
+      "Pevné pravidlo metody, podle něhož má každý projekt právě čtyři stejně dlouhé etapy",
+      "Počet team managerů, protože každý z nich řídí svou vlastní samostatnou etapu",
+      "Délka sprintů dodavatele, protože každá etapa musí odpovídat právě jednomu sprintu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Počet a délka etap se odvozují od rizikovosti a složitosti projektu, plánovacího horizontu, potřebných rozhodovacích bodů a povahy dodávacích činností. Metoda žádný pevný počet nepředepisuje (minimem jsou dvě etapy včetně iniciační), etapy nejsou vázány na jednotlivé týmy a jedna etapa může obsahovat více iterací či timeboxů."
+  },
+  {
+    "topic": "plans",
+    "question": "Jak se plánování v PRINCE2 7 typicky přizpůsobí iterativně-inkrementálnímu způsobu dodávky?",
+    "options": [
+      "Požadavky se prioritizují, rozsah je flexibilní v rámci tolerance a uvnitř etap běží timeboxy",
+      "Před první dodávací etapou se musí kompletně specifikovat všechny produkty a jejich vlastnosti",
+      "Řídicí etapy se ruší a nahrazují je sprinty, které už Project Board jednotlivě neautorizuje",
+      "Plán projektu se nevytváří, protože ho zcela nahrazuje backlog produktu vedený týmy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Při iterativně-inkrementální dodávce se požadavky prioritizují, rozsah je flexibilní v rámci dohodnuté tolerance a uvnitř etap probíhají timeboxy. Řídicí etapy, autorizace boardem i plán projektu zůstávají – governance PRINCE2 7 funguje s jakýmkoli způsobem dodávky. Úplná specifikace předem odpovídá spíše lineárně-sekvenčnímu přístupu."
+  },
+  {
+    "topic": "plans",
+    "question": "Doplňte chybějící slovo: Plán projektu (project plan) vzniká v procesu Initiating a project a na hranicích etap se aktualizuje v procesu ______.",
+    "options": [
+      "Managing a stage boundary",
+      "Controlling a stage",
+      "Directing a project",
+      "Managing product delivery"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Plán projektu připravuje projektový manažer v Initiating a project a na konci etap ho aktualizuje v Managing a stage boundary, spolu s business casem a plánem další etapy. Controlling a stage řídí běžící etapu podle stage plánu, Directing a project je rozhodovací proces boardu a Managing product delivery proces team managera."
+  },
+  {
+    "topic": "plans",
+    "question": "Který plán dává Project Boardu přehled hlavních produktů, termínů a nákladů celého projektu a slouží mu jako baseline pro sledování projektu?",
+    "options": [
+      "Project plan",
+      "Stage plan",
+      "Team plan",
+      "Initiation stage plan"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project plan je vysokoúrovňový plán celého projektu (hlavní produkty, kdy, jak a za kolik), který vzniká v Initiating a project, aktualizuje se na hranicích etap a board podle něj sleduje projekt. Stage plan – včetně plánu iniciační etapy – je podrobný podklad pro řízení jedné etapy projektovým manažerem a team plan si volitelně připravuje team manager."
+  },
+  {
+    "topic": "plans",
+    "question": "Které tvrzení o závislostech (dependencies) v plánech PRINCE2 7 je správné?",
+    "options": [
+      "Mohou být interní, pod kontrolou projektu, i externí, mimo kontrolu projektu",
+      "Zaznamenávají se pouze mezi work packages, které řídí různí team manageři",
+      "Externí závislosti se do plánu nezahrnují, protože je vždy řeší business layer",
+      "Závislosti mezi produkty zobrazuje především product breakdown structure"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Závislosti mohou být interní (mezi produkty či činnostmi pod kontrolou projektu) i externí (na něčem mimo kontrolu projektu, např. na jiném projektu nebo dodávce). Externí závislosti je nutné v plánu zachytit, i když je projekt přímo neřídí. Pořadí a závislosti produktů zobrazuje product flow diagram, kdežto product breakdown structure ukazuje jejich hierarchii."
+  },
+  {
+    "topic": "quality",
+    "question": "Jaký je účel praktiky Quality v PRINCE2 7?",
+    "options": [
+      "Dokumentovat požadavky uživatelů na produkty projektu a stanovit, jak budou splněny a ověřeny",
+      "Zajistit, aby organizace nezávisle na projektu auditovala dodržování svých standardů a politik",
+      "Identifikovat, posoudit a řídit nejistoty, které by mohly ohrozit kvalitu dodávaných produktů",
+      "Shromažďovat a vyhodnocovat issues a udržet změny schválených produktů projektu pod kontrolou"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Praktika Quality slouží k zachycení požadavků uživatelů na produkty projektu a ke stanovení, jak budou tyto požadavky splněny a ověřeny. Nezávislé ujištění organizace odpovídá quality assurance, která je jen částí přístupu ke kvalitě; řízení nejistot je účelem praktiky Risk a řízení změn baseline praktiky Issues."
+  },
+  {
+    "topic": "quality",
+    "question": "Ve kterém manažerském produktu se zaznamenávají očekávání uživatelů ohledně kvality (user quality expectations) a akceptační kritéria projektu?",
+    "options": [
+      "V project product description",
+      "V quality management approach",
+      "V product descriptions jednotlivých produktů",
+      "V quality register v rámci project logu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "User quality expectations a akceptační kritéria se týkají projektového produktu jako celku, proto patří do project product description, která vzniká už ve Starting up a project jako součást project brief. Product descriptions obsahují quality specifications jednotlivých produktů, quality management approach popisuje postupy a odpovědnosti a quality register eviduje činnosti kontroly kvality."
+  },
+  {
+    "topic": "quality",
+    "question": "Která dvě z následujících tvrzení jsou pravdivá?\n1. Akceptační kritéria jsou po schválení project product description neměnná a nelze je upravit.\n2. Akceptační kritéria jsou prioritizovaná a měřitelná.\n3. Quality specifications stanovuje Project Board až při akceptaci projektového produktu.\n4. Quality specifications jednotlivých produktů se uvádějí v jejich product descriptions.",
+    "options": [
+      "2 a 4",
+      "1 a 2",
+      "1 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Akceptační kritéria jsou prioritizovaná a měřitelná kritéria, která musí projektový produkt splnit, aby ho uživatelé akceptovali, a quality specifications jednotlivých produktů jsou v jejich product descriptions. Akceptační kritéria se mohou měnit, ale jen přes řízení změn, a quality specifications se definují předem při plánování kvality, aby podle nich bylo možné produkty kontrolovat."
+  },
+  {
+    "topic": "quality",
+    "question": "Doplňte chybějící slovo: Prohlášení o tom, jakou kvalitu uživatelé od projektového produktu očekávají, se v PRINCE2 7 nazývá ______.",
+    "options": [
+      "user quality expectations",
+      "customer's quality expectations",
+      "quality specifications",
+      "acceptance criteria"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 pro tento pojem používá termín user quality expectations (očekávání uživatelů ohledně kvality), který nahradil označení customer's quality expectations z 6. edice. Quality specifications popisují měřitelné úrovně kvality jednotlivých produktů a acceptance criteria jsou prioritizované měřitelné podmínky, za kterých uživatelé projektový produkt akceptují – nejde tedy o obecné prohlášení o očekávané kvalitě."
+  },
+  {
+    "topic": "quality",
+    "question": "Co v PRINCE2 7 představuje quality control (kontrola kvality)?",
+    "options": [
+      "Sledování produktů vůči standardům, provádění metod kvality a záznam výsledků do quality register",
+      "Plánovanou a systematickou činnost nezávislou na projektu, která organizaci dává důvěru v kvalitu",
+      "Zachycení specifikací kvality a sepsání product descriptions a quality management approach",
+      "Odpovědnost Project Boardu za ověření, že projekt je řízen správně a podle dohodnutých postupů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Quality control znamená monitorovat produkty a jejich dodávku vůči standardům, provádět zvolené metody kvality, zaznamenávat výsledky do quality register a odstraňovat příčiny nevyhovujícího výkonu. Nezávislá systematická činnost dávající důvěru je quality assurance, sepsání specifikací a approach je quality planning a dohled boardu nad řízením projektu je project assurance."
+  },
+  {
+    "topic": "quality",
+    "question": "Kdo typicky zajišťuje quality assurance v pojetí PRINCE2 7?",
+    "options": [
+      "Organizace prostřednictvím funkce nezávislé na projektovém týmu",
+      "Osoby, které Project Board pověřil výkonem project assurance",
+      "Team manager při kontrole kvality produktů v Managing product delivery",
+      "Projektový manažer v rámci každodenního řízení etapy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Quality assurance je plánovaná a systematická činnost, která dává důvěru, že produkty splní své specifikace; je typicky nezávislá na projektovém týmu a zajišťuje ji organizace (business layer), např. útvar kvality. Project assurance je odpovědnost Project Boardu za dohled nad tím, že projekt je řízen správně, a kontrolu kvality produktů (quality control) provádějí týmy."
+  },
+  {
+    "topic": "quality",
+    "question": "Která dvě z následujících tvrzení o registrech v project logu jsou pravdivá?\n1. Quality register eviduje plánované a provedené činnosti kontroly kvality.\n2. Do quality register se zapisují jen kontroly kvality, které odhalily vady.\n3. Product register eviduje produkty, které mají být dodány, a jejich stav včetně akceptace.\n4. Product register je součástí PID, a proto se mění jen přes řízení změn.",
+    "options": [
+      "1 a 3",
+      "1 a 2",
+      "2 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Quality register zachycuje plánované i provedené činnosti kontroly kvality (bez ohledu na jejich výsledek) a product register seznam produktů k dodání s jejich stavem a akceptací. Oba registry jsou součástí project logu, tedy záznamy (records), které na rozdíl od baseline nepodléhají řízení změn; PID je baseline a žádný z registrů neobsahuje."
+  },
+  {
+    "topic": "quality",
+    "question": "Ve které části postupu řízení kvality se sepisují project product description, product descriptions a quality management approach?",
+    "options": [
+      "Quality planning",
+      "Quality control",
+      "Quality assurance",
+      "Project assurance"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Postup řízení kvality tvoří quality planning (zachycení požadavků a specifikací kvality a sepsání project product description, product descriptions a quality management approach), quality control (provádění metod kvality a záznam do quality register) a quality assurance (nezávislé ujištění ze strany organizace). Project assurance není krokem tohoto postupu, ale odpovědností Project Boardu."
+  },
+  {
+    "topic": "quality",
+    "question": "Co popisuje quality management approach, který je součástí PID?",
+    "options": [
+      "Techniky, standardy a odpovědnosti pro splnění specifikací kvality a akceptačních kritérií",
+      "Seznam všech produktů projektu s jejich aktuálním stavem a s datem akceptace uživateli",
+      "Měřitelné úrovně kvality, kterých musí dosáhnout každý jednotlivý specialistický produkt",
+      "Výsledky provedených kontrol kvality včetně odkazů na záznamy a plánovaných termínů dalších kontrol"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Quality management approach popisuje, jak bude kvality dosaženo: jaké techniky a standardy se použijí a kdo má jaké role a odpovědnosti, aby byly splněny quality specifications a akceptační kritéria. Seznam produktů a jejich akceptace je v product registeru, měřitelné úrovně kvality produktů v product descriptions a výsledky kontrol v quality register."
+  },
+  {
+    "topic": "quality",
+    "question": "Jak PRINCE2 7 přistupuje k upřesňování požadavků (requirements) uživatelů během projektu?",
+    "options": [
+      "Průběžně se upřesňují, ale změny již schválených požadavků podléhají řízení změn",
+      "Musí být úplně a závazně specifikovány ještě před autorizací iniciace projektu",
+      "Upřesňuje je senior supplier na hranicích etap podle technických možností dodavatele",
+      "Mohou se kdykoli volně měnit bez kontroly, protože riziko nesou sami uživatelé"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 počítá s tím, že požadavky se během projektu postupně zpřesňují (přístup „ready, fire, aim“) a kvalita není jen závěrečné testování. Jakmile je však požadavek zachycen ve schváleném manažerském produktu, jeho změna prochází řízením změn (praktika Issues). Úplná specifikace předem není podmínkou a za zachycení požadavků uživatelů odpovídá senior user, ne senior supplier."
+  },
+  {
+    "topic": "quality",
+    "question": "Jak PRINCE2 7 chápe pojem kvalita (quality)?",
+    "options": [
+      "Jako míru, do jaké vlastnosti produktu, služby či procesu splňují stanovené požadavky",
+      "Jako nejvyšší technickou úroveň produktu, jaké lze v daném oboru s dostupnými zdroji dosáhnout",
+      "Jako stav, kdy závěrečné testování produktu neodhalilo vady ani odchylky od návrhu",
+      "Jako dodržení plánovaných nákladů a termínů projektu, které schválil Project Board"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 chápe kvalitu jako míru, do jaké soubor vlastností produktu (případně služby, procesu či systému) splňuje požadavky. Kvalita je tedy vždy vztažena k požadavkům, které vyjadřují user quality expectations, akceptační kritéria a quality specifications. Nejde o nejvyšší možnou technickou úroveň (ta může být zbytečně drahá) ani jen o to, že testování neodhalilo vady; náklady a termíny jsou jiné výkonnostní cíle."
+  },
+  {
+    "topic": "quality",
+    "question": "Které pořadí odpovídá životnímu cyklu kvality produktu (product quality lifecycle) v PRINCE2 7?",
+    "options": [
+      "Vstup uživatelů → project product description → quality management approach → product descriptions → kontrola kvality → akceptace",
+      "Vstup uživatelů → product descriptions → kontrola kvality → project product description → quality management approach → akceptace",
+      "Quality management approach → vstup uživatelů → kontrola kvality → product descriptions → project product description → akceptace",
+      "Project product description → kontrola kvality → vstup uživatelů → quality management approach → product descriptions → akceptace"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Životní cyklus kvality produktu začíná vstupem uživatelů, ze kterého vznikne project product description; navazuje quality management approach a product descriptions se specifikacemi a tolerancemi kvality. Následují metody a činnosti kontroly kvality (zaznamenané v quality register) a nakonec akceptace (zaznamenaná v product registeru). Kontrolovat nelze dříve, než jsou specifikace kvality definovány."
+  },
+  {
+    "topic": "quality",
+    "question": "Doplňte chybějící slovo: Měřitelné úrovně kvality, kterých musí hotový produkt dosáhnout a které se ověřují při kontrole kvality, se v PRINCE2 7 nazývají ______.",
+    "options": [
+      "quality specifications",
+      "quality criteria",
+      "acceptance criteria",
+      "user quality expectations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 označuje měřítka kvality a úrovně, kterých musí hotový produkt dosáhnout, jako quality specifications; uvádějí se v product description daného produktu. Quality criteria je termín z 6. edice, acceptance criteria platí pro projektový produkt jako celek a user quality expectations popisují očekávání uživatelů v project product description."
+  },
+  {
+    "topic": "quality",
+    "question": "Kde se dokumentuje tolerance kvality pro konkrétní dílčí produkt, například přípustný rozsah doby odezvy jednoho modulu?",
+    "options": [
+      "V jeho product description",
+      "V project product description",
+      "V quality register",
+      "V plánu etapy (stage plan)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tolerance kvality se stanovuje na dvou úrovních: pro projektový produkt jako celek v project product description a pro jednotlivé produkty v jejich product descriptions, spolu s quality specifications. Quality register eviduje plánované a provedené kontroly kvality a stage plan obsahuje tolerance etapy, ne tolerance kvality jednotlivých produktů."
+  },
+  {
+    "topic": "quality",
+    "question": "Ve kterém procesu se typicky provádí kontrola kvality (quality control) specialistických produktů při jejich vytváření?",
+    "options": [
+      "Managing product delivery",
+      "Controlling a stage",
+      "Managing a stage boundary",
+      "Closing a project"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Specialistické produkty vytvářejí týmy v Managing product delivery; při provádění work packagu provádějí i předepsané kontroly kvality a výsledky se zaznamenávají do quality register. Projektový manažer v Controlling a stage sleduje stav work packagů, Managing a stage boundary slouží k přechodu mezi etapami a v Closing a project se potvrzuje akceptace projektového produktu."
+  },
+  {
+    "topic": "risk",
+    "question": "Jaký je účel praktiky Risk v PRINCE2 7?",
+    "options": [
+      "Identifikovat, posoudit a řídit nejistoty, a zlepšit tak schopnost projektu uspět",
+      "Shromáždit a vyhodnotit issues, která už nastala, a udržet změny baseline pod kontrolou",
+      "Vytvořit finanční rezervu, která pokryje dopady všech hrozeb identifikovaných v projektu",
+      "Sledovat skutečný postup proti plánu a eskalovat předpovídané překročení tolerancí"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Praktika Risk slouží k identifikaci, posouzení a řízení nejistot (hrozeb i příležitostí), které mohou ovlivnit cíle projektu, a tím zlepšuje jeho šanci na úspěch. Issues, která už nastala, a změny baseline řeší praktika Issues, sledování postupu a eskalaci výjimek praktika Progress. Cílem není pokrýt všechny hrozby rezervou – řízení rizik se týká i příležitostí."
+  },
+  {
+    "topic": "risk",
+    "question": "Projekt zavádí nový skladový systém s dodavatelem, se kterým organizace dosud nespolupracovala. Která formulace popisuje rizikovou událost (risk event)?",
+    "options": [
+      "Dodavatel může dodat rozhraní ke stávajícímu ERP pozdě",
+      "Dodavatel je pro organizaci nový a jeho postupy neznáme",
+      "Spuštění skladového systému by se posunulo o tři týdny",
+      "Projektový manažer s dodavatelem sjednal pevnou cenu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Riziková událost je nejistá skutečnost, která může nastat – zde možné zpoždění dodávky rozhraní. To, že je dodavatel nový, je už existující skutečnost, tedy příčina (cause) rizika, a posun spuštění o tři týdny je dopad (effect) na cíle projektu. Sjednaná pevná cena je fakt, ne nejistá událost; dobrý popis rizika příčinu, událost a dopad odděluje."
+  },
+  {
+    "topic": "risk",
+    "question": "Doplňte chybějící slovo: Ve formulaci rizika „Protože tým nemá zkušenosti s cloudovou platformou, může dojít k chybné konfiguraci zabezpečení, což by oddálilo bezpečnostní audit“ představuje nedostatek zkušeností týmu ______ rizika.",
+    "options": [
+      "příčinu (cause)",
+      "událost (event)",
+      "dopad (effect)",
+      "časovou blízkost (proximity)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Nedostatek zkušeností je existující skutečnost, ze které riziko vychází – jde tedy o příčinu (cause). Nejistá chybná konfigurace zabezpečení je riziková událost (event) a oddálení auditu je dopad (effect) na cíle projektu. Proximity vyjadřuje, jak brzy může událost nastat, a není součástí formulace příčina–událost–dopad."
+  },
+  {
+    "topic": "risk",
+    "question": "Kdo je v PRINCE2 7 risk owner?",
+    "options": [
+      "Osoba odpovědná za řízení konkrétního rizika včetně dohledu nad účinností reakcí",
+      "Osoba, která podle pokynů jiné osoby provádí jednotlivé dohodnuté akce reakce na riziko",
+      "Člen Project Boardu, který riziko identifikoval a jako první ho zapsal do risk registeru",
+      "Projektový manažer, který je automaticky vlastníkem všech rizik zapsaných v projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Risk owner odpovídá za řízení konkrétního rizika – za to, že reakce jsou naplánovány, provedeny a jsou účinné. Konkrétní akce může provádět risk action owner (v 6. edici risk actionee). Vlastníkem rizika nemusí být ten, kdo ho identifikoval, a projektový manažer není automaticky vlastníkem všech rizik."
+  },
+  {
+    "topic": "risk",
+    "question": "Doplňte chybějící slovo: Osoba, která na pokyn vlastníka rizika provádí konkrétní akce reakce na riziko, se v PRINCE2 7 označuje jako ______.",
+    "options": [
+      "risk action owner",
+      "risk owner",
+      "risk actionee",
+      "project assurance"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 rozlišuje risk ownera, který za řízení rizika odpovídá, a risk action ownera, který provádí konkrétní dohodnuté akce reakce. Termín risk actionee pochází z 6. edice a v PRINCE2 7 ho nahradil risk action owner. Project assurance nezávisle dohlíží na řízení projektu za Project Board a není označením pro vykonavatele reakcí."
+  },
+  {
+    "topic": "risk",
+    "question": "Co v PRINCE2 7 vyjadřuje rychlost rizika (velocity)?",
+    "options": [
+      "Jak rychle se dopad rizika projeví poté, co riziková událost nastane",
+      "Jak brzy v čase by mohla riziková událost nastat, pokud k ní dojde",
+      "Jak rychle roste pravděpodobnost rizika v průběhu jednotlivých etap",
+      "Jak rychle dokáže risk action owner po vzniku rizika zahájit reakci"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Velocity popisuje, jak rychle se projeví dopad poté, co riziková událost nastane. Jak brzy může událost nastat, vyjadřuje proximity (časová blízkost). Velocity doplňuje pravděpodobnost, dopad a proximity při posuzování rizik; netýká se rychlosti reakce týmu ani vývoje pravděpodobnosti v čase."
+  },
+  {
+    "topic": "risk",
+    "question": "Jak PRINCE2 7 vymezuje risk tolerance?",
+    "options": [
+      "Jako měřitelný přijatelný rozsah výsledků pro konkrétní cíl, vyjádřený v jeho jednotkách",
+      "Jako obecný postoj organizace k tomu, jaké množství a jaký typ rizika je ochotna podstoupit",
+      "Jako částku vyhrazenou v rozpočtu projektu na financování reakcí na identifikovaná rizika",
+      "Jako míru, do jaké je určitý cíl projektu v danou chvíli ohrožen souhrnem všech rizik"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Risk tolerance je v PRINCE2 7 měřitelný práh – přijatelný rozsah výsledků pro konkrétní cíl, vyjádřený v jeho jednotkách (např. ve dnech nebo korunách); předpověď jeho překročení vede k eskalaci. Obecný postoj k množství a typu rizika je risk appetite, vyhrazené prostředky na reakce jsou risk budget a míra ohrožení cíle je risk exposure."
+  },
+  {
+    "topic": "risk",
+    "question": "Doplňte chybějící slovo: ______ vyjadřuje množství a typ rizika, které je organizace ochotna podstoupit.",
+    "options": [
+      "Risk appetite",
+      "Risk tolerance",
+      "Risk exposure",
+      "Risk budget"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Risk appetite je postoj organizace – jaké množství a jaký typ rizika je ochotna podstoupit. Risk tolerance tento postoj převádí do měřitelných hranic pro jednotlivé cíle, risk exposure vyjadřuje míru, do jaké je cíl ohrožen, a risk budget jsou prostředky vyhrazené na reakce na rizika."
+  },
+  {
+    "topic": "risk",
+    "question": "Čím se liší risk budget od change budget?",
+    "options": [
+      "Risk budget financuje reakce na rizika, change budget schválené změny baseline",
+      "Risk budget financuje schválené změny baseline, change budget reakce na rizika",
+      "Oba jsou součástí tolerance etapy a PM je smí čerpat bez jakýchkoli omezení",
+      "Risk budget spravuje business layer, change budget výhradně team manageři"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Risk budget je částka vyhrazená na financování reakcí na rizika, například pohotovostních plánů, které se spustí, pokud riziko nastane. Change budget slouží k financování schválených požadavků na změnu a čerpají ho ti, komu board delegoval pravomoc rozhodovat o změnách. Ani jeden rozpočet není volnou rezervou projektového manažera."
+  },
+  {
+    "topic": "risk",
+    "question": "Projekt výstavby nového skladu sjedná pojištění, které uhradí škody způsobené případnou povodní během stavby. O jaký typ reakce na riziko jde?",
+    "options": [
+      "Transfer",
+      "Share",
+      "Reduce",
+      "Prepare contingent plans"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Pojištění přenáší finanční dopad hrozby na třetí stranu – jde o transfer. Pravděpodobnost povodně ani její fyzické dopady na stavbu se tím nemění, takže nejde o reduce. Share znamená sdílet zisky i ztráty s partnerem podle dohodnutého klíče a contingent plan je předem připravený postup, který se spustí, až riziko nastane."
+  },
+  {
+    "topic": "risk",
+    "question": "Tým zjistí, že pokud servery dorazí do konce roku, organizace získá dotaci. Projekt proto upraví plán a smlouvy tak, aby dodávka do konce roku proběhla s jistotou. O jakou reakci na příležitost jde?",
+    "options": [
+      "Exploit",
+      "Enhance",
+      "Share",
+      "Accept"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Exploit odstraňuje nejistotu – projekt se zařídí tak, aby příležitost nastala s jistotou (obdoba reakce avoid u hrozby). Enhance by jen zvýšil pravděpodobnost nebo dopad příležitosti, aniž by ji zaručil; share by přínos sdílel s partnerem a accept by znamenal vědomě nic nedělat a příležitost jen sledovat."
+  },
+  {
+    "topic": "risk",
+    "question": "Která dvě z následujících tvrzení o reakcích na riziko jsou pravdivá?\n1. Prepare contingent plans snižuje pravděpodobnost, že riziko nastane.\n2. Avoid jen snižuje pravděpodobnost hrozby, nejistotu však neodstraňuje.\n3. Reduce mění pravděpodobnost a/nebo dopad hrozby.\n4. Accept znamená vědomě zatím nepodnikat kroky a riziko dál sledovat.",
+    "options": [
+      "3 a 4",
+      "1 a 2",
+      "1 a 3",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Reduce ovlivňuje pravděpodobnost a/nebo dopad hrozby a accept je vědomé rozhodnutí zatím nejednat, přičemž se riziko dál monitoruje – nejde o ignorování. Avoid naopak nejistotu odstraňuje (hrozba už nemůže nastat nebo ovlivnit cíle) a contingent plans se spouštějí až po vzniku rizika, takže mění dopad, nikoli pravděpodobnost."
+  },
+  {
+    "topic": "risk",
+    "question": "Která z následujících reakcí NENÍ v PRINCE2 7 uvedena mezi doporučenými typy reakcí na riziko?",
+    "options": [
+      "Reject",
+      "Share",
+      "Accept",
+      "Enhance"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 uvádí reakce avoid/exploit, reduce/enhance, transfer, share, accept a prepare contingent plans. Reakce reject (vědomé odmítnutí příležitosti) patřila do 6. edice; v PRINCE2 7 mezi doporučenými typy reakcí není."
+  },
+  {
+    "topic": "risk",
+    "question": "Který krok techniky řízení rizik v PRINCE2 7 probíhá průběžně během celého cyklu, souběžně s ostatními kroky?",
+    "options": [
+      "Communicate (komunikovat)",
+      "Identify (identifikovat)",
+      "Implement (implementovat)",
+      "Assess (posoudit)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technika řízení rizik má kroky Identify → Assess → Plan → Implement a uprostřed cyklu krok Communicate, který probíhá průběžně: informace o rizicích se po celou dobu sdílejí v projektovém ekosystému a podle potřeby i navenek. Ostatní kroky na sebe navazují v uvedeném pořadí a cyklus se opakuje."
+  },
+  {
+    "topic": "risk",
+    "question": "Kde se v PRINCE2 7 zaznamenávají identifikovaná rizika včetně jejich stavu a historie?",
+    "options": [
+      "V risk registeru, který je součástí project logu",
+      "V risk management approach, který je součástí PID",
+      "V issue registeru, který je součástí project logu",
+      "V daily logu projektového manažera"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Identifikovaná rizika, jejich stav a historie se evidují v risk registeru, který je v PRINCE2 7 součástí project logu. Risk management approach v PID popisuje postupy, techniky, stupnice, role a tolerance pro řízení rizik, ale samotná rizika neobsahuje. Issue register slouží pro formálně řízená issues a daily log pro neformální poznámky PM."
+  },
+  {
+    "topic": "risk",
+    "question": "Která dvě z následujících tvrzení jsou pravdivá?\n1. Riziko je událost, která už nastala a negativně ovlivnila cíle projektu.\n2. Když riziková událost skutečně nastane, dále se řeší jako issue.\n3. Risk exposure je vždy negativní, protože vyjadřuje jen ohrožení hrozbami.\n4. Předpověď, že souhrnná rizika překročí risk tolerance, se eskaluje jako výjimka.",
+    "options": [
+      "2 a 4",
+      "1 a 2",
+      "1 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Riziko je nejistá událost; jakmile skutečně nastane, stává se issue a řeší se technikou řízení issues. Pokud se předpovídá, že souhrnná riziková expozice překročí risk tolerance, jde o výjimku, která se eskaluje o úroveň výš. Risk exposure je neutrální pojem a zahrnuje hrozby i příležitosti."
+  },
+  {
+    "topic": "issues",
+    "question": "Jaký je účel praktiky Issues v PRINCE2 7?",
+    "options": [
+      "Shromažďovat a vyhodnocovat issues a udržet změny baseline projektu pod kontrolou",
+      "Řídit přechod organizace ze současného do cílového stavu a podpořit přijetí změny",
+      "Identifikovat a posoudit nejisté budoucí události dřív, než se z nich stanou issues",
+      "Sledovat skutečný postup proti plánu a předpovídat dosažení cílů projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Praktika Issues slouží ke shromažďování a vyhodnocování issues a k udržení změn baseline projektu pod kontrolou – řízení změn (change control) je v PRINCE2 7 její součástí. Přechod organizace do cílového stavu je change management (oblast People), nejisté budoucí události řeší praktika Risk a sledování postupu praktika Progress."
+  },
+  {
+    "topic": "issues",
+    "question": "Při testování se ukáže, že nový e-shop nesplní dobu načtení stránky požadovanou v jeho product description. O jaký typ issue jde?",
+    "options": [
+      "Off-specification",
+      "Request for change",
+      "Concern",
+      "Event external to the project"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Off-specification je situace, kdy produkt nesplňuje (nebo podle předpovědi nesplní) své quality specifications – zde požadovanou dobu načtení stránky. Request for change je návrh změnit baseline, concern je issue, jehož načasování a dopad je teprve třeba posoudit, a event external to the project vzniká mimo projekt."
+  },
+  {
+    "topic": "issues",
+    "question": "Senior user požádá, aby schválený rozsah mobilní aplikace nově zahrnoval i platby kartou, se kterými se dosud nepočítalo. Jak se toto issue v PRINCE2 7 klasifikuje?",
+    "options": [
+      "Jako request for change",
+      "Jako off-specification",
+      "Jako business opportunity",
+      "Jako concession"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Požadavek na změnu schváleného rozsahu (baseline) je request for change; rozhoduje o něm change authority, případně Project Board. Off-specification by znamenala, že produkt nesplní existující specifikaci, business opportunity je nečekaný pozitivní důsledek pro projekt nebo organizaci a concession je off-specification přijatá bez nápravy."
+  },
+  {
+    "topic": "issues",
+    "question": "Během projektu se ukáže, že vyvíjený rezervační systém lze bez dalších nákladů používat i v druhé nemocnici skupiny, s čímž nikdo nepočítal. Jak PRINCE2 7 tuto situaci klasifikuje?",
+    "options": [
+      "Jako issue typu business opportunity",
+      "Jako riziko typu příležitost v risk registeru",
+      "Jako issue typu request for change",
+      "Jako dis-benefit zaznamenaný v business casu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business opportunity je v PRINCE2 7 typ issue: nečekaný pozitivní důsledek pro projekt nebo uživatelskou organizaci, který je už známý. Příležitost jako riziko je naopak nejistá událost, která teprve může nastat. O request for change by šlo, až kdyby někdo navrhl změnit baseline (např. rozšířit rozsah), a dis-benefit je měřitelné zhoršení."
+  },
+  {
+    "topic": "issues",
+    "question": "Doplňte chybějící slovo: Off-specification, kterou příslušná autorita přijme bez nápravy, se označuje jako ______.",
+    "options": [
+      "concession",
+      "request for change",
+      "exception",
+      "corrective action"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Rozhodne-li se, že off-specification bude přijata tak, jak je, bez opravy, jde o concession (ústupek). Request for change navrhuje změnit baseline, exception je předpověď překročení tolerance a corrective action je nápravné opatření, které by odchylku naopak odstranilo."
+  },
+  {
+    "topic": "issues",
+    "question": "Doplňte chybějící slovo: Issue, u kterého je teprve třeba posoudit jeho načasování a dopad, se v PRINCE2 7 označuje jako ______.",
+    "options": [
+      "concern",
+      "problem",
+      "off-specification",
+      "event external to the project"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Concern je issue, jehož načasování a dopad je třeba teprve posoudit. Problem má naopak okamžitý negativní dopad, off-specification znamená, že produkt nesplní svou specifikaci, a event external to the project je událost vzniklá mimo projekt, která ho ovlivňuje."
+  },
+  {
+    "topic": "issues",
+    "question": "Který krok techniky řízení issues v PRINCE2 7 následuje bezprostředně po kroku Assess?",
+    "options": [
+      "Recommend (doporučit)",
+      "Implement (realizovat)",
+      "Propose (navrhnout)",
+      "Decide (rozhodnout)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technika řízení issues má v PRINCE2 7 kroky Capture → Assess → Recommend → Decide → Implement. Po posouzení dopadu (Assess) se identifikují a vyhodnotí varianty a doporučí se řešení (Recommend); teprve pak rozhoduje příslušná autorita (Decide). Krok Propose (spolu s Examine) pochází z 6. edice."
+  },
+  {
+    "topic": "issues",
+    "question": "Co se děje v kroku Capture techniky řízení issues?",
+    "options": [
+      "Určí se typ a závažnost či priorita issue a rozhodne se, zda se bude řešit formálně, či neformálně",
+      "Posoudí se dopad issue na business case a rizikový profil a znovu se ověří jeho závažnost a priorita",
+      "Identifikují a vyhodnotí se možné varianty řešení a projektový manažer doporučí tu nejvhodnější",
+      "Rozhodovatel schválí, zamítne nebo odloží řešení issue, případně si vyžádá další informace či exception plan"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V kroku Capture se issue zachytí: určí se jeho typ a závažnost či priorita a rozhodne se, zda se bude řešit formálně (issue register, případně issue report), nebo neformálně (daily log). Posouzení dopadu na business case a rizikový profil je krok Assess, hledání a doporučení variant krok Recommend a schválení či zamítnutí krok Decide."
+  },
+  {
+    "topic": "issues",
+    "question": "Project Board rozhodne, že o drobných požadavcích na změnu bude rozhodovat přímo projektový manažer. Co to podle PRINCE2 7 znamená?",
+    "options": [
+      "PM bude pro tyto změny v delegovaných mezích působit jako change authority",
+      "PM se tím stává členem Project Boardu odpovědným za změny",
+      "Board se vzdává práva rozhodovat o jakýchkoli změnách až do konce etapy",
+      "Business layer musí tuto delegaci nejprve schválit v exception plánu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Board může pravomoc rozhodovat o změnách delegovat na change authority – například na PM pro drobné změny – v mezích daných stupnicemi závažnosti a priority v issue management approach a případně s change budget. PM se tím nestává členem boardu, změny nad delegovaný rámec dál posuzuje board a o delegaci rozhoduje board, ne business layer."
+  },
+  {
+    "topic": "issues",
+    "question": "Projektový manažer posoudí požadavek na změnu a zjistí, že jeho realizace by vedla k překročení tolerance etapy. Jak má postupovat?",
+    "options": [
+      "Eskalovat situaci Project Boardu formou exception reportu",
+      "Změnu schválit a informovat board v příštím highlight reportu",
+      "Požádat team managera o exception plan pro dotčený work package",
+      "Změnu zamítnout, protože o změnách PM nikdy nerozhoduje"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Pokud by realizace změny vedla k předpovídanému překročení tolerance etapy, jde o výjimku, kterou PM eskaluje Project Boardu exception reportem. PM nemůže sám schválit změnu nad rámec delegované pravomoci, exception plány se pro work packages nevytvářejí a o změnách PM rozhodovat může, pokud mu to board delegoval jako change authority."
+  },
+  {
+    "topic": "issues",
+    "question": "Kde jsou v PRINCE2 7 definovány postupy řízení issues, stupnice závažnosti a priority, change authority a change budget?",
+    "options": [
+      "V issue management approach",
+      "V change control approach",
+      "V change management approach",
+      "V issue registeru"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Postupy, stupnice závažnosti a priority, change authority i change budget popisuje issue management approach, který je součástí PID. Change control approach je název z 6. edice, change management approach se v PRINCE2 7 týká organizační změny (přechodu lidí a organizace do nového stavu) a issue register eviduje jednotlivá formálně řízená issues."
+  },
+  {
+    "topic": "issues",
+    "question": "Která dvě z následujících tvrzení o issues jsou pravdivá?\n1. Každá změna baseline začíná jako issue.\n2. Issue může kdykoli během projektu vznést kdokoli.\n3. Každé issue je zároveň požadavkem na změnu.\n4. Issues smějí vznášet pouze projektový manažer a Project Board.",
+    "options": [
+      "1 a 2",
+      "2 a 3",
+      "3 a 4",
+      "1 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Každá změna baseline začíná jako issue, ale ne každé issue je požadavek na změnu – může jít i o problem, concern, off-specification, business opportunity nebo event external to the project. Issue může vznést kdokoli, a to kdykoli během projektu, nejen projektový manažer nebo Project Board."
+  },
+  {
+    "topic": "issues",
+    "question": "Která dvě z následujících tvrzení jsou pravdivá?\n1. Issue register eviduje všechna issues včetně těch, která se řeší neformálně.\n2. Issues řešená neformálně zapisuje projektový manažer do daily logu.\n3. Issue report obsahuje popis issue, posouzení dopadu, varianty, doporučení a rozhodnutí.\n4. Issue report připravuje team manager ke každému issue zapsanému v daily logu.",
+    "options": [
+      "2 a 3",
+      "1 a 2",
+      "1 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Neformálně řešená issues zapisuje projektový manažer do daily logu, formálně řízená do issue registeru. Issue report se připravuje pro formálně řešené issue a obsahuje popis, posouzení dopadu, varianty řešení, doporučení a rozhodnutí. Issue register proto neeviduje neformální issues a issue report nepíše team manager ke každému záznamu v daily logu."
+  },
+  {
+    "topic": "progress",
+    "question": "Jaký je účel praktiky Progress v PRINCE2 7?",
+    "options": [
+      "Porovnávat skutečnost s plánem, předpovídat cíle a životaschopnost projektu a řídit odchylky",
+      "Definovat produkty a prostředky k jejich dodání, aby byl naplněn business case celého projektu",
+      "Identifikovat, posoudit a řídit nejistoty, které by mohly ohrozit dosažení cílů projektu",
+      "Shromažďovat a vyhodnocovat issues a udržet změny schválených produktů pod kontrolou"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Praktika Progress slouží ke sledování a porovnání skutečného a plánovaného postupu, k předpovídání cílů projektu a jeho trvalé životaschopnosti a k řízení odchylek, které by vedly k výjimce. Definice produktů a prostředků k jejich dodání je účelem praktiky Plans, řízení nejistot praktiky Risk a řízení issues a změn praktiky Issues."
+  },
+  {
+    "topic": "progress",
+    "question": "Doplňte chybějící slovo: Situace, kdy lze předpovědět, že bude překročena dohodnutá tolerance, se v PRINCE2 7 nazývá ______.",
+    "options": [
+      "exception",
+      "issue",
+      "concession",
+      "concern"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Exception (výjimka) je předpověď, že bude překročena tolerance dohodnutá mezi projektovým manažerem a Project Boardem nebo mezi boardem a business layer. Issue je obecně jakákoli událost vyžadující pozornost řízení, concern je typ issue, jehož dopad je třeba teprve posoudit, a concession je off-specification přijatá bez nápravy."
+  },
+  {
+    "topic": "progress",
+    "question": "Které z následujících je příkladem tolerance pro výkonnostní cíl udržitelnost (sustainability)?",
+    "options": [
+      "Uhlíková stopa dopravy materiálu 120 t CO2 s povolenou odchylkou +10 %",
+      "Dokončení etapy do 30. června s povolenou odchylkou ±2 týdny",
+      "Náklady etapy 2 mil. Kč s povoleným překročením nejvýše o 5 %",
+      "Zvýšení online prodeje o 10 % s přípustnou odchylkou ±2 procentní body"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PRINCE2 7 přidal mezi výkonnostní cíle udržitelnost, takže lze stanovit i toleranci pro ukazatele udržitelnosti, například pro uhlíkovou stopu. Termín dokončení s odchylkou je tolerance času, rozpočet s povoleným překročením tolerance nákladů a zvýšení prodeje tolerance přínosů (benefits)."
+  },
+  {
+    "topic": "progress",
+    "question": "Projektový manažer předpovídá, že etapa překročí svou toleranci. Které pořadí dalších kroků odpovídá technice řízení výjimek v PRINCE2 7?",
+    "options": [
+      "Exception report → rozhodnutí boardu → exception plan → schválení boardem",
+      "Exception plan → exception report → schválení business layer",
+      "Issue report → exception plan od team managera → schválení projektovým manažerem",
+      "Highlight report → exception report → schválení nového plánu business layer"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Při předpovědi překročení tolerance etapy připraví PM exception report a board v Directing a project rozhodne, například požádá o exception plan. PM ho připraví v Managing a stage boundary, board ho schválí a nový plán nahradí původní stage plan. Team manager exception plány nepřipravuje a business layer rozhoduje jen o výjimkách na úrovni projektu."
+  },
+  {
+    "topic": "progress",
+    "question": "Doplňte chybějící slovo: Předpověď dalšího vývoje projektu odvozená ze skutečně dosažených výsledků a trendů se v praktice Progress nazývá ______.",
+    "options": [
+      "forecast",
+      "estimate",
+      "baseline",
+      "tolerance"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Forecast (prognóza) vychází ze skutečně dosažených výsledků a trendů a ukazuje, zda projekt nebo etapa dosáhne cílů v rámci tolerance; předpověď překročení tolerance je výjimka. Estimate (odhad) vzniká při plánování ještě před zahájením práce, baseline je schválená verze produktu pod řízením změn a tolerance je povolená odchylka."
+  },
+  {
+    "topic": "progress",
+    "question": "Team manager předpovídá, že work package překročí dohodnutou toleranci. Jak má postupovat?",
+    "options": [
+      "Vznese issue k projektovému manažerovi",
+      "Připraví exception report pro board",
+      "Vypracuje exception plan pro work package",
+      "Sám upraví tolerance work packagu a pokračuje"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Team manager při předpovídaném překročení tolerance work packagu vznese issue k projektovému manažerovi, který rozhodne o dalším postupu v rámci tolerance etapy. Exception report připravuje pro Project Board jen PM, exception plány se pro work packages nevytvářejí a tolerance work packagu stanovuje PM, ne team manager."
+  },
+  {
+    "topic": "progress",
+    "question": "Project Board předpovídá, že bude překročena tolerance projektu. Jak má postupovat?",
+    "options": [
+      "Postoupit situaci k rozhodnutí business layer",
+      "Sám schválit exception plan a rozšířit tolerance",
+      "Pověřit PM úpravou tolerancí v plánu projektu",
+      "Výjimku vykázat až v end project reportu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tolerance projektu stanovuje business layer, proto o výjimce na úrovni projektu rozhoduje business layer – board jí situaci postoupí. Board nemůže sám rozšířit tolerance, které mu byly delegovány, PM je měnit nesmí a odklad do end project reportu by popřel princip řízení výjimkou."
+  },
+  {
+    "topic": "progress",
+    "question": "Jakou zprávu předává team manager projektovému manažerovi v pravidelných intervalech během práce na work packagu?",
+    "options": [
+      "Checkpoint report",
+      "Highlight report",
+      "Exception report",
+      "End project report"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Checkpoint report posílá team manager projektovému manažerovi v intervalech dohodnutých ve work package description – jde o kontrolu řízenou časem. Highlight report posílá PM Project Boardu, exception report připravuje PM pro board při předpovědi překročení tolerance etapy a end project report vzniká při uzavírání projektu."
+  },
+  {
+    "topic": "progress",
+    "question": "Která dvě z následujících tvrzení o kontrolách řízených časem (time-driven) a událostí (event-driven) jsou pravdivá?\n1. Highlight report je kontrola řízená časem.\n2. Checkpoint report je kontrola řízená událostí.\n3. Exception report je kontrola řízená časem.\n4. End stage report je kontrola řízená událostí.",
+    "options": [
+      "1 a 4",
+      "1 a 2",
+      "2 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Highlight reporty (PM → board) a checkpoint reporty (TM → PM) se předávají v pravidelných intervalech, jsou tedy řízené časem. End stage report vzniká při události (konec etapy) a exception report také (předpověď překročení tolerance), proto jsou řízené událostí. Mezi kontroly řízené událostí patří i dokončení PID nebo organizační události, jako je konec finančního roku."
+  },
+  {
+    "topic": "progress",
+    "question": "Která dvě z následujících tvrzení o zprávách v PRINCE2 7 jsou pravdivá?\n1. Checkpoint report posílá projektový manažer Project Boardu na konci každé etapy.\n2. Frekvenci highlight reportů určuje Project Board.\n3. Highlight report se smí předávat pouze členům Project Boardu.\n4. End project report připravuje projektový manažer v procesu Closing a project.",
+    "options": [
+      "2 a 4",
+      "1 a 2",
+      "1 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Highlight reporty posílá PM ve frekvenci, kterou určí Project Board, a end project report připravuje PM v Closing a project. Checkpoint report posílá team manager projektovému manažerovi v intervalech dohodnutých ve work package description. Highlight report mohou podle communication management approach dostávat i další zainteresované strany, nejen členové boardu."
+  },
+  {
+    "topic": "progress",
+    "question": "Projektový manažer zjistí, že etapa bude mít zpoždění, které se však vejde do tolerance etapy. Co je podle PRINCE2 7 správné?",
+    "options": [
+      "Sám přijme nápravné opatření v rámci své pravomoci",
+      "Připraví exception report pro Project Board",
+      "Požádá Project Board o schválení exception plánu pro etapu",
+      "Odchylku neřeší a počká, zda se do konce etapy sama nevyrovná"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V rámci tolerance etapy jedná projektový manažer sám – v Controlling a stage přijme nápravné opatření a stav uvede v pravidelném highlight reportu. Exception report a exception plan přicházejí na řadu až při předpovědi překročení tolerance. Nečinnost by odporovala povinnosti PM řídit etapu a udržet ji v toleranci."
+  },
+  {
+    "topic": "progress",
+    "question": "Co obsahuje exception report, který projektový manažer předkládá Project Boardu?",
+    "options": [
+      "Příčinu a důsledky odchylky, možné varianty řešení a doporučení PM",
+      "Podrobný nový stage plan, který nahradí ten stávající",
+      "Přehled dokončených produktů a záznamy o kontrolách z quality register",
+      "Pravidelné shrnutí stavu etapy ve frekvenci, kterou určil Project Board"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Exception report popisuje příčinu a důsledky předpovídané odchylky, varianty řešení s jejich dopady a doporučení projektového manažera, aby board mohl rozhodnout. Nový plán (exception plan) se připravuje až na žádost boardu v Managing a stage boundary, pravidelné shrnutí stavu je highlight report a údaje o kontrolách kvality obsahuje quality register."
+  },
+  {
+    "topic": "progress",
+    "question": "Který management approach v PID popisuje, jak bude projekt shromažďovat, ukládat, zabezpečovat a využívat informace pro řízení a reportování a jaké nástroje k tomu použije?",
+    "options": [
+      "Digital and data management approach",
+      "Communication management approach",
+      "Sustainability management approach",
+      "Quality management approach"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Digital and data management approach je nový management approach v PRINCE2 7 (patří k praktice Progress) a popisuje, jak se data, informace a digitální nástroje shromažďují, ukládají, zabezpečují, využívají a reportují. Communication management approach určuje komunikaci s projektovým ekosystémem a zpětnou vazbu, sustainability management approach kroky k dosažení cílů udržitelnosti a quality management approach způsob dosažení kvality."
+  },
+  {
+    "topic": "progress",
+    "question": "Kde se v PRINCE2 7 průběžně zaznamenávají ponaučení (lessons) získaná během projektu?",
+    "options": [
+      "V lessons logu, který je součástí project logu",
+      "V lessons reportu, který PM aktualizuje každý týden",
+      "V highlight reportu pro Project Board",
+      "V quality register spolu s výsledky kontrol kvality"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ponaučení se průběžně zapisují do lessons logu, který je součástí project logu. Lessons report z něj čerpá a předává ponaučení dál – vytváří se na konci projektu a podle potřeby i na konci etapy, ne každý týden. Highlight report informuje o stavu etapy a quality register eviduje kontroly kvality."
+  },
+  {
+    "topic": "progress",
+    "question": "Které tvrzení nejlépe vystihuje toleranci (tolerance) v PRINCE2 7?",
+    "options": [
+      "Povolená odchylka od cíle, v jejímž rámci delegovaná úroveň jedná bez eskalace",
+      "Finanční rezerva, kterou projektový manažer volně čerpá na nové požadavky uživatelů",
+      "Doba, o kterou se smí etapa prodloužit, aniž by se o tom dozvěděl Project Board",
+      "Míra rizika, kterou je organizace ochotna podstoupit při dosahování svých cílů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tolerance je povolená odchylka od plánovaného cíle (času, nákladů, rozsahu, kvality, přínosů, rizika či udržitelnosti), v jejímž rámci může delegovaná úroveň řízení jednat bez eskalace; předpověď jejího překročení je výjimka. Není to volná rezerva na nové požadavky (na změny slouží change budget), nezbavuje PM povinnosti reportovat a postoj organizace k riziku je risk appetite."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Jaký je účel procesu Starting up a project?",
+    "options": [
+      "Ověřit předpoklady pro iniciaci, tedy zda máme životaschopný a smysluplný projekt",
+      "Položit pevné základy, aby organizace před větším závazkem prostředků chápala potřebnou práci",
+      "Umožnit Project Boardu nést odpovědnost za úspěch projektu prostřednictvím klíčových rozhodnutí",
+      "Přidělovat a sledovat práci a udržet etapu v rámci tolerancí"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Starting up a project má zajistit, že jsou splněny předpoklady pro iniciaci – odpovídá na otázku, zda máme životaschopný a smysluplný projekt; o zahájení iniciace pak board rozhoduje explicitně. Položení pevných základů před větším závazkem prostředků je účel Initiating a project, klíčová rozhodnutí boardu patří do Directing a project a přidělování práce v etapě do Controlling a stage."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Doplňte chybějící slovo: Proces Starting up a project je spuštěn přijetím ______ od business layer.",
+    "options": [
+      "project mandate",
+      "project brief",
+      "initiation notice",
+      "project authorization notice"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Spouštěčem Starting up a project je project mandate od business layer; může mít jakoukoli formu, od neformální žádosti po podrobný dokument. Project brief je naopak výstupem SU, initiation notice vydává board po autorizaci iniciace (spouští Initiating a project) a project authorization notice následuje po autorizaci projektu."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Které tvrzení o procesu Starting up a project je správné?",
+    "options": [
+      "Probíhá ještě před projektem a není řídicí etapou",
+      "Je první řídicí etapou projektu, kterou autorizuje board",
+      "Řídí ho Project Board v rámci procesu Directing a project",
+      "Končí schválením PID a autorizací celého projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SU je předprojektová činnost: probíhá před rozhodnutím o zahájení projektu a není řídicí etapou – první etapou je iniciační etapa. Na SU se podílí business layer (jmenuje executive), executive a projektový manažer; Directing a project začíná až žádostí o zahájení iniciace a PID se schvaluje až na konci iniciace."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Kdo podle PRINCE2 7 jmenuje executive a kdo projektového manažera?",
+    "options": [
+      "Executive jmenuje zadávající strana (business layer), projektového manažera executive",
+      "Executive volí ze svého středu členové Project Boardu, projektového manažera jmenuje business layer",
+      "Executive i projektového manažera jmenuje senior user za uživatelskou stranu",
+      "Executive jmenuje projektový manažer, který pak sestaví i zbytek Project Boardu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Na začátku Starting up a project jmenuje zadávající strana (business layer) executive a ten pak jmenuje projektového manažera. Executive tedy nevolí členové boardu – executive stojí v čele boardu a je jediným bodem odpovědnosti – a projektový manažer executive nejmenuje, naopak je jím jmenován. Senior user zastupuje uživatele, klíčové role však nejmenuje."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Které dvě z následujících položek jsou součástí project brief?\n1. Full business case\n2. Project plan\n3. Outline business case\n4. Project product description",
+    "options": [
+      "3 a 4",
+      "1 a 2",
+      "1 a 3",
+      "2 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project brief vzniká ve Starting up a project a obsahuje mimo jiné outline business case, project product description, project approach a strukturu projektového týmu s popisy rolí. Full business case a plán projektu vznikají až v Initiating a project jako součást PID."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Ve kterém procesu se vybírá project approach, tedy řešení a způsob dodávky projektu?",
+    "options": [
+      "Starting up a project",
+      "Initiating a project",
+      "Directing a project",
+      "Managing a stage boundary"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Project approach (zvolené řešení a způsob dodávky, např. lineárně-sekvenční nebo iterativně-inkrementální) se vybírá už ve Starting up a project, kde se posuzují alternativní přístupy, a zaznamená se do project brief; v Initiating a project se pak promítne do PID. Directing a project je rozhodovací proces boardu a Managing a stage boundary slouží k přechodu mezi etapami."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Proč PRINCE2 7 zařazuje před iniciaci proces Starting up a project?",
+    "options": [
+      "Aby se neplýtvalo prací na iniciaci projektu s nepodloženými předpoklady",
+      "Aby PM mohl ještě před iniciací autorizovat první work packages",
+      "Aby se připravil úplný business case a plán projektu ještě před rozhodnutím boardu",
+      "Aby business layer stanovila tolerance etap pro všechny budoucí dodávací etapy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Starting up a project má zajistit, že se nebude plýtvat časem a úsilím na iniciaci projektu založeného na nepodložených předpokladech o rozsahu, termínech, akceptačních kritériích a omezeních. Work packages se autorizují až v dodávacích etapách, úplný business case a plán projektu vznikají v Initiating a project a tolerance etap stanovuje Project Board, ne business layer."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Jaký je účel procesu Initiating a project?",
+    "options": [
+      "Položit pevné základy, aby organizace před větším závazkem prostředků chápala potřebnou práci",
+      "Ověřit, zda máme životaschopný a smysluplný projekt, a připravit podklady pro rozhodnutí o iniciaci",
+      "Poskytnout Project Boardu dost informací k posouzení etapy a ke schválení plánu další etapy",
+      "Řídit spojení mezi projektovým manažerem a team managery při dodávce specialistických produktů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Initiating a project pokládá pevné základy projektu: organizace má před vynaložením významných prostředků pochopit, jakou práci dodání projektového produktu vyžaduje. Ověření životaschopnosti před iniciací je účel Starting up a project, informace pro schválení další etapy poskytuje Managing a stage boundary a spojení PM a team managerů řídí Managing product delivery."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Které dvě z následujících položek patří mezi cíle procesu Initiating a project?\n1. Ujistit Project Board, že všechny produkty aktuální etapy byly dokončeny a schváleny.\n2. Dosáhnout společného porozumění tomu, jak budou identifikována a řízena rizika a issues.\n3. Dosáhnout společného porozumění tomu, jak budou postupy organizace přizpůsobeny projektu.\n4. Ověřit, že uživatelé akceptovali projektový produkt a organizace ho dokáže podporovat.",
+    "options": [
+      "2 a 3",
+      "1 a 2",
+      "1 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cílem Initiating a project je mimo jiné společné porozumění tomu, jak budou řízena rizika a issues, jak se dosáhne kvality, jak se bude sledovat postup a jak budou politiky a metody organizace přizpůsobeny projektu (tailoring). Ujištění o dokončení produktů etapy je cílem Managing a stage boundary a ověření akceptace a podpory produktů cílem Closing a project."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Co předkládá projektový manažer Project Boardu na konci procesu Initiating a project spolu s žádostí o autorizaci projektu?",
+    "options": [
+      "PID včetně full business case a plánu projektu",
+      "Project brief s plánem iniciační etapy",
+      "Samostatný benefits management approach mimo PID",
+      "Project mandate doplněný o tolerance projektu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Na konci Initiating a project předkládá PM spolu s žádostí o autorizaci projektu PID, která obsahuje mimo jiné full business case, plán projektu, management approaches, strukturu týmu a popisy rolí. Project brief s plánem iniciační etapy se předkládá na konci Starting up a project, benefits management approach je v PRINCE2 7 součástí PID a project mandate je vstupem do Starting up a project."
+  },
+  {
+    "topic": "processes-start",
+    "question": "Jak vznikne na konci iniciační etapy plán první dodávací etapy, aby ho Project Board mohl autorizovat?",
+    "options": [
+      "PM ho připraví v Managing a stage boundary ještě před autorizací projektu",
+      "PM ho připraví v Controlling a stage jako první úkol nové etapy, až po autorizaci projektu",
+      "Připraví ho team manageři v Managing product delivery a PM je jen sloučí do jednoho plánu",
+      "Vzniká už spolu s project brief ve Starting up a project"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managing a stage boundary se poprvé použije na konci iniciační etapy: PM v něm připraví plán další etapy a board ho schvaluje spolu s autorizací projektu. Controlling a stage řídí etapu až po její autorizaci, team manageři připravují nanejvýš team plány a ve Starting up a project vzniká jen plán iniciační etapy."
+  },
+  {
+    "topic": "process-directing",
+    "question": "Jaký je účel procesu Directing a project?",
+    "options": [
+      "Umožnit boardu nést odpovědnost za projekt klíčovými rozhodnutími, bez každodenního řízení",
+      "Umožnit Project Boardu řídit projekt ze dne na den a přímo zadávat práci jednotlivým týmům",
+      "Umožnit business layer schvalovat každý work package a průběžně kontrolovat práci týmů",
+      "Umožnit projektovému manažerovi informovat business layer o stavu projektu a výjimkách"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Directing a project umožňuje Project Boardu zůstat odpovědný za úspěch projektu tím, že přijímá klíčová rozhodnutí a udržuje celkovou kontrolu, zatímco každodenní řízení deleguje na projektového manažera. Board práci týmům nezadává (to dělá PM prostřednictvím work packages), business layer work packages neschvaluje a DP je proces boardu, ne PM."
+  },
+  {
+    "topic": "process-directing",
+    "question": "Jak Project Board usměrňuje projekt v průběhu etapy, mezi jednotlivými autorizacemi?",
+    "options": [
+      "Průběžně reaguje na žádosti o radu, highlight a exception reporty a vnější vlivy",
+      "Svolává pravidelné týdenní porady, na kterých schvaluje checkpoint reporty týmů",
+      "Přebírá denní řízení etapy, kdykoli PM předloží highlight report se zpožděním",
+      "Neusměrňuje ho, protože do konce etapy smí do projektu zasahovat jen business layer"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V aktivitě Give ongoing direction (v 6. edici „give ad hoc direction“) board průběžně reaguje na žádosti PM o radu, na highlight, exception a issue reporty i na vnější vlivy; může také požádat o exception plan nebo nařídit předčasné uzavření projektu. Checkpoint reporty jsou určeny projektovému manažerovi a board denní řízení nepřebírá."
+  },
+  {
+    "topic": "process-directing",
+    "question": "Kdy začíná proces Directing a project?",
+    "options": [
+      "Když PM na konci Starting up a project požádá o iniciaci",
+      "V okamžiku, kdy business layer vydá a předá project mandate",
+      "Až po schválení PID, tedy po autorizaci celého projektu",
+      "Na začátku první dodávací etapy, tedy po skončení iniciace"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Directing a project začíná po skončení Starting up a project, když projektový manažer požádá board o zahájení iniciace (project initiation request); board pak rozhoduje o autorizaci iniciace. Project mandate spouští Starting up a project, a kdyby DP začínal až po schválení PID, board by nemohl iniciaci autorizovat. DP pak trvá až do uzavření projektu."
+  },
+  {
+    "topic": "process-directing",
+    "question": "Který z následujících je jedním z cílů procesu Directing a project?",
+    "options": [
+      "Zajistit, aby plány na realizaci přínosů po skončení projektu byly řízeny a přezkoumávány",
+      "Zajistit, aby team manageři věděli, co mají dodat a s jakým úsilím, náklady a v jakých termínech",
+      "Zajistit, aby byl vybrán project approach a sestaven project brief s outline business casem",
+      "Zajistit, aby byl připraven plán další etapy a zaznamenána ponaučení z končící etapy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Directing a project má mimo jiné zajistit autoritu k zahájení iniciace, k dodávce projektového produktu i k uzavření projektu, průběžné usměrňování a kontrolu, propojení projektu s business layer a to, aby plány na realizaci přínosů po skončení projektu byly řízeny a přezkoumávány. Srozumitelné zadání práce týmům je cílem Managing product delivery, výběr project approach a sestavení project brief cílem Starting up a project a příprava plánu další etapy cílem Managing a stage boundary."
+  },
+  {
+    "topic": "process-directing",
+    "question": "Která dvě z následujících tvrzení o procesu Directing a project jsou pravdivá?\n1. Project Board v něm neřídí projekt ze dne na den, ale deleguje to na projektového manažera.\n2. Board v něm sám autorizuje jednotlivé work packages pro týmy.\n3. Jde o proces projektového manažera pro komunikaci s business layer.\n4. Rozhodnutí v něm jsou vázána hlavně na události (autorizace), doplněná průběžným usměrňováním.",
+    "options": [
+      "1 a 4",
+      "1 a 2",
+      "2 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Directing a project je proces Project Boardu: board přijímá klíčová rozhodnutí při událostech (autorizace iniciace, projektu, etapy či exception plánu a uzavření) a mezi nimi projekt průběžně usměrňuje, každodenní řízení však deleguje na projektového manažera. Work packages autorizuje PM v Controlling a stage a DP není procesem PM."
+  },
+  {
+    "topic": "process-directing",
+    "question": "Kdo autorizuje uzavření projektu?",
+    "options": [
+      "Project Board v Directing a project na žádost PM",
+      "Projektový manažer v rámci procesu Closing a project",
+      "Senior user, jakmile uživatelé akceptují projektový produkt",
+      "Business layer až po posledním přezkumu přínosů"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Uzavření projektu autorizuje Project Board v Directing a project poté, co projektový manažer v Closing a project požádá o uzavření (Request project closure); board pak vydá oznámení o uzavření. Akceptace uživateli je jen jednou z podmínek a přezkumy přínosů po projektu probíhají až po jeho uzavření."
+  },
+  {
+    "topic": "process-directing",
+    "question": "Co Project Board posuzuje, když v Directing a project autorizuje další etapu?",
+    "options": [
+      "End stage report, plán další etapy a to, zda je projekt stále zdůvodněný",
+      "Checkpoint reporty týmů a podrobné team plány pro všechny work packages",
+      "Pouze to, zda byly v končící etapě dodrženy rozpočet a harmonogram etapy",
+      "Project brief a outline business case jako výchozí podklad pro další etapu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Při autorizaci etapy board posuzuje end stage report za končící etapu, plán další etapy, aktualizovaný plán projektu a business case a potvrzuje, že projekt je stále zdůvodněný a rizika jsou přijatelná. Checkpoint reporty a team plány jsou nástroji PM a team managerů, dodržení času a nákladů je jen část hodnocení a project brief s outline business casem byl nahrazen PID."
+  },
+  {
+    "topic": "processes-delivery",
+    "question": "Jaký je účel procesu Controlling a stage?",
+    "options": [
+      "Přidělovat a sledovat práci, řešit issues, reportovat a udržet etapu v toleranci",
+      "Připravit plán další etapy, aktualizovat business case a požádat o další etapu",
+      "Řídit spojení mezi PM a team managerem při přijetí a předání specialistických produktů",
+      "Umožnit boardu nést odpovědnost za projekt klíčovými rozhodnutími a celkovou kontrolou"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Controlling a stage slouží k přidělování práce (work packages), jejímu sledování, řešení issues, informování boardu o postupu a k nápravným opatřením, která udrží etapu v toleranci. Příprava plánu další etapy patří do Managing a stage boundary, spojení PM a team managera do Managing product delivery a klíčová rozhodnutí boardu do Directing a project."
+  },
+  {
+    "topic": "processes-delivery",
+    "question": "Jaký je účel procesu Managing product delivery?",
+    "options": [
+      "Řídit spojení PM a team managera dohodou o přijetí, provedení a předání práce",
+      "Umožnit PM autorizovat etapy bez rozhodnutí Project Boardu",
+      "Předat hotový projektový produkt uživatelům a potvrdit jeho akceptaci před uzavřením",
+      "Zajistit, aby team manageři sestavili plán projektu a odhad nákladů pro Project Board"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managing product delivery řídí spojení mezi projektovým manažerem a team managerem: dohodne požadavky na přijetí, provedení, reportování a předání specialistických produktů; team manager přitom může být interní i externí. Etapy autorizuje board, akceptace projektového produktu se potvrzuje v Closing a project a plán projektu připravuje PM."
+  },
+  {
+    "topic": "processes-delivery",
+    "question": "Na které dva z následujících podnětů reaguje projektový manažer v procesu Controlling a stage?\n1. Autorizace etapy nebo exception plánu Project Boardem\n2. Project mandate od business layer\n3. Oznámení team managera o dokončení work packagu\n4. Oznámení o uzavření projektu (closure notice)",
+    "options": [
+      "1 a 3",
+      "1 a 2",
+      "2 a 4",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Controlling a stage začíná autorizací etapy nebo exception plánu a PM v něm reaguje mimo jiné na dokončené work packages, radu boardu a nová issues a rizika. Project mandate spouští Starting up a project a closure notice vydává board na samém konci projektu v Directing a project."
+  },
+  {
+    "topic": "processes-delivery",
+    "question": "Blíží se konec poslední etapy projektu. Kam projektový manažer z Controlling a stage přechází?",
+    "options": [
+      "Do Closing a project, kde připraví uzavření projektu",
+      "Do Managing a stage boundary, kde připraví end stage report",
+      "Do Directing a project, kde sám autorizuje uzavření",
+      "Zůstane v Controlling a stage až do vydání closure notice"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Na konci poslední etapy se Managing a stage boundary nepoužívá – PM při blížícím se konci projektu (project end approaching) přechází do Closing a project, kde připraví uzavření, potvrdí akceptaci a vyhodnotí projekt. Directing a project je proces boardu, který uzavření autorizuje, a Controlling a stage končí předáním do Closing a project."
+  },
+  {
+    "topic": "processes-delivery",
+    "question": "Doplňte chybějící slovo: Proces Managing product delivery vykonává ______ a přijímá v něm work packages od projektového manažera.",
+    "options": [
+      "team manager",
+      "senior supplier",
+      "executive",
+      "project support"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managing product delivery je proces team managera: přijímá v něm work package od PM, řídí práci včetně kontroly kvality, posílá checkpoint reporty a oznamuje dokončení. Senior supplier je členem Project Boardu a poskytuje dodavatelské zdroje, ale práci týmu neřídí; executive ani project support tento proces nevykonávají."
+  },
+  {
+    "topic": "processes-delivery",
+    "question": "Který z následujících je cílem procesu Managing product delivery?",
+    "options": [
+      "Zajistit, aby práce přidělená týmu byla autorizována a dohodnuta",
+      "Zajistit, aby byl business case aktualizován na konci každé etapy",
+      "Zajistit, aby board explicitně rozhodl o zahájení iniciace projektu",
+      "Zajistit, aby otevřená issues přešla do follow-on action recommendations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cílem Managing product delivery je mimo jiné, aby práce přidělená týmu byla autorizována a dohodnuta, aby team manageři věděli, co mají dodat a s jakým úsilím, náklady a termíny, aby produkty splnily očekávání kvality v toleranci a aby PM dostával přesné informace o postupu. Aktualizace business casu patří do Managing a stage boundary, rozhodnutí o iniciaci do Directing a project a follow-on action recommendations do Closing a project."
+  },
+  {
+    "topic": "processes-delivery",
+    "question": "Co je podle PRINCE2 7 jedním z cílů procesu Controlling a stage?",
+    "options": [
+      "Soustředit se na dodání produktů etapy a předejít nekontrolované změně",
+      "Vybrat project approach a připravit project brief pro rozhodnutí boardu",
+      "Potvrdit akceptaci projektového produktu a předat otevřená rizika dál",
+      "Stanovit tolerance projektu a jmenovat executive za business layer"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cílem Controlling a stage je mimo jiné udržet pozornost na dodání produktů etapy a vyhnout se nekontrolované změně (odklonu od dohodnutých produktů a způsobu dodávky), mít pod kontrolou rizika a issues a průběžně přezkoumávat business case. Výběr project approach patří do Starting up a project, potvrzení akceptace do Closing a project a stanovení tolerancí projektu business layer."
+  },
+  {
+    "topic": "processes-closure",
+    "question": "Jaký je účel procesu Managing a stage boundary?",
+    "options": [
+      "Dát boardu podklady k posouzení etapy, schválení další etapy a potvrzení zdůvodnění",
+      "Umožnit PM přidělovat práci týmům a nápravnými opatřeními udržet etapu v toleranci",
+      "Potvrdit akceptaci projektového produktu a uznat, že cíle projektu byly dosaženy",
+      "Ověřit před iniciací, zda máme životaschopný a smysluplný projekt, a připravit project brief"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managing a stage boundary umožňuje projektovému manažerovi poskytnout Project Boardu dost informací k posouzení úspěšnosti aktuální etapy, ke schválení plánu další etapy, k přezkoumání aktualizovaného plánu projektu a k potvrzení trvalého zdůvodnění projektu a přijatelnosti rizik. Přidělování práce je Controlling a stage, potvrzení akceptace Closing a project a ověření před iniciací Starting up a project."
+  },
+  {
+    "topic": "processes-closure",
+    "question": "Která dvě z následujících tvrzení o procesu Managing a stage boundary jsou pravdivá?\n1. Používá ho Project Board k autorizaci další etapy.\n2. Poprvé se použije na konci iniciační etapy.\n3. Použije se pouze jednou, a to na konci iniciační etapy.\n4. Použije se kdykoli, když Project Board požádá o exception plan.",
+    "options": [
+      "2 a 4",
+      "1 a 2",
+      "1 a 3",
+      "3 a 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Managing a stage boundary je proces projektového manažera: poprvé se použije na konci iniciační etapy, pak na konci každé další etapy kromě poslední a navíc kdykoli (i během poslední etapy), když board požádá o exception plan. Další etapu autorizuje Project Board ve svém procesu Directing a project."
+  },
+  {
+    "topic": "processes-closure",
+    "question": "Doplňte chybějící slovo: V procesu řízení přechodu mezi etapami projektový manažer vyhodnotí končící etapu a připraví pro Project Board ______.",
+    "options": [
+      "end stage report",
+      "end project report",
+      "highlight report",
+      "checkpoint report"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Při vyhodnocení etapy v Managing a stage boundary připravuje PM end stage report – přehled výkonu etapy, stavu business casu a rizik a podklad pro žádost o další etapu; případně i lessons report. End project report vzniká v Closing a project, highlight report je pravidelná zpráva během etapy a checkpoint report posílá team manager projektovému manažerovi."
+  },
+  {
+    "topic": "processes-closure",
+    "question": "Jaký je účel procesu Closing a project?",
+    "options": [
+      "Potvrdit akceptaci projektového produktu a uznat dosažení cílů projektu",
+      "Dát boardu podklady k posouzení etapy a ke schválení plánu další etapy",
+      "Vyhodnotit všechny přínosy, protože po uzavření se už jejich realizace neměří",
+      "Umožnit Project Boardu převzít od PM denní řízení závěrečné dodávací etapy"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Closing a project poskytuje pevný bod, ve kterém se potvrdí akceptace projektového produktu a uzná se, že cíle projektu (nebo jejich schválené změny) byly dosaženy; při předčasném ukončení zajišťuje řádné uzavření. Podklady pro schválení další etapy poskytuje Managing a stage boundary, řada přínosů se měří až po projektu a board denní řízení nepřebírá."
+  },
+  {
+    "topic": "processes-closure",
+    "question": "Co spouští proces Closing a project?",
+    "options": [
+      "Blíží se konec projektu, nebo board požádá o předčasné uzavření",
+      "Výhradně schválení posledního end stage reportu v procesu Directing a project",
+      "Výsledek přezkumu přínosů po skončení projektu",
+      "Žádost team managera o ukončení posledního work packagu v Managing product delivery"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Closing a project spouští buď blížící se konec projektu (project end approaching) z Controlling a stage v poslední etapě, nebo žádost boardu o předčasné uzavření (premature close) z Directing a project. Na konci poslední etapy se end stage report nepřipravuje, přezkumy přínosů po projektu probíhají až po uzavření a team manager uzavření projektu nespouští."
+  },
+  {
+    "topic": "processes-closure",
+    "question": "Jak se při uzavírání projektu naloží s issues a riziky, která zůstávají otevřená?",
+    "options": [
+      "Předají se dál formou follow-on action recommendations",
+      "Musí být všechna vyřešena, jinak nelze projekt uzavřít",
+      "Převedou se do lessons reportu jako ponaučení pro další projekty",
+      "Zůstanou v issue registeru, který převezme business layer jako baseline"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Otevřená issues a rizika se při uzavření předávají těm, kdo budou za produkty po projektu odpovídat, formou follow-on action recommendations (doporučení navazujících kroků). Projekt kvůli nim nemusí zůstat otevřený; lessons report zachycuje ponaučení, nikoli nevyřešené úkoly, a registry v project logu jsou záznamy, ne baseline."
+  },
+  {
+    "topic": "processes-closure",
+    "question": "Která z následujících činností NEPATŘÍ k procesu Closing a project?",
+    "options": [
+      "Příprava plánu další etapy a aktualizace plánu projektu",
+      "Ověření, že uživatelé akceptovali projektový produkt",
+      "Posouzení dosud dosažených přínosů a aktualizace benefits management approach",
+      "Přezkoumání výkonu projektu vůči jeho baselines"
+    ],
+    "correctAnswer": 0,
+    "explanation": "V Closing a project se ověřuje akceptace projektového produktu, přezkoumává výkon projektu vůči baselines, posuzují dosud dosažené přínosy a aktualizuje benefits management approach o přezkumy po projektu. Příprava plánu další etapy a aktualizace plánu projektu patří do Managing a stage boundary, který se na konci poslední etapy nepoužívá."
+  }
+]

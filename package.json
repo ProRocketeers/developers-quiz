@@ -12,7 +12,8 @@
     "format": "prettier --write",
     "start": "PORT=4322 bun ./dist/server/entry.mjs",
     "questions:to-json": "bun scripts/questions-convert.ts --to-json --input questions.md --output src/data/questions.json",
-    "questions:to-md": "bun scripts/questions-convert.ts --to-md --input src/data/questions.json --output questions.md"
+    "questions:to-md": "bun scripts/questions-convert.ts --to-md --input src/data/questions.json --output questions.md",
+    "certifications:validate": "bun scripts/validate-certification-questions.ts"
   },
   "dependencies": {
     "@astrojs/node": "^9.5.0",

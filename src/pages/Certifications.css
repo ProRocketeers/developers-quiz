@@ -1,0 +1,216 @@
+.certifications {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(18px, 3vw, 30px) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+.certifications-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 42px);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(242, 191, 58, 0.24),
+      transparent 24%
+    ),
+    linear-gradient(135deg, #1b1845 0%, #27245c 52%, #343177 100%);
+  color: #fff8ea;
+  box-shadow: var(--shadow-md);
+}
+
+.certifications-hero h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+}
+
+.certifications-hero p {
+  max-width: 70ch;
+  margin: 0 0 22px;
+  color: rgba(255, 248, 234, 0.82);
+  font-size: 1.05rem;
+}
+
+.certifications-eyebrow {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(242, 191, 58, 0.16);
+  color: var(--color-accent-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.certifications-hero .certifications-eyebrow {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8c84d;
+}
+
+.certifications-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.certifications-link {
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  min-height: 46px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-strong)
+  );
+  color: #231f49;
+  font-weight: 800;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.certifications-link:hover {
+  color: #231f49;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(237, 123, 67, 0.26);
+}
+
+.certification-description {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.certification-levels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.certifications-disclaimer {
+  margin: 8px 0 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+.certification-empty {
+  align-items: flex-start;
+}
+
+.certification-empty h2,
+.certification-results-intro h2 {
+  margin: 0 0 8px;
+  color: var(--color-primary);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.certification-empty p,
+.certification-results-intro p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.certification-quiz {
+  max-width: 960px;
+}
+
+.certification-question-anchor {
+  scroll-margin-top: 16px;
+}
+
+.certification-nav-btn,
+.certification-submit-btn {
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background-color 0.2s;
+}
+
+.certification-nav-btn,
+.certification-nav-btn:hover {
+  border: 1px solid rgba(39, 36, 92, 0.16);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-primary);
+}
+
+.certification-nav-btn.is-primary,
+.certification-nav-btn.is-primary:hover {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--color-primary), #393679);
+  color: #ffffff;
+}
+
+.certification-submit-btn {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-strong)
+  );
+  color: #241f48;
+  box-shadow: 0 14px 30px rgba(237, 123, 67, 0.24);
+}
+
+.certification-nav-btn:hover:not(:disabled),
+.certification-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.certification-nav-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.certification-results {
+  max-width: 1080px;
+}
+
+.certification-results-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.certification-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.certification-section h3 {
+  margin: 12px 0 0;
+  color: var(--color-primary);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+}
+
+@media (max-width: 900px) {
+  .certification-levels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .certification-results-actions > * {
+    width: 100%;
+  }
+}

@@ -1,0 +1,169 @@
+.exam-level-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: clamp(24px, 3.5vw, 34px);
+  border-radius: 30px;
+  box-shadow: var(--shadow-md);
+}
+
+.exam-level-card--foundation {
+  border: 1px solid var(--color-border);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(93, 97, 167, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 253, 249, 0.98),
+      rgba(245, 242, 255, 0.96)
+    );
+  color: var(--color-text);
+}
+
+.exam-level-card--practitioner {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(242, 191, 58, 0.24),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #1b1845 0%, #27245c 52%, #343177 100%);
+  color: #fff8ea;
+}
+
+.exam-level-header h3 {
+  margin: 12px 0 8px;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+.exam-level-header p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+.exam-level-badge {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.exam-level-card--foundation .exam-level-badge {
+  background: rgba(93, 97, 167, 0.14);
+  color: var(--color-primary);
+}
+
+.exam-level-card--practitioner .exam-level-badge {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f8c84d;
+}
+
+.exam-format {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.exam-format div {
+  padding: 12px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.exam-level-card--foundation .exam-format div {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-border);
+}
+
+.exam-level-card--practitioner .exam-format div {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.exam-format dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+}
+
+.exam-format dd {
+  margin: 4px 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.exam-level-note,
+.exam-level-bank {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.exam-level-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.exam-level-primary,
+.exam-level-secondary {
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background-color 0.2s;
+}
+
+.exam-level-primary {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-strong)
+  );
+  color: #231f49;
+  box-shadow: 0 14px 30px rgba(237, 123, 67, 0.24);
+}
+
+.exam-level-secondary {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+}
+
+.exam-level-primary:hover:not(:disabled),
+.exam-level-secondary:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.exam-level-primary:disabled,
+.exam-level-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 640px) {
+  .exam-level-primary,
+  .exam-level-secondary {
+    width: 100%;
+  }
+}

@@ -1,0 +1,116 @@
+.attempt-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: clamp(24px, 3.5vw, 36px);
+  border-radius: 30px;
+  box-shadow: var(--shadow-md);
+}
+
+.attempt-summary.is-passed {
+  border: 1px solid rgba(47, 158, 68, 0.28);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(242, 191, 58, 0.18),
+      transparent 26%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 252, 244, 0.98),
+      rgba(239, 252, 240, 0.92)
+    );
+}
+
+.attempt-summary.is-failed {
+  border: 1px solid rgba(224, 49, 49, 0.24);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(237, 123, 67, 0.18),
+      transparent 26%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 251, 246, 0.98),
+      rgba(255, 241, 241, 0.94)
+    );
+}
+
+.attempt-summary-verdict {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.is-passed .attempt-summary-verdict {
+  background: rgba(47, 158, 68, 0.14);
+  color: #1e7b34;
+}
+
+.is-failed .attempt-summary-verdict {
+  background: rgba(224, 49, 49, 0.12);
+  color: #a12828;
+}
+
+.attempt-summary-percentage {
+  margin: 10px 0 6px;
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.is-passed .attempt-summary-percentage {
+  color: var(--color-success);
+}
+
+.is-failed .attempt-summary-percentage {
+  color: var(--color-danger);
+}
+
+.attempt-summary-main p {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.attempt-summary-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.attempt-summary-stats div {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--color-border);
+}
+
+.attempt-summary-stats dt {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.attempt-summary-stats dd {
+  margin: 4px 0 0;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .attempt-summary {
+    grid-template-columns: 1fr;
+  }
+}
