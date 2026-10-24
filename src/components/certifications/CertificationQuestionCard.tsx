@@ -14,6 +14,8 @@ interface Props {
   topicLabel: string;
   selectedAnswer: number | undefined;
   isRevealed: boolean;
+  isStudied?: boolean;
+  isRepeat?: boolean;
   onSelect?: (answerIndex: number) => void;
 }
 
@@ -23,6 +25,8 @@ function CertificationQuestionCard({
   topicLabel,
   selectedAnswer,
   isRevealed,
+  isStudied = false,
+  isRepeat = false,
   onSelect,
 }: Props) {
   const radioGroupName = useId();
@@ -35,6 +39,7 @@ function CertificationQuestionCard({
       <div className="cert-question-meta">
         <span className="cert-question-number">Otázka {questionNumber}</span>
         <span className="cert-question-topic">{topicLabel}</span>
+        {isRepeat && <span className="cert-question-repeat">Opakování</span>}
         {isGradient && (
           <span className="cert-question-scoring">Gradientní bodování</span>
         )}
@@ -80,7 +85,11 @@ function CertificationQuestionCard({
       </div>
 
       {isRevealed && (
-        <AnswerFeedback question={question} selectedAnswer={selectedAnswer} />
+        <AnswerFeedback
+          question={question}
+          selectedAnswer={selectedAnswer}
+          isStudied={isStudied}
+        />
       )}
     </article>
   );
@@ -89,9 +98,11 @@ function CertificationQuestionCard({
 function AnswerFeedback({
   question,
   selectedAnswer,
+  isStudied,
 }: {
   question: CertificationQuestion;
   selectedAnswer: number | undefined;
+  isStudied: boolean;
 }) {
   const earnedPoints = getEarnedPoints(question, selectedAnswer);
   const maxPoints = getMaxPoints(question);
@@ -100,7 +111,9 @@ function AnswerFeedback({
   return (
     <div className={`cert-feedback cert-feedback--${outcome}`} role="status">
       <strong className="cert-feedback-verdict">
-        {getVerdictText(question, selectedAnswer, earnedPoints, maxPoints)}
+        {isStudied
+          ? "Režim učení – správná odpověď je zvýrazněná."
+          : getVerdictText(question, selectedAnswer, earnedPoints, maxPoints)}
       </strong>
       <p className="cert-feedback-explanation">{question.explanation}</p>
     </div>

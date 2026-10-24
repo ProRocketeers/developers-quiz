@@ -3,7 +3,8 @@ import "./QuizFooter.css";
 interface Props {
   currentIndex: number;
   questionCount: number;
-  answeredCount: number;
+  completedCount: number;
+  canEvaluate: boolean;
   onNavigate: (index: number) => void;
   onFinish: () => void;
 }
@@ -11,7 +12,8 @@ interface Props {
 function QuizFooter({
   currentIndex,
   questionCount,
-  answeredCount,
+  completedCount,
+  canEvaluate,
   onNavigate,
   onFinish,
 }: Props) {
@@ -29,7 +31,7 @@ function QuizFooter({
           ← Předchozí
         </button>
         <span className="quiz-footer-cert-progress">
-          Zodpovězeno {answeredCount} / {questionCount}
+          Hotovo {completedCount} / {questionCount}
         </span>
         {isLastQuestion ? (
           <button
@@ -37,7 +39,7 @@ function QuizFooter({
             className="certification-submit-btn"
             onClick={onFinish}
           >
-            Vyhodnotit test
+            {canEvaluate ? "Vyhodnotit test" : "Ukončit studium"}
           </button>
         ) : (
           <button
@@ -56,7 +58,7 @@ function QuizFooter({
           className="quiz-footer-cert-finish"
           onClick={onFinish}
         >
-          Ukončit a vyhodnotit test
+          {canEvaluate ? "Ukončit a vyhodnotit test" : "Ukončit studium"}
         </button>
       )}
     </>

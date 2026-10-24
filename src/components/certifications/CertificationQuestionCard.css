@@ -214,3 +214,8 @@
   border-color: rgba(93, 97, 167, 0.25);
   background: rgba(245, 242, 255, 0.85);
 }
+
+.cert-question-repeat {
+  background: rgba(237, 123, 67, 0.16);
+  color: #a24a14;
+}

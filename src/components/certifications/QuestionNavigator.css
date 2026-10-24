@@ -55,3 +55,27 @@
 .question-navigator-item.is-current {
   box-shadow: 0 0 0 3px rgba(237, 123, 67, 0.45);
 }
+
+.question-navigator-item.is-studied {
+  background: rgba(93, 97, 167, 0.1);
+  border-style: dashed;
+  border-color: rgba(93, 97, 167, 0.5);
+}
+
+.question-navigator-item.is-repeat {
+  position: relative;
+}
+
+.question-navigator-item.is-repeat::after {
+  content: "↻";
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-accent-strong);
+  color: #ffffff;
+  font-size: 0.65rem;
+  line-height: 16px;
+}

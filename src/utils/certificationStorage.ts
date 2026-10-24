@@ -1,15 +1,18 @@
 import {
   CERTIFICATION_EXAMS,
+  DEFAULT_PRACTICE_PREFERENCES,
   isCertificationExamId,
 } from "../constants/certifications";
 import type {
   CertificationAttempt,
+  CertificationPracticePreferences,
   CertificationQuizMode,
   CertificationQuizSettings,
 } from "../types";
 
 const SETTINGS_STORAGE_KEY = "certificationQuizSettings";
 const HISTORY_STORAGE_KEY = "certificationAttemptHistory";
+const PRACTICE_PREFERENCES_STORAGE_KEY = "certificationPracticePreferences";
 const MAX_HISTORY_ENTRIES = 15;
 
 export function saveCertificationQuizSettings(
@@ -25,6 +28,26 @@ export function loadCertificationQuizSettings(): CertificationQuizSettings | nul
   }
   const parsed = parseStoredJson(stored, SETTINGS_STORAGE_KEY);
   return isValidQuizSettings(parsed) ? parsed : null;
+}
+
+export function saveCertificationPracticePreferences(
+  preferences: CertificationPracticePreferences,
+): void {
+  localStorage.setItem(
+    PRACTICE_PREFERENCES_STORAGE_KEY,
+    JSON.stringify(preferences),
+  );
+}
+
+export function loadCertificationPracticePreferences(): CertificationPracticePreferences {
+  const stored = localStorage.getItem(PRACTICE_PREFERENCES_STORAGE_KEY);
+  if (!stored) {
+    return DEFAULT_PRACTICE_PREFERENCES;
+  }
+  const parsed = parseStoredJson(stored, PRACTICE_PREFERENCES_STORAGE_KEY);
+  return isValidPracticePreferences(parsed)
+    ? parsed
+    : DEFAULT_PRACTICE_PREFERENCES;
 }
 
 export function loadCertificationAttempts(): CertificationAttempt[] {
@@ -122,6 +145,16 @@ function isStoredAttempt(value: unknown): value is CertificationAttempt {
     isValidQuizSettings(value.settings) &&
     Array.isArray(value.questions) &&
     isRecord(value.answers)
+  );
+}
+
+function isValidPracticePreferences(
+  value: unknown,
+): value is CertificationPracticePreferences {
+  return (
+    isRecord(value) &&
+    typeof value.isLearningMode === "boolean" &&
+    typeof value.isRepeatMode === "boolean"
   );
 }
 

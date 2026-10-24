@@ -4,6 +4,7 @@ import type {
   CertificationExamId,
   CertificationId,
   CertificationLevel,
+  CertificationPracticePreferences,
   CertificationQuizMode,
 } from "../types";
 
@@ -24,6 +25,11 @@ export const CERTIFICATION_MODE_LABELS: Record<CertificationQuizMode, string> =
   };
 
 export const DEFAULT_PRACTICE_QUESTION_COUNT = 20;
+
+export const DEFAULT_PRACTICE_PREFERENCES: CertificationPracticePreferences = {
+  isLearningMode: false,
+  isRepeatMode: false,
+};
 
 export const CERTIFICATION_ROUTES = {
   home: "/certifications",

@@ -100,6 +100,11 @@ export interface CertificationQuizSettings {
   questionCount: number;
 }
 
+export interface CertificationPracticePreferences {
+  isLearningMode: boolean;
+  isRepeatMode: boolean;
+}
+
 export interface CertificationAttempt {
   id: string;
   createdAt: string;

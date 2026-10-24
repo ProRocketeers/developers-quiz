@@ -1,34 +1,37 @@
-import type { AnswerOutcome } from "../../utils/certificationScoring";
+import type {
+  QuizItemState,
+  QuizItemStatus,
+} from "../../utils/certificationQuizSession";
 import "./QuestionNavigator.css";
 
-export type QuestionStatus = AnswerOutcome | "answered";
-
-const STATUS_LABELS: Record<QuestionStatus, string> = {
+const STATUS_LABELS: Record<QuizItemStatus, string> = {
   unanswered: "bez odpovědi",
   answered: "zodpovězeno",
+  studied: "prostudováno",
   correct: "správně",
   partial: "částečně správně",
   incorrect: "špatně",
 };
 
 interface Props {
-  statuses: QuestionStatus[];
+  items: QuizItemState[];
   currentIndex: number;
   onSelect: (index: number) => void;
 }
 
-function QuestionNavigator({ statuses, currentIndex, onSelect }: Props) {
+function QuestionNavigator({ items, currentIndex, onSelect }: Props) {
   return (
     <nav className="question-navigator" aria-label="Přehled otázek">
-      {statuses.map((status, index) => {
+      {items.map((item, index) => {
         const isCurrent = index === currentIndex;
+        const repeatLabel = item.isRepeat ? " (opakování)" : "";
         return (
           <button
             key={index}
             type="button"
-            className={`question-navigator-item is-${status}${isCurrent ? " is-current" : ""}`}
+            className={`question-navigator-item is-${item.status}${item.isRepeat ? " is-repeat" : ""}${isCurrent ? " is-current" : ""}`}
             aria-current={isCurrent ? "step" : undefined}
-            aria-label={`Otázka ${index + 1}: ${STATUS_LABELS[status]}`}
+            aria-label={`Otázka ${index + 1}${repeatLabel}: ${STATUS_LABELS[item.status]}`}
             onClick={() => onSelect(index)}
           >
             {index + 1}
