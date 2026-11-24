@@ -859,9 +859,9 @@
     "scenario": "Banka Vltava spouští dvouletý program „Nové jádro“ s rozpočtem přes 300 mil. Kč, který nahradí core bankingový systém; zapojeno je přes 60 lidí z banky i od dodavatelů. Program se skládá z projektů „Migrace dat klientů“, „Implementace platformy CoreX“ a „Odstavení starého jádra“. Implementace smí začít až po schválení architektury řídicím výborem, odstavení až po dokončení migrace dat. Výsledkem implementace je „Nasazená platforma CoreX“ (provozuschopná instalace aplikace CoreX), výsledkem migrace „Protokol o migraci dat“, který musí schválit interní audit. Audit trvá na tom, aby každý předávaný výstup byl v modelu dohledatelný. Program řídí role „Programový manažer“, na migraci pracuje externí dodavatel DataMove s.r.o. Programový manažer chce Project view, ze kterého bude zřejmé, kdo za co odpovídá, v jakém pořadí práce probíhají a co přesně má každý projekt předat.",
     "question": "Který model nejlépe odpovídá potřebě programového manažera?",
     "options": [
-      "Program „Nové jádro“ (work package) složit z projektů (work packages). Implementation event „Architektura schválena“ –triggering→ projekt implementace a projekt migrace –triggering→ projekt odstavení. Projekty –realization→ deliverables „Nasazená platforma CoreX“ a „Protokol o migraci dat“. Role „Programový manažer“ –assignment→ program, actor „DataMove s.r.o.“ –assignment→ projekt migrace.",
+      "Program „Nové jádro“ (work package) složit z projektů (work packages). Implementation event „Architektura schválena“ –triggering→ projekt implementace a projekt migrace –triggering→ projekt odstavení. Projekty –access→ deliverables „Nasazená platforma CoreX“ a „Protokol o migraci dat“. Role „Programový manažer“ –assignment→ program, actor „DataMove s.r.o.“ –assignment→ projekt migrace.",
       "Program „Nové jádro“ (work package) složit z projektů (work packages). Implementation event „Architektura schválena“ –triggering→ projekt implementace a projekt migrace –triggering→ projekt odstavení. Projekt implementace –realization→ přímo application component „CoreX“ a výsledek migrace se uvede v popisu projektu. Role „Programový manažer“ –assignment→ program, actor „DataMove s.r.o.“ –assignment→ projekt migrace.",
-      "Program „Nové jádro“ (work package) složit z projektů (work packages). Implementation event „Architektura schválena“ –triggering→ projekt implementace a projekt migrace –triggering→ projekt odstavení. Projekty –realization→ deliverables „Nasazená platforma CoreX“ a „Protokol o migraci dat“. Role „Programový manažer“ i actor „DataMove s.r.o.“ –assignment→ deliverables, za jejichž předání odpovídají.",
+      "Program „Nové jádro“ (work package) složit z projektů (work packages). Implementation event „Architektura schválena“ –triggering→ projekt implementace a projekt migrace –triggering→ projekt odstavení. Projekty –access→ deliverables „Nasazená platforma CoreX“ a „Protokol o migraci dat“. Role „Programový manažer“ i actor „DataMove s.r.o.“ –assignment→ deliverables, za jejichž předání odpovídají.",
       "Program modelovat jako plateau „Nové jádro“ s rozpočtem v atributech –aggregation→ tři business processes odpovídající projektům migrace, implementace a odstavení. Schválení architektury modelovat jako business event –triggering→ proces implementace, výsledky projektů jako business objects, ke kterým procesy přistupují (access), a programového manažera i dodavatele DataMove jako business roles přiřazené (assignment) ke všem třem procesům programu."
     ],
     "correctAnswer": 0,
@@ -871,17 +871,17 @@
       1,
       0
     ],
-    "explanation": "Program i projekty jsou work packages (program složený z projektů), pořadí určují vztahy triggering a implementation events, výsledky jsou deliverables realizované projekty a odpovědnost se vyjadřuje přiřazením role či aktéra k work package – model za 5 bodů tak odpovídá na všechny tři otázky manažera. Varianta za 3 body je platná (realization od work package k application component je přípustná), ale vynechává deliverables, takže chybí i auditem schvalovaný protokol, který má projekt předat. Varianta za 1 bod má deliverables, ale business role ani actor nelze k deliverable přiřadit – assignment patří k work package, deliverable je jen výsledek práce. Varianta za 0 bodů zaměňuje program za plateau a projekty za opakující se business processes."
+    "explanation": "Program i projekty jsou work packages (program složený z projektů), pořadí určují vztahy triggering a implementation events, výsledky jsou deliverables, k nimž od projektů vede access, a odpovědnost se vyjadřuje přiřazením role či aktéra k work package – model za 5 bodů tak odpovídá na všechny tři otázky manažera. Varianta za 3 body je platná (realization od work package k application component je přípustná), ale vynechává deliverables, takže chybí i auditem schvalovaný protokol, který má projekt předat. Varianta za 1 bod má deliverables, ale business role ani actor nelze k deliverable přiřadit – assignment patří k work package, deliverable je jen výsledek práce. Varianta za 0 bodů zaměňuje program za plateau a projekty za opakující se business processes. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
   },
   {
     "topic": "implementation-migration-modeling",
     "scenario": "Ministerstvo modernizuje agendový systém pro vydávání stavebních povolení; stavební úřady dnes přijímají žádosti převážně v listinné podobě a lhůty řízení se kvůli tomu prodlužují. Architektonická rada schválila tři požadavky: „Žádost lze podat elektronicky přes portál“, „Dokumenty řízení se ukládají do elektronického spisu“ a „Systém je dostupný 99,5 % pracovní doby“. Projekt vybraného dodavatele předá tři výstupy: „Elektronický formulář žádosti“, „Integrace se spisovou službou“ a „Provozní dokumentace se SLA“. Elektronické podání musí fungovat už v přechodném stavu 2027, zbylé dva požadavky až v cílovém stavu 2028. Výstupy přebírá komise ministerstva a výsledky kontroly se zapisují do předávacího protokolu. Řídicí výbor chce před každým předávacím řízením zkontrolovat, který výstup naplňuje který požadavek a které požadavky musí platit v kterém stavu architektury.",
     "question": "Který model nejlépe podpoří kontrolu řídicího výboru?",
     "options": [
-      "Každý deliverable –realization→ requirement, který naplňuje: formulář → podání, integrace → spis a dokumentace → dostupnost. Plateau „Přechodný stav 2027“ –aggregation→ requirement elektronického podání, plateau „Cílový stav 2028“ –aggregation→ zbylé dva; work package projektu –realization→ všechny tři deliverables.",
-      "Projekt (work package) –realization→ všechny tři requirements a stejným vztahem projekt –realization→ tři deliverables, které jsou jeho výsledky. Plateau „Přechodný stav 2027“ –aggregation→ requirement elektronického podání a plateau „Cílový stav 2028“ –aggregation→ zbylé dva, takže je zřejmé, kdy má který požadavek platit.",
+      "Každý deliverable –realization→ requirement, který naplňuje: formulář → podání, integrace → spis a dokumentace → dostupnost. Plateau „Přechodný stav 2027“ –aggregation→ requirement elektronického podání, plateau „Cílový stav 2028“ –aggregation→ zbylé dva; work package projektu –access→ všechny tři deliverables.",
+      "Projekt (work package) –realization→ všechny tři requirements a dalším vztahem projekt –access→ tři deliverables, které jsou jeho výsledky. Plateau „Přechodný stav 2027“ –aggregation→ requirement elektronického podání a plateau „Cílový stav 2028“ –aggregation→ zbylé dva, takže je zřejmé, kdy má který požadavek platit.",
       "Každý requirement –realization→ deliverable, kterým se naplňuje (elektronické podání → formulář, elektronický spis → integrace se spisovou službou, dostupnost → provozní dokumentace). Plateau „Přechodný stav 2027“ –aggregation→ requirement elektronického podání a plateau „Cílový stav 2028“ –aggregation→ zbylé dva requirements.",
-      "Každý požadavek modelovat jako work package –realization→ příslušný deliverable a termíny 2027 a 2028 jako implementation events –triggering→ tyto work packages. Stavy architektury není třeba modelovat, protože termíny i pořadí prací vyplývají přímo z implementation events a z jejich vzájemné návaznosti v čase projektu."
+      "Každý požadavek modelovat jako work package –access→ příslušný deliverable a termíny 2027 a 2028 jako implementation events –triggering→ tyto work packages. Stavy architektury není třeba modelovat, protože termíny i pořadí prací vyplývají přímo z implementation events a z jejich vzájemné návaznosti v čase projektu."
     ],
     "correctAnswer": 0,
     "optionScores": [
@@ -890,14 +890,14 @@
       1,
       0
     ],
-    "explanation": "Pro kontrolu pokrytí je nejpřesnější, když vztah realization vede od každého deliverable k requirementu, který naplňuje, a vztah aggregation od plateau k requirements platným v daném stavu – výbor tak u každého předání vidí, co ověřit (5). Varianta za 3 body je platná, ale vztah realization vede od celého projektu, takže nelze poznat, kterým výstupem se který požadavek naplňuje. Varianta za 1 bod má správné párování, ale realization vede obráceně – od requirementu k deliverable 3.2 připouští jen association. Varianta za 0 bodů zaměňuje požadavky za práce a stavy za události, takže požadavky z modelu úplně mizí."
+    "explanation": "Pro kontrolu pokrytí je nejpřesnější, když vztah realization vede od každého deliverable k requirementu, který naplňuje, a vztah aggregation od plateau k requirements platným v daném stavu – výbor tak u každého předání vidí, co ověřit (5). Varianta za 3 body je platná, ale vztah realization vede od celého projektu, takže nelze poznat, kterým výstupem se který požadavek naplňuje. Varianta za 1 bod má správné párování, ale realization vede obráceně – od requirementu k deliverable 3.2 připouští jen association. Varianta za 0 bodů zaměňuje požadavky za práce a stavy za události, takže požadavky z modelu úplně mizí. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
   },
   {
     "topic": "implementation-migration-modeling",
     "scenario": "Online knihkupectví Lístek, které ročně prodá přes dva miliony knih, přechází ze zastaralé e-commerce platformy na řešení ShopNext a během migrace nesmí přerušit prodej. Podpora softwaru staré platformy navíc v březnu končí. Release manažer potřebuje model klíčových milníků a jejich vazeb na práce. Projekt „Implementace ShopNext“ smí začít až po podpisu smlouvy s dodavatelem. Dokončení projektu vede k milníku „Go-live ShopNext“, po kterém začíná projekt „Odstavení staré platformy“. Go-live zároveň znamená přechod architektury do cílového stavu a mění stav výstupu projektu „Release 1.0 ShopNext“ z „v testování“ na „v provozu“. Termíny milníků sleduje i vedení firmy, které chce vidět, na čem jednotlivé kroky závisejí. Release manažer chce, aby z modelu bylo zřejmé, co který milník spouští a na co působí.",
     "question": "Který model nejlépe zachytí milníky a jejich vazby?",
     "options": [
-      "Implementation event „Smlouva podepsána“ –triggering→ work package „Implementace ShopNext“ –triggering→ implementation event „Go-live ShopNext“. Go-live –triggering→ work package „Odstavení staré platformy“ i plateau „Cílový stav“ a –access→ deliverable „Release 1.0 ShopNext“, protože mění jeho stav; work package „Implementace ShopNext“ –realization→ tento deliverable.",
+      "Implementation event „Smlouva podepsána“ –triggering→ work package „Implementace ShopNext“ –triggering→ implementation event „Go-live ShopNext“. Go-live –triggering→ work package „Odstavení staré platformy“ i plateau „Cílový stav“ a –access→ deliverable „Release 1.0 ShopNext“, protože mění jeho stav; work package „Implementace ShopNext“ –access→ tento deliverable.",
       "Implementation event „Smlouva podepsána“ –triggering→ work package „Implementace ShopNext“ –triggering→ implementation event „Go-live ShopNext“ –triggering→ work package „Odstavení staré platformy“. S plateau „Cílový stav“ a s deliverable „Release 1.0 ShopNext“ je Go-live propojen pouze vztahem association.",
       "Podpis smlouvy i Go-live modelovat jako business events: business event „Smlouva podepsána“ –triggering→ work package „Implementace ShopNext“ –triggering→ business event „Go-live ShopNext“. Go-live pak –triggering→ odstavení staré platformy i plateau „Cílový stav“ a mění stav deliverable „Release 1.0“.",
       "Milníky modelovat jako plateaus „Smlouva podepsána“ a „Go-live“, které jsou složeny z work packages realizovaných v daném období. Deliverable „Release 1.0“ agregovat v plateau „Go-live“ a změnu jeho stavu z „v testování“ na „v provozu“ zapsat do názvu deliverable, aby byla vidět."
@@ -909,7 +909,7 @@
       1,
       0
     ],
-    "explanation": "Milníky změny jsou implementation events: vztahy triggering vedou od nich k work packages i k plateau a vztahem access mohou působit na deliverable, jehož stav mění – model za 5 bodů tak ukazuje, co který milník spouští a na co působí. Varianta za 3 body je platná, ale vazbu Go-live na cílový stav a na release vyjadřuje jen neurčitou asociací, takže se ztrácí přesně to, co release manažer chce vidět. Varianta za 1 bod používá business events z business vrstvy; ty nemohou spouštět work packages (3.2 mezi nimi připouští jen association), takže klíčové vazby jsou neplatné. Varianta za 0 bodů zaměňuje milníky za stabilní stavy architektury a composition ani aggregation od plateau k work package či k deliverable 3.2 nepřipouští."
+    "explanation": "Milníky změny jsou implementation events: vztahy triggering vedou od nich k work packages i k plateau a vztahem access mohou působit na deliverable, jehož stav mění – model za 5 bodů tak ukazuje, co který milník spouští a na co působí. Varianta za 3 body je platná, ale vazbu Go-live na cílový stav a na release vyjadřuje jen neurčitou asociací, takže se ztrácí přesně to, co release manažer chce vidět. Varianta za 1 bod používá business events z business vrstvy; ty nemohou spouštět work packages (3.2 mezi nimi připouští jen association), takže klíčové vazby jsou neplatné. Varianta za 0 bodů zaměňuje milníky za stabilní stavy architektury a composition ani aggregation od plateau k work package či k deliverable 3.2 nepřipouští. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
   },
   {
     "topic": "implementation-migration-modeling",
@@ -919,7 +919,7 @@
       "Plateau „Přechodný stav 2027“ –aggregation→ outcome „Dálkový odečet u 40 % odběratelů“, plateau „Cílový stav 2029“ –aggregation→ oba cílové outcomes a plateau 2027 –triggering→ plateau 2029. Deliverables „Vodoměry – vlna 1“ a „Platforma pro analýzu dat“ –realization→ příslušné outcomes, které dále –realization→ goal „Zefektivnit provoz distribuční sítě“.",
       "Deliverables „Vodoměry – vlna 1“ a „Platforma pro analýzu dat“ –realization→ příslušné outcomes a všechny tři outcomes –realization→ goal „Zefektivnit provoz distribuční sítě“. Plateaus přechodného a cílového stavu modelovat zvlášť v Migration view bez vazby na outcomes, aby se přínosy nemíchaly se stavy architektury.",
       "Plateau „Přechodný stav 2027“ –aggregation→ outcome „Dálkový odečet u 40 % odběratelů“, plateau „Cílový stav 2029“ –aggregation→ oba cílové outcomes a plateau 2027 –triggering→ plateau 2029. Outcomes –realization→ deliverables „Vodoměry – vlna 1“ a „Platforma pro analýzu dat“, které k nim přispívají, a outcomes –realization→ goal „Zefektivnit provoz distribuční sítě“.",
-      "Přínosy modelovat jako deliverables programu, například „Náklady na odečty −70 %“ a „Úniky odhaleny do 24 hodin“: projekty –realization→ tyto deliverables –realization→ přechodné a cílové plateau. Goal „Zefektivnit provoz distribuční sítě“ –assignment→ program, který za jeho dosažení odpovídá před poskytovatelem dotace a přínosy mu pololetně vykazuje."
+      "Přínosy modelovat jako deliverables programu, například „Náklady na odečty −70 %“ a „Úniky odhaleny do 24 hodin“: projekty –access→ tyto deliverables –realization→ přechodné a cílové plateau. Goal „Zefektivnit provoz distribuční sítě“ –assignment→ program, který za jeho dosažení odpovídá před poskytovatelem dotace a přínosy mu pololetně vykazuje."
     ],
     "correctAnswer": 0,
     "optionScores": [
@@ -928,7 +928,7 @@
       1,
       0
     ],
-    "explanation": "ArchiMate 3.2 nově dovoluje vztah aggregation (či composition) od plateau k outcome, takže lze ukázat, které přínosy platí v kterém stavu; vztah realization pak vede od deliverables k outcomes a od outcomes ke goal (5). Varianta za 3 body je platná, ale přínosy nejsou svázány se stavy architektury, ačkoli právě na to se benefit manažerka ptá; je správná, jen neúplná. Varianta za 1 bod má správné plateaus, ale obrací klíčový vztah: realization od outcome k deliverable 3.2 nepřipouští (jen association), realizace vede od výstupu k výsledku. Varianta za 0 bodů zaměňuje přínosy (outcomes) za výstupy projektů (deliverables) a assignment od goal k work package neexistuje."
+    "explanation": "ArchiMate 3.2 nově dovoluje vztah aggregation (či composition) od plateau k outcome, takže lze ukázat, které přínosy platí v kterém stavu; vztah realization pak vede od deliverables k outcomes a od outcomes ke goal (5). Varianta za 3 body je platná, ale přínosy nejsou svázány se stavy architektury, ačkoli právě na to se benefit manažerka ptá; je správná, jen neúplná. Varianta za 1 bod má správné plateaus, ale obrací klíčový vztah: realization od outcome k deliverable 3.2 nepřipouští (jen association), realizace vede od výstupu k výsledku. Varianta za 0 bodů zaměňuje přínosy (outcomes) za výstupy projektů (deliverables) a assignment od goal k work package neexistuje. Samotná vazba work package –access→ deliverable chybou není: 3.2 ji doporučuje místo realization, která je stále přípustná, ale zastaralá (deprecated)."
   },
   {
     "topic": "implementation-migration-modeling",
@@ -954,9 +954,9 @@
     "scenario": "Pojišťovna Atlas každý rok od 1. listopadu provádí obnovu smluv autopojištění: oddělení retence osloví klienty, přepočítá pojistné a vystaví dodatky k pojistným smlouvám. Letos navíc běží projekt „Migrace smluv do PolicyOne“ s pevným začátkem v únoru a koncem v září, rozpočtem 8 mil. Kč a výsledkem „Migrované portfolio smluv“, které interní audit převezme až po kontrole vzorku smluv. Na projektu pracuje smíšený projektový tým IT a byznysu vedený projektovou manažerkou z IT, do kterého oddělení retence uvolnilo dva lidi. Vedení chce vědět, co z práce těchto lidí je běžný provoz a co změna. Architekt má proto v jednom modelu zachytit provozní činnost i změnu tak, aby bylo zřejmé, co je opakované chování organizace a co jednorázová změnová aktivita s vlastním předávaným výsledkem.",
     "question": "Který model nejlépe odlišuje provoz od změny?",
     "options": [
-      "Obnovu modelovat jako business process „Obnova smluv autopojištění“ spouštěný business eventem „Začátek obnovovacího období“, vykonávaný rolí „Retenční specialista“ a přistupující k business objectu „Pojistná smlouva“. Migraci modelovat jako work package s termíny a rozpočtem v atributech: work package –realization→ deliverable „Migrované portfolio smluv“, projektový tým –assignment→ work package.",
+      "Obnovu modelovat jako business process „Obnova smluv autopojištění“ spouštěný business eventem „Začátek obnovovacího období“, vykonávaný rolí „Retenční specialista“ a přistupující k business objectu „Pojistná smlouva“. Migraci modelovat jako work package s termíny a rozpočtem v atributech: work package –access→ deliverable „Migrované portfolio smluv“, projektový tým –assignment→ work package.",
       "Obnovu modelovat jako business process „Obnova smluv autopojištění“ spouštěný business eventem „Začátek obnovovacího období“ a vykonávaný rolí „Retenční specialista“. Migraci modelovat jako work package s termíny a rozpočtem v atributech, ke kterému je přiřazen „Projektový tým PolicyOne“; work package –realization→ přímo business object „Pojistná smlouva“.",
-      "Obnovu modelovat jako work package „Obnova smluv 2026“ spouštěný implementation eventem „1. listopad“, ke kterému je přiřazena role „Retenční specialista“, jež kampaň každý rok vede. Migraci modelovat jako work package s termíny a rozpočtem v atributech: work package –realization→ deliverable „Migrované portfolio smluv“ a „Projektový tým PolicyOne“ –assignment→ work package.",
+      "Obnovu modelovat jako work package „Obnova smluv 2026“ spouštěný implementation eventem „1. listopad“, ke kterému je přiřazena role „Retenční specialista“, jež kampaň každý rok vede. Migraci modelovat jako work package s termíny a rozpočtem v atributech: work package –access→ deliverable „Migrované portfolio smluv“ a „Projektový tým PolicyOne“ –assignment→ work package.",
       "Obnovu modelovat jako business process spouštěný business eventem „Začátek obnovovacího období“ a vykonávaný rolí „Retenční specialista“. Migraci modelovat jako plateau „Migrace smluv“, ke kterému je přiřazen projektový tým, a předávaný výsledek jako gap mezi starým a novým systémem smluv, který po kontrole vzorku převezme interní audit."
     ],
     "correctAnswer": 0,
@@ -966,7 +966,7 @@
       1,
       0
     ],
-    "explanation": "Work package je jednorázová série činností s jasným začátkem, koncem a výsledkem (deliverable), kdežto opakovaná provozní činnost je business process spouštěný business eventem – model za 5 bodů obojí jasně odlišuje. Varianta za 3 body je platná, ale vynechává deliverable: odvozený vztah work package → business object nezachytí výsledek, který přebírá audit. Varianta za 1 bod modeluje každoroční obnovu jako jednorázový work package, takže opakované chování organizace vypadá jako projekt. Varianta za 0 bodů zaměňuje projekt za stav architektury a výsledek za gap, a projektový tým (business actor či collaboration) navíc nelze k plateau přiřadit."
+    "explanation": "Work package je jednorázová série činností s jasným začátkem, koncem a výsledkem (deliverable), kdežto opakovaná provozní činnost je business process spouštěný business eventem – model za 5 bodů obojí jasně odlišuje. Varianta za 3 body je platná, ale vynechává deliverable: odvozený vztah work package → business object nezachytí výsledek, který přebírá audit. Varianta za 1 bod modeluje každoroční obnovu jako jednorázový work package, takže opakované chování organizace vypadá jako projekt. Varianta za 0 bodů zaměňuje projekt za stav architektury a výsledek za gap, a projektový tým (business actor či collaboration) navíc nelze k plateau přiřadit. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
   },
   {
     "topic": "archimate-in-adm",
@@ -1068,7 +1068,7 @@
     "scenario": "Portfolio manažerka mobilního operátora TelNet CZ řídí 12 souběžných projektů s celkovým rozpočtem 900 mil. Kč; portfolio vznikalo postupně a několik projektů mění stejné aplikace. Na čtvrtletním portfoliovém boardu potřebuje ukázat, které projekty mění které aplikace a business procesy, do kterého stavu architektury (přechodného, nebo cílového) jejich výsledky patří a které architektonické požadavky naplňují. Minulý board kritizoval, že ze seznamu projektů nepozná jejich dopad na firmu. Board podle toho rozhoduje o pozastavení nebo urychlení projektů, a proto potřebuje vidět, co by v architektuře chybělo, kdyby některý projekt skončil. Detailní úkoly, kapacity a harmonogram eviduje jiný nástroj. Board zasedá jednou za čtvrtletí a na téma má vyhrazenu hodinu. Architekt má v modelu work packages, deliverables, plateaus, requirements i všechny jádrové prvky.",
     "question": "Který viewpoint nejlépe odpovídá concernu portfolio manažerky?",
     "options": [
-      "Implementation and Migration viewpoint: work packages –realization→ deliverables –realization→ plateaus, requirements a jádrové prvky – aplikace a procesy. Board uvidí, který projekt mění kterou část architektury a ve kterém stavu.",
+      "Implementation and Migration viewpoint: work packages –access→ deliverables –realization→ plateaus, requirements a jádrové prvky – aplikace a procesy. Board uvidí, který projekt mění kterou část architektury a ve kterém stavu.",
       "Project viewpoint: work packages, deliverables, implementation events, odpovědné business roles a goals, ke kterým projekty přispívají. Board tak uvidí strukturu portfolia, jeho milníky, odpovědnosti a přínos jednotlivých projektů k cílům firmy.",
       "Migration viewpoint: plateaus výchozího, přechodného a cílového stavu a gaps mezi nimi. Board tak uvidí, jak se architektura postupně mění, v jakém pořadí stavy následují a jaké rozdíly mezi jednotlivými stavy architektury vznikají.",
       "Application Cooperation viewpoint: aplikace operátora a jejich vzájemné toky dat, ve kterém se u aplikací měněných projekty uvede název projektu v poznámce. Board tak uvidí aplikační krajinu i místa, kde do ní jednotlivé projekty portfolia zasahují."
@@ -1080,7 +1080,7 @@
       1,
       0
     ],
-    "explanation": "Implementation and Migration viewpoint propojuje programy a projekty s tím, co realizují – s částmi architektury, plateaus i requirements – přesně to board potřebuje (5). Project viewpoint ukazuje projekty, milníky a odpovědnosti, ale ne jejich vazbu na aplikace, procesy a stavy architektury (3). Migration viewpoint ukazuje jen plateaus a gaps, tedy stavy bez projektů, takže hlavní předmět concernu chybí (1). Application Cooperation je pohled na aplikační krajinu a projekty v něm nejsou prvky modelu, jen poznámky (0)."
+    "explanation": "Implementation and Migration viewpoint propojuje programy a projekty s tím, co realizují – s částmi architektury, plateaus i requirements – přesně to board potřebuje (5). Project viewpoint ukazuje projekty, milníky a odpovědnosti, ale ne jejich vazbu na aplikace, procesy a stavy architektury (3). Migration viewpoint ukazuje jen plateaus a gaps, tedy stavy bez projektů, takže hlavní předmět concernu chybí (1). Application Cooperation je pohled na aplikační krajinu a projekty v něm nejsou prvky modelu, jen poznámky (0). Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
   },
   {
     "topic": "viewpoints-customization",
@@ -1296,7 +1296,7 @@
     "scenario": "Regionální dráhy dokončily Phases B–D cyklu TOGAF ADM pro nový systém prodeje jízdenek: v modelu mají výchozí a cílovou architekturu a gaps mezi nimi. Nový systém nahradí pokladny, staré jízdenkové automaty i e-shop, přes které se ročně prodá přes 30 milionů jízdenek, a musí se napojit na celostátní tarifní systém. Ve Phases E (Opportunities and Solutions) a F (Migration Planning) má architekt s PMO navrhnout přechodové architektury a plán realizace. Concern PMO zní: v jakém pořadí, jakými balíky práce a přes jaké stabilní mezistavy se dostaneme do cíle, aby byl prodej jízdenek v každém okamžiku funkční. Plán bude schvalovat dozorčí rada a jeho plnění bude ve Phase G kontrolovat architektonická rada, která chce mít práce i mezistavy dohledatelné v jednom modelu.",
     "question": "Jak nejlépe využít ArchiMate ve Phases E a F?",
     "options": [
-      "Konsolidovat gaps, navrhnout přechodová plateaus seřazená vztahem triggering a gaps mezi sousedními plateaus. Změny seskupit do work packages, od nichž vede realization k deliverables a dále k plateaus, milníky zachytit jako implementation events; prezentovat v Migration a Implementation and Migration views.",
+      "Konsolidovat gaps, navrhnout přechodová plateaus seřazená vztahem triggering a gaps mezi sousedními plateaus. Změny seskupit do work packages, od nichž vede access k deliverables realizujícím plateaus, milníky zachytit jako implementation events; prezentovat v Migration a Implementation and Migration views.",
       "Konsolidovat gaps, navrhnout přechodová plateaus seřazená vztahem triggering a gaps mezi sousedními plateaus a prezentovat je v Migration view. Work packages a jejich pořadí vést v plánovacím nástroji PMO bez vazby na plateaus v modelu, aby se plán dal snadno měnit bez zásahu architekta a bez aktualizace modelu.",
       "Navrhnout work packages pro jednotlivé etapy, seřadit je vztahem triggering a mezistavy zachytit jako implementation events „Etapa 1 dokončena“ a „Etapa 2 dokončena“. Plateaus pro mezistavy nemodelovat, protože stav po každé etapě vyplývá z dokončených work packages a z jejich deliverables.",
       "Vrátit se k modelům z Phases B–D a místo plánování migrace vytvořit detailní Layered view cílové architektury se všemi vrstvami a prvky, včetně nového systému prodeje, pokladen a tarifního rozhraní. PMO z něj projekty i jejich pořadí odvodí samo, takže prvky Implementation and Migration nejsou v modelu vůbec potřeba."
@@ -1308,7 +1308,7 @@
       1,
       0
     ],
-    "explanation": "Ve Phases E a F se z konsolidovaných gaps navrhují přechodové architektury (plateaus seřazené vztahem triggering) a work packages, od jejichž deliverables vede vztah realization k těmto plateaus, včetně milníků – Migration a Implementation and Migration views tak odpovídají na pořadí, balíky práce i mezistavy (5). Varianta za 3 body má mezistavy správně, ale work packages drží mimo model, takže chybí vazba práce na mezistavy. Varianta za 1 bod zachycuje přechodové architektury jako implementation events; událost je okamžik změny, nikoli stabilní stav architektury, ve kterém musí prodej fungovat. Varianta za 0 bodů ignoruje účel Phases E a F a prvky Implementation and Migration vůbec nepoužívá."
+    "explanation": "Ve Phases E a F se z konsolidovaných gaps navrhují přechodové architektury (plateaus seřazené vztahem triggering) a work packages, od jejichž deliverables vede vztah realization k těmto plateaus, včetně milníků – Migration a Implementation and Migration views tak odpovídají na pořadí, balíky práce i mezistavy (5). Varianta za 3 body má mezistavy správně, ale work packages drží mimo model, takže chybí vazba práce na mezistavy. Varianta za 1 bod zachycuje přechodové architektury jako implementation events; událost je okamžik změny, nikoli stabilní stav architektury, ve kterém musí prodej fungovat. Varianta za 0 bodů ignoruje účel Phases E a F a prvky Implementation and Migration vůbec nepoužívá. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
   },
   {
     "topic": "archimate-in-adm",
@@ -1328,5 +1328,632 @@
       0
     ],
     "explanation": "Ve Phase H se nové podněty ke změně zachycují jako drivers a assessments, z nichž plynou requirements, a analýzou vztahů se zjišťuje, které prvky změna zasáhne – podle rozsahu dopadu se pak rozhoduje mezi změnou v rámci architektury a novým cyklem (5). Varianta za 3 body má motivaci správně, ale bez analýzy dopadu na stávající architekturu chybí podklad pro rozhodnutí, které je smyslem Phase H. Varianta za 1 bod skáče rovnou k projektům bez zachycení důvodu a požadavků v modelu, takže chybí sledovatelnost i rozhodnutí o rozsahu změny. Varianta za 0 bodů zaměňuje driver za business event a popírá účel řízení změn architektury."
+  },
+  {
+    "topic": "modeling-business",
+    "scenario": "Městská policie Hradiště připravuje nový kompetenční model strážníků. Každý strážník bez ohledu na zařazení vykonává hlídkovou službu a sepisuje přestupky. Strážníci-psovodi k tomu navíc cvičí služební psy, strážníci-okrskáři navíc pravidelně jednají s občany svého okrsku. Psovod i okrskář tedy dělá vše, co běžný strážník, a k tomu má své zvláštní povinnosti. Psovodi jsou zařazeni ve skupině psovodů, okrskáři na obvodní služebně Sever.\n\nŘeditel městské policie chce model, ve kterém budou společné povinnosti zachyceny na jediném místě, aby se při změně předpisu, například o sepisování přestupků, nemusely upravovat u každého typu strážníka zvlášť. Zároveň z něj má být patrné, že psovod a okrskář jsou zvláštním druhem strážníka a který útvar které strážníky zaměstnává. Model poslouží také personálnímu oddělení při plánování školení.",
+    "question": "Který model nejlépe odpovídá požadavku ředitele městské policie?",
+    "options": [
+      "Od Business Role „Psovod“ a „Okrskář“ vést specialization k obecné Business Role „Strážník“. Obecnou roli přiřadit k Business Process „Hlídková služba“ a „Sepsání přestupku“, specializované role k procesům „Výcvik služebního psa“ a „Jednání s občany okrsku“. Business Actor „Skupina psovodů“ a „Služebna Sever“ přiřadit ke specializovaným rolím.",
+      "Zavést tři Business Role „Strážník“, „Psovod“ a „Okrskář“ a vztahy mezi nimi nemodelovat. Každou z nich přiřadit zvlášť k Business Process „Hlídková služba“ a „Sepsání přestupku“, role „Psovod“ a „Okrskář“ navíc k procesům „Výcvik služebního psa“ a „Jednání s občany okrsku“. Business Actor „Skupina psovodů“ a „Služebna Sever“ přiřadit k těmto dvěma rolím.",
+      "„Strážník“ modelovat jako Business Collaboration, která agreguje Business Role „Psovod“ a „Okrskář“, a přiřadit ji k Business Process „Hlídková služba“ a „Sepsání přestupku“. Obě role přiřadit k procesům „Výcvik služebního psa“ a „Jednání s občany okrsku“ a Business Actor „Skupina psovodů“ a „Služebna Sever“ přiřadit k těmto rolím.",
+      "„Strážník“ modelovat jako Business Function složenou vztahem composition z Business Role „Psovod“ a „Okrskář“ a od ní vést specialization ke každé z obou rolí. Business Process „Hlídková služba“, „Výcvik služebního psa“ a „Jednání s občany okrsku“ připojit vztahem assignment vedeným od procesu k roli a útvary „Skupina psovodů“ a „Služebna Sever“ zachytit jako Location."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Vztah specialization říká, že prvek je zvláštním druhem jiného prvku téhož typu; společné chování tak stačí přiřadit jednou obecné roli a specializované role nesou jen své zvláštní povinnosti (5). Varianta za 3 body je platná a věcně správná, ale společné povinnosti opakuje u tří rolí a vztah „je druhem“ nevyjadřuje. Varianta za 1 bod používá platné vztahy, jenže Business Collaboration znamená, že role vykonávají kolektivní chování společně, nikoli že existuje obecnější druh role. Varianta za 0 bodů míchá strukturu s chováním (funkce složená z rolí) a obrací směr specializace i vztahu assignment, který vede od role k procesu."
+  },
+  {
+    "topic": "modeling-business",
+    "scenario": "Krajský úřad poskytuje obcím dotace na opravy místních komunikací. Jakmile rada kraje žádost schválí, následují dvě na sobě nezávislé činnosti: právní odbor uzavře s obcí smlouvu o poskytnutí dotace a ekonomický odbor zarezervuje prostředky v rozpočtu kraje. Obě činnosti začínají hned po schválení, žádná nečeká na druhou a každá trvá jinak dlouho. Vyplacení zálohy smí začít teprve tehdy, když je smlouva uzavřena a zároveň jsou prostředky zarezervovány. Loni se přitom dvakrát stalo, že záloha odešla dříve, než obec smlouvu podepsala.\n\nVedoucí odboru kontroly proto požaduje model procesu „Poskytnutí dotace“, ze kterého bude jednoznačně patrné, které kroky běží souběžně a že vyplacení zálohy je podmíněno dokončením obou předchozích činností. Model se stane přílohou nové směrnice o poskytování dotací.",
+    "question": "Který model nejlépe odpovídá požadavku vedoucího odboru kontroly?",
+    "options": [
+      "Business Process „Poskytnutí dotace“ složit z kroků „Schválení žádosti“, „Uzavření smlouvy“, „Rezervace prostředků“ a „Vyplacení zálohy“. Od kroku „Schválení žádosti“ vést triggering do AND junction a z ní ke krokům „Uzavření smlouvy“ a „Rezervace prostředků“. Od obou těchto kroků vést triggering do druhé AND junction a z ní ke kroku „Vyplacení zálohy“.",
+      "Business Process „Poskytnutí dotace“ složit z kroků „Schválení žádosti“, „Smluvní a rozpočtové zajištění“ a „Vyplacení zálohy“, propojených vztahy triggering v tomto pořadí. Uzavření smlouvy a rezervaci prostředků tak shrnout do jediného kroku, k němuž jsou Business Role „Právník“ a „Rozpočtář“ přiřazeny přes AND junction.",
+      "Business Process „Poskytnutí dotace“ složit z kroků „Schválení žádosti“, „Uzavření smlouvy“, „Rezervace prostředků“ a „Vyplacení zálohy“. Od kroku „Schválení žádosti“ vést triggering do OR junction a z ní ke krokům „Uzavření smlouvy“ a „Rezervace prostředků“. Od obou těchto kroků vést triggering do druhé OR junction a z ní ke kroku „Vyplacení zálohy“.",
+      "Činnosti „Uzavření smlouvy“ a „Rezervace prostředků“ modelovat jako Business Function a s krokem „Vyplacení zálohy“ je propojit vztahy flow, které vyjadřují čekání na jejich dokončení. Do jediné AND junction svést triggering od kroku „Schválení žádosti“ spolu se vztahy assignment od Business Role „Právník“ a „Rozpočtář“ a z junction vést triggering k oběma činnostem."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Souběh se vyjadřuje AND junction na vztazích triggering: rozdělení znamená, že po schválení začnou obě činnosti, a spojení, že vyplacení zálohy začne teprve po dokončení obou (5). Varianta za 3 body je platná a podmínku pro vyplacení zachovává, ale obě činnosti slévá do jednoho kroku, takže souběh z modelu vidět není. Varianta za 1 bod používá OR junction, která vyjadřuje výběr jedné z větví – záloha by pak mohla odejít po kterékoli z činností, což je právě loňská chyba. Varianta za 0 bodů zaměňuje kroky procesu za funkce, vztahu flow připisuje kauzalitu, kterou nemá, a v jedné junction spojuje vztahy různých typů, což ArchiMate nedovoluje."
+  },
+  {
+    "topic": "modeling-business",
+    "scenario": "Velkoobchod se stavebninami Cihlář Morava připravuje reorganizaci a výměnu informačního systému. Provozní ředitel si stěžuje, že nikdo nemá ucelený přehled, které útvary si mezi sebou a s okolím trvale vyměňují jaké informace. Obchod průběžně přijímá od zákazníků poptávky a vrací jim nabídky. Potvrzené zakázky předává logistice, která mu zpět hlásí termíny dodání. Nákup posílá dodavatelům objednávky a dostává od nich potvrzení dodávek; logistice předává avíza o příchozím zboží. Tyto činnosti probíhají nepřetržitě a souběžně, nejde o kroky jednoho postupu s pevným pořadím.\n\nProvozní ředitel chce jeden pohled, který ukáže hlavní oblasti činností jednotlivých útvarů i zákazníků a dodavatelů a informace, které si tyto oblasti mezi sebou předávají. Pořadí kroků ani detaily procesů ho nezajímají.",
+    "question": "Který model nejlépe odpovídá požadavku provozního ředitele?",
+    "options": [
+      "Útvary „Obchod“, „Logistika“ a „Nákup“ a vnější strany „Zákazník“ a „Dodavatel“ modelovat jako Business Actor a každému přiřadit Business Function, kterou vykonává, například „Prodej“, „Řízení dodávek“ a „Zásobování“. Mezi funkcemi vést vztahy flow pojmenované předávanou informací, například „poptávka“, „nabídka“, „potvrzená zakázka“ a „avízo“.",
+      "Útvary „Obchod“, „Logistika“ a „Nákup“ a vnější strany „Zákazník“ a „Dodavatel“ modelovat jako Business Actor a mezi těmito aktéry vést vztahy flow pojmenované předávanou informací, například „poptávka“, „nabídka“, „potvrzená zakázka“ a „avízo“. Oblasti činností se do pohledu nezařazují a jsou uvedeny v popisu aktérů.",
+      "Útvary „Obchod“, „Logistika“ a „Nákup“ a vnější strany „Zákazník“ a „Dodavatel“ modelovat jako Business Actor a každému přiřadit Business Function, kterou vykonává, například „Prodej“, „Řízení dodávek“ a „Zásobování“. Mezi funkcemi vést vztahy triggering ve směru předávání informací a název informace, například „poptávka“ či „avízo“, uvést v popisu vztahu.",
+      "Činnosti útvarů modelovat jako Business Service „Prodej“, „Řízení dodávek“ a „Zásobování“, mezi nimiž vedou vztahy realization ve směru předávání informací. Informace zachytit jako Business Object „Poptávka“, „Nabídka“ a „Avízo“ a od každého objektu vést triggering ke službě, kterou spouští; vnější strany „Zákazník“ a „Dodavatel“ modelovat jako Business Interface."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Pohled na business funkce zachycuje hlavní funkce přiřazené aktérům (včetně vnějších stran) a vztahy flow mezi nimi; flow vyjadřuje předávání informací a žádné pořadí ani kauzalitu neimplikuje, což odpovídá trvale a souběžně probíhajícím činnostem (5). Toky vedené jen mezi aktéry jsou platné, ale oblasti činností, o které ředitel výslovně žádá, v pohledu chybějí (3). Triggering mezi funkcemi je povolený vztah, jenže tvrdí, že jedna funkce spouští druhou v daném pořadí, a přenos informace odsouvá do popisu (1). Varianta za 0 bodů zaměňuje interní chování za služby, informacím jako pasivním prvkům připisuje spouštění a vnější strany modeluje jako rozhraní."
+  },
+  {
+    "topic": "modeling-business",
+    "scenario": "Mobilní operátor TeleMorava nabízí domácnostem balíček „Domácí internet“. Zákazník v něm dostane připojení k internetu, telefonickou technickou podporu a přístup do samoobsluhy; pravidla upravují všeobecné smluvní podmínky. Od ledna přibude balíček „Domácí internet Plus“. Ten zákazníkovi poskytne totéž co základní balíček a k tomu servisní zásah technika do 24 hodin, jehož garanci upravuje samostatný dodatek ke smlouvě. Produktový manažer plánuje další varianty a obává se, že se společné součásti budou u každé varianty popisovat znovu a časem se rozejdou.\n\nChce proto model nabídky, ze kterého bude zřejmé, že varianta Plus je zvláštním druhem základního balíčku, co mají obě nabídky společné a co varianta Plus přidává. Stejným způsobem pak chce do modelu doplnit i připravované varianty pro seniory a pro studenty.",
+    "question": "Který model nejlépe odpovídá požadavku produktového manažera?",
+    "options": [
+      "„Domácí internet“ modelovat jako Product, který agreguje Business Service „Připojení k internetu“, „Telefonická podpora“ a „Samoobsluha“ a Contract „Všeobecné podmínky“. „Domácí internet Plus“ modelovat jako druhý Product, od něhož vede specialization k produktu „Domácí internet“ a který agreguje Business Service „Zásah technika do 24 hodin“ a Contract „Dodatek o garanci zásahu“.",
+      "„Domácí internet“ a „Domácí internet Plus“ modelovat jako dva Product, mezi nimiž žádný vztah nevede. Oba agregují tytéž Business Service „Připojení k internetu“, „Telefonická podpora“ a „Samoobsluha“ a Contract „Všeobecné podmínky“; produkt Plus k tomu agreguje Business Service „Zásah technika do 24 hodin“ a Contract „Dodatek o garanci zásahu“.",
+      "„Domácí internet“ modelovat jako Product, který agreguje Business Service „Připojení k internetu“, „Telefonická podpora“ a „Samoobsluha“ a Contract „Všeobecné podmínky“. „Domácí internet Plus“ modelovat jako druhý Product, k němuž vede aggregation od produktu „Domácí internet“ a který agreguje Business Service „Zásah technika do 24 hodin“ a Contract „Dodatek o garanci zásahu“.",
+      "„Domácí internet“ modelovat jako Business Process složený z kroků „Připojení k internetu“, „Telefonická podpora“ a „Samoobsluha“. „Domácí internet Plus“ zachytit jako Contract, od něhož vede realization k tomuto procesu, a zásah technika jako Business Object připojený ke smlouvě vztahem assignment. Od základní nabídky vést specialization k variantě Plus."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Product agreguje služby a contract a vztah specialization mezi dvěma produkty vyjadřuje, že varianta je zvláštním druhem základního produktu: společné součásti jsou popsány jednou u základního produktu a varianta Plus nese jen to, co přidává (5). Dva nepropojené produkty se sdílenými službami jsou platný model, který ukáže společné i přidané součásti, ale vztah „je druhem“ chybí a společné vazby se u každé další varianty opakují (3). Aggregation od základního produktu k variantě Plus je formálně možná, říká však opak skutečnosti – že Plus je součástí základního balíčku (1). Varianta za 0 bodů zaměňuje produkt za proces, smlouvu nechává realizovat chování a specializaci obrací."
+  },
+  {
+    "topic": "modeling-business",
+    "scenario": "Výrobce nábytku Javořina vyřizuje zakázky koncovým procesem „Od objednávky po úhradu“, který má čtyři na sebe navazující kroky: „Přijetí objednávky“, „Výroba na zakázku“, „Expedice“ a „Fakturace“. Firma je řízena funkčně: dlouhodobě stabilními oblastmi činností jsou „Prodej“, „Výroba“, „Logistika“ a „Finance“ a každá z nich zahrnuje i řadu dalších činností mimo tento proces. Organizační útvary se v posledních letech několikrát slučovaly a dělily, funkční oblasti ale zůstaly stejné a vedení s jejich změnou nepočítá.\n\nProvozní ředitelka chce pohled, který ukáže průběh koncového procesu a zároveň to, do které funkční oblasti každý jeho krok patří. Pohled má zůstat platný i po další reorganizaci útvarů, kterou firma chystá na příští rok. Stejný pohled chce později připravit i pro proces reklamací.",
+    "question": "Který model nejlépe odpovídá požadavku provozní ředitelky?",
+    "options": [
+      "Business Process „Od objednávky po úhradu“ složit vztahem composition ze čtyř kroků propojených vztahy triggering v uvedeném pořadí. Oblasti „Prodej“, „Výroba“, „Logistika“ a „Finance“ modelovat jako Business Function a od každé funkce vést aggregation ke kroku, který do ní patří. Krok tak zůstává složkou jediného procesu a současně je zařazen do své funkční oblasti.",
+      "Business Process „Od objednávky po úhradu“ složit vztahem composition ze čtyř kroků propojených vztahy triggering v uvedeném pořadí. Oblasti „Prodej“, „Výroba“, „Logistika“ a „Finance“ modelovat jako Business Function a každou funkci spojit s krokem, který do ní patří, vztahem association. Povahu vazby mezi krokem a funkcí pohled dále neupřesňuje.",
+      "Business Process „Od objednávky po úhradu“ složit vztahem composition ze čtyř kroků propojených vztahy triggering v uvedeném pořadí. Oblasti „Prodej“, „Výroba“, „Logistika“ a „Finance“ modelovat jako Business Function a od každé funkce vést druhý vztah composition ke kroku, který do ní patří. Krok je tak složkou procesu a zároveň funkce.",
+      "Oblasti „Prodej“, „Výroba“, „Logistika“ a „Finance“ modelovat jako Business Role propojené vztahy triggering v pořadí kroků. Koncový proces zachytit jako Business Service složenou vztahem composition z těchto čtyř rolí a jeho jednotlivé kroky jako Business Object „Objednávka“, „Výrobek“ a „Faktura“, ke kterým dané role přistupují vztahem access."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Kroky jsou složkami procesu (composition) a Business Function je může současně agregovat: prvek smí být součástí nejvýše jedné composition, ale libovolného počtu aggregation; funkce jsou navíc stabilnější než útvary, takže pohled reorganizaci přežije (5). Association mezi funkcí a krokem je platná a příslušnost naznačí, jako nespecifický vztah však neříká, že krok je součástí funkční oblasti (3). Varianta za 1 bod má správné prvky, avšak tentýž krok vkládá do dvou composition, což sémantice tohoto vztahu odporuje. Varianta za 0 bodů zaměňuje chování za role a objekty a skládá službu z rolí."
+  },
+  {
+    "topic": "modeling-application",
+    "scenario": "Krajská knihovna Vysočiny přestavuje svůj systém „Výpůjčky“, který se skládá ze tří modulů. Modul „Upomínky“ rozesílá čtenářům upozornění na blížící se konec výpůjční lhůty a potřebuje k tomu údaje o čtenářích a o výpůjčkách. K těmto datům ale sám nepřistupuje: údaje o čtenářích spravuje modul „Registr čtenářů“ a zpřístupňuje je přes rozhraní „API čtenářů“, údaje o výpůjčkách spravuje modul „Evidence výpůjček“ a zpřístupňuje je přes rozhraní „API výpůjček“. Žádný jiný modul nemá mít k těmto datům vlastní přístup.\n\nDatový architekt potřebuje pro audit ochrany osobních údajů model, ze kterého bude patrné, který modul je jediným správcem kterých dat, přes které rozhraní se k nim dostává modul upomínek a že tento modul na data sám nesahá.",
+    "question": "Který model nejlépe odpovídá potřebě datového architekta?",
+    "options": [
+      "Application Component „Výpůjčky“ složit z komponent „Upomínky“, „Registr čtenářů“ a „Evidence výpůjček“. Od komponenty „Registr čtenářů“ vede access k Data Object „Čtenář“ a composition k Application Interface „API čtenářů“; od komponenty „Evidence výpůjček“ access k Data Object „Výpůjčka“ a composition k „API výpůjček“. Od obou rozhraní vede serving ke komponentě „Upomínky“.",
+      "Application Component „Výpůjčky“ složit z komponent „Upomínky“, „Registr čtenářů“ a „Evidence výpůjček“. Od komponenty „Registr čtenářů“ vede access k Data Object „Čtenář“, od komponenty „Evidence výpůjček“ access k Data Object „Výpůjčka“. Od obou těchto komponent vede serving ke komponentě „Upomínky“; rozhraní se jako prvky nemodelují a jejich názvy jsou uvedeny v popisu vztahů.",
+      "Application Component „Výpůjčky“ složit z komponent „Upomínky“, „Registr čtenářů“ a „Evidence výpůjček“. Od komponenty „Upomínky“ vede composition k Application Interface „API čtenářů“ a „API výpůjček“ a od těchto rozhraní serving ke komponentám „Registr čtenářů“ a „Evidence výpůjček“. Od nich vede access k Data Object „Čtenář“ a „Výpůjčka“.",
+      "Komponenty „Upomínky“, „Registr čtenářů“ a „Evidence výpůjček“ propojit s Data Object „Čtenář“ a „Výpůjčka“ vztahy access vedenými od každé komponenty ke každému objektu. „API čtenářů“ a „API výpůjček“ modelovat jako Application Service. Vztah assignment vést od každého datového objektu k příslušné službě a od služby dále ke komponentě „Výpůjčky“."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Rozhraní je složkou komponenty, která službu poskytuje, a vztah serving vede od rozhraní ke komponentě, která je využívá; access od správcovských komponent k datovým objektům ukazuje, kdo s daty pracuje, a chybějící access od upomínek dokládá, že na data samy nesahají (5). Varianta za 3 body je platná – serving mezi komponentami lze odvodit – a správce dat i závislost upomínek ukazuje, rozhraní však chybějí. Varianta za 1 bod umisťuje rozhraní k odběrateli a obrací směr obsluhy, takže tvrdí, že upomínky poskytují služby oběma správcovským modulům. Varianta za 0 bodů dává přístup k datům každé komponentě, zaměňuje rozhraní za službu a vede assignment od pasivního prvku, což nelze."
+  },
+  {
+    "topic": "modeling-application",
+    "scenario": "E-shop s elektronikou Jiskra navrhuje nové integrační rozhraní pro partnery a s ním jednotný datový model aplikační vrstvy. Objednávka obsahuje položky; položka nemá mimo svou objednávku žádný smysl a se zrušením objednávky zaniká. Součástí objednávky je i doručovací adresa. Tentýž záznam adresy je ale zároveň součástí zákaznického profilu, kde ho zákazník spravuje ve svém adresáři, a existuje dál i po smazání objednávky. Zvláštním druhem objednávky je expresní objednávka: má vše, co běžná objednávka, a navíc požadovaný čas doručení.\n\nIntegrační architektka potřebuje, aby vývojáři partnerů z modelu poznali, které údaje zanikají spolu s objednávkou, které jsou sdílené mezi více celky a která datová struktura je variantou jiné. Model bude součástí veřejné dokumentace rozhraní.",
+    "question": "Který model nejlépe odpovídá potřebě integrační architektky?",
+    "options": [
+      "Od Data Object „Objednávka“ vést composition k Data Object „Položka objednávky“ a aggregation k Data Object „Doručovací adresa“, ke které vede druhý vztah aggregation od Data Object „Zákaznický profil“. Od Data Object „Expresní objednávka“ vést specialization k objektu „Objednávka“.",
+      "Od Data Object „Objednávka“ vést aggregation k Data Object „Položka objednávky“ a další aggregation k Data Object „Doručovací adresa“. K adrese vést druhý vztah aggregation od Data Object „Zákaznický profil“, který ji tak sdílí s objednávkou. Od Data Object „Expresní objednávka“ vést specialization k objektu „Objednávka“.",
+      "Od Data Object „Objednávka“ vést composition k Data Object „Položka objednávky“ a další composition k Data Object „Doručovací adresa“, ke které vede druhý vztah composition od Data Object „Zákaznický profil“. Od Data Object „Expresní objednávka“ vést specialization k objektu „Objednávka“.",
+      "Od Data Object „Položka objednávky“ a „Doručovací adresa“ vést assignment k Data Object „Objednávka“, tedy od části k celku. Sdílení adresy vyjádřit vztahem realization vedeným od Data Object „Zákaznický profil“ k adrese. Od objektu „Objednávka“ vést specialization k Data Object „Expresní objednávka“."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Composition vyjadřuje, že část patří jedinému celku a bez něj neexistuje (položky), aggregation dovoluje, aby byl tentýž prvek součástí více celků (adresa v objednávce i v profilu), a specialization vede od zvláštního druhu k obecnému prvku (5). Samé agregace jsou platné, ale model pak neodliší údaje, které zanikají s objednávkou, od sdílených (3). Varianta za 1 bod vkládá adresu do dvou composition, ačkoli prvek smí být složkou nejvýše jedné, a tvrdí tak, že adresa zaniká s objednávkou. Varianta za 0 bodů vyjadřuje vztah části a celku vztahem assignment, jehož zdrojem pasivní prvek být nemůže, sdílení adresy vztahem realization, který nic takového neznamená, a specializaci obrací."
+  },
+  {
+    "topic": "modeling-application",
+    "scenario": "Prodejce vstupenek Hlediště rozděluje svůj monolitický systém na samostatné aplikace. Aplikace „Prodej“ dokončí zpracování nákupu ověřením platby. V té chvíli nastává okamžik důležitý pro další aplikace: nákup je potvrzen. Aplikace „Kapacity“ na něj reaguje závazným obsazením míst v sále, aplikace „Notifikace“ odesláním vstupenek zákazníkovi. Aplikace „Prodej“ přitom nemá vědět, kdo na potvrzení reaguje; pouze oznámí, že k němu došlo, a spolu s oznámením zpřístupní údaje o nákupu. V příštím roce přibudou další odběratelé oznámení, například věrnostní program.\n\nArchitekt řešení chce model chování aplikační vrstvy, ve kterém bude potvrzení nákupu vidět jako samostatná změna stavu: co ji vyvolává, která data nese a jaké chování v dalších aplikacích spouští. Model má sloužit i vývojovým týmům jednotlivých aplikací jako společný referenční popis jejich vazeb.",
+    "question": "Který model nejlépe odpovídá požadavku architekta řešení?",
+    "options": [
+      "Application Component „Prodej“ přiřadit k Application Process „Zpracování nákupu“, od něhož vede triggering k Application Event „Nákup potvrzen“. Od této události vede access k Data Object „Nákup“ a dále triggering k Application Process „Obsazení míst“ komponenty „Kapacity“ a k Application Process „Odeslání vstupenek“ komponenty „Notifikace“.",
+      "Application Component „Prodej“ přiřadit k Application Process „Zpracování nákupu“, od něhož vede triggering k Application Process „Obsazení míst“ komponenty „Kapacity“ a k Application Process „Odeslání vstupenek“ komponenty „Notifikace“. Od obou spouštěných procesů vede access k Data Object „Nákup“ a potvrzení je uvedeno v názvu vztahů.",
+      "Application Component „Prodej“ přiřadit k Application Process „Zpracování nákupu“ a zavést Application Event „Nákup potvrzen“, od něhož vede access k Data Object „Nákup“. Triggering vést k této události od procesu „Obsazení míst“ komponenty „Kapacity“ a od procesu „Odeslání vstupenek“ komponenty „Notifikace“ a od události dále k procesu „Zpracování nákupu“.",
+      "Potvrzení modelovat jako Data Object „Nákup potvrzen“, ke kterému vede access od Application Component „Prodej“ a od kterého vede triggering ke komponentám „Kapacity“ a „Notifikace“. Chování těchto komponent zachytit jako Application Interface „Obsazení míst“ a „Odeslání vstupenek“ a od nich vést realization k oběma komponentám."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Application Event je okamžitá změna stavu: aplikační chování ji může vyvolat (triggering od procesu k události) a událost spouští další chování a může přistupovat k datovému objektu; zdrojový proces tak o odběratelích neví a další odběratel se připojí novým vztahem od události (5). Triggering vedený rovnou mezi procesy je platný, ale potvrzení jako samostatná změna stavu v modelu chybí a aplikace jsou svázány napevno (3). Varianta za 1 bod událost zavádí, směr spouštění však obrací – odběratelé by vyvolávali událost a ta zpracování nákupu. Varianta za 0 bodů nechává spouštět pasivní datový objekt a chování zaměňuje za rozhraní."
+  },
+  {
+    "topic": "modeling-application",
+    "scenario": "Univerzita Jana Blahoslava vznikla sloučením dvou vysokých škol a studijní agendu v ní dnes zajišťují dva různé softwarové produkty: KampusIS pro fakulty první školy a UniMatrika pro fakulty druhé. Oba dělají totéž a studijní oddělení je vnímají jako jedinou aplikaci. Hlavní architekt chce udržovat cílovou aplikační mapu nezávislou na dodavatelích: jejími stavebními kameny mají být logické aplikace, například „Studijní informační systém“, jejichž vymezení se nezmění, ani když se konkrétní produkt vymění. Zároveň potřebuje vidět, které nasazené produkty dnes kterou logickou aplikaci naplňují, protože produkt UniMatrika bude do dvou let vyřazen a jeho fakulty přejdou na KampusIS. Proces „Zápis do semestru“ využívá službu evidence studia bez ohledu na to, který produkt ji právě poskytuje. Mapu chce architekt předložit kolegiu rektora při schvalování rozpočtu na informační systémy.",
+    "question": "Který model nejlépe odpovídá záměru hlavního architekta?",
+    "options": [
+      "„Studijní informační systém“ modelovat jako logickou Application Component, od níž vede realization k Application Service „Evidence studia“ obsluhující Business Process „Zápis do semestru“. Produkty „KampusIS“ a „UniMatrika“ modelovat jako fyzické Application Component a od každé z nich vést realization k logické komponentě.",
+      "Produkty „KampusIS“ a „UniMatrika“ modelovat jako dvě Application Component a od každé z nich vést realization k téže Application Service „Evidence studia“, která obsluhuje Business Process „Zápis do semestru“. Logická aplikace se jako prvek nemodeluje a její název je uveden ve vlastnostech obou komponent.",
+      "„Studijní informační systém“ modelovat jako logickou Application Component, od níž vede realization k Application Service „Evidence studia“ obsluhující Business Process „Zápis do semestru“. Produkty „KampusIS“ a „UniMatrika“ modelovat jako fyzické Application Component a realization vést od logické komponenty ke každému z obou produktů.",
+      "„Studijní informační systém“ modelovat jako Business Function, ke které vede assignment od Application Component „KampusIS“ a „UniMatrika“. Od Business Process „Zápis do semestru“ vede k této funkci realization a rozdíl mezi logickou a fyzickou úrovní vyjadřuje vztah access vedený od funkce k oběma produktům."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "ArchiMate dovoluje realization mezi dvěma application components: konkrétní (fyzická) komponenta realizuje abstraktnější (logickou); logická komponenta nese službu pro business a výměna produktu změní jen vztahy realization pod ní (5). Dvě komponenty realizující tutéž službu jsou platný model a nezávislost procesu na produktu ukazují, stavební kámen cílové mapy však chybí (3). Varianta za 1 bod má správné prvky, ale realization obrací – abstraktnější prvek by realizoval konkrétnější. Varianta za 0 bodů přesouvá logickou aplikaci do business vrstvy, přiřazuje aplikační komponenty k business funkci a vede access k prvkům aktivní struktury."
+  },
+  {
+    "topic": "motivation-strategy-modeling",
+    "scenario": "Statutární město Dubová chce občanům usnadnit vyřizování úředních záležitostí. Na workshopu s tajemníkem magistrátu vznikly tyto závěry. Hlavní cíl „Zjednodušit občanům styk s úřadem“ se rozpadá na dva dílčí cíle: „Snížit administrativní zátěž občanů“ a „Zkrátit dobu vyřízení žádostí“. K nižší administrativní zátěži má vést obecná zásada platná pro každý budoucí systém města: „Údaj stačí úřadu sdělit jednou“. Z této zásady plyne konkrétní požadavek na připravovaný portál občana, „Formuláře jsou předvyplněny údaji z registrů“, který se dále dělí na „Napojení na registr obyvatel“ a „Napojení na katastr nemovitostí“.\n\nTajemník chce pohled, ve kterém dohledá cestu od každého konkrétního požadavku k hlavnímu cíli a uvidí rozpad cílů i požadavků a také zásadu, kterou se mají řídit další projekty města.",
+    "question": "Který model nejlépe odpovídá požadavku tajemníka?",
+    "options": [
+      "Goal „Zjednodušit styk s úřadem“ –aggregation→ goals „Snížit administrativní zátěž“ a „Zkrátit dobu vyřízení“. Principle „Údaj stačí sdělit jednou“ –realization→ goal „Snížit administrativní zátěž“ a requirement „Předvyplněné formuláře“ –realization→ tento principle. Requirement „Předvyplněné formuláře“ –aggregation→ requirements „Napojení na registr obyvatel“ a „Napojení na katastr nemovitostí“.",
+      "Goal „Zjednodušit styk s úřadem“ –aggregation→ goals „Snížit administrativní zátěž“ a „Zkrátit dobu vyřízení“. Requirement „Předvyplněné formuláře“ –realization→ goal „Snížit administrativní zátěž“ a –aggregation→ requirements „Napojení na registr obyvatel“ a „Napojení na katastr nemovitostí“. Zásada jediného sdělení údaje je uvedena v popisu tohoto requirementu.",
+      "Goal „Zjednodušit styk s úřadem“ –aggregation→ goals „Snížit administrativní zátěž“ a „Zkrátit dobu vyřízení“. Principle „Údaj stačí sdělit jednou“ –realization→ goal „Snížit administrativní zátěž“ a tentýž principle dále –realization→ requirement „Předvyplněné formuláře“. Requirement „Předvyplněné formuláře“ –aggregation→ requirements „Napojení na registr obyvatel“ a „Napojení na katastr nemovitostí“.",
+      "Hlavní cíl modelovat jako driver a tento driver –triggering→ goals „Snížit administrativní zátěž“ a „Zkrátit dobu vyřízení“. Zásadu jediného sdělení údaje zachytit jako constraint a ten –assignment→ stakeholder „Tajemník“. Requirement „Předvyplněné formuláře“ –composition→ goal „Snížit administrativní zátěž“ a –serving→ requirements „Napojení na registr obyvatel“ a „Napojení na katastr nemovitostí“."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Rozpad cíle na dílčí cíle i požadavku na dílčí požadavky vyjadřuje aggregation mezi prvky téhož typu; realization vede od konkrétnějšího k abstraktnějšímu, tedy od requirementu k principle a od principle ke goal, takže cesta od požadavku k hlavnímu cíli je dohledatelná (5). Varianta za 3 body je platná, protože requirement může goal realizovat (odvozeně), ale zásada pro další projekty z pohledu vypadla. Varianta za 1 bod obrací realizaci mezi principle a requirementem: obecná zásada by realizovala konkrétní požadavek. Varianta za 0 bodů zaměňuje cíl za driver a používá mezi motivačními prvky vztahy triggering, assignment, serving a composition mezi různými typy, které jazyk nepřipouští."
+  },
+  {
+    "topic": "motivation-strategy-modeling",
+    "scenario": "Mlékárna Orlice schválila strategii „Vratné skleněné obaly“: do dvou let převést jogurty a mléko z plastových kelímků a lahví do vratného skla. Představenstvo sleduje dva cíle – „Snížit ekologickou stopu výroby“ a „Udržet výrobní náklady na dnešní úrovni“. Analýza provozního úseku očekává dva výsledky strategie. Zamýšleným výsledkem je podíl vratných obalů zvýšený na 80 %, který cíl nižší ekologické stopy naplňuje. Vedlejším, nechtěným výsledkem jsou zvýšené náklady na svoz a mytí obalů, které naopak ohrožují cíl udržet výrobní náklady. Strategii má umožnit schopnost „Zpětná logistika obalů“.\n\nPředseda představenstva chce před hlasováním vidět v jednom pohledu oba očekávané výsledky strategie a to, jak každý z nich působí na cíle mlékárny, včetně směru tohoto působení. Podklad dostanou členové představenstva týden před zasedáním spolu s finanční analýzou.",
+    "question": "Který model nejlépe odpovídá požadavku předsedy představenstva?",
+    "options": [
+      "Course of action „Vratné skleněné obaly“ –realization→ outcome „Podíl vratných obalů zvýšen na 80 %“ a ten –realization→ goal „Snížit ekologickou stopu výroby“. Tentýž course of action –influence→ outcome „Náklady na svoz a mytí obalů zvýšeny“ s kladným znaménkem a tento outcome –influence→ goal „Udržet výrobní náklady“ se záporným znaménkem. Capability „Zpětná logistika obalů“ –realization→ tento course of action.",
+      "Course of action „Vratné skleněné obaly“ –realization→ outcome „Podíl vratných obalů zvýšen na 80 %“ a ten –realization→ goal „Snížit ekologickou stopu výroby“. Tentýž course of action –influence→ outcome „Náklady na svoz a mytí obalů zvýšeny“ a tento outcome –influence→ goal „Udržet výrobní náklady“; znaménka se neuvádějí. Capability „Zpětná logistika obalů“ –realization→ course of action.",
+      "Course of action „Vratné skleněné obaly“ –realization→ outcome „Podíl vratných obalů zvýšen na 80 %“ a ten –realization→ goal „Snížit ekologickou stopu výroby“. Tentýž course of action –influence→ outcome „Náklady na svoz a mytí obalů zvýšeny“ s kladným znaménkem a tento outcome –influence→ goal „Udržet výrobní náklady“ se stejným znaménkem. Capability „Zpětná logistika obalů“ –realization→ course of action.",
+      "Goals „Snížit ekologickou stopu výroby“ a „Udržet výrobní náklady“ –triggering→ course of action „Vratné skleněné obaly“. Zvýšení nákladů na svoz a mytí obalů modelovat jako constraint s vazbou –assignment→ capability „Zpětná logistika obalů“. Vyšší podíl vratných skleněných obalů modelovat jako resource s vazbami –realization→ course of action a –serving→ goal „Snížit ekologickou stopu výroby“."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Course of action může outcome realizovat i ovlivňovat a motivační prvky se mohou ovlivňovat navzájem; vztah influence nese znaménko, takže zamýšlený výsledek cíl nižší ekologické stopy realizuje, kdežto nechtěný výsledek cíl udržení nákladů ovlivňuje záporně (5). Varianta za 3 body je platná a oba výsledky ukazuje, ale influence s neuvedeným znaménkem vyjadřuje jen blíže neurčené působení, takže směr, na který se předseda ptá, z ní poznat nelze. Varianta za 1 bod oba výsledky zachycuje, avšak kladným znaménkem tvrdí, že zvýšené náklady na svoz a mytí k cíli udržení nákladů přispívají – působení je ve skutečnosti opačné. Varianta za 0 bodů nechává cíle spouštět strategii a zaměňuje výsledky za constraint a resource s nepřípustnými vztahy."
+  },
+  {
+    "topic": "motivation-strategy-modeling",
+    "scenario": "Dopravní podnik města Bystřice připravuje reorganizaci a zvažuje vyčlenění některých útvarů do dceřiné společnosti. Ředitelka strategie má mapu schopností a chce ji propojit s business functions, které schopnosti dnes zajišťují. Schopnost „Plánování jízdních řádů“ vyžaduje součinnost dvou funkcí, „Dopravní plánování“ a „Analýza přepravních dat“: bez kterékoli z nich podnik jízdní řády sestavit nedokáže. Schopnost „Prodej jízdného“ zajišťuje funkce „Obchod a tarify“ sama. Funkce „Analýza přepravních dat“ navíc sama zajišťuje schopnost „Vyhodnocování vytíženosti linek“.\n\nŘeditelka potřebuje, aby z modelu bylo patrné, které funkce jsou pro danou schopnost nezbytné společně, a při vyčleňování je tedy nelze od sebe oddělit, a kde schopnost stojí na jediné funkci. Model předloží dozorčí radě spolu s návrhem reorganizace.",
+    "question": "Který model nejlépe odpovídá potřebě ředitelky strategie?",
+    "options": [
+      "Business functions „Dopravní plánování“ a „Analýza přepravních dat“ –realization→ AND junction –realization→ capability „Plánování jízdních řádů“. Business function „Obchod a tarify“ –realization→ capability „Prodej jízdného“ a business function „Analýza přepravních dat“ dalším vztahem –realization→ capability „Vyhodnocování vytíženosti linek“.",
+      "Business functions „Dopravní plánování“ a „Analýza přepravních dat“ –realization→ AND junction –realization→ capability „Plánování jízdních řádů“. Business function „Obchod a tarify“ –realization→ capability „Prodej jízdného“. Capability „Vyhodnocování vytíženosti linek“ zůstává v pohledu nepropojená a její zajištění popisuje průvodní dokumentace mapy schopností.",
+      "Business functions „Dopravní plánování“ a „Analýza přepravních dat“ –realization→ OR junction –realization→ capability „Plánování jízdních řádů“. Business function „Obchod a tarify“ –realization→ capability „Prodej jízdného“ a business function „Analýza přepravních dat“ dalším vztahem –realization→ capability „Vyhodnocování vytíženosti linek“.",
+      "Capability „Plánování jízdních řádů“ –assignment→ AND junction a do téže junction vede také realization od business function „Dopravní plánování“ a serving od business function „Analýza přepravních dat“. Capabilities „Prodej jízdného“ a „Vyhodnocování vytíženosti linek“ –composition→ business functions „Obchod a tarify“ a „Analýza přepravních dat“."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Capability je realizována interním chováním, zde business functions, a AND junction na vztazích realization výslovně říká, že schopnost zajišťují obě funkce společně; samostatný vztah realization ukazuje schopnost stojící na jediné funkci (5). Varianta za 3 body používá AND junction správně, ale u schopnosti „Vyhodnocování vytíženosti linek“ neukáže, že stojí na jediné funkci, která je navíc vázána ve společné realizaci jízdních řádů – právě to je pro vyčleňování podstatné. OR junction tvrdí, že schopnost zajistí kterákoli z funkcí sama, což odporuje zadání (1). Varianta za 0 bodů spojuje v jedné junction vztahy různých typů, což ArchiMate nedovoluje, a skládá capability z business functions vztahem composition, který mezi těmito typy prvků neexistuje."
+  },
+  {
+    "topic": "motivation-strategy-modeling",
+    "scenario": "Rodinný pivovar Podhoran z Jeseníků chystá strategii na příštích pět let. Na strategickém workshopu zapsali majitelé čtyři výroky:\n(1) „Rozhodli jsme se přejít od prodeje přes velkoobchody k přímému prodeji předplatného domácnostem.“\n(2) „Umíme vařit malé várky speciálních piv a rychle měnit sortiment.“\n(3) „Od objednání předplatného po doručení bedny ke dveřím – tak vzniká hodnota pro zákazníka.“\n(4) „Máme vlastní varnu s chráněnými recepturami a zkušený tým sládků.“\nArchitektka má výroky převést do prvků strategické vrstvy ArchiMate a propojit je tak, aby majitelé viděli, o co se zvolený směr opírá: co pivovar umí, čím to umí a kde se to projeví při tvorbě hodnoty pro zákazníka. Výsledný pohled poslouží jako podklad pro jednání s bankou o úvěru na rozšíření varny.",
+    "question": "Který model nejlépe převádí výroky do strategické vrstvy a odpovídá potřebě majitelů?",
+    "options": [
+      "Výroky zachytit jako (1) course of action, (2) capability, (3) value stream a (4) dva resources. Oba resources –assignment→ capability „Výroba speciálních piv“. Tato capability –realization→ course of action „Přímý prodej předplatného“ a –serving→ value stream „Dodat předplatné piva“.",
+      "Výroky zachytit jako (1) course of action, (2) capability, (3) value stream a (4) dva resources. Oba resources –assignment→ capability „Výroba speciálních piv“ a tato capability –realization→ course of action „Přímý prodej předplatného“. Value stream „Dodat předplatné piva“ zůstává v pohledu jako nepropojený prvek.",
+      "Výroky zachytit jako (1) course of action, (2) capability, (3) value stream a (4) dva resources. Oba resources –assignment→ capability „Výroba speciálních piv“. Course of action „Přímý prodej předplatného“ –realization→ tato capability, která dále –serving→ value stream „Dodat předplatné piva“.",
+      "Výroky zachytit jako (1) goal, (2) business function, (3) business process a (4) dva business objects. Business function „Výroba speciálních piv“ –composition→ oba business objects a –triggering→ goal „Přímý prodej předplatného“. Business process „Dodat předplatné piva“ –access→ tento goal a –assignment→ business function."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Rozhodnutí, co podnik udělá, je course of action, to, co umí, je capability, posloupnost činností tvořících hodnotu pro zákazníka je value stream a varna, receptury a sládci jsou resources; resource se ke capability přiřazuje vztahem assignment, capability realizuje course of action a obsluhuje (serving) value stream (5). Varianta za 3 body je platná, ale value stream nechává nepropojený, takže neukáže, kde se schopnost projeví v tvorbě hodnoty. Varianta za 1 bod obrací realizaci: course of action nerealizuje capability, je naopak schopnostmi realizován. Varianta za 0 bodů volí prvky jiných vrstev a aspektů a propojuje je nepřípustnými vztahy."
+  },
+  {
+    "topic": "motivation-strategy-modeling",
+    "scenario": "Krajská nemocnice Beskydy chce nabídnout chronickým pacientům kontroly na dálku. Z motivačního modelu vyplynul outcome „Kontroly chronických pacientů probíhají na dálku“ a dva requirements: „Konzultace probíhá přes zabezpečený videohovor“ a „Naměřené hodnoty má lékař k dispozici před konzultací“. Nemocnice zatím nevybírá konkrétní systémy ani dodavatele. Náměstek pro strategii chce nejprve koncept řešení na strategické úrovni: které zdroje nemocnice potřebuje, aby byl každý requirement splněn a výsledku dosaženo. Podle pracovní skupiny videohovory zajistí „Platforma pro videokonzultace“, naměřené hodnoty dodají „Domácí měřicí přístroje pacientů“ a výsledku lze dosáhnout jen spojením platformy s „Lékaři vyškolenými v telemedicíně“. Všechny tři zdroje patří ke schopnosti „Vzdálená péče“. Z pohledu má být u každého requirementu i u výsledku patrné, který zdroj ho naplňuje.",
+    "question": "Který model nejlépe odpovídá požadavku náměstka pro strategii?",
+    "options": [
+      "Resource „Platforma pro videokonzultace“ –realization→ requirement „Zabezpečený videohovor“ a resource „Domácí měřicí přístroje“ –realization→ requirement „Hodnoty před konzultací“. Resources „Platforma pro videokonzultace“ a „Lékaři vyškolení v telemedicíně“ –realization→ AND junction –realization→ outcome „Kontroly na dálku“. Každý z těchto tří resources –assignment→ capability „Vzdálená péče“.",
+      "Resources „Platforma pro videokonzultace“, „Domácí měřicí přístroje“ a „Lékaři vyškolení v telemedicíně“ –assignment→ capability „Vzdálená péče“. Tato capability –realization→ requirements „Zabezpečený videohovor“ a „Hodnoty před konzultací“ a –realization→ outcome „Kontroly na dálku“. Mezi jednotlivými resources a requirements žádné vztahy nevedou.",
+      "Requirement „Zabezpečený videohovor“ –realization→ resource „Platforma pro videokonzultace“ a requirement „Hodnoty před konzultací“ –realization→ resource „Domácí měřicí přístroje“. Outcome „Kontroly na dálku“ –realization→ AND junction –realization→ resources „Platforma pro videokonzultace“ a „Lékaři vyškolení v telemedicíně“. Každý z těchto tří resources dále –assignment→ capability „Vzdálená péče“.",
+      "Zdroje modelovat jako business objects „Platforma pro videokonzultace“, „Domácí měřicí přístroje“ a „Lékaři vyškolení v telemedicíně“; requirements „Zabezpečený videohovor“ a „Hodnoty před konzultací“ k nim přistupují vztahem access. Outcome „Kontroly na dálku“ –assignment→ capability „Vzdálená péče“ a ta –composition→ tyto business objects."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Resource může requirement realizovat a spojení více zdrojů nutných společně vyjadřuje AND junction na vztazích realization; assignment ke capability ukazuje, ke které schopnosti zdroje patří; koncept tak zůstává na strategické úrovni a u každého požadavku i výsledku je vidět zdroj, který ho naplňuje (5). Varianta za 3 body je platná – capability může requirements i outcome realizovat – ale neříká, který zdroj naplňuje který requirement. Varianta za 1 bod má správné prvky, realization však obrací: abstraktní požadavek by realizoval konkrétní zdroj. Varianta za 0 bodů zaměňuje zdroje za business objects a používá vztahy access, assignment a composition tam, kde je jazyk nepřipouští."
+  },
+  {
+    "topic": "model-analysis-derivation",
+    "scenario": "Společnost Čistá obec zajišťuje pro obce svoz velkoobjemového odpadu. Nová analytička dostala k prostudování pohled business vrstvy, který obsahuje tyto vztahy:\n– business event „Objednávka svozu přijata“ –triggering→ business process „Plánování svozu“;\n– „Plánování svozu“ –triggering→ AND junction a z ní vede triggering k procesům „Přistavení kontejneru“ a „Vystavení zálohové faktury“;\n– „Plánování svozu“ –flow→ business function „Správa vozového parku“, vztah je pojmenován „plán tras“;\n– mezi procesem „Plánování svozu“ a business objectem „Svozový plán“ vede access se šipkou u objektu, mezi procesem „Přistavení kontejneru“ a týmž objektem access se šipkou u procesu;\n– business collaboration „Svozová posádka“ –aggregation→ business roles „Řidič“ a „Závozník“; roli „Řidič“ agreguje také business collaboration „Servisní výjezd“.\nAnalytička má vedoucímu provozu vlastními slovy shrnout, co pohled říká.",
+    "question": "Které shrnutí pohledu je nejsprávnější?",
+    "options": [
+      "Přijetí objednávky spustí plánování svozu a po něm začnou obě navazující činnosti, přistavení kontejneru a vystavení zálohové faktury. Plánování předává plán tras správě vozového parku, spuštění funkce z toho neplyne. Plánování svozový plán zapisuje a přistavení kontejneru jej čte. Role řidiče je členem posádky a současně servisního výjezdu.",
+      "Přijetí objednávky spustí plánování svozu a po něm začnou obě navazující činnosti, přistavení kontejneru a vystavení zálohové faktury. Plánování je určitým způsobem propojeno také s funkcí správy vozového parku. Se svozovým plánem pracuje plánování a také přistavení kontejneru. Posádku tvoří role řidiče a závozníka, řidič se podílí na servisním výjezdu.",
+      "Přijetí objednávky spustí plánování svozu a po něm začne jedna z navazujících činností, přistavení kontejneru nebo vystavení zálohové faktury. Plánování předává plán tras správě vozového parku, spuštění funkce z toho neplyne. Plánování svozový plán zapisuje a přistavení kontejneru jej čte. Role řidiče je členem posádky a současně servisního výjezdu.",
+      "Přijetí objednávky spustí plánování svozu a to svozový plán čte, kdežto přistavení kontejneru jej zapisuje. Dokončené plánování spouští předáním plánu tras správu vozového parku a teprve po ní jednu z obou navazujících činností, přistavení kontejneru a vystavení zálohové faktury. Role řidiče patří do jediné collaboration a tou je svozová posádka."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "AND junction na vztazích triggering znamená, že po plánování začnou obě činnosti; flow vyjadřuje předání informace a kauzalitu neimplikuje; šipka vztahu access u objektu značí zápis, šipka u chování čtení; a prvek může být součástí více aggregation (5). Varianta za 3 body neobsahuje nic nepravdivého, ale povahu toku, směr přístupu k objektu ani sdílení role nerozlišuje. Varianta za 1 bod čte AND junction jako výběr jedné větve, zbytek má správně. Varianta za 0 bodů zaměňuje čtení a zápis, toku připisuje spouštění, junction čte jako výběr a agregaci vykládá jako výlučnou příslušnost."
+  },
+  {
+    "topic": "model-analysis-derivation",
+    "scenario": "Knižní e-shop Čtenářův ráj připravuje strategii zvýšení online prodeje. Stážista nakreslil v obecném kreslicím nástroji, který pravidla jazyka nehlídá, pohled motivace a strategie a požádal architektku o kontrolu. Pohled obsahuje tyto vztahy:\n(1) stakeholder „Obchodní ředitelka“ je vztahem association spojen s driverem „Podíl online prodeje“;\n(2) driver „Podíl online prodeje“ –triggering→ goal „Zvýšit konverzi e-shopu“ (stážista chtěl říci, že cíl z driveru vychází);\n(3) goal „Zvýšit konverzi e-shopu“ –realization→ requirement „Objednávka na tři kliknutí“ (cíl se má tímto požadavkem naplnit);\n(4) capability „Návrh zákaznické zkušenosti“ –realization→ course of action „Zjednodušit nákupní cestu“;\n(5) capability „Návrh zákaznické zkušenosti“ –assignment→ resource „UX tým“ (schopnost se o tým opírá);\n(6) business process „Testování použitelnosti“ –realization→ capability „Návrh zákaznické zkušenosti“.\nArchitektka má určit, které vztahy odporují ArchiMate 3.2, a opravit je tak, aby zůstal zachován zamýšlený význam.",
+    "question": "Který závěr kontroly je nejsprávnější?",
+    "options": [
+      "Pravidlům odporují tři vztahy. Vztah (2) nahradit vztahem association mezi driverem a goal, vztah (3) obrátit na requirement –realization→ goal a vztah (5) obrátit na resource „UX tým“ –assignment→ capability. Vztahy (1), (4) a (6) jsou v pořádku a zůstanou beze změny.",
+      "Pravidlům odporují tři vztahy. Vztah (2) nahradit vztahem association mezi driverem a goal, vztah (3) obrátit na requirement –realization→ goal a vztah (5) nahradit vztahem association mezi capability a resource „UX tým“. Vztahy (1), (4) a (6) jsou v pořádku.",
+      "Pravidlům odporují dva vztahy. Vztah (2) nahradit vztahem association mezi driverem a goal a vztah (3) obrátit na requirement –realization→ goal. Vztah (5) je běžné připojení resource ke capability a vztahy (1), (4) a (6) jsou rovněž v pořádku.",
+      "Pravidlům odporují dva vztahy. Vztah (4) obrátit na course of action –realization→ capability „Návrh zákaznické zkušenosti“ a vztah (6) obrátit na capability –realization→ business process. Vztahy (1), (2), (3) a (5) jsou v pořádku a zůstanou beze změny."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Driver se s goal spojuje vztahem association; triggering patří mezi prvky chování, ne mezi motivační prvky; realization vede od konkrétnějšího requirementu ke goal a assignment od resource ke capability, nikoli naopak; capability realizuje course of action a business process realizuje capability, takže vztahy (4) a (6) jsou správně (5). Varianta za 3 body najde tytéž chyby, ale vztah (5) nahrazuje obecnou association, která je platná, avšak neříká, že zdroj je schopnosti přidělen. Varianta za 1 bod ponechává nepřípustný assignment od capability k resource. Varianta za 0 bodů označuje za chybné právě správné vztahy a navrhuje jejich obrácení do nepřípustného směru."
+  },
+  {
+    "topic": "modeling-technology-physical",
+    "scenario": "Vysoká škola technická v Táboře provozuje ve své serverovně dva fyzické servery HV-01 a HV-02. Na každém z nich běží hypervizor, který hostí virtuální servery. Na HV-01 jsou to virtuální server studijního systému s operačním systémem Linux a virtuální server ekonomiky s operačním systémem Windows Server; HV-02 hostí virtuální servery knihovny a e-learningu. Výrobce hypervizoru vydal kritickou bezpečnostní záplatu, jejíž instalace vyžaduje restart hypervizoru, a tím i všech virtuálních serverů, které na něm běží.\n\nVedoucí infrastruktury plánuje záplatování po jednotlivých fyzických serverech tak, aby nikdy nestály všechny systémy školy najednou. Potřebuje model technologické vrstvy, který odliší hardware od softwaru, ukáže, že operační systémy virtuálních serverů běží na hypervizoru a ten na fyzickém serveru, a zachytí virtuální servery jako samostatné jednotky, na které se nasazují aplikace.",
+    "question": "Který model nejlépe odpovídá potřebě vedoucího infrastruktury?",
+    "options": [
+      "Device „HV-01“ –assignment→ System Software „Hypervizor“ a ten –assignment→ System Software „Linux“ a „Windows Server“. Každý z obou operačních systémů je součástí (composition) vlastního Node: „Virtuální server studijního systému“, resp. „Virtuální server ekonomiky“. Server HV-02 se modeluje stejně.",
+      "Node „Virtualizační platforma HV-01“ se skládá (composition) z Device „HV-01“ a ze System Software „Hypervizor“, „Linux“ a „Windows Server“, které jsou v něm uvedeny vedle sebe. Virtuální servery v modelu samostatně nevystupují, jejich názvy jsou zapsány v popisu operačních systémů. Server HV-02 se modeluje stejným způsobem.",
+      "System Software „Linux“ a „Windows Server“ –assignment→ System Software „Hypervizor“ a ten –assignment→ Device „HV-01“. Každý z těchto operačních systémů je součástí (composition) vlastního Node: „Virtuální server studijního systému“, resp. „Virtuální server ekonomiky“. Server HV-02 se modeluje stejně.",
+      "Facility „HV-01“ –realization→ Application Component „Hypervizor“ a ta –aggregation→ Artifact „Studijní systém“ a „Ekonomika“, jimiž jsou virtuální servery. Operační systémy „Linux“ a „Windows Server“ jsou Technology Service, ze kterých se tyto artefakty skládají (composition). Server HV-02 se modeluje stejným způsobem."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Vztah assignment vede od hostitele k tomu, co na něm běží: od Device k System Software (hypervizor) a od něj k dalšímu System Software (hostované operační systémy); virtuální server jako samostatnou jednotku vyjadřuje Node složený ze svého systémového softwaru (5). Varianta za 3 body je platná – Node se skládá ze zařízení a systémového softwaru –, ale neukazuje, co běží na čem, ani virtuální servery jako jednotky, takže z ní dopad restartu hypervizoru nelze vyčíst. Varianta za 1 bod má správné prvky, ale řetězec assignment obrací: operační systémy by hostily hypervizor a ten fyzický server, na kterém ve skutečnosti běží. Varianta za 0 bodů zaměňuje vrstvy i aspekty – hypervizor není aplikační komponenta, fyzický server není Facility a operační systém není služba."
+  },
+  {
+    "topic": "modeling-technology-physical",
+    "scenario": "Platební instituce PlatímTo zpracovává okamžité platby přes dvojici zprávových brokerů: jeden uzel běží v datovém centru v Praze, druhý v Brně. Zpráva s platebním příkazem se považuje za přijatou teprve ve chvíli, kdy ji oba uzly společně potvrdí dvoufázovým zápisem; žádný z uzlů tedy sám o sobě garantované doručení neposkytne. Dvojice není samostatně spravovaným zařízením ani produktem – každý uzel má vlastní provozní tým a uzly spolupracují jen při tomto potvrzování. Garantované doručení zpráv využívají platební aplikace instituce jako technologickou službu.\n\nArchitekt infrastruktury připravuje analýzu rizik pro případ výpadku jednoho datového centra. Potřebuje model, ze kterého bude zřejmé, že služba vzniká společným chováním obou uzlů, nikoli chováním kteréhokoli z nich, a že dvojice uzlů je jen logickým spojením dvou samostatných prvků.",
+    "question": "Který model nejlépe vystihuje, jak služba garantovaného doručení vzniká?",
+    "options": [
+      "Technology Collaboration „Dvojice brokerů“ –aggregation→ Node „Broker Praha“ a Node „Broker Brno“. Kolaborace –assignment→ Technology Interaction „Dvoufázové potvrzení zprávy“ a tato interakce –realization→ Technology Service „Garantované doručení zpráv“, která obsluhuje (serving) platební aplikace.",
+      "Node „Cluster brokerů“ se skládá z Node „Broker Praha“ a z Node „Broker Brno“. Cluster –assignment→ Technology Function „Potvrzování zpráv“ a tato funkce –realization→ Technology Service „Garantované doručení zpráv“, která obsluhuje (serving) platební aplikace instituce.",
+      "Technology Collaboration „Dvojice brokerů“ –aggregation→ Node „Broker Praha“ a Node „Broker Brno“. Kolaborace –assignment→ Technology Interaction „Dvoufázové potvrzení zprávy“ a Technology Service „Garantované doručení zpráv“ –realization→ tuto interakci; služba obsluhuje (serving) platební aplikace.",
+      "Technology Interaction „Dvojice brokerů“ –aggregation→ Node „Broker Praha“ a Node „Broker Brno“. Technology Collaboration „Dvoufázové potvrzení zprávy“ je společné chování, které –triggering→ Technology Interface „Garantované doručení zpráv“; toto rozhraní obsluhuje (serving) platební aplikace instituce."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Společné chování dvou či více technologických prvků je Technology Interaction, kterou vykonává Technology Collaboration – logické seskupení agregující oba uzly, které neexistuje jako samostatná entita; interakce pak realizuje službu (5). Varianta za 3 body je platná, ale z dvojice dělá jeden složený uzel s vlastní funkcí, takže se ztrácí, že jde jen o logické spojení a o chování společné. Varianta za 1 bod má kolaboraci i interakci správně, ale obrací realizaci: službu realizuje interní chování, ne naopak. Varianta za 0 bodů zaměňuje strukturu a chování – interakce nemůže agregovat uzly, kolaborace není chování a rozhraní není služba."
+  },
+  {
+    "topic": "modeling-technology-physical",
+    "scenario": "Správa silnic Podhůří sleduje stav 900 km silnic pomocí zařízení rozmístěných v terénu: meteostanic, čidel teploty vozovky a sčítačů dopravy. Všechna tato zařízení fungují stejně – po zapnutí si z centrálního telemetrického serveru stáhnou své nastavení, například interval měření, a pak mu průběžně posílají naměřené hodnoty. Server stojí v sídle organizace; distribuci nastavení a příjem měření nabízí jako své služby přes jediné rozhraní MQTT. Z naměřených hodnot se v zimě rozhoduje o výjezdech sypačů.\n\nSprávce telemetrie chystá nákup dalších typů čidel od nového dodavatele. Potřebuje model, který ukáže, že jednotlivé typy zařízení jsou druhy téhož, kam jejich data tečou a které služby serveru a přes jaký přístupový bod zařízení využívají. Podle modelu chce dodavateli předat jednoznačné zadání pro připojení nových čidel.",
+    "question": "Který model nejlépe odpovídá potřebě správce telemetrie?",
+    "options": [
+      "Equipment „Meteostanice“, „Čidlo vozovky“ a „Sčítač dopravy“ jsou specializacemi Equipment „Polní zařízení“, od něhož vede vztah flow k Node „Telemetrický server“. Součástí serveru je Technology Interface „Rozhraní MQTT“ přiřazená k Technology Service „Distribuce nastavení“ a „Příjem měření“; vztah serving vede od těchto služeb k polnímu zařízení.",
+      "Equipment „Meteostanice“, „Čidlo vozovky“ a „Sčítač dopravy“ jsou specializacemi Equipment „Polní zařízení“, od něhož vede vztah flow k Node „Telemetrický server“. Služby serveru a jeho rozhraní v modelu samostatně nevystupují; způsob stažení nastavení a předávání měření popisuje technická dokumentace přiložená k uzlu.",
+      "Equipment „Meteostanice“, „Čidlo vozovky“ a „Sčítač dopravy“ jsou specializacemi Equipment „Polní zařízení“, od něhož vede vztah flow k Node „Telemetrický server“. Součástí serveru je Technology Interface „Rozhraní MQTT“ přiřazená k Technology Service „Distribuce nastavení“ a „Příjem měření“; vztah serving vede od polního zařízení k těmto dvěma službám.",
+      "Business Actor „Meteostanice“, „Čidlo vozovky“ a „Sčítač dopravy“ jsou specializacemi Business Role „Polní zařízení“, ke které vede flow od Application Component „Telemetrický server“. Součástí serveru je Business Interface „Rozhraní MQTT“ přiřazená k Business Service „Distribuce nastavení“ a „Příjem měření“; vztah serving vede od zařízení k serveru."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Jednotlivé typy čidel jsou specializacemi obecného Equipment, tok dat k serveru vyjadřuje flow a služby serveru jsou zpřístupněny přes Technology Interface, která je jeho součástí a je přiřazena ke službám obsluhujícím zařízení (5). Varianta za 3 body je platná, ale chybí v ní služby a přístupový bod, tedy to hlavní, co má správce předat dodavateli. Varianta za 1 bod má všechny prvky, ale obrací serving: funkcionalitu poskytuje server zařízením, ne zařízení službám serveru. Varianta za 0 bodů přesouvá fyzická zařízení a server do business a aplikační vrstvy a tok dat vede opačným směrem."
+  },
+  {
+    "topic": "modeling-technology-physical",
+    "scenario": "Mlékárna Jasná pasterizuje mléko v pasterizační stanici umístěné ve výrobní hale 2. Stanici tvoří deskový pastér a řídicí software, který běží přímo ve stanici. Software každou sekundu přebírá z pastéru naměřené teploty a průtoky a zpět mu posílá povely pro nastavení ventilů a ohřevu; bez této výměny pastér nedodrží předepsanou teplotu 72 °C. Dodavatel ohlásil ukončení podpory současné verze řídicího softwaru.\n\nVedoucí automatizace připravuje výměnu softwaru za novou verzi během plánované odstávky. Potřebuje model, který ukáže, co je stroj a co software, že oba dohromady tvoří jednu stanici, ve které budově stanice stojí a jaká výměna mezi strojem a softwarem v obou směrech probíhá. Výrobní postupy ani suroviny v tomto modelu nepožaduje; ty má mlékárna popsány v samostatném pohledu na výrobu.",
+    "question": "Který model nejlépe odpovídá potřebě vedoucího automatizace?",
+    "options": [
+      "Součástí Facility „Výrobní hala 2“ je Node „Pasterizační stanice“, který se skládá z Equipment „Deskový pastér“ a ze System Software „Řídicí software pasterizace“. Od pastéru vede k softwaru vztah flow „měření“ a od softwaru k pastéru vztah flow „povely“.",
+      "Součástí Facility „Výrobní hala 2“ je Node „Pasterizační stanice“, který se skládá z Equipment „Deskový pastér“ a ze System Software „Řídicí software pasterizace“. Pastér a software jsou propojeny jedním vztahem association; měření a povely jsou popsány v dokumentaci stanice.",
+      "Equipment „Deskový pastér“ se skládá z Node „Pasterizační stanice“ a z Facility „Výrobní hala 2“; součástí stanice je System Software „Řídicí software pasterizace“. Od pastéru vede k softwaru vztah flow „měření“ a od softwaru k pastéru vztah flow „povely“.",
+      "Součástí Business Actor „Výrobní hala 2“ je Business Process „Pasterizační stanice“, ke kterému jsou přiřazeny Material „Deskový pastér“ a Data Object „Řídicí software pasterizace“. Od pastéru vede k softwaru vztah triggering „měření“ a od softwaru k pastéru vztah triggering „povely“."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "ArchiMate 3.2 dovoluje, aby se Node skládal z Equipment i ze System Software a aby byl takový uzel součástí Facility; obousměrnou výměnu mezi strojem a softwarem vyjadřují dva vztahy flow (5). Varianta za 3 body má stejnou platnou strukturu, ale neurčitá association nahrazuje toky měření a povelů, na které se vedoucí výslovně ptá. Varianta za 1 bod má správné prvky i toky, ale obrací skládání: stroj se nemůže skládat ze stanice ani z budovy, ve které stojí. Varianta za 0 bodů zaměňuje stanici za business proces, stroj za materiál, software za data a budovu za aktéra."
+  },
+  {
+    "topic": "modeling-technology-physical",
+    "scenario": "Leasingová společnost AutoKredit provozuje dvě webové aplikace: Kalkulačku splátek a Klientský portál. Dodavatel je dodává jako nasaditelné archivy kalkulacka.war a portal.war. Oba archivy jsou sestaveny podle téhož standardního webového archivu, jehož pevnou součástí je knihovna pdf-export.jar pro tisk dokumentů. Archivy jsou nasazeny na aplikačním serveru WildFly. V knihovně pdf-export.jar byla minulý týden zveřejněna závažná zranitelnost.\n\nBezpečnostní manažer má do 48 hodin rozhodnout o rozsahu mimořádné opravy. Potřebuje model, ze kterého bude ze vztahů mezi prvky vidět, které nasaditelné jednotky zranitelnou knihovnu obsahují, na kterém systémovém softwaru jsou nasazeny a které aplikační komponenty realizují. Stejný model chce použít při příštích hlášeních zranitelností v jiných knihovnách, a nechce proto údaje o knihovnách dohledávat v textových popisech.",
+    "question": "Který model nejlépe slouží bezpečnostnímu manažerovi?",
+    "options": [
+      "Artifact „Standardní webový archiv“ se skládá (composition) z Artifact „pdf-export.jar“; Artifact „kalkulacka.war“ a „portal.war“ jsou jeho specializacemi. Od System Software „WildFly“ vede vztah assignment k oběma archivům, které realizují Application Component „Kalkulačka splátek“, resp. „Klientský portál“.",
+      "Artifact „kalkulacka.war“ a „portal.war“ mají ve svém atributu (property) „knihovny“ zapsáno pdf-export.jar; samostatným prvkem modelu knihovna není. Od System Software „WildFly“ vede vztah assignment k oběma archivům, které realizují Application Component „Kalkulačka splátek“, resp. „Klientský portál“.",
+      "Artifact „pdf-export.jar“ se skládá (composition) z Artifact „Standardní webový archiv“, jehož specializacemi jsou „kalkulacka.war“ a „portal.war“. Od System Software „WildFly“ vede vztah assignment k oběma archivům, které realizují Application Component „Kalkulačka splátek“, resp. „Klientský portál“.",
+      "Data Object „pdf-export.jar“ se skládá (composition) z Application Component „Kalkulačka splátek“ a „Klientský portál“; archivy kalkulacka.war a portal.war jsou Application Interface těchto komponent. Od obou komponent vede vztah realization k Application Service „WildFly“, na které jsou obě webové aplikace nasazeny."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Artefakt se může skládat z dílčích artefaktů a konkrétní archivy lze modelovat jako specializace obecného archivu, takže od knihovny vede řetězec vztahů k oběma nasaditelným jednotkám, k systémovému softwaru, na kterém jsou nasazeny, i ke komponentám, které realizují (5). Varianta za 3 body je platná, ale knihovnu schovává do atributu, takže dopad zranitelnosti nelze vyčíst ze vztahů. Varianta za 1 bod obrací kompozici – knihovna by se skládala z archivu, jehož je ve skutečnosti součástí. Varianta za 0 bodů opouští technologickou vrstvu: knihovna není datový objekt, archivy nejsou rozhraní a aplikační server není aplikační služba."
+  },
+  {
+    "topic": "modeling-technology-physical",
+    "scenario": "Výrobce dřevěných hraček Dřevík má tři provozy: pilu v Hlinsku, výrobní závod ve Vsetíně a distribuční sklad v Olomouci. Pila dodává závodu bukové řezivo. V závodě z něj obráběcí a lakovací linka vyrábí stavebnice, které se odvážejí do distribučního skladu a odtud k zákazníkům. Po loňském výpadku dodávek řeziva stála výroba dva týdny a nikdo předem nevěděl, který provoz na čem závisí.\n\nManažerka dodavatelského řetězce chce jednoduchý model fyzické vrstvy, který ukáže, co se ve kterém provozu děje s materiálem a jaký materiál se mezi provozy přesouvá a kterým směrem. Trasy, dopravce ani dopravní infrastrukturu teď neřeší; ty doplní v další etapě, ve které bude posuzovat alternativní způsoby přepravy mezi provozy.",
+    "question": "Který model nejlépe odpovídá potřebě manažerky dodavatelského řetězce?",
+    "options": [
+      "Facility „Pila Hlinsko“ –flow→ Facility „Závod Vsetín“ –flow→ Facility „Sklad Olomouc“; s prvním tokem je asociován Material „Bukové řezivo“, s druhým Material „Stavebnice“. Součástí závodu je Equipment „Obráběcí a lakovací linka“ přiřazené k Technology Process „Výroba stavebnic“, který čte řezivo a zapisuje stavebnice.",
+      "Facility „Pila Hlinsko“, „Závod Vsetín“ a „Sklad Olomouc“ jsou propojeny dvěma Path, které realizuje Distribution Network „Silniční síť“. Součástí závodu je Equipment „Obráběcí a lakovací linka“ přiřazené k Technology Process „Výroba stavebnic“, který čte Material „Bukové řezivo“ a zapisuje Material „Stavebnice“.",
+      "Facility „Sklad Olomouc“ –flow→ Facility „Závod Vsetín“ –flow→ Facility „Pila Hlinsko“; s prvním tokem je asociován Material „Stavebnice“, s druhým Material „Bukové řezivo“. Součástí závodu je Equipment „Obráběcí a lakovací linka“ přiřazené k Technology Process „Výroba stavebnic“, který čte bukové řezivo a zapisuje stavebnice.",
+      "Business Actor „Pila Hlinsko“ –triggering→ Business Actor „Závod Vsetín“ –triggering→ Business Actor „Sklad Olomouc“; s prvním vztahem je asociován Business Object „Bukové řezivo“, s druhým Business Object „Stavebnice“. Linku představuje Application Component přiřazená k Business Process „Výroba stavebnic“, který řezivo čte."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Přesun materiálu mezi provozy vyjadřuje vztah flow mezi Facility, se kterým lze asociovat přenášený Material; zpracování ukazuje Equipment přiřazené k technologickému procesu, který k materiálu přistupuje (5). Varianta za 3 body je platná, ale Path a Distribution Network říkají jen to, že provozy jsou propojeny – ne co a kterým směrem mezi nimi putuje, a trasy manažerka zatím neřeší. Varianta za 1 bod používá správné prvky, ale oba toky vede opačným směrem, takže by sklad zásoboval pilu. Varianta za 0 bodů nahrazuje fyzické prvky business a aplikačními a materiál informací."
+  },
+  {
+    "topic": "cross-layer-modeling",
+    "scenario": "Zdravotní pojišťovna Zdraví Plus vydává plátcům pojistného potvrzení o bezdlužnosti. Plátce o ně může požádat na pobočce, kde žádost vyřídí referent v procesu „Vystavení potvrzení na pobočce“. Od loňska lze tutéž službu získat v klientském portálu: ten po přihlášení plátce sám ověří stav jeho účtu a potvrzení vystaví s elektronickou pečetí, aniž do toho vstoupí kterýkoli zaměstnanec. Z pohledu plátce i zákona jde o jednu a tutéž službu pojišťovny, jen poskytnutou jiným způsobem. Přes portál dnes vzniká 60 % potvrzení.\n\nVedoucí klientských služeb chce model, ze kterého bude zřejmé, že jedna business služba je poskytována dvěma způsoby – lidskou prací na pobočce a plně automaticky portálem. Model použije při posuzování dopadu výpadku portálu a při plánování dalšího převodu klientů do online kanálu.",
+    "question": "Který model nejlépe odpovídá požadavku vedoucí klientských služeb?",
+    "options": [
+      "Business Service „Vystavení potvrzení o bezdlužnosti“ –serving→ Business Role „Plátce pojistného“. Ke službě vede realization od dvou prvků: od Business Process „Vystavení potvrzení na pobočce“, ke kterému je přiřazena Business Role „Referent“, a od Application Service „Online vystavení potvrzení“, kterou realizuje Application Component „Klientský portál“.",
+      "Business Role „Plátce pojistného“ obsluhují dvě služby: Business Service „Potvrzení na pobočce“, ke které vede realization od Business Process „Vystavení potvrzení na pobočce“ s přiřazenou rolí „Referent“, a Business Service „Potvrzení online“, ke které vede realization od Application Service „Online vystavení potvrzení“ komponenty „Klientský portál“.",
+      "Business Service „Vystavení potvrzení o bezdlužnosti“ –serving→ Business Role „Plátce pojistného“. Ke službě vede realization od Business Process „Vystavení potvrzení na pobočce“, ke kterému je přiřazena Business Role „Referent“; od této business služby pak vede realization k Application Service „Online vystavení potvrzení“, kterou realizuje Application Component „Klientský portál“.",
+      "Klientský portál je Business Role přiřazená k Business Process „Vystavení potvrzení na pobočce“ společně s rolí „Referent“. Application Service „Online vystavení potvrzení“ se skládá z Business Service „Vystavení potvrzení o bezdlužnosti“ a ta je přiřazena k Business Role „Plátce pojistného“, která potvrzení získává na pobočce a také online v klientském portálu."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Mezivrstvové vztahy dovolují, aby aplikační služba business službu realizovala – tak se modeluje plně automatizované poskytnutí služby; táž business služba může být zároveň realizována business procesem, takže model za 5 bodů ukazuje jednu službu se dvěma způsoby poskytnutí. Varianta za 3 body používá platné vztahy, ale službu rozděluje na dvě, čímž se ztrácí to, že jde o tutéž službu. Varianta za 1 bod obrací realizaci mezi vrstvami: konkrétnější aplikační služba realizuje abstraktnější business službu, ne naopak. Varianta za 0 bodů dělá z aplikace business roli, skládá aplikační službu z business služby a přiřazuje službu roli, což jsou nepřípustné záměny struktury a chování."
+  },
+  {
+    "topic": "cross-layer-modeling",
+    "scenario": "Zdravotnická záchranná služba Kraje Vysoká řídí výjezdy posádek aplikací Operační řízení. Aplikace je dodávána jako jediný nasaditelný balíček operacni-rizeni.ear. Stejný balíček je nasazen na dvou serverových clusterech: na primárním v Jihlavě a na záložním v Třebíči, který převezme provoz při výpadku primárního. Aplikace poskytuje aplikační služby „Příjem tísňové výzvy“ a „Vyslání posádky“, bez kterých se neobejde business proces „Řízení zásahu“ na operačním středisku.\n\nKrizový manažer kraje chce po nedávném výpadku elektřiny v Jihlavě doložit, že proces „Řízení zásahu“ nezávisí na jediném místě. Potřebuje model přes všechny vrstvy, který ukáže, že tutéž aplikaci nesou dva různé clustery, a který od procesu povede přes aplikační služby ke konkrétním clusterům. Model předloží bezpečnostní radě kraje.",
+    "question": "Který model nejlépe doloží, že proces nezávisí na jediném clusteru?",
+    "options": [
+      "Od Device „Primární cluster Jihlava“ a stejně tak od Device „Záložní cluster Třebíč“ vede vztah assignment k témuž Artifact „operacni-rizeni.ear“, od něhož vede realization k Application Component „Operační řízení“. Komponenta realizuje Application Service „Příjem tísňové výzvy“ a „Vyslání posádky“, které obsluhují Business Process „Řízení zásahu“.",
+      "Od jediného Device „Serverová infrastruktura ZZS“, které v sobě zahrnuje oba clustery, vede vztah assignment k Artifact „operacni-rizeni.ear“, od něhož vede realization k Application Component „Operační řízení“. Komponenta realizuje Application Service „Příjem tísňové výzvy“ a „Vyslání posádky“, které obsluhují Business Process „Řízení zásahu“.",
+      "Od téhož Artifact „operacni-rizeni.ear“ vede vztah assignment k Device „Primární cluster Jihlava“ a k Device „Záložní cluster Třebíč“; od artefaktu vede realization k Application Component „Operační řízení“. Komponenta realizuje Application Service „Příjem tísňové výzvy“ a „Vyslání posádky“, které obsluhují Business Process „Řízení zásahu“.",
+      "Od Business Process „Řízení zásahu“ vede vztah composition k Device „Primární cluster Jihlava“ a k Device „Záložní cluster Třebíč“; balíček operacni-rizeni.ear je Business Object, od něhož vede realization k oběma clusterům. Application Service „Příjem tísňové výzvy“ a „Vyslání posádky“ jsou přiřazeny k Application Component „Operační řízení“."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Totéž nasazení na dvou místech vyjadřují dva vztahy assignment od dvou zařízení k jedinému artefaktu, který realizuje aplikační komponentu; od ní vede řetězec přes aplikační služby k procesu, takže je vidět, že proces výpadek jednoho clusteru přežije (5). Varianta za 3 body je platná, ale oba clustery slévá do jednoho zařízení, a nezávislost na jediném místě z ní proto vyčíst nelze. Varianta za 1 bod má správné prvky, ale obrací assignment: artefakt je pasivní prvek a zdrojem vztahu assignment být nemůže – nasazení vyjadřuje assignment vedený od zařízení k artefaktu. Varianta za 0 bodů skládá business proces ze zařízení, dělá z balíčku business objekt a přiřazuje služby ke komponentě opačným směrem."
+  },
+  {
+    "topic": "cross-layer-modeling",
+    "scenario": "Online lékárna Zdravěnka, která denně odesílá kolem 2 000 zásilek, expeduje objednávky teprve po zaplacení. Když banka potvrdí úhradu, zaznamená to systém Pokladna Online jako změnu stavu „Platba potvrzena“ a sám hned spustí svůj aplikační proces „Vystavení daňového dokladu“. Pro provoz lékárny znamená stejný okamžik událost „Objednávka zaplacena“, kterou začíná business proces „Vychystání objednávky“ vykonávaný expedienty. Minulý měsíc se potvrzení plateb z banky dvakrát o několik hodin zpozdilo a expedice stála, aniž kdo tušil proč.\n\nVlastnice procesu vychystání chce model, který udrží business a aplikační pohled oddělené, ale ukáže, co v IT stojí za událostí, kterou její proces začíná. Podle modelu chce s IT dohodnout sledování zpožděných potvrzení a náhradní postup pro případ dalšího zpoždění.",
+    "question": "Který model nejlépe odpovídá požadavku vlastnice procesu?",
+    "options": [
+      "Application Event „Platba potvrzena“ –realization→ Business Event „Objednávka zaplacena“ a ten –triggering→ Business Process „Vychystání objednávky“, ke kterému je přiřazena Business Role „Expedient“. Aplikační událost zároveň –triggering→ Application Process „Vystavení daňového dokladu“ komponenty „Pokladna Online“.",
+      "Business Event „Objednávka zaplacena“ –triggering→ Business Process „Vychystání objednávky“, ke kterému je přiřazena Business Role „Expedient“. Odděleně od toho Application Event „Platba potvrzena“ –triggering→ Application Process „Vystavení daňového dokladu“ komponenty „Pokladna Online“; obě události mezi sebou propojeny nejsou.",
+      "Business Event „Objednávka zaplacena“ –realization→ Application Event „Platba potvrzena“ a –triggering→ Business Process „Vychystání objednávky“, ke kterému je přiřazena Business Role „Expedient“. Aplikační událost zároveň –triggering→ Application Process „Vystavení daňového dokladu“ komponenty „Pokladna Online“.",
+      "Application Service „Platba potvrzena“ –assignment→ Business Role „Expedient“ a Business Process „Vychystání objednávky“ –realization→ Application Process „Vystavení daňového dokladu“ komponenty „Pokladna Online“. Událost „Objednávka zaplacena“ je Business Object, který tato komponenta předává expedici lékárny k vychystání."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Mezi vrstvami může aplikační událost realizovat business událost: model za 5 bodů tak drží oba pohledy oddělené, a přitom ukazuje, že za začátkem procesu vychystání stojí změna stavu v Pokladně Online. Varianta za 3 body používá platné vztahy, ale události nechává nepropojené, takže vlastnice z modelu nezjistí, na čem v IT její proces závisí. Varianta za 1 bod má správné prvky, ale realizaci obrací – abstraktnější business událost nemůže realizovat aplikační. Varianta za 0 bodů zaměňuje událost za službu a za business objekt a přiřazuje službu roli, což ArchiMate nepřipouští."
+  },
+  {
+    "topic": "cross-layer-modeling",
+    "scenario": "Pražírna Zrnko nabízí domácnostem „Kávové předplatné“. Zákazník za měsíční cenu dostává balíček čerstvě pražené kávy, jeho doručení domů a možnost spravovat předplatné ve webové samoobsluze (změna druhu kávy, přerušení dodávek). Práva a povinnosti obou stran upravují Podmínky předplatného. Kávu praží pražírna sama: pražička ve výrobně v Kroměříži zpracovává zelenou kávu na praženou. Předplatné dnes odebírají čtyři tisíce domácností a vedení zvažuje druhou variantu s kapslemi místo zrnkové kávy.\n\nProduktový manažer potřebuje model, který ukáže vše, co zákazník v rámci předplatného dostává jako jeden celek – včetně samotného zboží – a který zboží propojí s jeho výrobou. Podle modelu chce posoudit, které části nabídky lze v nové variantě použít beze změny a které se budou nahrazovat.",
+    "question": "Který model nejlépe vystihuje Kávové předplatné?",
+    "options": [
+      "Product „Kávové předplatné“ agreguje Material „Pražená káva“, Business Service „Doručení domů“, Application Service „Správa předplatného online“ a Contract „Podmínky předplatného“. Equipment „Pražička“ je přiřazeno k Technology Process „Pražení“, který čte Material „Zelená káva“ a zapisuje Material „Pražená káva“.",
+      "Product „Kávové předplatné“ agreguje Business Service „Doručení domů“, Application Service „Správa předplatného online“ a Contract „Podmínky předplatného“; zboží je uvedeno v textovém popisu tohoto produktu. Equipment „Pražička“ je přiřazeno k Technology Process „Pražení“, který čte Material „Zelená káva“ a zapisuje Material „Pražená káva“.",
+      "Product „Kávové předplatné“ agreguje Equipment „Pražička“, Technology Process „Pražení“, Business Service „Doručení domů“, Application Service „Správa předplatného online“ a Contract „Podmínky předplatného“. Technologický proces „Pražení“ čte Material „Zelená káva“ a zapisuje Material „Pražená káva“.",
+      "Business Process „Kávové předplatné“ agreguje Data Object „Pražená káva“, Business Service „Doručení domů“, Application Service „Správa předplatného online“ a Requirement „Podmínky předplatného“. Business Actor „Pražička“ je přiřazen k Application Process „Pražení“, který čte Material „Zelená káva“ a zapisuje Data Object „Pražená káva“."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Product sdružuje služby a pasivní prvky nabízené jako celek spolu se smlouvou; fyzické zboží je Material, který lze do produktu agregovat a zároveň ukázat jako výstup technologického procesu vykonávaného zařízením (5). Varianta za 3 body je platná, ale zboží v produktu chybí, ačkoli se má v nové variantě změnit právě ono. Varianta za 1 bod vkládá do produktu místo zboží výrobní prostředky – zařízení ani interní technologický proces produkt agregovat nemůže a zákazník je ani nedostává. Varianta za 0 bodů zaměňuje produkt za proces, zboží za data, smlouvu za požadavek a stroj za aktéra."
+  },
+  {
+    "topic": "implementation-migration-modeling",
+    "scenario": "Stavební firma Stavby Morava nahrazuje dva zastaralé systémy: účetnictví a systém pro řízení staveb. Obojí najednou si nemůže dovolit, a zvažuje tedy dvě cesty. Při cestě A zavede nejprve nové ERP a rok ho provozuje se starým systémem řízení staveb; při cestě B naopak nejprve nový systém řízení staveb vedle starého účetnictví. Obě cesty končí stejným cílovým stavem s oběma novými systémy. Uskuteční se jediná z nich; rozhodne o tom představenstvo v červnu podle nabídek dodavatelů.\n\nFinanční ředitel chce pro představenstvo jeden migrační pohled, ze kterého bude patrné, že cesty A a B jsou alternativy vedoucí ze stejného výchozího do stejného cílového stavu, a jaké aplikace tvoří architekturu v každém z mezistavů. Práce, projekty ani termíny v tomto pohledu vidět nechce.",
+    "question": "Který model nejlépe zachytí obě zvažované cesty?",
+    "options": [
+      "Plateau „Výchozí stav“ –triggering→ OR junction, ze které vede triggering k plateau „Přechod A: nové ERP“ a k plateau „Přechod B: nové řízení staveb“; z obou vede triggering přes další OR junction k plateau „Cílový stav“. Každé plateau –aggregation→ aplikace platné v daném stavu.",
+      "Plateau „Výchozí stav“ –triggering→ plateau „Přechod A: nové ERP“ –triggering→ plateau „Cílový stav“; cesta B je popsána v poznámce u výchozího stavu jako záložní možnost pro případ nevýhodných nabídek. Každé ze tří plateaus –aggregation→ aplikace platné v daném stavu.",
+      "Plateau „Výchozí stav“ –triggering→ AND junction, ze které vede triggering k plateau „Přechod A: nové ERP“ a k plateau „Přechod B: nové řízení staveb“; z obou vede triggering přes další AND junction k plateau „Cílový stav“. Každé plateau –aggregation→ aplikace platné v daném stavu.",
+      "Cesty A a B jsou work packages „Nejprve ERP“ a „Nejprve řízení staveb“, které –aggregation→ aplikace zaváděné v daném kroku a ze kterých se skládá plateau „Cílový stav“. Výchozí stav se v pohledu nemodeluje; rozdíl mezi oběma cestami ukazuje gap asociovaný s oběma work packages."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Alternativní mezistavy jsou samostatná plateaus a to, že nastane jediný z nich, vyjadřuje OR junction na vztazích triggering mezi plateaus; agregované aplikace ukazují architekturu každého stavu (5). Varianta za 3 body je platná, ale zobrazuje jednu cestu, takže představenstvo nemá co porovnávat. Varianta za 1 bod má správná plateaus, ale AND junction tvrdí, že nastanou oba mezistavy, tedy že jde o souběh, ne o volbu. Varianta za 0 bodů zaměňuje stavy architektury za práce – work package nemůže agregovat aplikace, plateau se neskládá z work packages a gap se váže ke dvěma plateaus."
+  },
+  {
+    "topic": "implementation-migration-modeling",
+    "scenario": "Pekárny Zlatý klas zavádějí nový systém plánování výroby. Program má tři na sebe navazující projekty. Projekt „Analýza a návrh“ vytvoří „Katalog požadavků“ a „Návrh cílové architektury“; oba dokumenty dohromady tvoří „Zadávací dokumentaci“. Projekt „Výběr dodavatele“ ze zadávací dokumentace vychází a jeho výsledkem je „Smlouva s dodavatelem“. Projekt „Implementace“ pak pracuje podle návrhu cílové architektury a podle smlouvy. Analýza má už teď měsíční skluz a hrozí, že se zpozdí celý program.\n\nVedoucí projektové kanceláře potřebuje model, ze kterého bude u každého výstupu vidět, který projekt ho vytváří a které pozdější projekty ho potřebují jako vstup. Chce podle něj vyhodnotit, co všechno zpoždění jednoho výstupu ohrozí. Milníky ani odpovědné osoby v tomto pohledu nepožaduje.",
+    "question": "Který model nejlépe odpovídá potřebě vedoucí projektové kanceláře?",
+    "options": [
+      "Work package „Analýza a návrh“ zapisuje vztahem access deliverables „Katalog požadavků“ a „Návrh cílové architektury“; oba agreguje deliverable „Zadávací dokumentace“. Work package „Výběr dodavatele“ zadávací dokumentaci vztahem access čte a zapisuje deliverable „Smlouva s dodavatelem“; work package „Implementace“ čte návrh architektury a smlouvu.",
+      "Work package „Analýza a návrh“ zapisuje vztahem access deliverables „Katalog požadavků“ a „Návrh cílové architektury“ a work package „Výběr dodavatele“ zapisuje deliverable „Smlouva s dodavatelem“. Návaznost projektů vyjadřuje triggering od analýzy k výběru dodavatele a od něj k implementaci; vstupy projektů v modelu zachyceny nejsou.",
+      "Work package „Analýza a návrh“ zapisuje vztahem access deliverables „Katalog požadavků“ a „Návrh cílové architektury“; oba agreguje deliverable „Zadávací dokumentace“. Od zadávací dokumentace vede triggering k work package „Výběr dodavatele“, který zapisuje deliverable „Smlouva s dodavatelem“; od smlouvy a od návrhu architektury vede triggering k work package „Implementace“.",
+      "Work package „Analýza a návrh“ realizuje plateaus „Katalog požadavků“ a „Návrh cílové architektury“; rozdíl mezi nimi vyjadřuje gap „Zadávací dokumentace“. Od těchto plateaus vede triggering k plateau „Smlouva s dodavatelem“ a projekty „Výběr dodavatele“ a „Implementace“ jsou implementation events, které tato plateaus agregují."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Deliverable je pasivní prvek: work package ho vztahem access vytváří (zápis) nebo používá jako vstup (čtení) a složený výstup vyjadřuje agregace deliverables, takže u každého výstupu je vidět původ i odběratelé; ArchiMate 3.2 pro vazbu mezi work package a deliverable doporučuje access, dřívější realization označuje za zastaralou (5). Varianta za 3 body je platná, ale ukazuje pořadí projektů, ne to, který výstup je čí vstup. Varianta za 1 bod má výstupy správně, ale deliverable jako pasivní prvek nemůže být zdrojem vztahu triggering. Varianta za 0 bodů zaměňuje výstupy za stavy architektury a projekty za události."
+  },
+  {
+    "topic": "implementation-migration-modeling",
+    "scenario": "Obchodní družstvo Jednota Podlesí slučuje IT tří dříve samostatných družstev v programu „Konsolidace IT“. Projekt „Sjednocení pokladen“ nahradí pokladní systémy Pokladna A a Pokladna B jediným systémem Pokladna Uni. Projekt „Analytika prodeje“ přinese novou aplikaci Reporting a pro ni uzel Analytická platforma. Projekt „Obnova serverů“ dodá nový Cluster 2 a starý Server S1 bude vyřazen. Účetní systém Účto zůstává beze změny. Členové představenstva se v dosavadních harmonogramech projektů neorientují a ptají se, co konkrétně za své peníze dostanou.\n\nIT ředitel chce jeden pohled, který u každého projektu ukáže, které konkrétní aplikace a uzly přináší, a u každé aplikace a uzlu, zda existuje dnes, v cílovém stavu, nebo v obou. Dílčí výstupy projektů ani milníky v pohledu být nemají.",
+    "question": "Který model nejlépe odpovídá požadavku IT ředitele?",
+    "options": [
+      "Od každého work package vede realization k prvkům, které přináší: „Sjednocení pokladen“ → „Pokladna Uni“, „Analytika prodeje“ → „Reporting“ a „Analytická platforma“, „Obnova serverů“ → „Cluster 2“. Plateau „Výchozí stav“ a plateau „Cílový stav“ agregují prvky, které k nim patří; „Účto“ agregují obě a pohled příslušnost odlišuje barvou.",
+      "Od každého work package vede access k jeho deliverable, například „Nasazené pokladny“, „Zprovozněná analytika prodeje“ a „Nové servery“, a od deliverables vede realization k plateau „Cílový stav“. Plateau „Výchozí stav“ –triggering→ plateau „Cílový stav“; jednotlivé aplikace a uzly jsou vyjmenovány v popisu deliverables.",
+      "Od prvků vede realization k work package, který je přináší: „Pokladna Uni“ → „Sjednocení pokladen“, „Reporting“ a „Analytická platforma“ → „Analytika prodeje“, „Cluster 2“ → „Obnova serverů“. Plateau „Výchozí stav“ a plateau „Cílový stav“ agregují prvky, které k nim patří; „Účto“ agregují obě a pohled příslušnost odlišuje barvou.",
+      "Od každého plateau vede composition k prvkům měněným projektem: plateau „Sjednocení pokladen“ → pokladní systémy, plateau „Analytika prodeje“ → „Reporting“, plateau „Obnova serverů“ → oba servery. Výchozí a cílový stav jsou implementation events, mezi kterými vede vztah flow, a „Účto“ se v modelu vynechává."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Work package může realizovat jádrové prvky, které přináší, a plateau agreguje prvky platné v daném stavu; pohled za 5 bodů tak spojuje projekty s konkrétními aplikacemi a uzly a barvou ukazuje jejich příslušnost ke stavům. Varianta za 3 body je platná, ale konkrétní aplikace a uzly schovává do popisu deliverables, které navíc IT ředitel v pohledu nechce. Varianta za 1 bod má správné prvky i plateaus, jenže realizaci vede od aplikací a uzlů k projektům, tedy obráceně. Varianta za 0 bodů zaměňuje projekty za stavy a stavy za události a nezměněný systém vypouští, ačkoli patří do obou stavů."
+  },
+  {
+    "topic": "implementation-migration-modeling",
+    "scenario": "Dopravní podnik města Bělá nahrazuje odbavovací systém ve svých vozech. Architektka dostala od vedení projektu tyto výroky a má je zachytit prvky Implementation and Migration:\n(1) Do konce března proběhne audit stávajícího odbavovacího systému.\n(2) Výsledkem auditu bude zpráva s doporučeními, kterou schválí vedení podniku.\n(3) Od července do prosince poběží ve vozech starý i nový systém vedle sebe.\n(4) Dne 1. ledna bude starý systém ve všech vozech vypnut.\n(5) Oproti dnešku v cílovém stavu přibude placení bankovní kartou a zanikne prodej papírových jízdenek u řidiče.\n\nVedení chce, aby z modelu bylo patrné, co je práce s omezeným trváním, co její výsledek, co okamžik v čase, co stabilní stav architektury a co konstatování rozdílu. Model bude sloužit jako základ plánu migrace, který schvaluje rada města.",
+    "question": "Které zachycení výroků nejlépe odpovídá ArchiMate 3.2?",
+    "options": [
+      "(1) work package, (2) deliverable, (3) plateau, (4) implementation event a (5) gap. Plateau „Výchozí stav“ –triggering→ plateau „Souběžný provoz“ –triggering→ plateau „Cílový stav“; implementation event „Starý systém vypnut“ –triggering→ plateau „Cílový stav“ a gap je asociován s výchozím a cílovým plateau.",
+      "(1) work package, (2) deliverable, (3) plateau a (4) implementation event; výrok (5) se samostatným prvkem nemodeluje a zapíše se do popisu cílového stavu. Plateau „Výchozí stav“ –triggering→ plateau „Souběžný provoz“ –triggering→ plateau „Cílový stav“ a implementation event „Starý systém vypnut“ –triggering→ plateau „Cílový stav“.",
+      "(1) work package, (2) deliverable, (3) implementation event, (4) implementation event a (5) gap. Implementation event „Souběžný provoz“ –triggering→ implementation event „Starý systém vypnut“ –triggering→ plateau „Cílový stav“, před kterým stojí plateau „Výchozí stav“; gap je asociován s výchozím a cílovým plateau.",
+      "(1) plateau, (2) gap, (3) work package, (4) deliverable a (5) implementation event. Plateau „Audit“ –triggering→ work package „Souběžný provoz“ –access→ deliverable „Starý systém vypnut“; gap „Zpráva z auditu“ je asociován s plateau „Audit“ a implementation event „Karty místo jízdenek“ popisuje rozdíl mezi stavy."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Audit je práce s počátkem a koncem (work package), zpráva její přesně vymezený výsledek (deliverable), souběžný provoz relativně stabilní stav architektury po omezenou dobu (plateau), vypnutí okamžik bez trvání (implementation event) a výrok o rozdílu mezi stavy je gap asociovaný se dvěma plateaus – tak to zachycuje varianta za 5 bodů. Varianta za 3 body klasifikuje správně a používá platné vztahy, ale rozdíl mezi stavy nemodeluje prvkem, takže ho nelze dále analyzovat. Varianta za 1 bod chybuje v klíčovém prvku: půlroční souběžný provoz má trvání, a nemůže tedy být událostí. Varianta za 0 bodů zaměňuje téměř všechny prvky – práci za stav, výsledek za rozdíl a okamžik za výstup."
+  },
+  {
+    "topic": "viewpoints-customization",
+    "scenario": "Logistická společnost NordTrans musí v příštím čtvrtletí vyměnit diskové pole, na kterém leží data většiny jejích systémů. Pole je v provozu osm let a dodavatel k němu přestává dodávat náhradní díly. Výměna znamená několikahodinovou odstávku. Vedoucí provozu IT má rozhodnout, ve kterém z nabízených termínů odstávka způsobí nejmenší škodu, a svůj návrh obhájit před vedoucími skladů a dispečinku. Potřebuje k tomu vědět, které servery na poli závisejí, které aplikace na nich běží a které business procesy – například noční plánování tras nebo příjem zboží – by odstávka zastavila. Architektonický tým má v repozitáři úplný model všech vrstev a zvažuje čtyři druhy pohledů.\n\nArchitekt se při výběru řídí klasifikací viewpointů ArchiMate podle účelu (Designing, Deciding, Informing) a podle obsahu (Details, Coherence, Overview).",
+    "question": "Který pohled má architekt vedoucímu provozu IT připravit?",
+    "options": [
+      "Pohled s účelem Deciding a obsahem Coherence: napříč vrstvami ukáže diskové pole, servery, aplikace a business procesy propojené vztahy serving, realization a assignment. Doplní ho tabulka procesů zasažených odstávkou v jednotlivých nabízených termínech.",
+      "Pohled s účelem Designing a obsahem Coherence: úplný návrhový model napříč vrstvami se všemi funkcemi, rozhraními, artefakty a datovými objekty mezi diskovým polem a business procesy, v podobě, v jaké s ním pracují architekti při návrhu řešení.",
+      "Pohled s účelem Designing a obsahem Details: podrobné schéma jediné vrstvy, které ukáže diskové pole, jeho řadiče, připojené servery, sítě a systémový software včetně verzí. V této podobě ho při výměně použijí technici dodavatele.",
+      "Pohled s účelem Informing a obsahem Overview: ilustrovaný přehled strategických schopností firmy a hlavních oblastí IT s ikonami a krátkými popisky. Vystaví se na firemním intranetu a seznámí zaměstnance s plánovanou modernizací infrastruktury."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Vedoucí provozu rozhoduje (Deciding) a potřebuje analyzovat závislosti a dopad změny napříč vrstvami, což je obsah Coherence – pohled vyjadřující vztahy typu využívá, realizuje a je přiřazen, shrnutý pro rozhodnutí tabulkou. Varianta za 3 body má správný obsah, ale úroveň podrobnosti a podoba návrhového modelu odpovídají architektům, ne manažerovi, který má volit termín. Varianta za 1 bod zůstává v jediné vrstvě: ukáže, co se mění, ale ne které aplikace a procesy odstávka zasáhne. Varianta za 0 bodů míří na jiné publikum i jiný concern a o závislostech neříká nic."
+  },
+  {
+    "topic": "viewpoints-customization",
+    "scenario": "Družstevní záložna Úspora zavádí na svých 25 pobočkách nové řešení pro sjednávání úvěrů, na kterém pracují dva externí dodavatelé. Architekt má celé řešení v jednom modelu a pro všechny zúčastněné z něj vytiskl jediný velký diagram přes všechny vrstvy. Ohlasy byly špatné. Vývojáři integrací v něm nenašli podrobnosti o rozhraních a datových objektech, které potřebují k návrhu. Ředitelka IT, která má rozhodnout o pořadí investic, se v diagramu ztratila. Zaměstnanci poboček, kteří se mají dozvědět, co se v jejich práci změní, mu nerozuměli vůbec; notaci ArchiMate neznají.\n\nVedoucí architektury chce, aby architekt postupoval podle mechanismu viewpointů ArchiMate a aby vše, co zúčastněným předloží, zůstalo vzájemně konzistentní i po dalších změnách řešení, které se v příštích měsících očekávají.",
+    "question": "Jak má architekt postupovat?",
+    "options": [
+      "Ponechat jeden model a nad ním definovat tři viewpointy, každý se stakeholdery a jejich concerns, s účelem a obsahem: Designing a Details pro vývojáře, Deciding a Overview pro ředitelku IT a Informing se zjednodušeným zobrazením pro pobočky. Podle každého viewpointu pak z modelu vytvořit view.",
+      "Ponechat jeden model a z původního diagramu odvodit tři verze, které se liší množstvím zobrazených prvků: úplnou pro vývojáře, zkrácenou pro ředitelku IT a nejstručnější pro pobočky. Tyto tři verze zachovají standardní notaci a stejné rozvržení kvůli snadnému porovnání.",
+      "Pro každou skupinu nakreslit vlastní, na ostatních nezávislý model v nástroji, který je jí blízký: vývojářům podrobný návrh rozhraní, ředitelce IT přehled investic v tabulce a pobočkám ilustrovaný leták. Společný model po dokončení těchto tří nových podkladů dále neudržovat.",
+      "Ponechat jediný úplný diagram s odůvodněním, že viewpoint je podle standardu pro celou architekturu jeden a ukazuje ji každému stejně. K diagramu přidat legendu a každou ze tří skupin včetně zaměstnanců poboček proškolit v notaci ArchiMate, a to ještě před dalším tiskem."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Podle mechanismu viewpointů vznikají z jednoho modelu různé views podle viewpointů, z nichž každý míří na určité stakeholdery a jejich concerns a je určen účelem a obsahem; views odvozené z téhož modelu zůstávají konzistentní (5). Varianta za 3 body zachovává jeden model, ale mění jen množství prvků – účel a způsob zobrazení nepřizpůsobuje, takže pobočkám ani ředitelce IT nepomůže. Varianta za 1 bod vychází publiku vstříc, ale tři nezávislé modely nejsou views jedné architektury a jejich konzistence se rozpadne. Varianta za 0 bodů vychází z omylu: viewpointů může být libovolně mnoho a volí se právě podle stakeholderů a jejich concerns."
+  },
+  {
+    "topic": "viewpoints-customization",
+    "scenario": "Po sloučení dvou krajských nemocnic vznikla Nemocnice Posázaví se dvěma areály. Personální ředitelka potřebuje vyjasnit kompetence, pravomoci a odpovědnosti: které útvary nová nemocnice má, jak jsou do sebe začleněny, kdo komu podléhá a ve kterém areálu který útvar sídlí. Stejnou otázku budou podle ní příští rok klást vedoucí klinik a noví zaměstnanci. Architektonická kancelář si vede knihovnu viewpointů, díky které pohledy pro opakující se otázky vznikají jednotně a dají se kdykoli vytvořit znovu z aktuálního modelu.\n\nArchitektka má nejprve do knihovny popsat viewpoint, podle kterého pohled pro personální ředitelku vytvoří. Popis má komukoli z kanceláře umožnit vytvořit stejný druh pohledu pro jinou část nemocnice a posoudit, zda pohled na položenou otázku opravdu odpovídá.",
+    "question": "Který popis viewpointu je nejlepší?",
+    "options": [
+      "Stakeholdeři: personální ředitelka, vedoucí klinik a zaměstnanci. Concerns: kompetence, pravomoci a odpovědnosti. Účel: Deciding a Informing. Rozsah: jedna vrstva a jeden aspekt. Prvky: business actors, roles a locations se vztahy composition, aggregation a assignment, případně vnořením.",
+      "Prvky: business actors, roles a locations se vztahy composition, aggregation a assignment, případně vnořením. Zobrazení: standardní notace ArchiMate s barevným odlišením obou areálů a s legendou. Stakeholdeři, jejich concerns a účel se v popisu neuvádějí; určí se u každého pohledu zvlášť.",
+      "Stakeholdeři: personální ředitelka, vedoucí klinik a zaměstnanci. Concerns: kompetence, pravomoci a odpovědnosti. Účel: Deciding a Informing. Rozsah: více vrstev. Prvky: business processes, application components a nodes se vztahy serving, flow a realization, seskupené podle areálů.",
+      "Viewpointem je sám organizační diagram sloučené nemocnice, který architektka nakreslí a uloží do knihovny jako závazný vzor. View je pak úhel, ze kterého se na diagram personální ředitelka, vedoucí klinik a noví zaměstnanci dívají, a architektka ho popíše jednou krátkou větou v legendě diagramu."
+    ],
+    "correctAnswer": 0,
+    "optionScores": [
+      5,
+      3,
+      1,
+      0
+    ],
+    "explanation": "Viewpoint je specifikace konvencí pro určitý druh pohledu: říká, pro které stakeholdery a concerns je určen, jaký má účel a rozsah a které prvky a vztahy obsahuje – pro otázky kompetencí a odpovědností jsou to aktéři, role a místa v jedné vrstvě a jednom aspektu (5). Varianta za 3 body vybírá správné prvky, ale bez stakeholderů, concerns a účelu nelze posoudit, zda pohled na otázku odpovídá. Varianta za 1 bod má popis formálně úplný, jenže zvolený obsah – procesy, aplikace a uzly – na otázku, kdo komu podléhá, neodpovídá. Varianta za 0 bodů zaměňuje pojmy: view je to, co stakeholder vidí, a viewpoint to, odkud se dívá, tedy předpis, ne diagram."
   }
 ]
