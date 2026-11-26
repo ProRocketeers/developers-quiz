@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 515">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="515" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Sedm principů PRINCE2 7</text>
+<rect x="20" y="55" width="760" height="52" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="50" cy="81" r="16" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="50" y="86" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">1</text>
+<text x="80" y="77" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">Ensure continued business justification</text>
+<text x="80" y="97" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">projekt má po celou dobu platné zdůvodnění (business case)</text>
+<rect x="20" y="115" width="760" height="52" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="50" cy="141" r="16" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="50" y="146" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">2</text>
+<text x="80" y="137" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">Learn from experience</text>
+<text x="80" y="157" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">ponaučení se hledají, zaznamenávají a uplatňují po celý projekt</text>
+<rect x="20" y="175" width="760" height="52" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="50" cy="201" r="16" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="50" y="206" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">3</text>
+<text x="80" y="197" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">Define roles, responsibilities, and relationships</text>
+<text x="80" y="217" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">jasné role a odpovědnosti; zájmy business, user a supplier</text>
+<rect x="20" y="235" width="760" height="52" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="50" cy="261" r="16" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="50" y="266" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">4</text>
+<text x="80" y="257" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">Manage by exception</text>
+<text x="80" y="277" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">každá úroveň řízení má tolerance; výš se eskaluje jen výjimka</text>
+<rect x="20" y="295" width="760" height="52" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="50" cy="321" r="16" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="50" y="326" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">5</text>
+<text x="80" y="317" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">Manage by stages</text>
+<text x="80" y="337" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">projekt se plánuje, sleduje a řídí po etapách (nejméně dvě)</text>
+<rect x="20" y="355" width="760" height="52" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="50" cy="381" r="16" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="50" y="386" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">6</text>
+<text x="80" y="377" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">Focus on products</text>
+<text x="80" y="397" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">nejdřív se definují produkty a jejich kvalita, teprve pak práce</text>
+<rect x="20" y="415" width="760" height="52" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="50" cy="441" r="16" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="50" y="446" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">7</text>
+<text x="80" y="437" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">Tailor to suit the project</text>
+<text x="80" y="457" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">metoda se přizpůsobí kontextu projektu</text>
+<text x="400" y="496" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">Principy jsou povinné – nelze je vynechat, přizpůsobuje se jen způsob jejich uplatnění.</text>
+</svg>

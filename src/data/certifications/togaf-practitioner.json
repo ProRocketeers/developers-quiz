@@ -35,7 +35,12 @@
       1,
       0
     ],
-    "explanation": "Podle úrovní souladu v TOGAF je portál Conformant (implementuje vše ze specifikace a navíc prvky, které specifikace nepokrývá), mobilní aplikace Compliant (implementuje jen část, ale vše v souladu se specifikací) a reporting Non-conformant (prvek specifikace je implementován v rozporu s ní). Nejlepší odpověď správně klasifikuje, rozhodnutí o nápravě či časově omezené dispensation nechává na Architecture Board a řeší i rizika přidaných prvků a dokončení chybějících. Druhá varianta klasifikuje správně, ale u portálu a mobilní aplikace vynechává potřebná další opatření. Třetí zaměňuje klasickou dvojici Compliant/Conformant a poslední varianta zastírá neshodu a obchází governance."
+    "explanation": "Podle úrovní souladu v TOGAF je portál Conformant (implementuje vše ze specifikace a navíc prvky, které specifikace nepokrývá), mobilní aplikace Compliant (implementuje jen část, ale vše v souladu se specifikací) a reporting Non-conformant (prvek specifikace je implementován v rozporu s ní). Nejlepší odpověď správně klasifikuje, rozhodnutí o nápravě či časově omezené dispensation nechává na Architecture Board a řeší i rizika přidaných prvků a dokončení chybějících. Druhá varianta klasifikuje správně, ale u portálu a mobilní aplikace vynechává potřebná další opatření. Třetí zaměňuje klasickou dvojici Compliant/Conformant a poslední varianta zastírá neshodu a obchází governance.",
+    "image": {
+      "src": "/certification-images/togaf/compliance-levels.svg",
+      "alt": "Šest úrovní Architecture Compliance znázorněných překryvem specifikace a implementace: Irrelevant, Consistent, Compliant, Conformant, Fully Conformant a Non-conformant.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "context-governance",
@@ -54,7 +59,12 @@
       1,
       0
     ],
-    "explanation": "Vybudování architektonické schopnosti (Architecture Capability) pro nově vzniklý podnik je úkolem Preliminary Phase: vymezení dotčených organizací, potvrzení vazeb na ostatní řídicí rámce, Organizational Model for EA, principy, přizpůsobení rámce, governance a počáteční repository – to dělá nejlepší odpověď. Převzetí praxe jedné ze společností rozumně využívá existující aktiva, ale vynechává přizpůsobení novému podniku, jeho rámcům a regulatorním požadavkům. Zahájit fázi A bez ustavené schopnosti a s provizorní governance je slabé řešení. Začít nástrojem a plošnou dokumentací bez governance a principů je v rozporu s přístupem TOGAF."
+    "explanation": "Vybudování architektonické schopnosti (Architecture Capability) pro nově vzniklý podnik je úkolem Preliminary Phase: vymezení dotčených organizací, potvrzení vazeb na ostatní řídicí rámce, Organizational Model for EA, principy, přizpůsobení rámce, governance a počáteční repository – to dělá nejlepší odpověď. Převzetí praxe jedné ze společností rozumně využívá existující aktiva, ale vynechává přizpůsobení novému podniku, jeho rámcům a regulatorním požadavkům. Zahájit fázi A bez ustavené schopnosti a s provizorní governance je slabé řešení. Začít nástrojem a plošnou dokumentací bez governance a principů je v rozporu s přístupem TOGAF.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "context-governance",
@@ -263,7 +273,12 @@
       1,
       0
     ],
-    "explanation": "Podle TOGAF architekt vybírá viewpoints podle concerns jednotlivých stakeholderů a vytváří views, které ukazují, jak jsou tyto concerns řešeny; jeden view může sloužit více stakeholderům a všechny musí být konzistentní s ADD. Nejlepší odpověď to dělá pro všechny skupiny včetně provozu a auditu. Druhá varianta přizpůsobuje views jen části stakeholderů a konkrétní concerns provozu a auditu nechává bez odpovědi. Jedno shrnutí pro všechny je „stejný view pro všechny“ a concerns neřeší; školení notace a jeden dokument pro všechny popírá smysl views."
+    "explanation": "Podle TOGAF architekt vybírá viewpoints podle concerns jednotlivých stakeholderů a vytváří views, které ukazují, jak jsou tyto concerns řešeny; jeden view může sloužit více stakeholderům a všechny musí být konzistentní s ADD. Nejlepší odpověď to dělá pro všechny skupiny včetně provozu a auditu. Druhá varianta přizpůsobuje views jen části stakeholderů a konkrétní concerns provozu a auditu nechává bez odpovědi. Jedno shrnutí pro všechny je „stejný view pro všechny“ a concerns neřeší; školení notace a jeden dokument pro všechny popírá smysl views.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-concern-view-viewpoint.svg",
+      "alt": "Vztahy mezi pojmy stakeholder, concern, viewpoint a view: stakeholder má concerns, viewpoint je rámuje a řídí view, view concerns řeší.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "stakeholder-management",
@@ -282,7 +297,12 @@
       1,
       0
     ],
-    "explanation": "Mřížka moci a zájmu v technice Stakeholder Management určuje přístup: vysoká moc i zájem = Key Players (plné zapojení), vysoká moc a nízký zájem = Keep Satisfied, nízká moc a vysoký zájem = Keep Informed, nízká moc i zájem = Minimal Effort (sledovat). Nejlepší odpověď tak klasifikuje všechny skupiny a výsledek promítá do Stakeholder Map a Communications Plan. Druhá varianta chybně podceňuje odbory, které mají vysoký zájem a právo být o změnách včas informovány; režim Minimal Effort a informace až při implementaci vyvolají zbytečný odpor. Stejně intenzivní zapojení všech plýtvá úsilím a zatěžuje stakeholdery s nízkým zájmem; vyřazení klíčového hráče a informování až po rozhodnutí je v rozporu s TOGAF."
+    "explanation": "Mřížka moci a zájmu v technice Stakeholder Management určuje přístup: vysoká moc i zájem = Key Players (plné zapojení), vysoká moc a nízký zájem = Keep Satisfied, nízká moc a vysoký zájem = Keep Informed, nízká moc i zájem = Minimal Effort (sledovat). Nejlepší odpověď tak klasifikuje všechny skupiny a výsledek promítá do Stakeholder Map a Communications Plan. Druhá varianta chybně podceňuje odbory, které mají vysoký zájem a právo být o změnách včas informovány; režim Minimal Effort a informace až při implementaci vyvolají zbytečný odpor. Stejně intenzivní zapojení všech plýtvá úsilím a zatěžuje stakeholdery s nízkým zájmem; vyřazení klíčového hráče a informování až po rozhodnutí je v rozporu s TOGAF.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-power-interest.svg",
+      "alt": "Mřížka power/interest pro Stakeholder Management se čtyřmi kvadranty: Keep Satisfied, Key Players, Minimal Effort a Keep Informed.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "stakeholder-management",
@@ -339,7 +359,12 @@
       1,
       0
     ],
-    "explanation": "Regulátor je externí stakeholder s vysokou mocí; jeho concerns je třeba identifikovat včas, promítnout do požadavků a zvolit pro ně viewpoints, z nichž vzniknou views ukazující, jak architektura concerns řeší. Nejlepší odpověď to dělá během vývoje architektury, takže concerns mohou cílový stav ovlivnit, a zahrnuje komunikaci do Communications Plan. Druhá varianta používá správnou techniku, ale pozdě – concerns regulátora tak nemohou ovlivnit návrh a hrozí přepracování. Poslat celý ADD s certifikacemi dodavatele není view zaměřený na concerns; vynechat regulátora úplně je v rozporu s řízením stakeholderů."
+    "explanation": "Regulátor je externí stakeholder s vysokou mocí; jeho concerns je třeba identifikovat včas, promítnout do požadavků a zvolit pro ně viewpoints, z nichž vzniknou views ukazující, jak architektura concerns řeší. Nejlepší odpověď to dělá během vývoje architektury, takže concerns mohou cílový stav ovlivnit, a zahrnuje komunikaci do Communications Plan. Druhá varianta používá správnou techniku, ale pozdě – concerns regulátora tak nemohou ovlivnit návrh a hrozí přepracování. Poslat celý ADD s certifikacemi dodavatele není view zaměřený na concerns; vynechat regulátora úplně je v rozporu s řízením stakeholderů.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-concern-view-viewpoint.svg",
+      "alt": "Vztahy mezi pojmy stakeholder, concern, viewpoint a view: stakeholder má concerns, viewpoint je rámuje a řídí view, view concerns řeší.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "stakeholder-management",
@@ -377,7 +402,12 @@
       1,
       0
     ],
-    "explanation": "TOGAF doporučuje při tvorbě views nejprve využít existující knihovnu viewpoints (součást Reference Library), určit klíčové stakeholdery, analyzovat jejich concerns, vybrat viewpoints a podle nich vytvořit views – knihovna zajišťuje opakovanou použitelnost a konzistenci, a to i pro Architecture Board jako jednu ze tříd stakeholderů. Nejlepší odpověď spojuje knihovnu s výběrem podle concerns konkrétního projektu. Druhá varianta má knihovnu, ale vynucuje všechny views bez ohledu na relevantní concerns, což vede ke zbytečné práci. Grafický manuál sjednotí vzhled, ale ne obsah zaměřený na concerns; přenechat stakeholderům orientaci v celém modelu popírá roli architekta vytvářet views pro jejich concerns."
+    "explanation": "TOGAF doporučuje při tvorbě views nejprve využít existující knihovnu viewpoints (součást Reference Library), určit klíčové stakeholdery, analyzovat jejich concerns, vybrat viewpoints a podle nich vytvořit views – knihovna zajišťuje opakovanou použitelnost a konzistenci, a to i pro Architecture Board jako jednu ze tříd stakeholderů. Nejlepší odpověď spojuje knihovnu s výběrem podle concerns konkrétního projektu. Druhá varianta má knihovnu, ale vynucuje všechny views bez ohledu na relevantní concerns, což vede ke zbytečné práci. Grafický manuál sjednotí vzhled, ale ne obsah zaměřený na concerns; přenechat stakeholderům orientaci v celém modelu popírá roli architekta vytvářet views pro jejich concerns.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-concern-view-viewpoint.svg",
+      "alt": "Vztahy mezi pojmy stakeholder, concern, viewpoint a view: stakeholder má concerns, viewpoint je rámuje a řídí view, view concerns řeší.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "phase-a-vision",
@@ -510,7 +540,12 @@
       1,
       0
     ],
-    "explanation": "Fáze A končí schválením Statement of Architecture Work sponzorem (a governance, např. Architecture Board); spolu s Architecture Vision a Communications Plan jde o výstupy potřebné k zahájení dalších fází. SoAW slouží jako dohoda o rozsahu, rolích, plánu a kritériích přijetí, proto nejlepší odpověď dokončí všechny tři výstupy, uzavře otevřené body se zákazníky a IT a teprve pak přechází do fáze B. Druhá varianta získá schválení, ale bez Communications Plan a bez potvrzených zdrojů a požadavků, což ohrožuje další práci. Zahájit fázi B před schválením je chybné pořadí; přeskočit vizi a začít produkty je v rozporu s TOGAF."
+    "explanation": "Fáze A končí schválením Statement of Architecture Work sponzorem (a governance, např. Architecture Board); spolu s Architecture Vision a Communications Plan jde o výstupy potřebné k zahájení dalších fází. SoAW slouží jako dohoda o rozsahu, rolích, plánu a kritériích přijetí, proto nejlepší odpověď dokončí všechny tři výstupy, uzavře otevřené body se zákazníky a IT a teprve pak přechází do fáze B. Druhá varianta získá schválení, ale bez Communications Plan a bez potvrzených zdrojů a požadavků, což ohrožuje další práci. Zahájit fázi B před schválením je chybné pořadí; přeskočit vizi a začít produkty je v rozporu s TOGAF.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "phase-a-vision",
@@ -681,7 +716,12 @@
       1,
       0
     ],
-    "explanation": "Fáze B–D definují architekturu pomocí logických, na dodavateli nezávislých stavebních bloků (ABB); konkrétní produkty (SBB) se vybírají až ve fázi E, kde lze licencované produkty posoudit jako kandidátní řešení. Fáze C (Application) zároveň popisuje, jak aplikace sdílejí informace, takže interoperabilita s registry patří sem. Nejlepší odpověď proto pracuje s logickými komponentami i interoperabilitou a licence bere jako omezení či příležitost. Druhá varianta odkládá interoperabilitu do fáze D, kde se řeší jen technické mechanismy; přijmout produkty jako cílovou architekturu je slabé a předat návrh dodavateli je v rozporu s TOGAF."
+    "explanation": "Fáze B–D definují architekturu pomocí logických, na dodavateli nezávislých stavebních bloků (ABB); konkrétní produkty (SBB) se vybírají až ve fázi E, kde lze licencované produkty posoudit jako kandidátní řešení. Fáze C (Application) zároveň popisuje, jak aplikace sdílejí informace, takže interoperabilita s registry patří sem. Nejlepší odpověď proto pracuje s logickými komponentami i interoperabilitou a licence bere jako omezení či příležitost. Druhá varianta odkládá interoperabilitu do fáze D, kde se řeší jen technické mechanismy; přijmout produkty jako cílovou architekturu je slabé a předat návrh dodavateli je v rozporu s TOGAF.",
+    "image": {
+      "src": "/certification-images/togaf/content-deliverable-artifact-building-block.svg",
+      "alt": "Deliverable obsahuje artifacts (catalogs, matrices, diagrams), které popisují building blocks – ABB a SBB.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "architecture-development",
@@ -776,7 +816,12 @@
       1,
       0
     ],
-    "explanation": "Výstupy fází B–D potřebné pro pokračování jsou aktualizovaný ADD (kvalitativní popis architektury včetně gap analysis a dopadů), draft ARS (kvantitativní, testovatelné požadavky včetně interoperability, omezení a předpokladů) a kandidátní komponenty roadmapy za každou doménu. Právě ARS odpovídá na otázku, co musí implementace splnit. Druhá varianta vynechává kandidátní komponenty roadmapy, které jsou vstupem pro konsolidaci ve fázi E. Diagramy a zápisy bez testovatelných požadavků jsou slabou náhradou; nechat dodavatele definovat požadavky je v rozporu s TOGAF."
+    "explanation": "Výstupy fází B–D potřebné pro pokračování jsou aktualizovaný ADD (kvalitativní popis architektury včetně gap analysis a dopadů), draft ARS (kvantitativní, testovatelné požadavky včetně interoperability, omezení a předpokladů) a kandidátní komponenty roadmapy za každou doménu. Právě ARS odpovídá na otázku, co musí implementace splnit. Druhá varianta vynechává kandidátní komponenty roadmapy, které jsou vstupem pro konsolidaci ve fázi E. Diagramy a zápisy bez testovatelných požadavků jsou slabou náhradou; nechat dodavatele definovat požadavky je v rozporu s TOGAF.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "migration-planning",
@@ -890,7 +935,12 @@
       1,
       0
     ],
-    "explanation": "Výstupem fáze F je vedle finálního Implementation and Migration Plan i Implementation Governance Model, který zajistí, že přechod do implementace je zároveň přechodem pod řádnou governance – s procesy, rolemi, kontrolními body a kritérii úspěchu. Draft Architecture Contract je vstupem fáze G, kde se podepisuje a slouží ke komunikaci gapů, specifikace a kontroly s implementátory. Varianta za 3 body má governance model, ale vynechává Architecture Contracts, ačkoli právě nekontrolovaná rozhodnutí dodavatelů byla problémem; obchodní smlouva architektonické požadavky nenahrazuje. Svěření dohledu dodavatelům (1 bod) a úplné vynechání governance (0 bodů) opakují selhání předchozího programu."
+    "explanation": "Výstupem fáze F je vedle finálního Implementation and Migration Plan i Implementation Governance Model, který zajistí, že přechod do implementace je zároveň přechodem pod řádnou governance – s procesy, rolemi, kontrolními body a kritérii úspěchu. Draft Architecture Contract je vstupem fáze G, kde se podepisuje a slouží ke komunikaci gapů, specifikace a kontroly s implementátory. Varianta za 3 body má governance model, ale vynechává Architecture Contracts, ačkoli právě nekontrolovaná rozhodnutí dodavatelů byla problémem; obchodní smlouva architektonické požadavky nenahrazuje. Svěření dohledu dodavatelům (1 bod) a úplné vynechání governance (0 bodů) opakují selhání předchozího programu.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "migration-planning",
@@ -1061,7 +1111,12 @@
       1,
       0
     ],
-    "explanation": "Řešení je Non-conformant, jakmile je kterákoli specifikovaná funkce implementována v rozporu se specifikací – nezáleží na tom, že ostatní funkce jsou v pořádku a že přibyly funkce navíc. Úroveň Conformant by platila jen tehdy, kdyby všechny specifikované funkce odpovídaly specifikaci a navíc existovaly další funkce. Nejlepší odpověď správně klasifikuje, zapisuje oba nálezy do Compliance Assessment a rozhodnutí ponechává Architecture Board; varianta za 3 body klasifikuje správně, ale přehlíží rizikového chatbota mimo specifikaci. Klasifikace Conformant (1 bod) je chybná a Fully Conformant bez nálezů (0 bodů) popírá výsledek revize."
+    "explanation": "Řešení je Non-conformant, jakmile je kterákoli specifikovaná funkce implementována v rozporu se specifikací – nezáleží na tom, že ostatní funkce jsou v pořádku a že přibyly funkce navíc. Úroveň Conformant by platila jen tehdy, kdyby všechny specifikované funkce odpovídaly specifikaci a navíc existovaly další funkce. Nejlepší odpověď správně klasifikuje, zapisuje oba nálezy do Compliance Assessment a rozhodnutí ponechává Architecture Board; varianta za 3 body klasifikuje správně, ale přehlíží rizikového chatbota mimo specifikaci. Klasifikace Conformant (1 bod) je chybná a Fully Conformant bez nálezů (0 bodů) popírá výsledek revize.",
+    "image": {
+      "src": "/certification-images/togaf/compliance-levels.svg",
+      "alt": "Šest úrovní Architecture Compliance znázorněných překryvem specifikace a implementace: Irrelevant, Consistent, Compliant, Conformant, Fully Conformant a Non-conformant.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "implementation-governance",
@@ -1156,7 +1211,12 @@
       1,
       0
     ],
-    "explanation": "Requirements Management je centrální a průběžný proces: nový požadavek se zaznamená, jeho dopad se vyhodnotí v Requirements Impact Assessment (dotčené požadavky, fáze k revizi, stakeholdeři) a o zapracování rozhoduje příslušná fáze ADM, nikoli samotný proces RM. Revize zahrnuje i dříve dokončené fáze a jejich gap analýzu a promítá se do ARS, případně do SoAW. Varianta za 3 body požadavek zapracuje, ale nereviduje fázi B, ačkoli se mění i business procesy. Restart celého cyklu (1 bod) je nepřiměřený, protože stačí revidovat dotčené fáze, a odmítnutí požadavku procesem RM (0 bodů) odporuje tomu, že RM požadavky neprioritizuje ani nevyřizuje."
+    "explanation": "Requirements Management je centrální a průběžný proces: nový požadavek se zaznamená, jeho dopad se vyhodnotí v Requirements Impact Assessment (dotčené požadavky, fáze k revizi, stakeholdeři) a o zapracování rozhoduje příslušná fáze ADM, nikoli samotný proces RM. Revize zahrnuje i dříve dokončené fáze a jejich gap analýzu a promítá se do ARS, případně do SoAW. Varianta za 3 body požadavek zapracuje, ale nereviduje fázi B, ačkoli se mění i business procesy. Restart celého cyklu (1 bod) je nepřiměřený, protože stačí revidovat dotčené fáze, a odmítnutí požadavku procesem RM (0 bodů) odporuje tomu, že RM požadavky neprioritizuje ani nevyřizuje.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "change-requirements",
@@ -1213,7 +1273,12 @@
       1,
       0
     ],
-    "explanation": "Požadavky jsou dynamické a Requirements Management je zpracovává průběžně ve všech fázích: změněný požadavek se zaznamená, Requirements Impact Assessment ukáže dotčené požadavky, fáze k revizi a dopady na náklady, čas a rizika a rozhodnutí o konfliktu přísluší oprávněným stakeholderům, nikoli architektovi ani samotnému procesu RM. Po rozhodnutí se revidují všechny dotčené výstupy včetně dříve schválených. Varianta za 3 body správně připraví rozhodnutí, ale ponechá Technology Architecture a ARS v rozporu s plánem. Pouhá úprava rozpočtu (1 bod) vytváří nesoulad, který se projeví až v implementaci, a odmítnutí změny (0 bodů) zaměňuje baseline pod change control za zákaz změn."
+    "explanation": "Požadavky jsou dynamické a Requirements Management je zpracovává průběžně ve všech fázích: změněný požadavek se zaznamená, Requirements Impact Assessment ukáže dotčené požadavky, fáze k revizi a dopady na náklady, čas a rizika a rozhodnutí o konfliktu přísluší oprávněným stakeholderům, nikoli architektovi ani samotnému procesu RM. Po rozhodnutí se revidují všechny dotčené výstupy včetně dříve schválených. Varianta za 3 body správně připraví rozhodnutí, ale ponechá Technology Architecture a ARS v rozporu s plánem. Pouhá úprava rozpočtu (1 bod) vytváří nesoulad, který se projeví až v implementaci, a odmítnutí změny (0 bodů) zaměňuje baseline pod change control za zákaz změn.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "change-requirements",
@@ -1251,7 +1316,12 @@
       1,
       0
     ],
-    "explanation": "Lessons learned z konce fáze F a z fáze H vedou ke change requestům na samotnou architektonickou schopnost; jedním z cílů fáze H je zajistit, aby EA Capability odpovídala aktuálním potřebám. Pokud se změny týkají governance, přizpůsobení rámce nebo repository, vrací se organizace do iterace Architecture Capability (Preliminary a A), kde se upraví Tailored Architecture Framework a governance. Varianta za 3 body řeší šablony a repository, ale ponechává hlavní příčinu – pomalé schvalování. Pouhé školení (1 bod) přehlíží, že problém je v nastavení procesu, a zrušení Boardu (0 bodů) odstraňuje governance místo jejího přizpůsobení."
+    "explanation": "Lessons learned z konce fáze F a z fáze H vedou ke change requestům na samotnou architektonickou schopnost; jedním z cílů fáze H je zajistit, aby EA Capability odpovídala aktuálním potřebám. Pokud se změny týkají governance, přizpůsobení rámce nebo repository, vrací se organizace do iterace Architecture Capability (Preliminary a A), kde se upraví Tailored Architecture Framework a governance. Varianta za 3 body řeší šablony a repository, ale ponechává hlavní příčinu – pomalé schvalování. Pouhé školení (1 bod) přehlíží, že problém je v nastavení procesu, a zrušení Boardu (0 bodů) odstraňuje governance místo jejího přizpůsobení.",
+    "image": {
+      "src": "/certification-images/togaf/adm-iteration-cycles.svg",
+      "alt": "Čtyři iterační cykly ADM a fáze, které do nich patří: Architecture Capability, Architecture Development, Transition Planning a Architecture Governance.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "iteration-levels-repository",
@@ -1270,7 +1340,12 @@
       1,
       0
     ],
-    "explanation": "Účel architektury určuje její záběr, horizont a podrobnost: Architecture to Support Strategy má nejširší záběr, nejdelší horizont a nejmenší podrobnost a odpovídá úrovni Strategic Architecture v Architecture Landscape. Pro rozhodnutí představenstva jsou klíčové business capabilities, value streams a varianty cílového stavu; podrobnější segmentové a capability architektury navazují pro vybrané oblasti. Varianta za 3 body volí správnou úroveň, ale omezuje se na IT, ačkoli jde o rozhodnutí o business struktuře holdingu. Pilotní segment (1 bod) má pro rozhodnutí o celém holdingu nevhodný záběr a podrobné mapování všeho (0 bodů) dodá architekturu až po rozhodnutí, kdy už nic neovlivní."
+    "explanation": "Účel architektury určuje její záběr, horizont a podrobnost: Architecture to Support Strategy má nejširší záběr, nejdelší horizont a nejmenší podrobnost a odpovídá úrovni Strategic Architecture v Architecture Landscape. Pro rozhodnutí představenstva jsou klíčové business capabilities, value streams a varianty cílového stavu; podrobnější segmentové a capability architektury navazují pro vybrané oblasti. Varianta za 3 body volí správnou úroveň, ale omezuje se na IT, ačkoli jde o rozhodnutí o business struktuře holdingu. Pilotní segment (1 bod) má pro rozhodnutí o celém holdingu nevhodný záběr a podrobné mapování všeho (0 bodů) dodá architekturu až po rozhodnutí, kdy už nic neovlivní.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-landscape.svg",
+      "alt": "Tři úrovně Architecture Landscape (Strategic, Segment, Capability) a odděleně čtyři účely architektury (Support Strategy, Portfolio, Project, Solution Delivery).",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "iteration-levels-repository",
@@ -1308,7 +1383,12 @@
       1,
       0
     ],
-    "explanation": "Podle G186 pracuje architektura nižší úrovně (projekt, capability) pod nadřazenou strategickou a segmentovou architekturou a musí respektovat její omezení; konflikty se nejprve řeší hledáním vyhovujících variant ve spolupráci s dotčenými týmy a není-li to možné, eskalují se přes governance. Varianta za 3 body postupuje věcně správně, ale vynechává tým segmentové architektury, s nímž je třeba se koordinovat. Zastavení projektu do dokončení segmentu (1 bod) zbytečně blokuje business, ačkoli lze iterovat. Nadřazení projektové úrovně (0 bodů) obrací vztah úrovní architektury a obchází governance."
+    "explanation": "Podle G186 pracuje architektura nižší úrovně (projekt, capability) pod nadřazenou strategickou a segmentovou architekturou a musí respektovat její omezení; konflikty se nejprve řeší hledáním vyhovujících variant ve spolupráci s dotčenými týmy a není-li to možné, eskalují se přes governance. Varianta za 3 body postupuje věcně správně, ale vynechává tým segmentové architektury, s nímž je třeba se koordinovat. Zastavení projektu do dokončení segmentu (1 bod) zbytečně blokuje business, ačkoli lze iterovat. Nadřazení projektové úrovně (0 bodů) obrací vztah úrovní architektury a obchází governance.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-landscape.svg",
+      "alt": "Tři úrovně Architecture Landscape (Strategic, Segment, Capability) a odděleně čtyři účely architektury (Support Strategy, Portfolio, Project, Solution Delivery).",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "iteration-levels-repository",
@@ -1384,7 +1464,12 @@
       1,
       0
     ],
-    "explanation": "Architecture Repository má třídy s jasným účelem: Reference Library obsahuje referenční modely, vzory, šablony a viewpoints, Standards Library standardy, kterým musí nové architektury vyhovět (včetně regulatorních povinností a životního cyklu), Governance Repository záznamy governance, Architecture Requirements Repository požadavky odsouhlasené s Architecture Board, Architecture Landscape architektury na různých úrovních a v čase a Solutions Landscape nasazené či plánované SBB. Varianta za 3 body chybně řadí referenční model mezi povinné standardy, čímž z návodného materiálu dělá závazný. Varianta za 1 bod slévá standardy s referenčním materiálem a ztrácí záznamy governance i požadavky. Enterprise Continuum (0 bodů) je klasifikace aktiv, nikoli úložiště, a governance i požadavky do repository patří."
+    "explanation": "Architecture Repository má třídy s jasným účelem: Reference Library obsahuje referenční modely, vzory, šablony a viewpoints, Standards Library standardy, kterým musí nové architektury vyhovět (včetně regulatorních povinností a životního cyklu), Governance Repository záznamy governance, Architecture Requirements Repository požadavky odsouhlasené s Architecture Board, Architecture Landscape architektury na různých úrovních a v čase a Solutions Landscape nasazené či plánované SBB. Varianta za 3 body chybně řadí referenční model mezi povinné standardy, čímž z návodného materiálu dělá závazný. Varianta za 1 bod slévá standardy s referenčním materiálem a ztrácí záznamy governance i požadavky. Enterprise Continuum (0 bodů) je klasifikace aktiv, nikoli úložiště, a governance i požadavky do repository patří.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-repository.svg",
+      "alt": "Osm komponent Architecture Repository s krátkým popisem obsahu každé z nich.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "techniques-application",
@@ -1422,7 +1507,12 @@
       1,
       0
     ],
-    "explanation": "V matici gap analýzy se building block výchozí architektury, který v cílové chybí, buď výslovně označí jako Eliminated, nebo jde o nechtěné opomenutí, které je třeba v další iteraci vrátit; building block jen v cílové architektuře je nový gap k vývoji či nákupu. Zda byla služba vyřazena záměrně, musí potvrdit dotčení stakeholdeři – zde vlastník procesu zajištění, který na workshopech chyběl. Varianta za 3 body nejspíš dojde ke správnému výsledku, ale bez ověření se stakeholderem. Označení služby za vyřazenou kvůli termínům (1 bod) ignoruje signál opomenutí a výklad „chybí = vyřazeno“ spolu s výběrem dodavatele ve fázi C (0 bodů) odporuje technice i tomu, že produktová řešení se volí až od fáze E."
+    "explanation": "V matici gap analýzy se building block výchozí architektury, který v cílové chybí, buď výslovně označí jako Eliminated, nebo jde o nechtěné opomenutí, které je třeba v další iteraci vrátit; building block jen v cílové architektuře je nový gap k vývoji či nákupu. Zda byla služba vyřazena záměrně, musí potvrdit dotčení stakeholdeři – zde vlastník procesu zajištění, který na workshopech chyběl. Varianta za 3 body nejspíš dojde ke správnému výsledku, ale bez ověření se stakeholderem. Označení služby za vyřazenou kvůli termínům (1 bod) ignoruje signál opomenutí a výklad „chybí = vyřazeno“ spolu s výběrem dodavatele ve fázi C (0 bodů) odporuje technice i tomu, že produktová řešení se volí až od fáze E.",
+    "image": {
+      "src": "/certification-images/togaf/gap-analysis-matrix.svg",
+      "alt": "Příklad matice gap analysis: baseline building blocks v řádcích, cílové ve sloupcích, sloupec Eliminated a řádek New.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "techniques-application",

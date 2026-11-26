@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="550" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Typy issue a postup jejich řízení</text>
+<text x="400" y="66" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Typy issue</text>
+<rect x="15" y="78" width="250" height="60" rx="8" fill="#fde3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="140.0" y="102.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Request for change</text>
+<text x="140.0" y="122.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">návrh změnit baseline</text>
+<rect x="275" y="78" width="250" height="60" rx="8" fill="#fde3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="400.0" y="102.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Off-specification</text>
+<text x="400.0" y="122.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">produkt nesplní specifikaci</text>
+<rect x="535" y="78" width="250" height="60" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="660.0" y="102.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Problem</text>
+<text x="660.0" y="122.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">okamžitý negativní dopad</text>
+<rect x="15" y="148" width="250" height="60" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="140.0" y="172.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Concern</text>
+<text x="140.0" y="192.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">dopad a načasování je třeba posoudit</text>
+<rect x="275" y="148" width="250" height="60" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="400.0" y="172.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Event external to the project</text>
+<text x="400.0" y="192.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">událost vzniklá mimo projekt</text>
+<rect x="535" y="148" width="250" height="60" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="660.0" y="172.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business opportunity</text>
+<text x="660.0" y="192.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">nečekaný pozitivní důsledek</text>
+<text x="400" y="240" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">Concession = off-specification přijatá bez nápravy.</text>
+<text x="400" y="280" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Issue management technique – pět kroků</text>
+<rect x="15" y="294" width="150" height="36" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="90.0" y="317.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">1. Capture</text>
+<text x="180" y="317" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">určit typ a závažnost; formálně (issue register), nebo neformálně (daily log)</text>
+<line x1="90" y1="331" x2="90" y2="343" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="15" y="344" width="150" height="36" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="90.0" y="367.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">2. Assess</text>
+<text x="180" y="367" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">posoudit dopad na business case a rizikový profil projektu</text>
+<line x1="90" y1="381" x2="90" y2="393" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="15" y="394" width="150" height="36" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="90.0" y="417.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">3. Recommend</text>
+<text x="180" y="417" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">najít varianty řešení a doporučit nejvhodnější</text>
+<line x1="90" y1="431" x2="90" y2="443" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="15" y="444" width="150" height="36" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="90.0" y="467.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">4. Decide</text>
+<text x="180" y="467" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">schválit, nebo zamítnout – rozhoduje ten, kdo k tomu má pravomoc</text>
+<line x1="90" y1="481" x2="90" y2="493" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="15" y="494" width="150" height="36" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="90.0" y="517.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">5. Implement</text>
+<text x="180" y="517" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">provést rozhodnutí a aktualizovat záznamy</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 530">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="530" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Reporty v PRINCE2 7: kdo, komu a kdy</text>
+<text x="30" y="70" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Report</text>
+<text x="205" y="70" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Kdo → komu</text>
+<text x="455" y="70" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Kdy vzniká</text>
+<text x="720" y="70" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Řízeno</text>
+<rect x="20" y="82" width="760" height="56" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="115" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Checkpoint report</text>
+<text x="205" y="115" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Team manager → Project manager</text>
+<text x="455" y="106" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">v intervalech podle</text>
+<text x="455" y="124" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">work package description</text>
+<rect x="665" y="92" width="110" height="36" rx="18" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="720.0" y="114.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">časem</text>
+<rect x="20" y="146" width="760" height="56" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="179" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Highlight report</text>
+<text x="205" y="179" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Project manager → Project Board</text>
+<text x="455" y="170" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">v pravidelných</text>
+<text x="455" y="188" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">intervalech</text>
+<rect x="665" y="156" width="110" height="36" rx="18" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="720.0" y="178.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">časem</text>
+<rect x="20" y="210" width="760" height="56" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="243" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">End stage report</text>
+<text x="205" y="243" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Project manager → Project Board</text>
+<text x="455" y="243" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">na konci etapy (ne poslední)</text>
+<rect x="665" y="220" width="110" height="36" rx="18" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="720.0" y="242.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">událostí</text>
+<rect x="20" y="274" width="760" height="56" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="307" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">End project report</text>
+<text x="205" y="307" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Project manager → Project Board</text>
+<text x="455" y="307" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">při uzavírání projektu</text>
+<rect x="665" y="284" width="110" height="36" rx="18" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="720.0" y="306.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">událostí</text>
+<rect x="20" y="338" width="760" height="56" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="371" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Exception report</text>
+<text x="205" y="371" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Project manager → Project Board</text>
+<text x="455" y="362" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">při předpovědi</text>
+<text x="455" y="380" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">překročení tolerance</text>
+<rect x="665" y="348" width="110" height="36" rx="18" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="720.0" y="370.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">událostí</text>
+<rect x="20" y="402" width="760" height="56" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="435" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Lessons report</text>
+<text x="205" y="435" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Project manager → board, organizace</text>
+<text x="455" y="426" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">na konci projektu,</text>
+<text x="455" y="444" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">podle potřeby i etapy</text>
+<rect x="665" y="412" width="110" height="36" rx="18" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="720.0" y="434.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">událostí</text>
+<text x="400" y="490" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">Řízeno časem = time-driven control (pravidelný interval). Highlight report mohou dostat i další stakeholdeři.</text>
+<text x="400" y="510" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">Řízeno událostí = event-driven control (vzniká, když něco nastane).</text>
+</svg>

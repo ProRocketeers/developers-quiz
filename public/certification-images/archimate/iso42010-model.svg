@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <marker id="arrF" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#4a4a6a"/></marker>
+    <marker id="arrO" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="arrS" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#4a4a6a" stroke-width="1.4"/></marker>
+    <marker id="triH" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="diaF" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#4a4a6a" stroke="#4a4a6a" stroke-width="1"/></marker>
+    <marker id="diaH" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="dot" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#4a4a6a"/></marker>
+    <marker id="arrFA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#b3264a"/></marker>
+    <marker id="arrOA" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="arrSA" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#b3264a" stroke-width="1.4"/></marker>
+    <marker id="triHA" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="diaFA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#b3264a" stroke="#b3264a" stroke-width="1"/></marker>
+    <marker id="diaHA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="dotA" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#b3264a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="800" height="600" fill="#ffffff"/>
+  <text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">ISO/IEC 42010: koncepční model architecture description</text>
+  <rect x="40" y="66" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="125.0" y="96.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">System-of-interest</text>
+  <rect x="590" y="66" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="675.0" y="96.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Architecture</text>
+  <rect x="40" y="172" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="125.0" y="202.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Stakeholder</text>
+  <rect x="590" y="172" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="675.0" y="193.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Architecture</text>
+  <text x="675.0" y="211.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">description</text>
+  <rect x="40" y="278" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="125.0" y="308.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Concern</text>
+  <rect x="40" y="384" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="125.0" y="405.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Architecture</text>
+  <text x="125.0" y="423.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">viewpoint</text>
+  <rect x="590" y="384" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="675.0" y="414.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Architecture view</text>
+  <rect x="40" y="490" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="125.0" y="520.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Model kind</text>
+  <rect x="590" y="490" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="675.0" y="520.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Architecture model</text>
+  <path d="M210,82 L590,82" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="400" y="74" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">exhibits</text>
+  <path d="M700,172 L700,116" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="692" y="149" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">expresses</text>
+  <path d="M590,180 L210,106" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="400" y="136" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">identifies</text>
+  <path d="M590,197 L210,197" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="400" y="189" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">identifies</text>
+  <path d="M590,214 L210,290" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="400" y="262" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">identifies</text>
+  <path d="M100,172 L100,116" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="110" y="149" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">has interests in</text>
+  <path d="M100,222 L100,278" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="110" y="255" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">has</text>
+  <path d="M100,384 L100,328" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="110" y="361" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">frames</text>
+  <path d="M590,396 L210,316" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="505" y="366" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">addresses</text>
+  <path d="M210,420 L590,420" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="400" y="440" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">governs</text>
+  <path d="M210,515 L590,515" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="400" y="507" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">governs</text>
+  <path d="M720,222 L720,384" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#diaH)"/>
+  <path d="M640,222 L210,392" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#diaH)"/>
+  <path d="M125,434 L125,490" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#diaH)"/>
+  <path d="M675,434 L675,490" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#diaH)"/>
+  <path d="M40,572 L95,572" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="105" y="577" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">pojmenovaný vztah (čte se ve směru šipky)</text>
+  <path d="M440,572 L495,572" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#diaH)"/>
+  <text x="505" y="577" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">celek obsahuje část (u kosočtverce)</text>
+</svg>

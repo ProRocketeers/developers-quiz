@@ -83,9 +83,20 @@ export interface CertificationExam {
   topics: CertificationTopic[];
 }
 
+/**
+ * An illustration stored under `public/`. "question" shows it with the question,
+ * "explanation" only after answering, so it must not give the answer away.
+ */
+export interface CertificationQuestionImage {
+  src: string;
+  alt: string;
+  placement: "question" | "explanation";
+}
+
 export interface CertificationQuestion {
   topic: string;
   scenario?: string;
+  image?: CertificationQuestionImage;
   question: string;
   options: string[];
   correctAnswer: number;

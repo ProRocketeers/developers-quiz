@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="460" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Pět integrovaných prvků PRINCE2 7</text>
+<rect x="20" y="55" width="760" height="385" rx="14" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="400" y="84" font-family="Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" fill="#26254d" font-weight="bold">Project context</text>
+<text x="400" y="106" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">prostředí a povaha projektu – podle něj se metoda přizpůsobuje (tailoring)</text>
+<rect x="40" y="125" width="350" height="140" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="215" y="173" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" fill="#26254d" font-weight="bold">Principles</text>
+<text x="215" y="207" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">7 zásad, které platí vždy;</text>
+<text x="215" y="227" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">žádnou nelze vynechat</text>
+<rect x="410" y="125" width="350" height="140" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="585" y="173" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" fill="#26254d" font-weight="bold">People</text>
+<text x="585" y="207" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">lidé, vztahy, vedení týmu,</text>
+<text x="585" y="227" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">komunikace a řízení změny</text>
+<rect x="40" y="280" width="350" height="140" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="215" y="328" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" fill="#26254d" font-weight="bold">Practices</text>
+<text x="215" y="362" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">7 oblastí řízení uplatňovaných</text>
+<text x="215" y="382" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">po celou dobu projektu</text>
+<rect x="410" y="280" width="350" height="140" rx="8" fill="#e9e3fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="585" y="328" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" fill="#26254d" font-weight="bold">Processes</text>
+<text x="585" y="362" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">7 procesů: kdo co dělá a kdy</text>
+<text x="585" y="382" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">od zahájení po uzavření projektu</text>
+</svg>

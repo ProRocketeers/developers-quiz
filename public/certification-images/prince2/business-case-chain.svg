@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="500" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Od výstupů k podnikovým cílům (praktika Business case)</text>
+<rect x="20" y="55" width="200" height="60" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="120" y="81" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Outputs</text>
+<text x="120" y="101" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">výstupy</text>
+<text x="240" y="79" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">specializované produkty, které projekt dodá</text>
+<text x="240" y="101" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">Příklad: rezervační aplikace a zaškolená recepce</text>
+<line x1="120" y1="117" x2="120" y2="135" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="137" width="200" height="60" rx="8" fill="#e9e3fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="120" y="163" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Capabilities</text>
+<text x="120" y="183" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">schopnosti</text>
+<text x="240" y="161" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">ucelený soubor výstupů potřebný k dosažení výsledku</text>
+<text x="240" y="183" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">Příklad: areál umí přijímat rezervace online</text>
+<line x1="120" y1="199" x2="120" y2="217" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="219" width="200" height="60" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="120" y="245" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Outcomes</text>
+<text x="120" y="265" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">výsledky</text>
+<text x="240" y="243" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">změněné chování nebo okolnosti</text>
+<text x="240" y="265" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">Příklad: zákazníci si sportoviště rezervují sami přes web</text>
+<line x1="120" y1="281" x2="120" y2="299" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="301" width="200" height="60" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="120" y="327" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Benefits</text>
+<text x="120" y="347" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">přínosy</text>
+<text x="240" y="325" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">měřitelné zlepšení plynoucí z výsledku</text>
+<text x="240" y="347" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">Příklad: o 30 % méně telefonátů na recepci</text>
+<line x1="120" y1="363" x2="120" y2="381" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="20" y="383" width="200" height="60" rx="8" fill="#ffe6cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="120" y="409" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Business objectives</text>
+<text x="120" y="429" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">podnikové cíle</text>
+<text x="240" y="407" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">strategické cíle, ke kterým přínosy přispívají</text>
+<text x="240" y="429" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">Příklad: nižší provozní náklady areálu</text>
+<text x="400" y="480" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">Dis-benefit = měřitelný negativní důsledek výsledku, který stakeholder vnímá jako zhoršení.</text>
+</svg>

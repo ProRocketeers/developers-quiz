@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="540" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">PID a project log: co kam patří</text>
+<rect x="15" y="55" width="380" height="470" rx="12" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="405" y="55" width="380" height="470" rx="12" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="205" y="84" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#26254d" font-weight="bold">PID</text>
+<text x="205" y="106" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">project initiation documentation</text>
+<text x="205" y="128" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">typ: baseline (řízené změny)</text>
+<text x="595" y="84" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#26254d" font-weight="bold">Project log</text>
+<text x="595" y="106" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">průběžně doplňované záznamy</text>
+<text x="595" y="128" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">typ: records</text>
+<text x="205" y="164" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">9 management approaches:</text>
+<rect x="25" y="178" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="83.0" y="201.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Benefits</text>
+<rect x="147" y="178" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="205.0" y="201.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Change</text>
+<rect x="269" y="178" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="327.0" y="201.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Commercial</text>
+<rect x="25" y="226" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="83.0" y="249.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Communication</text>
+<rect x="147" y="226" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="205.0" y="249.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Digital and data</text>
+<rect x="269" y="226" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="327.0" y="249.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Issue</text>
+<rect x="25" y="274" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="83.0" y="297.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Quality</text>
+<rect x="147" y="274" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="205.0" y="297.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Risk</text>
+<rect x="269" y="274" width="116" height="38" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="327.0" y="297.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Sustainability</text>
+<text x="205" y="348" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">(každý: „… management approach“)</text>
+<text x="205" y="384" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Change = organizační změna;</text>
+<text x="205" y="404" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">změny baseline řeší issue management</text>
+<text x="205" y="424" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">approach.</text>
+<text x="205" y="462" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">PID dále obsahuje mj. business case,</text>
+<text x="205" y="482" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">project plan a popis tailoringu.</text>
+<rect x="420" y="146" width="350" height="54" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="595.0" y="167.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Daily log</text>
+<text x="595.0" y="187.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">neformální poznámky Project managera</text>
+<rect x="420" y="208" width="350" height="54" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="595.0" y="229.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Lessons log</text>
+<text x="595.0" y="249.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">ponaučení zapisovaná průběžně</text>
+<rect x="420" y="270" width="350" height="54" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="595.0" y="291.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Issue register</text>
+<text x="595.0" y="311.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">formálně řízená issues</text>
+<rect x="420" y="332" width="350" height="54" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="595.0" y="353.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Risk register</text>
+<text x="595.0" y="373.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">rizika, jejich stav a historie</text>
+<rect x="420" y="394" width="350" height="54" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="595.0" y="415.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Quality register</text>
+<text x="595.0" y="435.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">činnosti kontroly kvality</text>
+<rect x="420" y="456" width="350" height="54" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="595.0" y="477.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Product register</text>
+<text x="595.0" y="497.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">produkty, jejich stav a akceptace</text>
+</svg>

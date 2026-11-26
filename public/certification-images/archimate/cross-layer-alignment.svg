@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 590">
+  <defs>
+    <marker id="arrF" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#4a4a6a"/></marker>
+    <marker id="arrO" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="arrS" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#4a4a6a" stroke-width="1.4"/></marker>
+    <marker id="triH" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="diaF" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#4a4a6a" stroke="#4a4a6a" stroke-width="1"/></marker>
+    <marker id="diaH" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="dot" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#4a4a6a"/></marker>
+    <marker id="arrFA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#b3264a"/></marker>
+    <marker id="arrOA" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="arrSA" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#b3264a" stroke-width="1.4"/></marker>
+    <marker id="triHA" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="diaFA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#b3264a" stroke="#b3264a" stroke-width="1"/></marker>
+    <marker id="diaHA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="dotA" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#b3264a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="800" height="590" fill="#ffffff"/>
+  <text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Propojení vrstev: serving a realization</text>
+  <rect x="20" y="66" width="760" height="124" fill="#FFFFE6" stroke="#4a4a6a" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="32" y="86" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-weight="bold">Business layer</text>
+  <rect x="20" y="216" width="760" height="124" fill="#E6FFFF" stroke="#4a4a6a" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="32" y="236" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-weight="bold">Application layer</text>
+  <rect x="20" y="380" width="760" height="124" fill="#EDF7E6" stroke="#4a4a6a" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="32" y="400" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-weight="bold">Technology layer</text>
+  <rect x="310" y="100" width="170" height="60" rx="14" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="395.0" y="126.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business process</text>
+  <text x="395.0" y="144.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Přijmout objednávku“</text>
+  <rect x="580" y="100" width="170" height="60" rx="0" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="665.0" y="126.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business object</text>
+  <text x="665.0" y="144.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Objednávka“</text>
+  <rect x="50" y="250" width="170" height="60" rx="0" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="135.0" y="276.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application component</text>
+  <text x="135.0" y="294.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„E-shop“</text>
+  <rect x="310" y="250" width="170" height="60" rx="14" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="395.0" y="276.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application service</text>
+  <text x="395.0" y="294.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Zadání objednávky“</text>
+  <rect x="580" y="250" width="170" height="60" rx="0" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="665.0" y="276.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Data object</text>
+  <text x="665.0" y="294.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Záznam objednávky“</text>
+  <rect x="50" y="414" width="170" height="60" rx="0" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="135.0" y="440.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Artifact</text>
+  <text x="135.0" y="458.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„eshop.war“</text>
+  <rect x="310" y="414" width="170" height="60" rx="14" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="395.0" y="440.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Technology service</text>
+  <text x="395.0" y="458.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Hosting aplikací“</text>
+  <rect x="580" y="414" width="170" height="60" rx="0" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="665.0" y="440.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Artifact</text>
+  <text x="665.0" y="458.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Tabulka orders“</text>
+  <path d="M395,250 L395,160" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="405" y="208" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">serves</text>
+  <path d="M220,280 L310,280" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="265" y="271" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M665,250 L665,160" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="675" y="208" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M165,414 L165,310" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="156" y="366" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M395,414 L395,368 L203,368 L203,310" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="300" y="360" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">serves</text>
+  <path d="M665,414 L665,310" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="675" y="366" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M40,534 L95,534" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="105" y="539" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">serving: typicky nižší vrstva slouží vyšší (možný je i opačný směr)</text>
+  <path d="M40,562 L95,562" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="105" y="567" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">realization: konkrétnější prvek realizuje abstraktnější prvek vyšší vrstvy</text>
+</svg>

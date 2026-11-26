@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 548">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="548" fill="#ffffff"/>
+<text x="400" y="34" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" font-weight="bold" fill="#26254d">Gap analysis – příklad matice</text>
+<text x="475" y="80" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#26254d">Target Architecture (cílové ABBs) →</text>
+<rect x="20" y="96" width="150" height="60" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="95" y="123" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#26254d">Baseline</text>
+<text x="95" y="142" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#26254d">Architecture ↓</text>
+<rect x="170" y="96" width="122" height="60" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="231" y="123" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Zákaznická</text>
+<text x="231" y="142" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">evidence</text>
+<rect x="292" y="96" width="122" height="60" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="353" y="123" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Platby</text>
+<text x="353" y="142" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">kartou</text>
+<rect x="414" y="96" width="122" height="60" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="475" y="132" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">E-fakturace</text>
+<rect x="536" y="96" width="122" height="60" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="597" y="123" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Mobilní</text>
+<text x="597" y="142" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">aplikace</text>
+<rect x="658" y="96" width="122" height="60" rx="0" fill="#e6e0fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="719" y="132" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#26254d">Eliminated</text>
+<rect x="20" y="156" width="150" height="58" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="190" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Zákaznická evidence</text>
+<rect x="170" y="156" width="122" height="58" rx="0" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="231" y="190" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Included</text>
+<rect x="292" y="156" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="414" y="156" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="536" y="156" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="658" y="156" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="20" y="214" width="150" height="58" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="248" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Platby kartou</text>
+<rect x="170" y="214" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="292" y="214" width="122" height="58" rx="0" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="353" y="248" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Included</text>
+<rect x="414" y="214" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="536" y="214" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="658" y="214" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="20" y="272" width="150" height="58" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="306" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Tisk faktur</text>
+<rect x="170" y="272" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="292" y="272" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="414" y="272" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="536" y="272" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="658" y="272" width="122" height="58" rx="0" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="719" y="297" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Intentionally</text>
+<text x="719" y="316" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">eliminated</text>
+<rect x="20" y="330" width="150" height="58" rx="0" fill="#e3e3ee" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="364" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Telefonní podpora</text>
+<rect x="170" y="330" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="292" y="330" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="414" y="330" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="536" y="330" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="658" y="330" width="122" height="58" rx="0" fill="#ffe0e0" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="719" y="355" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Unintentionally</text>
+<text x="719" y="374" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">excluded</text>
+<rect x="20" y="388" width="150" height="58" rx="0" fill="#e6e0fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="30" y="422" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" font-weight="bold" fill="#26254d">New</text>
+<rect x="170" y="388" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="292" y="388" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="414" y="388" width="122" height="58" rx="0" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="475" y="413" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Gap:</text>
+<text x="475" y="432" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">to be developed</text>
+<rect x="536" y="388" width="122" height="58" rx="0" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="597" y="413" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Gap:</text>
+<text x="597" y="432" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">to be procured</text>
+<rect x="658" y="388" width="122" height="58" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="20" y="480" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Included – building block zůstává i v cílové architektuře.</text>
+<text x="20" y="504" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Sloupec Eliminated – ABB v cíli chybí: záměrně vyřazen, nebo nechtěně opomenut (vrátit do návrhu).</text>
+<text x="20" y="528" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Řádek New – ABB jen v cílové architektuře: gap, který je třeba vyvinout nebo pořídit.</text>
+</svg>

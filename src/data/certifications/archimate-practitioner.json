@@ -16,7 +16,12 @@
       1,
       0
     ],
-    "explanation": "Model za 5 bodů odděluje aktéra (oddělení) od odpovědnosti (role) a interní proces od služby, kterou realizuje, a oba kanály modeluje jako samostatné Business Interface přiřazené ke službě – právě to ředitelka potřebuje pro rozhodnutí o škodní lince; nahlášení je Business Event, který proces spouští. Varianta za 3 body je platná, ale sloučením kanálů do jednoho rozhraní ztrácí informaci, kvůli které model vzniká. Varianta za 1 bod modeluje kanály jako role, tedy jako odpovědnosti, nikoli jako přístupové body ke službě. Varianta za 0 bodů obrací realizaci (služba proces nerealizuje), přiřazuje roli k aktérovi opačným směrem (assignment vede od aktéra k roli) a kanály zaměňuje za pasivní objekty."
+    "explanation": "Model za 5 bodů odděluje aktéra (oddělení) od odpovědnosti (role) a interní proces od služby, kterou realizuje, a oba kanály modeluje jako samostatné Business Interface přiřazené ke službě – právě to ředitelka potřebuje pro rozhodnutí o škodní lince; nahlášení je Business Event, který proces spouští. Varianta za 3 body je platná, ale sloučením kanálů do jednoho rozhraní ztrácí informaci, kvůli které model vzniká. Varianta za 1 bod modeluje kanály jako role, tedy jako odpovědnosti, nikoli jako přístupové body ke službě. Varianta za 0 bodů obrací realizaci (služba proces nerealizuje), přiřazuje roli k aktérovi opačným směrem (assignment vede od aktéra k roli) a kanály zaměňuje za pasivní objekty.",
+    "image": {
+      "src": "/certification-images/archimate/layer-pattern-business.svg",
+      "alt": "Příklad vzoru vrstvy na Business layer: business actor, role, interface, process, service, event a business object se vztahy assigned to, realizes, serves, accesses, triggers a composed of.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-business",
@@ -35,7 +40,12 @@
       1,
       0
     ],
-    "explanation": "Nejlepší model odděluje odpovědnosti (Business Role) od subjektů, které je vykonávají (Business Actor): pobočka i makléřská firma jsou přiřazeny k téže roli poradce a jeden klient může být přiřazen k roli dlužníka i ručitele (5). Varianta za 3 body má správné prvky, ale vztah association místo assignment nevyjadřuje, kdo odpovědnost vykonává, což je jádro concernu compliance. Varianta za 1 bod chybně používá Business Collaboration, která znamená společné vykonávání chování – pobočka a makléř však hypotéku sjednávají každý samostatně. Varianta za 0 bodů modeluje postavení jako aktéry a přiřazuje role k aktérům obráceným směrem, což ArchiMate nedovoluje (assignment vede vždy od aktéra k roli)."
+    "explanation": "Nejlepší model odděluje odpovědnosti (Business Role) od subjektů, které je vykonávají (Business Actor): pobočka i makléřská firma jsou přiřazeny k téže roli poradce a jeden klient může být přiřazen k roli dlužníka i ručitele (5). Varianta za 3 body má správné prvky, ale vztah association místo assignment nevyjadřuje, kdo odpovědnost vykonává, což je jádro concernu compliance. Varianta za 1 bod chybně používá Business Collaboration, která znamená společné vykonávání chování – pobočka a makléř však hypotéku sjednávají každý samostatně. Varianta za 0 bodů modeluje postavení jako aktéry a přiřazuje role k aktérům obráceným směrem, což ArchiMate nedovoluje (assignment vede vždy od aktéra k roli).",
+    "image": {
+      "src": "/certification-images/archimate/layer-pattern-business.svg",
+      "alt": "Příklad vzoru vrstvy na Business layer: business actor, role, interface, process, service, event a business object se vztahy assigned to, realizes, serves, accesses, triggers a composed of.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-business",
@@ -111,7 +121,12 @@
       1,
       0
     ],
-    "explanation": "Okamžitou změnu stavu (přijetí platby, čas 22:00) vyjadřuje Business Event, pořadí kroků vztah triggering a předání informace vztah flow, s nímž lze asociovat předávaný Business Object – model za 5 bodů tak odpovídá na všechny tři otázky vedoucího provozu. Modelovat přijetí platby jako proces je platné, ale zastírá, že jde o vnější změnu stavu, která zpracování spouští (3). Použít flow místo triggering je kategoriální chyba: flow popisuje přenos bez kauzality, takže model neříká, co co spouští (1). Varianta za 0 bodů nechává pasivní objekt spouštět chování a událost realizovat proces, což ArchiMate nepovoluje, a platbu navíc zaměňuje za roli."
+    "explanation": "Okamžitou změnu stavu (přijetí platby, čas 22:00) vyjadřuje Business Event, pořadí kroků vztah triggering a předání informace vztah flow, s nímž lze asociovat předávaný Business Object – model za 5 bodů tak odpovídá na všechny tři otázky vedoucího provozu. Modelovat přijetí platby jako proces je platné, ale zastírá, že jde o vnější změnu stavu, která zpracování spouští (3). Použít flow místo triggering je kategoriální chyba: flow popisuje přenos bez kauzality, takže model neříká, co co spouští (1). Varianta za 0 bodů nechává pasivní objekt spouštět chování a událost realizovat proces, což ArchiMate nepovoluje, a platbu navíc zaměňuje za roli.",
+    "image": {
+      "src": "/certification-images/archimate/relationships-notation.svg",
+      "alt": "Přehled notace všech vztahů ArchiMate rozdělených na strukturální, závislosti, dynamické a ostatní, včetně spojky AND a OR.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-business",
@@ -149,7 +164,12 @@
       1,
       0
     ],
-    "explanation": "Vzájemně se vylučující větve vyjadřuje OR junction na vztazích triggering s popsanými podmínkami a sběh větví druhá OR junction; událost spouští proces a podprocesy tvoří kompozici celkového procesu (5). Totéž chování zabalené do Business Function je platné, ale funkce seskupuje chování podle kompetencí a zdrojů, nikoli jako tok od spouštěče k výsledku, takže je méně výstižná (3). Dva samostatné vztahy triggering bez junction vyjadřují, že krok spouští obě varianty – popisky podmínek jsou jen neformální text, takže vzájemné vyloučení větví ani místo jejich sběhu model nevyjadřuje (1). Varianta za 0 bodů nahrazuje pořadí toky bez kauzality a nechává pasivní objekt spouštět chování, což ArchiMate nepovoluje."
+    "explanation": "Vzájemně se vylučující větve vyjadřuje OR junction na vztazích triggering s popsanými podmínkami a sběh větví druhá OR junction; událost spouští proces a podprocesy tvoří kompozici celkového procesu (5). Totéž chování zabalené do Business Function je platné, ale funkce seskupuje chování podle kompetencí a zdrojů, nikoli jako tok od spouštěče k výsledku, takže je méně výstižná (3). Dva samostatné vztahy triggering bez junction vyjadřují, že krok spouští obě varianty – popisky podmínek jsou jen neformální text, takže vzájemné vyloučení větví ani místo jejich sběhu model nevyjadřuje (1). Varianta za 0 bodů nahrazuje pořadí toky bez kauzality a nechává pasivní objekt spouštět chování, což ArchiMate nepovoluje.",
+    "image": {
+      "src": "/certification-images/archimate/junction-examples.svg",
+      "alt": "Dva příklady junction na vztahu triggering mezi procesy: AND junction (plné kolečko) a OR junction (prázdné kolečko) s českým čtením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-business",
@@ -168,7 +188,12 @@
       1,
       0
     ],
-    "explanation": "Model za 5 bodů ukazuje centrum jako poskytovatele interních Business Service, které obsluhují (serving) procesy dceřiných společností; vnitřní kroky jsou skryty za funkcí, což odpovídá požadované úrovni abstrakce. Rozepsání interních podprocesů je správný ArchiMate, ale pro jednostránkový pohled je zbytečně detailní a odporuje výslovnému přání finančního ředitele (3). Vztah serving vedoucí od spotřebitele k poskytovateli je obrácený – serving musí směřovat od služby k procesu, který ji využívá (1). Varianta za 0 bodů tvrdí, že centrum vykonává procesy dceřiných firem, obrací realizaci mezi službou a procesem a služby vkládá do pasivního objektu, což tabulky vztahů nedovolují."
+    "explanation": "Model za 5 bodů ukazuje centrum jako poskytovatele interních Business Service, které obsluhují (serving) procesy dceřiných společností; vnitřní kroky jsou skryty za funkcí, což odpovídá požadované úrovni abstrakce. Rozepsání interních podprocesů je správný ArchiMate, ale pro jednostránkový pohled je zbytečně detailní a odporuje výslovnému přání finančního ředitele (3). Vztah serving vedoucí od spotřebitele k poskytovateli je obrácený – serving musí směřovat od služby k procesu, který ji využívá (1). Varianta za 0 bodů tvrdí, že centrum vykonává procesy dceřiných firem, obrací realizaci mezi službou a procesem a služby vkládá do pasivního objektu, což tabulky vztahů nedovolují.",
+    "image": {
+      "src": "/certification-images/archimate/generic-metamodel.svg",
+      "alt": "Generický metamodel ArchiMate: internal a external active structure, internal behavior, service, event a passive structure se vztahy assigned to, realizes, serves, accesses, triggers/flows to a composed of.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-business",
@@ -206,7 +231,12 @@
       1,
       0
     ],
-    "explanation": "Model za 5 bodů odděluje komponentu (kdo), funkci (co dělá uvnitř) a aplikační služby (co nabízí navenek); kroky procesu jsou navázány na služby, takže výměna modulu nemění vazby procesu, a GUI je Application Interface obsluhující roli sestry. Přímý vztah serving od komponenty k procesu je platný odvozený vztah, ale vynechává služby, o které vlastnici procesu jde, a váže proces přímo na konkrétní systém (3). Modelovat klinický desktop jako Business Interface je chyba vrstvy a přiřazení business rozhraní k aplikační službě ArchiMate nepovoluje (1). Varianta za 0 bodů obrací směr podpory (ve scénáři aplikace slouží procesu, ne naopak), nechává pasivní data spouštět chování a zaměňuje rozhraní za službu."
+    "explanation": "Model za 5 bodů odděluje komponentu (kdo), funkci (co dělá uvnitř) a aplikační služby (co nabízí navenek); kroky procesu jsou navázány na služby, takže výměna modulu nemění vazby procesu, a GUI je Application Interface obsluhující roli sestry. Přímý vztah serving od komponenty k procesu je platný odvozený vztah, ale vynechává služby, o které vlastnici procesu jde, a váže proces přímo na konkrétní systém (3). Modelovat klinický desktop jako Business Interface je chyba vrstvy a přiřazení business rozhraní k aplikační službě ArchiMate nepovoluje (1). Varianta za 0 bodů obrací směr podpory (ve scénáři aplikace slouží procesu, ne naopak), nechává pasivní data spouštět chování a zaměňuje rozhraní za službu.",
+    "image": {
+      "src": "/certification-images/archimate/generic-metamodel.svg",
+      "alt": "Generický metamodel ArchiMate: internal a external active structure, internal behavior, service, event a passive structure se vztahy assigned to, realizes, serves, accesses, triggers/flows to a composed of.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-application",
@@ -225,7 +255,12 @@
       1,
       0
     ],
-    "explanation": "Výměnu informací mezi aplikacemi vyjadřuje vztah flow (přenos bez nutné kauzality) a s tokem lze asociovat Data Object, který říká, co se přenáší – model za 5 bodů tak odpovídá na všechny otázky IT ředitele a nezávisí na technické podobě integrace. Nepojmenované toky jsou správné, jen neúplné – chybí v nich přenášená informace, která je pro náhradu ERP podstatná (3). Triggering vyjadřuje časovou či příčinnou návaznost chování, nikoli přenos dat; model s ním sice uvádí datové objekty, ale vztahy nesprávné kategorie tvrdí něco jiného, než se mezi aplikacemi děje (1). Varianta za 0 bodů tvrdí, že nezávislé aplikace jsou součástí ERP, a od datových objektů vede vztahy assignment a triggering, které ArchiMate nepovoluje."
+    "explanation": "Výměnu informací mezi aplikacemi vyjadřuje vztah flow (přenos bez nutné kauzality) a s tokem lze asociovat Data Object, který říká, co se přenáší – model za 5 bodů tak odpovídá na všechny otázky IT ředitele a nezávisí na technické podobě integrace. Nepojmenované toky jsou správné, jen neúplné – chybí v nich přenášená informace, která je pro náhradu ERP podstatná (3). Triggering vyjadřuje časovou či příčinnou návaznost chování, nikoli přenos dat; model s ním sice uvádí datové objekty, ale vztahy nesprávné kategorie tvrdí něco jiného, než se mezi aplikacemi děje (1). Varianta za 0 bodů tvrdí, že nezávislé aplikace jsou součástí ERP, a od datových objektů vede vztahy assignment a triggering, které ArchiMate nepovoluje.",
+    "image": {
+      "src": "/certification-images/archimate/relationships-notation.svg",
+      "alt": "Přehled notace všech vztahů ArchiMate rozdělených na strukturální, závislosti, dynamické a ostatní, včetně spojky AND a OR.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-application",
@@ -263,7 +298,12 @@
       1,
       0
     ],
-    "explanation": "Přístupový bod, přes který je aplikační služba zpřístupněna uživateli (GUI) nebo jiné aplikaci (API), je Application Interface; dvě rozhraní složená v komponentě a přiřazená ke stejné službě ukazují, že za nimi stojí tatáž funkcionalita a lze je verzovat a vyměňovat odděleně (5). Jediné společné rozhraní je platné, ale stírá rozdíl mezi GUI a API, kvůli kterému model vzniká (3). Modelovat API jako další aplikační službu zaměňuje přístupový bod (aktivní strukturu) za chování a vytváří zdánlivě druhou službu (1). Varianta za 0 bodů posouvá rozhraní do technologické vrstvy, obrací vztah assignment mezi službou a rozhraním a aplikace zaměňuje za business aktéry."
+    "explanation": "Přístupový bod, přes který je aplikační služba zpřístupněna uživateli (GUI) nebo jiné aplikaci (API), je Application Interface; dvě rozhraní složená v komponentě a přiřazená ke stejné službě ukazují, že za nimi stojí tatáž funkcionalita a lze je verzovat a vyměňovat odděleně (5). Jediné společné rozhraní je platné, ale stírá rozdíl mezi GUI a API, kvůli kterému model vzniká (3). Modelovat API jako další aplikační službu zaměňuje přístupový bod (aktivní strukturu) za chování a vytváří zdánlivě druhou službu (1). Varianta za 0 bodů posouvá rozhraní do technologické vrstvy, obrací vztah assignment mezi službou a rozhraním a aplikace zaměňuje za business aktéry.",
+    "image": {
+      "src": "/certification-images/archimate/generic-metamodel.svg",
+      "alt": "Generický metamodel ArchiMate: internal a external active structure, internal behavior, service, event a passive structure se vztahy assigned to, realizes, serves, accesses, triggers/flows to a composed of.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-application",
@@ -301,7 +341,12 @@
       1,
       0
     ],
-    "explanation": "Samostatně nasaditelné moduly jsou Application Component složené v BillCore, jejich chování vyjadřují Application Function a vztah access se šipkou určuje čtení, nebo zápis – přesně to audit zámků potřebuje (5). Access bez vyznačení směru je platný (nespecifikovaný přístup), ale nerozlišuje čtení a zápis, na kterém audit stojí (3). Modelovat moduly jako aplikační služby zaměňuje aktivní strukturu za externí chování – služba není modul, ale funkcionalita zpřístupněná navenek (1). Varianta za 0 bodů nechává pasivní data vykonávat a spouštět chování, což ArchiMate nepovoluje, a moduly redukuje na funkce bez vykonavatele."
+    "explanation": "Samostatně nasaditelné moduly jsou Application Component složené v BillCore, jejich chování vyjadřují Application Function a vztah access se šipkou určuje čtení, nebo zápis – přesně to audit zámků potřebuje (5). Access bez vyznačení směru je platný (nespecifikovaný přístup), ale nerozlišuje čtení a zápis, na kterém audit stojí (3). Modelovat moduly jako aplikační služby zaměňuje aktivní strukturu za externí chování – služba není modul, ale funkcionalita zpřístupněná navenek (1). Varianta za 0 bodů nechává pasivní data vykonávat a spouštět chování, což ArchiMate nepovoluje, a moduly redukuje na funkce bez vykonavatele.",
+    "image": {
+      "src": "/certification-images/archimate/access-influence-association-variants.svg",
+      "alt": "Varianty vztahu Access (bez hrotu, read, write, read-write), Influence se znaménkem plus a minus a Association nesměrová a směrová.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-application",
@@ -339,7 +384,12 @@
       1,
       0
     ],
-    "explanation": "V ArchiMate 3.2 se Node skládá ze zařízení a systémového softwaru, artefakt je nasazen vztahem assignment ze systémového softwaru, na kterém běží, a artefakty realizují aplikační komponentu i datový objekt – model za 5 bodů tak přesně ukazuje, co upgrade Tomcatu zasáhne. Nasazení artefaktů přímo na celý uzel (assignment od uzlu) je platné, ale neukazuje, který systémový software je hostí, což je pro upgrade podstatné (3). Kompozice uzlu v zařízení odpovídá ArchiMate 3.1, kde byl Device specializací Node; ve verzi 3.2 tento směr tabulky vztahů nepovolují (1). Varianta za 0 bodů obrací klíčové vztahy: komponenta ani datový objekt artefakt nerealizují (realizuje se opačným směrem) a artefakt nelze přiřadit k uzlu – assignment vede od uzlu k artefaktu."
+    "explanation": "V ArchiMate 3.2 se Node skládá ze zařízení a systémového softwaru, artefakt je nasazen vztahem assignment ze systémového softwaru, na kterém běží, a artefakty realizují aplikační komponentu i datový objekt – model za 5 bodů tak přesně ukazuje, co upgrade Tomcatu zasáhne. Nasazení artefaktů přímo na celý uzel (assignment od uzlu) je platné, ale neukazuje, který systémový software je hostí, což je pro upgrade podstatné (3). Kompozice uzlu v zařízení odpovídá ArchiMate 3.1, kde byl Device specializací Node; ve verzi 3.2 tento směr tabulky vztahů nepovolují (1). Varianta za 0 bodů obrací klíčové vztahy: komponenta ani datový objekt artefakt nerealizují (realizuje se opačným směrem) a artefakt nelze přiřadit k uzlu – assignment vede od uzlu k artefaktu.",
+    "image": {
+      "src": "/certification-images/archimate/deployment-chain.svg",
+      "alt": "Řetěz nasazení: node složený z device a system software, system software assigned to artifact, artifact realizuje application component a data object.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-technology-physical",
@@ -377,7 +427,12 @@
       1,
       0
     ],
-    "explanation": "Fyzické stroje, které zpracovávají materiál, jsou Equipment přiřazené k technologickému chování (fyzické prvky vlastní chování nemají), suroviny a pivo jsou Material se čtením a zápisem, budova je Facility, obec Location a obsluhu vyjadřuje serving od zařízení k roli (5). Modelovat stroje jako Device je méně přesné – Device je IT hardware pro systémový software a artefakty –, ale zůstává fyzickým prvkem technologické vrstvy, se kterým Physical viewpoint počítá, takže struktura modelu odpovídá (3). Suroviny a produkt jako Business Object posouvají fyzickou hmotu do business vrstvy jako informaci, tedy mimo Physical viewpoint, a model tak přestává popisovat fyzický svět (1). Varianta za 0 bodů modeluje výrobu jako business událost, přiřazuje pasivní materiál k zařízení a skládá roli z budovy, což ArchiMate nepovoluje."
+    "explanation": "Fyzické stroje, které zpracovávají materiál, jsou Equipment přiřazené k technologickému chování (fyzické prvky vlastní chování nemají), suroviny a pivo jsou Material se čtením a zápisem, budova je Facility, obec Location a obsluhu vyjadřuje serving od zařízení k roli (5). Modelovat stroje jako Device je méně přesné – Device je IT hardware pro systémový software a artefakty –, ale zůstává fyzickým prvkem technologické vrstvy, se kterým Physical viewpoint počítá, takže struktura modelu odpovídá (3). Suroviny a produkt jako Business Object posouvají fyzickou hmotu do business vrstvy jako informaci, tedy mimo Physical viewpoint, a model tak přestává popisovat fyzický svět (1). Varianta za 0 bodů modeluje výrobu jako business událost, přiřazuje pasivní materiál k zařízení a skládá roli z budovy, což ArchiMate nepovoluje.",
+    "image": {
+      "src": "/certification-images/archimate/elements-physical.svg",
+      "alt": "Čtyři fyzické prvky ArchiMate s ikonami: Equipment, Facility, Distribution Network a Material.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-technology-physical",
@@ -396,7 +451,12 @@
       1,
       0
     ],
-    "explanation": "Technologická služba realizovaná funkcí uzlu a zpřístupněná přes Technology Interface je přesně to, co katalog služeb potřebuje: aplikace závisejí na službě (serving), ne na konkrétních serverech, a vnitřek clusteru zůstává skrytý (5). Přímý vztah serving od uzlu k aplikacím je platný odvozený vztah, ale chybí v něm služba i přístupový bod, které má katalog zveřejnit (3). Obrácený serving tvrdí, že aplikace poskytují funkcionalitu databázové službě – opak skutečné závislosti (1). Varianta za 0 bodů modeluje nasazení aplikací vztahem assignment od uzlu ke komponentám a realizaci komponent technologickou službou, což ArchiMate 3.2 nepovoluje (komponentu realizuje artefakt)."
+    "explanation": "Technologická služba realizovaná funkcí uzlu a zpřístupněná přes Technology Interface je přesně to, co katalog služeb potřebuje: aplikace závisejí na službě (serving), ne na konkrétních serverech, a vnitřek clusteru zůstává skrytý (5). Přímý vztah serving od uzlu k aplikacím je platný odvozený vztah, ale chybí v něm služba i přístupový bod, které má katalog zveřejnit (3). Obrácený serving tvrdí, že aplikace poskytují funkcionalitu databázové službě – opak skutečné závislosti (1). Varianta za 0 bodů modeluje nasazení aplikací vztahem assignment od uzlu ke komponentám a realizaci komponent technologickou službou, což ArchiMate 3.2 nepovoluje (komponentu realizuje artefakt).",
+    "image": {
+      "src": "/certification-images/archimate/generic-metamodel.svg",
+      "alt": "Generický metamodel ArchiMate: internal a external active structure, internal behavior, service, event a passive structure se vztahy assigned to, realizes, serves, accesses, triggers/flows to a composed of.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-technology-physical",
@@ -415,7 +475,12 @@
       1,
       0
     ],
-    "explanation": "Fyzický přístroj je Equipment, počítač s řídicím softwarem je Device (IT hardware), který může být součástí přístroje, budova se stíněním a zesílenou statikou je Facility a areál je Location, která budovy agreguje (5). Modelovat pavilon jako Location je platné, ale Location je jen místo, kdežto Facility je fyzická stavba s vlastnostmi (stínění, statika), o které technickému řediteli jde (3). Řídicí stanice jako Application Component zaměňuje hardware za aplikaci a kompozici aplikační komponenty v Equipment ArchiMate nepovoluje (1). Varianta za 0 bodů modeluje přístroj jako business aktéra, počítač jako materiál a areál jako budovu složenou z aktérů – zcela míjí rozlišení fyzických a IT prvků."
+    "explanation": "Fyzický přístroj je Equipment, počítač s řídicím softwarem je Device (IT hardware), který může být součástí přístroje, budova se stíněním a zesílenou statikou je Facility a areál je Location, která budovy agreguje (5). Modelovat pavilon jako Location je platné, ale Location je jen místo, kdežto Facility je fyzická stavba s vlastnostmi (stínění, statika), o které technickému řediteli jde (3). Řídicí stanice jako Application Component zaměňuje hardware za aplikaci a kompozici aplikační komponenty v Equipment ArchiMate nepovoluje (1). Varianta za 0 bodů modeluje přístroj jako business aktéra, počítač jako materiál a areál jako budovu složenou z aktérů – zcela míjí rozlišení fyzických a IT prvků.",
+    "image": {
+      "src": "/certification-images/archimate/elements-physical.svg",
+      "alt": "Čtyři fyzické prvky ArchiMate s ikonami: Equipment, Facility, Distribution Network a Material.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-technology-physical",
@@ -434,7 +499,12 @@
       1,
       0
     ],
-    "explanation": "Logické spojení, kterým se přepravuje materiál, je Path a fyzické dopravní infrastruktury (silnice, železnice), které ho realizují, jsou Distribution Network; vozidla jsou Equipment vykonávající technologický proces přepravy a léčiva jsou Material (5). Sloučit silnici a železnici do jediné distribuční sítě je platné, ale právě tím se ztrácí rozlišení, které je pro posouzení uzavírky D1 klíčové (3). Communication Network slouží k přenosu dat, nikoli materiálu, takže je pro dopravní síť nesprávným typem prvku (1). Varianta za 0 bodů zaměňuje fyzický materiál za business informaci přiřazenou k vozidlům a nechává zařízení realizovat cesty, což ArchiMate nepovoluje."
+    "explanation": "Logické spojení, kterým se přepravuje materiál, je Path a fyzické dopravní infrastruktury (silnice, železnice), které ho realizují, jsou Distribution Network; vozidla jsou Equipment vykonávající technologický proces přepravy a léčiva jsou Material (5). Sloučit silnici a železnici do jediné distribuční sítě je platné, ale právě tím se ztrácí rozlišení, které je pro posouzení uzavírky D1 klíčové (3). Communication Network slouží k přenosu dat, nikoli materiálu, takže je pro dopravní síť nesprávným typem prvku (1). Varianta za 0 bodů zaměňuje fyzický materiál za business informaci přiřazenou k vozidlům a nechává zařízení realizovat cesty, což ArchiMate nepovoluje.",
+    "image": {
+      "src": "/certification-images/archimate/elements-physical.svg",
+      "alt": "Čtyři fyzické prvky ArchiMate s ikonami: Equipment, Facility, Distribution Network a Material.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-technology-physical",
@@ -453,7 +523,12 @@
       1,
       0
     ],
-    "explanation": "Validátor je Device, na němž běží System Software, a nasazení aplikace vyjadřuje artefakt nasazený (assignment) na systémovém softwaru, který realizuje aplikační komponentu; autobus je Equipment (vozidlo), které validátor agreguje – agregace bez existenční závislosti odpovídá tomu, že validátor lze přemístit; komunikaci ukazuje Path realizovaná sítí LTE (5). Nasazení artefaktu přímo na zařízení je platné, ale vynechává operační systém, na jehož verzi distribuce závisí (3). Vztah assignment od systémového softwaru přímo k aplikační komponentě ArchiMate 3.2 nepovoluje – nasazuje se artefakt, který komponentu realizuje (1). Varianta za 0 bodů skládá zařízení z artefaktu, nechává zařízení realizovat cestu a zaměňuje vozidlo za business aktéra."
+    "explanation": "Validátor je Device, na němž běží System Software, a nasazení aplikace vyjadřuje artefakt nasazený (assignment) na systémovém softwaru, který realizuje aplikační komponentu; autobus je Equipment (vozidlo), které validátor agreguje – agregace bez existenční závislosti odpovídá tomu, že validátor lze přemístit; komunikaci ukazuje Path realizovaná sítí LTE (5). Nasazení artefaktu přímo na zařízení je platné, ale vynechává operační systém, na jehož verzi distribuce závisí (3). Vztah assignment od systémového softwaru přímo k aplikační komponentě ArchiMate 3.2 nepovoluje – nasazuje se artefakt, který komponentu realizuje (1). Varianta za 0 bodů skládá zařízení z artefaktu, nechává zařízení realizovat cestu a zaměňuje vozidlo za business aktéra.",
+    "image": {
+      "src": "/certification-images/archimate/deployment-chain.svg",
+      "alt": "Řetěz nasazení: node složený z device a system software, system software assigned to artifact, artifact realizuje application component a data object.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-technology-physical",
@@ -491,7 +566,12 @@
       1,
       0
     ],
-    "explanation": "Auditor požaduje úplný řetězec, takže model za 5 bodů ukazuje každou vrstvu: proces obsluhuje aplikační služba realizovaná funkcí komponenty, komponentu realizuje artefakt nasazený na systémovém softwaru uzlu a informace je realizována od tabulky přes datový objekt až k business objektu. Odvozené vztahy (uzel obsluhuje proces, artefakt realizuje business objekt) jsou platné, ale vynechávají právě ty mezivrstvy, které auditor chce vidět (3). Realizace business procesu technologickou službou není v ArchiMate 3.2 povolena a navíc přeskakuje aplikaci, která ve scénáři existuje (1). Varianta za 0 bodů obrací směr realizace mezi vrstvami, přiřazuje artefakt k uzlu obráceně a používá přiřazení komponenty k business procesu z ArchiMate 2."
+    "explanation": "Auditor požaduje úplný řetězec, takže model za 5 bodů ukazuje každou vrstvu: proces obsluhuje aplikační služba realizovaná funkcí komponenty, komponentu realizuje artefakt nasazený na systémovém softwaru uzlu a informace je realizována od tabulky přes datový objekt až k business objektu. Odvozené vztahy (uzel obsluhuje proces, artefakt realizuje business objekt) jsou platné, ale vynechávají právě ty mezivrstvy, které auditor chce vidět (3). Realizace business procesu technologickou službou není v ArchiMate 3.2 povolena a navíc přeskakuje aplikaci, která ve scénáři existuje (1). Varianta za 0 bodů obrací směr realizace mezi vrstvami, přiřazuje artefakt k uzlu obráceně a používá přiřazení komponenty k business procesu z ArchiMate 2.",
+    "image": {
+      "src": "/certification-images/archimate/cross-layer-alignment.svg",
+      "alt": "Příklad propojení vrstev: technology service slouží application component, application service slouží business process, data object realizuje business object a artifacty realizují data object a application component.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "cross-layer-modeling",
@@ -510,7 +590,12 @@
       1,
       0
     ],
-    "explanation": "Konceptuální, logická a fyzická úroveň informace se v ArchiMate propojují realizací směrem vzhůru: artefakt realizuje datový objekt, ten realizuje business objekt, a papírový formulář je Representation téhož business objektu – pověřenec tak může řetězec projít oběma směry (5). Přímá realizace business objektu artefaktem je platný odvozený vztah, ale vynechává logickou úroveň datového objektu, se kterou pracuje aplikace (3). Prohození typů – tabulka jako Data Object a záznam v CRM jako Artifact – zaměňuje logickou a fyzickou úroveň (1). Varianta za 0 bodů obrací směr realizace mezi vrstvami, zaměňuje formulář za rozhraní a aplikaci za uzel."
+    "explanation": "Konceptuální, logická a fyzická úroveň informace se v ArchiMate propojují realizací směrem vzhůru: artefakt realizuje datový objekt, ten realizuje business objekt, a papírový formulář je Representation téhož business objektu – pověřenec tak může řetězec projít oběma směry (5). Přímá realizace business objektu artefaktem je platný odvozený vztah, ale vynechává logickou úroveň datového objektu, se kterou pracuje aplikace (3). Prohození typů – tabulka jako Data Object a záznam v CRM jako Artifact – zaměňuje logickou a fyzickou úroveň (1). Varianta za 0 bodů obrací směr realizace mezi vrstvami, zaměňuje formulář za rozhraní a aplikaci za uzel.",
+    "image": {
+      "src": "/certification-images/archimate/cross-layer-alignment.svg",
+      "alt": "Příklad propojení vrstev: technology service slouží application component, application service slouží business process, data object realizuje business object a artifacty realizují data object a application component.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "cross-layer-modeling",
@@ -605,7 +690,12 @@
       1,
       0
     ],
-    "explanation": "Odvozené vztahy jsou plnohodnotné vztahy ArchiMate: z řetězce assignment – realization – serving plyne platný vztah serving od komponenty k business funkci (strukturní řetězec dává realizaci, ta se závislostí serving dává serving), takže kompaktní pohled je korektní a pro představenstvo srozumitelný (5). Association je vždy povolena, ale nevyjadřuje směr ani druh podpory, takže pohled ztrácí význam, který z podrobného modelu vyplývá (3). Přiřazení aplikační komponenty k business funkci je konstrukce z ArchiMate 2, kterou verze 3 nepovoluje (1). Varianta za 0 bodů skládá aplikace do business funkcí, což tabulky vztahů nepovolují, a obrací směr podpory."
+    "explanation": "Odvozené vztahy jsou plnohodnotné vztahy ArchiMate: z řetězce assignment – realization – serving plyne platný vztah serving od komponenty k business funkci (strukturní řetězec dává realizaci, ta se závislostí serving dává serving), takže kompaktní pohled je korektní a pro představenstvo srozumitelný (5). Association je vždy povolena, ale nevyjadřuje směr ani druh podpory, takže pohled ztrácí význam, který z podrobného modelu vyplývá (3). Přiřazení aplikační komponenty k business funkci je konstrukce z ArchiMate 2, kterou verze 3 nepovoluje (1). Varianta za 0 bodů skládá aplikace do business funkcí, což tabulky vztahů nepovolují, a obrací směr podpory.",
+    "image": {
+      "src": "/certification-images/archimate/derivation-example.svg",
+      "alt": "Příklad odvození vztahu: role assigned to process, process realizes service, odvozený vztah role realizes service a pořadí síly strukturálních vztahů.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "cross-layer-modeling",
@@ -662,7 +752,12 @@
       1,
       0
     ],
-    "explanation": "Audit potřebuje sledovatelnost od procesů a aplikací přes requirements až k měřitelnému výsledku: řetězec core element → requirement → outcome → goal se vztahy realization vedenými vzhůru k abstraktnějšímu záměru to přesně splňuje (5). Varianta za 3 body je v ArchiMate 3.2 platná (realization od requirementu ke goal je přípustná), ale chybí v ní outcome – právě ten měřitelný výsledek, který audit ověřuje. Varianta za 1 bod má správné vazby aplikací, ale goal → outcome a outcome → requirement jako realization jsou obrácené a v 3.2 nepřípustné (dovoleny jsou jen influence a association). Varianta za 0 bodů převádí motivaci na pasivní strukturu a chování, takže vazba na regulaci a cíle z modelu zcela mizí."
+    "explanation": "Audit potřebuje sledovatelnost od procesů a aplikací přes requirements až k měřitelnému výsledku: řetězec core element → requirement → outcome → goal se vztahy realization vedenými vzhůru k abstraktnějšímu záměru to přesně splňuje (5). Varianta za 3 body je v ArchiMate 3.2 platná (realization od requirementu ke goal je přípustná), ale chybí v ní outcome – právě ten měřitelný výsledek, který audit ověřuje. Varianta za 1 bod má správné vazby aplikací, ale goal → outcome a outcome → requirement jako realization jsou obrácené a v 3.2 nepřípustné (dovoleny jsou jen influence a association). Varianta za 0 bodů převádí motivaci na pasivní strukturu a chování, takže vazba na regulaci a cíle z modelu zcela mizí.",
+    "image": {
+      "src": "/certification-images/archimate/motivation-chain.svg",
+      "alt": "Motivation elementy a jejich vztahy: stakeholder, driver, assessment, goal, outcome, principle, requirement, constraint, meaning a value.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -700,7 +795,12 @@
       1,
       0
     ],
-    "explanation": "Stakeholder view má ukázat stakeholdery, jejich concerns vyjádřené drivery a výsledky analýzy (assessments, typicky SWOT), na které teprve navazují goals; externí driver přitom stakeholdera mít nemusí – to splňuje model za 5 bodů. Varianta za 3 body je platná, ale slučuje driver s výsledkem analýzy, takže se ztrácí odpověď na otázku „proč“, kterou vedení chce vidět. Varianta za 1 bod má správné assessments, ale stakeholdery modeluje jako business actors; stakeholder je motivační prvek a aktér by k němu mohl být nanejvýš přiřazen vztahem assignment. Varianta za 0 bodů převádí motivaci na chování a pasivní strukturu business vrstvy, takže analýza stakeholderů v modelu vůbec není."
+    "explanation": "Stakeholder view má ukázat stakeholdery, jejich concerns vyjádřené drivery a výsledky analýzy (assessments, typicky SWOT), na které teprve navazují goals; externí driver přitom stakeholdera mít nemusí – to splňuje model za 5 bodů. Varianta za 3 body je platná, ale slučuje driver s výsledkem analýzy, takže se ztrácí odpověď na otázku „proč“, kterou vedení chce vidět. Varianta za 1 bod má správné assessments, ale stakeholdery modeluje jako business actors; stakeholder je motivační prvek a aktér by k němu mohl být nanejvýš přiřazen vztahem assignment. Varianta za 0 bodů převádí motivaci na chování a pasivní strukturu business vrstvy, takže analýza stakeholderů v modelu vůbec není.",
+    "image": {
+      "src": "/certification-images/archimate/motivation-chain.svg",
+      "alt": "Motivation elementy a jejich vztahy: stakeholder, driver, assessment, goal, outcome, principle, requirement, constraint, meaning a value.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -719,7 +819,12 @@
       1,
       0
     ],
-    "explanation": "Influence je určena právě pro částečné kladné i záporné příspěvky k motivačním prvkům a znaménko (+/−) zviditelní střety obou požadavků s oběma cíli, což ředitel potřebuje (5). Varianta za 3 body je platná, ale u vícefaktorového ověření chybí jeho záporný dopad na rychlost péče, takže jeden ze dvou střetů zůstává skrytý. Varianta za 1 bod používá přípustné vztahy, ale záporný vliv kreslí obráceně – od cíle k požadavku –, takže model neříká, který požadavek cíl ohrožuje. Varianta za 0 bodů modeluje motivaci jako chování: triggering od business eventu k requirementu ani flow od requirementu ke goal ArchiMate 3.2 nepřipouští."
+    "explanation": "Influence je určena právě pro částečné kladné i záporné příspěvky k motivačním prvkům a znaménko (+/−) zviditelní střety obou požadavků s oběma cíli, což ředitel potřebuje (5). Varianta za 3 body je platná, ale u vícefaktorového ověření chybí jeho záporný dopad na rychlost péče, takže jeden ze dvou střetů zůstává skrytý. Varianta za 1 bod používá přípustné vztahy, ale záporný vliv kreslí obráceně – od cíle k požadavku –, takže model neříká, který požadavek cíl ohrožuje. Varianta za 0 bodů modeluje motivaci jako chování: triggering od business eventu k requirementu ani flow od requirementu ke goal ArchiMate 3.2 nepřipouští.",
+    "image": {
+      "src": "/certification-images/archimate/access-influence-association-variants.svg",
+      "alt": "Varianty vztahu Access (bez hrotu, read, write, read-write), Influence se znaménkem plus a minus a Association nesměrová a směrová.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -757,7 +862,12 @@
       1,
       0
     ],
-    "explanation": "Value stream se v ArchiMate 3.2 člení na fáze (value streams spojené kompozicí a propojené vztahem flow), vztah serving vede od capabilities k fázím, vztah realization od business processes k fázím a value spolu se stakeholderem vyjadřuje pohled klienta – přesně to představenstvo chce (5). Varianta za 3 body je platná, ale vynechává hodnotu a klienta, tedy právě perspektivu, kvůli které value stream vzniká. Varianta za 1 bod skládá strategickou fázi z provozních procesů; composition od value streamu k business process 3.2 nepřipouští (jen association), vazbou má být realization od procesu k fázi. Varianta za 0 bodů zaměňuje value stream za business process a přiřazuje capability k procesu vztahem assignment, který neexistuje."
+    "explanation": "Value stream se v ArchiMate 3.2 člení na fáze (value streams spojené kompozicí a propojené vztahem flow), vztah serving vede od capabilities k fázím, vztah realization od business processes k fázím a value spolu se stakeholderem vyjadřuje pohled klienta – přesně to představenstvo chce (5). Varianta za 3 body je platná, ale vynechává hodnotu a klienta, tedy právě perspektivu, kvůli které value stream vzniká. Varianta za 1 bod skládá strategickou fázi z provozních procesů; composition od value streamu k business process 3.2 nepřipouští (jen association), vazbou má být realization od procesu k fázi. Varianta za 0 bodů zaměňuje value stream za business process a přiřazuje capability k procesu vztahem assignment, který neexistuje.",
+    "image": {
+      "src": "/certification-images/archimate/strategy-relations.svg",
+      "alt": "Strategy elementy a vztahy: resource assigned to capability, capability serves value stream, strategy elementy realizují course of action, ten realizuje outcome a core elementy realizují strategy elementy.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -776,7 +886,12 @@
       1,
       0
     ],
-    "explanation": "Course of action je přístup ke konfiguraci capabilities a resources: vztah realization vede od capabilities ke course of action, resources se ke capabilities přiřazují (assignment) a od course of action vede realization k outcomes a od nich ke goal – dozorčí rada tak vidí měřitelné výsledky strategie (5). Varianta za 3 body je platná, ale outcomes vynechává a měřitelné výsledky schovává do popisu, ačkoli se na ně dozorčí rada ptá nejvíc. Varianta za 1 bod obrací klíčový vztah: realization od course of action ke capability 3.2 nepřipouští, vést má od capabilities ke course of action. Varianta za 0 bodů zaměňuje strategii za program a schopnosti za výstupy projektu, tedy prvky vrstvy Implementation & Migration místo strategických."
+    "explanation": "Course of action je přístup ke konfiguraci capabilities a resources: vztah realization vede od capabilities ke course of action, resources se ke capabilities přiřazují (assignment) a od course of action vede realization k outcomes a od nich ke goal – dozorčí rada tak vidí měřitelné výsledky strategie (5). Varianta za 3 body je platná, ale outcomes vynechává a měřitelné výsledky schovává do popisu, ačkoli se na ně dozorčí rada ptá nejvíc. Varianta za 1 bod obrací klíčový vztah: realization od course of action ke capability 3.2 nepřipouští, vést má od capabilities ke course of action. Varianta za 0 bodů zaměňuje strategii za program a schopnosti za výstupy projektu, tedy prvky vrstvy Implementation & Migration místo strategických.",
+    "image": {
+      "src": "/certification-images/archimate/strategy-relations.svg",
+      "alt": "Strategy elementy a vztahy: resource assigned to capability, capability serves value stream, strategy elementy realizují course of action, ten realizuje outcome a core elementy realizují strategy elementy.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -795,7 +910,12 @@
       1,
       0
     ],
-    "explanation": "Resource je aktivum, které organizace vlastní nebo ovládá; vztah assignment vede od resource ke capability a vztah realization od konkrétních prvků aktivní či pasivní struktury – equipment, business actor nebo business object – k resource, takže ředitel vidí, co koupit, koho vyškolit a které povolení rozšířit (5). Varianta za 3 body je platná, ale vazbu na reálné prvky schovává do textu, takže z modelu nelze přímo vyčíst, co koupit, koho vyškolit a které povolení rozšířit; je správná, jen neúplná. Varianta za 1 bod má správnou realizaci zdrojů, ale obrací klíčový vztah: assignment od capability k resource 3.2 nepřipouští, zdroj se přiřazuje ke schopnosti. Varianta za 0 bodů zaměňuje resources za informační objekty a capability v 3.2 nemůže k business objectu přistupovat (access)."
+    "explanation": "Resource je aktivum, které organizace vlastní nebo ovládá; vztah assignment vede od resource ke capability a vztah realization od konkrétních prvků aktivní či pasivní struktury – equipment, business actor nebo business object – k resource, takže ředitel vidí, co koupit, koho vyškolit a které povolení rozšířit (5). Varianta za 3 body je platná, ale vazbu na reálné prvky schovává do textu, takže z modelu nelze přímo vyčíst, co koupit, koho vyškolit a které povolení rozšířit; je správná, jen neúplná. Varianta za 1 bod má správnou realizaci zdrojů, ale obrací klíčový vztah: assignment od capability k resource 3.2 nepřipouští, zdroj se přiřazuje ke schopnosti. Varianta za 0 bodů zaměňuje resources za informační objekty a capability v 3.2 nemůže k business objectu přistupovat (access).",
+    "image": {
+      "src": "/certification-images/archimate/strategy-relations.svg",
+      "alt": "Strategy elementy a vztahy: resource assigned to capability, capability serves value stream, strategy elementy realizují course of action, ten realizuje outcome a core elementy realizují strategy elementy.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -814,7 +934,12 @@
       1,
       0
     ],
-    "explanation": "Value vyjadřuje relativní hodnotu či užitek konceptu a asociuje se s ním i se stakeholderem, pro kterého platí; meaning vyjadřuje interpretaci konceptu v určitém kontextu a stejný business object může mít pro různé stakeholdery různé meanings – model za 5 bodů tak pokrývá obě potřeby. Varianta za 3 body zachytí hodnotu správně, ale rozdílné interpretace, které marketing potřebuje vidět, zůstanou jen v textu. Varianta za 1 bod má správné meanings, ale hodnotu pro zákazníky zaměňuje za goals, tedy záměry organizace. Varianta za 0 bodů nepoužívá value ani meaning: služba není hodnota a representation je vnímatelná podoba informace, nikoli její výklad."
+    "explanation": "Value vyjadřuje relativní hodnotu či užitek konceptu a asociuje se s ním i se stakeholderem, pro kterého platí; meaning vyjadřuje interpretaci konceptu v určitém kontextu a stejný business object může mít pro různé stakeholdery různé meanings – model za 5 bodů tak pokrývá obě potřeby. Varianta za 3 body zachytí hodnotu správně, ale rozdílné interpretace, které marketing potřebuje vidět, zůstanou jen v textu. Varianta za 1 bod má správné meanings, ale hodnotu pro zákazníky zaměňuje za goals, tedy záměry organizace. Varianta za 0 bodů nepoužívá value ani meaning: služba není hodnota a representation je vnímatelná podoba informace, nikoli její výklad.",
+    "image": {
+      "src": "/certification-images/archimate/elements-motivation.svg",
+      "alt": "Deset motivačních prvků ArchiMate se zkosenými rohy a ikonami: Stakeholder, Driver, Assessment, Goal, Outcome, Principle, Requirement, Constraint, Meaning a Value.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -852,7 +977,12 @@
       1,
       0
     ],
-    "explanation": "Stabilní stavy architektury – výchozí, přechodné i cílové – jsou v ArchiMate plateaus seřazené vztahem triggering a vztah aggregation vede od každého plateau k prvkům platným v daném stavu; gap se asociuje právě se dvěma porovnávanými plateaus a s prvky, které se mezi nimi liší (5). Varianta za 3 body je platná, ale vynechává přechodný stav, a tím i dočasný souběh systémů, na který se CIO výslovně ptá. Varianta za 1 bod zachycuje přechodný stav jako gap; gap je však výrok o rozdílu mezi dvěma plateaus, nikoli stav architektury, ve kterém systémy skutečně běží. Varianta za 0 bodů nahrazuje stavy projekty a výstupy, takže Migration view vůbec nevznikne."
+    "explanation": "Stabilní stavy architektury – výchozí, přechodné i cílové – jsou v ArchiMate plateaus seřazené vztahem triggering a vztah aggregation vede od každého plateau k prvkům platným v daném stavu; gap se asociuje právě se dvěma porovnávanými plateaus a s prvky, které se mezi nimi liší (5). Varianta za 3 body je platná, ale vynechává přechodný stav, a tím i dočasný souběh systémů, na který se CIO výslovně ptá. Varianta za 1 bod zachycuje přechodný stav jako gap; gap je však výrok o rozdílu mezi dvěma plateaus, nikoli stav architektury, ve kterém systémy skutečně běží. Varianta za 0 bodů nahrazuje stavy projekty a výstupy, takže Migration view vůbec nevznikne.",
+    "image": {
+      "src": "/certification-images/archimate/implementation-migration-metamodel.svg",
+      "alt": "Implementation & Migration elementy: work package, deliverable, implementation event, plateau a gap se vztahy, včetně poznámky o deprecated realization.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "implementation-migration-modeling",
@@ -871,7 +1001,12 @@
       1,
       0
     ],
-    "explanation": "Program i projekty jsou work packages (program složený z projektů), pořadí určují vztahy triggering a implementation events, výsledky jsou deliverables, k nimž od projektů vede access, a odpovědnost se vyjadřuje přiřazením role či aktéra k work package – model za 5 bodů tak odpovídá na všechny tři otázky manažera. Varianta za 3 body je platná (realization od work package k application component je přípustná), ale vynechává deliverables, takže chybí i auditem schvalovaný protokol, který má projekt předat. Varianta za 1 bod má deliverables, ale business role ani actor nelze k deliverable přiřadit – assignment patří k work package, deliverable je jen výsledek práce. Varianta za 0 bodů zaměňuje program za plateau a projekty za opakující se business processes. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
+    "explanation": "Program i projekty jsou work packages (program složený z projektů), pořadí určují vztahy triggering a implementation events, výsledky jsou deliverables, k nimž od projektů vede access, a odpovědnost se vyjadřuje přiřazením role či aktéra k work package – model za 5 bodů tak odpovídá na všechny tři otázky manažera. Varianta za 3 body je platná (realization od work package k application component je přípustná), ale vynechává deliverables, takže chybí i auditem schvalovaný protokol, který má projekt předat. Varianta za 1 bod má deliverables, ale business role ani actor nelze k deliverable přiřadit – assignment patří k work package, deliverable je jen výsledek práce. Varianta za 0 bodů zaměňuje program za plateau a projekty za opakující se business processes. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated).",
+    "image": {
+      "src": "/certification-images/archimate/implementation-migration-metamodel.svg",
+      "alt": "Implementation & Migration elementy: work package, deliverable, implementation event, plateau a gap se vztahy, včetně poznámky o deprecated realization.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "implementation-migration-modeling",
@@ -947,7 +1082,12 @@
       1,
       0
     ],
-    "explanation": "Gap je výrok o rozdílu mezi dvěma plateaus: asociuje se s oběma porovnávanými plateaus a s prvky, které jsou jen v jednom z nich, zatímco nezměněné prvky zůstávají v obou plateaus – z takového gapu lze odvodit work packages (5). Varianta za 3 body je platná, ale rozdíl schovává do textu, takže z modelu nelze vyčíst, čeho se změna týká. Varianta za 1 bod má gap obsahově správně, ale realization od work package ke gap 3.2 nepřipouští – mezi nimi je dovolena jen association; jde o jeden nepřípustný vedlejší vztah jinak dobrého modelu. Varianta za 0 bodů gap vůbec nemodeluje a bez výchozího stavu rozdíl ani nelze určit."
+    "explanation": "Gap je výrok o rozdílu mezi dvěma plateaus: asociuje se s oběma porovnávanými plateaus a s prvky, které jsou jen v jednom z nich, zatímco nezměněné prvky zůstávají v obou plateaus – z takového gapu lze odvodit work packages (5). Varianta za 3 body je platná, ale rozdíl schovává do textu, takže z modelu nelze vyčíst, čeho se změna týká. Varianta za 1 bod má gap obsahově správně, ale realization od work package ke gap 3.2 nepřipouští – mezi nimi je dovolena jen association; jde o jeden nepřípustný vedlejší vztah jinak dobrého modelu. Varianta za 0 bodů gap vůbec nemodeluje a bez výchozího stavu rozdíl ani nelze určit.",
+    "image": {
+      "src": "/certification-images/archimate/implementation-migration-metamodel.svg",
+      "alt": "Implementation & Migration elementy: work package, deliverable, implementation event, plateau a gap se vztahy, včetně poznámky o deprecated realization.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "implementation-migration-modeling",
@@ -966,7 +1106,12 @@
       1,
       0
     ],
-    "explanation": "Work package je jednorázová série činností s jasným začátkem, koncem a výsledkem (deliverable), kdežto opakovaná provozní činnost je business process spouštěný business eventem – model za 5 bodů obojí jasně odlišuje. Varianta za 3 body je platná, ale vynechává deliverable: odvozený vztah work package → business object nezachytí výsledek, který přebírá audit. Varianta za 1 bod modeluje každoroční obnovu jako jednorázový work package, takže opakované chování organizace vypadá jako projekt. Varianta za 0 bodů zaměňuje projekt za stav architektury a výsledek za gap, a projektový tým (business actor či collaboration) navíc nelze k plateau přiřadit. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
+    "explanation": "Work package je jednorázová série činností s jasným začátkem, koncem a výsledkem (deliverable), kdežto opakovaná provozní činnost je business process spouštěný business eventem – model za 5 bodů obojí jasně odlišuje. Varianta za 3 body je platná, ale vynechává deliverable: odvozený vztah work package → business object nezachytí výsledek, který přebírá audit. Varianta za 1 bod modeluje každoroční obnovu jako jednorázový work package, takže opakované chování organizace vypadá jako projekt. Varianta za 0 bodů zaměňuje projekt za stav architektury a výsledek za gap, a projektový tým (business actor či collaboration) navíc nelze k plateau přiřadit. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated).",
+    "image": {
+      "src": "/certification-images/archimate/elements-implementation-migration.svg",
+      "alt": "Pět prvků implementace a migrace ArchiMate s ikonami: Work Package, Deliverable, Implementation Event, Plateau a Gap.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "archimate-in-adm",
@@ -1118,7 +1263,12 @@
       1,
       0
     ],
-    "explanation": "Mechanismus viewpointů znamená vybrat podmnožinu konceptů relevantních pro concern a definovat reprezentaci srozumitelnou stakeholderovi – pro široké publikum jde o účel Informing a zjednodušenou ilustraci odvozenou z modelu (5). Varianta za 3 body má správný obsah, ale standardní notace je pro zaměstnance bez znalosti ArchiMate nevhodná reprezentace. Layered view je obsahově přetížený a navíc ve standardní notaci, concern tedy pokrývá jen částečně (1). Varianta za 0 bodů vychází z omylu: example viewpoints jsou informativní, organizace je smí upravovat i definovat vlastní."
+    "explanation": "Mechanismus viewpointů znamená vybrat podmnožinu konceptů relevantních pro concern a definovat reprezentaci srozumitelnou stakeholderovi – pro široké publikum jde o účel Informing a zjednodušenou ilustraci odvozenou z modelu (5). Varianta za 3 body má správný obsah, ale standardní notace je pro zaměstnance bez znalosti ArchiMate nevhodná reprezentace. Layered view je obsahově přetížený a navíc ve standardní notaci, concern tedy pokrývá jen částečně (1). Varianta za 0 bodů vychází z omylu: example viewpoints jsou informativní, organizace je smí upravovat i definovat vlastní.",
+    "image": {
+      "src": "/certification-images/archimate/viewpoint-dimensions.svg",
+      "alt": "Dva rozměry klasifikace viewpointů: purpose (Designing, Deciding, Informing) a content (Details, Coherence, Overview) s typickými stakeholdery.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "viewpoints-customization",
@@ -1175,7 +1325,12 @@
       1,
       0
     ],
-    "explanation": "Strukturní řetězec node → artifact → component → function → service dává odvozenou realization (nejslabší vztah řetězce) a strukturní vztah následovaný serving dává platný serving od serveru k procesu, takže oba procesy jsou zasaženy jistě; serving vedený do celku platí pro jeho části jen potenciálně (5). Varianta za 3 body má jistý dopad správně, ale potenciální odvození vydává za platné. Varianta za 1 bod sleduje serving obráceně: vztah serving vede od „Ruční ověření platby“ k aplikaci, proces je tedy poskytovatelem, nikoli závislým konzumentem. Varianta za 0 bodů bere asociaci jako důkaz závislosti a odvozuje nesprávný typ vztahu – z řetězce se odvozuje nejslabší strukturní vztah, ne první."
+    "explanation": "Strukturní řetězec node → artifact → component → function → service dává odvozenou realization (nejslabší vztah řetězce) a strukturní vztah následovaný serving dává platný serving od serveru k procesu, takže oba procesy jsou zasaženy jistě; serving vedený do celku platí pro jeho části jen potenciálně (5). Varianta za 3 body má jistý dopad správně, ale potenciální odvození vydává za platné. Varianta za 1 bod sleduje serving obráceně: vztah serving vede od „Ruční ověření platby“ k aplikaci, proces je tedy poskytovatelem, nikoli závislým konzumentem. Varianta za 0 bodů bere asociaci jako důkaz závislosti a odvozuje nesprávný typ vztahu – z řetězce se odvozuje nejslabší strukturní vztah, ne první.",
+    "image": {
+      "src": "/certification-images/archimate/derivation-example.svg",
+      "alt": "Příklad odvození vztahu: role assigned to process, process realizes service, odvozený vztah role realizes service a pořadí síly strukturálních vztahů.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "model-analysis-derivation",
@@ -1194,7 +1349,12 @@
       1,
       0
     ],
-    "explanation": "Řetězec strukturních vztahů dává platně odvozený nejslabší z nich (realization < assignment < aggregation < composition), tedy realization od oddělení ke službě; strukturní vztah následovaný závislostním vztahem access dává tentýž access (5). Varianta za 3 body má službu správně, ale platně odvoditelný access zbytečně oslabuje na association, takže ztrácí informaci o práci s protokolem. Varianta za 1 bod bere typ prvního vztahu místo nejslabšího – assignment by tvrdil, že oddělení službu přímo vystavuje, což z modelu neplyne. Varianta za 0 bodů obrací směr a používá vztahy, které 3.2 mezi těmito prvky nepřipouští."
+    "explanation": "Řetězec strukturních vztahů dává platně odvozený nejslabší z nich (realization < assignment < aggregation < composition), tedy realization od oddělení ke službě; strukturní vztah následovaný závislostním vztahem access dává tentýž access (5). Varianta za 3 body má službu správně, ale platně odvoditelný access zbytečně oslabuje na association, takže ztrácí informaci o práci s protokolem. Varianta za 1 bod bere typ prvního vztahu místo nejslabšího – assignment by tvrdil, že oddělení službu přímo vystavuje, což z modelu neplyne. Varianta za 0 bodů obrací směr a používá vztahy, které 3.2 mezi těmito prvky nepřipouští.",
+    "image": {
+      "src": "/certification-images/archimate/derivation-example.svg",
+      "alt": "Příklad odvození vztahu: role assigned to process, process realizes service, odvozený vztah role realizes service a pořadí síly strukturálních vztahů.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "model-analysis-derivation",
@@ -1251,7 +1411,12 @@
       1,
       0
     ],
-    "explanation": "Řetězec assignment + realization dává odvozenou realization od komponenty k business procesu (komponenta proces automatizuje), dvě realizace za sebou dávají realization od artifactu k business objectu a strukturní vztah následovaný vztahem access dává access – model za 5 bodů zachová všechny souvislosti. Varianta za 3 body je platná, ale platně odvoditelnou realizaci zbytečně oslabuje na association; odvozování přes více vrstev je přípustné. Varianta za 1 bod mění automatizaci na podporu – serving z řetězce assignment a realization odvodit nelze a vyjadřuje jiný význam. Varianta za 0 bodů používá konstrukt z ArchiMate 2 (application component přiřazená k business processu) a obrácenou realizaci, kterou 3.2 nepřipouští."
+    "explanation": "Řetězec assignment + realization dává odvozenou realization od komponenty k business procesu (komponenta proces automatizuje), dvě realizace za sebou dávají realization od artifactu k business objectu a strukturní vztah následovaný vztahem access dává access – model za 5 bodů zachová všechny souvislosti. Varianta za 3 body je platná, ale platně odvoditelnou realizaci zbytečně oslabuje na association; odvozování přes více vrstev je přípustné. Varianta za 1 bod mění automatizaci na podporu – serving z řetězce assignment a realization odvodit nelze a vyjadřuje jiný význam. Varianta za 0 bodů používá konstrukt z ArchiMate 2 (application component přiřazená k business processu) a obrácenou realizaci, kterou 3.2 nepřipouští.",
+    "image": {
+      "src": "/certification-images/archimate/derivation-example.svg",
+      "alt": "Příklad odvození vztahu: role assigned to process, process realizes service, odvozený vztah role realizes service a pořadí síly strukturálních vztahů.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "model-analysis-derivation",
@@ -1270,7 +1435,12 @@
       1,
       0
     ],
-    "explanation": "V 3.2 nelze přiřadit application component k business processu (konstrukt z ArchiMate 2; ruční práci podporovanou aplikací vyjadřuje serving od application service k procesu), node se k aplikaci váže přes artifact – node je přiřazen k artifactu a artifact realizuje komponentu – a assignment vede od actor k role (5). Varianta za 3 body najde všechny chyby, ale nasazení nahrazuje vztahem serving, který je platný, avšak informaci o tom, kde CRM běží, ztrácí. Varianta za 1 bod ponechává nepřípustné přiřazení node → application component. Varianta za 0 bodů považuje chybný pohled za správný a navrhuje další nepřípustné vztahy včetně obrácené realizace business objectu."
+    "explanation": "V 3.2 nelze přiřadit application component k business processu (konstrukt z ArchiMate 2; ruční práci podporovanou aplikací vyjadřuje serving od application service k procesu), node se k aplikaci váže přes artifact – node je přiřazen k artifactu a artifact realizuje komponentu – a assignment vede od actor k role (5). Varianta za 3 body najde všechny chyby, ale nasazení nahrazuje vztahem serving, který je platný, avšak informaci o tom, kde CRM běží, ztrácí. Varianta za 1 bod ponechává nepřípustné přiřazení node → application component. Varianta za 0 bodů považuje chybný pohled za správný a navrhuje další nepřípustné vztahy včetně obrácené realizace business objectu.",
+    "image": {
+      "src": "/certification-images/archimate/cross-layer-alignment.svg",
+      "alt": "Příklad propojení vrstev: technology service slouží application component, application service slouží business process, data object realizuje business object a artifacty realizují data object a application component.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "model-analysis-derivation",
@@ -1308,7 +1478,12 @@
       1,
       0
     ],
-    "explanation": "Ve Phases E a F se z konsolidovaných gaps navrhují přechodové architektury (plateaus seřazené vztahem triggering) a work packages, od jejichž deliverables vede vztah realization k těmto plateaus, včetně milníků – Migration a Implementation and Migration views tak odpovídají na pořadí, balíky práce i mezistavy (5). Varianta za 3 body má mezistavy správně, ale work packages drží mimo model, takže chybí vazba práce na mezistavy. Varianta za 1 bod zachycuje přechodové architektury jako implementation events; událost je okamžik změny, nikoli stabilní stav architektury, ve kterém musí prodej fungovat. Varianta za 0 bodů ignoruje účel Phases E a F a prvky Implementation and Migration vůbec nepoužívá. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated)."
+    "explanation": "Ve Phases E a F se z konsolidovaných gaps navrhují přechodové architektury (plateaus seřazené vztahem triggering) a work packages, od jejichž deliverables vede vztah realization k těmto plateaus, včetně milníků – Migration a Implementation and Migration views tak odpovídají na pořadí, balíky práce i mezistavy (5). Varianta za 3 body má mezistavy správně, ale work packages drží mimo model, takže chybí vazba práce na mezistavy. Varianta za 1 bod zachycuje přechodové architektury jako implementation events; událost je okamžik změny, nikoli stabilní stav architektury, ve kterém musí prodej fungovat. Varianta za 0 bodů ignoruje účel Phases E a F a prvky Implementation and Migration vůbec nepoužívá. Vazbu work package → deliverable doporučuje 3.2 modelovat vztahem access; realization je pro ni stále přípustná, ale zastaralá (deprecated).",
+    "image": {
+      "src": "/certification-images/archimate/implementation-migration-metamodel.svg",
+      "alt": "Implementation & Migration elementy: work package, deliverable, implementation event, plateau a gap se vztahy, včetně poznámky o deprecated realization.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "archimate-in-adm",
@@ -1365,7 +1540,12 @@
       1,
       0
     ],
-    "explanation": "Souběh se vyjadřuje AND junction na vztazích triggering: rozdělení znamená, že po schválení začnou obě činnosti, a spojení, že vyplacení zálohy začne teprve po dokončení obou (5). Varianta za 3 body je platná a podmínku pro vyplacení zachovává, ale obě činnosti slévá do jednoho kroku, takže souběh z modelu vidět není. Varianta za 1 bod používá OR junction, která vyjadřuje výběr jedné z větví – záloha by pak mohla odejít po kterékoli z činností, což je právě loňská chyba. Varianta za 0 bodů zaměňuje kroky procesu za funkce, vztahu flow připisuje kauzalitu, kterou nemá, a v jedné junction spojuje vztahy různých typů, což ArchiMate nedovoluje."
+    "explanation": "Souběh se vyjadřuje AND junction na vztazích triggering: rozdělení znamená, že po schválení začnou obě činnosti, a spojení, že vyplacení zálohy začne teprve po dokončení obou (5). Varianta za 3 body je platná a podmínku pro vyplacení zachovává, ale obě činnosti slévá do jednoho kroku, takže souběh z modelu vidět není. Varianta za 1 bod používá OR junction, která vyjadřuje výběr jedné z větví – záloha by pak mohla odejít po kterékoli z činností, což je právě loňská chyba. Varianta za 0 bodů zaměňuje kroky procesu za funkce, vztahu flow připisuje kauzalitu, kterou nemá, a v jedné junction spojuje vztahy různých typů, což ArchiMate nedovoluje.",
+    "image": {
+      "src": "/certification-images/archimate/junction-examples.svg",
+      "alt": "Dva příklady junction na vztahu triggering mezi procesy: AND junction (plné kolečko) a OR junction (prázdné kolečko) s českým čtením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-business",
@@ -1384,7 +1564,12 @@
       1,
       0
     ],
-    "explanation": "Pohled na business funkce zachycuje hlavní funkce přiřazené aktérům (včetně vnějších stran) a vztahy flow mezi nimi; flow vyjadřuje předávání informací a žádné pořadí ani kauzalitu neimplikuje, což odpovídá trvale a souběžně probíhajícím činnostem (5). Toky vedené jen mezi aktéry jsou platné, ale oblasti činností, o které ředitel výslovně žádá, v pohledu chybějí (3). Triggering mezi funkcemi je povolený vztah, jenže tvrdí, že jedna funkce spouští druhou v daném pořadí, a přenos informace odsouvá do popisu (1). Varianta za 0 bodů zaměňuje interní chování za služby, informacím jako pasivním prvkům připisuje spouštění a vnější strany modeluje jako rozhraní."
+    "explanation": "Pohled na business funkce zachycuje hlavní funkce přiřazené aktérům (včetně vnějších stran) a vztahy flow mezi nimi; flow vyjadřuje předávání informací a žádné pořadí ani kauzalitu neimplikuje, což odpovídá trvale a souběžně probíhajícím činnostem (5). Toky vedené jen mezi aktéry jsou platné, ale oblasti činností, o které ředitel výslovně žádá, v pohledu chybějí (3). Triggering mezi funkcemi je povolený vztah, jenže tvrdí, že jedna funkce spouští druhou v daném pořadí, a přenos informace odsouvá do popisu (1). Varianta za 0 bodů zaměňuje interní chování za služby, informacím jako pasivním prvkům připisuje spouštění a vnější strany modeluje jako rozhraní.",
+    "image": {
+      "src": "/certification-images/archimate/relationships-notation.svg",
+      "alt": "Přehled notace všech vztahů ArchiMate rozdělených na strukturální, závislosti, dynamické a ostatní, včetně spojky AND a OR.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-business",
@@ -1441,7 +1626,12 @@
       1,
       0
     ],
-    "explanation": "Rozhraní je složkou komponenty, která službu poskytuje, a vztah serving vede od rozhraní ke komponentě, která je využívá; access od správcovských komponent k datovým objektům ukazuje, kdo s daty pracuje, a chybějící access od upomínek dokládá, že na data samy nesahají (5). Varianta za 3 body je platná – serving mezi komponentami lze odvodit – a správce dat i závislost upomínek ukazuje, rozhraní však chybějí. Varianta za 1 bod umisťuje rozhraní k odběrateli a obrací směr obsluhy, takže tvrdí, že upomínky poskytují služby oběma správcovským modulům. Varianta za 0 bodů dává přístup k datům každé komponentě, zaměňuje rozhraní za službu a vede assignment od pasivního prvku, což nelze."
+    "explanation": "Rozhraní je složkou komponenty, která službu poskytuje, a vztah serving vede od rozhraní ke komponentě, která je využívá; access od správcovských komponent k datovým objektům ukazuje, kdo s daty pracuje, a chybějící access od upomínek dokládá, že na data samy nesahají (5). Varianta za 3 body je platná – serving mezi komponentami lze odvodit – a správce dat i závislost upomínek ukazuje, rozhraní však chybějí. Varianta za 1 bod umisťuje rozhraní k odběrateli a obrací směr obsluhy, takže tvrdí, že upomínky poskytují služby oběma správcovským modulům. Varianta za 0 bodů dává přístup k datům každé komponentě, zaměňuje rozhraní za službu a vede assignment od pasivního prvku, což nelze.",
+    "image": {
+      "src": "/certification-images/archimate/generic-metamodel.svg",
+      "alt": "Generický metamodel ArchiMate: internal a external active structure, internal behavior, service, event a passive structure se vztahy assigned to, realizes, serves, accesses, triggers/flows to a composed of.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-application",
@@ -1460,7 +1650,12 @@
       1,
       0
     ],
-    "explanation": "Composition vyjadřuje, že část patří jedinému celku a bez něj neexistuje (položky), aggregation dovoluje, aby byl tentýž prvek součástí více celků (adresa v objednávce i v profilu), a specialization vede od zvláštního druhu k obecnému prvku (5). Samé agregace jsou platné, ale model pak neodliší údaje, které zanikají s objednávkou, od sdílených (3). Varianta za 1 bod vkládá adresu do dvou composition, ačkoli prvek smí být složkou nejvýše jedné, a tvrdí tak, že adresa zaniká s objednávkou. Varianta za 0 bodů vyjadřuje vztah části a celku vztahem assignment, jehož zdrojem pasivní prvek být nemůže, sdílení adresy vztahem realization, který nic takového neznamená, a specializaci obrací."
+    "explanation": "Composition vyjadřuje, že část patří jedinému celku a bez něj neexistuje (položky), aggregation dovoluje, aby byl tentýž prvek součástí více celků (adresa v objednávce i v profilu), a specialization vede od zvláštního druhu k obecnému prvku (5). Samé agregace jsou platné, ale model pak neodliší údaje, které zanikají s objednávkou, od sdílených (3). Varianta za 1 bod vkládá adresu do dvou composition, ačkoli prvek smí být složkou nejvýše jedné, a tvrdí tak, že adresa zaniká s objednávkou. Varianta za 0 bodů vyjadřuje vztah části a celku vztahem assignment, jehož zdrojem pasivní prvek být nemůže, sdílení adresy vztahem realization, který nic takového neznamená, a specializaci obrací.",
+    "image": {
+      "src": "/certification-images/archimate/relationships-notation.svg",
+      "alt": "Přehled notace všech vztahů ArchiMate rozdělených na strukturální, závislosti, dynamické a ostatní, včetně spojky AND a OR.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-application",
@@ -1536,7 +1731,12 @@
       1,
       0
     ],
-    "explanation": "Course of action může outcome realizovat i ovlivňovat a motivační prvky se mohou ovlivňovat navzájem; vztah influence nese znaménko, takže zamýšlený výsledek cíl nižší ekologické stopy realizuje, kdežto nechtěný výsledek cíl udržení nákladů ovlivňuje záporně (5). Varianta za 3 body je platná a oba výsledky ukazuje, ale influence s neuvedeným znaménkem vyjadřuje jen blíže neurčené působení, takže směr, na který se předseda ptá, z ní poznat nelze. Varianta za 1 bod oba výsledky zachycuje, avšak kladným znaménkem tvrdí, že zvýšené náklady na svoz a mytí k cíli udržení nákladů přispívají – působení je ve skutečnosti opačné. Varianta za 0 bodů nechává cíle spouštět strategii a zaměňuje výsledky za constraint a resource s nepřípustnými vztahy."
+    "explanation": "Course of action může outcome realizovat i ovlivňovat a motivační prvky se mohou ovlivňovat navzájem; vztah influence nese znaménko, takže zamýšlený výsledek cíl nižší ekologické stopy realizuje, kdežto nechtěný výsledek cíl udržení nákladů ovlivňuje záporně (5). Varianta za 3 body je platná a oba výsledky ukazuje, ale influence s neuvedeným znaménkem vyjadřuje jen blíže neurčené působení, takže směr, na který se předseda ptá, z ní poznat nelze. Varianta za 1 bod oba výsledky zachycuje, avšak kladným znaménkem tvrdí, že zvýšené náklady na svoz a mytí k cíli udržení nákladů přispívají – působení je ve skutečnosti opačné. Varianta za 0 bodů nechává cíle spouštět strategii a zaměňuje výsledky za constraint a resource s nepřípustnými vztahy.",
+    "image": {
+      "src": "/certification-images/archimate/access-influence-association-variants.svg",
+      "alt": "Varianty vztahu Access (bez hrotu, read, write, read-write), Influence se znaménkem plus a minus a Association nesměrová a směrová.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -1555,7 +1755,12 @@
       1,
       0
     ],
-    "explanation": "Capability je realizována interním chováním, zde business functions, a AND junction na vztazích realization výslovně říká, že schopnost zajišťují obě funkce společně; samostatný vztah realization ukazuje schopnost stojící na jediné funkci (5). Varianta za 3 body používá AND junction správně, ale u schopnosti „Vyhodnocování vytíženosti linek“ neukáže, že stojí na jediné funkci, která je navíc vázána ve společné realizaci jízdních řádů – právě to je pro vyčleňování podstatné. OR junction tvrdí, že schopnost zajistí kterákoli z funkcí sama, což odporuje zadání (1). Varianta za 0 bodů spojuje v jedné junction vztahy různých typů, což ArchiMate nedovoluje, a skládá capability z business functions vztahem composition, který mezi těmito typy prvků neexistuje."
+    "explanation": "Capability je realizována interním chováním, zde business functions, a AND junction na vztazích realization výslovně říká, že schopnost zajišťují obě funkce společně; samostatný vztah realization ukazuje schopnost stojící na jediné funkci (5). Varianta za 3 body používá AND junction správně, ale u schopnosti „Vyhodnocování vytíženosti linek“ neukáže, že stojí na jediné funkci, která je navíc vázána ve společné realizaci jízdních řádů – právě to je pro vyčleňování podstatné. OR junction tvrdí, že schopnost zajistí kterákoli z funkcí sama, což odporuje zadání (1). Varianta za 0 bodů spojuje v jedné junction vztahy různých typů, což ArchiMate nedovoluje, a skládá capability z business functions vztahem composition, který mezi těmito typy prvků neexistuje.",
+    "image": {
+      "src": "/certification-images/archimate/junction-examples.svg",
+      "alt": "Dva příklady junction na vztahu triggering mezi procesy: AND junction (plné kolečko) a OR junction (prázdné kolečko) s českým čtením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -1574,7 +1779,12 @@
       1,
       0
     ],
-    "explanation": "Rozhodnutí, co podnik udělá, je course of action, to, co umí, je capability, posloupnost činností tvořících hodnotu pro zákazníka je value stream a varna, receptury a sládci jsou resources; resource se ke capability přiřazuje vztahem assignment, capability realizuje course of action a obsluhuje (serving) value stream (5). Varianta za 3 body je platná, ale value stream nechává nepropojený, takže neukáže, kde se schopnost projeví v tvorbě hodnoty. Varianta za 1 bod obrací realizaci: course of action nerealizuje capability, je naopak schopnostmi realizován. Varianta za 0 bodů volí prvky jiných vrstev a aspektů a propojuje je nepřípustnými vztahy."
+    "explanation": "Rozhodnutí, co podnik udělá, je course of action, to, co umí, je capability, posloupnost činností tvořících hodnotu pro zákazníka je value stream a varna, receptury a sládci jsou resources; resource se ke capability přiřazuje vztahem assignment, capability realizuje course of action a obsluhuje (serving) value stream (5). Varianta za 3 body je platná, ale value stream nechává nepropojený, takže neukáže, kde se schopnost projeví v tvorbě hodnoty. Varianta za 1 bod obrací realizaci: course of action nerealizuje capability, je naopak schopnostmi realizován. Varianta za 0 bodů volí prvky jiných vrstev a aspektů a propojuje je nepřípustnými vztahy.",
+    "image": {
+      "src": "/certification-images/archimate/strategy-relations.svg",
+      "alt": "Strategy elementy a vztahy: resource assigned to capability, capability serves value stream, strategy elementy realizují course of action, ten realizuje outcome a core elementy realizují strategy elementy.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "motivation-strategy-modeling",
@@ -1612,7 +1822,12 @@
       1,
       0
     ],
-    "explanation": "AND junction na vztazích triggering znamená, že po plánování začnou obě činnosti; flow vyjadřuje předání informace a kauzalitu neimplikuje; šipka vztahu access u objektu značí zápis, šipka u chování čtení; a prvek může být součástí více aggregation (5). Varianta za 3 body neobsahuje nic nepravdivého, ale povahu toku, směr přístupu k objektu ani sdílení role nerozlišuje. Varianta za 1 bod čte AND junction jako výběr jedné větve, zbytek má správně. Varianta za 0 bodů zaměňuje čtení a zápis, toku připisuje spouštění, junction čte jako výběr a agregaci vykládá jako výlučnou příslušnost."
+    "explanation": "AND junction na vztazích triggering znamená, že po plánování začnou obě činnosti; flow vyjadřuje předání informace a kauzalitu neimplikuje; šipka vztahu access u objektu značí zápis, šipka u chování čtení; a prvek může být součástí více aggregation (5). Varianta za 3 body neobsahuje nic nepravdivého, ale povahu toku, směr přístupu k objektu ani sdílení role nerozlišuje. Varianta za 1 bod čte AND junction jako výběr jedné větve, zbytek má správně. Varianta za 0 bodů zaměňuje čtení a zápis, toku připisuje spouštění, junction čte jako výběr a agregaci vykládá jako výlučnou příslušnost.",
+    "image": {
+      "src": "/certification-images/archimate/relationships-notation.svg",
+      "alt": "Přehled notace všech vztahů ArchiMate rozdělených na strukturální, závislosti, dynamické a ostatní, včetně spojky AND a OR.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "model-analysis-derivation",
@@ -1631,7 +1846,12 @@
       1,
       0
     ],
-    "explanation": "Driver se s goal spojuje vztahem association; triggering patří mezi prvky chování, ne mezi motivační prvky; realization vede od konkrétnějšího requirementu ke goal a assignment od resource ke capability, nikoli naopak; capability realizuje course of action a business process realizuje capability, takže vztahy (4) a (6) jsou správně (5). Varianta za 3 body najde tytéž chyby, ale vztah (5) nahrazuje obecnou association, která je platná, avšak neříká, že zdroj je schopnosti přidělen. Varianta za 1 bod ponechává nepřípustný assignment od capability k resource. Varianta za 0 bodů označuje za chybné právě správné vztahy a navrhuje jejich obrácení do nepřípustného směru."
+    "explanation": "Driver se s goal spojuje vztahem association; triggering patří mezi prvky chování, ne mezi motivační prvky; realization vede od konkrétnějšího requirementu ke goal a assignment od resource ke capability, nikoli naopak; capability realizuje course of action a business process realizuje capability, takže vztahy (4) a (6) jsou správně (5). Varianta za 3 body najde tytéž chyby, ale vztah (5) nahrazuje obecnou association, která je platná, avšak neříká, že zdroj je schopnosti přidělen. Varianta za 1 bod ponechává nepřípustný assignment od capability k resource. Varianta za 0 bodů označuje za chybné právě správné vztahy a navrhuje jejich obrácení do nepřípustného směru.",
+    "image": {
+      "src": "/certification-images/archimate/strategy-relations.svg",
+      "alt": "Strategy elementy a vztahy: resource assigned to capability, capability serves value stream, strategy elementy realizují course of action, ten realizuje outcome a core elementy realizují strategy elementy.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-technology-physical",
@@ -1650,7 +1870,12 @@
       1,
       0
     ],
-    "explanation": "Vztah assignment vede od hostitele k tomu, co na něm běží: od Device k System Software (hypervizor) a od něj k dalšímu System Software (hostované operační systémy); virtuální server jako samostatnou jednotku vyjadřuje Node složený ze svého systémového softwaru (5). Varianta za 3 body je platná – Node se skládá ze zařízení a systémového softwaru –, ale neukazuje, co běží na čem, ani virtuální servery jako jednotky, takže z ní dopad restartu hypervizoru nelze vyčíst. Varianta za 1 bod má správné prvky, ale řetězec assignment obrací: operační systémy by hostily hypervizor a ten fyzický server, na kterém ve skutečnosti běží. Varianta za 0 bodů zaměňuje vrstvy i aspekty – hypervizor není aplikační komponenta, fyzický server není Facility a operační systém není služba."
+    "explanation": "Vztah assignment vede od hostitele k tomu, co na něm běží: od Device k System Software (hypervizor) a od něj k dalšímu System Software (hostované operační systémy); virtuální server jako samostatnou jednotku vyjadřuje Node složený ze svého systémového softwaru (5). Varianta za 3 body je platná – Node se skládá ze zařízení a systémového softwaru –, ale neukazuje, co běží na čem, ani virtuální servery jako jednotky, takže z ní dopad restartu hypervizoru nelze vyčíst. Varianta za 1 bod má správné prvky, ale řetězec assignment obrací: operační systémy by hostily hypervizor a ten fyzický server, na kterém ve skutečnosti běží. Varianta za 0 bodů zaměňuje vrstvy i aspekty – hypervizor není aplikační komponenta, fyzický server není Facility a operační systém není služba.",
+    "image": {
+      "src": "/certification-images/archimate/deployment-chain.svg",
+      "alt": "Řetěz nasazení: node složený z device a system software, system software assigned to artifact, artifact realizuje application component a data object.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "modeling-technology-physical",
@@ -1840,7 +2065,12 @@
       1,
       0
     ],
-    "explanation": "Alternativní mezistavy jsou samostatná plateaus a to, že nastane jediný z nich, vyjadřuje OR junction na vztazích triggering mezi plateaus; agregované aplikace ukazují architekturu každého stavu (5). Varianta za 3 body je platná, ale zobrazuje jednu cestu, takže představenstvo nemá co porovnávat. Varianta za 1 bod má správná plateaus, ale AND junction tvrdí, že nastanou oba mezistavy, tedy že jde o souběh, ne o volbu. Varianta za 0 bodů zaměňuje stavy architektury za práce – work package nemůže agregovat aplikace, plateau se neskládá z work packages a gap se váže ke dvěma plateaus."
+    "explanation": "Alternativní mezistavy jsou samostatná plateaus a to, že nastane jediný z nich, vyjadřuje OR junction na vztazích triggering mezi plateaus; agregované aplikace ukazují architekturu každého stavu (5). Varianta za 3 body je platná, ale zobrazuje jednu cestu, takže představenstvo nemá co porovnávat. Varianta za 1 bod má správná plateaus, ale AND junction tvrdí, že nastanou oba mezistavy, tedy že jde o souběh, ne o volbu. Varianta za 0 bodů zaměňuje stavy architektury za práce – work package nemůže agregovat aplikace, plateau se neskládá z work packages a gap se váže ke dvěma plateaus.",
+    "image": {
+      "src": "/certification-images/archimate/junction-examples.svg",
+      "alt": "Dva příklady junction na vztahu triggering mezi procesy: AND junction (plné kolečko) a OR junction (prázdné kolečko) s českým čtením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "implementation-migration-modeling",
@@ -1859,7 +2089,12 @@
       1,
       0
     ],
-    "explanation": "Deliverable je pasivní prvek: work package ho vztahem access vytváří (zápis) nebo používá jako vstup (čtení) a složený výstup vyjadřuje agregace deliverables, takže u každého výstupu je vidět původ i odběratelé; ArchiMate 3.2 pro vazbu mezi work package a deliverable doporučuje access, dřívější realization označuje za zastaralou (5). Varianta za 3 body je platná, ale ukazuje pořadí projektů, ne to, který výstup je čí vstup. Varianta za 1 bod má výstupy správně, ale deliverable jako pasivní prvek nemůže být zdrojem vztahu triggering. Varianta za 0 bodů zaměňuje výstupy za stavy architektury a projekty za události."
+    "explanation": "Deliverable je pasivní prvek: work package ho vztahem access vytváří (zápis) nebo používá jako vstup (čtení) a složený výstup vyjadřuje agregace deliverables, takže u každého výstupu je vidět původ i odběratelé; ArchiMate 3.2 pro vazbu mezi work package a deliverable doporučuje access, dřívější realization označuje za zastaralou (5). Varianta za 3 body je platná, ale ukazuje pořadí projektů, ne to, který výstup je čí vstup. Varianta za 1 bod má výstupy správně, ale deliverable jako pasivní prvek nemůže být zdrojem vztahu triggering. Varianta za 0 bodů zaměňuje výstupy za stavy architektury a projekty za události.",
+    "image": {
+      "src": "/certification-images/archimate/implementation-migration-metamodel.svg",
+      "alt": "Implementation & Migration elementy: work package, deliverable, implementation event, plateau a gap se vztahy, včetně poznámky o deprecated realization.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "implementation-migration-modeling",
@@ -1897,7 +2132,12 @@
       1,
       0
     ],
-    "explanation": "Audit je práce s počátkem a koncem (work package), zpráva její přesně vymezený výsledek (deliverable), souběžný provoz relativně stabilní stav architektury po omezenou dobu (plateau), vypnutí okamžik bez trvání (implementation event) a výrok o rozdílu mezi stavy je gap asociovaný se dvěma plateaus – tak to zachycuje varianta za 5 bodů. Varianta za 3 body klasifikuje správně a používá platné vztahy, ale rozdíl mezi stavy nemodeluje prvkem, takže ho nelze dále analyzovat. Varianta za 1 bod chybuje v klíčovém prvku: půlroční souběžný provoz má trvání, a nemůže tedy být událostí. Varianta za 0 bodů zaměňuje téměř všechny prvky – práci za stav, výsledek za rozdíl a okamžik za výstup."
+    "explanation": "Audit je práce s počátkem a koncem (work package), zpráva její přesně vymezený výsledek (deliverable), souběžný provoz relativně stabilní stav architektury po omezenou dobu (plateau), vypnutí okamžik bez trvání (implementation event) a výrok o rozdílu mezi stavy je gap asociovaný se dvěma plateaus – tak to zachycuje varianta za 5 bodů. Varianta za 3 body klasifikuje správně a používá platné vztahy, ale rozdíl mezi stavy nemodeluje prvkem, takže ho nelze dále analyzovat. Varianta za 1 bod chybuje v klíčovém prvku: půlroční souběžný provoz má trvání, a nemůže tedy být událostí. Varianta za 0 bodů zaměňuje téměř všechny prvky – práci za stav, výsledek za rozdíl a okamžik za výstup.",
+    "image": {
+      "src": "/certification-images/archimate/elements-implementation-migration.svg",
+      "alt": "Pět prvků implementace a migrace ArchiMate s ikonami: Work Package, Deliverable, Implementation Event, Plateau a Gap.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "viewpoints-customization",
@@ -1916,7 +2156,12 @@
       1,
       0
     ],
-    "explanation": "Vedoucí provozu rozhoduje (Deciding) a potřebuje analyzovat závislosti a dopad změny napříč vrstvami, což je obsah Coherence – pohled vyjadřující vztahy typu využívá, realizuje a je přiřazen, shrnutý pro rozhodnutí tabulkou. Varianta za 3 body má správný obsah, ale úroveň podrobnosti a podoba návrhového modelu odpovídají architektům, ne manažerovi, který má volit termín. Varianta za 1 bod zůstává v jediné vrstvě: ukáže, co se mění, ale ne které aplikace a procesy odstávka zasáhne. Varianta za 0 bodů míří na jiné publikum i jiný concern a o závislostech neříká nic."
+    "explanation": "Vedoucí provozu rozhoduje (Deciding) a potřebuje analyzovat závislosti a dopad změny napříč vrstvami, což je obsah Coherence – pohled vyjadřující vztahy typu využívá, realizuje a je přiřazen, shrnutý pro rozhodnutí tabulkou. Varianta za 3 body má správný obsah, ale úroveň podrobnosti a podoba návrhového modelu odpovídají architektům, ne manažerovi, který má volit termín. Varianta za 1 bod zůstává v jediné vrstvě: ukáže, co se mění, ale ne které aplikace a procesy odstávka zasáhne. Varianta za 0 bodů míří na jiné publikum i jiný concern a o závislostech neříká nic.",
+    "image": {
+      "src": "/certification-images/archimate/viewpoint-dimensions.svg",
+      "alt": "Dva rozměry klasifikace viewpointů: purpose (Designing, Deciding, Informing) a content (Details, Coherence, Overview) s typickými stakeholdery.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "viewpoints-customization",
@@ -1935,7 +2180,12 @@
       1,
       0
     ],
-    "explanation": "Podle mechanismu viewpointů vznikají z jednoho modelu různé views podle viewpointů, z nichž každý míří na určité stakeholdery a jejich concerns a je určen účelem a obsahem; views odvozené z téhož modelu zůstávají konzistentní (5). Varianta za 3 body zachovává jeden model, ale mění jen množství prvků – účel a způsob zobrazení nepřizpůsobuje, takže pobočkám ani ředitelce IT nepomůže. Varianta za 1 bod vychází publiku vstříc, ale tři nezávislé modely nejsou views jedné architektury a jejich konzistence se rozpadne. Varianta za 0 bodů vychází z omylu: viewpointů může být libovolně mnoho a volí se právě podle stakeholderů a jejich concerns."
+    "explanation": "Podle mechanismu viewpointů vznikají z jednoho modelu různé views podle viewpointů, z nichž každý míří na určité stakeholdery a jejich concerns a je určen účelem a obsahem; views odvozené z téhož modelu zůstávají konzistentní (5). Varianta za 3 body zachovává jeden model, ale mění jen množství prvků – účel a způsob zobrazení nepřizpůsobuje, takže pobočkám ani ředitelce IT nepomůže. Varianta za 1 bod vychází publiku vstříc, ale tři nezávislé modely nejsou views jedné architektury a jejich konzistence se rozpadne. Varianta za 0 bodů vychází z omylu: viewpointů může být libovolně mnoho a volí se právě podle stakeholderů a jejich concerns.",
+    "image": {
+      "src": "/certification-images/archimate/viewpoint-dimensions.svg",
+      "alt": "Dva rozměry klasifikace viewpointů: purpose (Designing, Deciding, Informing) a content (Details, Coherence, Overview) s typickými stakeholdery.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "viewpoints-customization",
@@ -1954,6 +2204,11 @@
       1,
       0
     ],
-    "explanation": "Viewpoint je specifikace konvencí pro určitý druh pohledu: říká, pro které stakeholdery a concerns je určen, jaký má účel a rozsah a které prvky a vztahy obsahuje – pro otázky kompetencí a odpovědností jsou to aktéři, role a místa v jedné vrstvě a jednom aspektu (5). Varianta za 3 body vybírá správné prvky, ale bez stakeholderů, concerns a účelu nelze posoudit, zda pohled na otázku odpovídá. Varianta za 1 bod má popis formálně úplný, jenže zvolený obsah – procesy, aplikace a uzly – na otázku, kdo komu podléhá, neodpovídá. Varianta za 0 bodů zaměňuje pojmy: view je to, co stakeholder vidí, a viewpoint to, odkud se dívá, tedy předpis, ne diagram."
+    "explanation": "Viewpoint je specifikace konvencí pro určitý druh pohledu: říká, pro které stakeholdery a concerns je určen, jaký má účel a rozsah a které prvky a vztahy obsahuje – pro otázky kompetencí a odpovědností jsou to aktéři, role a místa v jedné vrstvě a jednom aspektu (5). Varianta za 3 body vybírá správné prvky, ale bez stakeholderů, concerns a účelu nelze posoudit, zda pohled na otázku odpovídá. Varianta za 1 bod má popis formálně úplný, jenže zvolený obsah – procesy, aplikace a uzly – na otázku, kdo komu podléhá, neodpovídá. Varianta za 0 bodů zaměňuje pojmy: view je to, co stakeholder vidí, a viewpoint to, odkud se dívá, tedy předpis, ne diagram.",
+    "image": {
+      "src": "/certification-images/archimate/iso42010-model.svg",
+      "alt": "Koncepční model architecture description podle ISO/IEC 42010: stakeholder, concern, system-of-interest, architecture, architecture description, viewpoint, view, model kind a architecture model s pojmenovanými vztahy.",
+      "placement": "explanation"
+    }
   }
 ]

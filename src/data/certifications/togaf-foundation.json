@@ -177,7 +177,12 @@
       "Architecture Model"
     ],
     "correctAnswer": 0,
-    "explanation": "Deliverable je pracovní produkt, který je smluvně specifikovaný a stakeholdeři ho formálně revidují, odsouhlasí a podepíší. Artifact jen popisuje určitý aspekt architektury (katalog, matice, diagram) a bývá součástí deliverables; building block je potenciálně znovupoužitelná komponenta."
+    "explanation": "Deliverable je pracovní produkt, který je smluvně specifikovaný a stakeholdeři ho formálně revidují, odsouhlasí a podepíší. Artifact jen popisuje určitý aspekt architektury (katalog, matice, diagram) a bývá součástí deliverables; building block je potenciálně znovupoužitelná komponenta.",
+    "image": {
+      "src": "/certification-images/togaf/content-deliverable-artifact-building-block.svg",
+      "alt": "Deliverable obsahuje artifacts (catalogs, matrices, diagrams), které popisují building blocks – ABB a SBB.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "definitions",
@@ -285,7 +290,12 @@
       "Solution Architecture"
     ],
     "correctAnswer": 0,
-    "explanation": "Segment Architecture podrobně popisuje oblasti podniku a používá se na úrovni programů a portfolií. Strategic Architecture je souhrnný popis celého podniku pro výkonné vedení s dlouhodobým horizontem a Capability Architecture je nejpodrobnější úroveň, která popisuje, jak podnik podporuje konkrétní capability."
+    "explanation": "Segment Architecture podrobně popisuje oblasti podniku a používá se na úrovni programů a portfolií. Strategic Architecture je souhrnný popis celého podniku pro výkonné vedení s dlouhodobým horizontem a Capability Architecture je nejpodrobnější úroveň, která popisuje, jak podnik podporuje konkrétní capability.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-landscape.svg",
+      "alt": "Tři úrovně Architecture Landscape (Strategic, Segment, Capability) a odděleně čtyři účely architektury (Support Strategy, Portfolio, Project, Solution Delivery).",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "definitions",
@@ -345,7 +355,12 @@
       "Phase C: Information Systems Architectures"
     ],
     "correctAnswer": 0,
-    "explanation": "V referenčním cyklu ADM následuje po fázích B, C a D (vývoj architektury) fáze E: Opportunities and Solutions, která zahajuje plánování implementace; pak F: Migration Planning, G: Implementation Governance a H: Architecture Change Management. Pořadí v diagramu je referenční – ADM nepředepisuje vodopád a fáze se mohou překrývat."
+    "explanation": "V referenčním cyklu ADM následuje po fázích B, C a D (vývoj architektury) fáze E: Opportunities and Solutions, která zahajuje plánování implementace; pak F: Migration Planning, G: Implementation Governance a H: Architecture Change Management. Pořadí v diagramu je referenční – ADM nepředepisuje vodopád a fáze se mohou překrývat.",
+    "image": {
+      "src": "/certification-images/togaf/adm-cycle.svg",
+      "alt": "Cyklus ADM: Preliminary, fáze A až H uspořádané do kruhu a Requirements Management uprostřed propojený se všemi fázemi.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-overview",
@@ -357,7 +372,12 @@
       "Je součástí Preliminary Phase a po jejím skončení už neprobíhá"
     ],
     "correctAnswer": 0,
-    "explanation": "Requirements Management je v diagramu ADM umístěn uprostřed: je to průběžný, dynamický proces, který spravuje požadavky po celou dobu cyklu a zpřístupňuje je všem fázím. Není to fáze, která by následovala po fázi H, ani jednorázová činnost na začátku cyklu."
+    "explanation": "Requirements Management je v diagramu ADM umístěn uprostřed: je to průběžný, dynamický proces, který spravuje požadavky po celou dobu cyklu a zpřístupňuje je všem fázím. Není to fáze, která by následovala po fázi H, ani jednorázová činnost na začátku cyklu.",
+    "image": {
+      "src": "/certification-images/togaf/adm-cycle.svg",
+      "alt": "Cyklus ADM: Preliminary, fáze A až H uspořádané do kruhu a Requirements Management uprostřed propojený se všemi fázemi.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-overview",
@@ -501,7 +521,12 @@
       "2 a 3"
     ],
     "correctAnswer": 0,
-    "explanation": "Preliminary Phase poskytuje fázi A mimo jiné Tailored Architecture Framework a Organizational Model for Enterprise Architecture; fáze B–D předávají fázi E kandidátní komponenty roadmapy. Architecture Contract vstupuje do fáze G jako draft a podepisuje se až v ní. Fáze H při zásadní změně iniciuje nový cyklus novým Request for Architecture Work – Statement of Architecture Work se vytváří a schvaluje až ve fázi A."
+    "explanation": "Preliminary Phase poskytuje fázi A mimo jiné Tailored Architecture Framework a Organizational Model for Enterprise Architecture; fáze B–D předávají fázi E kandidátní komponenty roadmapy. Architecture Contract vstupuje do fáze G jako draft a podepisuje se až v ní. Fáze H při zásadní změně iniciuje nový cyklus novým Request for Architecture Work – Statement of Architecture Work se vytváří a schvaluje až ve fázi A.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-overview",
@@ -573,7 +598,12 @@
       "Architecture Principles"
     ],
     "correctAnswer": 0,
-    "explanation": "Preliminary Phase produkuje mj. Organizational Model for Enterprise Architecture, Tailored Architecture Framework, Architecture Principles, počáteční Architecture Repository, Architecture Governance Framework a volitelně Request for Architecture Work. Architecture Vision vzniká až ve fázi A."
+    "explanation": "Preliminary Phase produkuje mj. Organizational Model for Enterprise Architecture, Tailored Architecture Framework, Architecture Principles, počáteční Architecture Repository, Architecture Governance Framework a volitelně Request for Architecture Work. Architecture Vision vzniká až ve fázi A.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-preliminary-a",
@@ -585,7 +615,12 @@
       "Phase G: Implementation Governance"
     ],
     "correctAnswer": 0,
-    "explanation": "Krok Tailor the TOGAF Framework and Other Selected Framework(s) patří do Preliminary Phase a jeho výsledkem je Tailored Architecture Framework (přizpůsobená metoda, obsah, nástroje a rozhraní na další rámce). Fáze A tento rámec používá a případně zpřesňuje, o tailoringu se však primárně rozhoduje v Preliminary Phase."
+    "explanation": "Krok Tailor the TOGAF Framework and Other Selected Framework(s) patří do Preliminary Phase a jeho výsledkem je Tailored Architecture Framework (přizpůsobená metoda, obsah, nástroje a rozhraní na další rámce). Fáze A tento rámec používá a případně zpřesňuje, o tailoringu se však primárně rozhoduje v Preliminary Phase.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-preliminary-a",
@@ -657,7 +692,12 @@
       "Architecture Board schvaluje RFAW ve fázi G, SoAW podepisují implementační partneři"
     ],
     "correctAnswer": 0,
-    "explanation": "Request for Architecture Work je podnět sponzora, který spouští fázi A. Statement of Architecture Work je výstupem fáze A: popisuje rozsah a přístup architektonického projektu a jeho schválení je podmínkou zahájení detailní práce. Záměna obou dokumentů je častou chybou; implementační partneři podepisují až Architecture Contract ve fázi G."
+    "explanation": "Request for Architecture Work je podnět sponzora, který spouští fázi A. Statement of Architecture Work je výstupem fáze A: popisuje rozsah a přístup architektonického projektu a jeho schválení je podmínkou zahájení detailní práce. Záměna obou dokumentů je častou chybou; implementační partneři podepisují až Architecture Contract ve fázi G.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-preliminary-a",
@@ -669,7 +709,12 @@
       "Schválí se Implementation and Migration Plan včetně rozpočtu projektů"
     ],
     "correctAnswer": 0,
-    "explanation": "Fáze A vrcholí krokem Develop Statement of Architecture Work; Secure Approval – sponzor (případně governance orgán, např. Architecture Board) formálně schválí SoAW a teprve pak začíná detailní vývoj ve fázích B–D. Architecture Contract se podepisuje ve fázi G, ADD i I&M Plan se finalizují ve fázi F."
+    "explanation": "Fáze A vrcholí krokem Develop Statement of Architecture Work; Secure Approval – sponzor (případně governance orgán, např. Architecture Board) formálně schválí SoAW a teprve pak začíná detailní vývoj ve fázích B–D. Architecture Contract se podepisuje ve fázi G, ADD i I&M Plan se finalizují ve fázi F.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-preliminary-a",
@@ -681,7 +726,12 @@
       "2 a 4"
     ],
     "correctAnswer": 0,
-    "explanation": "Ve fázi A vznikají mj. schválený Statement of Architecture Work, Architecture Vision, Capability Assessment (z kroků Evaluate Capabilities a Assess Readiness for Business Transformation), Communications Plan a draft ADD. Implementation Governance Model vzniká ve fázi F a Architecture Contract se podepisuje ve fázi G."
+    "explanation": "Ve fázi A vznikají mj. schválený Statement of Architecture Work, Architecture Vision, Capability Assessment (z kroků Evaluate Capabilities a Assess Readiness for Business Transformation), Communications Plan a draft ADD. Implementation Governance Model vzniká ve fázi F a Architecture Contract se podepisuje ve fázi G.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-preliminary-a",
@@ -897,7 +947,12 @@
       "Podepsaný Architecture Contract, Compliance Assessments a Change Requests z implementace"
     ],
     "correctAnswer": 0,
-    "explanation": "Fáze B–D rozšiřují draft Architecture Definition Document o popisy domén, vytvářejí draft Architecture Requirements Specification (výsledky gap analysis, technické požadavky pro další fáze) a definují komponenty Architecture Roadmap. SoAW, Communications Plan a Capability Assessment vznikají ve fázi A, I&M Plan a Implementation Governance Model ve fázi F a Architecture Contract se podepisuje ve fázi G."
+    "explanation": "Fáze B–D rozšiřují draft Architecture Definition Document o popisy domén, vytvářejí draft Architecture Requirements Specification (výsledky gap analysis, technické požadavky pro další fáze) a definují komponenty Architecture Roadmap. SoAW, Communications Plan a Capability Assessment vznikají ve fázi A, I&M Plan a Implementation Governance Model ve fázi F a Architecture Contract se podepisuje ve fázi G.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-e-h-requirements",
@@ -909,7 +964,12 @@
       "Vyvinout cílovou Technology Architecture a definovat její kandidátní komponenty roadmapy"
     ],
     "correctAnswer": 0,
-    "explanation": "Fáze E vytváří první úplnou verzi Architecture Roadmap na základě gap analysis a kandidátních komponent z fází B–D a rozhoduje, zda je nutný přírůstkový postup – pokud ano, identifikuje Transition Architectures přinášející průběžnou business hodnotu. Finalizace roadmapy a I&M Plan je cílem fáze F, dohled nad souladem projektů cílem fáze G."
+    "explanation": "Fáze E vytváří první úplnou verzi Architecture Roadmap na základě gap analysis a kandidátních komponent z fází B–D a rozhoduje, zda je nutný přírůstkový postup – pokud ano, identifikuje Transition Architectures přinášející průběžnou business hodnotu. Finalizace roadmapy a I&M Plan je cílem fáze F, dohled nad souladem projektů cílem fáze G.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-e-h-requirements",
@@ -957,7 +1017,12 @@
       "Plán vzniká až ve fázi G spolu s Architecture Contract; fáze E a F ho nevytvářejí"
     ],
     "correctAnswer": 0,
-    "explanation": "Ve fázi E vzniká počáteční, vysokoúrovňová verze Implementation and Migration Plan spolu s první úplnou Architecture Roadmap. Fáze F plán dopracuje (odhady zdrojů, prioritizace podle hodnoty a rizik, sladění s portfoliem změn) do detailní finální podoby, která je vstupem do fáze G."
+    "explanation": "Ve fázi E vzniká počáteční, vysokoúrovňová verze Implementation and Migration Plan spolu s první úplnou Architecture Roadmap. Fáze F plán dopracuje (odhady zdrojů, prioritizace podle hodnoty a rizik, sladění s portfoliem změn) do detailní finální podoby, která je vstupem do fáze G.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-e-h-requirements",
@@ -981,7 +1046,12 @@
       "Zajistit soulad nasazovaných řešení s cílovou architekturou prostřednictvím compliance reviews"
     ],
     "correctAnswer": 0,
-    "explanation": "Fáze F finalizuje Architecture Roadmap a podpůrný Implementation and Migration Plan, koordinuje je s přístupem podniku k řízení celkového portfolia změn a zajišťuje, aby klíčoví stakeholdeři rozuměli business hodnotě a nákladům work packages a Transition Architectures. Navzdory názvu fáze neřídí technickou migraci dat – tu provádějí projekty pod dohledem fáze G."
+    "explanation": "Fáze F finalizuje Architecture Roadmap a podpůrný Implementation and Migration Plan, koordinuje je s přístupem podniku k řízení celkového portfolia změn a zajišťuje, aby klíčoví stakeholdeři rozuměli business hodnotě a nákladům work packages a Transition Architectures. Navzdory názvu fáze neřídí technickou migraci dat – tu provádějí projekty pod dohledem fáze G.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-e-h-requirements",
@@ -1005,7 +1075,12 @@
       "Requirements Impact Assessment"
     ],
     "correctAnswer": 0,
-    "explanation": "Implementation Governance Model je výstupem fáze F a zajišťuje, že s přechodem do implementace přejde práce i pod řádnou governance (procesy, organizace, role, kontrolní body). Architecture Contract se podepisuje a Compliance Assessments vznikají až ve fázi G; Requirements Impact Assessment je výstupem Requirements Management."
+    "explanation": "Implementation Governance Model je výstupem fáze F a zajišťuje, že s přechodem do implementace přejde práce i pod řádnou governance (procesy, organizace, role, kontrolní body). Architecture Contract se podepisuje a Compliance Assessments vznikají až ve fázi G; Requirements Impact Assessment je výstupem Requirements Management.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-e-h-requirements",
@@ -1041,7 +1116,12 @@
       "3 a 4"
     ],
     "correctAnswer": 0,
-    "explanation": "Ve fázi G se podepisuje Architecture Contract (do fáze vstupuje jako draft) a z compliance reviews vznikají Compliance Assessments; dalšími výstupy jsou Change Requests a nasazená řešení v souladu s architekturou. Requirements Impact Assessment je výstupem Requirements Management a Communications Plan výstupem fáze A."
+    "explanation": "Ve fázi G se podepisuje Architecture Contract (do fáze vstupuje jako draft) a z compliance reviews vznikají Compliance Assessments; dalšími výstupy jsou Change Requests a nasazená řešení v souladu s architekturou. Requirements Impact Assessment je výstupem Requirements Management a Communications Plan výstupem fáze A.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-e-h-requirements",
@@ -1125,7 +1205,12 @@
       "Architecture Roadmap a Implementation and Migration Plan"
     ],
     "correctAnswer": 0,
-    "explanation": "Výstupem Requirements Management jsou změněné požadavky (changed requirements) a Requirements Impact Assessment, který popisuje dopad změny, např. které fáze ADM je třeba znovu otevřít; aktualizuje se také Architecture Requirements Specification a repository požadavků. O prioritách a realizaci rozhodují příslušné fáze, Change Requests a Compliance Assessments vznikají ve fázi G a roadmapa s I&M Plan ve fázích E–F."
+    "explanation": "Výstupem Requirements Management jsou změněné požadavky (changed requirements) a Requirements Impact Assessment, který popisuje dopad změny, např. které fáze ADM je třeba znovu otevřít; aktualizuje se také Architecture Requirements Specification a repository požadavků. O prioritách a realizaci rozhodují příslušné fáze, Change Requests a Compliance Assessments vznikají ve fázi G a roadmapa s I&M Plan ve fázích E–F.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-e-h-requirements",
@@ -1245,7 +1330,12 @@
       "Minimal Effort"
     ],
     "correctAnswer": 0,
-    "explanation": "Kombinace vysokého vlivu (power) a nízkého zájmu (interest) odpovídá kvadrantu Keep Satisfied – stakeholdera je třeba udržovat spokojeného, aby se z něj nestal odpůrce. Keep Informed je opačná kombinace (malý vliv, velký zájem), Key Players mají vysoký vliv i zájem a Minimal Effort nízký vliv i zájem."
+    "explanation": "Kombinace vysokého vlivu (power) a nízkého zájmu (interest) odpovídá kvadrantu Keep Satisfied – stakeholdera je třeba udržovat spokojeného, aby se z něj nestal odpůrce. Keep Informed je opačná kombinace (malý vliv, velký zájem), Key Players mají vysoký vliv i zájem a Minimal Effort nízký vliv i zájem.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-power-interest.svg",
+      "alt": "Mřížka power/interest pro Stakeholder Management se čtyřmi kvadranty: Keep Satisfied, Key Players, Minimal Effort a Keep Informed.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-techniques",
@@ -1257,7 +1347,12 @@
       "Minimal Effort – pouze sledovat, zda se jejich postoj nemění"
     ],
     "correctAnswer": 0,
-    "explanation": "Malý vliv (power) a velký zájem (interest) znamená kvadrant Keep Informed: tyto stakeholdery je třeba pravidelně informovat, protože mohou dát cennou zpětnou vazbu a jejich podpora usnadní zavedení změny. Keep Satisfied platí pro vysoký vliv a nízký zájem, Key Players pro vysoký vliv i zájem."
+    "explanation": "Malý vliv (power) a velký zájem (interest) znamená kvadrant Keep Informed: tyto stakeholdery je třeba pravidelně informovat, protože mohou dát cennou zpětnou vazbu a jejich podpora usnadní zavedení změny. Keep Satisfied platí pro vysoký vliv a nízký zájem, Key Players pro vysoký vliv i zájem.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-power-interest.svg",
+      "alt": "Mřížka power/interest pro Stakeholder Management se čtyřmi kvadranty: Keep Satisfied, Key Players, Minimal Effort a Keep Informed.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-techniques",
@@ -1281,7 +1376,12 @@
       "Kontroluje, zda implementační projekty dodržují cílovou architekturu a schválené standardy."
     ],
     "correctAnswer": 0,
-    "explanation": "Gap analysis porovnává Baseline a Target Architecture a slouží k validaci architektury: odhalí, co bylo náhodně opomenuto, co bylo záměrně vyřazeno a co je třeba nově vyvinout nebo pořídit. Prioritizaci podle hodnoty a rizika podporuje Business Value and Risk Matrix, připravenost na změnu hodnotí Business Transformation Readiness Assessment a dodržování architektury kontrolují compliance reviews."
+    "explanation": "Gap analysis porovnává Baseline a Target Architecture a slouží k validaci architektury: odhalí, co bylo náhodně opomenuto, co bylo záměrně vyřazeno a co je třeba nově vyvinout nebo pořídit. Prioritizaci podle hodnoty a rizika podporuje Business Value and Risk Matrix, připravenost na změnu hodnotí Business Transformation Readiness Assessment a dodržování architektury kontrolují compliance reviews.",
+    "image": {
+      "src": "/certification-images/togaf/gap-analysis-matrix.svg",
+      "alt": "Příklad matice gap analysis: baseline building blocks v řádcích, cílové ve sloupcích, sloupec Eliminated a řádek New.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-techniques",
@@ -1293,7 +1393,12 @@
       "V samostatném sloupci „Gap“ přidaném pro každou doménu."
     ],
     "correctAnswer": 0,
-    "explanation": "V matici tvoří baseline ABBs řádky a target ABBs sloupce; navíc se přidá řádek „New“ a sloupec „Eliminated“. Baseline ABB, který v cílovém stavu chybí, se zaznamená do sloupce Eliminated. Řádek New slouží pro target ABBs, které v baseline nejsou a je třeba je vyvinout nebo pořídit; Included označuje ABB přítomný v obou stavech."
+    "explanation": "V matici tvoří baseline ABBs řádky a target ABBs sloupce; navíc se přidá řádek „New“ a sloupec „Eliminated“. Baseline ABB, který v cílovém stavu chybí, se zaznamená do sloupce Eliminated. Řádek New slouží pro target ABBs, které v baseline nejsou a je třeba je vyvinout nebo pořídit; Included označuje ABB přítomný v obou stavech.",
+    "image": {
+      "src": "/certification-images/togaf/gap-analysis-matrix.svg",
+      "alt": "Příklad matice gap analysis: baseline building blocks v řádcích, cílové ve sloupcích, sloupec Eliminated a řádek New.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-techniques",
@@ -1305,7 +1410,12 @@
       "Jde o položku jen z baseline, která do gap analysis nepatří, a proto se nesleduje."
     ],
     "correctAnswer": 0,
-    "explanation": "Baseline ABB, který v cílovém stavu chybí, aniž by o jeho vyřazení někdo rozhodl, představuje náhodné opomenutí (accidental omission). Gap analysis právě takové chyby odhaluje a ABB je třeba v další iteraci návrhu cílové architektury znovu zařadit. Za záměrně vyřazený (Eliminated) lze považovat jen ABB, o jehož vyřazení se rozhodlo; kategorie New platí pro target ABBs, které v baseline neexistují."
+    "explanation": "Baseline ABB, který v cílovém stavu chybí, aniž by o jeho vyřazení někdo rozhodl, představuje náhodné opomenutí (accidental omission). Gap analysis právě takové chyby odhaluje a ABB je třeba v další iteraci návrhu cílové architektury znovu zařadit. Za záměrně vyřazený (Eliminated) lze považovat jen ABB, o jehož vyřazení se rozhodlo; kategorie New platí pro target ABBs, které v baseline neexistují.",
+    "image": {
+      "src": "/certification-images/togaf/gap-analysis-matrix.svg",
+      "alt": "Příklad matice gap analysis: baseline building blocks v řádcích, cílové ve sloupcích, sloupec Eliminated a řádek New.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-techniques",
@@ -1449,7 +1559,12 @@
       "Phase G a Phase H"
     ],
     "correctAnswer": 0,
-    "explanation": "Iterace Architecture Capability zahrnuje Preliminary Phase a fázi A a slouží k založení nebo úpravě architektonické schopnosti. Častou pastí je přiřazení fáze A k fázím B–D, které však tvoří iteraci Architecture Development. Fáze G a H tvoří iteraci Architecture Governance."
+    "explanation": "Iterace Architecture Capability zahrnuje Preliminary Phase a fázi A a slouží k založení nebo úpravě architektonické schopnosti. Častou pastí je přiřazení fáze A k fázím B–D, které však tvoří iteraci Architecture Development. Fáze G a H tvoří iteraci Architecture Governance.",
+    "image": {
+      "src": "/certification-images/togaf/adm-iteration-cycles.svg",
+      "alt": "Čtyři iterační cykly ADM a fáze, které do nich patří: Architecture Capability, Architecture Development, Transition Planning a Architecture Governance.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "applying-adm",
@@ -1461,7 +1576,12 @@
       "3 a 4"
     ],
     "correctAnswer": 0,
-    "explanation": "TOGAF rozlišuje čtyři iterační cykly: Architecture Capability (Preliminary a A), Architecture Development (B, C, D), Transition Planning (E a F) a Architecture Governance (G a H). Transition Planning proto netvoří fáze D a E a Architecture Capability nezahrnuje fázi B."
+    "explanation": "TOGAF rozlišuje čtyři iterační cykly: Architecture Capability (Preliminary a A), Architecture Development (B, C, D), Transition Planning (E a F) a Architecture Governance (G a H). Transition Planning proto netvoří fáze D a E a Architecture Capability nezahrnuje fázi B.",
+    "image": {
+      "src": "/certification-images/togaf/adm-iteration-cycles.svg",
+      "alt": "Čtyři iterační cykly ADM a fáze, které do nich patří: Architecture Capability, Architecture Development, Transition Planning a Architecture Governance.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "applying-adm",
@@ -1473,7 +1593,12 @@
       "Dovoluje trvale vynechat Preliminary Phase, pokud organizace pracuje agilně."
     ],
     "correctAnswer": 0,
-    "explanation": "Iterace umožňuje, aby více fází ADM probíhalo souběžně – například governance dříve vytvořené architektury, zatímco se vyvíjí architektura nová – a aby se krajina architektur rozvíjela v opakovaných cyklech. ADM tedy není vodopád; schvalování výstupů ani Preliminary Phase však iterace neruší."
+    "explanation": "Iterace umožňuje, aby více fází ADM probíhalo souběžně – například governance dříve vytvořené architektury, zatímco se vyvíjí architektura nová – a aby se krajina architektur rozvíjela v opakovaných cyklech. ADM tedy není vodopád; schvalování výstupů ani Preliminary Phase však iterace neruší.",
+    "image": {
+      "src": "/certification-images/togaf/adm-iteration-cycles.svg",
+      "alt": "Čtyři iterační cykly ADM a fáze, které do nich patří: Architecture Capability, Architecture Development, Transition Planning a Architecture Governance.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "applying-adm",
@@ -1497,7 +1622,12 @@
       "Foundation, Industry a Organization-Specific Architecture"
     ],
     "correctAnswer": 0,
-    "explanation": "Architecture Landscape se člení na Strategic Architecture (dlouhodobý souhrnný pohled pro vedení), Segment Architecture (úroveň programů a portfolií) a Capability Architecture (nejpodrobnější úroveň realizace konkrétních schopností). Strategy, Portfolio a Project jsou účely (purposes) architektury, Contextual, Conceptual a Logical úrovně abstrakce a Foundation až Organization-Specific stupně Enterprise Continuum."
+    "explanation": "Architecture Landscape se člení na Strategic Architecture (dlouhodobý souhrnný pohled pro vedení), Segment Architecture (úroveň programů a portfolií) a Capability Architecture (nejpodrobnější úroveň realizace konkrétních schopností). Strategy, Portfolio a Project jsou účely (purposes) architektury, Contextual, Conceptual a Logical úrovně abstrakce a Foundation až Organization-Specific stupně Enterprise Continuum.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-landscape.svg",
+      "alt": "Tři úrovně Architecture Landscape (Strategic, Segment, Capability) a odděleně čtyři účely architektury (Support Strategy, Portfolio, Project, Solution Delivery).",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "applying-adm",
@@ -1521,7 +1651,12 @@
       "Úroveň programů a portfolií, která organizuje a slaďuje změny v určité oblasti podniku."
     ],
     "correctAnswer": 0,
-    "explanation": "Capability Architecture je nejpodrobnější úrovní Architecture Landscape: popisuje, jak podnik podporuje konkrétní schopnost, a často se realizuje po capability increments na úrovni projektů a work packages. Souhrnný dlouhodobý pohled na celý podnik představuje Strategic Architecture a úroveň programů a portfolií Segment Architecture; popis jednoho přechodového okamžiku je Transition Architecture, která úrovní landscape není."
+    "explanation": "Capability Architecture je nejpodrobnější úrovní Architecture Landscape: popisuje, jak podnik podporuje konkrétní schopnost, a často se realizuje po capability increments na úrovni projektů a work packages. Souhrnný dlouhodobý pohled na celý podnik představuje Strategic Architecture a úroveň programů a portfolií Segment Architecture; popis jednoho přechodového okamžiku je Transition Architecture, která úrovní landscape není.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-landscape.svg",
+      "alt": "Tři úrovně Architecture Landscape (Strategic, Segment, Capability) a odděleně čtyři účely architektury (Support Strategy, Portfolio, Project, Solution Delivery).",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "applying-adm",
@@ -1533,7 +1668,12 @@
       "3 a 4"
     ],
     "correctAnswer": 0,
-    "explanation": "Pravdivá jsou tvrzení 1 a 4: Strategic Architecture dává dlouhodobý souhrnný směr pro vedení a obecně platí, že architektury s širokým záběrem jsou méně podrobné a déle platné, kdežto úzce zaměřené vyžadují více detailu. Segment Architecture není omezena na technologii – organizuje změny na úrovni programů a portfolií – a úrovně nejsou výstupem fáze F."
+    "explanation": "Pravdivá jsou tvrzení 1 a 4: Strategic Architecture dává dlouhodobý souhrnný směr pro vedení a obecně platí, že architektury s širokým záběrem jsou méně podrobné a déle platné, kdežto úzce zaměřené vyžadují více detailu. Segment Architecture není omezena na technologii – organizuje změny na úrovni programů a portfolií – a úrovně nejsou výstupem fáze F.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-landscape.svg",
+      "alt": "Tři úrovně Architecture Landscape (Strategic, Segment, Capability) a odděleně čtyři účely architektury (Support Strategy, Portfolio, Project, Solution Delivery).",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "applying-adm",
@@ -1569,7 +1709,12 @@
       "Architecture to Support Solution Delivery"
     ],
     "correctAnswer": 0,
-    "explanation": "Čtyři účely architektury jsou Architecture to Support Strategy, Support Portfolio, Support Project a Support Solution Delivery. Segment je úroveň Architecture Landscape (Strategic, Segment, Capability), nikoli účel – záměna obou seznamů je typická past."
+    "explanation": "Čtyři účely architektury jsou Architecture to Support Strategy, Support Portfolio, Support Project a Support Solution Delivery. Segment je úroveň Architecture Landscape (Strategic, Segment, Capability), nikoli účel – záměna obou seznamů je typická past.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-landscape.svg",
+      "alt": "Tři úrovně Architecture Landscape (Strategic, Segment, Capability) a odděleně čtyři účely architektury (Support Strategy, Portfolio, Project, Solution Delivery).",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "applying-adm",
@@ -1833,7 +1978,12 @@
       "Fully Conformant"
     ],
     "correctAnswer": 0,
-    "explanation": "Compliant znamená, že některé funkce ze specifikace chybí, ale vše implementované je specifikací pokryto a odpovídá jí. Conformant je opačná situace: všechny funkce specifikace jsou implementovány a navíc existují funkce mimo ni. Consistent znamená částečnou shodu s chybějícími i nadbytečnými funkcemi a Fully Conformant úplnou shodu bez čehokoli navíc."
+    "explanation": "Compliant znamená, že některé funkce ze specifikace chybí, ale vše implementované je specifikací pokryto a odpovídá jí. Conformant je opačná situace: všechny funkce specifikace jsou implementovány a navíc existují funkce mimo ni. Consistent znamená částečnou shodu s chybějícími i nadbytečnými funkcemi a Fully Conformant úplnou shodu bez čehokoli navíc.",
+    "image": {
+      "src": "/certification-images/togaf/compliance-levels.svg",
+      "alt": "Šest úrovní Architecture Compliance znázorněných překryvem specifikace a implementace: Irrelevant, Consistent, Compliant, Conformant, Fully Conformant a Non-conformant.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "governance",
@@ -1845,7 +1995,12 @@
       "Implementace nemá se specifikací žádné společné funkce, a proto se dál neposuzuje."
     ],
     "correctAnswer": 0,
-    "explanation": "Conformant znamená, že všechny funkce ze specifikace jsou implementovány v souladu s ní, ale implementace obsahuje i další funkce, které specifikace nepokrývá. Částečná implementace bez funkcí navíc je Compliant, úplná shoda bez čehokoli navíc Fully Conformant a žádné společné rysy Irrelevant. Záměna Compliant a Conformant je klasická past."
+    "explanation": "Conformant znamená, že všechny funkce ze specifikace jsou implementovány v souladu s ní, ale implementace obsahuje i další funkce, které specifikace nepokrývá. Částečná implementace bez funkcí navíc je Compliant, úplná shoda bez čehokoli navíc Fully Conformant a žádné společné rysy Irrelevant. Záměna Compliant a Conformant je klasická past.",
+    "image": {
+      "src": "/certification-images/togaf/compliance-levels.svg",
+      "alt": "Šest úrovní Architecture Compliance znázorněných překryvem specifikace a implementace: Irrelevant, Consistent, Compliant, Conformant, Fully Conformant a Non-conformant.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "governance",
@@ -1857,7 +2012,12 @@
       "Když implementace nemá se specifikací žádné společné rysy ani funkce."
     ],
     "correctAnswer": 0,
-    "explanation": "Non-conformant je jakýkoli případ, kdy je některá funkce ze specifikace implementována v rozporu s ní – bez ohledu na to, kolik dalších funkcí odpovídá. Chybějící funkce při jinak správné implementaci znamenají Compliant, funkce navíc při úplné implementaci Conformant a žádné společné rysy Irrelevant."
+    "explanation": "Non-conformant je jakýkoli případ, kdy je některá funkce ze specifikace implementována v rozporu s ní – bez ohledu na to, kolik dalších funkcí odpovídá. Chybějící funkce při jinak správné implementaci znamenají Compliant, funkce navíc při úplné implementaci Conformant a žádné společné rysy Irrelevant.",
+    "image": {
+      "src": "/certification-images/togaf/compliance-levels.svg",
+      "alt": "Šest úrovní Architecture Compliance znázorněných překryvem specifikace a implementace: Irrelevant, Consistent, Compliant, Conformant, Fully Conformant a Non-conformant.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "governance",
@@ -1893,7 +2053,12 @@
       "Jednoznačné, testovatelné či měřitelné vyjádření potřeby, kterou musí řešení splnit."
     ],
     "correctAnswer": 0,
-    "explanation": "Viewpoint specifikuje konvence pro konstrukci, interpretaci a použití určitého druhu view: které concerns rámuje, pro jaké publikum je určen a jaké druhy modelů a techniky používá. Konkrétní reprezentace systému je view, zájem stakeholdera je concern a testovatelné vyjádření potřeby je requirement."
+    "explanation": "Viewpoint specifikuje konvence pro konstrukci, interpretaci a použití určitého druhu view: které concerns rámuje, pro jaké publikum je určen a jaké druhy modelů a techniky používá. Konkrétní reprezentace systému je view, zájem stakeholdera je concern a testovatelné vyjádření potřeby je requirement.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-concern-view-viewpoint.svg",
+      "alt": "Vztahy mezi pojmy stakeholder, concern, viewpoint a view: stakeholder má concerns, viewpoint je rámuje a řídí view, view concerns řeší.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "views-viewpoints",
@@ -1905,7 +2070,12 @@
       "Architecture principle"
     ],
     "correctAnswer": 0,
-    "explanation": "View je konkrétní reprezentace systému z perspektivy souvisejících concerns – zde bezpečnosti dat – a odpovídá zvolenému viewpointu, který slouží jako šablona. Viewpointem je tedy ona předem definovaná šablona, nikoli výsledný model; concern je zájem stakeholdera (ochrana citlivých dat), na který view odpovídá."
+    "explanation": "View je konkrétní reprezentace systému z perspektivy souvisejících concerns – zde bezpečnosti dat – a odpovídá zvolenému viewpointu, který slouží jako šablona. Viewpointem je tedy ona předem definovaná šablona, nikoli výsledný model; concern je zájem stakeholdera (ochrana citlivých dat), na který view odpovídá.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-concern-view-viewpoint.svg",
+      "alt": "Vztahy mezi pojmy stakeholder, concern, viewpoint a view: stakeholder má concerns, viewpoint je rámuje a řídí view, view concerns řeší.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "views-viewpoints",
@@ -1917,7 +2087,12 @@
       "Šablona, podle které se vytváří pohled pro konkrétní skupinu stakeholderů."
     ],
     "correctAnswer": 0,
-    "explanation": "Concern je zájem na systému relevantní pro jednoho či více stakeholderů – například výkon, spolehlivost, bezpečnost nebo možnost dalšího rozvoje. Requirement je oproti tomu jednoznačné, testovatelné či měřitelné vyjádření potřeby; concerns vedou k požadavkům i k volbě viewpointů. Šablona pohledu je viewpoint."
+    "explanation": "Concern je zájem na systému relevantní pro jednoho či více stakeholderů – například výkon, spolehlivost, bezpečnost nebo možnost dalšího rozvoje. Requirement je oproti tomu jednoznačné, testovatelné či měřitelné vyjádření potřeby; concerns vedou k požadavkům i k volbě viewpointů. Šablona pohledu je viewpoint.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-concern-view-viewpoint.svg",
+      "alt": "Vztahy mezi pojmy stakeholder, concern, viewpoint a view: stakeholder má concerns, viewpoint je rámuje a řídí view, view concerns řeší.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "views-viewpoints",
@@ -1929,7 +2104,12 @@
       "3 a 4"
     ],
     "correctAnswer": 0,
-    "explanation": "Pravdivá jsou tvrzení 1 a 4: jeden view může sloužit více stakeholderům a jejich concerns a viewpoints jsou znovupoužitelné šablony, které se uchovávají ve Viewpoint Library jako součásti Reference Library. TOGAF pojmy normy ISO/IEC/IEEE 42010 přebírá, ale striktně se jí nedrží."
+    "explanation": "Pravdivá jsou tvrzení 1 a 4: jeden view může sloužit více stakeholderům a jejich concerns a viewpoints jsou znovupoužitelné šablony, které se uchovávají ve Viewpoint Library jako součásti Reference Library. TOGAF pojmy normy ISO/IEC/IEEE 42010 přebírá, ale striktně se jí nedrží.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-concern-view-viewpoint.svg",
+      "alt": "Vztahy mezi pojmy stakeholder, concern, viewpoint a view: stakeholder má concerns, viewpoint je rámuje a řídí view, view concerns řeší.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "views-viewpoints",
@@ -1953,7 +2133,12 @@
       "Požádat oba ředitele, aby si potřebné pohledy sami vytvořili z Architecture Repository."
     ],
     "correctAnswer": 0,
-    "explanation": "Různí stakeholdeři mají různé concerns, a proto potřebují různé views. Architekt pro každý concern zvolí viewpoint, který jej rámuje, a podle něj vytvoří view – nákladový pohled pro finančního ředitele a bezpečnostní pohled pro bezpečnostního ředitele. Jediný model pro všechny concerns neadresuje a ignorování stakeholdera odporuje stakeholder managementu."
+    "explanation": "Různí stakeholdeři mají různé concerns, a proto potřebují různé views. Architekt pro každý concern zvolí viewpoint, který jej rámuje, a podle něj vytvoří view – nákladový pohled pro finančního ředitele a bezpečnostní pohled pro bezpečnostního ředitele. Jediný model pro všechny concerns neadresuje a ignorování stakeholdera odporuje stakeholder managementu.",
+    "image": {
+      "src": "/certification-images/togaf/stakeholder-concern-view-viewpoint.svg",
+      "alt": "Vztahy mezi pojmy stakeholder, concern, viewpoint a view: stakeholder má concerns, viewpoint je rámuje a řídí view, view concerns řeší.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "views-viewpoints",
@@ -1989,7 +2174,12 @@
       "Jde o tři názvy pro totéž, používané jen v různých fázích ADM."
     ],
     "correctAnswer": 0,
-    "explanation": "Deliverable je formálně schválený výstup, který obsahuje artifacts (catalogs, matrices, diagrams); artifacts pak slouží k popisu building blocks, tedy potenciálně znovupoužitelných komponent. Například Architecture Definition Document obsahuje diagram procesu, který popisuje proces a jeho aktéry jako building blocks. Zda je artifact sám deliverablem, určuje smlouva (např. Statement of Architecture Work)."
+    "explanation": "Deliverable je formálně schválený výstup, který obsahuje artifacts (catalogs, matrices, diagrams); artifacts pak slouží k popisu building blocks, tedy potenciálně znovupoužitelných komponent. Například Architecture Definition Document obsahuje diagram procesu, který popisuje proces a jeho aktéry jako building blocks. Zda je artifact sám deliverablem, určuje smlouva (např. Statement of Architecture Work).",
+    "image": {
+      "src": "/certification-images/togaf/content-deliverable-artifact-building-block.svg",
+      "alt": "Deliverable obsahuje artifacts (catalogs, matrices, diagrams), které popisují building blocks – ABB a SBB.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "content-framework",
@@ -2001,7 +2191,12 @@
       "Formálně schválený obsah, který podepisují všichni stakeholdeři"
     ],
     "correctAnswer": 0,
-    "explanation": "TOGAF rozlišuje tři typy artifacts: catalog (strukturovaný seznam prvků, např. Application Portfolio), matrix (mřížka zachycující vztahy mezi prvky, např. Application Interaction) a diagram (grafické znázornění). Formálně schválený a podepsaný výstup je deliverable, nikoli typ artifactu."
+    "explanation": "TOGAF rozlišuje tři typy artifacts: catalog (strukturovaný seznam prvků, např. Application Portfolio), matrix (mřížka zachycující vztahy mezi prvky, např. Application Interaction) a diagram (grafické znázornění). Formálně schválený a podepsaný výstup je deliverable, nikoli typ artifactu.",
+    "image": {
+      "src": "/certification-images/togaf/content-deliverable-artifact-building-block.svg",
+      "alt": "Deliverable obsahuje artifacts (catalogs, matrices, diagrams), které popisují building blocks – ABB a SBB.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "content-framework",
@@ -2037,7 +2232,12 @@
       "Je to formálně schválený deliverable, který podepisuje sponzor."
     ],
     "correctAnswer": 0,
-    "explanation": "ABB je architektonický, logický a na dodavateli nezávislý stavební blok: zachycuje požadavky na architekturu a řídí a usměrňuje vývoj Solution Building Blocks. Konkrétní produkt s konfigurací popisuje SBB. ABBs se podrobně definují ve fázích B–D a deliverable není druh building blocku."
+    "explanation": "ABB je architektonický, logický a na dodavateli nezávislý stavební blok: zachycuje požadavky na architekturu a řídí a usměrňuje vývoj Solution Building Blocks. Konkrétní produkt s konfigurací popisuje SBB. ABBs se podrobně definují ve fázích B–D a deliverable není druh building blocku.",
+    "image": {
+      "src": "/certification-images/togaf/content-deliverable-artifact-building-block.svg",
+      "alt": "Deliverable obsahuje artifacts (catalogs, matrices, diagrams), které popisují building blocks – ABB a SBB.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "content-framework",
@@ -2049,7 +2249,12 @@
       "Reference Model"
     ],
     "correctAnswer": 0,
-    "explanation": "SBB je fyzická, na produkt či dodavatele zaměřená komponenta, která realizuje část nebo celou funkcionalitu jednoho či více ABBs. ABB by popisoval potřebnou schopnost správy identit nezávisle na produktu. Capability increment je část capability architecture přinášející hodnotu a reference model abstraktní rámec bez vazby na konkrétní technologie."
+    "explanation": "SBB je fyzická, na produkt či dodavatele zaměřená komponenta, která realizuje část nebo celou funkcionalitu jednoho či více ABBs. ABB by popisoval potřebnou schopnost správy identit nezávisle na produktu. Capability increment je část capability architecture přinášející hodnotu a reference model abstraktní rámec bez vazby na konkrétní technologie.",
+    "image": {
+      "src": "/certification-images/togaf/content-deliverable-artifact-building-block.svg",
+      "alt": "Deliverable obsahuje artifacts (catalogs, matrices, diagrams), které popisují building blocks – ABB a SBB.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "content-framework",
@@ -2109,7 +2314,12 @@
       "Časová osa všech přechodových architektur mezi baseline a cílovou architekturou podniku."
     ],
     "correctAnswer": 0,
-    "explanation": "Enterprise Continuum je pohled a klasifikační schéma pro aktiva v repository: řadí architektonické artifacts, řešení a building blocks od obecných Foundation po Organization-Specific. Tvoří jej Architecture Continuum a Solutions Continuum a slouží i jako společný jazyk architektů. Fyzickým úložištěm je Architecture Repository."
+    "explanation": "Enterprise Continuum je pohled a klasifikační schéma pro aktiva v repository: řadí architektonické artifacts, řešení a building blocks od obecných Foundation po Organization-Specific. Tvoří jej Architecture Continuum a Solutions Continuum a slouží i jako společný jazyk architektů. Fyzickým úložištěm je Architecture Repository.",
+    "image": {
+      "src": "/certification-images/togaf/enterprise-continuum.svg",
+      "alt": "Enterprise Continuum: Architecture Continuum a Solutions Continuum se čtyřmi stupni od Foundation po Organization-Specific, od obecného ke specifickému.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2121,7 +2331,12 @@
       "Foundation → Common Systems → Segment → Organization-Specific"
     ],
     "correctAnswer": 0,
-    "explanation": "Architecture Continuum postupuje od Foundation Architectures přes Common Systems Architectures a Industry Architectures k Organization-Specific Architectures; zleva doprava roste detail a specializace. Stejné stupně má i Solutions Continuum. Segment je úroveň Architecture Landscape, nikoli stupeň continua."
+    "explanation": "Architecture Continuum postupuje od Foundation Architectures přes Common Systems Architectures a Industry Architectures k Organization-Specific Architectures; zleva doprava roste detail a specializace. Stejné stupně má i Solutions Continuum. Segment je úroveň Architecture Landscape, nikoli stupeň continua.",
+    "image": {
+      "src": "/certification-images/togaf/enterprise-continuum.svg",
+      "alt": "Enterprise Continuum: Architecture Continuum a Solutions Continuum se čtyřmi stupni od Foundation po Organization-Specific, od obecného ke specifickému.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2133,7 +2348,12 @@
       "Solutions Continuum je starší název pro Architecture Continuum, používaný v TOGAF 9."
     ],
     "correctAnswer": 0,
-    "explanation": "Vztah vede od architektur k řešením: Architecture Continuum obsahuje požadavky a specifikace, kterými se řídí řešení v Solutions Continuum – a to na každém stupni od Foundation po Organization-Specific. Opačným směrem vztah nevede; obě continua spolu úzce souvisejí a dohromady tvoří Enterprise Continuum."
+    "explanation": "Vztah vede od architektur k řešením: Architecture Continuum obsahuje požadavky a specifikace, kterými se řídí řešení v Solutions Continuum – a to na každém stupni od Foundation po Organization-Specific. Opačným směrem vztah nevede; obě continua spolu úzce souvisejí a dohromady tvoří Enterprise Continuum.",
+    "image": {
+      "src": "/certification-images/togaf/enterprise-continuum.svg",
+      "alt": "Enterprise Continuum: Architecture Continuum a Solutions Continuum se čtyřmi stupni od Foundation po Organization-Specific, od obecného ke specifickému.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2145,7 +2365,12 @@
       "Organization-Specific Architectures"
     ],
     "correctAnswer": 0,
-    "explanation": "Referenční model společný pro celé odvětví patří mezi Industry Architectures. Teprve jeho přizpůsobením konkrétní bance vznikne Organization-Specific Architecture. Foundation Architectures obsahují nejobecnější building blocks použitelné v jakémkoli podniku a Common Systems Architectures obecně použitelná řešení napříč odvětvími (např. bezpečnost či správa sítí)."
+    "explanation": "Referenční model společný pro celé odvětví patří mezi Industry Architectures. Teprve jeho přizpůsobením konkrétní bance vznikne Organization-Specific Architecture. Foundation Architectures obsahují nejobecnější building blocks použitelné v jakémkoli podniku a Common Systems Architectures obecně použitelná řešení napříč odvětvími (např. bezpečnost či správa sítí).",
+    "image": {
+      "src": "/certification-images/togaf/enterprise-continuum.svg",
+      "alt": "Enterprise Continuum: Architecture Continuum a Solutions Continuum se čtyřmi stupni od Foundation po Organization-Specific, od obecného ke specifickému.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2157,7 +2382,12 @@
       "1 a 2"
     ],
     "correctAnswer": 0,
-    "explanation": "Pravdivá jsou tvrzení 3 a 4: posun zleva doprava znamená rostoucí specializaci a přizpůsobení (zprava doleva zobecnění pro opětovné použití) a continuum poskytuje architektům společný jazyk. Continuum se uplatňuje v celém ADM – architekti v každé fázi hledají znovupoužitelná aktiva a každý cyklus ADM obsah repository dále rozšiřuje – a stupeň Segment v continuu neexistuje."
+    "explanation": "Pravdivá jsou tvrzení 3 a 4: posun zleva doprava znamená rostoucí specializaci a přizpůsobení (zprava doleva zobecnění pro opětovné použití) a continuum poskytuje architektům společný jazyk. Continuum se uplatňuje v celém ADM – architekti v každé fázi hledají znovupoužitelná aktiva a každý cyklus ADM obsah repository dále rozšiřuje – a stupeň Segment v continuu neexistuje.",
+    "image": {
+      "src": "/certification-images/togaf/enterprise-continuum.svg",
+      "alt": "Enterprise Continuum: Architecture Continuum a Solutions Continuum se čtyřmi stupni od Foundation po Organization-Specific, od obecného ke specifickému.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2169,7 +2399,12 @@
       "Solutions Landscape"
     ],
     "correctAnswer": 0,
-    "explanation": "Architecture Repository se skládá z komponent Architecture Metamodel, Architecture Capability, Architecture Landscape, Standards Library, Reference Library, Governance Repository, Architecture Requirements Repository a Solutions Landscape. Enterprise Continuum není komponentou úložiště, ale klasifikačním pohledem na jeho obsah."
+    "explanation": "Architecture Repository se skládá z komponent Architecture Metamodel, Architecture Capability, Architecture Landscape, Standards Library, Reference Library, Governance Repository, Architecture Requirements Repository a Solutions Landscape. Enterprise Continuum není komponentou úložiště, ale klasifikačním pohledem na jeho obsah.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-repository.svg",
+      "alt": "Osm komponent Architecture Repository s krátkým popisem obsahu každé z nich.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2181,7 +2416,12 @@
       "Všechny autorizované architektonické požadavky odsouhlasené s Architecture Board."
     ],
     "correctAnswer": 0,
-    "explanation": "Standards Library obsahuje standardy, se kterými musí být nové architektury v souladu – např. odvětvové standardy, vybrané produkty a služby nebo sdílené služby; obvykle se člení na právní a regulatorní povinnosti, odvětvové standardy a organizační standardy. Šablony, vzory a viewpoints patří do Reference Library, záznamy o governance do Governance Repository a autorizované požadavky do Architecture Requirements Repository."
+    "explanation": "Standards Library obsahuje standardy, se kterými musí být nové architektury v souladu – např. odvětvové standardy, vybrané produkty a služby nebo sdílené služby; obvykle se člení na právní a regulatorní povinnosti, odvětvové standardy a organizační standardy. Šablony, vzory a viewpoints patří do Reference Library, záznamy o governance do Governance Repository a autorizované požadavky do Architecture Requirements Repository.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-repository.svg",
+      "alt": "Osm komponent Architecture Repository s krátkým popisem obsahu každé z nich.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2193,7 +2433,12 @@
       "Solutions Landscape"
     ],
     "correctAnswer": 0,
-    "explanation": "Reference Library obsahuje návody, šablony, vzory a další referenční materiály včetně Viewpoint Library a je podporována TOGAF Library. Standards Library naopak obsahuje standardy, které musí architektury dodržovat; Governance Repository zaznamenává governance činnosti a Solutions Landscape popisuje SBBs."
+    "explanation": "Reference Library obsahuje návody, šablony, vzory a další referenční materiály včetně Viewpoint Library a je podporována TOGAF Library. Standards Library naopak obsahuje standardy, které musí architektury dodržovat; Governance Repository zaznamenává governance činnosti a Solutions Landscape popisuje SBBs.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-repository.svg",
+      "alt": "Osm komponent Architecture Repository s krátkým popisem obsahu každé z nich.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2205,7 +2450,12 @@
       "Architecture Requirements Repository"
     ],
     "correctAnswer": 0,
-    "explanation": "Governance Repository uchovává záznam o governance činnostech v podniku – tedy i o rozhodnutích, výsledcích posouzení souladu a udělených výjimkách. Komponenta Architecture Capability popisuje parametry, struktury a procesy pro řízení samotného repository, Standards Library obsahuje standardy a Architecture Requirements Repository autorizované požadavky. V TOGAF 9 se tato komponenta nazývala Governance Log."
+    "explanation": "Governance Repository uchovává záznam o governance činnostech v podniku – tedy i o rozhodnutích, výsledcích posouzení souladu a udělených výjimkách. Komponenta Architecture Capability popisuje parametry, struktury a procesy pro řízení samotného repository, Standards Library obsahuje standardy a Architecture Requirements Repository autorizované požadavky. V TOGAF 9 se tato komponenta nazývala Governance Log.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-repository.svg",
+      "alt": "Osm komponent Architecture Repository s krátkým popisem obsahu každé z nich.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "continuum-repository",
@@ -2217,7 +2467,12 @@
       "Neschválené návrhy požadavků, které čekají na zařazení do Architecture Vision."
     ],
     "correctAnswer": 0,
-    "explanation": "Architecture Requirements Repository uchovává všechny autorizované požadavky na architekturu, odsouhlasené s Architecture Board. Požadavky přibývají ve všech fázích ADM a spravuje je Requirements Management; nejde jen o požadavky z fáze A ani o neschválené návrhy či provozní požadavky na licence."
+    "explanation": "Architecture Requirements Repository uchovává všechny autorizované požadavky na architekturu, odsouhlasené s Architecture Board. Požadavky přibývají ve všech fázích ADM a spravuje je Requirements Management; nejde jen o požadavky z fáze A ani o neschválené návrhy či provozní požadavky na licence.",
+    "image": {
+      "src": "/certification-images/togaf/architecture-repository.svg",
+      "alt": "Osm komponent Architecture Repository s krátkým popisem obsahu každé z nich.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-deliverables",
@@ -2361,7 +2616,12 @@
       "Prohlášení sponzora, že architektonický projekt splnil akceptační kritéria ze SoAW."
     ],
     "correctAnswer": 0,
-    "explanation": "Compliance Assessment dokumentuje výsledek periodických revizí souladu implementačních projektů s architekturou – stav projektu, přehled architektury a návrhu a vyplněné kontrolní seznamy. Vzniká ve fázi G a aktualizuje se ve fázi H. Hodnocení připravenosti je součástí Capability Assessment a dopad změny požadavků popisuje Requirements Impact Assessment."
+    "explanation": "Compliance Assessment dokumentuje výsledek periodických revizí souladu implementačních projektů s architekturou – stav projektu, přehled architektury a návrhu a vyplněné kontrolní seznamy. Vzniká ve fázi G a aktualizuje se ve fázi H. Hodnocení připravenosti je součástí Capability Assessment a dopad změny požadavků popisuje Requirements Impact Assessment.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-deliverables",
@@ -2373,7 +2633,12 @@
       "Když je nutné doplnit Communications Plan o nově identifikované skupiny stakeholderů."
     ],
     "correctAnswer": 0,
-    "explanation": "Change Request vzniká, když se implementované řešení nebo měnící se potřeby byznysu odchylují od schválené architektury; popisuje navrhovanou změnu, její zdůvodnění a dopady. Typicky vzniká ve fázi G (změny vyvolané implementací) a je vstupem fáze H. Žádostí o zahájení nového cyklu je Request for Architecture Work."
+    "explanation": "Change Request vzniká, když se implementované řešení nebo měnící se potřeby byznysu odchylují od schválené architektury; popisuje navrhovanou změnu, její zdůvodnění a dopady. Typicky vzniká ve fázi G (změny vyvolané implementací) a je vstupem fáze H. Žádostí o zahájení nového cyklu je Request for Architecture Work.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-deliverables",
@@ -2385,7 +2650,12 @@
       "Compliance Assessment"
     ],
     "correctAnswer": 0,
-    "explanation": "Requirements Impact Assessment vzniká v Requirements Management, kdykoli se požadavky změní: identifikuje dotčené požadavky, prioritu stakeholderů, fáze ADM, které je třeba znovu projít, a doporučení. Finální verze nese plné dopady včetně nákladů, času a byznysových metrik. ARS je specifikací požadavků, nikoli posouzením dopadu jejich změny, a Change Request vzniká hlavně při implementaci (fáze G) jako podnět pro fázi H, nikoli jako výstup Requirements Management."
+    "explanation": "Requirements Impact Assessment vzniká v Requirements Management, kdykoli se požadavky změní: identifikuje dotčené požadavky, prioritu stakeholderů, fáze ADM, které je třeba znovu projít, a doporučení. Finální verze nese plné dopady včetně nákladů, času a byznysových metrik. ARS je specifikací požadavků, nikoli posouzením dopadu jejich změny, a Change Request vzniká hlavně při implementaci (fáze G) jako podnět pro fázi H, nikoli jako výstup Requirements Management.",
+    "image": {
+      "src": "/certification-images/togaf/adm-phase-outputs.svg",
+      "alt": "Tabulka fází ADM a jejich klíčových výstupů od Preliminary po Requirements Management.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "adm-deliverables",

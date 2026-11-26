@@ -10,7 +10,12 @@
       "Ano, protože tailoring umožňuje u projektů s hotovým technickým návrhem princip Manage by stages vynechat."
     ],
     "correctAnswer": 0,
-    "explanation": "Princip Manage by stages vyžaduje nejméně dvě manažerské etapy: iniciační etapu a alespoň jednu realizační etapu. Iniciace má vytvořit pevné základy (PID, úplný business case, project plan) dřív, než Project Board uvolní velké prostředky; existující studie ji může zkrátit, ale ne nahradit. Starting up a project není etapa, ale předprojektová činnost, a principy nelze tailoringem vypustit – přizpůsobuje se jen způsob jejich uplatnění."
+    "explanation": "Princip Manage by stages vyžaduje nejméně dvě manažerské etapy: iniciační etapu a alespoň jednu realizační etapu. Iniciace má vytvořit pevné základy (PID, úplný business case, project plan) dřív, než Project Board uvolní velké prostředky; existující studie ji může zkrátit, ale ne nahradit. Starting up a project není etapa, ale předprojektová činnost, a principy nelze tailoringem vypustit – přizpůsobuje se jen způsob jejich uplatnění.",
+    "image": {
+      "src": "/certification-images/prince2/principles.svg",
+      "alt": "Přehled sedmi principů PRINCE2 7 s anglickými názvy a krátkým českým vysvětlením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -49,7 +54,12 @@
       "Ne, protože hledání poučení začíná až v Initiating a project, kdy se zakládají registry a logy, které dohromady tvoří project log."
     ],
     "correctAnswer": 0,
-    "explanation": "Learn from experience se uplatňuje na začátku, během i na konci projektu; ve Starting up a project k tomu slouží aktivita Assess previous lessons. Poučení lze čerpat z vlastních projektů i z jiných organizací a zaznamenávají se do lessons logu, aby se podle nich dalo jednat. Tvrzení, že se poučení sbírají jen na začátku a na konci, je chybné – hledají se a uplatňují průběžně."
+    "explanation": "Learn from experience se uplatňuje na začátku, během i na konci projektu; ve Starting up a project k tomu slouží aktivita Assess previous lessons. Poučení lze čerpat z vlastních projektů i z jiných organizací a zaznamenávají se do lessons logu, aby se podle nich dalo jednat. Tvrzení, že se poučení sbírají jen na začátku a na konci, je chybné – hledají se a uplatňují průběžně.",
+    "image": {
+      "src": "/certification-images/prince2/principles.svg",
+      "alt": "Přehled sedmi principů PRINCE2 7 s anglickými názvy a krátkým českým vysvětlením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -62,7 +72,12 @@
       "Ponechat poučení v týmu, protože se týká technické práce a lessons log je určen jen pro poučení z řízení projektu."
     ],
     "correctAnswer": 0,
-    "explanation": "Learn from experience se uplatňuje po celou dobu projektu a hledat a sdílet poučení má každý, nejen projektový manažer. Poučení se zaznamená do lessons logu a hned se využije v dalších pracovních balících, aby se chyba neopakovala; čekat do uzavření projektu znamená ztratit jeho hodnotu. Lessons report pro business layer se zpracovává na konci projektu (případně etapy), ne pro každé jednotlivé poučení."
+    "explanation": "Learn from experience se uplatňuje po celou dobu projektu a hledat a sdílet poučení má každý, nejen projektový manažer. Poučení se zaznamená do lessons logu a hned se využije v dalších pracovních balících, aby se chyba neopakovala; čekat do uzavření projektu znamená ztratit jeho hodnotu. Lessons report pro business layer se zpracovává na konci projektu (případně etapy), ne pro každé jednotlivé poučení.",
+    "image": {
+      "src": "/certification-images/prince2/principles.svg",
+      "alt": "Přehled sedmi principů PRINCE2 7 s anglickými názvy a krátkým českým vysvětlením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -75,7 +90,12 @@
       "Požádat business layer o změnu smlouvy se zhotovitelem, protože vztahy s externími dodavateli v projektu upravuje jen obchodní smlouva."
     ],
     "correctAnswer": 0,
-    "explanation": "V PRINCE2 7 princip Define roles, responsibilities and relationships zahrnuje kromě rolí a odpovědností i budování vztahů mezi lidmi v projektu a se zainteresovanými stranami, interními i externími. Schválené role descriptions samy nestačí, když spolupráce mezi stavbou a provozem nefunguje. Zařazení stavbyvedoucího do Project Boardu by mísilo úroveň dodávky s úrovní usměrňování a problém komunikace by nevyřešilo."
+    "explanation": "V PRINCE2 7 princip Define roles, responsibilities and relationships zahrnuje kromě rolí a odpovědností i budování vztahů mezi lidmi v projektu a se zainteresovanými stranami, interními i externími. Schválené role descriptions samy nestačí, když spolupráce mezi stavbou a provozem nefunguje. Zařazení stavbyvedoucího do Project Boardu by mísilo úroveň dodávky s úrovní usměrňování a problém komunikace by nevyřešilo.",
+    "image": {
+      "src": "/certification-images/prince2/principles.svg",
+      "alt": "Přehled sedmi principů PRINCE2 7 s anglickými názvy a krátkým českým vysvětlením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -88,7 +108,12 @@
       "Ne, protože tolerance nákladů stanovuje business layer, a Project Board proto do čerpání rozpočtu projektu nesmí během etapy nijak zasahovat."
     ],
     "correctAnswer": 0,
-    "explanation": "Manage by exception znamená, že každá úroveň deleguje pravomoc na nižší úroveň prostřednictvím tolerancí: Project Board stanoví tolerance etapy, PM v nich řídí každodenní práci a eskaluje, když předpovídá jejich překročení. Executive odpovídá za business case, to však neznamená schvalovat jednotlivé nákupy ani úkolovat vývojáře – tím by obcházel PM i Team managera. Tolerance projektu stanovuje business layer, tolerance etapy ale nastavuje právě Project Board."
+    "explanation": "Manage by exception znamená, že každá úroveň deleguje pravomoc na nižší úroveň prostřednictvím tolerancí: Project Board stanoví tolerance etapy, PM v nich řídí každodenní práci a eskaluje, když předpovídá jejich překročení. Executive odpovídá za business case, to však neznamená schvalovat jednotlivé nákupy ani úkolovat vývojáře – tím by obcházel PM i Team managera. Tolerance projektu stanovuje business layer, tolerance etapy ale nastavuje právě Project Board.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -101,7 +126,12 @@
       "Požádat Senior usera o schválení seznamu činností, protože za převzetí produktů odpovídá on a jeho souhlas plán etapy potvrdí."
     ],
     "correctAnswer": 0,
-    "explanation": "Focus on products znamená definovat produkty (co se má dodat a jaké vlastnosti má mít) dřív, než se plánují činnosti; product descriptions se specifikacemi kvality pak řídí plánování, kontrolu kvality i akceptaci. Podrobný Ganttův diagram jen přesněji rozvrhne činnosti, ale neřekne, co bude výsledkem a podle čeho se převezme. Pokrok se posuzuje podle dokončených a schválených produktů, nikoli podle spotřebovaných hodin."
+    "explanation": "Focus on products znamená definovat produkty (co se má dodat a jaké vlastnosti má mít) dřív, než se plánují činnosti; product descriptions se specifikacemi kvality pak řídí plánování, kontrolu kvality i akceptaci. Podrobný Ganttův diagram jen přesněji rozvrhne činnosti, ale neřekne, co bude výsledkem a podle čeho se převezme. Pokrok se posuzuje podle dokončených a schválených produktů, nikoli podle spotřebovaných hodin.",
+    "image": {
+      "src": "/certification-images/prince2/principles.svg",
+      "alt": "Přehled sedmi principů PRINCE2 7 s anglickými názvy a krátkým českým vysvětlením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -114,7 +144,12 @@
       "Ne, protože checkpoint reporty musí mít vždy písemnou podobu, jinak je nelze předložit Project Boardu k posouzení a schválení."
     ],
     "correctAnswer": 0,
-    "explanation": "Tailoring přizpůsobuje praktiky, procesy, produkty a jejich formálnost velikosti a složitosti projektu – PID jako wiki, stručné e-mailové highlight reporty nebo ústní checkpointy jsou typické příklady. Podmínkou je, že účel produktů zůstane naplněn (Project Board má dost informací k řízení výjimkami) a všech sedm principů se dál uplatňuje. Praktiky se nevypouštějí, jen se přiměřeně zjednodušují; checkpoint reporty navíc patří projektovému manažerovi, ne Project Boardu."
+    "explanation": "Tailoring přizpůsobuje praktiky, procesy, produkty a jejich formálnost velikosti a složitosti projektu – PID jako wiki, stručné e-mailové highlight reporty nebo ústní checkpointy jsou typické příklady. Podmínkou je, že účel produktů zůstane naplněn (Project Board má dost informací k řízení výjimkami) a všech sedm principů se dál uplatňuje. Praktiky se nevypouštějí, jen se přiměřeně zjednodušují; checkpoint reporty navíc patří projektovému manažerovi, ne Project Boardu.",
+    "image": {
+      "src": "/certification-images/prince2/principles.svg",
+      "alt": "Přehled sedmi principů PRINCE2 7 s anglickými názvy a krátkým českým vysvětlením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -140,7 +175,12 @@
       "Uvést je v lessons logu, protože tailoring je především poučením pro budoucí projekty, které na konci posoudí business layer."
     ],
     "correctAnswer": 0,
-    "explanation": "Požadavky na tailoring se dohadují v Initiating a project (aktivita Agree tailoring requirements) a dokumentují se v PID, kterou Project Board schvaluje při autorizaci projektu – tím jsou úpravy metody formálně potvrzeny. Project brief vzniká ve Starting up a project a po iniciaci jej nahrazuje PID, takže se dál neudržuje. Daily log slouží PM pro neformální záznamy, nikoli pro dohody o způsobu řízení projektu."
+    "explanation": "Požadavky na tailoring se dohadují v Initiating a project (aktivita Agree tailoring requirements) a dokumentují se v PID, kterou Project Board schvaluje při autorizaci projektu – tím jsou úpravy metody formálně potvrzeny. Project brief vzniká ve Starting up a project a po iniciaci jej nahrazuje PID, takže se dál neudržuje. Daily log slouží PM pro neformální záznamy, nikoli pro dohody o způsobu řízení projektu.",
+    "image": {
+      "src": "/certification-images/prince2/management-products.svg",
+      "alt": "Dva kontejnery: PID s devíti management approaches a project log se šesti záznamy od daily logu po product register.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -179,7 +219,12 @@
       "Ensure continued business justification"
     ],
     "correctAnswer": 0,
-    "explanation": "Ve scénáři chybí definice produktů: výstupy nemají popsané vlastnosti (specifikace kvality) ani způsob převzetí a týmy pracují podle seznamů úkolů. To odporuje principu Focus on products, podle něhož product descriptions řídí plánování, kontrolu kvality i akceptaci. Manage by exception je naplněn tolerancemi a reportingem, Learn from experience převzetím poučení a Ensure continued business justification posouzením business casu na konci každé etapy."
+    "explanation": "Ve scénáři chybí definice produktů: výstupy nemají popsané vlastnosti (specifikace kvality) ani způsob převzetí a týmy pracují podle seznamů úkolů. To odporuje principu Focus on products, podle něhož product descriptions řídí plánování, kontrolu kvality i akceptaci. Manage by exception je naplněn tolerancemi a reportingem, Learn from experience převzetím poučení a Ensure continued business justification posouzením business casu na konci každé etapy.",
+    "image": {
+      "src": "/certification-images/prince2/principles.svg",
+      "alt": "Přehled sedmi principů PRINCE2 7 s anglickými názvy a krátkým českým vysvětlením.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "principles-tailoring",
@@ -231,7 +276,12 @@
       "Do commercial management approach, protože terminály dodává externí dodavatel a příprava lidí na jejich používání je součástí smlouvy."
     ],
     "correctAnswer": 0,
-    "explanation": "Change management v PRINCE2 7 znamená řízení přechodu organizace a lidí ze současného do cílového stavu; jak projekt tento přechod podpoří, včetně přípravy lidí a práce s jejich obavami, popisuje change management approach v PID. Issue management approach se týká řízení issues a změn baseline (change control), nikoli organizační změny. Záměna těchto dvou pojmů vede k tomu, že příprava lidí na přechod nebude vůbec naplánována."
+    "explanation": "Change management v PRINCE2 7 znamená řízení přechodu organizace a lidí ze současného do cílového stavu; jak projekt tento přechod podpoří, včetně přípravy lidí a práce s jejich obavami, popisuje change management approach v PID. Issue management approach se týká řízení issues a změn baseline (change control), nikoli organizační změny. Záměna těchto dvou pojmů vede k tomu, že příprava lidí na přechod nebude vůbec naplánována.",
+    "image": {
+      "src": "/certification-images/prince2/management-products.svg",
+      "alt": "Dva kontejnery: PID s devíti management approaches a project log se šesti záznamy od daily logu po product register.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "people",
@@ -387,7 +437,12 @@
       "Kompletní nástroj s konektory, metodikou výpočtu a vyškolenými uživateli připravený k nasazení."
     ],
     "correctAnswer": 0,
-    "explanation": "Výsledek (outcome) je změna v reálném chování nebo okolnostech, která nastane, když se nové schopnosti začnou používat – zde controlleři pracují jinak než dříve. Konektor je výstup (output), kompletní nástroj připravený k nasazení je schopnost (capability) složená z výstupů a snížení nákladů je měřitelný přínos (benefit), který z výsledku plyne. Řetězec v PRINCE2 7 vede od výstupů přes schopnosti a výsledky k přínosům a podnikovým cílům."
+    "explanation": "Výsledek (outcome) je změna v reálném chování nebo okolnostech, která nastane, když se nové schopnosti začnou používat – zde controlleři pracují jinak než dříve. Konektor je výstup (output), kompletní nástroj připravený k nasazení je schopnost (capability) složená z výstupů a snížení nákladů je měřitelný přínos (benefit), který z výsledku plyne. Řetězec v PRINCE2 7 vede od výstupů přes schopnosti a výsledky k přínosům a podnikovým cílům.",
+    "image": {
+      "src": "/certification-images/prince2/business-case-chain.svg",
+      "alt": "Řetězec outputs, capabilities, outcomes, benefits a business objectives s definicí a českým příkladem ke každému článku.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "business-case",
@@ -400,7 +455,12 @@
       "Ne, protože jde o problém, který se už projevil v pilotním závodě, a patří proto do issue registeru jako issue, které je třeba vyřešit."
     ],
     "correctAnswer": 0,
-    "explanation": "Dis-benefit je měřitelné zhoršení, které vyplývá z výsledku projektu a některá zainteresovaná strana jej vnímá negativně; na rozdíl od rizika není nejisté, ale očekává se. Proto patří do business casu vedle přínosů, aby Project Board posuzoval vyvážený obraz. Risk register slouží pro nejisté události a pilotní měření neznamená problém (issue) k vyřešení – jde o známý důsledek nového způsobu práce."
+    "explanation": "Dis-benefit je měřitelné zhoršení, které vyplývá z výsledku projektu a některá zainteresovaná strana jej vnímá negativně; na rozdíl od rizika není nejisté, ale očekává se. Proto patří do business casu vedle přínosů, aby Project Board posuzoval vyvážený obraz. Risk register slouží pro nejisté události a pilotní měření neznamená problém (issue) k vyřešení – jde o známý důsledek nového způsobu práce.",
+    "image": {
+      "src": "/certification-images/prince2/business-case-chain.svg",
+      "alt": "Řetězec outputs, capabilities, outcomes, benefits a business objectives s definicí a českým příkladem ke každému článku.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "business-case",
@@ -439,7 +499,12 @@
       "Ne, protože vždy musí být zvolena varianta s nejlepším dopadem na udržitelnost, bez ohledu na její náklady, přínosy a ostatní cíle."
     ],
     "correctAnswer": 0,
-    "explanation": "Cíle udržitelnosti a jejich tolerance se v PRINCE2 7 zohledňují v business casu; preferovaná varianta je ta, která udrží všech sedm výkonnostních cílů (přínosy, náklady, čas, kvalitu, rozsah, udržitelnost a riziko) v toleranci, nikoli nutně ta nejlevnější. Plynový kotel by porušil cíl snížení emisí, zatímco tepelné čerpadlo je stále v toleranci nákladů. Udržitelnost zároveň neznamená volbu „za každou cenu“ – vyvažuje se s ostatními cíli."
+    "explanation": "Cíle udržitelnosti a jejich tolerance se v PRINCE2 7 zohledňují v business casu; preferovaná varianta je ta, která udrží všech sedm výkonnostních cílů (přínosy, náklady, čas, kvalitu, rozsah, udržitelnost a riziko) v toleranci, nikoli nutně ta nejlevnější. Plynový kotel by porušil cíl snížení emisí, zatímco tepelné čerpadlo je stále v toleranci nákladů. Udržitelnost zároveň neznamená volbu „za každou cenu“ – vyvažuje se s ostatními cíli.",
+    "image": {
+      "src": "/certification-images/prince2/practices-and-targets.svg",
+      "alt": "Dva sloupce: sedm praktik PRINCE2 7 a sedm výkonnostních cílů včetně udržitelnosti.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "business-case",
@@ -556,7 +621,12 @@
       "Tomáš Beneš, protože jako obchodní ředitel dodavatele nejlépe zná funkce portálu a ví, co mohou uživatelé od systému očekávat."
     ],
     "correctAnswer": 0,
-    "explanation": "Senior user zastupuje ty, kdo budou produkty projektu používat, odpovídá za to, jak jsou zachyceny jejich požadavky, specifikuje přínosy a odpovídá za jejich dosažení – to nejlépe splňuje vedoucí odboru dopravy. Vedoucí odboru informatiky zastupuje především dodavatelskou stranu (hosting), a hodí se proto spíše do role Senior supplier, stejně jako zástupce SoftCity. Interní auditorka může vykonávat project assurance, ale ne zastupovat uživatele."
+    "explanation": "Senior user zastupuje ty, kdo budou produkty projektu používat, odpovídá za to, jak jsou zachyceny jejich požadavky, specifikuje přínosy a odpovídá za jejich dosažení – to nejlépe splňuje vedoucí odboru dopravy. Vedoucí odboru informatiky zastupuje především dodavatelskou stranu (hosting), a hodí se proto spíše do role Senior supplier, stejně jako zástupce SoftCity. Interní auditorka může vykonávat project assurance, ale ne zastupovat uživatele.",
+    "image": {
+      "src": "/certification-images/prince2/organization-levels.svg",
+      "alt": "Organizační schéma PRINCE2 7: business layer, Project Board se třemi rolemi, Project manager a Team manager s rolemi project assurance, change authority a project support.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "organizing",
@@ -582,7 +652,12 @@
       "Ne, protože user assurance smí vykonávat výhradně Senior user osobně a tuto činnost nelze svěřit žádné další osobě ani útvaru."
     ],
     "correctAnswer": 0,
-    "explanation": "Project assurance vykonávají členové Project Boardu za svou oblast (business, user a supplier assurance) a mohou ji svěřit dalším osobám, ty však musí být nezávislé na projektovém manažerovi. Projektová kancelář, která pro PM vede registry a připravuje reporty, plní roli project support, a nemůže proto zároveň nezávisle prověřovat jeho práci. Senior user může user assurance delegovat, nikoli však na project support."
+    "explanation": "Project assurance vykonávají členové Project Boardu za svou oblast (business, user a supplier assurance) a mohou ji svěřit dalším osobám, ty však musí být nezávislé na projektovém manažerovi. Projektová kancelář, která pro PM vede registry a připravuje reporty, plní roli project support, a nemůže proto zároveň nezávisle prověřovat jeho práci. Senior user může user assurance delegovat, nikoli však na project support.",
+    "image": {
+      "src": "/certification-images/prince2/organization-levels.svg",
+      "alt": "Organizační schéma PRINCE2 7: business layer, Project Board se třemi rolemi, Project manager a Team manager s rolemi project assurance, change authority a project support.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "organizing",
@@ -595,7 +670,12 @@
       "Ne, protože business assurance musí vykonávat projektová kancelář, která má o projektu nejlepší přehled a vede jeho registry."
     ],
     "correctAnswer": 0,
-    "explanation": "Členové Project Boardu odpovídají za project assurance ve své oblasti a mohou ji svěřit dalším osobám, které jsou nezávislé na projektovém manažerovi – interní auditorka tuto podmínku splňuje a umí posoudit hodnotu za peníze i životaschopnost business casu. Odpovědnost za business assurance však zůstává Executivovi; auditorka ji vykonává jeho jménem. Projektová kancelář poskytující project support by naopak nezávislá nebyla."
+    "explanation": "Členové Project Boardu odpovídají za project assurance ve své oblasti a mohou ji svěřit dalším osobám, které jsou nezávislé na projektovém manažerovi – interní auditorka tuto podmínku splňuje a umí posoudit hodnotu za peníze i životaschopnost business casu. Odpovědnost za business assurance však zůstává Executivovi; auditorka ji vykonává jeho jménem. Projektová kancelář poskytující project support by naopak nezávislá nebyla.",
+    "image": {
+      "src": "/certification-images/prince2/organization-levels.svg",
+      "alt": "Organizační schéma PRINCE2 7: business layer, Project Board se třemi rolemi, Project manager a Team manager s rolemi project assurance, change authority a project support.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "organizing",
@@ -608,7 +688,12 @@
       "Ano, protože projektový manažer je automaticky change authority pro všechny změny, které se vejdou do tolerancí aktuální etapy."
     ],
     "correctAnswer": 0,
-    "explanation": "Pokud Project Board pravomoc nedeleguje, je change authority sám; může ji ale svěřit jiné osobě nebo skupině – u drobných změn i projektovému manažerovi – v jasně stanovených mezích a s rozpočtem na změny (change budget). Pravidla delegace se popisují v issue management approach. PM však není change authority automaticky: o změnách smí rozhodovat jen v rozsahu, který mu Project Board výslovně svěří."
+    "explanation": "Pokud Project Board pravomoc nedeleguje, je change authority sám; může ji ale svěřit jiné osobě nebo skupině – u drobných změn i projektovému manažerovi – v jasně stanovených mezích a s rozpočtem na změny (change budget). Pravidla delegace se popisují v issue management approach. PM však není change authority automaticky: o změnách smí rozhodovat jen v rozsahu, který mu Project Board výslovně svěří.",
+    "image": {
+      "src": "/certification-images/prince2/organization-levels.svg",
+      "alt": "Organizační schéma PRINCE2 7: business layer, Project Board se třemi rolemi, Project manager a Team manager s rolemi project assurance, change authority a project support.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "organizing",
@@ -621,7 +706,12 @@
       "Ano, protože projektový manažer může vedle těchto rolí vykonávat i project assurance za Senior usera a Senior suppliera."
     ],
     "correctAnswer": 0,
-    "explanation": "Role Team manager je v PRINCE2 volitelná – pokud není jmenována, řídí práci týmu přímo projektový manažer. Project support je ve výchozím stavu odpovědností PM a delegovat ji (např. na projektovou kancelář) lze, ale není to nutné. Project assurance však PM vykonávat nesmí, protože musí být na něm nezávislé."
+    "explanation": "Role Team manager je v PRINCE2 volitelná – pokud není jmenována, řídí práci týmu přímo projektový manažer. Project support je ve výchozím stavu odpovědností PM a delegovat ji (např. na projektovou kancelář) lze, ale není to nutné. Project assurance však PM vykonávat nesmí, protože musí být na něm nezávislé.",
+    "image": {
+      "src": "/certification-images/prince2/organization-levels.svg",
+      "alt": "Organizační schéma PRINCE2 7: business layer, Project Board se třemi rolemi, Project manager a Team manager s rolemi project assurance, change authority a project support.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "organizing",
@@ -634,7 +724,12 @@
       "Ne, protože tolerance nákladů a času stanovuje Senior supplier, který odpovídá za odhady prací a zdrojů celé dodavatelské strany."
     ],
     "correctAnswer": 0,
-    "explanation": "Podle Manage by exception stanovuje business layer (zde představenstvo) tolerance celého projektu a rozhoduje, když hrozí jejich překročení; Project Board v jejich rámci stanovuje tolerance etap a PM tolerance pracovních balíků. Executive je jediným bodem odpovědnosti v projektu, tolerance projektu si však sám neurčuje – jsou to meze pravomoci, kterou mu deleguje vyšší úroveň. Bez nich by představenstvo ztratilo nad projektem kontrolu."
+    "explanation": "Podle Manage by exception stanovuje business layer (zde představenstvo) tolerance celého projektu a rozhoduje, když hrozí jejich překročení; Project Board v jejich rámci stanovuje tolerance etap a PM tolerance pracovních balíků. Executive je jediným bodem odpovědnosti v projektu, tolerance projektu si však sám neurčuje – jsou to meze pravomoci, kterou mu deleguje vyšší úroveň. Bez nich by představenstvo ztratilo nad projektem kontrolu.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "organizing",
@@ -686,7 +781,12 @@
       "Ano, protože účelem Starting up a project je připravit PID, jejíž součástí je podrobný project plan na celý projekt."
     ],
     "correctAnswer": 0,
-    "explanation": "Ve Starting up a project projektový manažer připravuje project brief a plán iniciační etapy; Project Board na jejich základě rozhoduje, zda má smysl investovat do iniciace. Project plan vzniká až v Initiating a project jako součást PID, kdy jsou známy požadavky, přístupy a odhady. Podrobný harmonogram všech sprintů na dva roky by navíc šel daleko za plánovací horizont."
+    "explanation": "Ve Starting up a project projektový manažer připravuje project brief a plán iniciační etapy; Project Board na jejich základě rozhoduje, zda má smysl investovat do iniciace. Project plan vzniká až v Initiating a project jako součást PID, kdy jsou známy požadavky, přístupy a odhady. Podrobný harmonogram všech sprintů na dva roky by navíc šel daleko za plánovací horizont.",
+    "image": {
+      "src": "/certification-images/prince2/plan-levels.svg",
+      "alt": "Úrovně plánů v PRINCE2 7: project plan, stage plan, volitelný team plan a exception plan, který nahrazuje project plan nebo stage plan.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "plans",
@@ -699,7 +799,12 @@
       "Ne, protože harmonogram stavebních prací patří výhradně do team planu zhotovitele a v plánech projektu se vůbec neuvádí."
     ],
     "correctAnswer": 0,
-    "explanation": "Plánovací horizont je období, pro které lze plánovat s přiměřenou přesností; za ním by podrobný denní harmonogram byl jen odhadem s falešnou přesností, zvlášť když ještě není hotová dokumentace ani vybrán zhotovitel. Project plan proto zůstává přehledový (hlavní produkty, milníky, náklady) a podrobnosti se doplňují do stage planu pro nejbližší etapu na její hranici. Volitelný team plan zhotovitele nenahrazuje stage plan."
+    "explanation": "Plánovací horizont je období, pro které lze plánovat s přiměřenou přesností; za ním by podrobný denní harmonogram byl jen odhadem s falešnou přesností, zvlášť když ještě není hotová dokumentace ani vybrán zhotovitel. Project plan proto zůstává přehledový (hlavní produkty, milníky, náklady) a podrobnosti se doplňují do stage planu pro nejbližší etapu na její hranici. Volitelný team plan zhotovitele nenahrazuje stage plan.",
+    "image": {
+      "src": "/certification-images/prince2/plan-levels.svg",
+      "alt": "Úrovně plánů v PRINCE2 7: project plan, stage plan, volitelný team plan a exception plan, který nahrazuje project plan nebo stage plan.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "plans",
@@ -738,7 +843,12 @@
       "Není přijatelný, protože Project Board musí každý team plan před zahájením práce schválit na svém zasedání v Directing a project."
     ],
     "correctAnswer": 0,
-    "explanation": "Team plan je volitelný plán, který Team manager připravuje pro provedení pracovního balíku; může mít podobu plánu sprintů ve formátu dodavatele, pokud je v souladu s work package description a je dohodnut s PM. Stage plan však nenahrazuje – PM dál řídí etapu podle stage planu a Team manager mu podává checkpoint reporty. Project Board team plany neschvaluje; schvaluje project plan, stage plany a exception plany."
+    "explanation": "Team plan je volitelný plán, který Team manager připravuje pro provedení pracovního balíku; může mít podobu plánu sprintů ve formátu dodavatele, pokud je v souladu s work package description a je dohodnut s PM. Stage plan však nenahrazuje – PM dál řídí etapu podle stage planu a Team manager mu podává checkpoint reporty. Project Board team plany neschvaluje; schvaluje project plan, stage plany a exception plany.",
+    "image": {
+      "src": "/certification-images/prince2/plan-levels.svg",
+      "alt": "Úrovně plánů v PRINCE2 7: project plan, stage plan, volitelný team plan a exception plan, který nahrazuje project plan nebo stage plan.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "plans",
@@ -751,7 +861,12 @@
       "Ne, protože exception plan v tomto případě připravuje projektový manažer a předkládá ho business layer k rozhodnutí o dalším postupu projektu."
     ],
     "correctAnswer": 0,
-    "explanation": "Exception plan se připravuje jen na úrovni projektu nebo etapy (nahrazuje project plan nebo stage plan), nikoli pro pracovní balík. Když Team manager předpovídá překročení tolerance pracovního balíku, vznese issue projektovému manažerovi; ten může, pokud etapa zůstává v toleranci, sám přijmout nápravné opatření, např. upravit work package description. Project Board se zapojí až při předpovědi překročení tolerance etapy."
+    "explanation": "Exception plan se připravuje jen na úrovni projektu nebo etapy (nahrazuje project plan nebo stage plan), nikoli pro pracovní balík. Když Team manager předpovídá překročení tolerance pracovního balíku, vznese issue projektovému manažerovi; ten může, pokud etapa zůstává v toleranci, sám přijmout nápravné opatření, např. upravit work package description. Project Board se zapojí až při předpovědi překročení tolerance etapy.",
+    "image": {
+      "src": "/certification-images/prince2/plan-levels.svg",
+      "alt": "Úrovně plánů v PRINCE2 7: project plan, stage plan, volitelný team plan a exception plan, který nahrazuje project plan nebo stage plan.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "plans",
@@ -855,7 +970,12 @@
       "Revizi do configuration item record elektroinstalace a schválení do product status account, který se ukládá jako součást PID."
     ],
     "correctAnswer": 0,
-    "explanation": "Quality register eviduje plánované a provedené činnosti quality control a jejich výsledky, zatímco product register sleduje produkty projektu, jejich stav a akceptaci; oba patří v PRINCE2 7 do project logu. Configuration item record a product status account jsou pojmy 6. edice, které product register nahradil. Product register se navíc vede pro všechny produkty projektu, nejen pro ty, které se předávají na konci."
+    "explanation": "Quality register eviduje plánované a provedené činnosti quality control a jejich výsledky, zatímco product register sleduje produkty projektu, jejich stav a akceptaci; oba patří v PRINCE2 7 do project logu. Configuration item record a product status account jsou pojmy 6. edice, které product register nahradil. Product register se navíc vede pro všechny produkty projektu, nejen pro ty, které se předávají na konci.",
+    "image": {
+      "src": "/certification-images/prince2/management-products.svg",
+      "alt": "Dva kontejnery: PID s devíti management approaches a project log se šesti záznamy od daily logu po product register.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "quality",
@@ -972,7 +1092,12 @@
       "Ne, protože risk owner a risk action owner musí být táž osoba, jinak by odpovědnost za reakci na riziko nebyla jednoznačná."
     ],
     "correctAnswer": 0,
-    "explanation": "Risk owner je osoba odpovědná za řízení konkrétního rizika – sleduje je a dohlíží na to, aby zvolené reakce byly provedeny a byly účinné; to odpovídá roli technického náměstka. Risk action owner (v 6. edici risk actionee) provádí konkrétní dohodnuté akce, zde dezinfekci a odběry vzorků. Představa, že risk ownerem je vždy Project manager, je chybná: PM vede risk register, ale vlastníkem rizika má být ten, kdo je nejlépe schopen dané riziko řídit."
+    "explanation": "Risk owner je osoba odpovědná za řízení konkrétního rizika – sleduje je a dohlíží na to, aby zvolené reakce byly provedeny a byly účinné; to odpovídá roli technického náměstka. Risk action owner (v 6. edici risk actionee) provádí konkrétní dohodnuté akce, zde dezinfekci a odběry vzorků. Představa, že risk ownerem je vždy Project manager, je chybná: PM vede risk register, ale vlastníkem rizika má být ten, kdo je nejlépe schopen dané riziko řídit.",
+    "image": {
+      "src": "/certification-images/prince2/risk-responses.svg",
+      "alt": "Přehled reakcí na rizika v PRINCE2 7 pro hrozby a příležitosti a rozdíl mezi risk owner a risk action owner.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "risk",
@@ -985,7 +1110,12 @@
       "Accept – nemocnice vědomě nepřijímá žádné opatření a vývoj cen materiálů pouze sleduje."
     ],
     "correctAnswer": 0,
-    "explanation": "Při reakci share se organizace dělí s partnerem o ztráty i zisky – zde o překročení i úspory oproti cílové ceně. Transfer by znamenal přesunout finanční dopad hrozby na třetí stranu (např. pojištěním nebo pevnou cenou), což tu neplatí, protože polovinu překročení dál nese nemocnice. Ujednání nijak nemění pravděpodobnost růstu cen, takže nejde ani o reduce."
+    "explanation": "Při reakci share se organizace dělí s partnerem o ztráty i zisky – zde o překročení i úspory oproti cílové ceně. Transfer by znamenal přesunout finanční dopad hrozby na třetí stranu (např. pojištěním nebo pevnou cenou), což tu neplatí, protože polovinu překročení dál nese nemocnice. Ujednání nijak nemění pravděpodobnost růstu cen, takže nejde ani o reduce.",
+    "image": {
+      "src": "/certification-images/prince2/risk-responses.svg",
+      "alt": "Přehled reakcí na rizika v PRINCE2 7 pro hrozby a příležitosti a rozdíl mezi risk owner a risk action owner.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "risk",
@@ -998,7 +1128,12 @@
       "Transfer – dopad případného výpadku ponese správce národního systému, který za dostupnost rozhraní odpovídá."
     ],
     "correctAnswer": 0,
-    "explanation": "Pohotovostní plán (contingent plan) se připraví předem, ale spustí se až při výskytu události; nemění pravděpodobnost výpadku, jen zmírňuje jeho dopad, a typicky se financuje z risk budgetu. Reakce reduce by musela ovlivnit, zda rozhraní národního systému bude dostupné, což náhradní přihlášení nedělá. Avoid by vyžadoval odstranit samotnou nejistotu, např. tím, že portál na rozhraní při spuštění vůbec nebude závislý."
+    "explanation": "Pohotovostní plán (contingent plan) se připraví předem, ale spustí se až při výskytu události; nemění pravděpodobnost výpadku, jen zmírňuje jeho dopad, a typicky se financuje z risk budgetu. Reakce reduce by musela ovlivnit, zda rozhraní národního systému bude dostupné, což náhradní přihlášení nedělá. Avoid by vyžadoval odstranit samotnou nejistotu, např. tím, že portál na rozhraní při spuštění vůbec nebude závislý.",
+    "image": {
+      "src": "/certification-images/prince2/risk-responses.svg",
+      "alt": "Přehled reakcí na rizika v PRINCE2 7 pro hrozby a příležitosti a rozdíl mezi risk owner a risk action owner.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "risk",
@@ -1011,7 +1146,12 @@
       "Jako reakci share, protože na využití příležitosti se podílí firma i dodavatel vlastními lidmi a časem."
     ],
     "correctAnswer": 0,
-    "explanation": "Enhance mění pravděpodobnost nebo dopad příležitosti v její prospěch – zde se zvyšuje šance na dřívější dokončení, výsledek však zůstává nejistý. Exploit by znamenal nejistotu zcela odstranit a zajistit, že příležitost nastane, což uvolnění dispečerů nezaručuje. Reakce reject pochází z 6. edice a mezi reakcemi PRINCE2 7 se neuvádí; share by vyžadoval dohodu s partnerem o dělení přínosů a ztrát."
+    "explanation": "Enhance mění pravděpodobnost nebo dopad příležitosti v její prospěch – zde se zvyšuje šance na dřívější dokončení, výsledek však zůstává nejistý. Exploit by znamenal nejistotu zcela odstranit a zajistit, že příležitost nastane, což uvolnění dispečerů nezaručuje. Reakce reject pochází z 6. edice a mezi reakcemi PRINCE2 7 se neuvádí; share by vyžadoval dohodu s partnerem o dělení přínosů a ztrát.",
+    "image": {
+      "src": "/certification-images/prince2/risk-responses.svg",
+      "alt": "Přehled reakcí na rizika v PRINCE2 7 pro hrozby a příležitosti a rozdíl mezi risk owner a risk action owner.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "risk",
@@ -1024,7 +1164,12 @@
       "Ne, protože reakce accept není u hrozeb v PRINCE2 7 přípustná a riziko mělo být řešeno některou z aktivních reakcí."
     ],
     "correctAnswer": 0,
-    "explanation": "Accept je vědomé rozhodnutí nyní nepodnikat žádné kroky, typicky proto, že by byly dražší než možný dopad; riziko ale zůstává v risk registeru a dál se sleduje pro případ, že se situace změní. Risk register eviduje všechna identifikovaná rizika s jejich stavem a historií, nejen ta s probíhajícími akcemi, proto návrh Senior supplier není vhodný. Accept je v PRINCE2 7 přípustná reakce na hrozby i příležitosti a nemá žádnou časovou lhůtu."
+    "explanation": "Accept je vědomé rozhodnutí nyní nepodnikat žádné kroky, typicky proto, že by byly dražší než možný dopad; riziko ale zůstává v risk registeru a dál se sleduje pro případ, že se situace změní. Risk register eviduje všechna identifikovaná rizika s jejich stavem a historií, nejen ta s probíhajícími akcemi, proto návrh Senior supplier není vhodný. Accept je v PRINCE2 7 přípustná reakce na hrozby i příležitosti a nemá žádnou časovou lhůtu.",
+    "image": {
+      "src": "/certification-images/prince2/risk-responses.svg",
+      "alt": "Přehled reakcí na rizika v PRINCE2 7 pro hrozby a příležitosti a rozdíl mezi risk owner a risk action owner.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "risk",
@@ -1050,7 +1195,12 @@
       "Požádat Team managera dodavatele o exception report, protože nové hrozby vznikly v jeho pracovním balíku a řešit je má jeho tým."
     ],
     "correctAnswer": 0,
-    "explanation": "Riziko je jedním ze sedmi výkonnostních cílů s vlastní tolerancí; předpověď, že souhrnná riziková expozice etapy překročí toleranci stanovenou Project Board, je výjimka a Project manager ji musí eskalovat exception reportem. Čekat na pravidelný highlight report nestačí, protože mimo tolerance nemá Project manager pravomoc pokračovat. Exception report navíc nikdy nepodává Team manager – ten eskaluje Project managerovi formou issue."
+    "explanation": "Riziko je jedním ze sedmi výkonnostních cílů s vlastní tolerancí; předpověď, že souhrnná riziková expozice etapy překročí toleranci stanovenou Project Board, je výjimka a Project manager ji musí eskalovat exception reportem. Čekat na pravidelný highlight report nestačí, protože mimo tolerance nemá Project manager pravomoc pokračovat. Exception report navíc nikdy nepodává Team manager – ten eskaluje Project managerovi formou issue.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "risk",
@@ -1102,7 +1252,12 @@
       "Jako riziko (hrozbu), protože není jisté, zda signalizaci s hlasitostí 60 dB personál na chodbě uslyší."
     ],
     "correctAnswer": 0,
-    "explanation": "Off-specification je situace, kdy produkt nesplňuje nebo podle předpovědi nesplní své quality specifications – zde 60 dB místo požadovaných 65 dB. Request for change by byl návrh na změnu baseline, např. kdyby uživatelé sami chtěli specifikaci změnit; úprava specifikace může být jedním z možných řešení, ale situace se zachytí jako off-specification. Nesplnění specifikace je už známý fakt, a nejde proto o riziko."
+    "explanation": "Off-specification je situace, kdy produkt nesplňuje nebo podle předpovědi nesplní své quality specifications – zde 60 dB místo požadovaných 65 dB. Request for change by byl návrh na změnu baseline, např. kdyby uživatelé sami chtěli specifikaci změnit; úprava specifikace může být jedním z možných řešení, ale situace se zachytí jako off-specification. Nesplnění specifikace je už známý fakt, a nejde proto o riziko.",
+    "image": {
+      "src": "/certification-images/prince2/issue-types-and-procedure.svg",
+      "alt": "Šest typů issue v PRINCE2 7 a pět kroků techniky řízení issue: Capture, Assess, Recommend, Decide, Implement.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "issues",
@@ -1115,7 +1270,12 @@
       "Ano, protože s odchylkou výslovně souhlasila Senior user, a souhlas uživatelů s concession nahrazuje rozhodnutí Project Board."
     ],
     "correctAnswer": 0,
-    "explanation": "Concession je off-specification přijatá bez nápravy; schválit ji může jen ten, komu k tomu Project Board delegoval pravomoc, a protože change authority jmenována nebyla, rozhoduje sám Project Board. Projektová manažerka měla issue posoudit, připravit doporučení (např. v issue reportu) a předložit je k rozhodnutí. Souhlas Senior user je důležitý podklad, ale sám o sobě nenahrazuje rozhodnutí podle delegovaných pravomocí v issue management approach."
+    "explanation": "Concession je off-specification přijatá bez nápravy; schválit ji může jen ten, komu k tomu Project Board delegoval pravomoc, a protože change authority jmenována nebyla, rozhoduje sám Project Board. Projektová manažerka měla issue posoudit, připravit doporučení (např. v issue reportu) a předložit je k rozhodnutí. Souhlas Senior user je důležitý podklad, ale sám o sobě nenahrazuje rozhodnutí podle delegovaných pravomocí v issue management approach.",
+    "image": {
+      "src": "/certification-images/prince2/issue-types-and-procedure.svg",
+      "alt": "Šest typů issue v PRINCE2 7 a pět kroků techniky řízení issue: Capture, Assess, Recommend, Decide, Implement.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "issues",
@@ -1128,7 +1288,12 @@
       "Jako event external to the project, protože o obsahu licence rozhodl dodavatel systému mimo projektový tým."
     ],
     "correctAnswer": 0,
-    "explanation": "Business opportunity je v PRINCE2 7 typ issue: nečekaná příznivá skutečnost pro projekt nebo uživatelskou organizaci, která už je známa a vyžaduje posouzení. Příležitost v risk registeru by byla nejistá budoucí událost, zde však jde o zjištěný fakt. Pokud se po posouzení rozhodne modul využít a rozšířit rozsah, vznikne request for change – při zachycení ale žádná změna baseline navržena nebyla."
+    "explanation": "Business opportunity je v PRINCE2 7 typ issue: nečekaná příznivá skutečnost pro projekt nebo uživatelskou organizaci, která už je známa a vyžaduje posouzení. Příležitost v risk registeru by byla nejistá budoucí událost, zde však jde o zjištěný fakt. Pokud se po posouzení rozhodne modul využít a rozšířit rozsah, vznikne request for change – při zachycení ale žádná změna baseline navržena nebyla.",
+    "image": {
+      "src": "/certification-images/prince2/issue-types-and-procedure.svg",
+      "alt": "Šest typů issue v PRINCE2 7 a pět kroků techniky řízení issue: Capture, Assess, Recommend, Decide, Implement.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "issues",
@@ -1141,7 +1306,12 @@
       "Problem – novela má okamžitý negativní dopad, protože portál už nyní nesplňuje požadavky platného zákona."
     ],
     "correctAnswer": 0,
-    "explanation": "Novela je událost, která nastala mimo projekt a ovlivňuje jeho cíle, proto se zachytí jako issue typu event external to the project a posoudí se její dopad na business case, plány a rizika. Request for change z posouzení pravděpodobně vzejde, ale až jako konkrétní navržená změna baseline. Off-specification to není, protože produkty stále odpovídají své schválené specifikaci – změnil se vnější požadavek."
+    "explanation": "Novela je událost, která nastala mimo projekt a ovlivňuje jeho cíle, proto se zachytí jako issue typu event external to the project a posoudí se její dopad na business case, plány a rizika. Request for change z posouzení pravděpodobně vzejde, ale až jako konkrétní navržená změna baseline. Off-specification to není, protože produkty stále odpovídají své schválené specifikaci – změnil se vnější požadavek.",
+    "image": {
+      "src": "/certification-images/prince2/issue-types-and-procedure.svg",
+      "alt": "Šest typů issue v PRINCE2 7 a pět kroků techniky řízení issue: Capture, Assess, Recommend, Decide, Implement.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "issues",
@@ -1154,7 +1324,12 @@
       "Off-specification, protože strop nebude vybetonován v termínu, který uvádí jeho product description."
     ],
     "correctAnswer": 0,
-    "explanation": "Problem je issue s okamžitým negativním dopadem – zastavená betonáž je fakt, který už nastal, a jeho dopad na plán etapy se upřesní v kroku Assess. Concern odpovídá situaci, kdy časování a dopad zatím nejsou zřejmé; zde je dopad bezprostřední, jen jeho rozsah se teprve vyhodnotí. Off-specification to není, protože žádný produkt neporušuje své quality specifications a product description termíny neobsahuje."
+    "explanation": "Problem je issue s okamžitým negativním dopadem – zastavená betonáž je fakt, který už nastal, a jeho dopad na plán etapy se upřesní v kroku Assess. Concern odpovídá situaci, kdy časování a dopad zatím nejsou zřejmé; zde je dopad bezprostřední, jen jeho rozsah se teprve vyhodnotí. Off-specification to není, protože žádný produkt neporušuje své quality specifications a product description termíny neobsahuje.",
+    "image": {
+      "src": "/certification-images/prince2/issue-types-and-procedure.svg",
+      "alt": "Šest typů issue v PRINCE2 7 a pět kroků techniky řízení issue: Capture, Assess, Recommend, Decide, Implement.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "issues",
@@ -1167,7 +1342,12 @@
       "Uzavřít issue v issue registeru a dopady změny podrobně vysvětlit Project Board až v end stage reportu na konci etapy."
     ],
     "correctAnswer": 0,
-    "explanation": "Po zachycení (Capture) a posouzení dopadů (Assess) následuje krok Recommend: projektová manažerka identifikuje a vyhodnotí možnosti a doporučí jednu z nich tomu, kdo má o změně rozhodnout (Decide); teprve potom se změna realizuje (Implement). Zařadit změnu rovnou do práce dodavatele by vynechalo doporučení i rozhodnutí oprávněné osoby – Project manager smí o změnách rozhodovat jen tehdy, pokud mu to Project Board delegoval. Funkce, kterou specifikace nikdy nepožadovala, není off-specification."
+    "explanation": "Po zachycení (Capture) a posouzení dopadů (Assess) následuje krok Recommend: projektová manažerka identifikuje a vyhodnotí možnosti a doporučí jednu z nich tomu, kdo má o změně rozhodnout (Decide); teprve potom se změna realizuje (Implement). Zařadit změnu rovnou do práce dodavatele by vynechalo doporučení i rozhodnutí oprávněné osoby – Project manager smí o změnách rozhodovat jen tehdy, pokud mu to Project Board delegoval. Funkce, kterou specifikace nikdy nepožadovala, není off-specification.",
+    "image": {
+      "src": "/certification-images/prince2/issue-types-and-procedure.svg",
+      "alt": "Šest typů issue v PRINCE2 7 a pět kroků techniky řízení issue: Capture, Assess, Recommend, Decide, Implement.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "issues",
@@ -1193,7 +1373,12 @@
       "Požádat Team managera dodavatele, aby změnu zapracoval do příštích sprintů a její dopady průběžně uváděl v checkpoint reportech."
     ],
     "correctAnswer": 0,
-    "explanation": "Pokud by realizace změny vedla k předpovědi překročení tolerancí etapy, nejde už o běžné rozhodnutí v mezích delegovaných pravomocí, ale o výjimku, kterou projektová manažerka eskaluje Project Board exception reportem s možnostmi a doporučením. Rozdělení změny na menší části by obcházelo limity, které Project Board pro change authority stanovil. Schválit změnu ani ji financovat z risk budgetu projektová manažerka nemůže."
+    "explanation": "Pokud by realizace změny vedla k předpovědi překročení tolerancí etapy, nejde už o běžné rozhodnutí v mezích delegovaných pravomocí, ale o výjimku, kterou projektová manažerka eskaluje Project Board exception reportem s možnostmi a doporučením. Rozdělení změny na menší části by obcházelo limity, které Project Board pro change authority stanovil. Schválit změnu ani ji financovat z risk budgetu projektová manažerka nemůže.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "issues",
@@ -1206,7 +1391,12 @@
       "Ne, protože záměna materiálu je vždy off-specification, o které musí rozhodnout change authority nebo Project Board."
     ],
     "correctAnswer": 0,
-    "explanation": "Při zachycení (Capture) se rozhoduje, zda issue řešit formálně, nebo neformálně; issue, které nemění žádný baselinový produkt a lze je vyřešit hned, stačí zaznamenat v daily logu. Formální zpracování v issue registeru a issue reportu je určeno pro issues, která vyžadují posouzení a rozhodnutí podle delegovaných pravomocí. Tvrzení, že Project manager smí schvalovat všechny změny baseline do výše tolerancí etapy, je chybné – o změnách rozhoduje change authority a Project manager jen tehdy, je-li mu tato pravomoc delegována."
+    "explanation": "Při zachycení (Capture) se rozhoduje, zda issue řešit formálně, nebo neformálně; issue, které nemění žádný baselinový produkt a lze je vyřešit hned, stačí zaznamenat v daily logu. Formální zpracování v issue registeru a issue reportu je určeno pro issues, která vyžadují posouzení a rozhodnutí podle delegovaných pravomocí. Tvrzení, že Project manager smí schvalovat všechny změny baseline do výše tolerancí etapy, je chybné – o změnách rozhoduje change authority a Project manager jen tehdy, je-li mu tato pravomoc delegována.",
+    "image": {
+      "src": "/certification-images/prince2/issue-types-and-procedure.svg",
+      "alt": "Šest typů issue v PRINCE2 7 a pět kroků techniky řízení issue: Capture, Assess, Recommend, Decide, Implement.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "issues",
@@ -1245,7 +1435,12 @@
       "Ano, protože Team manager je zaměstnancem externího dodavatele a se zprávami o výjimkách se obrací přímo na Project Board."
     ],
     "correctAnswer": 0,
-    "explanation": "Tolerance pracovního balíku stanovuje Project manager ve work package description, a Team manager proto při předpovědi jejich překročení eskaluje jemu, a to formou issue. Project manager pak posoudí, zda lze situaci vyřešit v rámci tolerancí etapy, nebo zda je nutné předložit exception report Project Board. Představa, že Team manager pošle exception report až při ohrožení tolerance etapy, je chybná – Team manager exception report nepodává nikdy."
+    "explanation": "Tolerance pracovního balíku stanovuje Project manager ve work package description, a Team manager proto při předpovědi jejich překročení eskaluje jemu, a to formou issue. Project manager pak posoudí, zda lze situaci vyřešit v rámci tolerancí etapy, nebo zda je nutné předložit exception report Project Board. Představa, že Team manager pošle exception report až při ohrožení tolerance etapy, je chybná – Team manager exception report nepodává nikdy.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "progress",
@@ -1271,7 +1466,12 @@
       "Pokračovat podle stage planu a odchylku i její příčiny podrobně vysvětlit Project Board v end stage reportu."
     ],
     "correctAnswer": 0,
-    "explanation": "Předpověď překročení tolerance etapy je výjimka: Project manager ji neprodleně eskaluje Project Board exception reportem, který popisuje příčinu, důsledky, možnosti a doporučení. Plán výjimky připravuje až na žádost Project Board v procesu Managing a stage boundary a platí teprve po jeho schválení. Obracet se přímo na business layer by obešlo Project Board, navíc projektová tolerance podle prognózy překročena není."
+    "explanation": "Předpověď překročení tolerance etapy je výjimka: Project manager ji neprodleně eskaluje Project Board exception reportem, který popisuje příčinu, důsledky, možnosti a doporučení. Plán výjimky připravuje až na žádost Project Board v procesu Managing a stage boundary a platí teprve po jeho schválení. Obracet se přímo na business layer by obešlo Project Board, navíc projektová tolerance podle prognózy překročena není.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "progress",
@@ -1284,7 +1484,12 @@
       "Ne, protože plán výjimky se připravuje jen tehdy, když hrozí překročení tolerancí projektu stanovených business layer."
     ],
     "correctAnswer": 0,
-    "explanation": "Project Board stanovuje tolerance etapy, a výjimky na úrovni etapy proto řeší sám: může vyžádat plán výjimky (exception plan), který Project manager připraví v Managing a stage boundary, a schválit jej v Authorize a stage or exception plan. Business layer rozhoduje teprve tehdy, když je předpovězeno překročení tolerancí projektu, které stanovil – to zde podle prognózy nehrozí. Tolerance projektu však Project Board sám rozšířit nemůže."
+    "explanation": "Project Board stanovuje tolerance etapy, a výjimky na úrovni etapy proto řeší sám: může vyžádat plán výjimky (exception plan), který Project manager připraví v Managing a stage boundary, a schválit jej v Authorize a stage or exception plan. Business layer rozhoduje teprve tehdy, když je předpovězeno překročení tolerancí projektu, které stanovil – to zde podle prognózy nehrozí. Tolerance projektu však Project Board sám rozšířit nemůže.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "progress",
@@ -1310,7 +1515,12 @@
       "Highlight reporty jsou kontrolou řízenou časem; zpráva k 31. březnu i checkpoint reporty jsou kontroly řízené událostí."
     ],
     "correctAnswer": 0,
-    "explanation": "Kontroly řízené časem probíhají v pravidelných intervalech – typicky highlight reporty od Project managera pro Project Board a checkpoint reporty od Team managera pro Project managera. Kontroly řízené událostí nastávají při určité události, např. na konci etapy, po dokončení PID, při výjimce nebo při organizační události, jako je konec hospodářského roku. To, že konec hospodářského roku připadá na známé datum, z něj nedělá pravidelnou kontrolu – jde o organizační událost."
+    "explanation": "Kontroly řízené časem probíhají v pravidelných intervalech – typicky highlight reporty od Project managera pro Project Board a checkpoint reporty od Team managera pro Project managera. Kontroly řízené událostí nastávají při určité události, např. na konci etapy, po dokončení PID, při výjimce nebo při organizační události, jako je konec hospodářského roku. To, že konec hospodářského roku připadá na známé datum, z něj nedělá pravidelnou kontrolu – jde o organizační událost.",
+    "image": {
+      "src": "/certification-images/prince2/reports-flow.svg",
+      "alt": "Tabulka reportů PRINCE2 7: kdo je pro koho připravuje, kdy vznikají a zda jsou řízené časem, nebo událostí.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "progress",
@@ -1323,7 +1533,12 @@
       "Požádat stavbyvedoucího jako Team managera, aby kvůli odchylce v udržitelnosti zaslal exception report Project Board."
     ],
     "correctAnswer": 0,
-    "explanation": "Sedmá edice PRINCE2 doplnila udržitelnost jako sedmý výkonnostní cíl, pro který se tolerance stanovují stejně jako pro čas či náklady. Předpověď, že recyklace skončí mimo toleranci etapy, je proto výjimka a projektová manažerka ji eskaluje exception reportem, i když ostatní cíle jsou v toleranci. Tvrzení, že udržitelnost nemá toleranci, odpovídá 6. edici, která pracovala jen se šesti cíli."
+    "explanation": "Sedmá edice PRINCE2 doplnila udržitelnost jako sedmý výkonnostní cíl, pro který se tolerance stanovují stejně jako pro čas či náklady. Předpověď, že recyklace skončí mimo toleranci etapy, je proto výjimka a projektová manažerka ji eskaluje exception reportem, i když ostatní cíle jsou v toleranci. Tvrzení, že udržitelnost nemá toleranci, odpovídá 6. edici, která pracovala jen se šesti cíli.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "progress",
@@ -1336,7 +1551,12 @@
       "Do quality registeru, protože nepřesné odhady dodavatele jsou nedostatkem kvality jeho práce na produktech."
     ],
     "correctAnswer": 0,
-    "explanation": "Lessons log slouží k zaznamenání ponaučení, která lze využít v tomto projektu (např. při plánování dalších etap) i v budoucích projektech; z něj se pak připravuje lessons report, jímž se ponaučení předávají organizaci. Daily log je pracovní deník Project managera pro neformální issues, akce a poznámky a ponaučení by se v něm ztratilo. Protože etapa zůstává v tolerancích a nic se nemusí rozhodovat, nejde ani o formální issue."
+    "explanation": "Lessons log slouží k zaznamenání ponaučení, která lze využít v tomto projektu (např. při plánování dalších etap) i v budoucích projektech; z něj se pak připravuje lessons report, jímž se ponaučení předávají organizaci. Daily log je pracovní deník Project managera pro neformální issues, akce a poznámky a ponaučení by se v něm ztratilo. Protože etapa zůstává v tolerancích a nic se nemusí rozhodovat, nejde ani o formální issue.",
+    "image": {
+      "src": "/certification-images/prince2/management-products.svg",
+      "alt": "Dva kontejnery: PID s devíti management approaches a project log se šesti záznamy od daily logu po product register.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "progress",
@@ -1349,7 +1569,12 @@
       "Tolerance balíku stanoví Team manager dodavatele v team planu, který poté předloží ke schválení Project Board."
     ],
     "correctAnswer": 0,
-    "explanation": "Tolerance se delegují shora dolů: business layer (zde řídicí výbor programu) stanovuje tolerance projektu, Project Board tolerance etapy a Project manager tolerance pracovních balíků, které zaznamená ve work package description. Project manager přitom nemůže delegovat víc, než sám má, proto musí tolerance balíku zapadnout do tolerancí etapy, nikoli projektu. Skutečnost, že balík zpracovává externí dodavatel, na tom nic nemění – balík autorizuje a jeho tolerance stanovuje Project manager."
+    "explanation": "Tolerance se delegují shora dolů: business layer (zde řídicí výbor programu) stanovuje tolerance projektu, Project Board tolerance etapy a Project manager tolerance pracovních balíků, které zaznamená ve work package description. Project manager přitom nemůže delegovat víc, než sám má, proto musí tolerance balíku zapadnout do tolerancí etapy, nikoli projektu. Skutečnost, že balík zpracovává externí dodavatel, na tom nic nemění – balík autorizuje a jeho tolerance stanovuje Project manager.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "progress",
@@ -1492,7 +1717,12 @@
       "V SB na konci iniciace v aktivitě „Prepare next stage plan“, protože tailoring se týká až dodávkových etap."
     ],
     "correctAnswer": 0,
-    "explanation": "Jedním z cílů IP je určit, jak se zásady, metody a standardy organizace uplatní v konkrétním projektu; slouží k tomu aktivita „Agree tailoring requirements“. Dohodnutý tailoring – například registry v jednom nástroji nebo dashboard místo písemné zprávy – se zaznamená do PID, takže jej Project Board schvaluje při autorizaci projektu. Project approach v SU řeší volbu řešení a způsobu dodávky, nikoli přizpůsobení řídicích produktů a reportingu."
+    "explanation": "Jedním z cílů IP je určit, jak se zásady, metody a standardy organizace uplatní v konkrétním projektu; slouží k tomu aktivita „Agree tailoring requirements“. Dohodnutý tailoring – například registry v jednom nástroji nebo dashboard místo písemné zprávy – se zaznamená do PID, takže jej Project Board schvaluje při autorizaci projektu. Project approach v SU řeší volbu řešení a způsobu dodávky, nikoli přizpůsobení řídicích produktů a reportingu.",
+    "image": {
+      "src": "/certification-images/prince2/management-products.svg",
+      "alt": "Dva kontejnery: PID s devíti management approaches a project log se šesti záznamy od daily logu po product register.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-start",
@@ -1505,7 +1735,12 @@
       "Do project briefu, který se v IP doplní o pravidla řízení změn, takže samostatný přístup k řízení issues není potřeba."
     ],
     "correctAnswer": 0,
-    "explanation": "Pravidla řízení změn baseline – stupnice závažnosti, určení change authority a change budget – patří do issue management approach, který se spolu s ostatními přístupy dohodne v IP v aktivitě „Agree the management approaches“. Change management approach řeší organizační změnu u lidí, kterých se projekt dotkne; patří do něj příprava prodavačů, nikoli schvalování změn funkcí. Project brief se v IP nerozšiřuje, nahrazuje jej PID."
+    "explanation": "Pravidla řízení změn baseline – stupnice závažnosti, určení change authority a change budget – patří do issue management approach, který se spolu s ostatními přístupy dohodne v IP v aktivitě „Agree the management approaches“. Change management approach řeší organizační změnu u lidí, kterých se projekt dotkne; patří do něj příprava prodavačů, nikoli schvalování změn funkcí. Project brief se v IP nerozšiřuje, nahrazuje jej PID.",
+    "image": {
+      "src": "/certification-images/prince2/management-products.svg",
+      "alt": "Dva kontejnery: PID s devíti management approaches a project log se šesti záznamy od daily logu po product register.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-start",
@@ -1544,7 +1779,12 @@
       "Aktualizovaný project brief, který spolu s PID tvoří podklad pro rozhodnutí boardu v aktivitě „Authorize the project“."
     ],
     "correctAnswer": 0,
-    "explanation": "Po dokončení PID nastává hranice iniciační etapy: v procesu Managing a stage boundary Project manager připraví stage plan další etapy (aktivita „Prepare next stage plan“) a požádá o její zahájení. Board pak v DP autorizuje projekt na základě PID a zároveň první dodávkovou etapu. Team plany jsou volitelné a vznikají v MP, pracovní balíky autorizuje Project manager v Controlling a stage a project brief se po iniciaci neaktualizuje – nahradil jej PID."
+    "explanation": "Po dokončení PID nastává hranice iniciační etapy: v procesu Managing a stage boundary Project manager připraví stage plan další etapy (aktivita „Prepare next stage plan“) a požádá o její zahájení. Board pak v DP autorizuje projekt na základě PID a zároveň první dodávkovou etapu. Team plany jsou volitelné a vznikají v MP, pracovní balíky autorizuje Project manager v Controlling a stage a project brief se po iniciaci neaktualizuje – nahradil jej PID.",
+    "image": {
+      "src": "/certification-images/prince2/process-model.svg",
+      "alt": "Mřížka sedmi procesů PRINCE2 7 podle fází projektu (pre-project, initiation stage, subsequent stages, final stage) a úrovní directing, managing a delivering.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-start",
@@ -1557,7 +1797,12 @@
       "Ne, protože tolerance etap stanovuje Project manager ve stage planu a board je při autorizaci projektu pouze bere na vědomí."
     ],
     "correctAnswer": 0,
-    "explanation": "Tolerance projektu stanovuje business layer (zde rektor) a jen on je může změnit; Project Board v jejich rámci stanovuje tolerance etap a Project manager tolerance pracovních balíků. Pokud project plan ukazuje, že ±5 % je nereálných, je správné situaci projednat s business layer, nikoli toleranci změnit v PID na vlastní pěst. Stage plan připravuje Project manager, ale tolerance etapy stanovuje board."
+    "explanation": "Tolerance projektu stanovuje business layer (zde rektor) a jen on je může změnit; Project Board v jejich rámci stanovuje tolerance etap a Project manager tolerance pracovních balíků. Pokud project plan ukazuje, že ±5 % je nereálných, je správné situaci projednat s business layer, nikoli toleranci změnit v PID na vlastní pěst. Stage plan připravuje Project manager, ale tolerance etapy stanovuje board.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-delivery",
@@ -1596,7 +1841,12 @@
       "Ano, protože každé issue od Team managera je výjimkou, kterou Project manager musí bez dalšího posouzení předat boardu."
     ],
     "correctAnswer": 0,
-    "explanation": "Tolerance pracovního balíku stanovuje Project manager, proto se jejich předpovídané překročení eskaluje jemu: Team manager v MP vznese issue, jakmile překročení předpoví, a nečeká na pravidelný checkpoint report. Project manager pak v CS posoudí, zda situaci zvládne v rámci tolerancí etapy, nebo musí eskalovat boardu – automaticky výjimkou pro board to není. Exception plany se pro pracovní balíky nepřipravují a řízení výjimkou znamená eskalaci o úroveň výš, ne obcházení Project managera."
+    "explanation": "Tolerance pracovního balíku stanovuje Project manager, proto se jejich předpovídané překročení eskaluje jemu: Team manager v MP vznese issue, jakmile překročení předpoví, a nečeká na pravidelný checkpoint report. Project manager pak v CS posoudí, zda situaci zvládne v rámci tolerancí etapy, nebo musí eskalovat boardu – automaticky výjimkou pro board to není. Exception plany se pro pracovní balíky nepřipravují a řízení výjimkou znamená eskalaci o úroveň výš, ne obcházení Project managera.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-delivery",
@@ -1622,7 +1872,12 @@
       "Požádat change authority o navýšení change budgetu, aby se nový vývoj vešel do tolerancí etapy bez zapojení boardu."
     ],
     "correctAnswer": 0,
-    "explanation": "Předpověď, že etapa překročí toleranci nákladů, je výjimka: Project manager ji v CS v aktivitě „Escalate issues and risks“ neprodleně eskaluje exception reportem, ne až na konci etapy nebo po skutečném překročení. Board podle něj rozhodne a teprve na jeho žádost Project manager připraví exception plan v SB. Change budget stanovuje board, change authority jej sama navýšit nemůže."
+    "explanation": "Předpověď, že etapa překročí toleranci nákladů, je výjimka: Project manager ji v CS v aktivitě „Escalate issues and risks“ neprodleně eskaluje exception reportem, ne až na konci etapy nebo po skutečném překročení. Board podle něj rozhodne a teprve na jeho žádost Project manager připraví exception plan v SB. Change budget stanovuje board, change authority jej sama navýšit nemůže.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-delivery",
@@ -1635,7 +1890,12 @@
       "Ano, protože o průběhu etapy informují Project Board checkpoint reporty, které Team manageři zasílají přímo Executive."
     ],
     "correctAnswer": 0,
-    "explanation": "Highlight reporty jsou časově řízená kontrola: Project manager je v aktivitě „Report highlights“ posílá boardu ve frekvenci, kterou board stanovil. Řízení výjimkou neznamená, že board nedostává pravidelné informace – znamená, že nemusí zasahovat, dokud nehrozí překročení tolerancí. Checkpoint reporty jsou určeny Project managerovi, ne boardu."
+    "explanation": "Highlight reporty jsou časově řízená kontrola: Project manager je v aktivitě „Report highlights“ posílá boardu ve frekvenci, kterou board stanovil. Řízení výjimkou neznamená, že board nedostává pravidelné informace – znamená, že nemusí zasahovat, dokud nehrozí překročení tolerancí. Checkpoint reporty jsou určeny Project managerovi, ne boardu.",
+    "image": {
+      "src": "/certification-images/prince2/reports-flow.svg",
+      "alt": "Tabulka reportů PRINCE2 7: kdo je pro koho připravuje, kdy vznikají a zda jsou řízené časem, nebo událostí.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-delivery",
@@ -1648,7 +1908,12 @@
       "Požádat Team managera o exception report, protože práce mimo rozsah znamená překročení tolerance pracovního balíku."
     ],
     "correctAnswer": 0,
-    "explanation": "Členové boardu usměrňují projekt v DP prostřednictvím Project managera, ne přímými pokyny týmu, a board není demokratický orgán – rozhoduje Executive. Nová funkce mimo schválený rozsah je request for change: Project manager ji v CS zachytí („Capture issues and risks“), posoudí dopad a rozhodne o ní change authority, nebo Project Board, pokud změna přesahuje delegovanou pravomoc; tým má mezitím pracovat podle autorizovaného balíku. Risk budget slouží na reakce na rizika, ne na změny rozsahu."
+    "explanation": "Členové boardu usměrňují projekt v DP prostřednictvím Project managera, ne přímými pokyny týmu, a board není demokratický orgán – rozhoduje Executive. Nová funkce mimo schválený rozsah je request for change: Project manager ji v CS zachytí („Capture issues and risks“), posoudí dopad a rozhodne o ní change authority, nebo Project Board, pokud změna přesahuje delegovanou pravomoc; tým má mezitím pracovat podle autorizovaného balíku. Risk budget slouží na reakce na rizika, ne na změny rozsahu.",
+    "image": {
+      "src": "/certification-images/prince2/issue-types-and-procedure.svg",
+      "alt": "Šest typů issue v PRINCE2 7 a pět kroků techniky řízení issue: Capture, Assess, Recommend, Decide, Implement.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-delivery",
@@ -1765,7 +2030,12 @@
       "Ano, protože Project Board schvaluje výsledky poslední etapy v aktivitě „Authorize a stage or exception plan“."
     ],
     "correctAnswer": 0,
-    "explanation": "Managing a stage boundary se používá na konci iniciace a každé další etapy kromě poslední; ke konci poslední etapy vede v CS spouštěč „project end approaching“ přímo do procesu Closing a project. Výkon poslední etapy i celého projektu proto hodnotí end project report, nikoli end stage report. Výjimkou je exception plan – kvůli němu se SB použije kdykoli, i v poslední etapě."
+    "explanation": "Managing a stage boundary se používá na konci iniciace a každé další etapy kromě poslední; ke konci poslední etapy vede v CS spouštěč „project end approaching“ přímo do procesu Closing a project. Výkon poslední etapy i celého projektu proto hodnotí end project report, nikoli end stage report. Výjimkou je exception plan – kvůli němu se SB použije kdykoli, i v poslední etapě.",
+    "image": {
+      "src": "/certification-images/prince2/process-model.svg",
+      "alt": "Mřížka sedmi procesů PRINCE2 7 podle fází projektu (pre-project, initiation stage, subsequent stages, final stage) a úrovní directing, managing a delivering.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-boundary-closure",
@@ -1778,7 +2048,12 @@
       "Požádat business layer o novou toleranci, protože exception plan v poslední etapě vždy schvaluje business layer."
     ],
     "correctAnswer": 0,
-    "explanation": "Exception plan se připravuje v procesu Managing a stage boundary (aktivita „Prepare exception plan“) na základě požadavku boardu – a to v kterékoli etapě, tedy i v poslední. Board jej pak schvaluje v DP v aktivitě „Authorize a stage or exception plan“. Protože odchylka nepřekračuje toleranci projektu, rozhoduje Project Board, nikoli business layer, a pokračovat bez řešení překročené tolerance etapy nelze."
+    "explanation": "Exception plan se připravuje v procesu Managing a stage boundary (aktivita „Prepare exception plan“) na základě požadavku boardu – a to v kterékoli etapě, tedy i v poslední. Board jej pak schvaluje v DP v aktivitě „Authorize a stage or exception plan“. Protože odchylka nepřekračuje toleranci projektu, rozhoduje Project Board, nikoli business layer, a pokračovat bez řešení překročené tolerance etapy nelze.",
+    "image": {
+      "src": "/certification-images/prince2/process-model.svg",
+      "alt": "Mřížka sedmi procesů PRINCE2 7 podle fází projektu (pre-project, initiation stage, subsequent stages, final stage) a úrovní directing, managing a delivering.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-boundary-closure",
@@ -1791,7 +2066,12 @@
       "Ano, protože předložení hotového plánu je rychlejší a board jej může schválit rovnou v aktivitě „Give ad hoc direction“."
     ],
     "correctAnswer": 0,
-    "explanation": "Postup při výjimce je dvoukrokový: Project manager v CS předpoví překročení tolerance etapy a předloží exception report s příčinou, dopady, možnostmi a doporučením; board v DP rozhodne – může vyžádat exception plan, ale také zvolit jinou možnost. Teprve na jeho požadavek Project manager připraví exception plan v SB a board jej schválí v „Authorize a stage or exception plan“ („Give ad hoc direction“ je navíc název z 6. edice). Hotový plán bez rozhodnutí boardu předjímá volbu, která boardu náleží."
+    "explanation": "Postup při výjimce je dvoukrokový: Project manager v CS předpoví překročení tolerance etapy a předloží exception report s příčinou, dopady, možnostmi a doporučením; board v DP rozhodne – může vyžádat exception plan, ale také zvolit jinou možnost. Teprve na jeho požadavek Project manager připraví exception plan v SB a board jej schválí v „Authorize a stage or exception plan“ („Give ad hoc direction“ je navíc název z 6. edice). Hotový plán bez rozhodnutí boardu předjímá volbu, která boardu náleží.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-boundary-closure",
@@ -1804,7 +2084,12 @@
       "Okamžitě vydat premature close request, protože překročení tolerance projektu znamená ztrátu zdůvodnění projektu."
     ],
     "correctAnswer": 0,
-    "explanation": "Tolerance projektu stanovuje business layer, a proto se jejich předpovídané překročení eskaluje k němu: Project Board exception report předá rektorovi, který rozhodne o dalším postupu (například o exception planu, jenž nahradí project plan, nebo o ukončení projektu). Board sám rozhoduje jen o výjimkách v rámci tolerancí projektu, typicky na úrovni etapy. Předčasné uzavření je jednou z možností, ne automatickým důsledkem překročení tolerance."
+    "explanation": "Tolerance projektu stanovuje business layer, a proto se jejich předpovídané překročení eskaluje k němu: Project Board exception report předá rektorovi, který rozhodne o dalším postupu (například o exception planu, jenž nahradí project plan, nebo o ukončení projektu). Board sám rozhoduje jen o výjimkách v rámci tolerancí projektu, typicky na úrovni etapy. Předčasné uzavření je jednou z možností, ne automatickým důsledkem překročení tolerance.",
+    "image": {
+      "src": "/certification-images/prince2/tolerances-and-escalation.svg",
+      "alt": "Řetězec business layer, Project Board, Project manager a Team manager: tolerance se stanovují shora dolů a výjimky se eskalují zdola nahoru.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-boundary-closure",
@@ -1817,7 +2102,12 @@
       "Tolerance etapy přestávají platit a do konce etapy se Tomáš řídí přímo pokyny Executive v aktivitě „Give ongoing direction“."
     ],
     "correctAnswer": 0,
-    "explanation": "Exception plan nahrazuje plán, jehož tolerance by byly překročeny – při výjimce na úrovni etapy tedy stage plan. Po schválení boardem se etapa dál řídí v Controlling a stage podle exception planu a highlight reporty porovnávají skutečnost s ním. Exception plan na úrovni projektu by nahrazoval project plan; zde jde o výjimku etapy a nová autorizace celého projektu se nevyžaduje."
+    "explanation": "Exception plan nahrazuje plán, jehož tolerance by byly překročeny – při výjimce na úrovni etapy tedy stage plan. Po schválení boardem se etapa dál řídí v Controlling a stage podle exception planu a highlight reporty porovnávají skutečnost s ním. Exception plan na úrovni projektu by nahrazoval project plan; zde jde o výjimku etapy a nová autorizace celého projektu se nevyžaduje.",
+    "image": {
+      "src": "/certification-images/prince2/plan-levels.svg",
+      "alt": "Úrovně plánů v PRINCE2 7: project plan, stage plan, volitelný team plan a exception plan, který nahrazuje project plan nebo stage plan.",
+      "placement": "explanation"
+    }
   },
   {
     "topic": "processes-boundary-closure",

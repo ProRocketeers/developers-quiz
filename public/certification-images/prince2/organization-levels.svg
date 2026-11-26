@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="560" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Čtyři úrovně organizace projektu v PRINCE2 7</text>
+<rect x="5" y="50" width="790" height="65" rx="0" fill="#f7f7fb" stroke="#c9c9d9" stroke-width="1"/>
+<text x="15" y="78.5" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Zadávání</text>
+<text x="15" y="97.5" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">mimo tým řízení</text>
+<rect x="5" y="130" width="790" height="170" rx="0" fill="#ffffff" stroke="#c9c9d9" stroke-width="1"/>
+<text x="15" y="220.0" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Directing</text>
+<rect x="5" y="315" width="790" height="85" rx="0" fill="#f7f7fb" stroke="#c9c9d9" stroke-width="1"/>
+<text x="15" y="362.5" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Managing</text>
+<rect x="5" y="415" width="790" height="85" rx="0" fill="#ffffff" stroke="#c9c9d9" stroke-width="1"/>
+<text x="15" y="462.5" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Delivering</text>
+<line x1="355" y1="104" x2="355" y2="150" stroke="#4a4a6a" stroke-width="1.5"/>
+<line x1="355" y1="280" x2="355" y2="330" stroke="#4a4a6a" stroke-width="1.5"/>
+<line x1="355" y1="386" x2="355" y2="430" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="215" y="60" width="280" height="44" rx="8" fill="#ffe6cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="355.0" y="87.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Business layer</text>
+<rect x="135" y="150" width="440" height="130" rx="8" fill="#e9e3fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="355" y="174" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Project Board</text>
+<rect x="143" y="190" width="136" height="76" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="211.0" y="221.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Senior user</text>
+<text x="211.0" y="243.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">zájem user</text>
+<rect x="287" y="190" width="136" height="76" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="355.0" y="221.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Executive</text>
+<text x="355.0" y="243.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">zájem business</text>
+<rect x="431" y="190" width="136" height="76" rx="8" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="499.0" y="221.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Senior supplier</text>
+<text x="499.0" y="243.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">zájem supplier</text>
+<rect x="600" y="142" width="185" height="62" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="692.5" y="167.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Project assurance</text>
+<text x="692.5" y="187.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">nezávislá na PM</text>
+<rect x="600" y="226" width="185" height="62" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="692.5" y="251.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Change authority</text>
+<text x="692.5" y="271.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">deleguje ji board</text>
+<line x1="575" y1="173" x2="600" y2="173" stroke="#4a4a6a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="575" y1="257" x2="600" y2="257" stroke="#4a4a6a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="255" y="330" width="200" height="56" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="355.0" y="363.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Project manager</text>
+<rect x="600" y="330" width="185" height="56" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="692.5" y="352.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Project support</text>
+<text x="692.5" y="372.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">odpovídá za ni PM</text>
+<line x1="455" y1="358" x2="600" y2="358" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="255" y="430" width="200" height="56" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="355.0" y="452.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Team manager</text>
+<text x="355.0" y="472.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">volitelná role</text>
+<text x="400" y="524" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">Project management team = Project Board, Project manager, Team manager,</text>
+<text x="400" y="544" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">project assurance, change authority a project support. Business layer stojí mimo něj.</text>
+</svg>

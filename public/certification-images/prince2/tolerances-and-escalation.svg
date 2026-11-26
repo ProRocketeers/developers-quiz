@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 570">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="570" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Tolerance a eskalace výjimek</text>
+<text x="170" y="66" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Tolerance se stanovují shora dolů</text>
+<text x="640" y="66" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Výjimky se eskalují zdola nahoru</text>
+<rect x="300" y="85" width="200" height="56" rx="8" fill="#ffe6cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="400.0" y="118.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Business layer</text>
+<rect x="300" y="195" width="200" height="56" rx="8" fill="#e9e3fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="400.0" y="228.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Project Board</text>
+<rect x="300" y="305" width="200" height="56" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="400.0" y="338.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Project manager</text>
+<rect x="300" y="415" width="200" height="56" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="400.0" y="448.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Team manager</text>
+<line x1="350" y1="143" x2="350" y2="193" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="450" y1="193" x2="450" y2="143" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="335" y="164.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">stanovuje</text>
+<text x="335" y="182.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d" font-weight="bold">project tolerances</text>
+<text x="465" y="164.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">postoupí výjimku, hrozí-li</text>
+<text x="465" y="182.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">překročení project tolerances</text>
+<line x1="350" y1="253" x2="350" y2="303" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="450" y1="303" x2="450" y2="253" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="335" y="274.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">stanovuje</text>
+<text x="335" y="292.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d" font-weight="bold">stage tolerances</text>
+<text x="465" y="274.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">exception report, hrozí-li</text>
+<text x="465" y="292.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">překročení stage tolerances</text>
+<line x1="350" y1="363" x2="350" y2="413" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="450" y1="413" x2="450" y2="363" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arr)"/>
+<text x="335" y="384.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">stanovuje</text>
+<text x="335" y="402.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d" font-weight="bold">work package tolerances</text>
+<text x="465" y="384.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">vznese issue, hrozí-li překročení</text>
+<text x="465" y="402.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">work package tolerances</text>
+<rect x="20" y="490" width="760" height="62" rx="8" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="400" y="515" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Po exception reportu si Project Board může vyžádat exception plan: připraví ho Project manager</text>
+<text x="400" y="537" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">v Managing a stage boundary a schválí ho Project Board. Pro work package se exception plan nedělá.</text>
+</svg>

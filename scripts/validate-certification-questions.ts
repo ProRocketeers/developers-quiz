@@ -5,6 +5,8 @@ import { CERTIFICATION_EXAMS } from "../src/constants/certifications";
 import type { CertificationExam } from "../src/types";
 
 const DATA_DIR = path.resolve(process.cwd(), "src/data/certifications");
+const PUBLIC_DIR = path.resolve(process.cwd(), "public");
+const IMAGE_PLACEMENTS = ["question", "explanation"];
 const OPTION_COUNT = 4;
 const GRADIENT_SCORES = [0, 1, 3, 5];
 const MIN_EXPLANATION_LENGTH = 30;
@@ -12,6 +14,7 @@ const MAX_LONGEST_CORRECT_RATIO = 0.4;
 const ALLOWED_KEYS = new Set([
   "topic",
   "scenario",
+  "image",
   "question",
   "options",
   "correctAnswer",
@@ -104,6 +107,33 @@ function validateOptionScores(
   }
 }
 
+function validateImage(question: RawQuestion, errors: string[]) {
+  const { image } = question;
+  if (image === undefined) {
+    return;
+  }
+  if (typeof image !== "object" || image === null || Array.isArray(image)) {
+    errors.push("image must be an object");
+    return;
+  }
+  const { src, alt, placement } = image as Record<string, unknown>;
+  if (!isNonEmptyString(alt)) {
+    errors.push("image.alt must be a non-empty string");
+  }
+  if (!IMAGE_PLACEMENTS.includes(String(placement))) {
+    errors.push(
+      `image.placement must be one of ${IMAGE_PLACEMENTS.join(", ")}`,
+    );
+  }
+  if (!isNonEmptyString(src) || !src.startsWith("/")) {
+    errors.push("image.src must be an absolute path under public/");
+    return;
+  }
+  if (!fs.existsSync(path.join(PUBLIC_DIR, src))) {
+    errors.push(`image file "${src}" does not exist in public/`);
+  }
+}
+
 function validateQuestion(
   question: unknown,
   exam: CertificationExam,
@@ -140,6 +170,7 @@ function validateQuestion(
       `explanation must have at least ${MIN_EXPLANATION_LENGTH} characters`,
     );
   }
+  validateImage(raw, errors);
   validateOptions(raw, errors);
   validateCorrectAnswer(raw, errors);
   validateOptionScores(raw, exam, errors);

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 506">
+  <defs>
+    <marker id="arrF" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#4a4a6a"/></marker>
+    <marker id="arrO" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="arrS" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#4a4a6a" stroke-width="1.4"/></marker>
+    <marker id="triH" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="diaF" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#4a4a6a" stroke="#4a4a6a" stroke-width="1"/></marker>
+    <marker id="diaH" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="dot" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#4a4a6a"/></marker>
+    <marker id="arrFA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#b3264a"/></marker>
+    <marker id="arrOA" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="arrSA" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#b3264a" stroke-width="1.4"/></marker>
+    <marker id="triHA" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="diaFA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#b3264a" stroke="#b3264a" stroke-width="1"/></marker>
+    <marker id="diaHA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="dotA" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#b3264a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="800" height="506" fill="#ffffff"/>
+  <text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Nesting: jiný zápis téhož modelu</text>
+  <text x="205" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Vztahy zakreslené čarami</text>
+  <text x="595" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">Tentýž model pomocí nesting</text>
+  <path d="M400,70 L400,430" stroke="#4a4a6a" stroke-width="1" stroke-dasharray="3 5"/>
+  <rect x="110" y="104" width="190" height="56" rx="0" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="205.0" y="128.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application component</text>
+  <text x="205.0" y="146.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„E-shop“</text>
+  <rect x="20" y="230" width="170" height="56" rx="0" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="105.0" y="254.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application component</text>
+  <text x="105.0" y="272.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Košík“</text>
+  <rect x="215" y="230" width="170" height="56" rx="0" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="300.0" y="254.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application component</text>
+  <text x="300.0" y="272.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Katalog“</text>
+  <rect x="20" y="360" width="170" height="56" rx="14" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="105.0" y="384.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application function</text>
+  <text x="105.0" y="402.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Výpočet ceny“</text>
+  <path d="M165,160 L105,230" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#diaF)"/>
+  <path d="M245,160 L300,230" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#diaF)"/>
+  <text x="205" y="205" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">composition</text>
+  <path d="M105,286 L105,360" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#dot)" marker-end="url(#arrF)"/>
+  <text x="115" y="328" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">assigned to</text>
+  <rect x="420" y="104" width="360" height="312" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="600" y="128" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application component „E-shop“</text>
+  <rect x="435" y="146" width="180" height="254" fill="#D6FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="525" y="170" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application component</text>
+  <text x="525" y="188" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Košík“</text>
+  <rect x="447" y="300" width="156" height="60" rx="14" fill="#EFFFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="525.0" y="326.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application function</text>
+  <text x="525.0" y="344.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Výpočet ceny“</text>
+  <rect x="628" y="146" width="140" height="76" rx="0" fill="#D6FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="698.0" y="171.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application</text>
+  <text x="698.0" y="189.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">component</text>
+  <text x="698.0" y="207.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Katalog“</text>
+  <text x="400" y="462" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Nesting je jen alternativní notace, typicky pro composition, aggregation a assignment – model se nemění.</text>
+  <text x="400" y="484" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Ze samotného vnoření ale není vidět, který z těchto vztahů mezi prvky platí.</text>
+</svg>

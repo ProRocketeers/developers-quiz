@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 510">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="510" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Sedm procesů PRINCE2 7 v průběhu projektu</text>
+<rect x="133" y="50" width="163" height="400" rx="0" fill="#f7f7fb" stroke="#c9c9d9" stroke-width="1"/>
+<text x="214.5" y="74" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Pre-project</text>
+<rect x="296" y="50" width="163" height="400" rx="0" fill="#ffffff" stroke="#c9c9d9" stroke-width="1"/>
+<text x="377.5" y="74" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Initiation stage</text>
+<rect x="459" y="50" width="163" height="400" rx="0" fill="#f7f7fb" stroke="#c9c9d9" stroke-width="1"/>
+<text x="540.5" y="74" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Subsequent stage(s)</text>
+<rect x="622" y="50" width="163" height="400" rx="0" fill="#ffffff" stroke="#c9c9d9" stroke-width="1"/>
+<text x="703.5" y="74" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Final stage</text>
+<line x1="5" y1="90" x2="785" y2="90" stroke="#4a4a6a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="10" y="123.0" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Directing</text>
+<text x="10" y="143.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Project Board</text>
+<line x1="5" y1="170" x2="785" y2="170" stroke="#4a4a6a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="10" y="258.0" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Managing</text>
+<text x="10" y="278.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Project manager</text>
+<line x1="5" y1="360" x2="785" y2="360" stroke="#4a4a6a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="10" y="398.0" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Delivering</text>
+<text x="10" y="418.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Team manager</text>
+<rect x="245" y="102" width="532" height="46" rx="8" fill="#e9e3fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="511.0" y="130.2" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d" font-weight="bold">Directing a project</text>
+<rect x="141" y="190" width="147" height="54" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="214.5" y="212.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Starting up</text>
+<text x="214.5" y="230.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">a project</text>
+<rect x="304" y="190" width="147" height="54" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="377.5" y="212.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Initiating</text>
+<text x="377.5" y="230.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">a project</text>
+<rect x="467" y="190" width="147" height="54" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="540.5" y="212.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Controlling</text>
+<text x="540.5" y="230.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">a stage</text>
+<rect x="630" y="190" width="147" height="54" rx="8" fill="#dfe9fb" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="703.5" y="212.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Controlling</text>
+<text x="703.5" y="230.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">a stage</text>
+<rect x="304" y="270" width="147" height="54" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="377.5" y="292.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Managing a</text>
+<text x="377.5" y="310.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">stage boundary</text>
+<rect x="467" y="270" width="147" height="54" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="540.5" y="292.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Managing a</text>
+<text x="540.5" y="310.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">stage boundary</text>
+<rect x="630" y="270" width="147" height="54" rx="8" fill="#fde3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="703.5" y="292.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Closing</text>
+<text x="703.5" y="310.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">a project</text>
+<rect x="467" y="375" width="147" height="54" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="540.5" y="397.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Managing</text>
+<text x="540.5" y="415.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">product delivery</text>
+<rect x="630" y="375" width="147" height="54" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="703.5" y="397.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Managing</text>
+<text x="703.5" y="415.9" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">product delivery</text>
+<text x="400" y="474" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">Managing a stage boundary probíhá na konci každé etapy kromě poslední</text>
+<text x="400" y="494" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">(a při přípravě exception planu); poslední etapu uzavírá Closing a project.</text>
+</svg>

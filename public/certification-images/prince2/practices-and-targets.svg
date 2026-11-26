@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490">
+<defs><marker id="arr" markerWidth="5" markerHeight="4" viewBox="0 0 10 8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="490" fill="#ffffff"/>
+<text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Sedm praktik a sedm výkonnostních cílů</text>
+<text x="205" y="66" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">7 practices (praktiky)</text>
+<text x="595" y="66" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#26254d" font-weight="bold">7 performance targets (výkonnostní cíle)</text>
+<rect x="30" y="80" width="350" height="44" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="45" y="107" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Business case</text>
+<text x="365" y="107" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">proč projekt děláme</text>
+<rect x="420" y="80" width="350" height="44" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="435" y="107" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Benefits</text>
+<text x="755" y="107" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">přínosy</text>
+<rect x="30" y="132" width="350" height="44" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="45" y="159" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Organizing</text>
+<text x="365" y="159" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">kdo za co odpovídá</text>
+<rect x="420" y="132" width="350" height="44" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="435" y="159" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Costs</text>
+<text x="755" y="159" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">náklady</text>
+<rect x="30" y="184" width="350" height="44" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="45" y="211" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Plans</text>
+<text x="365" y="211" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">co, kdy, jak a za kolik</text>
+<rect x="420" y="184" width="350" height="44" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="435" y="211" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Time</text>
+<text x="755" y="211" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">čas</text>
+<rect x="30" y="236" width="350" height="44" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="45" y="263" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Quality</text>
+<text x="365" y="263" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">co přesně má produkt splnit</text>
+<rect x="420" y="236" width="350" height="44" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="435" y="263" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Quality</text>
+<text x="755" y="263" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">kvalita</text>
+<rect x="30" y="288" width="350" height="44" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="45" y="315" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Risk</text>
+<text x="365" y="315" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">co nejistého může nastat</text>
+<rect x="420" y="288" width="350" height="44" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="435" y="315" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Scope</text>
+<text x="755" y="315" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">rozsah</text>
+<rect x="30" y="340" width="350" height="44" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="45" y="367" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Issues</text>
+<text x="365" y="367" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">co nastalo; změny baseline</text>
+<rect x="420" y="340" width="350" height="44" rx="8" fill="#ffe6cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="435" y="367" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Sustainability</text>
+<text x="755" y="367" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">udržitelnost – nově v 7. edici</text>
+<rect x="30" y="392" width="350" height="44" rx="8" fill="#e0f3e3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="45" y="419" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Progress</text>
+<text x="365" y="419" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">kde jsme proti plánu</text>
+<rect x="420" y="392" width="350" height="44" rx="8" fill="#fff3cf" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="435" y="419" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" fill="#26254d" font-weight="bold">Risk</text>
+<text x="755" y="419" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">riziko</text>
+<text x="400" y="468" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">Praktiky nahradily „themes“ 6. edice. Pro každý výkonnostní cíl lze stanovit toleranci.</text>
+</svg>

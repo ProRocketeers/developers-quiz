@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580">
+  <defs>
+    <marker id="arrF" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#4a4a6a"/></marker>
+    <marker id="arrO" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="arrS" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#4a4a6a" stroke-width="1.4"/></marker>
+    <marker id="triH" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="diaF" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#4a4a6a" stroke="#4a4a6a" stroke-width="1"/></marker>
+    <marker id="diaH" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="dot" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#4a4a6a"/></marker>
+    <marker id="arrFA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#b3264a"/></marker>
+    <marker id="arrOA" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="arrSA" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#b3264a" stroke-width="1.4"/></marker>
+    <marker id="triHA" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="diaFA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#b3264a" stroke="#b3264a" stroke-width="1"/></marker>
+    <marker id="diaHA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="dotA" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#b3264a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="800" height="580" fill="#ffffff"/>
+  <text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">ArchiMate Full Framework</text>
+  <rect x="200" y="70" width="140" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="270.0" y="91.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Passive</text>
+  <text x="270.0" y="109.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">structure</text>
+  <rect x="350" y="70" width="140" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="420.0" y="100.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Behavior</text>
+  <rect x="500" y="70" width="140" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="570.0" y="91.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Active</text>
+  <text x="570.0" y="109.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">structure</text>
+  <rect x="660" y="70" width="120" height="50" rx="0" fill="#CCCCFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="720.0" y="100.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Motivation</text>
+  <rect x="30" y="132" width="160" height="56" rx="0" fill="#F5DEAA" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="110.0" y="165.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Strategy</text>
+  <rect x="200" y="132" width="140" height="56" fill="#F5DEAA" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="350" y="132" width="140" height="56" fill="#F5DEAA" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="500" y="132" width="140" height="56" fill="#F5DEAA" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="30" y="198" width="160" height="56" rx="0" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="110.0" y="231.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business</text>
+  <rect x="200" y="198" width="140" height="56" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="350" y="198" width="140" height="56" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="500" y="198" width="140" height="56" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="30" y="264" width="160" height="56" rx="0" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="110.0" y="297.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Application</text>
+  <rect x="200" y="264" width="140" height="56" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="350" y="264" width="140" height="56" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="500" y="264" width="140" height="56" fill="#B5FFFF" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="30" y="330" width="160" height="50" rx="0" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="110.0" y="360.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Technology</text>
+  <rect x="200" y="330" width="140" height="50" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="350" y="330" width="140" height="50" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="500" y="330" width="140" height="50" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="30" y="380" width="160" height="50" rx="0" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="110.0" y="410.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Physical</text>
+  <rect x="200" y="380" width="140" height="50" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="350" y="380" width="140" height="50" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="500" y="380" width="140" height="50" fill="#C9E7B7" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="30" y="440" width="160" height="56" rx="0" fill="#FFE0E0" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="110.0" y="464.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Implementation</text>
+  <text x="110.0" y="482.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">&amp; Migration</text>
+  <rect x="200" y="440" width="140" height="56" fill="#FFE0E0" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="350" y="440" width="140" height="56" fill="#FFE0E0" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="500" y="440" width="140" height="56" fill="#FFE0E0" stroke="#4a4a6a" stroke-width="1.2"/>
+  <rect x="660" y="132" width="120" height="364" fill="#CCCCFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="720" y="300" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">aspekt přes</text>
+  <text x="720" y="320" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">všechny vrstvy</text>
+  <rect x="22" y="192" width="626" height="244" fill="none" stroke="#b3264a" stroke-width="2.5" stroke-dasharray="9 5"/>
+  <path d="M40,525 L90,525" fill="none" stroke="#b3264a" stroke-width="2.5" stroke-dasharray="9 5"/>
+  <text x="100" y="530" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Core Framework (jádro): Business, Application, Technology × 3 aspekty</text>
+  <text x="40" y="556" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Physical elementy jsou rozšířením Technology layer. Řádky = vrstvy (layers), sloupce = aspekty (aspects).</text>
+</svg>

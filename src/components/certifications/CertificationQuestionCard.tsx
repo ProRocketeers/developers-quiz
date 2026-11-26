@@ -1,5 +1,8 @@
 import { useId } from "react";
-import type { CertificationQuestion } from "../../types";
+import type {
+  CertificationQuestion,
+  CertificationQuestionImage,
+} from "../../types";
 import {
   getAnswerOutcome,
   getEarnedPoints,
@@ -55,6 +58,10 @@ function CertificationQuestionCard({
       <h3 id={titleId} className="cert-question-title">
         {question.question}
       </h3>
+
+      {question.image?.placement === "question" && (
+        <QuestionImage image={question.image} />
+      )}
 
       <div className="cert-options" role="radiogroup" aria-labelledby={titleId}>
         {question.options.map((option, index) => (
@@ -116,7 +123,24 @@ function AnswerFeedback({
           : getVerdictText(question, selectedAnswer, earnedPoints, maxPoints)}
       </strong>
       <p className="cert-feedback-explanation">{question.explanation}</p>
+      {question.image?.placement === "explanation" && (
+        <QuestionImage image={question.image} />
+      )}
     </div>
+  );
+}
+
+function QuestionImage({ image }: { image: CertificationQuestionImage }) {
+  return (
+    <a
+      className="cert-question-image"
+      href={image.src}
+      target="_blank"
+      rel="noreferrer"
+      title="Otevřít obrázek v plné velikosti"
+    >
+      <img src={image.src} alt={image.alt} loading="lazy" />
+    </a>
   );
 }
 

@@ -219,3 +219,21 @@
   background: rgba(237, 123, 67, 0.16);
   color: #a24a14;
 }
+
+.cert-question-image {
+  display: block;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+.cert-question-image img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.cert-feedback .cert-question-image {
+  margin-top: 12px;
+}
