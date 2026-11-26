@@ -68,10 +68,15 @@ export const CERTIFICATIONS: Certification[] = [
       description:
         "Zhuštěný přehled k oběma zkouškám: framework, vztahy, prvky všech vrstev s notací, vazby mezi vrstvami, migrace a viewpointy.",
       files: [
-        { label: "Stáhnout PDF", href: "/downloads/archimate-3-2-tahak.pdf" },
+        { label: "PDF česky", href: "/downloads/archimate-3-2-tahak.pdf" },
+        { label: "Word česky", href: "/downloads/archimate-3-2-tahak.docx" },
         {
-          label: "Stáhnout Word (.docx)",
-          href: "/downloads/archimate-3-2-tahak.docx",
+          label: "PDF anglicky",
+          href: "/downloads/archimate-3-2-cheat-sheet-en.pdf",
+        },
+        {
+          label: "Word anglicky",
+          href: "/downloads/archimate-3-2-cheat-sheet-en.docx",
         },
       ],
     },
