@@ -31,7 +31,7 @@
   <text x="380.0" y="315.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Vyřídit výpůjčku“</text>
   <rect x="290" y="435" width="180" height="72" rx="14" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
   <text x="380.0" y="467.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business event</text>
-  <text x="380.0" y="485.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Žádost o výpůjčku“</text>
+  <text x="380.0" y="485.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Žádost přijata“</text>
   <rect x="560" y="95" width="180" height="72" rx="0" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
   <text x="650.0" y="127.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business interface</text>
   <text x="650.0" y="145.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">„Výpůjční pult“</text>

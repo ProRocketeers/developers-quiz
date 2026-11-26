@@ -23,7 +23,7 @@
   <text x="400.0" y="178.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Concept</text>
   <path d="M400,108 L400,150" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#diaF)"/>
   <text x="495" y="90" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">kolekce konceptů</text>
-  <text x="495" y="178" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">element, relationship nebo connector</text>
+  <text x="495" y="178" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">element nebo relationship</text>
   <rect x="110" y="250" width="170" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
   <text x="195.0" y="280.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Element</text>
   <rect x="320" y="250" width="160" height="50" rx="0" fill="#F2F2F7" stroke="#4a4a6a" stroke-width="1.5"/>
