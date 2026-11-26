@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CertificationTabs from "../components/certifications/CertificationTabs";
+import CheatSheetDownload from "../components/certifications/CheatSheetDownload";
 import ExamLevelCard from "../components/certifications/ExamLevelCard";
 import PracticeSetup from "../components/certifications/PracticeSetup";
 import {
@@ -83,6 +84,10 @@ export default function CertificationHomeView({ questionCounts }: Props) {
           {certification.description} Vlastník certifikace:{" "}
           {certification.owner}.
         </p>
+      )}
+
+      {certification?.cheatSheet && (
+        <CheatSheetDownload cheatSheet={certification.cheatSheet} />
       )}
 
       <div className="certification-levels">

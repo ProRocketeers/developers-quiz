@@ -51,12 +51,24 @@ export type CertificationQuizMode = "practice" | "exam";
  */
 export type CertificationScoring = "single-answer" | "gradient";
 
+export interface CertificationDownload {
+  label: string;
+  href: string;
+}
+
+export interface CertificationCheatSheet {
+  title: string;
+  description: string;
+  files: CertificationDownload[];
+}
+
 export interface Certification {
   id: CertificationId;
   name: string;
   edition: string;
   owner: string;
   description: string;
+  cheatSheet?: CertificationCheatSheet;
 }
 
 export interface CertificationTopic {

@@ -63,6 +63,18 @@ export const CERTIFICATIONS: Certification[] = [
     owner: "The Open Group",
     description:
       "Modelovací jazyk pro popis, analýzu a vizualizaci enterprise architektury.",
+    cheatSheet: {
+      title: "Tahák ArchiMate 3.2",
+      description:
+        "Zhuštěný přehled k oběma zkouškám: framework, vztahy, prvky všech vrstev s notací, vazby mezi vrstvami, migrace a viewpointy.",
+      files: [
+        { label: "Stáhnout PDF", href: "/downloads/archimate-3-2-tahak.pdf" },
+        {
+          label: "Stáhnout Word (.docx)",
+          href: "/downloads/archimate-3-2-tahak.docx",
+        },
+      ],
+    },
   },
 ];
 
