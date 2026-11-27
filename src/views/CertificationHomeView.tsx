@@ -1,7 +1,6 @@
 import { useState } from "react";
 import CertificationTabs from "../components/certifications/CertificationTabs";
-import CheatSheetDownload from "../components/certifications/CheatSheetDownload";
-import CourseMaterialsDownload from "../components/certifications/CourseMaterialsDownload";
+import DocumentsPanel from "../components/certifications/DocumentsPanel";
 import ExamLevelCard from "../components/certifications/ExamLevelCard";
 import PracticeSetup from "../components/certifications/PracticeSetup";
 import {
@@ -87,13 +86,10 @@ export default function CertificationHomeView({ questionCounts }: Props) {
         </p>
       )}
 
-      {certification?.cheatSheet && (
-        <CheatSheetDownload cheatSheet={certification.cheatSheet} />
-      )}
-
-      {certification?.courseMaterialIds && (
-        <CourseMaterialsDownload
-          materialIds={certification.courseMaterialIds}
+      {(certification?.cheatSheet || certification?.courseMaterialIds) && (
+        <DocumentsPanel
+          cheatSheet={certification.cheatSheet}
+          courseMaterialIds={certification.courseMaterialIds}
         />
       )}
 

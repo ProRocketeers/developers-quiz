@@ -1,21 +1,4 @@
-.course-materials {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 20px 24px;
-  border: 1px solid var(--color-border);
-  border-radius: 24px;
-  background: rgba(255, 253, 249, 0.96);
-  box-shadow: var(--shadow-md);
-}
-
-.course-materials-text h3 {
-  margin: 0 0 6px;
-  color: var(--color-primary);
-  font-size: 1.2rem;
-}
-
-.course-materials-text p {
+.course-materials-intro {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.95rem;

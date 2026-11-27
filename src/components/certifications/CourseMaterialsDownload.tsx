@@ -37,14 +37,12 @@ function CourseMaterialsDownload({ materialIds }: Props) {
   };
 
   return (
-    <section className="course-materials">
-      <div className="course-materials-text">
-        <h3>Podklady z kurzu</h3>
-        <p>
-          Oficiální materiály kurzu ArchiMate 3.2 (The Open Group) ke stažení po
-          zadání hesla. Slouží jen pro vlastní studium.
-        </p>
-      </div>
+    <section className="documents-subpanel">
+      <h4>Open Group Dokumenty</h4>
+      <p className="course-materials-intro">
+        Oficiální materiály kurzu ArchiMate 3.2 (The Open Group) ke stažení po
+        zadání hesla. Slouží jen pro vlastní studium.
+      </p>
 
       <label className="course-materials-password">
         <span>Heslo</span>
