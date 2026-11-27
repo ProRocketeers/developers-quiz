@@ -7,6 +7,7 @@ import {
   CERTIFICATION_EXAMS,
   CERTIFICATION_ROUTES,
   CERTIFICATIONS,
+  DEFAULT_CERTIFICATION_ID,
   getCertificationExams,
 } from "../constants/certifications";
 import type { QuestionCountsByExam } from "../services/certificationQuestionService";
@@ -36,8 +37,9 @@ interface Props {
 }
 
 export default function CertificationHomeView({ questionCounts }: Props) {
-  const [certificationId, setCertificationId] =
-    useState<CertificationId>("prince2");
+  const [certificationId, setCertificationId] = useState<CertificationId>(
+    DEFAULT_CERTIFICATION_ID,
+  );
   const [practiceExamId, setPracticeExamId] =
     useState<CertificationExamId | null>(null);
   const certification = CERTIFICATIONS.find(({ id }) => id === certificationId);
@@ -58,7 +60,7 @@ export default function CertificationHomeView({ questionCounts }: Props) {
     <div className="certifications">
       <section className="certifications-hero">
         <span className="certifications-eyebrow">Příprava na certifikace</span>
-        <h2>PRINCE2®, TOGAF® a ArchiMate®</h2>
+        <h2>ArchiMate®, PRINCE2® a TOGAF®</h2>
         <p>
           Cvičné otázky pokrývající sylaby úrovní Foundation i Practitioner.
           Každá otázka má vysvětlení, takže se z chyb rovnou učíte. Výsledky se

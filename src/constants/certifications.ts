@@ -39,23 +39,9 @@ export const CERTIFICATION_ROUTES = {
 
 export const ATTEMPT_QUERY_PARAM = "attempt";
 
+export const DEFAULT_CERTIFICATION_ID: CertificationId = "archimate";
+
 export const CERTIFICATIONS: Certification[] = [
-  {
-    id: "prince2",
-    name: "PRINCE2®",
-    edition: "7. edice (2023)",
-    owner: "PeopleCert",
-    description:
-      "Procesně orientovaná metoda řízení projektů – principy, lidé, praxe, procesy a kontext projektu.",
-  },
-  {
-    id: "togaf",
-    name: "TOGAF®",
-    edition: "TOGAF Standard, 10. edice",
-    owner: "The Open Group",
-    description:
-      "Rámec pro enterprise architekturu postavený na Architecture Development Method (ADM).",
-  },
   {
     id: "archimate",
     name: "ArchiMate®",
@@ -85,6 +71,22 @@ export const CERTIFICATIONS: Certification[] = [
         },
       ],
     },
+  },
+  {
+    id: "prince2",
+    name: "PRINCE2®",
+    edition: "7. edice (2023)",
+    owner: "PeopleCert",
+    description:
+      "Procesně orientovaná metoda řízení projektů – principy, lidé, praxe, procesy a kontext projektu.",
+  },
+  {
+    id: "togaf",
+    name: "TOGAF®",
+    edition: "TOGAF Standard, 10. edice",
+    owner: "The Open Group",
+    description:
+      "Rámec pro enterprise architekturu postavený na Architecture Development Method (ADM).",
   },
 ];
 
