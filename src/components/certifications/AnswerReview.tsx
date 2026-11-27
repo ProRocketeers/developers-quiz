@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getTopicLabel } from "../../constants/certifications";
+import { useTranslations } from "../../i18n/localeContext";
 import type { CertificationAttempt, CertificationExam } from "../../types";
 import { getAnswerOutcome } from "../../utils/certificationScoring";
 import CertificationQuestionCard from "./CertificationQuestionCard";
@@ -11,6 +12,7 @@ interface Props {
 }
 
 function AnswerReview({ exam, attempt }: Props) {
+  const t = useTranslations().certifications.review;
   const [showOnlyMistakes, setShowOnlyMistakes] = useState(false);
   const reviewedQuestions = attempt.questions.map((question, index) => ({
     question,
@@ -32,13 +34,11 @@ function AnswerReview({ exam, attempt }: Props) {
           checked={showOnlyMistakes}
           onChange={(event) => setShowOnlyMistakes(event.target.checked)}
         />
-        Zobrazit jen otázky k zopakování ({mistakeCount})
+        {t.onlyMistakes(mistakeCount)}
       </label>
 
       {visibleQuestions.length === 0 && (
-        <p className="answer-review-empty">
-          Všechny odpovědi jsou nejlepší možné.
-        </p>
+        <p className="answer-review-empty">{t.nothingToRepeat}</p>
       )}
 
       {visibleQuestions.map(({ question, index }) => (

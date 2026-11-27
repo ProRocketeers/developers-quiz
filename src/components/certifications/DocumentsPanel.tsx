@@ -1,3 +1,4 @@
+import { useTranslations } from "../../i18n/localeContext";
 import type { CertificationCheatSheet, CourseMaterialId } from "../../types";
 import CheatSheetDownload from "./CheatSheetDownload";
 import CourseMaterialsDownload from "./CourseMaterialsDownload";
@@ -9,9 +10,11 @@ interface Props {
 }
 
 function DocumentsPanel({ cheatSheet, courseMaterialIds }: Props) {
+  const t = useTranslations().certifications.documents;
+
   return (
     <section className="documents-panel">
-      <h3>Dokumenty</h3>
+      <h3>{t.title}</h3>
       {cheatSheet && <CheatSheetDownload cheatSheet={cheatSheet} />}
       {courseMaterialIds && (
         <CourseMaterialsDownload materialIds={courseMaterialIds} />

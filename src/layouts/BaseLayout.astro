@@ -4,20 +4,19 @@ import Footer from "../components/Footer";
 import "../index.css";
 import "./Layout.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import type { Locale } from "../i18n/locales";
 
 interface Props {
-  title?: string;
+  locale: Locale;
+  title: string;
   currentPath?: string;
 }
 
-const {
-  title = "Developers Quiz",
-  currentPath = "/",
-} = Astro.props as Props;
+const { locale, title, currentPath = "/" } = Astro.props as Props;
 ---
 
 <!doctype html>
-<html lang="cs">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +24,7 @@ const {
   </head>
   <body>
     <div class="layout">
-      <Header currentPath={currentPath} />
+      <Header locale={locale} currentPath={currentPath} client:load />
       <main class="main">
         <slot />
       </main>

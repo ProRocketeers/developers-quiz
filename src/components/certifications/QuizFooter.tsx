@@ -1,3 +1,4 @@
+import { useTranslations } from "../../i18n/localeContext";
 import "./QuizFooter.css";
 
 interface Props {
@@ -17,6 +18,7 @@ function QuizFooter({
   onNavigate,
   onFinish,
 }: Props) {
+  const t = useTranslations().certifications.footer;
   const isLastQuestion = currentIndex === questionCount - 1;
 
   return (
@@ -28,10 +30,10 @@ function QuizFooter({
           onClick={() => onNavigate(currentIndex - 1)}
           disabled={currentIndex === 0}
         >
-          ← Předchozí
+          {t.previous}
         </button>
         <span className="quiz-footer-cert-progress">
-          Hotovo {completedCount} / {questionCount}
+          {t.progress(completedCount, questionCount)}
         </span>
         {isLastQuestion ? (
           <button
@@ -39,7 +41,7 @@ function QuizFooter({
             className="certification-submit-btn"
             onClick={onFinish}
           >
-            {canEvaluate ? "Vyhodnotit test" : "Ukončit studium"}
+            {canEvaluate ? t.evaluate : t.finishStudy}
           </button>
         ) : (
           <button
@@ -47,7 +49,7 @@ function QuizFooter({
             className="certification-nav-btn is-primary"
             onClick={() => onNavigate(currentIndex + 1)}
           >
-            Další →
+            {t.next}
           </button>
         )}
       </footer>
@@ -58,7 +60,7 @@ function QuizFooter({
           className="quiz-footer-cert-finish"
           onClick={onFinish}
         >
-          {canEvaluate ? "Ukončit a vyhodnotit test" : "Ukončit studium"}
+          {canEvaluate ? t.finishAndEvaluate : t.finishStudy}
         </button>
       )}
     </>

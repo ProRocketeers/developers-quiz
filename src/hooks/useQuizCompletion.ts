@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef } from "react";
 import { CERTIFICATION_ROUTES } from "../constants/certifications";
+import { useTranslations } from "../i18n/localeContext";
 import type { CertificationQuizSettings } from "../types";
 import { finishCertificationQuiz } from "../utils/certificationNavigation";
 import type { EvaluatedResults } from "../utils/certificationQuizSession";
 import { navigateTo } from "../utils/navigation";
-import { QUESTION_FORMS, pluralizeCs } from "../utils/pluralizeCs";
 import { createId } from "../utils/quizResults";
 import { useBeforeUnloadWarning } from "./useBeforeUnloadWarning";
 
@@ -30,6 +30,7 @@ export function useQuizCompletion({
   unansweredCount,
   getEvaluatedResults,
 }: CompletionOptions): () => void {
+  const t = useTranslations().certifications.quiz;
   const isFinishedRef = useRef(false);
 
   const finishQuiz = useCallback(() => {
@@ -60,17 +61,11 @@ export function useQuizCompletion({
   useBeforeUnloadWarning(completedCount > 0, isFinishedRef);
 
   return () => {
-    if (confirmUnansweredQuestions(unansweredCount)) {
+    const isConfirmed =
+      unansweredCount === 0 ||
+      window.confirm(t.confirmUnanswered(unansweredCount));
+    if (isConfirmed) {
       finishQuiz();
     }
   };
-}
-
-function confirmUnansweredQuestions(unansweredCount: number): boolean {
-  return (
-    unansweredCount === 0 ||
-    window.confirm(
-      `Bez odpovědi zůstává ${pluralizeCs(unansweredCount, QUESTION_FORMS)}. Opravdu chcete test vyhodnotit?`,
-    )
-  );
 }

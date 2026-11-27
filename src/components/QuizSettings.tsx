@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import type { KeyboardEvent } from "react";
 import { getCategoriesWithCount } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
+import { useTranslations } from "../i18n/localeContext";
 import "./QuizSettings.css";
 import CategoryList from "./CategoryList";
 import { MAX_TOTAL_QUESTIONS } from "../constants/quiz";
@@ -20,6 +21,7 @@ function QuizSettings({
   onValidationChange,
 }: Props) {
   const { settings, updateSettings } = useQuizSettings();
+  const t = useTranslations().quizSettings;
   const categories = useMemo(
     () => getCategoriesWithCount(settings.useMock),
     [settings.useMock],
@@ -68,18 +70,23 @@ function QuizSettings({
 
   const validateField = useCallback(
     (field: string, val: string) => {
-      if (!val) return "Povinné pole";
-      if (field === "name" && val.length < 2) return "Min. 2 znaky";
-      if (field === "email" && !validateEmail(val)) return "Neplatný email";
+      if (!val) return t.requiredField;
+      if (field === "name" && val.length < 2) return t.nameTooShort;
+      if (field === "email" && !validateEmail(val)) return t.invalidEmail;
       return "";
     },
-    [validateEmail],
+    [validateEmail, t],
   );
 
-  const validateTotalQuestions = useCallback((count: number) => {
-    if (count > MAX_TOTAL_QUESTIONS) return `Max. ${MAX_TOTAL_QUESTIONS} otázek`;
-    return "";
-  }, []);
+  const validateTotalQuestions = useCallback(
+    (count: number) => {
+      if (count > MAX_TOTAL_QUESTIONS) {
+        return t.tooManyQuestions(MAX_TOTAL_QUESTIONS);
+      }
+      return "";
+    },
+    [t],
+  );
 
   const totalQuestions = settings.multiSelect
     ? settings.selectedCategories.reduce(
@@ -273,13 +280,13 @@ function QuizSettings({
           <div className="row">
             <div className="col">
               <label className="field-label">
-                Jméno
+                {t.name}
                 <input
                   type="text"
                   value={inputName}
                   onChange={(e) => handleInput("name", e.target.value)}
                   className="form-control"
-                  placeholder="Např. Jana Nováková"
+                  placeholder={t.namePlaceholder}
                 />
                 {errors.name && <span className="text-danger small">{errors.name}</span>}
               </label>
@@ -287,13 +294,13 @@ function QuizSettings({
 
             <div className="col">
               <label className="field-label">
-                Email
+                {t.email}
                 <input
                   type="email"
                   value={inputEmail}
                   onChange={(e) => handleInput("email", e.target.value)}
                   className="form-control"
-                  placeholder="jmeno@firma.cz"
+                  placeholder={t.emailPlaceholder}
                 />
                 {errors.email && <span className="text-danger small">{errors.email}</span>}
               </label>
@@ -306,7 +313,7 @@ function QuizSettings({
                   checked={consentGiven}
                   onChange={(e) => handleConsentChange(e.target.checked)}
                 />
-                Souhlasím se zpracováním osobních údajů pouze za účelem odeslání emailu s výsledky.
+                {t.consent}
               </label>
             </div>
           </div>
@@ -315,7 +322,7 @@ function QuizSettings({
         <div className="row">
           <div className="col">
             <div className="category-header">
-              <label className="field-label">Kategorie</label>
+              <label className="field-label">{t.categories}</label>
               {settings.multiSelect && (
                 <label className="select-all-toggle">
                   <input
@@ -323,7 +330,7 @@ function QuizSettings({
                     checked={allSelected}
                     onChange={(e) => handleSelectAllToggle(e.target.checked)}
                   />
-                  Vybrat všechny
+                  {t.selectAllCategories}
                 </label>
               )}
             </div>
@@ -331,7 +338,7 @@ function QuizSettings({
             {settings.multiSelect && (
               <div className="bulk-control">
                 <label className="bulk-label" htmlFor="bulk-count-input">
-                  Nastavit počet otázek pro vybrané
+                  {t.bulkCountLabel}
                 </label>
                 <div className="bulk-input-row">
                   <input
@@ -343,10 +350,10 @@ function QuizSettings({
                     disabled={settings.selectedCategories.length === 0}
                     onChange={(e) => handleBulkInput(e.target.value)}
                   />
-                  <span className="bulk-badge">Vybráno: {settings.selectedCategories.length}</span>
+                  <span className="bulk-badge">{t.selectedCount(settings.selectedCategories.length)}</span>
                 </div>
                 <span className="bulk-hint">
-                  Zadaná hodnota přepíše počty u všech vybraných kategorií.
+                  {t.bulkCountHint}
                 </span>
               </div>
             )}
@@ -362,7 +369,7 @@ function QuizSettings({
 
             {settings.multiSelect && (
               <div className="category-total">
-                Celkem otázek: <strong>{totalQuestions}</strong>
+                {t.totalQuestions} <strong>{totalQuestions}</strong>
                 {errors.totalQuestions && (
                   <div>
                     <span className="text-danger small">{errors.totalQuestions}</span>
@@ -375,7 +382,7 @@ function QuizSettings({
           {!settings.multiSelect && (
             <div className="col">
               <label className="field-label">
-                Počet otázek
+                {t.questionCount}
                 <input
                   type="number"
                   value={inputMaxQuestions}
@@ -397,7 +404,7 @@ function QuizSettings({
           <div className="col">
             {showRefresh && (
               <button className="btn btn-success" onClick={handleRefresh}>
-                Obnovit
+                {t.refresh}
               </button>
             )}
           </div>

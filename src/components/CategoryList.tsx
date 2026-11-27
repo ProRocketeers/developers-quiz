@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ChangeEvent } from "react";
 import { Form } from "react-bootstrap";
+import { localizeCategoryGroup } from "../i18n/content";
+import { useLocale, useTranslations } from "../i18n/localeContext";
 import { groupCategories } from "../utils/categoryGroups";
 import "./CategoryList.css";
 
@@ -28,9 +30,14 @@ function CategoryList({
 }: CategoryListProps) {
   const selected = value ?? (multiSelect ? [] : "");
   const selectedList = Array.isArray(selected) ? selected : [];
+  const locale = useLocale();
+  const t = useTranslations();
   const groupedCategories = useMemo(
-    () => groupCategories(categories ?? []),
-    [categories],
+    () =>
+      groupCategories(categories ?? []).map((group) =>
+        localizeCategoryGroup(group, locale),
+      ),
+    [categories, locale],
   );
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(
     {},
@@ -106,7 +113,7 @@ function CategoryList({
   if (!multiSelect) {
     return (
       <Form.Select value={selected} onChange={handleSelectChange}>
-        <option value="">All categories</option>
+        <option value="">{t.categoryList.allCategories}</option>
         {categories?.map((category) => (
           <option key={category.name} value={category.name}>
             {category.name} ({category.count})
@@ -159,7 +166,9 @@ function CategoryList({
                   handleGroupSelectionToggle(groupNames, !allInGroupSelected)
                 }
               >
-                {allInGroupSelected ? "Odebrat vše" : "Vybrat vše"}
+                {allInGroupSelected
+                  ? t.categoryList.deselectGroup
+                  : t.categoryList.selectGroup}
               </button>
             </div>
 
@@ -182,11 +191,11 @@ function CategoryList({
                         />
                         <span className="category-name">{category.name}</span>
                         <span className="category-meta">
-                          {category.count} otázek
+                          {t.plural.questions(category.count)}
                         </span>
                       </label>
                       <div className="category-count">
-                        <span>Počet</span>
+                        <span>{t.categoryList.count}</span>
                         <input
                           type="number"
                           min={0}

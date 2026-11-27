@@ -9,7 +9,8 @@ export declare const buildQuizEmail: ({
   passed,
   detailed,
   questions,
-  answers
+  answers,
+  locale
 }: {
   name: string;
   score: number;
@@ -18,6 +19,7 @@ export declare const buildQuizEmail: ({
   detailed?: boolean;
   questions?: any[];
   answers?: Record<number, number>;
+  locale?: string;
 }) => {
   subject: string;
   text: string;
@@ -32,6 +34,7 @@ export declare const sendQuizResultsEmail: ({
   detailed,
   questions,
   answers,
+  locale,
   requestId,
   log,
   env
@@ -44,6 +47,7 @@ export declare const sendQuizResultsEmail: ({
   detailed?: boolean;
   questions?: any[];
   answers?: Record<number, number>;
+  locale?: string;
   requestId: string;
   log: ReturnType<typeof createLogger>;
   env?: Record<string, string | undefined>;

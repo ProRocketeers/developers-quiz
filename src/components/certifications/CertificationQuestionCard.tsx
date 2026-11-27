@@ -1,4 +1,6 @@
 import { useId } from "react";
+import { useTranslations } from "../../i18n/localeContext";
+import type { Messages } from "../../i18n/messages";
 import type {
   CertificationQuestion,
   CertificationQuestionImage,
@@ -8,8 +10,9 @@ import {
   getEarnedPoints,
   getMaxPoints,
 } from "../../utils/certificationScoring";
-import { POINT_FORMS, pluralizeCs } from "../../utils/pluralizeCs";
 import "./CertificationQuestionCard.css";
+
+type QuestionMessages = Messages["certifications"]["question"];
 
 interface Props {
   question: CertificationQuestion;
@@ -32,6 +35,8 @@ function CertificationQuestionCard({
   isRepeat = false,
   onSelect,
 }: Props) {
+  const messages = useTranslations();
+  const t = messages.certifications.question;
   const radioGroupName = useId();
   const titleId = `${radioGroupName}-title`;
   const isGradient = question.optionScores !== undefined;
@@ -40,17 +45,19 @@ function CertificationQuestionCard({
   return (
     <article className="cert-question">
       <div className="cert-question-meta">
-        <span className="cert-question-number">Otázka {questionNumber}</span>
+        <span className="cert-question-number">
+          {t.number(questionNumber)}
+        </span>
         <span className="cert-question-topic">{topicLabel}</span>
-        {isRepeat && <span className="cert-question-repeat">Opakování</span>}
+        {isRepeat && <span className="cert-question-repeat">{t.repeat}</span>}
         {isGradient && (
-          <span className="cert-question-scoring">Gradientní bodování</span>
+          <span className="cert-question-scoring">{t.gradientScoring}</span>
         )}
       </div>
 
       {question.scenario && (
         <div className="cert-question-scenario">
-          <strong>Scénář</strong>
+          <strong>{t.scenario}</strong>
           <p>{question.scenario}</p>
         </div>
       )}
@@ -84,7 +91,7 @@ function CertificationQuestionCard({
             <span className="cert-option-text">{option}</span>
             {isRevealed && isGradient && (
               <span className="cert-option-points">
-                {pluralizeCs(question.optionScores?.[index] ?? 0, POINT_FORMS)}
+                {messages.plural.points(question.optionScores?.[index] ?? 0)}
               </span>
             )}
           </label>
@@ -114,13 +121,18 @@ function AnswerFeedback({
   const earnedPoints = getEarnedPoints(question, selectedAnswer);
   const maxPoints = getMaxPoints(question);
   const outcome = getAnswerOutcome(question, selectedAnswer);
+  const t = useTranslations().certifications.question;
 
   return (
     <div className={`cert-feedback cert-feedback--${outcome}`} role="status">
       <strong className="cert-feedback-verdict">
         {isStudied
-          ? "Režim učení – správná odpověď je zvýrazněná."
-          : getVerdictText(question, selectedAnswer, earnedPoints, maxPoints)}
+          ? t.studiedVerdict
+          : getVerdictText(t, selectedAnswer, {
+              isGradient: question.optionScores !== undefined,
+              earnedPoints,
+              maxPoints,
+            })}
       </strong>
       <p className="cert-feedback-explanation">{question.explanation}</p>
       {question.image?.placement === "explanation" && (
@@ -131,34 +143,39 @@ function AnswerFeedback({
 }
 
 function QuestionImage({ image }: { image: CertificationQuestionImage }) {
+  const t = useTranslations().certifications.question;
+
   return (
     <a
       className="cert-question-image"
       href={image.src}
       target="_blank"
       rel="noreferrer"
-      title="Otevřít obrázek v plné velikosti"
+      title={t.openImage}
     >
       <img src={image.src} alt={image.alt} loading="lazy" />
     </a>
   );
 }
 
+interface AnswerPoints {
+  isGradient: boolean;
+  earnedPoints: number;
+  maxPoints: number;
+}
+
 function getVerdictText(
-  question: CertificationQuestion,
+  t: QuestionMessages,
   selectedAnswer: number | undefined,
-  earnedPoints: number,
-  maxPoints: number,
+  { isGradient, earnedPoints, maxPoints }: AnswerPoints,
 ): string {
   if (selectedAnswer === undefined) {
-    return "Bez odpovědi – správné řešení je zvýrazněné.";
+    return t.unansweredVerdict;
   }
-  if (question.optionScores) {
-    return `Získáno ${earnedPoints} z ${pluralizeCs(maxPoints, POINT_FORMS)}.`;
+  if (isGradient) {
+    return t.pointsVerdict(earnedPoints, maxPoints);
   }
-  return earnedPoints === maxPoints
-    ? "Správně!"
-    : "Špatně – správná odpověď je zvýrazněná.";
+  return earnedPoints === maxPoints ? t.correctVerdict : t.incorrectVerdict;
 }
 
 function getOptionClassName(

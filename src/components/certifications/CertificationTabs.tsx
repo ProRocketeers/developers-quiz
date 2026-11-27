@@ -1,16 +1,23 @@
-import { CERTIFICATIONS } from "../../constants/certifications";
-import type { CertificationId } from "../../types";
+import { useTranslations } from "../../i18n/localeContext";
+import type { Certification, CertificationId } from "../../types";
 import "./CertificationTabs.css";
 
 interface Props {
+  certifications: Certification[];
   selectedId: CertificationId;
   onSelect: (certificationId: CertificationId) => void;
 }
 
-function CertificationTabs({ selectedId, onSelect }: Props) {
+function CertificationTabs({ certifications, selectedId, onSelect }: Props) {
+  const t = useTranslations().certifications.home;
+
   return (
-    <div className="certification-tabs" role="group" aria-label="Certifikace">
-      {CERTIFICATIONS.map((certification) => {
+    <div
+      className="certification-tabs"
+      role="group"
+      aria-label={t.tabsLabel}
+    >
+      {certifications.map((certification) => {
         const isSelected = certification.id === selectedId;
         return (
           <button

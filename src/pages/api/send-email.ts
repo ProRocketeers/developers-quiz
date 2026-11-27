@@ -21,6 +21,7 @@ type EmailRequest = {
     correctAnswer: number;
   }>;
   answers?: Record<number, number>;
+  locale?: string;
 };
 
 const log = createLogger("astro-api");

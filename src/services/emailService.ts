@@ -1,3 +1,4 @@
+import type { Locale } from '../i18n/locales'
 import type { Question } from '../types'
 
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
@@ -8,6 +9,7 @@ interface EmailData {
   score: number
   total: number
   passed: boolean
+  locale: Locale
   detailed?: boolean
   questions?: Question[]
   answers?: Record<number, number>

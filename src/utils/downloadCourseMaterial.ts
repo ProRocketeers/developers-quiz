@@ -5,12 +5,18 @@ import {
 import type { CourseMaterial } from "../types";
 
 export class CourseMaterialDownloadError extends Error {
-  readonly isWrongPassword: boolean;
+  readonly httpStatus: number;
 
-  constructor(message: string, isWrongPassword: boolean) {
-    super(message);
+  constructor(materialId: string, httpStatus: number) {
+    super(
+      `Course material "${materialId}" could not be downloaded (HTTP ${httpStatus}).`,
+    );
     this.name = "CourseMaterialDownloadError";
-    this.isWrongPassword = isWrongPassword;
+    this.httpStatus = httpStatus;
+  }
+
+  get isWrongPassword(): boolean {
+    return this.httpStatus === WRONG_PASSWORD_STATUS;
   }
 }
 
@@ -24,13 +30,7 @@ async function requestCourseMaterial(
     body: JSON.stringify({ password }),
   });
   if (!response.ok) {
-    const isWrongPassword = response.status === WRONG_PASSWORD_STATUS;
-    throw new CourseMaterialDownloadError(
-      isWrongPassword
-        ? "Nesprávné heslo."
-        : `Soubor „${material.label}“ se nepodařilo stáhnout (HTTP ${response.status}).`,
-      isWrongPassword,
-    );
+    throw new CourseMaterialDownloadError(material.id, response.status);
   }
   return response.blob();
 }

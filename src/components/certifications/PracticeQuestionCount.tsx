@@ -1,4 +1,4 @@
-import { QUESTION_FORMS, pluralizeCs } from "../../utils/pluralizeCs";
+import { useTranslations } from "../../i18n/localeContext";
 
 const QUESTION_COUNT_PRESETS = [10, 20, 40];
 
@@ -13,6 +13,8 @@ function PracticeQuestionCount({
   availableCount,
   onChange,
 }: Props) {
+  const t = useTranslations().certifications.practice;
+
   const handleInput = (value: string) => {
     const parsed = Number.parseInt(value, 10);
     onChange(Number.isNaN(parsed) ? 0 : Math.max(0, parsed));
@@ -20,7 +22,7 @@ function PracticeQuestionCount({
 
   return (
     <div className="practice-count">
-      <label htmlFor="practice-question-count">Počet otázek</label>
+      <label htmlFor="practice-question-count">{t.questionCount}</label>
       <div className="practice-count-controls">
         <input
           id="practice-question-count"
@@ -41,11 +43,11 @@ function PracticeQuestionCount({
           </button>
         ))}
         <button type="button" onClick={() => onChange(availableCount)}>
-          Všechny
+          {t.allQuestions}
         </button>
       </div>
       <span className="practice-count-hint">
-        Ve vybraných okruzích je {pluralizeCs(availableCount, QUESTION_FORMS)}.
+        {t.availableQuestions(availableCount)}
       </span>
     </div>
   );

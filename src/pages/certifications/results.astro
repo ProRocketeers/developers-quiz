@@ -1,8 +1,13 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CertificationResultsView from "../../views/CertificationResultsView";
+import { getRequestLocale } from "../../i18n/requestLocale";
+import { getMessages } from "../../i18n/messages";
+
+const locale = getRequestLocale(Astro.cookies);
+const pageTitle = getMessages(locale).pageTitles.certificationResults;
 ---
 
-<BaseLayout title="Výsledky | Certifikace | Developers Quiz" currentPath="/certifications">
-  <CertificationResultsView client:only="react" />
+<BaseLayout locale={locale} title={pageTitle} currentPath="/certifications">
+  <CertificationResultsView locale={locale} client:only="react" />
 </BaseLayout>

@@ -1,8 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HomeView from "../views/HomeView";
+import { getRequestLocale } from "../i18n/requestLocale";
+import { getMessages } from "../i18n/messages";
+
+const locale = getRequestLocale(Astro.cookies);
+const pageTitle = getMessages(locale).pageTitles.home;
 ---
 
-<BaseLayout title="Developers Quiz" currentPath="/">
-  <HomeView client:only="react" />
+<BaseLayout locale={locale} title={pageTitle} currentPath="/">
+  <HomeView locale={locale} client:only="react" />
 </BaseLayout>

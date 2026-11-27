@@ -1,7 +1,6 @@
-import { CERTIFICATION_MODE_LABELS } from "../../constants/certifications";
+import { useTranslations } from "../../i18n/localeContext";
 import type { CertificationExam, CertificationQuizMode } from "../../types";
 import { formatClock } from "../../utils/formatClock";
-import { QUESTION_FORMS, pluralizeCs } from "../../utils/pluralizeCs";
 import "./QuizToolbar.css";
 
 interface Props {
@@ -19,26 +18,28 @@ function QuizToolbar({
   elapsedMs,
   remainingMs,
 }: Props) {
+  const messages = useTranslations();
+  const { toolbar: t, modeLabels } = messages.certifications;
   const isExamMode = mode === "exam";
 
   return (
     <header className={`quiz-toolbar-cert is-${exam.level}`}>
       <div>
         <span className="quiz-toolbar-cert-kicker">
-          {CERTIFICATION_MODE_LABELS[mode]}
+          {modeLabels[mode]}
         </span>
         <h2>{exam.title}</h2>
         <p>
-          {pluralizeCs(questionCount, QUESTION_FORMS)} •{" "}
+          {messages.plural.questions(questionCount)} •{" "}
           {isExamMode
-            ? `limit ${exam.format.durationMinutes} min, vyhodnocení na konci`
-            : "okamžitá zpětná vazba, bez časového limitu"}
+            ? t.examDetails(exam.format.durationMinutes)
+            : t.practiceDetails}
         </p>
       </div>
       <div
         className={`quiz-toolbar-cert-timer${isExamMode ? " is-countdown" : ""}`}
       >
-        {isExamMode ? "Zbývá" : "Čas"}{" "}
+        {isExamMode ? t.remaining : t.elapsed}{" "}
         <strong>{formatClock(isExamMode ? remainingMs : elapsedMs)}</strong>
       </div>
     </header>

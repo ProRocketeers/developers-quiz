@@ -1,8 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ResultsView from "../views/ResultsView";
+import { getRequestLocale } from "../i18n/requestLocale";
+import { getMessages } from "../i18n/messages";
+
+const locale = getRequestLocale(Astro.cookies);
+const pageTitle = getMessages(locale).pageTitles.results;
 ---
 
-<BaseLayout title="Výsledky | Developers Quiz" currentPath="/results">
-  <ResultsView client:only="react" />
+<BaseLayout locale={locale} title={pageTitle} currentPath="/results">
+  <ResultsView locale={locale} client:only="react" />
 </BaseLayout>

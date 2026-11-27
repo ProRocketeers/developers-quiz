@@ -3,8 +3,9 @@ import QuizQuestion from "./QuizQuestion";
 import Spinner from "./Spinner";
 import QuizSettings from "./QuizSettings";
 import "./QuizContainer.css";
-import { getQuestions } from "../services/questionService";
+import { loadQuizQuestions } from "../services/questionService";
 import { useQuizSettings } from "../context/QuizContext";
+import { useLocale, useTranslations } from "../i18n/localeContext";
 import type { Question } from "../types";
 import { navigateTo } from "../utils/navigation";
 import {
@@ -17,6 +18,8 @@ const QUIZ_TIME = 10;
 
 function QuizContainer() {
   const { settings } = useQuizSettings();
+  const locale = useLocale();
+  const t = useTranslations();
   const [showSettings, setShowSettings] = useState(false);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -25,6 +28,7 @@ function QuizContainer() {
   >({});
   const [timeLeft, setTimeLeft] = useState(QUIZ_TIME);
   const [loading, setLoading] = useState(true);
+  const [hasLoadFailed, setHasLoadFailed] = useState(false);
   const quizStartedAtRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -47,18 +51,30 @@ function QuizContainer() {
 
   const loadQuestions = () => {
     setLoading(true);
+    setHasLoadFailed(false);
     setTimeout(() => {
-      const loadedQuestions = getQuestions(
-        settings.questionCount,
-        settings.useMock,
-        settings.multiSelect ? settings.selectedCategories : settings.category,
-        settings.categoryQuestionCounts ?? {},
-      );
-      setQuestions(loadedQuestions);
-      setAnswers({});
-      setQuestionDurationsMs({});
-      quizStartedAtRef.current = Date.now();
-      setLoading(false);
+      loadQuizQuestions(locale, {
+        count: settings.questionCount,
+        useMock: settings.useMock,
+        selectedCategories: settings.multiSelect
+          ? settings.selectedCategories
+          : settings.category,
+        categoryQuestionCounts: settings.categoryQuestionCounts ?? {},
+      })
+        .then((loadedQuestions) => {
+          setQuestions(loadedQuestions);
+          setAnswers({});
+          setQuestionDurationsMs({});
+          quizStartedAtRef.current = Date.now();
+        })
+        .catch((error: unknown) => {
+          console.error(
+            `Failed to load the quiz questions (${locale}).`,
+            error,
+          );
+          setHasLoadFailed(true);
+        })
+        .finally(() => setLoading(false));
     }, 1000);
   };
 
@@ -93,9 +109,7 @@ function QuizContainer() {
   const handleSubmit = () => {
     const unanswered = Math.max(0, questions.length - answeredCount);
     if (unanswered > 0) {
-      const confirmed = window.confirm(
-        `Máte ${unanswered} nezodpovězených otázek. Opravdu chcete pokračovat?`,
-      );
+      const confirmed = window.confirm(t.quiz.confirmUnanswered(unanswered));
       if (!confirmed) {
         return;
       }
@@ -140,18 +154,20 @@ function QuizContainer() {
     <div className="quiz-container">
       <div className="quiz-toolbar">
         <div className="quiz-intro">
-          <span className="quiz-kicker">Aktivní test</span>
-          <h2>Technický kvíz</h2>
+          <span className="quiz-kicker">{t.quiz.kicker}</span>
+          <h2>{t.quiz.title}</h2>
           <p>
-            {settings.questionCount} otázek
-            {settings.useTimeLimit ? " • s časovým limitem" : " • bez časového limitu"}
+            {t.plural.questions(settings.questionCount)} •{" "}
+            {settings.useTimeLimit
+              ? t.quiz.withTimeLimit
+              : t.quiz.withoutTimeLimit}
           </p>
         </div>
 
         <div className="quiz-toolbar-actions">
           {settings.useTimeLimit ? (
             <div className="quiz-timer" aria-live="polite">
-              ⏱️ Zbývá: {timeLeft}s
+              ⏱️ {t.quiz.timeLeft(timeLeft)}
             </div>
           ) : null}
 
@@ -162,7 +178,7 @@ function QuizContainer() {
               aria-expanded={showSettings}
               aria-controls="quiz-settings-panel"
             >
-              {showSettings ? "Skrýt nastavení" : "Ukázat nastavení"}
+              {showSettings ? t.quiz.hideSettings : t.quiz.showSettings}
             </button>
           </div>
         </div>
@@ -176,6 +192,12 @@ function QuizContainer() {
             showNamePrompt={false}
           />
         </div>
+      )}
+
+      {hasLoadFailed && (
+        <p className="text-danger" role="alert">
+          {t.quiz.loadFailed}
+        </p>
       )}
 
       {questions.map((q, index) => (
@@ -192,13 +214,13 @@ function QuizContainer() {
 
       <div className="quiz-footer">
         <span className="progress">
-          Zodpovězeno: {answeredCount} / {settings.questionCount}
+          {t.quiz.answered(answeredCount, settings.questionCount)}
         </span>
         <button
           className="submit-btn"
           onClick={handleSubmit}
         >
-          Vyhodnotit kvíz
+          {t.quiz.submit}
         </button>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocale } from "../i18n/localeContext";
 import {
   createQuizQuestions,
   loadQuestionBank,
@@ -16,13 +17,14 @@ export type CertificationQuestionsState =
 export function useCertificationQuestions(
   settings: CertificationQuizSettings,
 ): CertificationQuestionsState {
+  const locale = useLocale();
   const [state, setState] = useState<CertificationQuestionsState>({
     status: "loading",
   });
 
   useEffect(() => {
     let isCancelled = false;
-    loadQuestionBank(settings.examId)
+    loadQuestionBank(settings.examId, locale)
       .then((bank) => {
         if (!isCancelled) {
           setState({
@@ -33,7 +35,7 @@ export function useCertificationQuestions(
       })
       .catch((error: unknown) => {
         console.error(
-          `Failed to load the question bank "${settings.examId}".`,
+          `Failed to load the question bank "${settings.examId}" (${locale}).`,
           error,
         );
         if (!isCancelled) {
@@ -43,7 +45,7 @@ export function useCertificationQuestions(
     return () => {
       isCancelled = true;
     };
-  }, [settings]);
+  }, [settings, locale]);
 
   return state;
 }

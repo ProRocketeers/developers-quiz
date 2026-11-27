@@ -1,5 +1,6 @@
 import realQuestions from "../data/questions.json";
 import { mockQuestions } from "../data/mockData";
+import type { Locale } from "../i18n/locales";
 import type { Question } from "../types";
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -32,13 +33,44 @@ function selectRandomQuestions(
   return selected.map(shuffleQuestionOptions);
 }
 
-export function getQuestions(
-  count: number,
-  useMock = true,
-  selectedCategories: string | string[] | null = null,
-  categoryQuestionCounts: Record<string, number> = {},
+export interface QuestionSelection {
+  count: number;
+  useMock: boolean;
+  selectedCategories: string | string[] | null;
+  categoryQuestionCounts: Record<string, number>;
+}
+
+type QuestionBankLoader = () => Promise<{ default: unknown[] }>;
+
+// The Czech bank is bundled because the category list is built from it; a
+// translated bank keeps the same categories and is downloaded only when used.
+const TRANSLATED_BANK_LOADERS: Partial<Record<Locale, QuestionBankLoader>> = {
+  en: () => import("../data/en/questions.json"),
+};
+
+async function loadQuestionBank(locale: Locale): Promise<Question[]> {
+  const loadTranslatedBank = TRANSLATED_BANK_LOADERS[locale];
+  if (!loadTranslatedBank) {
+    return realQuestions as unknown[] as Question[];
+  }
+  const bankModule = await loadTranslatedBank();
+  return bankModule.default as Question[];
+}
+
+export async function loadQuizQuestions(
+  locale: Locale,
+  selection: QuestionSelection,
+): Promise<Question[]> {
+  const source = selection.useMock
+    ? mockQuestions
+    : await loadQuestionBank(locale);
+  return pickQuestions(source, selection);
+}
+
+function pickQuestions(
+  source: Question[],
+  { count, selectedCategories, categoryQuestionCounts }: QuestionSelection,
 ): Question[] {
-  const source = useMock ? mockQuestions : realQuestions;
   let filtered = source;
   if (selectedCategories) {
     const categoryList = Array.isArray(selectedCategories)
@@ -56,12 +88,12 @@ export function getQuestions(
           categoryQuestionCounts[category] ?? 0,
           available.length,
         );
-        return selectRandomQuestions(available as Question[], desired);
+        return selectRandomQuestions(available, desired);
       });
       return shuffleArray(perCategory);
     }
   }
-  return selectRandomQuestions(filtered as Question[], count);
+  return selectRandomQuestions(filtered, count);
 }
 
 export function getQuestionCount(
