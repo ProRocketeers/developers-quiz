@@ -59,6 +59,7 @@ export interface CertificationDownload {
 export interface CertificationCheatSheet {
   title: string;
   description: string;
+  pageHref?: string;
   files: CertificationDownload[];
 }
 
@@ -148,4 +149,36 @@ export interface CertificationAttempt {
   questions: CertificationQuestion[];
   answers: Record<number, number>;
   totalDurationMs: number;
+}
+
+export interface CheatSheetRun {
+  text: string;
+  isBold?: boolean;
+  isItalic?: boolean;
+}
+
+export type CheatSheetParagraph = CheatSheetRun[];
+
+export interface CheatSheetTableCell {
+  paragraphs: CheatSheetParagraph[];
+  fill?: string;
+  colSpan?: number;
+}
+
+export interface CheatSheetTableRow {
+  cells: CheatSheetTableCell[];
+  isHeader?: boolean;
+}
+
+export type CheatSheetBlock =
+  | { type: "title"; text: string }
+  | { type: "heading"; level: 1 | 2; text: string; id: string }
+  | { type: "paragraph"; runs: CheatSheetParagraph }
+  | { type: "listItem"; runs: CheatSheetParagraph }
+  | { type: "image"; src: string; alt: string; width: number; height: number }
+  | { type: "callout"; title: string; paragraphs: CheatSheetParagraph[] }
+  | { type: "table"; rows: CheatSheetTableRow[] };
+
+export interface CheatSheetDocument {
+  blocks: CheatSheetBlock[];
 }

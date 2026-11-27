@@ -13,7 +13,8 @@
     "start": "PORT=4322 bun ./dist/server/entry.mjs",
     "questions:to-json": "bun scripts/questions-convert.ts --to-json --input questions.md --output src/data/questions.json",
     "questions:to-md": "bun scripts/questions-convert.ts --to-md --input src/data/questions.json --output questions.md",
-    "certifications:validate": "bun scripts/validate-certification-questions.ts"
+    "certifications:validate": "bun scripts/validate-certification-questions.ts",
+    "cheat-sheets:to-json": "bun scripts/cheat-sheet-to-json.ts --input public/downloads/archimate-3-2-tahak.docx --output src/data/cheat-sheets/archimate-3-2.cs.json --images-dir public/cheat-sheets/archimate-3-2/cs --images-url /cheat-sheets/archimate-3-2/cs && bun scripts/cheat-sheet-to-json.ts --input public/downloads/archimate-3-2-cheat-sheet-en.docx --output src/data/cheat-sheets/archimate-3-2.en.json --images-dir public/cheat-sheets/archimate-3-2/en --images-url /cheat-sheets/archimate-3-2/en"
   },
   "dependencies": {
     "@astrojs/node": "^9.5.0",

@@ -15,6 +15,14 @@ function CheatSheetDownload({ cheatSheet }: Props) {
           <p>{cheatSheet.description}</p>
         </div>
         <div className="cheat-sheet-actions">
+          {cheatSheet.pageHref && (
+            <a
+              className="cheat-sheet-link cheat-sheet-link--primary"
+              href={cheatSheet.pageHref}
+            >
+              Online s hledáním
+            </a>
+          )}
           {cheatSheet.files.map((file) => (
             <a
               key={file.href}

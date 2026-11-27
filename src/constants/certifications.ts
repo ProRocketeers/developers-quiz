@@ -35,6 +35,7 @@ export const CERTIFICATION_ROUTES = {
   home: "/certifications",
   quiz: "/certifications/quiz",
   results: "/certifications/results",
+  archimateCheatSheet: "/certifications/cheat-sheets/archimate",
 } as const;
 
 export const ATTEMPT_QUERY_PARAM = "attempt";
@@ -56,6 +57,7 @@ export const CERTIFICATIONS: Certification[] = [
     ],
     cheatSheet: {
       title: "Tahák ArchiMate 3.2",
+      pageHref: CERTIFICATION_ROUTES.archimateCheatSheet,
       description:
         "Zhuštěný přehled k oběma zkouškám: framework, vztahy, prvky všech vrstev s notací, vazby mezi vrstvami, migrace a viewpointy.",
       files: [

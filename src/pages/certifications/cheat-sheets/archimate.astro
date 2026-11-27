@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import archimateCheatSheetCs from "../../../data/cheat-sheets/archimate-3-2.cs.json";
+import archimateCheatSheetEn from "../../../data/cheat-sheets/archimate-3-2.en.json";
+import {
+  CHEAT_SHEET_LANGUAGE_QUERY_PARAM,
+  DEFAULT_CHEAT_SHEET_LANGUAGE,
+  isCheatSheetLanguage,
+  type CheatSheetLanguage,
+} from "../../../constants/cheatSheets";
+import { CERTIFICATION_ROUTES, CERTIFICATIONS } from "../../../constants/certifications";
+import type { CheatSheetDocument } from "../../../types";
+import CheatSheetView from "../../../views/CheatSheetView";
+
+// JSON generuje scripts/cheat-sheet-to-json.ts přímo z typu CheatSheetDocument;
+// TypeScript u importovaného JSON neumí odvodit literálové typy bloků.
+const cheatSheets: Record<CheatSheetLanguage, CheatSheetDocument> = {
+  cs: archimateCheatSheetCs as CheatSheetDocument,
+  en: archimateCheatSheetEn as CheatSheetDocument,
+};
+
+const requestedLanguage = Astro.url.searchParams.get(CHEAT_SHEET_LANGUAGE_QUERY_PARAM);
+const language = isCheatSheetLanguage(requestedLanguage)
+  ? requestedLanguage
+  : DEFAULT_CHEAT_SHEET_LANGUAGE;
+
+const metadata = CERTIFICATIONS.find(({ id }) => id === "archimate")?.cheatSheet;
+if (!metadata) {
+  throw new Error("Certifikace ArchiMate nemá v CERTIFICATIONS definovaný tahák");
+}
+---
+
+<BaseLayout title={`${metadata.title} | Certifikace | Developers Quiz`} currentPath="/certifications">
+  <CheatSheetView
+    cheatSheet={cheatSheets[language]}
+    metadata={metadata}
+    language={language}
+    pageHref={CERTIFICATION_ROUTES.archimateCheatSheet}
+    client:load
+  />
+</BaseLayout>
