@@ -63,6 +63,11 @@ export const CERTIFICATIONS: Certification[] = [
     owner: "The Open Group",
     description:
       "Modelovací jazyk pro popis, analýzu a vizualizaci enterprise architektury.",
+    courseMaterialIds: [
+      "archimate-presentation",
+      "archimate-reference-cards",
+      "archimate-student-guide",
+    ],
     cheatSheet: {
       title: "Tahák ArchiMate 3.2",
       description:

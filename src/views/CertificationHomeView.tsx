@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CertificationTabs from "../components/certifications/CertificationTabs";
 import CheatSheetDownload from "../components/certifications/CheatSheetDownload";
+import CourseMaterialsDownload from "../components/certifications/CourseMaterialsDownload";
 import ExamLevelCard from "../components/certifications/ExamLevelCard";
 import PracticeSetup from "../components/certifications/PracticeSetup";
 import {
@@ -88,6 +89,12 @@ export default function CertificationHomeView({ questionCounts }: Props) {
 
       {certification?.cheatSheet && (
         <CheatSheetDownload cheatSheet={certification.cheatSheet} />
+      )}
+
+      {certification?.courseMaterialIds && (
+        <CourseMaterialsDownload
+          materialIds={certification.courseMaterialIds}
+        />
       )}
 
       <div className="certification-levels">

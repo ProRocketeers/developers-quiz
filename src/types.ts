@@ -62,6 +62,18 @@ export interface CertificationCheatSheet {
   files: CertificationDownload[];
 }
 
+export type CourseMaterialId =
+  | "archimate-presentation"
+  | "archimate-reference-cards"
+  | "archimate-student-guide";
+
+export interface CourseMaterial {
+  id: CourseMaterialId;
+  label: string;
+  description: string;
+  fileName: string;
+}
+
 export interface Certification {
   id: CertificationId;
   name: string;
@@ -69,6 +81,7 @@ export interface Certification {
   owner: string;
   description: string;
   cheatSheet?: CertificationCheatSheet;
+  courseMaterialIds?: CourseMaterialId[];
 }
 
 export interface CertificationTopic {

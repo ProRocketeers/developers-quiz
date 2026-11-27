@@ -23,6 +23,7 @@ ENV PORT=4322
 
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/private-downloads ./private-downloads
 
 EXPOSE 4322
 
