@@ -1,7 +1,8 @@
-import { COURSE_MATERIALS_ROUTE } from "../constants/courseMaterials";
+import {
+  COURSE_MATERIALS_ROUTE,
+  WRONG_PASSWORD_STATUS,
+} from "../constants/courseMaterials";
 import type { CourseMaterial } from "../types";
-
-const WRONG_PASSWORD_STATUS = 401;
 
 export class CourseMaterialDownloadError extends Error {
   readonly isWrongPassword: boolean;

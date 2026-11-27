@@ -2,6 +2,10 @@ import type { CourseMaterial, CourseMaterialId } from "../types";
 
 export const COURSE_MATERIALS_ROUTE = "/api/course-materials";
 
+export const COURSE_MATERIALS_VERIFY_ROUTE = `${COURSE_MATERIALS_ROUTE}/verify`;
+
+export const WRONG_PASSWORD_STATUS = 401;
+
 export const COURSE_MATERIAL_PASSWORD_ENV = "COURSE_MATERIALS_PASSWORD";
 
 export const COURSE_MATERIALS: Record<CourseMaterialId, CourseMaterial> = {
