@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <marker id="arrF" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#4a4a6a"/></marker>
+    <marker id="arrO" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="arrS" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#4a4a6a" stroke-width="1.4"/></marker>
+    <marker id="triH" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="diaF" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#4a4a6a" stroke="#4a4a6a" stroke-width="1"/></marker>
+    <marker id="diaH" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="dot" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#4a4a6a"/></marker>
+    <marker id="arrFA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#b3264a"/></marker>
+    <marker id="arrOA" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="arrSA" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#b3264a" stroke-width="1.4"/></marker>
+    <marker id="triHA" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="diaFA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#b3264a" stroke="#b3264a" stroke-width="1"/></marker>
+    <marker id="diaHA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="dotA" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#b3264a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="800" height="550" fill="#ffffff"/>
+  <text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Junction: AND versus OR</text>
+  <rect x="20" y="50" width="760" height="218" rx="8" fill="#fafafc" stroke="#4a4a6a" stroke-width="1"/>
+  <text x="36" y="76" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">AND junction (filled circle)</text>
+  <rect x="50" y="126" width="190" height="56" rx="14" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="145.0" y="150.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business process</text>
+  <text x="145.0" y="168.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">"Receive order"</text>
+  <rect x="540" y="86" width="200" height="56" rx="14" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="640.0" y="110.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business process</text>
+  <text x="640.0" y="128.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">"Issue invoice"</text>
+  <rect x="540" y="166" width="200" height="56" rx="14" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="640.0" y="190.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business process</text>
+  <text x="640.0" y="208.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">"Ship goods"</text>
+  <path d="M240,154 L382,154" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrF)"/>
+  <path d="M390,154 L460,114 L540,114" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrF)"/>
+  <path d="M390,154 L460,194 L540,194" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrF)"/>
+  <circle cx="390" cy="154" r="9" fill="#4a4a6a" stroke="#4a4a6a" stroke-width="1.8"/>
+  <text x="390" y="188" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">junction</text>
+  <text x="400" y="252" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Reading: after "Receive order", both "Issue invoice" and "Ship goods" are triggered.</text>
+  <rect x="20" y="282" width="760" height="218" rx="8" fill="#fafafc" stroke="#4a4a6a" stroke-width="1"/>
+  <text x="36" y="308" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" fill="#26254d" font-weight="bold">OR junction (empty circle)</text>
+  <rect x="50" y="358" width="190" height="56" rx="14" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="145.0" y="382.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business process</text>
+  <text x="145.0" y="400.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">"Assess request"</text>
+  <rect x="540" y="318" width="200" height="56" rx="14" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="640.0" y="342.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business process</text>
+  <text x="640.0" y="360.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">"Approve request"</text>
+  <rect x="540" y="398" width="200" height="56" rx="14" fill="#FFFFB5" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="640.0" y="422.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Business process</text>
+  <text x="640.0" y="440.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">"Reject request"</text>
+  <path d="M240,386 L382,386" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrF)"/>
+  <path d="M390,386 L460,346 L540,346" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrF)"/>
+  <path d="M390,386 L460,426 L540,426" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrF)"/>
+  <circle cx="390" cy="386" r="9" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.8"/>
+  <text x="390" y="420" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic">junction</text>
+  <text x="400" y="484" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Reading: after "Assess request", "Approve request" or "Reject request" is triggered.</text>
+  <text x="400" y="528" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">A junction is not a relationship but a relationship connector – it joins same-type relationships (here triggering).</text>
+</svg>

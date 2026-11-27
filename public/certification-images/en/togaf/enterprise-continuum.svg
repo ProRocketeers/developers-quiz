@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 484">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="484" fill="#ffffff"/>
+<text x="400" y="34" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" font-weight="bold" fill="#26254d">Enterprise Continuum – from generic to specific</text>
+<rect x="20" y="56" width="760" height="380" rx="12" fill="#fafafd" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="40" y="84" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#26254d">Enterprise Continuum</text>
+<text x="40" y="122" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">generic</text>
+<text x="760" y="122" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">specific</text>
+<line x1="170.0" y1="117.0" x2="615.0" y2="117.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="156" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Architecture Continuum – Architecture Building Blocks (ABBs)</text>
+<rect x="40" y="168" width="162" height="62" rx="8" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="121" y="195" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Foundation</text>
+<text x="121" y="215" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Architectures</text>
+<line x1="204.0" y1="199.0" x2="224.0" y2="199.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="226" y="168" width="162" height="62" rx="8" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="307" y="195" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Common Systems</text>
+<text x="307" y="215" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Architectures</text>
+<line x1="390.0" y1="199.0" x2="410.0" y2="199.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="412" y="168" width="162" height="62" rx="8" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="493" y="195" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Industry</text>
+<text x="493" y="215" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Architectures</text>
+<line x1="576.0" y1="199.0" x2="596.0" y2="199.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="598" y="168" width="162" height="62" rx="8" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="679" y="195" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Organization-Specific</text>
+<text x="679" y="215" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Architectures</text>
+<text x="40" y="306" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Solutions Continuum – Solution Building Blocks (SBBs)</text>
+<rect x="40" y="318" width="162" height="62" rx="8" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="121" y="345" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Foundation</text>
+<text x="121" y="365" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Solutions</text>
+<line x1="204.0" y1="349.0" x2="224.0" y2="349.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="226" y="318" width="162" height="62" rx="8" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="307" y="345" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Common Systems</text>
+<text x="307" y="365" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Solutions</text>
+<line x1="390.0" y1="349.0" x2="410.0" y2="349.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="412" y="318" width="162" height="62" rx="8" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="493" y="345" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Industry</text>
+<text x="493" y="365" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Solutions</text>
+<line x1="576.0" y1="349.0" x2="596.0" y2="349.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="598" y="318" width="162" height="62" rx="8" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="679" y="345" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Organization-Specific</text>
+<text x="679" y="365" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Solutions</text>
+<line x1="400.0" y1="236.0" x2="400.0" y2="276.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="414" y="262" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">guides and supports</text>
+<text x="400" y="412" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Both continua have the same four stages; detail and specialization grow left to right.</text>
+<text x="400" y="462" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Enterprise Continuum classifies the content of the Architecture Repository; it is not a component.</text>
+</svg>

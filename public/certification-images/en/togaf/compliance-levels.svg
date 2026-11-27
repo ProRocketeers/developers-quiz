@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="580" fill="#ffffff"/>
+<text x="400" y="34" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" font-weight="bold" fill="#26254d">Six levels of Architecture Compliance</text>
+<circle cx="215.0" cy="66.0" r="10" fill="#cfe0ff" stroke="#2b4c9b" stroke-width="2.5"/>
+<text x="232" y="71" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Specification</text>
+<circle cx="425.0" cy="66.0" r="10" fill="#ffcf99" stroke="#b35a00" stroke-width="2.5" fill-opacity="0.65" stroke-dasharray="6 4"/>
+<text x="442" y="71" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Implementation</text>
+<rect x="20" y="92" width="248" height="208" rx="8" fill="#fafafd" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="102.0" cy="154.0" r="34" fill="#cfe0ff" stroke="#2b4c9b" stroke-width="2.5"/>
+<circle cx="186.0" cy="154.0" r="34" fill="#ffcf99" stroke="#b35a00" stroke-width="2.5" fill-opacity="0.65" stroke-dasharray="6 4"/>
+<text x="144" y="228" font-family="Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#26254d">Irrelevant</text>
+<text x="144" y="254" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">nothing in common</text>
+<rect x="276" y="92" width="248" height="208" rx="8" fill="#fafafd" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="380.0" cy="154.0" r="34" fill="#cfe0ff" stroke="#2b4c9b" stroke-width="2.5"/>
+<circle cx="420.0" cy="154.0" r="34" fill="#ffcf99" stroke="#b35a00" stroke-width="2.5" fill-opacity="0.65" stroke-dasharray="6 4"/>
+<text x="400" y="228" font-family="Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#26254d">Consistent</text>
+<text x="400" y="254" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">partly shared, some missing</text>
+<text x="400" y="274" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">and some extra</text>
+<rect x="532" y="92" width="248" height="208" rx="8" fill="#fafafd" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="656.0" cy="154.0" r="40" fill="#cfe0ff" stroke="#2b4c9b" stroke-width="2.5"/>
+<circle cx="656.0" cy="154.0" r="22" fill="#ffcf99" stroke="#b35a00" stroke-width="2.5" fill-opacity="0.65" stroke-dasharray="6 4"/>
+<text x="656" y="228" font-family="Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#26254d">Compliant</text>
+<text x="656" y="254" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">part of spec missing; all</text>
+<text x="656" y="274" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">implemented matches it</text>
+<rect x="20" y="314" width="248" height="208" rx="8" fill="#fafafd" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="144.0" cy="376.0" r="40" fill="#ffcf99" stroke="#b35a00" stroke-width="2.5" fill-opacity="0.65" stroke-dasharray="6 4"/>
+<circle cx="144.0" cy="376.0" r="22" fill="#cfe0ff" stroke="#2b4c9b" stroke-width="2.5"/>
+<text x="144" y="450" font-family="Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#26254d">Conformant</text>
+<text x="144" y="476" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">whole spec fulfilled,</text>
+<text x="144" y="496" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">plus features beyond it</text>
+<rect x="276" y="314" width="248" height="208" rx="8" fill="#fafafd" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="400.0" cy="376.0" r="34" fill="#cfe0ff" stroke="#2b4c9b" stroke-width="2.5"/>
+<circle cx="400.0" cy="376.0" r="34" fill="#ffcf99" stroke="#b35a00" stroke-width="2.5" fill-opacity="0.65" stroke-dasharray="6 4"/>
+<text x="400" y="450" font-family="Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#26254d">Fully Conformant</text>
+<text x="400" y="476" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">full match – nothing missing</text>
+<text x="400" y="496" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">and nothing extra</text>
+<rect x="532" y="314" width="248" height="208" rx="8" fill="#fafafd" stroke="#4a4a6a" stroke-width="1.5"/>
+<circle cx="636.0" cy="376.0" r="34" fill="#cfe0ff" stroke="#2b4c9b" stroke-width="2.5"/>
+<circle cx="676.0" cy="376.0" r="34" fill="#ffcf99" stroke="#b35a00" stroke-width="2.5" fill-opacity="0.65" stroke-dasharray="6 4"/>
+<line x1="647" y1="385" x2="665" y2="367" stroke="#b00020" stroke-width="4"/>
+<line x1="647" y1="367" x2="665" y2="385" stroke="#b00020" stroke-width="4"/>
+<text x="656" y="450" font-family="Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#26254d">Non-conformant</text>
+<text x="656" y="476" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">some of the spec is</text>
+<text x="656" y="496" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">implemented contrary to it</text>
+<text x="400" y="558" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Cross = feature implemented contrary to the specification. Beware confusing Compliant × Conformant.</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 576">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="576" fill="#ffffff"/>
+<text x="400" y="34" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" font-weight="bold" fill="#26254d">Four ADM iteration cycles</text>
+<text x="145" y="72" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#26254d">Iteration cycle</text>
+<text x="375" y="72" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#26254d">ADM phases</text>
+<text x="520" y="72" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" font-weight="bold" fill="#26254d">Purpose</text>
+<rect x="20" y="86" width="760" height="90" rx="10" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="30" y="106" width="230" height="50" rx="8" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="145" y="137" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#26254d">Architecture Capability</text>
+<rect x="295" y="111" width="104" height="40" rx="20" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="347" y="137" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Preliminary</text>
+<rect x="409" y="111" width="46" height="40" rx="20" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="432" y="137" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">A</text>
+<text x="520" y="127" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">setting up or adjusting the</text>
+<text x="520" y="147" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">architecture capability</text>
+<rect x="20" y="192" width="760" height="90" rx="10" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="30" y="212" width="230" height="50" rx="8" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="145" y="243" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#26254d">Architecture Development</text>
+<rect x="296" y="217" width="46" height="40" rx="20" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="319" y="243" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">B</text>
+<rect x="352" y="217" width="46" height="40" rx="20" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="375" y="243" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">C</text>
+<rect x="408" y="217" width="46" height="40" rx="20" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="431" y="243" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">D</text>
+<text x="520" y="233" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">creating architecture content: Business,</text>
+<text x="520" y="253" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Information Systems, Technology</text>
+<rect x="20" y="298" width="760" height="90" rx="10" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="30" y="318" width="230" height="50" rx="8" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="145" y="349" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#26254d">Transition Planning</text>
+<rect x="324" y="323" width="46" height="40" rx="20" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="347" y="349" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">E</text>
+<rect x="380" y="323" width="46" height="40" rx="20" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="403" y="349" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">F</text>
+<text x="520" y="339" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">creating the change roadmap and</text>
+<text x="520" y="359" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">transition plan to target state</text>
+<rect x="20" y="404" width="760" height="90" rx="10" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+<rect x="30" y="424" width="230" height="50" rx="8" fill="#ffe0e0" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="145" y="455" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#26254d">Architecture Governance</text>
+<rect x="324" y="429" width="46" height="40" rx="20" fill="#ffe0e0" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="347" y="455" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">G</text>
+<rect x="380" y="429" width="46" height="40" rx="20" fill="#ffe0e0" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="403" y="455" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">H</text>
+<text x="520" y="445" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">governing implementation and change</text>
+<text x="520" y="465" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">towards the target architecture</text>
+<text x="400" y="532" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">You can iterate within a cycle, between cycles and between whole ADM passes; cycles may run in parallel.</text>
+<text x="400" y="556" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Note: Phase A belongs to Architecture Capability, not Architecture Development.</text>
+</svg>

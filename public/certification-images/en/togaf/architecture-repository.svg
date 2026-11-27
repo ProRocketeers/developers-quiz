@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 542">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="542" fill="#ffffff"/>
+<text x="400" y="34" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" font-weight="bold" fill="#26254d">Architecture Repository – eight components</text>
+<rect x="14" y="52" width="772" height="440" rx="12" fill="#fafafd" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="34" y="78" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="start" font-weight="bold" fill="#26254d">Architecture Repository</text>
+<rect x="28" y="92" width="368" height="86" rx="8" fill="#e6e0fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="42" y="118" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Architecture Metamodel</text>
+<text x="42" y="142" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">organization's tailored architecture framework</text>
+<text x="42" y="162" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">incl. the content metamodel</text>
+<rect x="404" y="92" width="368" height="86" rx="8" fill="#e6e0fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="418" y="118" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Architecture Capability</text>
+<text x="418" y="142" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">parameters, structures and processes that</text>
+<text x="418" y="162" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">support repository governance</text>
+<rect x="28" y="190" width="368" height="86" rx="8" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="42" y="216" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Architecture Landscape</text>
+<text x="42" y="240" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">assets used or planned over time;</text>
+<text x="42" y="260" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Strategic, Segment, Capability levels</text>
+<rect x="404" y="190" width="368" height="86" rx="8" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="418" y="216" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Standards Library</text>
+<text x="418" y="240" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">standards that new</text>
+<text x="418" y="260" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">architectures must meet</text>
+<rect x="28" y="288" width="368" height="86" rx="8" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="42" y="314" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Reference Library</text>
+<text x="42" y="338" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">guides, templates, patterns, reference models</text>
+<text x="42" y="358" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">and Viewpoint Library</text>
+<rect x="404" y="288" width="368" height="86" rx="8" fill="#ffe0e0" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="418" y="314" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Governance Repository</text>
+<text x="418" y="338" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">records of governance activities</text>
+<text x="418" y="358" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">enterprise-wide</text>
+<rect x="28" y="386" width="368" height="86" rx="8" fill="#ffe0e0" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="42" y="412" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Architecture Requirements Repository</text>
+<text x="42" y="436" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">requirements agreed</text>
+<text x="42" y="456" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">with Architecture Board</text>
+<rect x="404" y="386" width="368" height="86" rx="8" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="418" y="412" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="start" font-weight="bold" fill="#26254d">Solutions Landscape</text>
+<text x="418" y="436" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">Solution Building Blocks (SBBs)</text>
+<text x="418" y="456" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d">supporting Architecture Landscape</text>
+<text x="400" y="520" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Enterprise Continuum is not a component – it is a classification view of the repository content.</text>
+</svg>
