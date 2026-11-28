@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 566">
+  <defs>
+    <marker id="arrF" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#4a4a6a"/></marker>
+    <marker id="arrO" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="arrS" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#4a4a6a" stroke-width="1.4"/></marker>
+    <marker id="triH" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="diaF" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#4a4a6a" stroke="#4a4a6a" stroke-width="1"/></marker>
+    <marker id="diaH" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.6"/></marker>
+    <marker id="dot" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#4a4a6a"/></marker>
+    <marker id="arrFA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#b3264a"/></marker>
+    <marker id="arrOA" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M1,1 L12,6 L1,11" fill="none" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="arrSA" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9" fill="none" stroke="#b3264a" stroke-width="1.4"/></marker>
+    <marker id="triHA" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="15" refY="8" orient="auto"><path d="M1,1 L15,8 L1,15 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="diaFA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#b3264a" stroke="#b3264a" stroke-width="1"/></marker>
+    <marker id="diaHA" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L9,1 L17,6 L9,11 z" fill="#ffffff" stroke="#b3264a" stroke-width="1.6"/></marker>
+    <marker id="dotA" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="1" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="#b3264a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="800" height="566" fill="#ffffff"/>
+  <text x="400" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#26254d" font-weight="bold">Strategy elements and relations</text>
+  <rect x="300" y="62" width="160" height="50" rx="0" fill="#CCCCFF" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="380.0" y="92.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Outcome</text>
+  <text x="475" y="92" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic">(motivation element)</text>
+  <rect x="300" y="170" width="160" height="50" rx="12" fill="#F5DEAA" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="380.0" y="200.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Course of action</text>
+  <rect x="50" y="290" width="170" height="50" rx="12" fill="#F5DEAA" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="135.0" y="320.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Value stream</text>
+  <rect x="300" y="290" width="160" height="50" rx="12" fill="#F5DEAA" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="380.0" y="320.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Capability</text>
+  <rect x="570" y="290" width="170" height="50" rx="0" fill="#F5DEAA" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="655.0" y="320.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Resource</text>
+  <rect x="90" y="430" width="330" height="56" rx="12" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="255.0" y="454.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Core behavior element</text>
+  <text x="255.0" y="472.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">(internal or external)</text>
+  <rect x="540" y="430" width="230" height="56" rx="0" fill="#ffffff" stroke="#4a4a6a" stroke-width="1.5"/>
+  <text x="655.0" y="454.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-weight="bold">Core structure element</text>
+  <text x="655.0" y="472.0" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">(active or passive)</text>
+  <path d="M380,170 L380,112" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="390" y="146" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M135,290 L135,195 L300,195" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="215" y="186" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M380,290 L380,220" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="390" y="260" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M655,290 L655,195 L460,195" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="570" y="186" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes (derived)</text>
+  <path d="M300,315 L220,315" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-end="url(#arrO)"/>
+  <text x="260" y="306" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">serves</text>
+  <path d="M570,315 L460,315" fill="none" stroke="#4a4a6a" stroke-width="1.6" marker-start="url(#dot)" marker-end="url(#arrF)"/>
+  <text x="515" y="306" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">assigned to</text>
+  <path d="M135,430 L135,340" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="145" y="390" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M380,430 L380,340" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="390" y="390" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <path d="M655,430 L655,340" fill="none" stroke="#4a4a6a" stroke-width="1.6" stroke-dasharray="2 3" marker-end="url(#triH)"/>
+  <text x="665" y="390" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#26254d" font-style="italic" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">realizes</text>
+  <text x="400" y="524" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Resource is assigned to capability, capability serves value stream; strategy elements realize</text>
+  <text x="400" y="544" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">course of action, which realizes outcome. Core elements realize strategy elements.</text>
+</svg>

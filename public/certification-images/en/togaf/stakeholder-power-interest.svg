@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 546">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="546" fill="#ffffff"/>
+<text x="400" y="34" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" font-weight="bold" fill="#26254d">Stakeholder Management – power / interest grid</text>
+<rect x="170" y="70" width="290" height="190" rx="0" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="315" y="159" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" font-weight="bold" fill="#26254d">Keep Satisfied</text>
+<text x="315" y="187" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d"></text>
+<rect x="460" y="70" width="290" height="190" rx="0" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="605" y="159" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" font-weight="bold" fill="#26254d">Key Players</text>
+<text x="605" y="187" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d">fully engage, work closely</text>
+<rect x="170" y="260" width="290" height="190" rx="0" fill="#f1f1f6" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="315" y="349" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" font-weight="bold" fill="#26254d">Minimal Effort</text>
+<text x="315" y="377" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d">just monitor</text>
+<rect x="460" y="260" width="290" height="190" rx="0" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="605" y="349" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="middle" font-weight="bold" fill="#26254d">Keep Informed</text>
+<text x="605" y="377" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#26254d">inform regularly</text>
+<line x1="150.0" y1="450.0" x2="150.0" y2="64.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="170.0" y1="470.0" x2="756.0" y2="470.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="138" y="170" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">high</text>
+<text x="138" y="360" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="end" fill="#26254d">low</text>
+<text x="60" y="265" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Power</text>
+<text x="60" y="286" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d"></text>
+<text x="315" y="494" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">low</text>
+<text x="605" y="494" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">high</text>
+<text x="460" y="522" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Interest</text>
+</svg>

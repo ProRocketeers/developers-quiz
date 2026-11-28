@@ -1,13 +1,12 @@
 import { useDeferredValue, useMemo, useState } from "react";
 import CheatSheetBlockView from "../components/cheatSheet/CheatSheetBlockView";
 import { HighlightedText } from "../components/cheatSheet/HighlightedText";
-import {
-  CHEAT_SHEET_LANGUAGE_LABELS,
-  CHEAT_SHEET_LANGUAGE_QUERY_PARAM,
-  CHEAT_SHEET_LANGUAGES,
-  type CheatSheetLanguage,
-} from "../constants/cheatSheets";
+import { CHEAT_SHEET_LANGUAGE_QUERY_PARAM } from "../constants/cheatSheets";
 import { CERTIFICATION_ROUTES } from "../constants/certifications";
+import { LocaleProvider } from "../i18n/LocaleProvider";
+import { useTranslations } from "../i18n/localeContext";
+import { LOCALES, type Locale } from "../i18n/locales";
+import type { Messages } from "../i18n/messages";
 import {
   filterSection,
   parseSearchTerms,
@@ -17,30 +16,52 @@ import {
 import type { CertificationCheatSheet, CheatSheetDocument } from "../types";
 import "./CheatSheetView.css";
 
-interface Props {
+type CheatSheetPageMessages = Messages["certifications"]["cheatSheetPage"];
+
+interface CheatSheetProps {
   cheatSheet: CheatSheetDocument;
   metadata: CertificationCheatSheet;
-  language: CheatSheetLanguage;
+  language: Locale;
   pageHref: string;
 }
 
-function buildLanguageHref(pageHref: string, language: CheatSheetLanguage) {
+interface Props extends CheatSheetProps {
+  locale: Locale;
+}
+
+function buildLanguageHref(pageHref: string, language: Locale) {
   return `${pageHref}?${CHEAT_SHEET_LANGUAGE_QUERY_PARAM}=${language}`;
 }
 
-function formatMatchSummary(sections: FilteredCheatSheetSection[]): string {
+function formatMatchSummary(
+  sections: FilteredCheatSheetSection[],
+  t: CheatSheetPageMessages,
+): string {
   const matchCount = sections.reduce(
     (total, section) => total + section.matchCount,
     0,
   );
   if (matchCount === 0) {
-    return "Nic nenalezeno. Zkuste jiné slovo nebo druhý jazyk taháku.";
+    return t.noResults;
   }
-  const chapterLabel = sections.length === 1 ? "kapitole" : "kapitolách";
-  return `Nalezeno ${matchCount}× v ${sections.length} ${chapterLabel}`;
+  return t.matchSummary(matchCount, sections.length);
 }
 
-function CheatSheetView({ cheatSheet, metadata, language, pageHref }: Props) {
+export default function CheatSheetView({ locale, ...cheatSheetProps }: Props) {
+  return (
+    <LocaleProvider locale={locale}>
+      <CheatSheet {...cheatSheetProps} />
+    </LocaleProvider>
+  );
+}
+
+function CheatSheet({
+  cheatSheet,
+  metadata,
+  language,
+  pageHref,
+}: CheatSheetProps) {
+  const t = useTranslations().certifications.cheatSheetPage;
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
   const sections = useMemo(() => splitIntoSections(cheatSheet), [cheatSheet]);
@@ -59,27 +80,27 @@ function CheatSheetView({ cheatSheet, metadata, language, pageHref }: Props) {
   return (
     <div className="cheat-sheet-page">
       <a className="cheat-sheet-back" href={CERTIFICATION_ROUTES.home}>
-        ← Zpět na certifikace
+        {t.back}
       </a>
 
       <div className="cheat-sheet-toolbar">
         <input
           type="search"
           className="cheat-sheet-search"
-          placeholder="Hledat v taháku, např. serving, artifact, plateau…"
-          aria-label="Hledat v taháku"
+          placeholder={t.searchPlaceholder}
+          aria-label={t.searchLabel}
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           autoFocus
         />
-        <nav className="cheat-sheet-languages" aria-label="Jazyk taháku">
-          {CHEAT_SHEET_LANGUAGES.map((option) => (
+        <nav className="cheat-sheet-languages" aria-label={t.languageNavLabel}>
+          {LOCALES.map((option) => (
             <a
               key={option}
               href={buildLanguageHref(pageHref, option)}
               aria-current={option === language ? "page" : undefined}
             >
-              {CHEAT_SHEET_LANGUAGE_LABELS[option]}
+              {t.languages[option]}
             </a>
           ))}
         </nav>
@@ -92,13 +113,13 @@ function CheatSheetView({ cheatSheet, metadata, language, pageHref }: Props) {
         </div>
         {isSearching && (
           <p className="cheat-sheet-match-summary" role="status">
-            {formatMatchSummary(visibleSections)}
+            {formatMatchSummary(visibleSections, t)}
           </p>
         )}
       </div>
 
       <div className="cheat-sheet-layout">
-        <nav className="cheat-sheet-toc" aria-label="Obsah taháku">
+        <nav className="cheat-sheet-toc" aria-label={t.tableOfContentsLabel}>
           {visibleSections
             .filter((section) => section.heading)
             .map((section) => (
@@ -127,5 +148,3 @@ function CheatSheetView({ cheatSheet, metadata, language, pageHref }: Props) {
     </div>
   );
 }
-
-export default CheatSheetView;

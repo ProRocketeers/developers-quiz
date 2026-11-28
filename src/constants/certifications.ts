@@ -5,24 +5,12 @@ import type {
   CertificationId,
   CertificationLevel,
   CertificationPracticePreferences,
-  CertificationQuizMode,
 } from "../types";
 
 export const CERTIFICATION_LEVELS: CertificationLevel[] = [
   "foundation",
   "practitioner",
 ];
-
-export const CERTIFICATION_LEVEL_LABELS: Record<CertificationLevel, string> = {
-  foundation: "Úroveň 1 · Foundation",
-  practitioner: "Úroveň 2 · Practitioner",
-};
-
-export const CERTIFICATION_MODE_LABELS: Record<CertificationQuizMode, string> =
-  {
-    practice: "Procvičování",
-    exam: "Zkouška nanečisto",
-  };
 
 export const DEFAULT_PRACTICE_QUESTION_COUNT = 20;
 

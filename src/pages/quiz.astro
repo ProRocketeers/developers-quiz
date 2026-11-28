@@ -1,8 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import QuizView from "../views/QuizView";
+import { getRequestLocale } from "../i18n/requestLocale";
+import { getMessages } from "../i18n/messages";
+
+const locale = getRequestLocale(Astro.cookies);
+const pageTitle = getMessages(locale).pageTitles.quiz;
 ---
 
-<BaseLayout title="Quiz | Developers Quiz" currentPath="/quiz">
-  <QuizView client:only="react" />
+<BaseLayout locale={locale} title={pageTitle} currentPath="/quiz">
+  <QuizView locale={locale} client:only="react" />
 </BaseLayout>

@@ -10,6 +10,10 @@ import {
   CERTIFICATION_ROUTES,
   getTopicLabel,
 } from "../constants/certifications";
+import { localizeExam } from "../i18n/content";
+import { LocaleProvider } from "../i18n/LocaleProvider";
+import { useLocale, useTranslations } from "../i18n/localeContext";
+import type { Locale } from "../i18n/locales";
 import { useCertificationQuestions } from "../hooks/useCertificationQuestions";
 import { useCertificationQuizSession } from "../hooks/useCertificationQuizSession";
 import { useQuizClock } from "../hooks/useQuizClock";
@@ -24,19 +28,21 @@ import type {
 import { loadCertificationQuizSettings } from "../utils/certificationStorage";
 import "../pages/Certifications.css";
 
-const MISSING_SETTINGS_TITLE = "Test není připravený";
-const MISSING_SETTINGS_MESSAGE =
-  "Nejprve si vyberte certifikaci, úroveň a režim testu.";
+export default function CertificationQuizView({ locale }: { locale: Locale }) {
+  return (
+    <LocaleProvider locale={locale}>
+      <CertificationQuizEntry />
+    </LocaleProvider>
+  );
+}
 
-export default function CertificationQuizView() {
+function CertificationQuizEntry() {
+  const t = useTranslations().certifications.quiz;
   const [settings] = useState(loadCertificationQuizSettings);
 
   if (!settings) {
     return (
-      <QuizUnavailable
-        title={MISSING_SETTINGS_TITLE}
-        message={MISSING_SETTINGS_MESSAGE}
-      />
+      <QuizUnavailable title={t.notReadyTitle} message={t.notReadyMessage} />
     );
   }
   return <CertificationQuizLoader settings={settings} />;
@@ -47,6 +53,8 @@ function CertificationQuizLoader({
 }: {
   settings: CertificationQuizSettings;
 }) {
+  const locale = useLocale();
+  const t = useTranslations().certifications.quiz;
   const questionsState = useCertificationQuestions(settings);
 
   if (questionsState.status === "loading") {
@@ -55,23 +63,20 @@ function CertificationQuizLoader({
   if (questionsState.status === "error") {
     return (
       <QuizUnavailable
-        title="Otázky se nepodařilo načíst"
-        message="Zkuste stránku obnovit nebo test spustit znovu."
+        title={t.loadFailedTitle}
+        message={t.loadFailedMessage}
       />
     );
   }
   if (questionsState.questions.length === 0) {
     return (
-      <QuizUnavailable
-        title={MISSING_SETTINGS_TITLE}
-        message={MISSING_SETTINGS_MESSAGE}
-      />
+      <QuizUnavailable title={t.notReadyTitle} message={t.notReadyMessage} />
     );
   }
   return (
     <CertificationQuiz
       settings={settings}
-      exam={CERTIFICATION_EXAMS[settings.examId]}
+      exam={localizeExam(CERTIFICATION_EXAMS[settings.examId], locale)}
       questions={questionsState.questions}
     />
   );
@@ -84,12 +89,14 @@ function QuizUnavailable({
   title: string;
   message: string;
 }) {
+  const t = useTranslations().certifications.quiz;
+
   return (
     <div className="certifications certification-empty">
       <h2>{title}</h2>
       <p>{message}</p>
       <a href={CERTIFICATION_ROUTES.home} className="certifications-link">
-        Vybrat certifikaci
+        {t.chooseCertification}
       </a>
     </div>
   );

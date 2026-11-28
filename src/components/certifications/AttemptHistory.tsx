@@ -1,7 +1,6 @@
-import {
-  CERTIFICATION_EXAMS,
-  CERTIFICATION_MODE_LABELS,
-} from "../../constants/certifications";
+import { CERTIFICATION_EXAMS } from "../../constants/certifications";
+import { useLocale, useTranslations } from "../../i18n/localeContext";
+import { INTL_LOCALE_TAGS } from "../../i18n/locales";
 import type { CertificationAttempt } from "../../types";
 import { scoreAttempt } from "../../utils/certificationScoring";
 import "./AttemptHistory.css";
@@ -13,6 +12,9 @@ interface Props {
 }
 
 function AttemptHistory({ attempts, selectedId, onSelect }: Props) {
+  const locale = useLocale();
+  const { modeLabels } = useTranslations().certifications;
+
   return (
     <ul className="attempt-history">
       {attempts.map((attempt) => {
@@ -29,8 +31,10 @@ function AttemptHistory({ attempts, selectedId, onSelect }: Props) {
             >
               <span className="attempt-history-title">{exam.title}</span>
               <span className="attempt-history-meta">
-                {new Date(attempt.createdAt).toLocaleString("cs-CZ")} ·{" "}
-                {CERTIFICATION_MODE_LABELS[attempt.settings.mode]}
+                {new Date(attempt.createdAt).toLocaleString(
+                  INTL_LOCALE_TAGS[locale],
+                )}{" "}
+                · {modeLabels[attempt.settings.mode]}
               </span>
               <span
                 className={`attempt-history-score ${score.passed ? "is-passed" : "is-failed"}`}

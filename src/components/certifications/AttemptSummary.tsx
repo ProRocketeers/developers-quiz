@@ -1,8 +1,7 @@
-import { CERTIFICATION_MODE_LABELS } from "../../constants/certifications";
+import { useTranslations } from "../../i18n/localeContext";
 import type { CertificationAttempt, CertificationExam } from "../../types";
 import type { AttemptScore } from "../../utils/certificationScoring";
 import { formatClock } from "../../utils/formatClock";
-import { POINT_FORMS, pluralizeCs } from "../../utils/pluralizeCs";
 import "./AttemptSummary.css";
 
 interface Props {
@@ -12,6 +11,7 @@ interface Props {
 }
 
 function AttemptSummary({ exam, attempt, score }: Props) {
+  const { summary: t, modeLabels } = useTranslations().certifications;
   const questionCount = attempt.questions.length;
   const isGradient = exam.format.scoring === "gradient";
 
@@ -21,34 +21,39 @@ function AttemptSummary({ exam, attempt, score }: Props) {
     >
       <div className="attempt-summary-main">
         <span className="attempt-summary-verdict">
-          {score.passed ? "Nad hranicí úspěchu" : "Pod hranicí úspěchu"}
+          {score.passed ? t.passed : t.failed}
         </span>
         <div className="attempt-summary-percentage">{score.percentage} %</div>
         <p>
           {isGradient
-            ? `${score.earnedPoints} z ${pluralizeCs(score.maxPoints, POINT_FORMS)}`
-            : `${score.earnedPoints} z ${questionCount} správně`}
-          {` · hranice úspěchu ${exam.format.passPercentage} % (min. ${score.requiredPoints} z ${score.maxPoints})`}
+            ? t.earnedPoints(score.earnedPoints, score.maxPoints)
+            : t.correctAnswers(score.earnedPoints, questionCount)}
+          {" · "}
+          {t.passThreshold(
+            exam.format.passPercentage,
+            score.requiredPoints,
+            score.maxPoints,
+          )}
         </p>
       </div>
 
       <dl className="attempt-summary-stats">
         <div>
-          <dt>Režim</dt>
-          <dd>{CERTIFICATION_MODE_LABELS[attempt.settings.mode]}</dd>
+          <dt>{t.mode}</dt>
+          <dd>{modeLabels[attempt.settings.mode]}</dd>
         </div>
         <div>
-          <dt>Čas</dt>
+          <dt>{t.time}</dt>
           <dd>{formatClock(attempt.totalDurationMs)}</dd>
         </div>
         <div>
-          <dt>Zodpovězeno</dt>
+          <dt>{t.answered}</dt>
           <dd>
             {score.answeredCount} / {questionCount}
           </dd>
         </div>
         <div>
-          <dt>{isGradient ? "Nejlepší odpověď" : "Správně"}</dt>
+          <dt>{isGradient ? t.bestAnswer : t.correct}</dt>
           <dd>
             {score.bestAnswerCount} / {questionCount}
           </dd>

@@ -1,3 +1,4 @@
+import { useTranslations } from "../../i18n/localeContext";
 import type { CertificationTopic } from "../../types";
 
 interface Props {
@@ -17,15 +18,17 @@ function PracticeTopicList({
   onSelectAll,
   onClearSelection,
 }: Props) {
+  const t = useTranslations().certifications.practice;
+
   return (
     <>
       <div className="practice-setup-toolbar">
-        <strong>Okruhy</strong>
+        <strong>{t.topics}</strong>
         <button type="button" onClick={onSelectAll}>
-          Vybrat vše
+          {t.selectAll}
         </button>
         <button type="button" onClick={onClearSelection}>
-          Zrušit výběr
+          {t.clearSelection}
         </button>
       </div>
 

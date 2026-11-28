@@ -28,6 +28,7 @@ interface EmailRequest {
   detailed?: boolean
   questions?: Question[]
   answers?: Record<number, number>
+  locale?: string
 }
 
 interface ErrorWithDetails {
@@ -60,7 +61,7 @@ export async function POST(request: Request) {
 
   try {
     const body: EmailRequest = await request.json()
-    const { to, name, score, total, passed, detailed = false, questions, answers } = body
+    const { to, name, score, total, passed, detailed = false, questions, answers, locale } = body
 
     if (!to || !name) {
       log('warn', 'email_send_validation_failed', {
@@ -92,6 +93,7 @@ export async function POST(request: Request) {
       detailed,
       questions,
       answers,
+      locale,
       requestId,
       log
     })

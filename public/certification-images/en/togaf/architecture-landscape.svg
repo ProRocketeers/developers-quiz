@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4a6a"/></marker></defs>
+<rect x="0" y="0" width="800" height="540" fill="#ffffff"/>
+<text x="400" y="34" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="middle" font-weight="bold" fill="#26254d">Architecture Landscape levels and architecture purposes</text>
+<text x="250" y="76" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Architecture Landscape – three levels</text>
+<rect x="50" y="100" width="400" height="92" rx="8" fill="#fff4c2" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="250" y="128" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Strategic Architecture</text>
+<text x="250" y="152" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">long-term summary view of the whole enterprise</text>
+<text x="250" y="172" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">(for leaders)</text>
+<rect x="95" y="210" width="310" height="92" rx="8" fill="#d9e8ff" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="250" y="238" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Segment Architecture</text>
+<text x="250" y="262" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">programme and portfolio level</text>
+<text x="250" y="282" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">(enterprise part)</text>
+<rect x="140" y="320" width="220" height="92" rx="8" fill="#dcf2d3" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="250" y="348" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Capability Architecture</text>
+<text x="250" y="372" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">delivering specific</text>
+<text x="250" y="392" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">capabilities</text>
+<line x1="250.0" y1="192.0" x2="250.0" y2="208.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="250.0" y1="302.0" x2="250.0" y2="318.0" stroke="#4a4a6a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="250" y="446" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Top: widest scope, longest horizon.</text>
+<text x="250" y="468" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Bottom: greatest detail.</text>
+<line x1="490" y1="60" x2="490" y2="480" stroke="#4a4a6a" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="640" y="76" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Four architecture purposes</text>
+<text x="640" y="98" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">(purposes – not the same as levels)</text>
+<rect x="515" y="116" width="250" height="68" rx="8" fill="#e6e0fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="640" y="144" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Architecture to Support</text>
+<text x="640" y="167" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Strategy</text>
+<rect x="515" y="200" width="250" height="68" rx="8" fill="#e6e0fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="640" y="228" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Architecture to Support</text>
+<text x="640" y="251" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Portfolio</text>
+<rect x="515" y="284" width="250" height="68" rx="8" fill="#e6e0fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="640" y="312" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Architecture to Support</text>
+<text x="640" y="335" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Project</text>
+<rect x="515" y="368" width="250" height="68" rx="8" fill="#e6e0fa" stroke="#4a4a6a" stroke-width="1.5"/>
+<text x="640" y="396" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Architecture to Support</text>
+<text x="640" y="419" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#26254d">Solution Delivery</text>
+<text x="400" y="516" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="#26254d">Segment is an Architecture Landscape level, not a purpose – and Portfolio or Project are not levels.</text>
+</svg>

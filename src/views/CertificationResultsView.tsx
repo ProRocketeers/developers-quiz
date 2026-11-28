@@ -9,6 +9,11 @@ import {
   CERTIFICATION_ROUTES,
   DEFAULT_PRACTICE_QUESTION_COUNT,
 } from "../constants/certifications";
+import { localizeExam } from "../i18n/content";
+import { LocaleProvider } from "../i18n/LocaleProvider";
+import { useLocale, useTranslations } from "../i18n/localeContext";
+import { INTL_LOCALE_TAGS } from "../i18n/locales";
+import type { Locale } from "../i18n/locales";
 import type { CertificationAttempt } from "../types";
 import { getWeakTopicIds, scoreAttempt } from "../utils/certificationScoring";
 import { loadCertificationAttempts } from "../utils/certificationStorage";
@@ -25,7 +30,20 @@ function writeAttemptIdToUrl(attemptId: string) {
   window.history.replaceState(null, "", url);
 }
 
-export default function CertificationResultsView() {
+export default function CertificationResultsView({
+  locale,
+}: {
+  locale: Locale;
+}) {
+  return (
+    <LocaleProvider locale={locale}>
+      <CertificationResults />
+    </LocaleProvider>
+  );
+}
+
+function CertificationResults() {
+  const t = useTranslations().certifications.results;
   const [attempts] = useState(loadCertificationAttempts);
   const [selectedId, setSelectedId] = useState(readAttemptIdFromUrl);
   const selectedAttempt =
@@ -34,12 +52,10 @@ export default function CertificationResultsView() {
   if (!selectedAttempt) {
     return (
       <div className="certifications certification-empty">
-        <h2>Zatím tu nejsou žádné výsledky</h2>
-        <p>
-          Spusťte procvičování nebo zkoušku nanečisto a výsledky se uloží sem.
-        </p>
+        <h2>{t.emptyTitle}</h2>
+        <p>{t.emptyText}</p>
         <a href={CERTIFICATION_ROUTES.home} className="certifications-link">
-          Vybrat certifikaci
+          {t.chooseCertification}
         </a>
       </div>
     );
@@ -56,7 +72,7 @@ export default function CertificationResultsView() {
       <AttemptResults key={selectedAttempt.id} attempt={selectedAttempt} />
 
       <section className="certification-section">
-        <h3>Historie pokusů</h3>
+        <h3>{t.historyTitle}</h3>
         <AttemptHistory
           attempts={attempts}
           selectedId={selectedAttempt.id}
@@ -68,7 +84,12 @@ export default function CertificationResultsView() {
 }
 
 function AttemptResults({ attempt }: { attempt: CertificationAttempt }) {
-  const exam = CERTIFICATION_EXAMS[attempt.settings.examId];
+  const locale = useLocale();
+  const t = useTranslations().certifications.results;
+  const exam = localizeExam(
+    CERTIFICATION_EXAMS[attempt.settings.examId],
+    locale,
+  );
   const score = scoreAttempt(attempt, exam);
   const weakTopicIds = getWeakTopicIds(
     score.topicScores,
@@ -86,9 +107,11 @@ function AttemptResults({ attempt }: { attempt: CertificationAttempt }) {
   return (
     <>
       <div className="certification-results-intro">
-        <span className="certifications-eyebrow">Vyhodnocení</span>
+        <span className="certifications-eyebrow">{t.kicker}</span>
         <h2>{exam.title}</h2>
-        <p>{new Date(attempt.createdAt).toLocaleString("cs-CZ")}</p>
+        <p>
+          {new Date(attempt.createdAt).toLocaleString(INTL_LOCALE_TAGS[locale])}
+        </p>
       </div>
 
       <AttemptSummary exam={exam} attempt={attempt} score={score} />
@@ -99,7 +122,7 @@ function AttemptResults({ attempt }: { attempt: CertificationAttempt }) {
           className="certification-submit-btn"
           onClick={() => startCertificationQuiz(attempt.settings)}
         >
-          Nový pokus se stejným nastavením
+          {t.retry}
         </button>
         {weakTopicIds.length > 0 && (
           <button
@@ -107,16 +130,16 @@ function AttemptResults({ attempt }: { attempt: CertificationAttempt }) {
             className="certification-nav-btn is-primary"
             onClick={practiceWeakTopics}
           >
-            Procvičit slabé okruhy ({weakTopicIds.length})
+            {t.practiceWeakTopics(weakTopicIds.length)}
           </button>
         )}
         <a href={CERTIFICATION_ROUTES.home} className="certification-nav-btn">
-          Zpět na certifikace
+          {t.backToCertifications}
         </a>
       </div>
 
       <section className="certification-section">
-        <h3>Úspěšnost podle okruhů</h3>
+        <h3>{t.topicBreakdownTitle}</h3>
         <TopicBreakdown
           topicScores={score.topicScores}
           passPercentage={exam.format.passPercentage}
@@ -124,7 +147,7 @@ function AttemptResults({ attempt }: { attempt: CertificationAttempt }) {
       </section>
 
       <section className="certification-section">
-        <h3>Rozbor odpovědí</h3>
+        <h3>{t.answerReviewTitle}</h3>
         <AnswerReview exam={exam} attempt={attempt} />
       </section>
     </>

@@ -10,6 +10,10 @@ import {
   DEFAULT_CERTIFICATION_ID,
   getCertificationExams,
 } from "../constants/certifications";
+import { localizeCertification, localizeExam } from "../i18n/content";
+import { LocaleProvider } from "../i18n/LocaleProvider";
+import { useLocale, useTranslations } from "../i18n/localeContext";
+import type { Locale } from "../i18n/locales";
 import type { QuestionCountsByExam } from "../services/certificationQuestionService";
 import type {
   CertificationExam,
@@ -33,19 +37,39 @@ function sumCounts(topicCounts: Record<string, number> = {}): number {
 }
 
 interface Props {
+  locale: Locale;
   questionCounts: QuestionCountsByExam;
 }
 
-export default function CertificationHomeView({ questionCounts }: Props) {
+export default function CertificationHomeView({
+  locale,
+  questionCounts,
+}: Props) {
+  return (
+    <LocaleProvider locale={locale}>
+      <CertificationHome questionCounts={questionCounts} />
+    </LocaleProvider>
+  );
+}
+
+function CertificationHome({ questionCounts }: Omit<Props, "locale">) {
+  const locale = useLocale();
+  const t = useTranslations().certifications.home;
+  const certifications = CERTIFICATIONS.map((certification) =>
+    localizeCertification(certification, locale),
+  );
   const [certificationId, setCertificationId] = useState<CertificationId>(
     DEFAULT_CERTIFICATION_ID,
   );
   const [practiceExamId, setPracticeExamId] =
     useState<CertificationExamId | null>(null);
-  const certification = CERTIFICATIONS.find(({ id }) => id === certificationId);
+  const certification = certifications.find(({ id }) => id === certificationId);
   const practiceExam = practiceExamId
-    ? CERTIFICATION_EXAMS[practiceExamId]
+    ? localizeExam(CERTIFICATION_EXAMS[practiceExamId], locale)
     : null;
+  const exams = getCertificationExams(certificationId).map((exam) =>
+    localizeExam(exam, locale),
+  );
 
   const selectCertification = (id: CertificationId) => {
     setCertificationId(id);
@@ -59,32 +83,28 @@ export default function CertificationHomeView({ questionCounts }: Props) {
   return (
     <div className="certifications">
       <section className="certifications-hero">
-        <span className="certifications-eyebrow">Příprava na certifikace</span>
-        <h2>ArchiMate®, PRINCE2® a TOGAF®</h2>
-        <p>
-          Cvičné otázky pokrývající sylaby úrovní Foundation i Practitioner.
-          Každá otázka má vysvětlení, takže se z chyb rovnou učíte. Výsledky se
-          ukládají jen ve vašem prohlížeči a nikam se neodesílají.
-        </p>
+        <span className="certifications-eyebrow">{t.eyebrow}</span>
+        <h2>{t.title}</h2>
+        <p>{t.intro}</p>
         <div className="certifications-hero-actions">
           <a
             href={CERTIFICATION_ROUTES.results}
             className="certifications-link"
           >
-            Moje výsledky
+            {t.myResults}
           </a>
         </div>
       </section>
 
       <CertificationTabs
+        certifications={certifications}
         selectedId={certificationId}
         onSelect={selectCertification}
       />
 
       {certification && (
         <p className="certification-description">
-          {certification.description} Vlastník certifikace:{" "}
-          {certification.owner}.
+          {certification.description} {t.owner(certification.owner)}
         </p>
       )}
 
@@ -96,7 +116,7 @@ export default function CertificationHomeView({ questionCounts }: Props) {
       )}
 
       <div className="certification-levels">
-        {getCertificationExams(certificationId).map((exam) => (
+        {exams.map((exam) => (
           <ExamLevelCard
             key={exam.id}
             exam={exam}
@@ -125,12 +145,7 @@ export default function CertificationHomeView({ questionCounts }: Props) {
         />
       )}
 
-      <p className="certifications-disclaimer">
-        Neoficiální cvičné otázky pro samostudium. PRINCE2® je registrovaná
-        ochranná známka PeopleCert group. TOGAF® a ArchiMate® jsou registrované
-        ochranné známky The Open Group. Tato aplikace s vlastníky certifikací
-        nijak nesouvisí.
-      </p>
+      <p className="certifications-disclaimer">{t.disclaimer}</p>
     </div>
   );
 }

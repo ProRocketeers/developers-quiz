@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { COURSE_MATERIALS } from "../../constants/courseMaterials";
 import { useCourseMaterialsPassword } from "../../hooks/useCourseMaterialsPassword";
-import type { PasswordStatus } from "../../hooks/useCourseMaterialsPassword";
-import type { CourseMaterialId } from "../../types";
+import { localizeCourseMaterial } from "../../i18n/content";
+import { useLocale, useTranslations } from "../../i18n/localeContext";
+import type { Messages } from "../../i18n/messages";
+import type { CourseMaterial, CourseMaterialId } from "../../types";
 import {
   CourseMaterialDownloadError,
   downloadCourseMaterial,
@@ -13,36 +15,44 @@ interface Props {
   materialIds: CourseMaterialId[];
 }
 
-function getErrorMessage(error: unknown): string {
-  return error instanceof CourseMaterialDownloadError
-    ? error.message
-    : "Stažení se nezdařilo, zkuste to prosím znovu.";
+type DocumentMessages = Messages["certifications"]["documents"];
+
+function getErrorMessage(
+  error: unknown,
+  material: CourseMaterial,
+  t: DocumentMessages,
+): string {
+  if (!(error instanceof CourseMaterialDownloadError)) {
+    return t.downloadFailed;
+  }
+  return error.isWrongPassword
+    ? t.wrongPassword
+    : t.downloadFailedWithStatus(material.label, error.httpStatus);
 }
 
-const PASSWORD_STATUS_MESSAGES: Record<PasswordStatus, string | null> = {
-  empty: null,
-  checking: "Ověřuji heslo…",
-  valid: "Heslo je správné.",
-  invalid: "Nesprávné heslo.",
-  unavailable: "Ověření hesla se nezdařilo, zkuste to později.",
-};
-
 function CourseMaterialsDownload({ materialIds }: Props) {
+  const locale = useLocale();
+  const t = useTranslations().certifications.documents;
+  const materials = materialIds.map((id) =>
+    localizeCourseMaterial(COURSE_MATERIALS[id], locale),
+  );
   const [password, setPassword] = useState("");
   const passwordStatus = useCourseMaterialsPassword(password);
   const isUnlocked = passwordStatus === "valid";
+  const passwordStatusMessage = t.passwordStatus[passwordStatus];
   const [downloadingId, setDownloadingId] = useState<CourseMaterialId | null>(
     null,
   );
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const download = async (id: CourseMaterialId) => {
+  const download = async (material: CourseMaterial) => {
     setErrorMessage(null);
-    setDownloadingId(id);
+    setDownloadingId(material.id);
     try {
-      await downloadCourseMaterial(COURSE_MATERIALS[id], password);
+      await downloadCourseMaterial(material, password);
     } catch (error) {
-      setErrorMessage(getErrorMessage(error));
+      console.error(`Course material "${material.id}" download failed`, error);
+      setErrorMessage(getErrorMessage(error, material, t));
     } finally {
       setDownloadingId(null);
     }
@@ -50,14 +60,11 @@ function CourseMaterialsDownload({ materialIds }: Props) {
 
   return (
     <section className="documents-subpanel">
-      <h4>Open Group Dokumenty</h4>
-      <p className="course-materials-intro">
-        Oficiální materiály kurzu ArchiMate 3.2 (The Open Group) ke stažení po
-        zadání hesla. Slouží jen pro vlastní studium.
-      </p>
+      <h4>{t.courseMaterials}</h4>
+      <p className="course-materials-intro">{t.courseMaterialsIntro}</p>
 
       <label className="course-materials-password">
-        <span>Heslo</span>
+        <span>{t.password}</span>
         <input
           type="password"
           value={password}
@@ -66,12 +73,12 @@ function CourseMaterialsDownload({ materialIds }: Props) {
         />
       </label>
 
-      {PASSWORD_STATUS_MESSAGES[passwordStatus] && (
+      {passwordStatusMessage && (
         <p
           className={`course-materials-status course-materials-status--${passwordStatus}`}
           role="status"
         >
-          {PASSWORD_STATUS_MESSAGES[passwordStatus]}
+          {passwordStatusMessage}
         </p>
       )}
 
@@ -82,19 +89,19 @@ function CourseMaterialsDownload({ materialIds }: Props) {
       )}
 
       <ul className="course-materials-list">
-        {materialIds.map((id) => (
-          <li key={id}>
+        {materials.map((material) => (
+          <li key={material.id}>
             <div>
-              <strong>{COURSE_MATERIALS[id].label}</strong>
-              <span>{COURSE_MATERIALS[id].description}</span>
+              <strong>{material.label}</strong>
+              <span>{material.description}</span>
             </div>
             <button
               type="button"
               className="course-materials-button"
               disabled={!isUnlocked || downloadingId !== null}
-              onClick={() => download(id)}
+              onClick={() => download(material)}
             >
-              {downloadingId === id ? "Stahuji…" : "Stáhnout PDF"}
+              {downloadingId === material.id ? t.downloading : t.download}
             </button>
           </li>
         ))}

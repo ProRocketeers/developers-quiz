@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { DEFAULT_PRACTICE_QUESTION_COUNT } from "../../constants/certifications";
+import { useTranslations } from "../../i18n/localeContext";
 import type { CertificationExam } from "../../types";
-import { QUESTION_FORMS, pluralizeCs } from "../../utils/pluralizeCs";
 import PracticeQuestionCount from "./PracticeQuestionCount";
 import PracticeTopicList from "./PracticeTopicList";
 import "./PracticeSetup.css";
@@ -14,6 +14,7 @@ interface Props {
 }
 
 function PracticeSetup({ exam, topicCounts, onStart, onClose }: Props) {
+  const t = useTranslations().certifications.practice;
   const sectionRef = useRef<HTMLElement>(null);
   const topicIdsWithQuestions = exam.topics
     .map((topic) => topic.id)
@@ -54,23 +55,20 @@ function PracticeSetup({ exam, topicCounts, onStart, onClose }: Props) {
     <section
       ref={sectionRef}
       className="practice-setup"
-      aria-label={`Procvičování – ${exam.title}`}
+      aria-label={t.sectionLabel(exam.title)}
     >
       <header className="practice-setup-header">
         <div>
-          <span className="practice-setup-kicker">Procvičování</span>
+          <span className="practice-setup-kicker">{t.kicker}</span>
           <h3>{exam.title}</h3>
-          <p>
-            Po každé odpovědi hned uvidíte správné řešení a vysvětlení. Časový
-            limit neplatí.
-          </p>
+          <p>{t.intro}</p>
         </div>
         <button
           type="button"
           className="practice-setup-close"
           onClick={onClose}
         >
-          Zavřít
+          {t.close}
         </button>
       </header>
 
@@ -95,7 +93,7 @@ function PracticeSetup({ exam, topicCounts, onStart, onClose }: Props) {
           onClick={handleStart}
           disabled={questionCount === 0}
         >
-          Spustit procvičování ({pluralizeCs(questionCount, QUESTION_FORMS)})
+          {t.start(questionCount)}
         </button>
       </div>
     </section>

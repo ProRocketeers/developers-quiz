@@ -1,4 +1,5 @@
 import "./SummaryList.css";
+import { useLocale, useTranslations } from "../i18n/localeContext";
 import { sendResultsEmail } from "../services/emailService";
 import type { Question } from "../types";
 import { formatDuration } from "../utils/formatDuration";
@@ -32,13 +33,17 @@ function SummaryList({
   totalDurationMs,
   questionDurationsMs,
 }: SummaryListProps) {
+  const locale = useLocale();
+  const messages = useTranslations();
+  const t = messages.summaryList;
+  const resolvedName = userName || messages.common.unknownUser;
+
   const handleSendEmail = async () => {
     if (!userEmail) {
       return;
     }
     console.info("Email: start sending results", { to: userEmail });
     onEmailStatusChange("sending");
-    const resolvedName = userName || "Neznámý uživatel";
     const primaryResult = await sendResultsEmail({
       name: resolvedName,
       score,
@@ -48,6 +53,7 @@ function SummaryList({
       questions,
       answers,
       detailed: false,
+      locale,
     });
     let copySuccess = true;
     if (emailForCopy) {
@@ -61,6 +67,7 @@ function SummaryList({
         questions,
         answers,
         detailed: true,
+        locale,
       });
       copySuccess = copyResult.success;
     }
@@ -73,34 +80,25 @@ function SummaryList({
     onEmailStatusChange(isSuccess ? "sent" : "error");
   };
 
-  const emailStatusLabel =
-    emailStatus === "sending"
-      ? "Odesílám..."
-      : emailStatus === "sent"
-        ? "Odesláno"
-        : emailStatus === "error"
-          ? "Odeslání selhalo"
-          : "Neodesláno";
-
   return (
     <div className="summary-list">
       <div className="user-info">
-        <h2>Souhrn pro {userName || "Neznámý uživatel"}</h2>
+        <h2>{t.title(resolvedName)}</h2>
         <div className="summary-meta">
           <div className="summary-meta-row">
-            <strong>Email:</strong> {userEmail || "Neuvedeno"}
+            <strong>{t.email}</strong> {userEmail || t.emailNotProvided}
           </div>
           <div className="summary-meta-row">
-            <strong>Stav emailu:</strong> {emailStatusLabel}
+            <strong>{t.emailStatusLabel}</strong> {t.emailStatus[emailStatus]}
           </div>
           <div className="summary-meta-row">
-            <strong>Skóre:</strong> {score}/{total}
+            <strong>{t.score}</strong> {score}/{total}
           </div>
           <div className="summary-meta-row">
-            <strong>Výsledek:</strong> {passed ? "✓" : "✗"}
+            <strong>{t.outcome}</strong> {passed ? "✓" : "✗"}
           </div>
           <div className="summary-meta-row">
-            <strong>Celkový čas:</strong> {formatDuration(totalDurationMs)}
+            <strong>{t.totalTime}</strong> {formatDuration(totalDurationMs)}
           </div>
           <div className="summary-meta-actions">
             <button
@@ -108,13 +106,7 @@ function SummaryList({
               onClick={handleSendEmail}
               disabled={emailStatus === "sending" || !userEmail}
             >
-              {emailStatus === "sending"
-                ? "Odesílám..."
-                : emailStatus === "sent"
-                  ? "Odesláno ✓"
-                  : emailStatus === "error"
-                  ? "Chyba - zkusit znovu"
-                    : "Odeslat email"}
+              {t.sendEmailButton[emailStatus]}
             </button>
           </div>
         </div>

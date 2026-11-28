@@ -4,7 +4,11 @@ import path from "node:path";
 import { CERTIFICATION_EXAMS } from "../src/constants/certifications";
 import type { CertificationExam } from "../src/types";
 
-const DATA_DIR = path.resolve(process.cwd(), "src/data/certifications");
+const SOURCE_LOCALE = "cs";
+const BANK_DIRS: Record<string, string> = {
+  [SOURCE_LOCALE]: path.resolve(process.cwd(), "src/data/certifications"),
+  en: path.resolve(process.cwd(), "src/data/en/certifications"),
+};
 const PUBLIC_DIR = path.resolve(process.cwd(), "public");
 const IMAGE_PLACEMENTS = ["question", "explanation"];
 const OPTION_COUNT = 4;
@@ -30,6 +34,7 @@ interface ValidQuestion {
 }
 
 interface ExamReport {
+  bankName: string;
   errors: string[];
   warnings: string[];
   questionCount: number;
@@ -195,7 +200,7 @@ function readBankFile(filePath: string): unknown[] {
 }
 
 function findDuplicateErrors(
-  examId: string,
+  bankName: string,
   questions: ValidQuestion[],
 ): string[] {
   const firstIndexByIdentity = new Map<string, number>();
@@ -206,7 +211,7 @@ function findDuplicateErrors(
     const duplicateOf = firstIndexByIdentity.get(identity);
     if (duplicateOf !== undefined) {
       return [
-        `${examId}.json [${index}]: duplicate of question [${duplicateOf}]`,
+        `${bankName}.json [${index}]: duplicate of question [${duplicateOf}]`,
       ];
     }
     firstIndexByIdentity.set(identity, index);
@@ -227,16 +232,16 @@ function countTopics(
 }
 
 function getEmptyTopicWarnings(
-  examId: string,
+  bankName: string,
   topicCounts: Map<string, number>,
 ): string[] {
   return [...topicCounts.entries()]
     .filter(([, count]) => count === 0)
-    .map(([topicId]) => `${examId}: topic "${topicId}" has no questions`);
+    .map(([topicId]) => `${bankName}: topic "${topicId}" has no questions`);
 }
 
 function getLengthBiasWarnings(
-  examId: string,
+  bankName: string,
   questions: ValidQuestion[],
 ): string[] {
   if (questions.length === 0) {
@@ -250,17 +255,19 @@ function getLengthBiasWarnings(
     return [];
   }
   return [
-    `${examId}: correct option is the longest in ${Math.round(ratio * 100)} % of questions (limit ${MAX_LONGEST_CORRECT_RATIO * 100} %)`,
+    `${bankName}: correct option is the longest in ${Math.round(ratio * 100)} % of questions (limit ${MAX_LONGEST_CORRECT_RATIO * 100} %)`,
   ];
 }
 
-function validateExam(exam: CertificationExam): ExamReport {
-  const filePath = path.join(DATA_DIR, `${exam.id}.json`);
+function validateExam(exam: CertificationExam, locale: string): ExamReport {
+  const bankName = `${locale}/${exam.id}`;
+  const filePath = path.join(BANK_DIRS[locale] ?? "", `${exam.id}.json`);
   let questions: unknown[];
   try {
     questions = readBankFile(filePath);
   } catch (error) {
     return {
+      bankName,
       errors: [`${filePath}: cannot read question bank (${String(error)})`],
       warnings: [],
       questionCount: 0,
@@ -274,7 +281,7 @@ function validateExam(exam: CertificationExam): ExamReport {
   questions.forEach((question, index) => {
     const questionErrors = validateQuestion(question, exam, topicIds);
     errors.push(
-      ...questionErrors.map((error) => `${exam.id}.json [${index}]: ${error}`),
+      ...questionErrors.map((error) => `${bankName}.json [${index}]: ${error}`),
     );
     if (questionErrors.length === 0) {
       validQuestions.push({ index, raw: question as RawQuestion });
@@ -283,30 +290,70 @@ function validateExam(exam: CertificationExam): ExamReport {
 
   const topicCounts = countTopics(exam, validQuestions);
   return {
-    errors: [...errors, ...findDuplicateErrors(exam.id, validQuestions)],
+    bankName,
+    errors: [...errors, ...findDuplicateErrors(bankName, validQuestions)],
     warnings: [
-      ...getEmptyTopicWarnings(exam.id, topicCounts),
-      ...getLengthBiasWarnings(exam.id, validQuestions),
+      ...getEmptyTopicWarnings(bankName, topicCounts),
+      ...getLengthBiasWarnings(bankName, validQuestions),
     ],
     questionCount: questions.length,
     topicCounts,
   };
 }
 
-const reports = Object.values(CERTIFICATION_EXAMS).map((exam) => ({
-  exam,
-  report: validateExam(exam),
-}));
-
-reports.forEach(({ exam, report }) => {
-  const topics = [...report.topicCounts.entries()]
+const formatTopicCounts = (topicCounts: Map<string, number>) =>
+  [...topicCounts.entries()]
     .map(([topicId, count]) => `${topicId}: ${count}`)
     .join(", ");
-  console.log(`${exam.id}: ${report.questionCount} questions (${topics})`);
+
+// The quiz treats every locale's bank as the same set of questions, so a
+// translation has to keep the number of questions in each topic.
+function getTranslationMismatchErrors(
+  source: ExamReport,
+  translation: ExamReport,
+): string[] {
+  const sourceCounts = formatTopicCounts(source.topicCounts);
+  const translationCounts = formatTopicCounts(translation.topicCounts);
+  if (
+    source.questionCount === translation.questionCount &&
+    sourceCounts === translationCounts
+  ) {
+    return [];
+  }
+  return [
+    `${translation.bankName}: questions per topic differ from ${source.bankName} (${translationCounts} vs ${sourceCounts})`,
+  ];
+}
+
+function validateExamInAllLocales(exam: CertificationExam): ExamReport[] {
+  const sourceReport = validateExam(exam, SOURCE_LOCALE);
+  const translationReports = Object.keys(BANK_DIRS)
+    .filter((locale) => locale !== SOURCE_LOCALE)
+    .map((locale) => {
+      const report = validateExam(exam, locale);
+      return {
+        ...report,
+        errors: [
+          ...report.errors,
+          ...getTranslationMismatchErrors(sourceReport, report),
+        ],
+      };
+    });
+  return [sourceReport, ...translationReports];
+}
+
+const reports = Object.values(CERTIFICATION_EXAMS).flatMap(
+  validateExamInAllLocales,
+);
+
+reports.forEach((report) => {
+  console.log(
+    `${report.bankName}: ${report.questionCount} questions (${formatTopicCounts(report.topicCounts)})`,
+  );
 });
 
-const errors = reports.flatMap(({ report }) => report.errors);
-const warnings = reports.flatMap(({ report }) => report.warnings);
+const errors = reports.flatMap((report) => report.errors);
+const warnings = reports.flatMap((report) => report.warnings);
 warnings.forEach((warning) => console.warn(`WARNING ${warning}`));
 errors.forEach((error) => console.error(`ERROR ${error}`));
 

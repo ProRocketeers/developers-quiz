@@ -2,10 +2,14 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { countQuestionsByExam } from "../../services/certificationQuestionService";
 import CertificationHomeView from "../../views/CertificationHomeView";
+import { getRequestLocale } from "../../i18n/requestLocale";
+import { getMessages } from "../../i18n/messages";
 
 const questionCounts = await countQuestionsByExam();
+const locale = getRequestLocale(Astro.cookies);
+const pageTitle = getMessages(locale).pageTitles.certifications;
 ---
 
-<BaseLayout title="Certifikace | Developers Quiz" currentPath="/certifications">
-  <CertificationHomeView questionCounts={questionCounts} client:only="react" />
+<BaseLayout locale={locale} title={pageTitle} currentPath="/certifications">
+  <CertificationHomeView locale={locale} questionCounts={questionCounts} client:only="react" />
 </BaseLayout>

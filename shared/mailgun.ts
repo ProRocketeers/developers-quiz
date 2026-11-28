@@ -19,7 +19,46 @@ type QuizEmailInput = {
   detailed?: boolean
   questions?: Question[]
   answers?: Record<number, number>
+  locale?: string
 }
+
+type EmailLocale = 'cs' | 'en'
+
+type EmailTexts = {
+  greeting: (name: string) => string
+  results: string
+  passed: string
+  failed: string
+  answersOverview: string
+  thanks: string
+}
+
+const DEFAULT_EMAIL_LOCALE: EmailLocale = 'cs'
+
+const EMAIL_TEXTS: Record<EmailLocale, EmailTexts> = {
+  cs: {
+    greeting: (name) => `Ahoj ${name},`,
+    results: 'Výsledky',
+    passed: 'PROŠEL',
+    failed: 'NEPROŠEL',
+    answersOverview: 'Přehled odpovědí:',
+    thanks: 'Děkujeme za účast!'
+  },
+  en: {
+    greeting: (name) => `Hi ${name},`,
+    results: 'Results',
+    passed: 'PASSED',
+    failed: 'FAILED',
+    answersOverview: 'Answer overview:',
+    thanks: 'Thank you for taking part!'
+  }
+}
+
+const isEmailLocale = (value: unknown): value is EmailLocale =>
+  typeof value === 'string' && Object.hasOwn(EMAIL_TEXTS, value)
+
+const getEmailTexts = (locale: unknown): EmailTexts =>
+  EMAIL_TEXTS[isEmailLocale(locale) ? locale : DEFAULT_EMAIL_LOCALE]
 
 type MailgunEnv = {
   MAILGUN_API_KEY?: string
@@ -112,22 +151,25 @@ export const buildQuizEmail = ({
   passed,
   detailed = false,
   questions,
-  answers
+  answers,
+  locale
 }: QuizEmailInput) => {
+  const texts = getEmailTexts(locale)
   const percentage = Math.round((Number(score) / Number(total)) * 100)
   const questionsText = buildQuestionsText(questions, answers, detailed)
-  const subject = `TEST | Výsledky | Java Developer Quiz | ${name} - ${
-    passed ? 'PROŠEL' : 'NEPROŠEL'
+  const title = `TEST | ${texts.results} | Java Developer Quiz | ${name}`
+  const subject = `${title} - ${
+    passed ? texts.passed : texts.failed
   } (${percentage}%)`
   const text = `
-Ahoj ${name},
+${texts.greeting(name)}
 
-TEST | Výsledky | Java Developer Quiz | ${name} - ${score}/${total} (${percentage}%)
-Status: ${passed ? 'PROŠEL ✅' : 'NEPROŠEL ❌'}
+${title} - ${score}/${total} (${percentage}%)
+Status: ${passed ? `${texts.passed} ✅` : `${texts.failed} ❌`}
 
-${questionsText ? `Přehled odpovědí:\n\n${questionsText}` : ''}
+${questionsText ? `${texts.answersOverview}\n\n${questionsText}` : ''}
 
-Děkujeme za účast!
+${texts.thanks}
 Prorocketeers
   `.trim()
 
@@ -166,6 +208,7 @@ export const sendQuizResultsEmail = async ({
   detailed = false,
   questions,
   answers,
+  locale,
   requestId,
   log,
   env = process.env
@@ -187,7 +230,8 @@ export const sendQuizResultsEmail = async ({
     passed,
     detailed,
     questions,
-    answers
+    answers,
+    locale
   })
 
   const client = createMailgunClient(config)

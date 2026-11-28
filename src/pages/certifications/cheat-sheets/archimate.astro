@@ -2,36 +2,37 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import archimateCheatSheetCs from "../../../data/cheat-sheets/archimate-3-2.cs.json";
 import archimateCheatSheetEn from "../../../data/cheat-sheets/archimate-3-2.en.json";
-import {
-  CHEAT_SHEET_LANGUAGE_QUERY_PARAM,
-  DEFAULT_CHEAT_SHEET_LANGUAGE,
-  isCheatSheetLanguage,
-  type CheatSheetLanguage,
-} from "../../../constants/cheatSheets";
+import { CHEAT_SHEET_LANGUAGE_QUERY_PARAM } from "../../../constants/cheatSheets";
 import { CERTIFICATION_ROUTES, CERTIFICATIONS } from "../../../constants/certifications";
+import { localizeCertification } from "../../../i18n/content";
+import { getMessages } from "../../../i18n/messages";
+import { isLocale, type Locale } from "../../../i18n/locales";
+import { getRequestLocale } from "../../../i18n/requestLocale";
 import type { CheatSheetDocument } from "../../../types";
 import CheatSheetView from "../../../views/CheatSheetView";
 
 // JSON generuje scripts/cheat-sheet-to-json.ts přímo z typu CheatSheetDocument;
 // TypeScript u importovaného JSON neumí odvodit literálové typy bloků.
-const cheatSheets: Record<CheatSheetLanguage, CheatSheetDocument> = {
+const cheatSheets: Record<Locale, CheatSheetDocument> = {
   cs: archimateCheatSheetCs as CheatSheetDocument,
   en: archimateCheatSheetEn as CheatSheetDocument,
 };
 
+const locale = getRequestLocale(Astro.cookies);
 const requestedLanguage = Astro.url.searchParams.get(CHEAT_SHEET_LANGUAGE_QUERY_PARAM);
-const language = isCheatSheetLanguage(requestedLanguage)
-  ? requestedLanguage
-  : DEFAULT_CHEAT_SHEET_LANGUAGE;
+const language = isLocale(requestedLanguage) ? requestedLanguage : locale;
 
-const metadata = CERTIFICATIONS.find(({ id }) => id === "archimate")?.cheatSheet;
+const archimate = CERTIFICATIONS.find(({ id }) => id === "archimate");
+const metadata = archimate && localizeCertification(archimate, locale).cheatSheet;
 if (!metadata) {
   throw new Error("Certifikace ArchiMate nemá v CERTIFICATIONS definovaný tahák");
 }
+const pageTitle = getMessages(locale).pageTitles.cheatSheet(metadata.title);
 ---
 
-<BaseLayout title={`${metadata.title} | Certifikace | Developers Quiz`} currentPath="/certifications">
+<BaseLayout locale={locale} title={pageTitle} currentPath="/certifications">
   <CheatSheetView
+    locale={locale}
     cheatSheet={cheatSheets[language]}
     metadata={metadata}
     language={language}
