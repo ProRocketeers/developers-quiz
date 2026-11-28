@@ -286,6 +286,7 @@ export const cs = {
       clearSelection: "Zrušit výběr",
       questionCount: "Počet otázek",
       allQuestions: "Všechny",
+      customQuestionCount: "Vlastní…",
       availableQuestions: (count: number) =>
         `Ve vybraných okruzích je ${questions(count)}.`,
       togglesLabel: "Možnosti procvičování",

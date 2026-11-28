@@ -241,6 +241,7 @@ export const en: Messages = {
       clearSelection: "Clear selection",
       questionCount: "Number of questions",
       allQuestions: "All",
+      customQuestionCount: "Custom…",
       availableQuestions: (count) =>
         `The selected topics contain ${questions(count)}.`,
       togglesLabel: "Practice options",
